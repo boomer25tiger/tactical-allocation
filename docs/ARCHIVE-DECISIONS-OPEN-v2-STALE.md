@@ -1,3 +1,13 @@
+# ARCHIVED - STALE - DO NOT READ FOR VALUES
+
+This is the v2 register as it stood BEFORE session 00A (last
+modified 2026-08-17 12:06). It predates every session and carries
+values that were later changed, reversed, or superseded. It is
+retained for archaeology only. The current register is
+docs/DECISIONS-v3.md.
+
+---
+
 # Open decision register, v2
 
 Supersedes DECISIONS-OPEN.md. Section 1 records decisions closed since v1.
