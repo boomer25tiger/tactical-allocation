@@ -1,0 +1,15 @@
+{
+  "session": "00C",
+  "pull_timestamp_utc": "2026-08-17T17:19:47.051993+00:00",
+  "pull_date_local": "2026-08-17",
+  "yfinance_version": "1.6.0",
+  "pandas_version": "3.0.5",
+  "numpy_version": "2.5.2",
+  "python_version": "3.13.13",
+  "start_requested": "1995-01-01",
+  "n_tickers": 35,
+  "n_failed": 0,
+  "failed": [],
+  "auto_adjust": false,
+  "actions": true
+}

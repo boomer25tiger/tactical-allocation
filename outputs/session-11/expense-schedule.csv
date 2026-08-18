@@ -1,0 +1,25 @@
+fund,start,end,gross_er_pct,net_er_pct,waiver,status,source
+TQQQ,2010-02-09,present,,0.86,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+QLD,2006-06-19,present,,0.95,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+SQQQ,2010-02-09,present,,0.95,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+PSQ,2006-06-19,present,,0.95,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+SH,2006-06-19,present,,0.88,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+SPXL,2008-11-05,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+SPXL,2024-11-01,present,,0.81,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+TECL,2008-12-17,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+TECL,2024-11-01,present,,0.83,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+TECS,2008-12-17,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+TECS,2024-11-01,present,,0.92,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+SOXL,2010-03-11,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+SOXL,2024-11-01,present,,0.71,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+SOXS,2010-03-11,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+SOXS,2024-11-01,present,,0.87,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+FAS,2008-11-06,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+FAS,2024-11-01,present,,0.86,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+LABU,2015-05-28,2024-10-31,,1.00,,CARRIED (session-10 constant; annual fee tables not harvested),
+LABU,2024-11-01,present,,0.92,,"STATED (costs-paid ratio, tailored shareholder report FY2025)",N-CSR 0001133228-26-000012
+UVXY,2011-10-03,present,,0.95,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+SVXY,2011-10-03,present,,0.95,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+SVIX,2022-03-28,present,,1.49,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+UVIX,2022-03-28,present,,1.77,,"CARRIED (session-10 constant; filings not parsed, bounded)",
+BTAL,2011-09-13,present,,1.43,,"CARRIED (session-10 constant; filings not parsed, bounded)",

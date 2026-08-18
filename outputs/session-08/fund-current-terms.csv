@@ -1,0 +1,18 @@
+ticker,issuer,trust,first_trade_frozen,inception_stated,current_multiple,current_benchmark,source
+TQQQ,ProShares,ProShares Trust,2010-02-11,2010-02-09,3.0,Nasdaq-100 Index,485BPOS 2026-07-23 0001174610-26-000450
+QLD,ProShares,ProShares Trust,2006-06-21,2006-06-19,2.0,Nasdaq-100 Index,485BPOS 2026-07-23 0001174610-26-000450
+SQQQ,ProShares,ProShares Trust,2010-02-11,2010-02-09,-3.0,Nasdaq-100 Index,485BPOS 2026-07-23 0001174610-26-000450
+PSQ,ProShares,ProShares Trust,2006-06-21,2006-06-19,-1.0,Nasdaq-100 Index,485BPOS 2026-07-23 0001174610-26-000450
+SH,ProShares,ProShares Trust,2006-06-21,2006-06-19,-1.0,S&P 500 Index,485BPOS 2026-07-23 0001174610-26-000450
+SPXL,Direxion,Direxion Shares ETF Trust,2008-11-05,2008-11-05,3.0,S&P 500 Index,485BPOS 2026-08-10 0001193125-26-342375; 497K 2013 0001193125-13-083450
+TECL,Direxion,Direxion Shares ETF Trust,2008-12-30,2008-12-17,3.0,Technology Select Sector Index,485BPOS 2026-08-10; 497K 2013 0001193125-13-083480
+TECS,Direxion,Direxion Shares ETF Trust,2008-12-30,2008-12-17,-3.0,Technology Select Sector Index,485BPOS 2026-08-10; 497K 2013 0001193125-13-083480
+SOXL,Direxion,Direxion Shares ETF Trust,2010-03-11,2010-03-11,3.0,ICE Semiconductor Index,497 2021-06-21 0001193125-21-195149; 485BPOS 2026-08-10
+SOXS,Direxion,Direxion Shares ETF Trust,2010-03-11,2010-03-11,-3.0,ICE Semiconductor Index,497 2021-06-21 0001193125-21-195149; 485BPOS 2026-08-10
+FAS,Direxion,Direxion Shares ETF Trust,2008-11-19,2008-11-06,3.0,Financials Select Sector Index,497 2022-06-02 0001193125-22-166266; 485BPOS 2026-08-10
+LABU,Direxion,Direxion Shares ETF Trust,2015-05-28,2015-05-28,3.0,S&P Biotechnology Select Industry Index,485BPOS 2026-08-10
+UVXY,ProShares,ProShares Trust II,(not in panel),2011-10-03,1.5,S&P 500 VIX Short-Term Futures Index,8-K 2018-02-27 0001193125-18-059052; 10-K 2026-02-26 0001193125-26-077441
+SVXY,ProShares,ProShares Trust II,(not in panel),2011-10-03,-0.5,S&P 500 VIX Short-Term Futures Index,8-K 2018-02-27 0001193125-18-059052; 10-K 2026-02-26 0001193125-26-077441
+SVIX,Volatility Shares,Volatility Shares Trust,(not in panel),2022-03-28,-1.0,Short VIX Futures Index,485BPOS 2026-06-26 0001213900-26-072183
+UVIX,Volatility Shares,Volatility Shares Trust,(not in panel),2022-03-28,2.0,Long VIX Futures Index,485BPOS 2026-06-26 0001213900-26-072183
+BTAL,AGF Investments,FQF Trust,2011-09-13,2011-09-13,(none - long/short strategy),Dow Jones U.S. Thematic Market Neutral Anti-Beta Index,485BPOS 2026-07-10 0001193125-26-300911

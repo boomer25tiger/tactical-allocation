@@ -1,0 +1,31 @@
+call_site,source_value,spec_value,decision_id,classification,mapping_sites,notes
+"T10 RSI registrations, source L65 L67-71, consumed L188-200",period 10,period 14,6.1,deliberate re-specification,"1-16",exhaustion / dip / relative-strength functions all take 14
+"T11 RSI10 registrations, L74-77, consumed L210-235 and helpers",period 10,period 14,6.1,deliberate re-specification,"17-29 and helper r10 legs",
+"T11 RSI20 registrations TLT PSQ AGG, L78-79",period 20,period 14,"6.1, 6.19",deliberate re-specification,"30, 32, 33, 36, 37",mixed-period pairwise sites resolved by 6.19 to the RS period on both sides
+"T11 RSI60 SH, L80",period 60,period 14,"6.1, 6.19",deliberate re-specification,"32, 36",slow side of the AGG/SH pair; 6.19 applies the RS period to both sides
+"S2 RSI registrations TQQQ SOXL SQQQ BSV, L89-92",period 10,period 14,6.1,deliberate re-specification,"38-41",
+"S3 RSI8 registrations QQQ SMH, L99 L101-102",period 8,period 14,6.1,deliberate re-specification,"46-47",
+"S3 RSI15 registrations SPY QQQ SMH SOXL, L100 L103-106",period 15,period 14,6.1,deliberate re-specification,"42-45",
+"T10 cascade baseline QQQE VTV VOX TECL VOOG VOOV TQQQ, L188-190",79,70,6.2,deliberate re-specification,"1-6, 8",single-tier cascade takes tier one
+"T10 cascade XLP, L190",75,70,6.2,deliberate re-specification,7,per-name exception collapsed
+"T10 cascade XLY FAS SPY, L190-191",80,70,6.2,deliberate re-specification,"9-11",per-name exception collapsed; single-tier cascade takes tier one
+"T10 LABU dip, L196",25,30,6.4,deliberate re-specification,15,
+"T11 tier one SPY IOO TQQQ VTV XLF, L220-221",79,70,6.2,deliberate re-specification,"17-21",
+"T11 tier two SPY IOO TQQQ VTV XLF, L223-224",81,80,6.3,deliberate re-specification,"22-26",
+"T11 PSQ oversold in bond_baller and feaver_bear, L158 L175",35,30,6.4,deliberate re-specification,"31, 35",A1 resolved to dip; 6.4 governs the threshold
+"S2 TQQQ overbought inside the gate, L264",79,70,6.2,deliberate re-specification,38,single-tier site takes tier one
+"S2 TQQQ dip, L266",31,30,6.4,deliberate re-specification,39,
+"S3 overbought SPY QQQ SMH SOXL, L280-283",72,70,6.2,deliberate re-specification,"42-45",
+"S3 QQQ dip, L294",29,30,6.4,deliberate re-specification,46,
+"S3 SMH dip, L294",31,30,6.4,deliberate re-specification,47,
+"S3 SMA registrations SPY QQQ SMH SOXL, L95-98",202,200,6.5,deliberate re-specification,,
+"warm-up, L108",215 bars,210 sessions,2.11,deliberate re-specification,,QC warm-up replaced by max(longest SMA; RSI seed convergence) plus ten-session margin
+"crash test in _t11_feaver_bear, L166-171",QQQ 60-session return < -12 percent,"return < rolling 5th percentile of trailing 60-session QQQ total returns; window 1260 expanding on QQQ from 1999; no fire before the window fills","6.10, 6.11, 6.12",deliberate re-specification,,threshold semantics; unavailable reads false
+"trend signal instrument, L44 L84 L199-200 L215 L218 L234-239",KMLM,RYMFX,2.5,deliberate re-specification (instrument change),"16, 29 plus SMA sites",instrument change not parameter change; KMLM appears in no weight dictionary in source
+"trend signal read timing",same-session read,one-session lag applied once at load,2.5a,deliberate re-specification,,RYMFX NAV posts one session late; lag lives in src/data.py only
+"trend-unready fallback, L199-200 L234-235",(not kmlm_ready) or (XLK > KMLM) routes risk-on,removed; pairwise comparison with unavailable input raises NotImplementedError,2.11 settled half,deliberate re-specification,"16, 29",directional assumption removed; raise marks the open half of 2.11
+"SVIX availability date guard, L22 L198",time >= 2022-03-30 selects SVIX else SVXY,availability switch on the SVIX bar at the signal date,1.9,deliberate re-specification,,date guards on instrument availability are not taken from source; flagged in report
+"UVIX availability date guard, L23 L286-290",time >= 2022-03-30 and has_data and price > 0 selects UVIX else UVXY,availability switch on the UVIX bar at the signal date,1.9,deliberate re-specification,,same treatment as SVIX; source's own has_data check minus the hardcoded date
+"readiness conventions, L24-25 L114-151 L186-196 L210-212 L234",QC is_ready gates with _LATE exemptions and .get sentinel defaults 0 and 50,threshold test with unavailable input reads false; pairwise raises,"1.9, 2.11",deliberate re-specification,,sentinel defaults 0 and 50 had the same observable effect as the threshold rule; mechanism replaced
+"order type, L323 L334",market-on-open orders filled at T+1 open,close_to_close fills at T+1 close; open_to_open arm on AdjOpen retained behind EXECUTION_MODE,4.1,deliberate re-specification,,both arms in one parameterised path
+"share sizing, L331",int() truncation at order placement,fractional; truncate arm retained behind SIZING_MODE with residual to sleeve cash at DTB3,"4.7, 5.5",deliberate re-specification,,

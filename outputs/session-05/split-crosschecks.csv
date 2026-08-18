@@ -1,0 +1,4 @@
+ticker,date,stored_close,future_split_factor,implied_as_traded,anchor,band,within_band,boundary_split,boundary_price_ratio,boundary_consistent,source
+SMH,2023-05-04,121.80500030517578,2.0,243.61000061035156,249.0,15.0,True,2023-05-05:2,1.9586,True,final pre-split session of the 2023-05-05 2:1; SMH traded ~ $250
+TQQQ,2021-01-20,24.7450008392334,8.0,197.9600067138672,198.0,15.0,True,2021-01-21:2,1.9515,True,"final pre-split session of the 2021-01-21 2:1; contemporaneous coverage put TQQQ near $99-100 immediately AFTER the split, so ~ $198 before it. (An earlier draft anchored ~ $100, the post-split level misremembered as pre-split; recorded in the session report.)"
+SOXL,2021-02-26,38.71066665649414,15.0,580.6599998474121,610.0,60.0,True,2021-03-02:15,16.5595,True,"late Feb 2021, ahead of the 2021-03-02 15:1 at ~ $600-650"

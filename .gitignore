@@ -1,0 +1,13 @@
+# environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# derived synthetics: rebuildable from frozen inputs via scripts/s10_build.py
+# (note: rebuilds of SVIX/UVIX read ^SHORTVOL at run time - network-dependent)
+data/interim/synthetics/
+
+# frozen data under data/raw/ IS COMMITTED (13MB total, under the 100MB
+# rule): the repository is fully self-contained. Every frozen file carries
+# SHA-256 in a session manifest under outputs/.

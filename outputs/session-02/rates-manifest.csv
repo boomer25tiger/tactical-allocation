@@ -1,0 +1,2 @@
+ticker,sha256,bytes,rows,null_count,first_date,last_date,pull_timestamp_utc,library_version,file
+DTB3,887c139077b9f0c1d8417b6f868a63f8f164e6362ebce30f0bd571b17fef9957,87041,8249,338,1995-01-03,2026-08-14,2026-08-18T00:30:42.666001+00:00,requests 2.34.2 / FRED fredgraph CSV / pandas 3.0.5,data/raw/rates/DTB3.parquet

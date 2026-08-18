@@ -1,0 +1,2 @@
+ticker,sha256,bytes,rows,null_count,first_date,last_date,pull_timestamp_utc,library_version,file
+NETR,61b575112ca246144feedc36aec3fc2fbe419cc5de5296a3ccff7f574ef44f8f,228965,5027,3,2006-08-21,2026-08-14,2026-08-18T02:49:39.710661+00:00,yfinance 1.6.0,data/raw/index/NETR.parquet

@@ -1,0 +1,20 @@
+fund,er_status,old_er,new_er,expected_dtd_pct,measured_dtd_pct,new_ann_td_pct,note
+TECL,STATED FY2025,1.0,0.83,0.17,0.175,-0.05545018446955298,
+TECS,STATED FY2025,1.0,0.92,0.08,0.084,1.114234833583512,
+SPXL,STATED FY2025,1.0,0.81,0.19,0.194,0.08363370189155502,
+FAS,STATED FY2025,1.0,0.86,0.14,0.14,1.2304239108548458,
+LABU,STATED FY2025,1.0,0.92,0.08,0.08,1.4502121906262857,
+SOXL,STATED FY2025 (confounded with SOXX adoption),1.0,0.71,,,,underlying changed simultaneously; dTD not attributable to ER alone
+SOXS,STATED FY2025 (confounded with SOXX adoption),1.0,0.87,,,,underlying changed simultaneously; dTD not attributable to ER alone
+TQQQ,CARRIED (unchanged),,0.86,,,,
+QLD,CARRIED (unchanged),,0.95,,,,
+SQQQ,CARRIED (unchanged),,0.95,,,,
+PSQ,CARRIED (unchanged),,0.95,,,,
+SH,CARRIED (unchanged),,0.88,,,,
+UVXY,CARRIED (unchanged),,0.95,,,,
+SVXY,CARRIED (unchanged),,0.95,,,,
+SVIX,CARRIED (unchanged),,1.49,,,,
+UVIX,CARRIED (unchanged),,1.77,,,,
+QID,CARRIED (unchanged),,0.95,,,,
+SSO,CARRIED (unchanged),,0.91,,,,
+SDS,CARRIED (unchanged),,0.9,,,,

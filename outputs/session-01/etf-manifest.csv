@@ -1,0 +1,2 @@
+ticker,sha256,bytes,rows,first_date,last_date,pull_timestamp_utc,yfinance_version,file
+RYMFX,0898d65147c79ec4a947d24974bf49b296b7792f35c7dc2460ec74d3b4a3ed98,119006,4901,2007-02-22,2026-08-14,2026-08-17T23:00:08.020299+00:00,1.6.0,data/raw/etf/RYMFX.parquet

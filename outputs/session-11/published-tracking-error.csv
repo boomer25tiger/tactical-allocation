@@ -1,0 +1,18 @@
+trust,fund,fiscal_end,convention,fund_nav_1yr_pct,index_1yr_pct,index_shown,issuer_stated_unverifiable
+Direxion,TECL,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",81.00,36.17,Technology Select Sector Index,True
+Direxion,TECS,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",,36.17,Technology Select Sector Index,True
+Direxion,SOXL,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",61.13,42.03,NYSE Semiconductor Index,True
+Direxion,SOXS,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",,42.03,NYSE Semiconductor Index,True
+Direxion,SPXL,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",43.75,,,False
+Direxion,FAS,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",17.19,14.25,Year 5 Year 10 Year Direxion Daily Financial Bull 3X Shares NAV 17.19 38.36 19.22 Financial Select Sector Index,True
+Direxion,LABU,2025-10-31,"NAV vs UNLEVERED index, avg annual returns (no objective-TE published)",10.53,16.53,S&P Biotechnology Select Industry Index,True
+ProShares,TQQQ,2026-05-31,financial statements only in this doc; MDFP return-vs-index table not present,,,,False
+ProShares,QLD,2026-05-31,financial statements only in this doc; MDFP return-vs-index table not present,,,,False
+ProShares,SQQQ,2026-05-31,financial statements only in this doc; MDFP return-vs-index table not present,,,,False
+ProShares,PSQ,2026-05-31,financial statements only in this doc; MDFP return-vs-index table not present,,,,False
+ProShares,SH,2026-05-31,financial statements only in this doc; MDFP return-vs-index table not present,,,,False
+ProShares Trust II,UVXY,,not retrieved (bounded); absence = no 2.7 anchor,,,,True
+ProShares Trust II,SVXY,,not retrieved (bounded); absence = no 2.7 anchor,,,,True
+Volatility Shares,SVIX,,not retrieved (bounded); absence = no 2.7 anchor,,,,True
+Volatility Shares,UVIX,,not retrieved (bounded); absence = no 2.7 anchor,,,,True
+FQF Trust,BTAL,,not retrieved (bounded); absence = no 2.7 anchor,,,,True

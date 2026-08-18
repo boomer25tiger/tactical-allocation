@@ -1,0 +1,4 @@
+rsi_period,oversold,window_start,window_end,sessions,sessions_excluded_before_span,interior_indeterminate,joint_transitions,transitions_per_year,median_hold_sessions,max_hold_sessions,p90_hold_sessions,transitions_T10,transitions_T11,transitions_S2,transitions_S3
+14,30,2007-03-15,2026-08-14,4886,3071,0,2041,105.11495346869712,1.0,39,5.0,1102,1231,454,593
+7,40,2007-03-06,2026-08-14,4893,3064,0,2804,144.22771440642163,1.0,16,3.0,1513,2009,672,926
+28,20,2007-04-04,2026-08-14,4872,3085,0,1126,58.15490667420814,2.0,141,8.0,495,680,237,242

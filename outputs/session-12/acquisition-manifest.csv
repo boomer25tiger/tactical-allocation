@@ -1,0 +1,6 @@
+series,rows,first,last,interior_nulls,splits,boundary_failures,sha256,file,status
+SOXX,6309.0,2001-07-13,2026-08-14,0.0,"[('2024-03-07', 3.0)]",0.0,3480ccefdf3fa3256663e8a6f559b28b91bb9db2129ed0ecc9732e2878d3978c,data/raw/etf/SOXX.parquet,
+UVXY_nav,3738.0,2011-10-03,2026-08-14,,,,0b686222d08c96a51bdba2558d0dadcc27e2567600290d9b86b05ca8db48205b,data/raw/nav/UVXY_nav.parquet,
+SVXY_nav,3738.0,2011-10-03,2026-08-14,,,,833e8bac7c55050dfb4fbcfe7ab99cb73b6e0e5e37a83f5a1c601d34f34031f8,data/raw/nav/SVXY_nav.parquet,
+SVIX_nav,,,,,,,,,unobtainable (bounded single attempt); validation stays vs exchange closes - disclosed limitation
+UVIX_nav,,,,,,,,,unobtainable (bounded single attempt); validation stays vs exchange closes - disclosed limitation

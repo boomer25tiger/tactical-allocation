@@ -1,0 +1,82 @@
+trust,fund,fiscal_period_end,accession,reference_asset,stated_rate,counterparty,reference_named,spread_bp,rate_direction,flat_rate_pct,implied_spread_vs_DTB3_bp,dtb3_reference
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.8000%,BNP Paribas,SOFR,80.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.7000%,Goldman Sachs,SOFR,70.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.7000%,Bank of America Merrill Lynch,SOFR,70.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.6700%,J.P. Morgan,SOFR,67.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.6500%,UBS Securities LLC,SOFR,65.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.6300%,Citibank N.A.,SOFR,63.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® Index,SOFR+0.7100%,Barclays,SOFR,71.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® High Beta Index,SOFR+0.8000%,J.P. Morgan,SOFR,80.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® High Beta Index,SOFR+0.2800%,UBS Securities LLC,SOFR,28.000000000000004,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® High Beta Index,SOFR+0.7700%,Citibank N.A.,SOFR,77.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P 500 ® High Beta Index,SOFR+0.6800%,Barclays,SOFR,68.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.9500%,BNP Paribas,SOFR,95.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.8500%,Goldman Sachs,SOFR,85.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.6800%,Bank of America Merrill Lynch,SOFR,68.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.6000%,J.P. Morgan,SOFR,60.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.5400%,UBS Securities LLC,SOFR,54.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.8400%,Citibank N.A.,SOFR,84.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,S&P Biotechnology Select Industry Index,SOFR+0.7700%,Barclays,SOFR,77.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9900%,BNP Paribas,SOFR,99.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9400%,Goldman Sachs,SOFR,94.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9800%,Bank of America Merrill Lynch,SOFR,98.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.5300%,Societe Generale,SOFR,53.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9200%,J.P. Morgan,SOFR,92.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.7300%,UBS Securities LLC,SOFR,73.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9400%,Citibank N.A.,SOFR,94.0,,,,
+Direxion,SPXL,2025-10-31,0001133228-26-000012,ICE Semiconductor Index,SOFR+0.9200%,Barclays,SOFR,92.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.7500%,BNP Paribas,SOFR,75.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.7500%,Goldman Sachs,SOFR,75.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.7800%,Bank of America Merrill Lynch,SOFR,78.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.8000%,Societe Generale,SOFR,80.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.8000%,J.P. Morgan,SOFR,80.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.6500%,UBS Securities LLC,SOFR,65.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.6500%,Citibank N.A.,SOFR,65.0,,,,
+Direxion,FAS,2025-10-31,0001133228-26-000012,Financial Select Sector Index,SOFR+0.7500%,Barclays,SOFR,75.0,,,,
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.77% (flat, no reference named)",Bank of America NA,,,paid,4.77,116.99999999999994,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.57% (flat, no reference named)",Barclays Bank PLC,,,paid,4.57,97.00000000000001,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.67% (flat, no reference named)",BNP Paribas,,,paid,4.67,106.99999999999999,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.87% (flat, no reference named)",Citibank NA,,,paid,4.87,127.0,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.62% (flat, no reference named)",Goldman Sachs International,,,paid,4.62,102.0,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.92% (flat, no reference named)",Nomura Global Financial Products Inc.,,,paid,4.92,131.99999999999997,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.72% (flat, no reference named)",Societe Generale,,,paid,4.72,111.99999999999997,3.6% at 2026-05-29
+ProShares,TQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.54% (flat, no reference named)",UBS AG,,,paid,4.54,94.0,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.47% (flat, no reference named)",Bank of America NA,,,received,-4.47,86.99999999999997,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.17% (flat, no reference named)",Barclays Bank PLC,,,received,-4.17,56.999999999999986,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.32% (flat, no reference named)",BNP Paribas,,,received,-4.32,72.00000000000001,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.47% (flat, no reference named)",Citibank NA,,,received,-4.47,86.99999999999997,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.22% (flat, no reference named)",Goldman Sachs International,,,received,-4.22,61.999999999999964,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.42% (flat, no reference named)",Nomura Global Financial Products Inc.,,,received,-4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.42% (flat, no reference named)",Societe Generale,,,received,-4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,SQQQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.14% (flat, no reference named)",UBS AG,,,received,-4.14,53.99999999999996,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.77% (flat, no reference named)",Bank of America NA,,,paid,4.77,116.99999999999994,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.57% (flat, no reference named)",Barclays Bank PLC,,,paid,4.57,97.00000000000001,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.67% (flat, no reference named)",BNP Paribas,,,paid,4.67,106.99999999999999,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.87% (flat, no reference named)",Citibank NA,,,paid,4.87,127.0,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.47% (flat, no reference named)",Goldman Sachs International,,,paid,4.47,86.99999999999997,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,PowerShares QQQ Trust,"4.42% (flat, no reference named)",Goldman Sachs International,,,paid,4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.92% (flat, no reference named)",Nomura Global Financial Products Inc.,,,paid,4.92,131.99999999999997,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.72% (flat, no reference named)",Societe Generale,,,paid,4.72,111.99999999999997,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"4.54% (flat, no reference named)",UBS AG,,,paid,4.54,94.0,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Top 30 Index,"4.82% (flat, no reference named)",Bank of America NA,,,paid,4.82,122.00000000000001,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Top 30 Index,"4.77% (flat, no reference named)",Citibank NA,,,paid,4.77,116.99999999999994,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Top 30 Index,"4.42% (flat, no reference named)",Nomura Global Financial Products Inc.,,,paid,4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,QLD,2026-05-31,0001398344-26-013617,Nasdaq-100 Top 30 Index,"4.67% (flat, no reference named)",Societe Generale,,,paid,4.67,106.99999999999999,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.47% (flat, no reference named)",Bank of America NA,,,received,-4.47,86.99999999999997,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.17% (flat, no reference named)",Barclays Bank PLC,,,received,-4.17,56.999999999999986,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.32% (flat, no reference named)",BNP Paribas,,,received,-4.32,72.00000000000001,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.47% (flat, no reference named)",Citibank NA,,,received,-4.47,86.99999999999997,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.22% (flat, no reference named)",Goldman Sachs International,,,received,-4.22,61.999999999999964,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.42% (flat, no reference named)",Nomura Global Financial Products Inc.,,,received,-4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.42% (flat, no reference named)",Societe Generale,,,received,-4.42,81.99999999999999,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Index,"-4.14% (flat, no reference named)",UBS AG,,,received,-4.14,53.99999999999996,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Mega Index,"-4.52% (flat, no reference named)",Bank of America NA,,,received,-4.52,91.99999999999994,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Mega Index,"-4.20% (flat, no reference named)",Barclays Bank PLC,,,received,-4.2,60.00000000000001,3.6% at 2026-05-29
+ProShares,PSQ,2026-05-31,0001398344-26-013617,Nasdaq-100 Mega Index,"-4.12% (flat, no reference named)",Goldman Sachs International,,,received,-4.12,52.0,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.32% (flat, no reference named)",Bank of America NA,,,received,-4.32,72.00000000000001,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.17% (flat, no reference named)",Barclays Bank PLC,,,received,-4.17,56.999999999999986,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.22% (flat, no reference named)",BNP Paribas,,,received,-4.22,61.999999999999964,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.20% (flat, no reference named)",Citibank NA,,,received,-4.2,60.00000000000001,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.22% (flat, no reference named)",Goldman Sachs International,,,received,-4.22,61.999999999999964,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.32% (flat, no reference named)",Societe Generale,,,received,-4.32,72.00000000000001,3.6% at 2026-05-29
+ProShares,SH,2026-05-31,0001398344-26-013617,S&P 500 ®,"-4.14% (flat, no reference named)",UBS AG,,,received,-4.14,53.99999999999996,3.6% at 2026-05-29

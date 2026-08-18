@@ -1,0 +1,4 @@
+source_file,sha256_at_copy
+outputs/session-00c/etf-manifest.csv,421d888a6d956319c2f48fdfa705b535dbfbb3d0ede1d6b4d777ec26b2a86ad4
+outputs/session-00c/pull-metadata.json,7abd04b83b2d84e70a0903a625860ed3386a39f84250ee3409a07507ea3e2ae1
+outputs/session-00a/vx-manifest.csv,56464f71ea437376c7667949b7f3eaf00f4a18831a904d5136a57d6a8e59a393
