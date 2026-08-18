@@ -1,6 +1,9 @@
-# DECISIONS v3 — the register as of session 12.5
+# DECISIONS v3 — the register as of session 12.6
 
-Reissued 2026-08-18 by session 12.5, replacing the stale v2 (archived as
+Reissued 2026-08-18 by session 12.5, amended 2026-08-18 by session 12.6
+(conversation-only closures added: 2.7 final form, SOXS sourcing, SVXY
+2018-02-06 exclusion, 8.8 full specification, 4.4 range retention, 4.6
+restatement), replacing the stale v2 (archived as
 ARCHIVE-DECISIONS-OPEN-v2-STALE.md, which predates session 00A and carries
 wrong values). Reconstructed from the session reports under `outputs/` and
 the session conversation. Where a decision was closed, reversed, and
@@ -74,8 +77,8 @@ than a measurement** (9.10 provenance requirement).
   holdout is not contaminated.
 - **2.6 — closed.** BTAL has no multiple (anti-beta long/short);
   validation routed to the AQR BAB factor; excluded from synthetics.
-- **2.7 — closed, REVERSED TWICE, final form OPEN at the band level
-  (history).** (i) Original: validate synthetics against benchmark
+- **2.7 — closed as report-without-threshold, REVERSED TWICE (history;
+  final closure recorded session 12.6).** (i) Original: validate synthetics against benchmark
   indices, banded by exposure class. (ii) Session 09 measured index-level
   validation impossible for six funds (indices gated at every resolution;
   SMH 19.3% max divergence from PHLX) → **revised to validate against the
@@ -84,10 +87,21 @@ than a measurement** (9.10 provenance requirement).
   by the same underlying the synthetic builds on; objTE equalled synthetic
   TE to two decimals; 12/12 "passed" a band that cannot fail). (iv)
   Session 11 found no issuer-published tracking error exists against the
-  levered daily objective. **A two-tier stipulated band is PROPOSED at the
-  end of session 12's report (Tier 1 exact underlying: corr ≥ 0.98 and
-  |ann TD| ≤ 2.0%; Tier 2 approximate: ≥ 0.95 and ≤ 4.0%) — awaiting
-  confirmation, not written to config, not applied.** [A]
+  levered daily objective. (v) **Closed as report-without-threshold
+  (conversation, recorded session 12.6). No pass-fail band.** Report
+  correlation, annualised tracking difference, and maximum rolling
+  divergence per fund, with the validation target and window stated. Two
+  external anchors were sought and neither exists: issuers publish no
+  tracking error against the levered daily objective, only against the
+  unlevered index, which under daily-reset compounding is a different
+  quantity (session 11); and a separate search established that Direxion
+  and ProShares prospectuses describe index correlation risk
+  qualitatively with no numeric target. The two-tier band session 12
+  proposed was rejected because its thresholds fell in the empty gap
+  between the eleven passing funds at 0.993–0.999 correlation and the
+  three exceptions at 6.2–8.9%/yr tracking difference, so any value in
+  that gap produces the same partition and the threshold does no work.
+  [A — rests on the absence of an anchor rather than on a measurement]
 - **2.8 — closed.** All-synthetic is the primary arm; realized-instrument
   is the comparison arm (the implementability check). Neither has run.
 - **2.9 — closed.** Sample starts 2007-01-01.
@@ -104,6 +118,19 @@ than a measurement** (9.10 provenance requirement).
   adopted session 12; replaced SMH)**, XLF (exact from 2022-08 only), XBI
   (exact). Proxy errors quantified session 09; see limitations in
   STATE.md.
+- **2.12a SOXS sourcing — closed (conversation, recorded session 12.6).**
+  Keep the synthetic. The recorded exception — 6.21 percent annualised
+  tracking difference and 1394 percent maximum rolling divergence against
+  the real fund, real-fund frictions compounding at −3× — stands and is
+  reported beside every result that depends on it. The alternative,
+  listed SOXS from 2010-03, was rejected because it would remove T11's
+  bull-branch inverse basket across 2008.
+- **2.12b SVXY 2018-02-06 — closed (conversation, recorded session
+  12.6).** Excluded from validation, as a stated exclusion with the
+  reason: the fund's NAV rebounded 187 percent against an index-implied
+  26 percent during the termination-scale event, which is a portfolio
+  departure from the index rather than a construction failure. Every
+  other session in the pre-2018 window matches to decimals.
 - **2.13 — partially closed.** Expense schedule: stated FY2025 costs-paid
   ratios for the seven Direxion funds (TECL 0.83, TECS 0.92, SOXL 0.71,
   SOXS 0.87, SPXL 0.81, FAS 0.86, LABU 0.92); everything else CARRIED
@@ -163,8 +190,19 @@ than a measurement** (9.10 provenance requirement).
   uniformly; spread estimates move to data characterisation.
 - **4.4 — closed.** The base sweep above; cost is a headline axis (105
   signal transitions/yr, median holding one session — session 07).
-- **4.6 — reopened.** Truncation reintroduces the size dependence
-  fractional sizing removed; cannot resolve before a first result exists.
+  **Range retained at 0–50 bp (conversation, recorded session 12.6).**
+  Session 05's stress-window spread estimates (SOXS at 401 bp and SOXL
+  at 288 bp in COVID) were not used to extend the range, because the
+  Corwin-Schultz variance-scaling assumption is violated on daily-reset
+  funds, so those figures substantially read volatility as spread.
+  Recorded as a limitation: the cost model proxies auction cost with a
+  continuous-market spread estimator and does not cover crisis
+  conditions.
+- **4.6 — reopened, unresolvable before a result (restated session
+  12.6).** Truncation reintroduces the size dependence fractional sizing
+  removed. The sweep as specified measures starting NAV, but the account
+  compounds, so the liquidity and impact question applies to terminal
+  size. Blocked until a first backtest exists.
 - **4.7 — closed, REVERSED ONCE (history).** (i) Session 01: fractional
   primary. (ii) Session 07: IBKR executes fractional components as
   principal — never routed to the closing auction — so the fractional
@@ -248,12 +286,19 @@ than a measurement** (9.10 provenance requirement).
 - **8.1 — closed.** Risk-free is DTB3 (`RISK_FREE_SERIES`), distinct from
   financing constants.
 - **8.2 — closed.** Lo-corrected Sharpe as headline beside the naive one.
-- **8.8 / 8.9 / 8.10 — closed (design).** Benchmark ladder (buy-and-hold
-  QQQ, TQQQ, vol-targeted QQQ, one fast naive rival, each sleeve
-  standalone), block-bootstrap timing-shuffle nulls plus a turnover-
-  matched switching null at 105/yr, 1,000 draws, identical cost model on
-  every line; ensemble-vs-best-sleeve disclosed post-hoc into the
-  Romano-Wolf family. Nothing executed.
+- **8.8 / 8.9 / 8.10 — closed (design; full specification recorded
+  session 12.6).** Benchmarks: buy-and-hold QQQ, buy-and-hold TQQQ,
+  vol-targeted QQQ at matched exposure, one fast-rebalancing naive rival
+  at comparable trading frequency, and each of the four sleeves run
+  standalone at full budget. Nulls: a timing shuffle preserving state
+  distribution and holding-period structure via block bootstrap under
+  8.9, and a turnover-matched switching null at the measured transition
+  rate. All at canonical parameters per 9.8, 1,000 draws, every line
+  bearing the identical cost model. Ensemble against the best single
+  sleeve is disclosed as post-hoc and joins 8.10's Romano-Wolf family.
+  Pairwise correlation of the four standalone tracks reported alongside.
+  Rationale: buy-and-hold comparisons confound the signal with a trading
+  frequency of 105 transitions per year. Nothing executed.
 - **9.8 — closed.** Implementation dimensions run at canonical parameters,
   not crossed into the grid (slippage base sweep, SMH accrual arm).
 - **9.10 — closed.** Assumption-based closures must carry provenance —
@@ -294,9 +339,9 @@ than a measurement** (9.10 provenance requirement).
 
 ## Open decisions with blockers
 
-- **2.7 band** — proposed two-tier stipulation awaits user confirmation
-  (end of session 12 report).
-- **4.6 sizing size-dependence** — blocked on a first backtest result.
+- **4.6 sizing size-dependence** — blocked on a first backtest result
+  (the sweep measures starting NAV; the account compounds, so the
+  question applies to terminal size).
 - **5.6 / 5.7** — computed in the backtest session.
 - **6.13 / 6.14 orderings** — measurements complete; closure is a register
   call.
