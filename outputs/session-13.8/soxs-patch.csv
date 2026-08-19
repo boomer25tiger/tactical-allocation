@@ -1,0 +1,5 @@
+table,date,sec_sourced_nav,reconstructed,pct_diff,result,worst_unlevered_abs_pct,worst_levered_abs_pct,note
+soxs_control,2017-10-31,16.25,16.24,-0.062,PASS,,,
+all33_recontrol,,,,,PASS,0.005825969878636705,0.5856999633638615,
+return_consistency,,,,,PASS,,,
+patch_record,,,,,,,,"Patch: SOXS 2021-03-02 ratio 1/15, applied at load (scripts/s13_backtest.py SPLIT_PATCHES); frozen file untouched (1.1). Source: Direxion corporate action effective 2021-03-02 (companion to SOXL 15:1 same date, present in the vendor record); evidenced by the SEC-sourced NAV control (Direxion FY2017 N-CSR, accession 0001104659-18-000153 family) recovering at exactly x1/15, and adjusted-close continuity through the date. Effect on share counts/commission/truncation reported from the step-7 run."

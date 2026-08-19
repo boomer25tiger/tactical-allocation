@@ -1,0 +1,46 @@
+table,ticker,date,known_level,reconstructed,rel_gap,tolerance,result,note,first_listed_in_window,reconstructed_first_price,ratio_to_old_100_anchor,year,px_min,px_median,px_max,range
+known_level_control,TQQQ,2021-07-30,120.0,132.74,0.10616671244303388,0.35,PASS,"forward splitter (2:1 x4, 3:1); traded ~$120 late Jul 2021",,,,,,,,
+known_level_control,SOXL,2021-03-15,40.0,35.57,-0.11075000762939458,0.35,PASS,forward splitter (15:1 Mar 2021); traded ~$40 after it,,,,,,,,
+known_level_control,UVXY,2021-06-15,27.0,31.5,0.16666666666666696,0.35,PASS,reverse splitter (x10); traded ~$25-30 after May 2021 1:10,,,,,,,,
+known_level_control,SQQQ,2021-07-30,9.5,8.34,-0.1221052631578946,0.35,PASS,reverse splitter; traded ~$9-10 summer 2021,,,,,,,,
+return_consistency,ALL,,,,,,PASS,"as-traded return x in-window split ratio == adjusted return, max abs gap < 1e-9 per fund per session",,,,,,,,
+anchor_error,TQQQ,,,,,,,,2010-02-11,83.05,0.8305,,,,,
+anchor_error,SQQQ,,,,,,,,2010-02-11,76.98,0.7698,,,,,
+anchor_error,QLD,,,,,,,,2007-01-03,81.3,0.813,,,,,
+anchor_error,PSQ,,,,,,,,2007-01-03,63.02,0.6302,,,,,
+anchor_error,SH,,,,,,,,2007-01-03,62.41,0.6241,,,,,
+anchor_error,SPXL,,,,,,,,2008-11-05,51.0,0.51,,,,,
+anchor_error,TECL,,,,,,,,2008-12-30,52.7501,0.5275,,,,,
+anchor_error,TECS,,,,,,,,2008-12-30,66.62,0.6662,,,,,
+anchor_error,SOXL,,,,,,,,2010-03-11,39.63,0.3963,,,,,
+anchor_error,SOXS,,,,,,,,2010-03-11,604.2,6.042,,,,,
+anchor_error,FAS,,,,,,,,2008-11-19,20.97,0.2097,,,,,
+anchor_error,LABU,,,,,,,,2015-05-28,39.158,0.3916,,,,,
+anchor_error,UVXY,,,,,,,,2011-10-04,34.3,0.343,,,,,
+anchor_error,SVXY,,,,,,,,2011-10-04,42.1,0.421,,,,,
+uvxy_path,,,,,,,,,,,,2007.0,683.539424806276,1083.808046782003,2706.1439124223193,
+uvxy_path,,,,,,,,,,,,2008.0,769.7370413031969,1567.3708817466556,11878.253878542093,
+uvxy_path,,,,,,,,,,,,2009.0,425.96620968307883,2237.497196035497,8227.432258743676,
+uvxy_path,,,,,,,,,,,,2010.0,23.781109571812767,164.88963957001732,437.452483113157,
+uvxy_path,,,,,,,,,,,,2011.0,6.165856674671481,15.698890625628016,40.83061987514419,
+uvxy_path,,,,,,,,,,,,2012.0,3.919999795200002,15.644999680000009,38.62999859200002,
+uvxy_path,,,,,,,,,,,,2013.0,5.649999872000003,19.210000000000008,87.46999808000004,
+uvxy_path,,,,,,,,,,,,2014.0,14.700000000000008,29.855000320000016,102.82999808000005,
+uvxy_path,,,,,,,,,,,,2015.0,8.230000000000004,27.580000000000013,87.54000000000005,
+uvxy_path,,,,,,,,,,,,2016.0,6.080000000000003,16.79500000000001,58.04000000000003,
+uvxy_path,,,,,,,,,,,,2017.0,6.120000000000002,16.720000000000006,43.09000000000002,
+uvxy_path,,,,,,,,,,,,2018.0,7.660000000000003,14.750000000000005,88.08000000000003,
+uvxy_path,,,,,,,,,,,,2019.0,12.580000000000004,31.98500000000001,83.30000000000003,
+uvxy_path,,,,,,,,,,,,2020.0,10.570000000000004,21.580000000000005,110.63000000000004,
+uvxy_path,,,,,,,,,,,,2021.0,4.060000000000001,10.000000000000004,38.12000000000001,
+prelisting_convention,TQQQ,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2010-02-10
+prelisting_convention,SQQQ,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2010-02-10
+prelisting_convention,SPXL,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2008-11-04
+prelisting_convention,TECL,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2008-12-29
+prelisting_convention,TECS,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2008-12-29
+prelisting_convention,SOXL,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2010-03-10
+prelisting_convention,SOXS,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2010-03-10
+prelisting_convention,FAS,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2008-11-18
+prelisting_convention,LABU,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2015-05-27
+prelisting_convention,UVXY,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2011-10-03
+prelisting_convention,SVXY,,,,,,,back-extended from first listed as-traded price with synthetic returns; no listing price exists to anchor,,,,,,,,2007-01-03..2011-10-03

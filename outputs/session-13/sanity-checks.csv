@@ -1,0 +1,9 @@
+check,result,detail
+nav_reconciles,PASS,relative gap 2.22e-15
+execution_lag_sensitivity,FAIL,T+1@10bp ann 0.1905 SR_lo 0.7158; T+2@10bp ann 0.2751 SR_lo 0.6492; cost-free T+1 ann 0.2419 vs T+2 ann 0.3302 — the result IMPROVES under one extra session of lag
+cash_accounts,PASS,max |pos+cash-nav| = 0.00e+00
+gross_target_leq_100pct,PASS,max target gross 1.000000
+gross_realized_max_reported,PASS,"max realized gross 1.027790; realized gross can exceed 1 only through cost-induced negative cash; min cash -87870.53, negative-cash sessions 1376"
+sleeve_weights_sum_to_budget,PASS,0 sleeve-sessions off budget
+warmup_boundary,PASS,"first loaded 2007-01-03, first signal 2007-11-01 (index 210), first fill 2007-11-02 (signal T close, fill T+1 close); indicators return None until defined"
+commission_cap,PASS,0 orders exceed 1% of trade value across all runs

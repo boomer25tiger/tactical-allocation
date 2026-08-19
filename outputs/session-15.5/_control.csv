@@ -1,0 +1,3 @@
+table,target,s155_ann,s15_ann,s155_sharpe_lo,s15_sharpe_lo,match_4dp
+control,designated cell (portfolio),0.5225924351843778,0.5226,1.3846209839337436,1.3846,True
+control,T10 standalone,0.04840432080003243,0.0484,0.5070328106599319,0.507,True

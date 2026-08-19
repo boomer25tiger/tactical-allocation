@@ -1,0 +1,19 @@
+table,note,sweep_bp,basis,year,dtb3_mean_pct,all_in_at_75bp_anchor_pct
+prospectus_check,"Bounded check answered by the register's own 2.14 history (session 08): no prospectus states swap financing as a rate over a named reference; year-end per-swap rates live in shareholder-report schedules only, and session 13.7/D16 established per-year rates are not derivable from statements of operations. Proceeding to the split.",,,,,
+split,"The split ALREADY EXISTS structurally: scripts/s10_build.py ref_returns() accrues DTB3 (observable, time-varying) as the base on every session; 2.14's constants are the SPREAD only (75 bp long anchor / 70 bp short haircut). The 2025-anchoring concern therefore attaches to the spread alone. Canonical anchor unchanged; sweep widened.",,,,,
+widened_sweep,,"(25, 50, 75, 100, 150, 200)","2008-2009 funding stress (interbank spreads peaked several hundred bp over policy rates; equity swap spreads negotiated in those conditions were almost certainly wider than the FY2025 median of ~75); fund-level historical terms unrecoverable (D16), so the range is an assumed bound, disclosed. 200 bp cap chosen to bracket the stress case without asserting a measured level.",,,
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2007.0,4.36,5.11
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2008.0,1.37,2.12
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2009.0,0.15,0.9
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2010.0,0.14,0.89
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2011.0,0.05,0.8
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2012.0,0.09,0.84
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2013.0,0.06,0.81
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2014.0,0.03,0.78
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2015.0,0.05,0.8
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2016.0,0.32,1.07
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2017.0,0.93,1.68
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2018.0,1.94,2.69
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2019.0,2.06,2.81
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2020.0,0.35,1.1
+per_year_all_in,base observable and time-varying; spread is the swept assumption,,,2021.0,0.04,0.79

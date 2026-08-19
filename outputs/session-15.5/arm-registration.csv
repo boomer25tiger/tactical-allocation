@@ -1,0 +1,12 @@
+table,arm,short_leg,branch_weights,residual_to_sleeve_cash,short_notional_frac_nav,leverage_multiple,role,note
+registration,A,SQQQ,SQQQ 0.50000; TLT 0.50000,0.0,-0.375,-3.0,"canonical, positive control",
+registration,B,PSQ,PSQ 0.50000; TLT 0.50000,0.0,-0.125,-1.0,direct swap at equal weight,
+registration,C,SQQQ,SQQQ 0.16667; TLT 0.50000,0.33333,-0.125,-3.0,notional twin of B,
+registration,D,SQQQ,SQQQ 0.33333; TLT 0.50000,0.16667,-0.25,-3.0,intensity curve,
+registration,E,PSQ,PSQ 1.00000,0.0,-0.25,-1.0,"reported, CONFOUNDED (displaces TLT entirely)",
+registration,F,none,TLT 1.00000,0.0,0.0,0.0,no-short control,
+registration,B_all,PSQ,PSQ 0.50000; TLT 0.50000,0.0,-0.125,-1.0,SECONDARY: sleeve-wide SQQQ->PSQ substitution,
+constraint,,,,,,,,"Notional matching above -25 percent is unreachable with PSQ: the canonical -37.5 percent needs 150 percent of the branch, which breaches the 5.3 gross cap at 100 percent. Recorded as a structural constraint of the -1x expression rather than an omission from the slate."
+constraint,,,,,,,,"Arm E reaches -25 percent with PSQ only by taking 100 percent of the branch, which displaces TLT entirely, so it changes two things at once. CONFOUNDED, reported, and not used for the instrument comparison."
+constraint,,,,,,,,Displaced weight routes to sleeve cash accruing DTB3 through the existing 1.9/2.11 path. No new accounting path is created.
+prereg,,,,,,,,The arm table was fixed and written to this artifact before any performance statistic was computed on any arm. Post-hoc under 9.10: the comparison was motivated by a visible result.

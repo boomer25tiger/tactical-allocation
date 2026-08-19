@@ -1,0 +1,15 @@
+table,segment,ann_contribution,sum_arith,share_of_total_arith,ann_vol,mean_abs_gap_vs_traded_return,note,metric,value,strategy_overnight_share_abs,passive_universe_overnight_share_abs,passive_qqq_overnight_share_abs,strategy_overnight_arith,strategy_intraday_arith,passive_universe_overnight_arith,passive_universe_intraday_arith,window,n_sessions,total_return,ann_return,sharpe_naive,sharpe_lo,max_drawdown,calmar,arith_mean_excess_ann,ann_turnover
+strategy_segments,overnight,0.3757077739718404,3.5824452561363733,0.5774825119308734,0.29815882532605364,,,,,,,,,,,,,,,,,,,,,
+strategy_segments,intraday,0.21526476271967576,2.621111011148833,0.42251748806912665,0.38277453085036434,,,,,,,,,,,,,,,,,,,,,
+passive_segments,overnight,0.08503830247438993,0.8077035722421335,4.896006714254824,0.03675854158970614,,,,,,,,,,,,,,,,,,,,,
+passive_segments,intraday,-0.06477449561806337,-0.6427316636272029,-3.896006714254824,0.05412086580116807,,,,,,,,,,,,,,,,,,,,,
+reconciliation_control,,,,,,0.0007117395699370917,"legs rebuild the open-to-open portfolio return up to cost charges and cross-product terms, which the traded series carries and the segment attribution does not",,,,,,,,,,,,,,,,,,,
+passive_qqq_segments,overnight,0.15883627759467145,1.5214961513142047,,0.12257981105626516,,,,,,,,,,,,,,,,,,,,,
+passive_qqq_segments,intraday,0.062242991991737995,0.6987218980468343,,0.14687150313627978,,,,,,,,,,,,,,,,,,,,,
+exposure,,,,,,,,mean_gross_exposure,0.9074826359093432,,,,,,,,,,,,,,,,,
+exposure,,,,,,,,mean_overnight_dollar_exposure,0.9071065943161107,,,,,,,,,,,,,,,,,
+exposure,,,,,,,,mean_intraday_dollar_exposure,0.9070972019298112,,,,,,,,,,,,,,,,,
+shares,,,,,,,,,,0.5774825119308734,0.5568697948502515,0.685291317108281,3.5824452561363733,2.621111011148833,0.8077035722421335,-0.6427316636272029,,,,,,,,,,
+verdict,,,,,,,"TRADE TIMING. The strategy's overnight share is 0.577 against 0.557 passive-universe and 0.685 passive-QQQ, close enough that the open-to-open advantage is not located in systematic overnight exposure.",,,,,,,,,,,,,,,,,,,
+segment_hold_line,overnight,,,,0.03675854158970614,,,,,,,,,,,,primary,2473.0,1.2276138338163332,0.08503830247438993,2.0747149279443575,1.603369015902455,-0.04599899527003126,1.8486991286479926,0.07625737485576982,0.0
+segment_hold_line,intraday,,,,0.05412086580116807,,,,,,,,,,,,primary,2473.0,-0.48169219119569073,-0.06477449561806337,-1.3219796564794593,-2.0258408416332823,-0.5142648508986316,-0.12595551787153206,-0.07154273814021594,0.0

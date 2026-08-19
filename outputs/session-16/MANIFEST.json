@@ -1,0 +1,45 @@
+{
+  "session": "16",
+  "date": "2026-08-19",
+  "commit_sha": "PENDING_STEP_12",
+  "config_sha256": "d1613f91b7f5a8da3056162258e5180be5c5519e11647068589d81b34069ee46",
+  "input_file_sha256": {
+    "src/config.py": "d1613f91b7f5a8da3056162258e5180be5c5519e11647068589d81b34069ee46",
+    "src/sleeves.py": "dbc9b55c9ff20d9895077f5aceaadfec1b0eebff257c904eb207cfcac04437ee",
+    "src/data.py": "cff6c1242bc318d638728b741fcf2a1530e477ef0b671cb2561d03b05b222dec",
+    "src/portfolio.py": "b2b15239b17d4844e54c8899f0d344d47a652a334bbb36c744b2e177ef40a78b",
+    "src/indicators.py": "59cea6f50555d17cfa88e31cd3004b73d3b24c2d710b36ea2dccc7c2c0fcba41",
+    "src/schedule.py": "52830391f2267fe9b65f863d2942ea51da77916b6d0629f59e1633c01f45e300",
+    "src/execution.py": "ce1a63c83eaf9318b97c9da771ae5d553d53f71914a7bdae08d8f2e8b3af2306",
+    "scripts/s13_backtest.py": "a3ecd61cc8c4623618e23c6707ba7365a7cca11e9927061c19d282dd37d9ca76",
+    "scripts/s14_common.py": "dda387a1f4aee0b46e9b19f5e02dac9acc667e8a567b848229a5ed349642d53e",
+    "scripts/s15_lines.py": "cb6fc723c4a7d4ce43b1d9337aa1f643127e390c9a34de222b49d1d3fdad405f",
+    "data/raw/rates/DTB3.parquet": "887c139077b9f0c1d8417b6f868a63f8f164e6362ebce30f0bd571b17fef9957"
+  },
+  "rng_seed": 20260819,
+  "cscv_S": 16,
+  "block_boundary_dates": "NOT PRODUCED: the grid did not run (D24)",
+  "canonicalised_panel_sha256": "NOT_PRODUCED",
+  "panel_canonicalisation": {
+    "precision": 12,
+    "dtype": "float64",
+    "column_order": "sorted",
+    "index": "sorted DatetimeIndex"
+  },
+  "panel_regeneration_command": "NOT APPLICABLE: no panel was produced; the grid axes are not enumerated (D24). When the axes close, the command is `python scripts/s16_grid.py` which does not yet exist.",
+  "verification_tool": "scripts/verify_panel.py, reporting maximum absolute deviation against a stated tolerance of 1e-9 rather than asserting bit-identical equality, since float reduction order varies with thread count and BLAS version",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "platform": "macOS-14.6-arm64-arm-64bit-Mach-O",
+    "thread_count": 8,
+    "omp_num_threads": "unset"
+  },
+  "grid_status": {
+    "ran": false,
+    "declared_specifications": 218700,
+    "enumerable_specifications": 20,
+    "reason": "GRID_UNREPRESENTED_AXES_CARDINALITY (10,935) stands in for axes no register decision enumerates; see outputs/session-16/grid-blocker.csv"
+  }
+}

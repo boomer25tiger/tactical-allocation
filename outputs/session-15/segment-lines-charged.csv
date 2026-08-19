@@ -1,0 +1,6 @@
+table,segment,variant,line_kind,window,ann_return,ann_vol,sharpe_lo,max_drawdown,daily_round_turn_slippage_frac,mean_daily_commission_frac,premium_applied_to_open_leg,line_kind_values,note
+segment_line,overnight,uncharged_attribution,attribution,primary,0.08491611090403572,0.03676123321797402,1.5972756199523965,-0.04599899527003104,,,,,
+segment_line,overnight,charged_tradeable,benchmark_tradeable,primary,-0.2868754184999327,0.03690301601663803,-4.999382126972861,-0.9636724391896573,,,,,
+segment_line,intraday,uncharged_attribution,attribution,primary,-0.06475347181546043,0.05412101963382142,-2.0259999813023613,-0.5142648508986316,,,,,
+segment_line,intraday,charged_tradeable,benchmark_tradeable,primary,-0.3854048391283853,0.05414152137078268,-12.263796426285072,-0.9917778433692963,,,,,
+charge_construction,,,,,,,,,0.0014382352941176473,0.000225978908059344,2.0,attribution | benchmark_tradeable,"one round trip per session. The class tier figure is a round-turn cost, so a single round trip carries it once, with the 4.4a opening-auction premium applied to the leg that executes at the open, being the sell for the overnight line and the buy for the intraday line. Commission is Arm S on both legs of every position at the canonical NAV, which goes to zero from the 2019-10-01 splice."

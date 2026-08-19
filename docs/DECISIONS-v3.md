@@ -40,6 +40,12 @@ than a measurement** (9.10 provenance requirement).
   consistency check** (adjusted = raw ÷ cumulative split factor on the
   sessions either side of every boundary, tolerance 25%): applied
   panel-wide, 69 boundaries, zero failures.
+- **1.9/2.11 unavailable-fill completion — closed (session 13.7,
+  2026-08-18).** A target whose fill-session price does not exist sits in
+  sleeve cash accruing DTB3. Provisional status (session 13's operating
+  value 3) closed. The rule governs 40 primary-arm events and 774
+  realized-arm events, all before 2011-10-03; the primary evaluation
+  window under 7.14 excludes every one of them.
 - **1.9 — closed in two halves (history).** Forward-fill prohibited;
   threshold test with unavailable input reads false; pairwise comparison
   with unavailable side raises (session 01). Interior-gap treatment left
@@ -102,8 +108,18 @@ than a measurement** (9.10 provenance requirement).
   three exceptions at 6.2–8.9%/yr tracking difference, so any value in
   that gap produces the same partition and the threshold does no work.
   [A — rests on the absence of an anchor rather than on a measurement]
-- **2.8 — closed.** All-synthetic is the primary arm; realized-instrument
-  is the comparison arm (the implementability check). Neither has run.
+- **2.8 — hierarchy removed (session 13.8, 2026-08-18; post-hoc under
+  9.10).** The panels carry EQUAL weight: synthetic and realized are
+  reported side by side wherever both fill, and neither is described as
+  primary. The change removes a hierarchy rather than promoting a
+  figure; for the record, the realized arm read 21.47 percent against
+  the synthetic's 18.33 in session 13.6 before the change was made, and
+  in the 13.8 canonical the panels sit within 1.7 pp of each other on
+  the primary window. History: all-synthetic primary was closed
+  pre-result on implementability grounds; 7.14's primary window
+  (2011-10-03+) contains no unavailable realized-arm fills, so that
+  reason does not bind inside it. The early window (2007..2011-10) is
+  synthetic-only with realized coverage reported instead of a return.
 - **2.9 — closed.** Sample starts 2007-01-01.
 - **2.10 — closed.** Holdout boundary 2021-08-01, untouched. No
   post-boundary quantity has been computed anywhere.
@@ -118,13 +134,50 @@ than a measurement** (9.10 provenance requirement).
   adopted session 12; replaced SMH)**, XLF (exact from 2022-08 only), XBI
   (exact). Proxy errors quantified session 09; see limitations in
   STATE.md.
-- **2.12a SOXS sourcing — closed (conversation, recorded session 12.6).**
-  Keep the synthetic. The recorded exception — 6.21 percent annualised
-  tracking difference and 1394 percent maximum rolling divergence against
-  the real fund, real-fund frictions compounding at −3× — stands and is
-  reported beside every result that depends on it. The alternative,
-  listed SOXS from 2010-03, was rejected because it would remove T11's
-  bull-branch inverse basket across 2008.
+- **2.12a SOXS sourcing — closed (conversation, recorded session 12.6;
+  exception re-scoped session 13.7; metric corrected session 13.8).**
+  Keep the synthetic. **Canonical in-window exception figures:
+  correlation 0.997, annualised ratio drift +2.32 percent per year
+  (the +0.78 previously recorded was the compressed geometric-difference
+  form; TECS reads +2.01 under the same metric — an inverse-sector-fund
+  class effect, not SOXS-specific), maximum rolling divergence 14
+  percent (window ≤ 2021-07-30).** The previously recorded 6.21 percent and
+  1394 percent are full-window figures (2010-03..2026-08) dominated by
+  post-boundary sessions — real-fund frictions compounding at −3× in
+  the 2021+ semiconductor cycle — retained with that label. The
+  alternative, listed SOXS from 2010-03, was rejected because it would
+  remove T11's bull-branch inverse basket across 2008.
+- **2.7a validation-statistic scoping — closed (session 13.7, 2026-08-18,
+  resolving D11/D12).** Every construction-validation statistic whose
+  window crosses 2021-07-30 is re-scoped: the in-window value is
+  canonical; the full-window value is retained labeled as such
+  (outputs/session-13.7/validation-rescope.csv carries the complete
+  list). The regime gradient's canonical value is **6.2× (D1 2.26% →
+  D10 14.03%)** under the documented method: pooled synthetic-minus-real
+  daily return deviations across the twelve equity levered synthetics,
+  deciles of the underlying's trailing 60-session volatility
+  (annualised), SD of deviations annualised per decile, ratio D10/D1,
+  window ≤ 2021-07-30. Session 12's recorded 5.4× (D1 1.71% → D10
+  9.13%) could not be reproduced under stated reimplementations and is
+  retained as a full-window historical figure; the qualitative
+  limitation survives under every method tried. The annualised
+  tracking-difference definition is fixed as the geometric annualised
+  return difference, synthetic minus real, over the joint window
+  (session 12's TD column does not reproduce under this definition and
+  its own definition is not recoverable from the session record).
+  **Amended (session 13.8, 2026-08-18): the canonical tracking metric is
+  the ANNUALISED RATIO DRIFT, (prod(1+r_syn)/prod(1+r_real))^(252/n) − 1
+  over the joint in-window session set. Reason: the geometric-difference
+  form's sensitivity scales with one plus the real fund's annualised
+  return, so on a steep decliner it reports a small fraction of true
+  divergence (measured: an injected 0.95 pp/yr error surfaced as 0.148
+  pp under the difference form and 0.949 pp under ratio drift — the
+  13.7a/13.8 mis-specification controls). Compression follows the sign
+  of each fund's return: most lenient on inverse and volatility funds,
+  mildly amplifying on risers. Geometric-difference values are retained
+  beside the canonical figures, labeled. All 23 re-scoped statistics are
+  recomputed under ratio drift in
+  outputs/session-13.8/metric-correction.csv.**
 - **2.12b SVXY 2018-02-06 — closed (conversation, recorded session
   12.6).** Excluded from validation, as a stated exclusion with the
   reason: the fund's NAV rebounded 187 percent against an index-implied
@@ -146,6 +199,18 @@ than a measurement** (9.10 provenance requirement).
   (`FINANCING_SPREAD_BP`, `FINANCING_SHORT_HAIRCUT_BP`), swept around; the
   anchor is a single-fiscal-year snapshot and that is disclosed.** [A —
   the level is measured, its constancy through time is assumed]
+  **Amended (session 13.8, 2026-08-18): the financing charge is
+  explicitly split into an OBSERVABLE BASE — DTB3, time-varying, already
+  what scripts/s10_build.py accrues per session — and the ASSUMED SPREAD
+  above; the 2025-anchoring concern (D14) attaches to the spread alone.
+  The sweep is widened to `FINANCING_SPREAD_SWEEP_BP` = (25, 50, 75,
+  100, 150, 200) bp: a spread negotiated in 2008-2009 funding stress was
+  almost certainly wider than the FY2025 median, fund-level historical
+  terms are unrecoverable (D16), and the 200 bp cap brackets the stress
+  case without asserting a measured level. Prospectuses state no such
+  terms (session 08; reconfirmed as the bounded check in
+  outputs/session-13.8/financing-base.csv). Per-year all-in rates under
+  the split are tabulated there.**
 - **2.15 — closed.** Borrow absorbed into the swap interest leg for the
   five swap-based inverse equity funds (filings' own language); SVXY/SVIX
   are futures-based with no swap borrow (economics in the futures basis
@@ -173,6 +238,185 @@ than a measurement** (9.10 provenance requirement).
 - **4.1 — closed.** Signal at T close, fill at T+1 close, close-to-close
   accumulation; open-to-open arm retained (degenerate for RYMFX, detected
   generally).
+- **4.1a open-to-open promotion — recorded (session 13.7a, 2026-08-18;
+  post-hoc under 9.10).** 4.1 closed with close-to-close primary and
+  open-to-open as a specification-curve arm under 9.8, so open-to-open
+  was pre-registered before any result existed. Session 13.6 measured it
+  at +33.3 percentage points annualised at zero cost against
+  close-to-close on a matched realized panel; session 13.7's passive
+  control found accumulation-convention gaps of −0.34 and −0.09
+  percentage points, confirming the advantage is not accumulation
+  arithmetic; signed leverage deviation at −1.3 basis points daily runs
+  against the arm rather than inflating it. **Promotion was decided
+  after those measurements and is therefore post-hoc. Both arms are
+  reported at equal prominence in the writeup, with the pre-registration
+  provenance stated.** Unresolved consequence, recorded without
+  resolving it: the synthetic reconstruction is close-to-close by
+  construction, and an open-to-open backtest on synthetic funds requires
+  an intraday leverage model with no clean validation target — 4.1's
+  recorded objection — so under open-to-open primary the canonical
+  result must come from the realized panel, which makes **2.8's
+  all-synthetic primary designation a decision the user has not yet
+  closed. OPEN.** 7.14's primary window from 2011-10-03 contains no
+  unavailable fills in the realized arm, so the original reason for
+  synthetic primary does not bind inside that window. **Amended
+  (session 13.8, 2026-08-18): open-to-open reports in the crossed
+  headline table restricted to 2011-10-03 onward; the synthetic
+  open-to-open cell is structurally empty — the synthetic
+  reconstruction is close-to-close by construction, and an open-to-open
+  synthetic requires an intraday leverage model with no validation
+  target (4.1's recorded objection). The 2.8 question this entry left
+  open is resolved by 2.8's equal-weight amendment of the same date.**
+- **4.1b headline designation — recorded (session 13.9, 2026-08-18;
+  post-hoc under 9.10).** The paper's abstract figure is the cell:
+  **open-to-open, realized panel, primary window (2011-10-03+), tiered
+  class-based slippage with the opening-auction premium at the 10 bp
+  anchor, commission Arm S, Lo-corrected Sharpe.** Designated value at
+  recording: **Lo-Sharpe 1.37 (annualised return 52.9%, volatility
+  51.1%, maximum drawdown −53.1%)**. Conditional gate satisfied: the
+  step-4 volatility passive-convention control returned negligible gaps
+  (UVXY −0.24 pp, SVXY +0.66 pp, SOXL −1.74 pp, SQQQ +0.22 pp
+  annualised), extending 13.7's verdict to the previously uncontrolled
+  22.5% of dollar exposure. Full history: open-to-open was the ORIGINAL
+  specification; 4.1 closed with close-to-close primary because the
+  synthetic reconstruction is exact close-to-close and an o2o synthetic
+  needs an intraday leverage model with no validation target; equal
+  panel weighting (2.8) and the 7.14 primary window — where every fund
+  is listed and the realized panel carries actual opening prices —
+  dissolve that objection. Session 13.6 measured +33.3 pp and session
+  13.8 measured 60.0 vs 30.0 before the designation was made; 13.8's
+  execution-lag check passes outright under o2o and fails under c2c.
+  The designation RESTORES the original specification after the
+  objection that displaced it ceased to apply, and it was made after
+  the measurement existed — post-hoc, recorded as such. The headline
+  loses close-to-close's panel-agreement support (o2o exists on the
+  realized panel alone); the c2c panel agreement within 1.7 pp is
+  reported alongside instead, and close-to-close is reported at equal
+  prominence throughout per 4.1 and 2.8.
+  **Gate amendment (session 14, 2026-08-18).** The session 13.9 step-4
+  gate was written as negligible against material with **no numeric
+  boundary fixed before the measurement**, which is disclosed here as
+  post-hoc under 9.10. Two arguments support the pass and neither was
+  stated in the 13.9 report. First, the four measured convention gaps
+  carry mixed signs at −0.24, +0.66, −1.74, and +0.22 percentage points
+  with a mean near −0.28, which is the signature of estimation noise
+  rather than of systematic accumulation arithmetic, since a genuine
+  arithmetic asymmetry would carry a consistent sign. Second, the
+  largest single gap of 1.74 percentage points accounts for 7.6 percent
+  of the 22.9-point convention effect being explained, so the effect
+  survives even if that gap is treated as real and signed against the
+  arm. The control is not re-run and the gate is not reversed.
+- **4.1c segment decomposition — recorded (session 14, 2026-08-18).**
+  The open-to-open advantage is decomposed into an overnight component
+  (previous close to open) and an intraday component (open to close) on
+  the designated cell. **Verdict: TRADE TIMING, not segment selection.**
+  The strategy's overnight leg contributes 3.582 in arithmetic sum
+  against an intraday leg of 2.621, an overnight share of 0.577, against
+  0.557 for an equal-weight buy-and-hold of the traded universe and
+  0.685 for passive QQQ over the same window. The strategy's overnight
+  share sits between the two passive references rather than materially
+  above either, so the open-to-open advantage is not located in
+  systematic exposure to the overnight segment and the paper describes
+  it as a property of when the strategy trades. Recorded alongside: an
+  overnight-only hold of the traded universe returns 8.50 percent
+  annualised at a Lo-corrected Sharpe of 1.60 while an intraday-only
+  hold returns −6.48 percent at −2.03, so the universe's return is
+  concentrated overnight for passive and active holders alike, and the
+  segment split is an attribution of a held position rather than a
+  separately tradeable line, since capturing it would require a daily
+  round trip the cost model would charge. The first computation of this
+  decomposition paired the lagged weight with the current session's
+  intraday move rather than the prior session's, which inverted the
+  verdict; the reconciliation control against the traded return caught
+  it, the mean absolute gap falling from 63 to 7 basis points per
+  session on correction.
+  **Amended (session 15, 2026-08-19): the segment hold lines are
+  relabelled and charged.** A benchmark line carrying zero turnover for a
+  position requiring a daily round trip is mislabelled in the
+  deliverable, so both lines now carry `line_kind` of **attribution** for
+  the uncharged figure and **benchmark_tradeable** for the charged one.
+  Charged under the session 14 cost model, being class tiers, commission
+  Arm S, and the 10 basis point anchor, with one round trip per session
+  carrying the class tier figure once because that figure is already a
+  round-turn cost, and the 4.4a opening-auction premium applied to the
+  leg executing at the open: the **overnight line falls from +8.49
+  percent annualised at a Lo-corrected Sharpe of 1.597 uncharged to
+  −28.69 percent at −4.999 charged**, and the **intraday line from −6.48
+  percent at −2.026 to −38.54 percent at −12.264**. Neither segment is
+  tradeable at the cost model the strategy is charged, which is why the
+  4.1c verdict rests on the share comparison rather than on the segment
+  lines. Figures: outputs/session-15/segment-lines-charged.csv.
+- **4.4a opening-auction premium — recorded (session 13.9, 2026-08-18;
+  post-hoc under 9.10).** A multiplier on the tiered slippage applied
+  to the OPEN-TO-OPEN arm only: **central 2.0x, swept 1.0–4.0x,
+  uniform across tiers.** Derived, not chosen: opening auctions carry
+  the largest price impact and closing the smallest, with continuous ≈
+  2x closing at large-cap sizes (Goyal-Jegadeesh-Wu, JFQA 2026,
+  snippet-verified figures), so opening/closing ≥ 2 anchors the
+  central; the 1.0 sweep floor carries Bacidore-Lipson (2001), where
+  1990s NYSE opening trades were ~20% CHEAPER; 4.0 covers the
+  unmeasured upside. Uniform because no retrieved source measures the
+  open-vs-rest ratio by liquidity tier. Supporting: McInish-Wood
+  reverse-J; the 744-ETF 2017 intraday study (spreads highest in the
+  first hour); Challet-Gourianov auction-volume asymmetry; NYSE 2023
+  closing TCA. Full sourcing:
+  outputs/session-13.9/auction-premium.csv. Also recorded: closing ≈
+  0.5x continuous implies the un-premiumed tier levels OVERCHARGE the
+  close-to-close arm — a conservative direction, unchanged.
+  **Amended (session 14, 2026-08-18): the Bacidore and Lipson
+  measurement of roughly 0.8x sits below the sweep floor of 1.0 and is
+  EXCLUDED rather than silently truncated.** Reason: their sample is
+  1997 to 1998 NYSE specialist openings, which precedes decimalization
+  in 2001 and precedes the electronic opening auctions introduced with
+  the Nasdaq and NYSE Arca crosses in 2004, so the roughly 0.8 multiple
+  describes an opening mechanism that no longer exists over a sample
+  beginning in 2007. The direction is disclosed: were the 1990s
+  relationship to hold, the premium would be a discount and the
+  open-to-open cell would read higher than every figure reported. The
+  sweep was measured at every registered point rather than inferred
+  from linearity, and the open-to-open cell exceeds the close-to-close
+  comparison cell on both annualised return and Lo-corrected Sharpe at
+  the 4.0x ceiling (41.90 percent and 1.196 against 29.71 percent and
+  0.929).
+- **2.13a expense finding status — recorded (session 13.7a,
+  2026-08-18).** Session 13.7 step 4 reported UVXY/SVXY charging
+  1.32–1.90 percent all-in against the 0.95 constant; an independent
+  source gives the ProShares Trust II statutory management fee at 0.95
+  percent across 2011–2021. Sessions 13.7a steps 1–4 resolved it:
+  **definitional artifact.** The 1.32–1.90 figures are Trust II's
+  unqualified "Expense ratio" line, which is brokerage-commission-
+  inclusive; the same tables print "Expense ratio, excluding brokerage
+  commissions" at 0.95 in every sampled year, while the ProShares Trust
+  (TQQQ/SQQQ) tables carry no brokerage-inclusive variant at all — the
+  comparison crossed line families. The decisive tracking test: with the
+  0.95 constant, synthetic UVXY drifts −0.67 percent per year BELOW
+  issuer NAV (inside the TQQQ/SQQQ baseline band of −0.73/−1.25), the
+  opposite direction of an understated expense, with the detector
+  validated on a deliberately mis-specified 1.90-percent control
+  (measured shift −0.949 pp against −0.95 expected). The construction is
+  validated against realized NAV, which embeds brokerage; applying the
+  brokerage-inclusive ratio would double-count. **D14's expense
+  component is closed; session 13.7's direction confirmation does not
+  survive; the financing component of D14 stays open under D16.**
+  Residuals recorded: SVXY drifts +1.60 percent per year above NAV
+  excluding the 2.12b day — larger than its filing gap and inside the
+  recorded SVXY residual class, not cleanly attributable to expenses;
+  the Direxion sampled cells (0.95–1.06 net-with-interest against
+  FY2025 constants 0.71–0.87) and TQQQ (actual 0.95 against build 0.86 —
+  session 13.7's table misstated the build constant as 0.95, corrected
+  in outputs/session-13.7a/expense-provenance.csv) are real
+  fiscal-year-level differences of order 0.1–0.24 pp/yr per fund,
+  inside the measured baseline noise, recorded and not applied.
+  **Amended (session 13.8, 2026-08-18): the residual constants are now
+  APPLIED as an authorized correction — TQQQ 0.95, SH 0.89, and the
+  Direxion seven at 0.95, all from the like-for-like measured line
+  (ProShares "Expenses net of waivers"; Direxion "Net Expenses"
+  excluding interest/extraordinary, financing being modeled separately
+  under 2.14 — the incl-interest line would double-count). UVXY/SVXY
+  confirmed 0.95, unchanged. D14's expense component is closed for
+  every measured fund. scripts/s10_build.py ER_PCT updated; the engine
+  bridges the on-disk panel with an exact additive layer. Measured
+  cells and accessions: outputs/session-13.8/expense-constants.csv.**
 - **4.2 — closed with a stated limitation.** Both available vendors
   redistribute the consolidated tape; the official closing auction print
   cannot be distinguished from the consolidated last sale without licensed
@@ -188,8 +432,45 @@ than a measurement** (9.10 provenance requirement).
   uniform swept cost.** No tiers, no multipliers; base sweep
   (0, 5, 10, 20, 35, 50 bp round-turn, Zarattini anchor 10) applied
   uniformly; spread estimates move to data characterisation.
+- **4.5 — ported and amended (session 13.7, 2026-08-18; v2 decision,
+  resolving D2).** Commission is reported as a RANGE bounded by IBKR
+  Fixed above and zero below rather than as a single figure. Four arms,
+  constants in src/config.py: **F** Fixed throughout (0.005/share, 1.00
+  minimum, 1% cap — retained for comparability with sessions 13–13.6);
+  **T** Tiered throughout (0.0035/share, 0.35 minimum, 1% cap, plus
+  pass-throughs held at current published values, disclosed); **S**
+  spliced — Fixed through 2019-09-30, zero from **2019-10-01**, the
+  month US retail commissions went to zero industry-wide (Schwab
+  announced 2019-10-01; peers followed within the month; IBKR Lite
+  launched October 2019); **Z** zero throughout. **Corrected
+  reasoning**: the original closure chose Fixed on continuity; applying
+  a schedule that ceased to be available in 2019 across the post-2019
+  window models a counterfactual account rather than a conservative
+  one, and the 2019 discontinuity is a property of the retail brokerage
+  market, not an artifact of the model. Arm S's explicit zero is not a
+  total execution cost of zero — zero commission accompanies wholesaler
+  routing and payment for order flow, and slippage carries that cost.
+  **Amended (session 13.8, 2026-08-18): Arm S is CANONICAL — the
+  spliced schedule is the measured history of what a retail account
+  paid. Arm F is reported alongside as the conservative bound and for
+  comparability with sessions 13–13.7. Arm T is a disclosed sensitivity
+  with its pass-through anachronism stated (current published
+  pass-through rates held constant across the sample). Post-2019 zero
+  commission is a FEE of zero, not a COST of zero — wholesaler routing
+  moves the cost into the spread, which the slippage axis carries.**
 - **4.4 — closed.** The base sweep above; cost is a headline axis (105
   signal transitions/yr, median holding one session — session 07).
+  **Amended (session 13.7, 2026-08-18): the uniform sweep remains the
+  registered sensitivity surface. A measured per-instrument slippage
+  profile was attempted as a post-hoc parallel cost model under 9.10 on
+  accuracy grounds; the construction HALTED per its own pre-condition —
+  the Corwin-Schultz levels reproduce failure mode (ii) in level form
+  (leverage-correlated volatility-as-spread bias: QQQ reads 5.6–38
+  bp/yr against a ~1 bp true spread; 2020 levels sort by leverage on
+  one underlying; negative-estimate fractions 40–50%; the Abdi-Ranaldo
+  cross-check disagrees rather than confirms). No parallel cost model
+  was added; the measurements are retained as evidence in
+  outputs/session-13.7/slippage-profile.csv.**
   **Range retained at 0–50 bp (conversation, recorded session 12.6).**
   Session 05's stress-window spread estimates (SOXS at 401 bp and SOXL
   at 288 bp in COVID) were not used to extend the range, because the
@@ -198,11 +479,242 @@ than a measurement** (9.10 provenance requirement).
   Recorded as a limitation: the cost model proxies auction cost with a
   continuous-market spread estimator and does not cover crisis
   conditions.
-- **4.6 — reopened, unresolvable before a result (restated session
-  12.6).** Truncation reintroduces the size dependence fractional sizing
-  removed. The sweep as specified measures starting NAV, but the account
-  compounds, so the liquidity and impact question applies to terminal
-  size. Blocked until a first backtest exists.
+  **Amended (session 13.8, 2026-08-18): a TIERED slippage arm is added
+  at the 10 bp anchor — multipliers 0.2x / 0.5x / 1.5x, tier boundaries
+  from measured median dollar volume terciles across the sample (NOT
+  from leverage; the assignment against both criteria is reported in
+  outputs/session-13.8/headline-canonical.csv, and volume drove it —
+  e.g. 2x UVXY sits in tier one on volume while 3x SOXL sits in tier
+  three). Three caveats, all running in the strategy's favor:
+  calibration on modern spread levels applied to a sample beginning in
+  2007; no stress widening; a fixed multiplier. Stored-volume artifact
+  flags (session 05: SOXS/TECS/UVXY/BTAL) carry into the tier
+  boundaries and are disclosed.**
+  **Amended again (session 13.9, 2026-08-18, post-hoc under 9.10): the
+  volume-based tier map is SUPERSEDED by assignment BY INSTRUMENT CLASS
+  AND UNDERLYING LIQUIDITY. Volume is a rejected proxy — published ETF
+  liquidity guidance identifies underlying-security liquidity as the
+  spread determinant, and the volume map demonstrated the failure
+  directly (UVXY in tier one at 2 bp against its measured ~15 bp median
+  spread on 18.5 percent of dollar exposure; BIL in tier three on an
+  instrument quoting a penny). Class anchors: unlevered broad
+  equity/short-duration bonds 1–2 bp; large levered index funds 5–10 bp
+  (DiLellio & Stanley's 8 and 10 bp for SSO and SH on 2013 volumes);
+  levered sector funds 10–20 bp; volatility products ~15 bp (UVXY's
+  measured median); BTAL tiered with them on both spread and capacity
+  grounds. Tiers, fixed before the arm ran: tier one 0.2x — every
+  unlevered instrument; tier two 0.5x — TQQQ, SQQQ, QLD, QID, SSO,
+  SDS, PSQ, SH; tier three 1.5x — SOXL, SOXS, TECL, TECS, SPXL, FAS,
+  LABU, UVXY, SVXY, BTAL. Assignment against volume, leverage, and
+  anchor: outputs/session-13.9/tier-reassignment.csv.**
+  **Stacking rule recorded (session 15, 2026-08-19, pre-registered before
+  the step-4 run): the uniform round-turn sweep REPLACES the tiered
+  slippage and the opening-auction premium rather than stacking on top of
+  them.** The uniform arm exists to bound sensitivity to an assumed cost
+  level, so adding it to a calibrated model would double-charge.
+  Commission Arm S and the participation cap are unchanged across the
+  sweep. Applied consistently in
+  outputs/session-15/cost-sweep-designated.csv, which reports the sweep on
+  the designated open-to-open cell, where session 14's step 5 had run it
+  on the close-to-close cell only.
+- **4.6c NAV sweep — measured (session 15, 2026-08-19; register decision
+  on axis membership left OPEN).** The canonical NAV is unchanged at
+  1,000,000 and every other level is a sensitivity arm. Designated cell
+  by NAV: 53.16 percent and 1.3804 at 100,000; 53.27 and 1.3849 at
+  250,000; **52.26 and 1.3846 at the canonical 1,000,000**; 37.80 and
+  1.2392 at 5,000,000; 22.60 and 0.9643 at 25,000,000. The relationship
+  is not log-linear, being flat from 100,000 to 1,000,000 and steep
+  above it, so the summary elasticity of −0.127 annualised return and
+  −0.174 Lo-corrected Sharpe per decade of NAV understates the upper
+  range and overstates the lower. The three channels separate cleanly.
+  Integer truncation falls from 0.027 percent of target dollars at
+  100,000 to 0.0004 percent at 25,000,000 and is immaterial throughout.
+  The Arm S commission minimum binds on 31.1 percent of orders at
+  100,000 and 7.9 percent at 25,000,000. **The participation cap is the
+  channel that carries the effect**, routing 1.15 percent of target
+  dollars to cash at 100,000 and 36.2 percent at 25,000,000, with the
+  count of cap-binding instruments rising from 2 to 14. Whether NAV joins
+  the specification-curve axes and whether the grid must span it is the
+  open decision this measurement informs.
+- **9.11 decision audit — recorded (session 13.9, 2026-08-18).** 121
+  register/corrections/defect items classified: 55 pre-result choices,
+  22 post-result choices, 17 post-result repairs, 16 measurements
+  (outputs/session-13.9/decision-audit.csv). Eleven post-result
+  choice-closures lack an explicit 9.10 flag (defect D17). **The
+  deflated Sharpe under 8.7 covers the parameter search only — N stays
+  at grid size (218,700), not inflated by the register**: repairs were
+  not trials, most decisions were made with no result visible, and the
+  post-result choices largely declined to select (equal weighting
+  removed a hierarchy rather than promoting the higher-reading panel).
+  Specification uncertainty is addressed by a reported SPECIFICATION
+  CURVE spanning the choice axes: panel, convention, window, commission
+  arm, slippage model (uniform level / class tiers / auction premium),
+  financing spread, SMH accrual, sizing mode, and the unavailable-fill
+  completion rule. No judgement is made about whether the count is
+  acceptable.
+  **Reconciled (session 14, 2026-08-18).** The 13.9 summary's four
+  figures sum to 110 against a stated 121; the **eleven unreported items
+  are the pre-result repairs**, being corrections-list entries 1 through
+  11, which the summary omitted by listing three of the six occupied
+  cells plus a measurement total. The full three-axis cross-tabulation
+  is outputs/session-14/decision-audit-reconciled.csv and sums to 121.
+  The alternative explanation, that the eleven were D17's unflagged
+  items, is **ruled out by zero item overlap**: D17's items are
+  post-result choices and pre-result choices closed post-result, while
+  the missing eleven are pre-result repairs, which carry no 9.10
+  requirement because no result existed when they were made. The
+  coincident count is arithmetic accident. **Axis coverage: seven of the
+  22 post-result choices do not lie on any of the nine recorded
+  specification-curve axes.** The seven, read from
+  outputs/session-14/decision-audit-reconciled.csv, are the 4.6 NAV
+  close, the 5.7 per-year covariance, the Sharpe numerator registration,
+  and the D5, D6, D7, and D10 dispositions; six are reporting or
+  diagnostic conventions that do not enter the return series. (Corrected
+  session 15, 2026-08-19: the original text named the 2.7a validation
+  scoping, which the CSV does not carry as off-axis, and omitted the
+  4.6, D6, and D7 items.) **Starting NAV under 4.6
+  is the consequential one**, since it enters the return series through
+  integer truncation, the commission minimum, and now the session 14
+  participation cap, whose bite scales with NAV, and the nine axes do
+  not span it. Reported without recommendation.
+- **D17 — CLOSED (session 14, 2026-08-18).** The eleven items are
+  retro-tagged with explicit 9.10 disclosures naming when each decision
+  was made and what it governs
+  (outputs/session-14/decision-audit-reconciled.csv). Composition
+  correction: the eleven are **eight post-result choices plus three
+  pre-result choices whose closure came after results existed**, not
+  eleven post-result choice-closures as 13.9 recorded. **Ordering,
+  stated rather than claimed**: the tags were written before any ladder
+  line comparison was read, but not before the session-14 run began, so
+  the ladder, the segment decomposition, and the premium sweep had
+  executed and their strategy-side figures were visible. The ordering
+  the session-14 prompt specified was therefore partially achieved and
+  the shortfall is recorded. The tags carry no judgement a benchmark
+  result could influence.
+- **4.6 — closed (session 13.7, 2026-08-18): starting NAV 1,000,000.**
+  The liquidity check runs against the realized NAV path rather than the
+  starting figure: maximum position dollars per instrument over the
+  compounded path against the instrument's median daily dollar volume
+  across its in-window listed sessions. **Binding instrument: BTAL, at
+  4.9x its median daily dollar volume** (maximum position ~$895k against
+  a ~$183k median; the stored-volume record for BTAL is artifact-flagged
+  per session 05, so the ratio's level is indicative, its ordering
+  decisive — every other instrument is at or below 0.18x). Computed from
+  session 13's daily series (position dollars are weight x NAV and hence
+  independent of the raw-price convention); the 13.6/13.7 corrections do
+  not alter it materially. The truncation size-dependence is dissolved by
+  measurement: residual drag 0.15 bp/yr at this NAV (sessions 13.5/13.6).
+  **Amended (session 13.9, 2026-08-18): BTAL's capacity verified against
+  an independent source (FactSet-sourced archived snapshots: median
+  daily dollar volume $11.7K as of 2018-07, average $74.6K; $1.26M
+  average by mid-2019 — the stored record is consistent with, and in
+  2018 generous to, the independent one, so the artifact flag is
+  resolved in the HARSHER direction). Capacity limit, reported not
+  applied: the NAV at which every instrument's maximum position stays
+  inside 5 percent of contemporaneous average daily volume is bounded
+  by **BTAL at approximately $45,000** (TECL $84K in 2008; every other
+  instrument ≥ $800K; full table
+  outputs/session-13.9/capacity-limit.csv). The 1,000,000 result
+  stands with this capacity note attached; no position is capped and no
+  impact charge is added.**
+  **Amended (session 14, 2026-08-18): the capacity note becomes an
+  IMPLEMENTED PARTICIPATION CAP, classified as a correctness repair
+  under the 7.14 precedent rather than as a specification choice.** 7.14
+  set the primary-window boundary at the last unavailable realized fill
+  on the standard that a position which cannot be filled is not a
+  result; a position requiring 6.08 times median daily dollar volume
+  fails the same standard. Denominator: trailing median daily dollar
+  volume over a 21-session lookback, lagged one session, computed
+  point-in-time, expanding over available history where fewer than 21
+  sessions exist, and excluding zero-volume sessions, which session 05
+  established are a stored-record truncation artifact on the extreme
+  reverse-splitters rather than a measurement of liquidity. Session
+  13.8's same-year median is not admissible for a cap that enters
+  position sizing, since it reads up to a year of future data. Cap: the
+  target dollar position is capped at 5 percent of the trailing
+  denominator, canonical; the capped remainder routes to sleeve cash
+  accruing DTB3 through the existing unfilled-slice path under 1.9 and
+  2.11, so no new accounting path is created. Application is universal,
+  on identical terms for every instrument, so BTAL's position as the
+  binding constraint is shown rather than asserted: BTAL is capped on
+  189 transitions with a mean 89.8 percent of its target routed to
+  cash, and seven other instruments are capped on 91 transitions
+  between them in thin early years. Arms: uncapped runs alongside for
+  continuity with sessions 13 through 13.9; 10 and 20 percent levels
+  run on the canonical specification only and do not carry through the
+  ladder or the nulls. **Instrument substitution was considered and
+  rejected**: selecting a BTAL replacement in 2026 with the 2011 to
+  2021 outcome visible is a look-ahead that no disclosure repairs.
+- **D18 defect class swept — recorded (session 15, 2026-08-19).** The
+  object-dtype boolean negation defect, where Python's integer bitwise
+  negation applied to an object-dtype series makes every element truthy,
+  was swept across the repository against a detector validated on both an
+  object-dtype and a bool-dtype control before any repository finding was
+  reported. **78 negation sites were scanned and ZERO lie in the
+  return-generating path**, which contains no negation of any kind:
+  src/config.py, src/data.py, src/indicators.py, src/sleeves.py,
+  src/portfolio.py, src/schedule.py, src/execution.py,
+  scripts/s13_backtest.py, and scripts/s14_common.py carry none. The halt
+  condition was therefore not met and no canonical figure is affected.
+  Two defective sites exist, both in diagnostic scripts and both confirmed
+  object-dtype at runtime: scripts/s13_7_mechanism.py line 114, which
+  produced session 13.8's entry-split rows, and scripts/s13_9_controls.py
+  line 137, which produced session 13.9's entry reconciliation. **Session
+  13.8's ablation-mechanism conclusions survive**: the overlay
+  decomposition is built from a comparison-derived bool mask rather than
+  the defective entry mask, and recomputation returns +5.5830 directional
+  against a published +5.5838, −4.8240 roll against −4.8242, and −0.0086
+  reset against −0.0086, the residual differences arising from the
+  session 14 participation cap rather than from the mask. Only the
+  entry-split rows are wrong, at a published +0.00234 on 469 observations
+  against a corrected −0.00869 on 167. Evidence:
+  outputs/session-15/d18-sweep.csv.
+- **D19 silent fill failures swept — recorded (session 15, 2026-08-19).**
+  A detector was validated by injecting an unfillable target into the
+  primary window, being LABU in 2013 against a 2015-05-28 listing, and
+  confirming both detection and the absence of a false positive on the
+  unmodified series. **Zero silent fill failures were found on any window
+  or convention.** At fill sessions the target dollars minus deployed
+  position value minus recorded cap remainder minus recorded
+  unavailable-fill weight leaves a residual whose maximum is 0.3 percent
+  of NAV and whose content is integer truncation. The cap path and the
+  unavailable-fill path do not double-count, with zero events routing
+  more to cash than the target carried across 362 close-to-close and 574
+  open-to-open cap events. Recorded alongside as a detector-design note:
+  the first implementation compared carried-forward target gross against
+  realized gross on every session and flagged 16.5 percent of the primary
+  window, which is drift that 5.2 permits with no calendar reset rather
+  than a fill failure, so the detector runs at fill sessions only.
+- **7.14 boundary, off by one session — recorded (session 15,
+  2026-08-19).** 7.14 sets the primary window at the last unavailable
+  realized fill and the boundary was taken INCLUSIVE of that session, so
+  the window's defining property that it contains no unavailable fills is
+  false by one event: SVXY's first priced session on the frozen panel is
+  2011-10-04, and a 2011-10-03 target on it at a weight of 0.0833 cannot
+  fill. Starting the window at 2011-10-04 removes the event and moves the
+  designated cell from 52.26 percent and 1.3846 to 52.18 percent and
+  1.3817, and the close-to-close cell from 29.71 percent and 0.9286 to
+  29.62 percent and 0.9251. The boundary is NOT changed here; the
+  correction is a register decision left open.
+- **4.4b cost-model binding verification — recorded (session 14,
+  2026-08-18).** Session 13.9's re-tiered close-to-close cells and
+  session 13.8's uniform Arm F cells matched at the precision the 13.9
+  report printed, which is the signature of a setting that failed to
+  bind. Verified: **the class tier map and commission Arm S both bound
+  correctly.** No column is byte-identical between the two runs
+  (differences of 0.035 and 0.042 percentage points on annualised return
+  and 0.0049 and 0.0057 on Lo-corrected Sharpe, both pairs rounding to
+  the same displayed figure); the commission arm varies inside session
+  13.9's own rows by 1.99 and 1.95 percentage points between Arms F and
+  Z; and the class tier map moves the level 2.03 percentage points
+  against session 13.8's volume map on both panels. What was wrong is
+  session 13.9's DELTA rows, which selected the full window for
+  close-to-close while the levels quoted beside them were primary-window,
+  so full-window deltas of 1.63 and 1.31 percentage points were printed
+  against primary-window levels whose true delta is 2.03. Corrected
+  primary-window close-to-close Arm S levels: synthetic 31.66 percent
+  and 0.9774, realized 29.98 percent and 0.9361. Evidence:
+  outputs/session-14/cost-model-verification.csv.
 - **4.7 — closed, REVERSED ONCE (history).** (i) Session 01: fractional
   primary. (ii) Session 07: IBKR executes fractional components as
   principal — never routed to the closing auction — so the fractional
@@ -224,8 +736,15 @@ than a measurement** (9.10 provenance requirement).
   implemented in `src/data.py` factors + `src/execution.py` accrual.
   Null rate days carry the last published rate for accrual only (stated
   departure from 1.9, rates are not prices).
-- **5.6 / 5.7 — open.** Breadth and concentration diagnostics: defined for
-  the backtest session's diagnostics; no values yet.
+- **5.6 / 5.7 — closed (5.7 estimation registered session 13.8,
+  2026-08-18, post-hoc under 9.10).** Breadth and concentration
+  diagnostics computed from session 13 onward. **5.7's minimum-torsion
+  ENB covariance is estimated PER CALENDAR YEAR (canonical)** — the
+  metric asks how many independent risk sources the portfolio holds at a
+  point in time and correlations moved substantially across the sample;
+  the fixed-window figures (2011-09-14..2021-07-30) are retained as
+  comparison. Canonical mean ENB 9.06 against 8.17 fixed
+  (outputs/session-13.8/concentration.csv).
 
 ## 6. Signals
 
@@ -279,13 +798,100 @@ than a measurement** (9.10 provenance requirement).
   len(SMA_LONG_GRID) × len(CRASH_THRESHOLD_GRID) ×
   GRID_UNREPRESENTED_AXES_CARDINALITY (10,935) — axes not yet represented
   as tuples must divide out of the remainder when added.
-- **7.14 — open.** Sub-period definitions for the backtest report.
+- **7.14 — closed (session 13.7, 2026-08-18; boundary CORRECTED session
+  16, 2026-08-19).** Sub-period definitions:
+  **primary evaluation window 2011-10-04 to 2021-07-30**, boundary set by
+  the last unavailable fill in the realized arm — the specification is
+  not implementable as written before that date. **Secondary window
+  2007-01-03 to 2011-10-02, labeled the synthetic-only extension**,
+  reported separately and never merged into headline figures. **Full
+  sample 2007-01-03 to 2021-07-30 retained and reported.** Every
+  benchmark and null runs on all three. Justification is
+  implementability rather than performance, and the boundary was set
+  before any benchmark ladder existed.
+
+- **7.14a boundary correction — recorded (session 16, 2026-08-19;
+  correctness repair under the 7.14 precedent, resolving D21).** 7.14
+  defines the primary window by containing no unavailable realized fills,
+  and taking the boundary inclusive of the last such fill made the
+  definition false by one event, being SVXY at weight 0.0833 on
+  2011-10-03, since SVXY's first priced session on the frozen panel is
+  2011-10-04. The window start moves to **2011-10-04**. Classified as a
+  correctness repair rather than a specification choice, since the
+  window's defining property was false as written. Verified: **zero
+  unavailable fills remain on either panel or convention from
+  2011-10-04**. Effect on the canonical, reproducing session 15's
+  prediction to four decimals: the designated cell moves from 52.26
+  percent and 1.3846 to **52.18 percent and 1.3817**, and the realized
+  close-to-close primary cell from 29.71 percent and 0.9286 to **29.62
+  percent and 0.9251**. Pre-correction figures carry forward for
+  continuity and never as the anchor. Evidence:
+  outputs/session-16/boundary-correction.csv.
+- **D20 NAV — closed (session 16, 2026-08-19).** Starting NAV under 4.6
+  **joins the specification curve and does not join the grid axes.** The
+  specification curve is a reported sensitivity surface and session 15's
+  step 6 already measured the five levels, so the addition costs nothing
+  further. The grid is a search over strategy specifications and NAV is
+  an account property, so adding it would multiply the grid fivefold and
+  inflate 8.7's N with an axis nobody selected on. The measured shape
+  supports the split, with the designated cell flat from 100,000 through
+  1,000,000 at a Lo-corrected Sharpe of 1.3804 to 1.3849 while cap
+  intervention quadruples from 1.15 to 5.23 percent of target dollars.
+  **The capacity curve above 1,000,000 is a separate paper deliverable**,
+  with volatility falling from 48.8 to 34.0 percent, maximum drawdown
+  improving from −53.1 to −46.3 percent, and turnover falling from 37.9
+  to 22.8 by 25,000,000. The canonical cap-binding table for the headline
+  convention is reported alongside it, being ten instruments across 574
+  events routing 5.2285 percent of target dollars to sleeve cash at the
+  canonical NAV.
+- **7.14b early-window reporting form — closed (session 16,
+  2026-08-19).** The 2007-01-03 to 2011-10-03 extension reports
+  **coverage tables and the per-instrument availability timeline only,
+  with no return figure at any prominence**, on the grounds session 13.9
+  established that 106 non-contiguous fully fillable sessions across 16
+  discontinuities carry no return interpretation. Synthetic-panel figures
+  for that window keep their separate label under 7.14 and sit in the
+  appendix.
+- **3.13 SH — recorded (session 16, 2026-08-19).** Session 15.5
+  established that SH appears in **no weight dictionary anywhere in the
+  return-generating path** and enters only as the right side of the AGG
+  against SH pairwise comparison. SH is recorded as a **signal input
+  rather than a tradeable universe member**, so the stated universe
+  matches the holdings. No behaviour changes.
+- **D24 the grid axes are not enumerated — OPEN (session 16,
+  2026-08-19).** The grid could not run. 7.10 pins the product at 218,700
+  as len(SMA_LONG_GRID) x len(CRASH_THRESHOLD_GRID) x
+  GRID_UNREPRESENTED_AXES_CARDINALITY, and only the first two are
+  enumerated in src/config.py, giving **20 of 218,700 specifications, or
+  0.0091 percent**. The remaining factor of 10,935 is a placeholder whose
+  own comment states that no decision in hand enumerates those axes'
+  values. The unenumerated axes are the three function-tied RSI periods
+  under 6.1 and 7.2, overbought tier one under 6.2 and 7.3, the tier-two
+  offset under 7.4 which the register records as informed rather than
+  closed, oversold under 6.4 and 7.5, short SMA under 6.6 and 7.8, and
+  the S3 vote threshold under 6.7 and 7.9. validate() passes because it
+  pins the product against the placeholder rather than against the axes.
+  **Enumerating them inside a measurement session would be a
+  specification act**, since what a study searches over determines N in
+  8.7 and the shape of the specification curve under 9.11, so the closure
+  belongs in the register. PBO, the deflated Sharpe, and the
+  specification curve all depend on the grid and are unrun. Evidence:
+  outputs/session-16/grid-blocker.csv.
 
 ## 8. Evaluation (not yet run)
 
 - **8.1 — closed.** Risk-free is DTB3 (`RISK_FREE_SERIES`), distinct from
   financing constants.
 - **8.2 — closed.** Lo-corrected Sharpe as headline beside the naive one.
+  **Amended (session 13.9, 2026-08-18): the Sharpe NUMERATOR is the
+  arithmetic mean excess return over DTB3 (annualised ×252), the
+  standard convention; the geometric annualised return is reported
+  separately, and every headline figure is dual-reported under both
+  numerator definitions (outputs/session-13.9/sharpe-convention.csv).
+  At ~53 percent volatility the variance drag runs ~14 pp/yr, which is
+  how a positive Sharpe coexists with a negative CAGR on the early
+  window — a reader comparing the two sees the convention rather than
+  inferring an error.**
 - **8.8 / 8.9 / 8.10 — closed (design; full specification recorded
   session 12.6).** Benchmarks: buy-and-hold QQQ, buy-and-hold TQQQ,
   vol-targeted QQQ at matched exposure, one fast-rebalancing naive rival
@@ -299,10 +905,147 @@ than a measurement** (9.10 provenance requirement).
   Pairwise correlation of the four standalone tracks reported alongside.
   Rationale: buy-and-hold comparisons confound the signal with a trading
   frequency of 105 transitions per year. Nothing executed.
+  **Amended (session 13.7, 2026-08-18; pre-registered before the ladder
+  runs): two benchmarks added.** (i) **Matched-exposure levered
+  benchmark**: a constant levered QQQ position at the strategy's mean
+  effective market exposure — 1.70 as measured by session 13.6 at the
+  anchor (step 6's rebuilt measurement was halted by the step-1 SOXS
+  gate; the value is to be refreshed when the rebuilt run exists) —
+  rebalanced daily, run through the same cost model as the strategy.
+  Tests whether the strategy adds anything over levered beta. (ii)
+  **Long-legs-only benchmark**: the strategy with every inverse-equity
+  destination routed to sleeve cash at DTB3, otherwise unchanged.
+  Separates long selection from short selection; specification identical
+  to ablation arm B (session 13.6), entering the ladder as a comparison
+  rather than a structural test, so the figures may be shared. Neither
+  has run.
+- **8.11 metric set — closed (session 15, 2026-08-19).** The grid emits
+  per-specification statistics across 218,700 specifications, so a metric
+  absent from the emitter cannot be added later without re-running the
+  grid, and the set is fixed here. **41 STANDALONE metrics the emitter
+  carries per specification**: the eight session-14 figures (annualised
+  return, annualised volatility, naive Sharpe, Lo-corrected Sharpe,
+  maximum drawdown, Calmar, arithmetic mean excess return, annual
+  turnover), the distributional set (Sortino at a minimum acceptable
+  return fixed at the DTB3 rate, downside deviation, skewness, excess
+  kurtosis, value at risk and conditional value at risk at 95 and 99
+  percent in daily and annualised terms), the drawdown set (maximum
+  drawdown duration in sessions and calendar days, time to recovery or
+  the statement that recovery did not occur inside the window, count of
+  drawdowns exceeding 20 percent and their mean duration, Ulcer index,
+  pain ratio), the stability set (per-calendar-year return and
+  Lo-corrected Sharpe, rolling twelve-month Sharpe minimum and maximum
+  and fraction of windows below zero, percentage of positive months,
+  split-half Sharpe on the primary window split at the median session),
+  and the implementation set (return per unit of annual turnover,
+  turnover-adjusted Sharpe as a raw ratio). **12 BENCHMARK-RELATIVE
+  metrics the emitter carries only for the ladder lines 8.8 fixes**:
+  information ratio, tracking error, alpha, beta, R-squared, alpha
+  t-statistic with Newey-West standard errors at a **lag of 21 sessions
+  fixed before the run** with the Andrews automatic bandwidth reported
+  alongside as a check, up-capture, down-capture, and their supporting
+  counts. **The information ratio is reported wherever an alpha is
+  reported and an alpha is never reported alone**, since session 14
+  reported annualised alpha with no denominator, which reads as a large
+  positive number alongside a sixth-place Sharpe: on the designated cell
+  the strategy's alpha against buy-and-hold TQQQ is +0.291 at a
+  Newey-West t of 2.42 while its information ratio against the same line
+  is −0.194. Full set: outputs/session-15/grid-emitter-metric-set.csv;
+  values: outputs/session-15/metrics-full.csv.
+- **9.12 report generation — closed (session 15, 2026-08-19).** Report
+  prose figures are read from the emitted CSVs rather than restated from
+  a separate computation. Prose-versus-data drift appeared in two
+  consecutive sessions, three figures in session 13.9 and three in
+  session 14, so the rule carries an enforcement mechanism:
+  `scripts/check_report_figures.py <session-dir>` re-derives every
+  decimal figure appearing in a session report and reports those it
+  cannot locate in that session's own CSVs at two, three, or four decimal
+  places, in level or percentage form. The check runs on every session
+  report from session 15 onward. Figures a report legitimately carries
+  from an earlier session or from an external source are expected to
+  appear in the unmatched list and are confirmed by hand against their
+  stated source; on session 15's own report the mechanism returned three
+  unmatched figures, being the uncapped continuity-arm pair 52.86 and
+  1.3742 carried from session 14's canonical-capped.csv and confirmed
+  against it by hand, and one register identifier its context filter
+  missed. **Stated limitation: the mechanism is partial.** Run
+  retrospectively against session 14 it returns thirteen unmatched
+  figures, of which none is one of the three errors that session
+  actually carried, because two of those three were not decimal figures
+  at all, one being a count spelled as a word and one being a list of
+  item names. The mechanism catches numeric drift between prose and the
+  emitted CSVs and does not catch a miscounted or misnamed claim, so a
+  report's non-numeric claims still require the hand check that found
+  these three. **Extended session 15.5, 2026-08-19: the comparison runs
+  to six decimal places**, since three figures session 15.5 carried from
+  its own emitted CSVs were reported unmatched at the previous five-place
+  limit; that is a change to the checking mechanism and not to any
+  measurement.
+- **6.23 short-leg instrument and hedge intensity — DIAGNOSTIC ONLY, no
+  arm adopted (session 15.5, 2026-08-19; post-hoc under 9.10).** The
+  canonical specification is unchanged, every arm below is a labelled
+  diagnostic arm reported alongside the canonical and never in place of
+  it, and **nothing measured is adopted**. The 9.10 disclosure: the
+  comparison was motivated by a visible result, being SQQQ's
+  primary-window contribution decomposing into −39.35 beta and −0.05
+  residual in session 13.5. **The arm table was fixed and written to
+  outputs/session-15.5/arm-registration.csv before any performance
+  statistic was computed on any arm.** T10's budget is 25 percent of NAV
+  and short notional is the sleeve budget times the branch weight times
+  the leverage multiple, with SQQQ at −3.0 and PSQ at −1.0 read from
+  src/schedule.py.
+
+  | arm | short leg | branch weights | short notional | role |
+  |---|---|---|---|---|
+  | A | SQQQ | 50% SQQQ, 50% TLT | −37.5% | canonical, positive control |
+  | B | PSQ | 50% PSQ, 50% TLT | −12.5% | direct swap at equal weight |
+  | C | SQQQ | 16.667% SQQQ, 50% TLT, 33.333% cash | −12.5% | notional twin of B |
+  | D | SQQQ | 33.333% SQQQ, 50% TLT, 16.667% cash | −25.0% | intensity curve |
+  | E | PSQ | 100% PSQ | −25.0% | reported, CONFOUNDED |
+  | F | none | 100% TLT | 0% | no-short control |
+  | B_all | PSQ | as B, applied sleeve-wide | −12.5% | SECONDARY |
+
+  **Structural constraint recorded rather than omitted**: notional
+  matching above −25 percent is unreachable with PSQ, since the canonical
+  −37.5 percent would need 150 percent of the branch and breach the 5.3
+  gross cap at 100 percent. Arm E reaches −25 percent only by displacing
+  TLT entirely, so it changes two things at once and is labelled
+  confounded and excluded from the instrument comparison. Displaced
+  weight routes to sleeve cash accruing DTB3 through the existing
+  1.9/2.11 path with no new accounting path. **Arm B_all is required as a
+  secondary arm** because SQQQ appears in four sites across three sleeves,
+  being T10's rs-bear terminal, T11's bull-short basket, both T11 bear
+  sub-model terminals, and S2's defensive state, so a T10-only
+  substitution does not remove SQQQ from the portfolio. SH appears in no
+  weight dictionary anywhere and enters only as the right side of the
+  AGG>SH pairwise comparison.
+
+  **No arm is adopted, the canonical instrument set, sleeve weights,
+  thresholds, cost model, cap level, NAV, and window boundary are
+  unchanged, and acting on any of this before the grid and the holdout
+  have run would convert a mostly pre-registered study into a fitted
+  one.** Measurements: outputs/session-15.5/.
+
 - **9.8 — closed.** Implementation dimensions run at canonical parameters,
   not crossed into the grid (slippage base sweep, SMH accrual arm).
 - **9.10 — closed.** Assumption-based closures must carry provenance —
   the [A] flags in this register.
+
+## Backlog dispositions re-registered (session 13.9, D3)
+
+- **1.12 — closed by measurement (session 00C).** Distribution coverage:
+  worst ticker 4.05 bp/yr internal inconsistency, median 0.06.
+- **2.18 — addressed (session 00A).** VX early-liquidity inspection;
+  2004–2005 unusable under construction B, gating 2.9's start.
+- **2.20 — closed by measurement (session 00C).** SMH stitched across the
+  December 2011 HOLDRS conversion with no price discontinuity.
+- **6.7 — informed (session 00E), value canonical at 3-of-4.** The vote
+  threshold; the leave-one-out clarification ran in 00E; the literal was
+  moved to config.S3_VOTE_THRESHOLD by session 13.6 (D1).
+- **6.16 — closed (session 00D).** S2 trend filter series: TQQQ as
+  supplied, QQQ as matched arm.
+- **6.20 — closed by measurement (session 00C).** RSI(inverse) equals
+  100 minus RSI(underlying) to ~1.1–1.3 points mean absolute difference.
 
 ## Corrections list — claims made and later overturned
 
@@ -336,6 +1079,17 @@ than a measurement** (9.10 provenance requirement).
 11. **The session 12 brief's SOXX splits (2016 3:1, 2021 2:1)** are not in
     the vendor record, which shows a single 3:1 on 2024-03-07 —
     discrepancy flagged, boundary-consistent either way.
+12. **Session 13's step-7 "no lookahead" check was misnamed and
+    under-specified** (renamed "execution-lag sensitivity" by session
+    13.6). Lookahead makes lag hurt, and T+1 was the worse arm on
+    annualised return, so the check fired on the opposite condition to
+    the one its name implied. The check was specified without naming a
+    metric and without stating a direction; annualised return and
+    Lo-corrected Sharpe disagree on its verdict (return improves under
+    one extra session of lag, the Lo-corrected Sharpe degrades), and 8.2
+    designated the Lo-corrected figure as headline before any result
+    existed. No dedicated lookahead test has run; the SPY positive
+    control covers engine accounting, not signal construction.
 
 ## Open decisions with blockers
 

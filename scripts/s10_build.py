@@ -80,10 +80,20 @@ VOL_FUNDS = {"UVXY", "SVXY", "SVIX", "UVIX"}
 # expense ratios, percent per year. Direxion seven: STATED FY2025
 # costs-paid ratios from the tailored shareholder reports (session 11).
 # Everything else: CARRIED constants, marked in the session 11 schedule.
+# Session 13.8 step 3 (D14 expense correction, authorized): constants set
+# to the measured like-for-like filing line — ProShares "Expenses net of
+# waivers"; Direxion "Net Expenses" EXCLUDING interest/extraordinary
+# (financing is modeled separately under 2.14, so the incl-interest line
+# would double-count). Measured cells and accessions:
+# outputs/session-13.8/expense-constants.csv. NOTE: the on-disk synthetics
+# under data/interim/synthetics/ predate this change; the session 13.8+
+# engine applies the exact additive ER delta at load
+# (scripts/s13_8_canonical.py adjusted_syn_panel), and the next full
+# regeneration of the panel picks these constants up directly.
 ER_PCT = {
-    "TQQQ": 0.86, "QLD": 0.95, "SQQQ": 0.95, "PSQ": 0.95, "SH": 0.88,
-    "SPXL": 0.81, "TECL": 0.83, "TECS": 0.92, "SOXL": 0.71, "SOXS": 0.87,
-    "FAS": 0.86, "LABU": 0.92,
+    "TQQQ": 0.95, "QLD": 0.95, "SQQQ": 0.95, "PSQ": 0.95, "SH": 0.89,
+    "SPXL": 0.95, "TECL": 0.95, "TECS": 0.95, "SOXL": 0.95, "SOXS": 0.95,
+    "FAS": 0.95, "LABU": 0.95,
     "UVXY": 0.95, "SVXY": 0.95, "SVIX": 1.49, "UVIX": 1.77,
     "QID": 0.95, "SSO": 0.91, "SDS": 0.90,
 }

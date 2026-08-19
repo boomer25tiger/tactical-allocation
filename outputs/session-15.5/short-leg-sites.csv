@@ -1,0 +1,11 @@
+table,sleeve,terminal_state,instrument,weight_in_sleeve,co_held,code_location,leverage_multiple,sessions_sleeve_state_contains_instrument_primary,firing_rate_primary,sleeve_sessions_holding_primary,appears_in_any_weight_dict,note
+site,T10,rs_bear -> 50% SQQQ + 50% TLT,SQQQ,0.5,TLT,src/sleeves.py:190,-3.0,513.0,0.20744035584310555,,,
+site,T11,bull_short -> 33% TECS + 33% SOXS + 33% SQQQ,SQQQ,0.3333333333333333,TECS;SOXS,src/sleeves.py:266,-3.0,477.0,0.1928831378892034,,,
+site,T11,bear sub-model terminal (bond_baller else->SQQQ),SQQQ,0.5,paired sub-model pick,src/sleeves.py:210,-3.0,477.0,0.1928831378892034,,,
+site,T11,bear sub-model terminal (feaver else->SQQQ),SQQQ,0.5,paired sub-model pick,src/sleeves.py:239,-3.0,477.0,0.1928831378892034,,,
+site,S2,defensive -> 100% SQQQ,SQQQ,1.0,none,src/sleeves.py:300,-3.0,74.0,0.029923170238576626,,,
+site,T11,bear sub-model terminals routing to PSQ,PSQ,0.5,paired sub-model pick,"src/sleeves.py:204,207,209,233,236,238",-1.0,89.0,0.035988677719369186,,,
+instrument_summary,,,SQQQ,,,,-3.0,,,1064.0,True,
+instrument_summary,,,PSQ,,,,-1.0,,,89.0,True,
+instrument_summary,,,SH,,,,-1.0,,,467.0,False,SH appears in no weight dictionary anywhere in the return-generating path; it enters only as the right side of the AGG>SH pairwise signal comparison
+sleeve_wide_requirement,,,,,,,,,,,,"SQQQ appears in T10, T11 (bull-short basket and both bear sub-model terminals), and S2, so a T10-only substitution does not remove SQQQ from the portfolio. Arm B_all is added as a SECONDARY arm applying the substitution sleeve-wide, reported separately so the T10-only effect is not confounded with a portfolio-wide swap."

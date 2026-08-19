@@ -53,6 +53,11 @@ TREND_SIGNAL_LAG = 1
 # snapshot and that is disclosed wherever it is used.
 FINANCING_SPREAD_BP = 75
 FINANCING_SHORT_HAIRCUT_BP = 70
+# 2.14 amendment (session 13.8): base is observable DTB3 (time-varying, in
+# the build); the spread is the assumed part and its sweep is widened to
+# bracket 2008-2009 funding stress (fund-level historical terms
+# unrecoverable, D16).
+FINANCING_SPREAD_SWEEP_BP = (25, 50, 75, 100, 150, 200)
 
 # Decision 4.1 -- closed, both arms required.
 # "close_to_close": signal at T close, fill at T+1 close.
@@ -111,6 +116,15 @@ OVERBOUGHT_TIER_2 = 80
 # Decision 6.4 -- closed. Oversold, single tier.
 OVERSOLD = 30
 
+# Decision 6.7 (v2 numbering; the v3 register carries no entry yet -- audit
+# item, session 12.6). S3 vote threshold: bull regime requires this many of
+# the four S3_VOTES above their long SMA. Canonical 3 of 4 per the session 13
+# scaffold; the registered grid sweeps 2/3/4 (v2 7.2-7.9 block). Moved here
+# from a literal `votes >= 3` in src/sleeves.py by session 13.6 (defect D1,
+# authorized correctness repair; value unchanged, behaviour-identity verified
+# against the pre-change S3 terminal-state occupancy on all 3,460 sessions).
+S3_VOTE_THRESHOLD = 3
+
 # Decision 6.5 -- closed. Long simple moving average.
 SMA_LONG = 200
 
@@ -158,6 +172,27 @@ GROSS_CAP = 1.00
 
 # Decision 5.1 -- closed. Label rounding, whole percent of sleeve budget.
 LABEL_ROUNDING_PERCENT = 1
+
+# Decision 4.5 -- ported from the v2 register by session 13.7 (D2), with the
+# corrected reasoning recorded in DECISIONS-v3.md: applying a schedule that
+# ceased to be available in 2019 across the post-2019 window models a
+# counterfactual account rather than a conservative one; the schedule choice
+# is reported as a RANGE bounded by Fixed above and zero below. Four arms:
+#   F  IBKR Fixed throughout (retained for comparability, sessions 13-13.6)
+#   T  IBKR Tiered throughout plus pass-throughs (current published values
+#      held constant across the sample, disclosed)
+#   S  spliced: Fixed through 2019-09-30, zero from 2019-10-01 (the month
+#      US retail commissions went to zero industry-wide); zero explicit
+#      commission accompanies wholesaler routing, so it is not a total
+#      execution cost of zero
+#   Z  zero throughout (lower bound)
+COMMISSION_F_PER_SHARE = 0.005
+COMMISSION_F_MINIMUM = 1.00
+COMMISSION_F_CAP_FRAC = 0.01
+COMMISSION_T_PER_SHARE = 0.0035
+COMMISSION_T_MINIMUM = 0.35
+COMMISSION_T_CAP_FRAC = 0.01
+COMMISSION_SPLICE_DATE = "2019-10-01"
 
 # Decision 8.1 -- closed.
 # Risk-free source. Deliberately named distinct from the financing constants
@@ -305,6 +340,10 @@ def validate() -> None:
         raise ValueError(f"TREND_SIGNAL_LAG must be non-negative: {TREND_SIGNAL_LAG}")
     if not OVERSOLD < OVERBOUGHT_TIER_1 < OVERBOUGHT_TIER_2:
         raise ValueError("threshold tiers are not ordered oversold < tier1 < tier2")
+    if not 1 <= S3_VOTE_THRESHOLD <= 4:
+        raise ValueError(
+            f"S3_VOTE_THRESHOLD must be between 1 and 4 votes, got {S3_VOTE_THRESHOLD}"
+        )
     if SMA_LONG not in SMA_LONG_GRID:
         raise ValueError(
             f"canonical SMA_LONG {SMA_LONG} is not on the grid {SMA_LONG_GRID}"

@@ -1,0 +1,248 @@
+section,metric,value,note
+transitions,synthetic_signal_transitions_total,1425,
+transitions,synthetic_transitions_per_year,103.78612716763007,session 07 signal-level count: 105/yr
+transitions,synthetic_realized_fill_sessions,1425,
+transitions,synthetic_holding_median_sessions,1.0,
+transitions,synthetic_holding_mean_sessions,2.4269662921348316,
+transitions,synthetic_holding_p90_sessions,5.0,
+transitions,synthetic_holding_max_sessions,40,
+transitions,synthetic_holding_frac_<= 1,0.5610955056179775,
+transitions,synthetic_holding_frac_<= 2,0.7626404494382022,
+transitions,synthetic_holding_frac_<= 3,0.8462078651685393,
+transitions,synthetic_holding_frac_<= 5,0.9157303370786517,
+transitions,synthetic_holding_frac_<= 10,0.9719101123595506,
+transitions,realized_signal_transitions_total,1369,
+transitions,realized_transitions_per_year,99.70751445086705,session 07 signal-level count: 105/yr
+transitions,realized_realized_fill_sessions,1369,
+transitions,realized_holding_median_sessions,1.0,
+transitions,realized_holding_mean_sessions,2.526315789473684,
+transitions,realized_holding_p90_sessions,5.0,
+transitions,realized_holding_max_sessions,40,
+transitions,realized_holding_frac_<= 1,0.5416666666666666,
+transitions,realized_holding_frac_<= 2,0.7426900584795322,
+transitions,realized_holding_frac_<= 3,0.8318713450292398,
+transitions,realized_holding_frac_<= 5,0.9078947368421053,
+transitions,realized_holding_frac_<= 10,0.9685672514619883,
+concentration,target_enc_tickers_mean,3.121680349255747,
+concentration,target_enc_tickers_median,3.0315789473684216,
+concentration,target_enc_underlyings_mean,2.5975891358443057,
+concentration,target_enb_mintorsion_mean,8.165160052993846,"Sigma: full-overlap window 2011-09-14..2021-07-30 (BTAL-bounded), annualised"
+concentration,target_enb_mintorsion_median,9.481499013480574,
+concentration,target_eff_mkt_exposure_mean,1.700758670520231,
+concentration,target_eff_mkt_exposure_p5,-0.25,
+concentration,target_eff_mkt_exposure_p95,2.75,
+concentration,target_max_single_ticker_mean,0.4642341040462427,
+concentration,target_max_single_underlying_mean,0.5178588631984584,
+concentration,target_top3_sum_mean,0.8092365125240847,
+concentration,target_frac_sessions_all_cash,0.0,
+concentration_dd,target_ddq0_enc_tickers,3.0643899975397373,quintile 0 = deepest drawdowns
+concentration_dd,target_ddq0_enb,7.9829359065670715,
+concentration_dd,target_ddq0_eff_exposure,1.8167148362235068,
+concentration_dd,target_ddq1_enc_tickers,3.2227436771058393,quintile 0 = deepest drawdowns
+concentration_dd,target_ddq1_enb,8.753138211301254,
+concentration_dd,target_ddq1_eff_exposure,1.5279985549132948,
+concentration_dd,target_ddq2_enc_tickers,3.0344342043264536,quintile 0 = deepest drawdowns
+concentration_dd,target_ddq2_enb,8.20926607309302,
+concentration_dd,target_ddq2_eff_exposure,1.5915823699421965,
+concentration_dd,target_ddq3_enc_tickers,3.1424032556065122,quintile 0 = deepest drawdowns
+concentration_dd,target_ddq3_enb,8.026879565302737,
+concentration_dd,target_ddq3_eff_exposure,1.6815992292870903,
+concentration_dd,target_ddq4_enc_tickers,3.144430611700193,quintile 0 = deepest drawdowns
+concentration_dd,target_ddq4_enb,7.853580508705157,
+concentration_dd,target_ddq4_eff_exposure,1.8858983622350671,
+concentration,realized_enc_tickers_mean,3.1088546022633565,
+concentration,realized_enc_tickers_median,3.0448396948753618,
+concentration,realized_enc_underlyings_mean,2.588635209716096,
+concentration,realized_enb_mintorsion_mean,8.165634890862961,"Sigma: full-overlap window 2011-09-14..2021-07-30 (BTAL-bounded), annualised"
+concentration,realized_enb_mintorsion_median,9.465264849213451,
+concentration,realized_eff_mkt_exposure_mean,1.7031812186044526,
+concentration,realized_eff_mkt_exposure_p5,-0.25035983630733816,
+concentration,realized_eff_mkt_exposure_p95,2.746041346104478,
+concentration,realized_max_single_ticker_mean,0.464603103691956,
+concentration,realized_max_single_underlying_mean,0.5179470700800923,
+concentration,realized_top3_sum_mean,0.8084626015177946,
+concentration,realized_frac_sessions_all_cash,0.00028901734104046245,
+concentration_dd,realized_ddq0_enc_tickers,3.048330579731911,quintile 0 = deepest drawdowns
+concentration_dd,realized_ddq0_enb,8.010338751390908,
+concentration_dd,realized_ddq0_eff_exposure,1.816840280664481,
+concentration_dd,realized_ddq1_enc_tickers,3.250787550489474,quintile 0 = deepest drawdowns
+concentration_dd,realized_ddq1_enb,8.721239247329422,
+concentration_dd,realized_ddq1_eff_exposure,1.5184587430905911,
+concentration_dd,realized_ddq2_enc_tickers,2.9971248542851345,quintile 0 = deepest drawdowns
+concentration_dd,realized_ddq2_enb,8.195349953008861,
+concentration_dd,realized_ddq2_eff_exposure,1.6026122060100594,
+concentration_dd,realized_ddq3_enc_tickers,3.1219224894234947,quintile 0 = deepest drawdowns
+concentration_dd,realized_ddq3_enb,8.070116482279502,
+concentration_dd,realized_ddq3_eff_exposure,1.6856647412901453,
+concentration_dd,realized_ddq4_enc_tickers,3.126132505454966,quintile 0 = deepest drawdowns
+concentration_dd,realized_ddq4_enb,7.830645932215583,
+concentration_dd,realized_ddq4_eff_exposure,1.8923301219669861,
+breadth_states,T10:33%TECL+33%SOXL+33%SVXY,1535,44.3642% of sessions
+breadth_states,T10:100%UVXY,940,27.1676% of sessions
+breadth_states,T10:50%SQQQ+50%TLT,804,23.2370% of sessions
+breadth_states,T10:100%SOXL,61,1.7630% of sessions
+breadth_states,T10:100%TECL,53,1.5318% of sessions
+breadth_states,T10:100%LABU,39,1.1272% of sessions
+breadth_states,T10:100%SPXL,28,0.8092% of sessions
+breadth_states,T11:33%TECL+33%SOXL+33%TQQQ,1532,44.2775% of sessions
+breadth_states,T11:33%UVXY+33%BIL+33%BTAL,584,16.8786% of sessions
+breadth_states,T11:33%TECS+33%SOXS+33%SQQQ,512,14.7977% of sessions
+breadth_states,T11:50%QQQ+50%TQQQ,237,6.8497% of sessions
+breadth_states,T11:50%QQQ+50%PSQ,174,5.0289% of sessions
+breadth_states,T11:100%SQQQ,117,3.3815% of sessions
+breadth_states,T11:100%TQQQ,68,1.9653% of sessions
+breadth_states,T11:100%UVXY,58,1.6763% of sessions
+breadth_states,T11:100%PSQ,45,1.3006% of sessions
+breadth_states,T11:50%QQQ+50%QLD,41,1.1850% of sessions
+breadth_states,T11:100%SPXL,33,0.9538% of sessions
+breadth_states,T11:50%SQQQ+50%QLD,29,0.8382% of sessions
+breadth_states,T11:50%QQQ+50%SQQQ,15,0.4335% of sessions
+breadth_states,T11:50%PSQ+50%QLD,11,0.3179% of sessions
+breadth_states,T11:50%SQQQ+50%BTAL,3,0.0867% of sessions
+breadth_states,T11:50%TQQQ+50%BTAL,1,0.0289% of sessions
+breadth_states,S2:100%TQQQ,2550,73.6994% of sessions
+breadth_states,S2:100%UVXY,387,11.1850% of sessions
+breadth_states,S2:100%BSV,268,7.7457% of sessions
+breadth_states,S2:100%SQQQ,163,4.7110% of sessions
+breadth_states,S2:100%SOXL,46,1.3295% of sessions
+breadth_states,S2:100%TECL,46,1.3295% of sessions
+breadth_states,S3:50%TQQQ+50%SOXL,1789,51.7052% of sessions
+breadth_states,S3:CASH,941,27.1965% of sessions
+breadth_states,S3:100%UVXY,647,18.6994% of sessions
+breadth_states,S3:100%SOXL,83,2.3988% of sessions
+breadth,sessions_with_ticker_shared_by_2plus_sleeves,3190,92.1965% of evaluated sessions
+t10_reach,cascade,3460,100.0000%
+t10_reach,dip_TQQQ,2520,72.8324%
+t10_reach,dip_SOXL,2467,71.3006%
+t10_reach,dip_SPXL,2406,69.5376%
+t10_reach,dip_LABU,2378,68.7283%
+t10_reach,rs_XLK_TREND,2339,67.6012%
+branch_firing,T10:rs_bull->TECL/SOXL/volshort,1535,44.3642%
+branch_firing,T10:overbought->UVXY,940,27.1676%
+branch_firing,T10:rs_bear->SQQQ/TLT,804,23.2370%
+branch_firing,T10:dip_SOXL->SOXL,61,1.7630%
+branch_firing,T10:dip_TQQQ->TECL,53,1.5318%
+branch_firing,T10:dip_LABU->LABU,39,1.1272%
+branch_firing,T10:dip_SPXL->SPXL,28,0.8092%
+branch_firing,T11:bull_rs->TECL/SOXL/TQQQ,1408,40.6936%
+branch_firing,T11:tier1->UVXY/BIL/BTAL,584,16.8786%
+branch_firing,T11:bull_short->TECS/SOXS/SQQQ,512,14.7977%
+branch_firing,T11:bear[bb:TLT>PSQ->QQQ|fb:AGG>SH->TQQQ],237,6.8497%
+branch_firing,T11:bear[bb:TLT>PSQ->QQQ|fb:IEF>PSQ->PSQ],166,4.7977%
+branch_firing,T11:bull_trend_discounted->TECL/SOXL/TQQQ,124,3.5838%
+branch_firing,T11:bear[bb:else->SQQQ|fb:else->SQQQ],117,3.3815%
+branch_firing,T11:tier2->UVXY,58,1.6763%
+branch_firing,T11:dip_TQQQ->TQQQ,53,1.5318%
+branch_firing,T11:bear[bb:TLT>PSQ->QQQ|fb:crash_BND>QQQ->QLD],41,1.1850%
+branch_firing,T11:dip_SPY->SPXL,33,0.9538%
+branch_firing,T11:bear[bb:else->SQQQ|fb:crash_BND>QQQ->QLD],29,0.8382%
+branch_firing,T11:bear[bb:IEF>PSQ->PSQ|fb:IEF>PSQ->PSQ],24,0.6936%
+branch_firing,T11:bear[bb:else->PSQ|fb:else->PSQ],21,0.6069%
+branch_firing,T11:bear[bb:AGG>SH->TQQQ|fb:AGG>SH->TQQQ],15,0.4335%
+branch_firing,T11:bear[bb:TLT>PSQ->QQQ|fb:else->SQQQ],15,0.4335%
+branch_firing,T11:bear[bb:IEF>PSQ->PSQ|fb:crash_BND>QQQ->QLD],10,0.2890%
+branch_firing,T11:bear[bb:TLT>PSQ->QQQ|fb:else->PSQ],8,0.2312%
+branch_firing,T11:bear[bb:else->SQQQ|fb:crash->BTAL],3,0.0867%
+branch_firing,T11:bear[bb:AGG>SH->TQQQ|fb:crash->BTAL],1,0.0289%
+branch_firing,T11:bear[bb:else->PSQ|fb:crash_BND>QQQ->QLD],1,0.0289%
+branch_firing,S2:gate->TQQQ,2166,62.6012%
+branch_firing,S2:gate_overbought->UVXY,387,11.1850%
+branch_firing,S2:default->TQQQ,384,11.0983%
+branch_firing,S2:defensive->BSV,268,7.7457%
+branch_firing,S2:defensive->SQQQ,163,4.7110%
+branch_firing,S2:dip_SOXL->SOXL,46,1.3295%
+branch_firing,S2:dip_TQQQ->TECL,46,1.3295%
+branch_firing,S3:bull->TQQQ/SOXL,1789,51.7052%
+branch_firing,S3:bear->CASH,941,27.1965%
+branch_firing,S3:bull_overbought->UVXY,647,18.6994%
+branch_firing,S3:bear_dip->SOXL,83,2.3988%
+t11_bear_submodel,bb:TLT>PSQ->QQQ,467,13.4971%
+t11_bear_submodel,bb:PSQ_dip->PSQ,0,0.0000%
+t11_bear_submodel,bb:AGG>SH->TQQQ,16,0.4624%
+t11_bear_submodel,bb:else->PSQ,22,0.6358%
+t11_bear_submodel,bb:IEF>PSQ->PSQ,34,0.9827%
+t11_bear_submodel,bb:else->SQQQ,149,4.3064%
+t11_bear_submodel,fb:crash_BND>QQQ->QLD,81,2.3410%
+t11_bear_submodel,fb:crash->BTAL,4,0.1156%
+t11_bear_submodel,fb:PSQ_dip->PSQ,0,0.0000%
+t11_bear_submodel,fb:AGG>SH->TQQQ,252,7.2832%
+t11_bear_submodel,fb:else->PSQ,29,0.8382%
+t11_bear_submodel,fb:IEF>PSQ->PSQ,190,5.4913%
+t11_bear_submodel,fb:else->SQQQ,132,3.8150%
+branch_firing,branches_never_fired,T11:bb:PSQ_dip->PSQ; T11:fb:PSQ_dip->PSQ,
+time_in_instrument,UVXY_frac_sessions_held,0.2904624277456647,
+time_in_instrument,UVXY_frac_dollar_exposure,0.1845007530396476,
+time_in_instrument,SVXY_frac_sessions_held,0.44335260115606934,
+time_in_instrument,SVXY_frac_dollar_exposure,0.036588044525200064,
+time_in_instrument,TECL_frac_sessions_held,0.5658959537572255,
+time_in_instrument,TECL_frac_dollar_exposure,0.08217911820680034,
+time_in_instrument,TECS_frac_sessions_held,0.14797687861271677,
+time_in_instrument,TECS_frac_dollar_exposure,0.015163354963435651,
+time_in_instrument,SOXL_frac_sessions_held,0.7335260115606936,
+time_in_instrument,SOXL_frac_dollar_exposure,0.1679353501499783,
+time_in_instrument,SOXS_frac_sessions_held,0.14797687861271677,
+time_in_instrument,SOXS_frac_dollar_exposure,0.015137547161363814,
+time_in_instrument,SPXL_frac_sessions_held,0.011271676300578034,
+time_in_instrument,SPXL_frac_dollar_exposure,0.004248236923961241,
+time_in_instrument,LABU_frac_sessions_held,0.011271676300578034,
+time_in_instrument,LABU_frac_dollar_exposure,0.001917968682721631,
+time_in_instrument,SQQQ_frac_sessions_held,0.2846820809248555,
+time_in_instrument,SQQQ_frac_dollar_exposure,0.05913691633208415,
+time_in_instrument,TQQQ_frac_sessions_held,0.7739884393063584,
+time_in_instrument,TQQQ_frac_dollar_exposure,0.3354665892618216,
+time_in_instrument,QLD_frac_sessions_held,0.023410404624277455,
+time_in_instrument,QLD_frac_dollar_exposure,0.0017785060172868163,
+time_in_instrument,PSQ_frac_sessions_held,0.06647398843930635,
+time_in_instrument,PSQ_frac_dollar_exposure,0.006468053067614742,
+time_in_instrument,QQQ_frac_sessions_held,0.13497109826589596,
+time_in_instrument,QQQ_frac_dollar_exposure,0.011539713491551746,
+time_in_instrument,TLT_frac_sessions_held,0.2323699421965318,
+time_in_instrument,TLT_frac_dollar_exposure,0.03062425781167496,
+time_in_instrument,BIL_frac_sessions_held,0.16878612716763006,
+time_in_instrument,BIL_frac_dollar_exposure,0.017487512850573917,
+time_in_instrument,BTAL_frac_sessions_held,0.13670520231213873,
+time_in_instrument,BTAL_frac_dollar_exposure,0.016183458231130092,
+time_in_instrument,BSV_frac_sessions_held,0.07745664739884393,
+time_in_instrument,BSV_frac_dollar_exposure,0.01364461928315345,
+gross_cap,transitions_where_cap_fired,0,proportional truncation events
+gross_cap,max_gross_before_cap,1.0,
+pairwise_raises,synthetic_pre_warmup_sessions,50,2007-01-03..2007-03-19; all pre-warm-up
+pairwise_raises,synthetic_post_warmup_sessions,0,traded window
+pairwise_raises,synthetic_frac_of_all_sessions,0.013623978201634877,
+pairwise_raises,realized_pre_warmup_sessions,47,2007-01-03..2007-03-14; all pre-warm-up
+pairwise_raises,realized_post_warmup_sessions,0,traded window
+pairwise_raises,realized_frac_of_all_sessions,0.012806539509536785,
+unavailable_fills,synthetic_events,40,
+unavailable_fills,synthetic_BTAL,40,2008-10-31..2011-04-29
+unavailable_fills,realized_events,774,
+unavailable_fills,realized_BTAL,33,2008-10-31..2011-04-29
+unavailable_fills,realized_SOXL,131,2007-11-09..2010-03-08
+unavailable_fills,realized_SOXS,19,2007-11-02..2010-02-09
+unavailable_fills,realized_SPXL,8,2008-01-18..2008-10-08
+unavailable_fills,realized_SQQQ,128,2007-11-02..2010-02-09
+unavailable_fills,realized_SVXY,130,2007-12-07..2011-10-03
+unavailable_fills,realized_TECL,28,2007-12-04..2008-12-26
+unavailable_fills,realized_TECS,5,2007-11-02..2007-12-28
+unavailable_fills,realized_TQQQ,210,2007-11-02..2010-02-09
+unavailable_fills,realized_UVXY,82,2008-05-02..2011-07-08
+commission,orders_total,8657,
+commission,frac_orders_minimum_bound,0.18020099341573292,
+commission,frac_orders_cap_bound,0.0023102691463555503,
+commission,portfolio_commission_bp_of_traded,0.9683791001608358,
+commission_by_instrument,BIL_bp_of_traded,0.7209100128386973,"n_orders=381, min_bound=18.37%, cap_bound=0.00%"
+commission_by_instrument,BSV_bp_of_traded,0.6405375197702454,"n_orders=239, min_bound=28.45%, cap_bound=0.42%"
+commission_by_instrument,BTAL_bp_of_traded,2.524802404586749,"n_orders=325, min_bound=13.85%, cap_bound=0.31%"
+commission_by_instrument,LABU_bp_of_traded,3.650062784546034,"n_orders=52, min_bound=0.00%, cap_bound=0.00%"
+commission_by_instrument,PSQ_bp_of_traded,0.8137943559554998,"n_orders=229, min_bound=20.96%, cap_bound=0.00%"
+commission_by_instrument,QLD_bp_of_traded,0.7444817717621987,"n_orders=61, min_bound=29.51%, cap_bound=0.00%"
+commission_by_instrument,QQQ_bp_of_traded,0.735286083635462,"n_orders=249, min_bound=45.78%, cap_bound=1.20%"
+commission_by_instrument,SOXL_bp_of_traded,0.30034067604738834,"n_orders=1223, min_bound=14.88%, cap_bound=0.16%"
+commission_by_instrument,SOXS_bp_of_traded,1.581016574120078,"n_orders=397, min_bound=10.08%, cap_bound=0.00%"
+commission_by_instrument,SPXL_bp_of_traded,0.6608716270219059,"n_orders=55, min_bound=3.64%, cap_bound=0.00%"
+commission_by_instrument,SQQQ_bp_of_traded,1.9788538731861605,"n_orders=782, min_bound=6.52%, cap_bound=0.00%"
+commission_by_instrument,SVXY_bp_of_traded,0.553742599520065,"n_orders=743, min_bound=33.78%, cap_bound=0.13%"
+commission_by_instrument,TECL_bp_of_traded,0.30886859119454285,"n_orders=1033, min_bound=21.39%, cap_bound=0.29%"
+commission_by_instrument,TECS_bp_of_traded,3.30850378049156,"n_orders=397, min_bound=6.80%, cap_bound=0.50%"
+commission_by_instrument,TLT_bp_of_traded,0.40668200068449484,"n_orders=629, min_bound=22.73%, cap_bound=0.64%"
+commission_by_instrument,TQQQ_bp_of_traded,0.49869195770190533,"n_orders=1226, min_bound=18.92%, cap_bound=0.24%"
+commission_by_instrument,UVXY_bp_of_traded,1.1824485403126872,"n_orders=636, min_bound=7.55%, cap_bound=0.00%"

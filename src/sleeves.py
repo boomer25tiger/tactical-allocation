@@ -21,9 +21,10 @@ Four substitutions against source:
    changes.
 2. The hardcoded crash test qqq_60d < -12 becomes a comparison of the
    trailing CRASH_HORIZON_SESSIONS QQQ total return against
-   CRASH_THRESHOLD_PCT (decision 6.10 as reversed and re-closed in session
-   04: the rolling quantile is withdrawn, the threshold is absolute, and
-   the canonical level is -10 percent). The test is a threshold test:
+   CRASH_THRESHOLD_PCT (decision 6.10: the rolling quantile was withdrawn
+   in session 04 and the absolute threshold re-closed at -15 in session
+   09; the canonical value lives in config, which this module reads --
+   docstring corrected by session 13.9, D4). The test is a threshold test:
    an unavailable return -- including the boundary where the horizon has
    not yet accumulated -- reads false per 1.9.
 3. The permissive fallback (not kmlm_ready) or (r["XLK"] > r["KMLM"]) is
@@ -312,7 +313,7 @@ def s3_weights(date, state: IndicatorState) -> dict[str, float]:
     # Four votes (source L275-279). A vote whose input is unavailable reads
     # false, i.e. bearish, per the threshold rule.
     votes = sum(_price_above_sma(state, t, config.SMA_LONG) for t in S3_VOTES)
-    bull = votes >= 3
+    bull = votes >= config.S3_VOTE_THRESHOLD
 
     overbought = any(_gt(ex(t), config.OVERBOUGHT_TIER_1) for t in S3_VOTES)
 

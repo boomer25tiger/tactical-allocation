@@ -1,0 +1,9 @@
+table,metric,arm_B,arm_C,B_minus_C,incremental_cash_frac_nav,sessions_branch_active_primary,dtb3_accrual_arith_over_window,dtb3_accrual_annualised_pp,note,b_minus_c_ann_return,cash_accrual_annualised,residual_after_netting_cash
+b_minus_c,ann_return,0.5468137639369881,0.5493046114456601,-0.0024908475086720117,,,,,,,,
+b_minus_c,ann_vol,0.4877565516271035,0.4878906273689723,-0.0001340757418687999,,,,,,,,
+b_minus_c,sharpe_lo,1.4006711766758262,1.4074683746406151,-0.006797197964788948,,,,,,,,
+b_minus_c,max_drawdown,-0.5328198449588459,-0.5327994556539851,-2.0389304860812807e-05,,,,,,,,
+b_minus_c,ann_turnover,36.592676502203624,35.47136864906735,1.1213078531362726,,,,,,,,
+b_minus_c,information_ratio_vs_buy_hold_QQQ,0.7478353370054585,0.7514238736519847,-0.0035885366465262525,,,,,,,,
+capital,,,,,0.08333333333333334,513.0,0.0010028931072065632,0.010219533482250463,"arm C deploys 4.167 percent of NAV to reach -12.5 percent notional where arm B deploys 12.5 percent, so arm C holds 8.333 percent of NAV in sleeve cash on the sessions the branch is active",,,
+residual,,,,,,,,,residual near zero establishes the -1x and -3x expressions are interchangeable at matched notional over this sample,-0.0024908475086720117,0.00010219533482250462,-0.002388652173849507

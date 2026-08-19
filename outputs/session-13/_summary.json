@@ -1,0 +1,86 @@
+{
+ "calendar": {
+  "first": "2007-01-03",
+  "last": "2021-07-30",
+  "sessions": 3670,
+  "evaluated": 3460,
+  "years": 13.73015873015873
+ },
+ "crossings": {
+  "synthetic": {
+   "ann_return_zero_bp": 50.936507151342816,
+   "sharpe_lo_zero_bp": 83.93275691768693
+  },
+  "realized": {
+   "ann_return_zero_bp": 65.98148701370484,
+   "sharpe_lo_zero_bp": 96.54631465693868
+  }
+ },
+ "lag_check": {
+  "anchor": {
+   "t1": {
+    "total_return": 9.951692910897048,
+    "ann_return": 0.19050101692146204,
+    "ann_vol": 0.543171691109922,
+    "sharpe_naive": 0.5787454244979986,
+    "sharpe_lo": 0.7158313308086734,
+    "max_drawdown": -0.7669003930369271,
+    "calmar": 0.2484038587685131,
+    "ann_turnover_one_sided": 42.288409913429334,
+    "total_commission": 188755.49566306308,
+    "total_slippage": 974595.0508004206,
+    "end_nav": 10951692.910897048,
+    "n_sessions": 3460,
+    "years": 13.726190476190476
+   },
+   "t2": {
+    "total_return": 27.093139029310603,
+    "ann_return": 0.2750742997291682,
+    "ann_vol": 0.5506200690031907,
+    "sharpe_naive": 0.6988079176922378,
+    "sharpe_lo": 0.6491816621045329,
+    "max_drawdown": -0.8175885751811562,
+    "calmar": 0.3364458703061242,
+    "ann_turnover_one_sided": 40.322256888788964,
+    "total_commission": 278742.5163731441,
+    "total_slippage": 1298954.0944320112,
+    "end_nav": 28093139.029310603,
+    "n_sessions": 3460,
+    "years": 13.726190476190476
+   }
+  },
+  "costfree": {
+   "t1": {
+    "total_return": 18.57418829113886,
+    "ann_return": 0.24194849960617293,
+    "ann_vol": 0.5427397750085098,
+    "sharpe_naive": 0.6567303484496041,
+    "sharpe_lo": 0.81258542171215,
+    "max_drawdown": -0.741418549160809,
+    "calmar": 0.3263318673103441,
+    "ann_turnover_one_sided": 42.102736614791894,
+    "total_commission": 295477.9339952815,
+    "total_slippage": 0.0,
+    "end_nav": 19574188.29113886,
+    "n_sessions": 3460,
+    "years": 13.726190476190476
+   },
+   "t2": {
+    "total_return": 49.23852595368735,
+    "ann_return": 0.3302288568139,
+    "ann_vol": 0.5504208771047637,
+    "sharpe_naive": 0.7758212491891852,
+    "sharpe_lo": 0.7219442174631882,
+    "max_drawdown": -0.7788295603915778,
+    "calmar": 0.42400657808605574,
+    "ann_turnover_one_sided": 39.99689346946439,
+    "total_commission": 460835.54613759706,
+    "total_slippage": 0.0,
+    "end_nav": 50238525.95368735,
+    "n_sessions": 3460,
+    "years": 13.726190476190476
+   }
+  }
+ },
+ "min_cash": -87870.5254432068
+}

@@ -1,0 +1,16 @@
+table,panel,convention,cap,window,mean_effective_exposure,worst_trailing_return_decile,wildest_vol_decile,s13_5_claim,s13_5_closest,s13_5_closest_values,s13_5_distance,s15_5_claim,s15_5_closest,s15_5_closest_values,s15_5_distance,definition,note
+exposure,synthetic,c2c,True,full_sample,1.818851172809719,0.9153794212861728,1.4269774286084698,,,,,,,,,,
+exposure,synthetic,c2c,True,primary_2011_10_04,1.824256333548528,1.1060456586382441,1.4924221414210679,,,,,,,,,,
+exposure,synthetic,c2c,False,full_sample,1.820861246613945,0.9252703644864142,1.4238403089611003,,,,,,,,,,
+exposure,synthetic,c2c,False,primary_2011_10_04,1.826278519973803,1.1198413162033967,1.4901206380507508,,,,,,,,,,
+exposure,realized,c2c,True,full_sample,1.8090210848040391,0.9012519960661242,1.454718357355206,,,,,,,,,,
+exposure,realized,c2c,True,primary_2011_10_04,1.8138384120160131,1.0879509941103305,1.5045998845890212,,,,,,,,,,
+exposure,realized,c2c,False,full_sample,1.8185395388354348,0.9222303813163689,1.4485746596207894,,,,,,,,,,
+exposure,realized,c2c,False,primary_2011_10_04,1.823415007841957,1.1143481135562165,1.4993734525833449,,,,,,,,,,
+exposure,realized,o2o,True,full_sample,1.7724304855522177,0.8632580502517675,1.443296285900909,,,,,,,,,,
+exposure,realized,o2o,True,primary_2011_10_04,1.7769723457408557,1.0509156865216827,1.4992706033470402,,,,,,,,,,
+exposure,realized,o2o,False,full_sample,1.8186896130574979,0.9209420378348482,1.4453653765952985,,,,,,,,,,
+exposure,realized,o2o,False,primary_2011_10_04,1.8235126763408478,1.112990169837057,1.4980071471136374,,,,,,,,,,
+reconciliation,,,,,,,,1.70 / 0.78 / 1.06,realized/o2o/cap=True/full_sample,1.772/0.863/1.443,0.39886604387248514,1.776 / 1.042 / 1.490,realized/o2o/cap=True/primary_2011_10_04,1.777/1.051/1.499,0.01289879873518564,,
+canonical_exposure,,,,,1.7769723457408557,1.0509156865216827,1.4992706033470402,,,,,,,,,"canonical = realized panel, open-to-open, cap on, primary window from 2011-10-04, conditioning statistics computed on full history and then sliced",
+method_note,,,,,,,,,,,,,,,,,"The decile conditioning is sensitive to whether the rolling statistic is computed before or after the window slice. Session 15.5 computed the trailing volatility on the full history and sliced, which this step reproduces; slicing first discards the 60 sessions of history the estimator needs and moves the wildest-vol decile figure by roughly 0.23."

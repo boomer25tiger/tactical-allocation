@@ -1,0 +1,2 @@
+HALTED
+step 5 not run: step-1 price control failed for SOXS (vendor split record missing the 2021-03-02 1:15 reverse split; see price-control.csv verdict). Arm definitions and register closures stand; run figures await the authorized split-table repair.

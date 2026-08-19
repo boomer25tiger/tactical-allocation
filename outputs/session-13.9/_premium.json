@@ -1,0 +1,21 @@
+{
+ "central": 2.0,
+ "sweep": [
+  1.0,
+  2.0,
+  3.0,
+  4.0
+ ],
+ "uniform_across_tiers": true,
+ "central_by_tier": {
+  "1": 2.0,
+  "2": 2.0,
+  "3": 2.0
+ },
+ "derivation": "Opening >= continuous (GJW: 'largest price impact') and continuous ~ 2x closing (GJW large-cap snippet chain 6.4/3.2, 20.2/10.1) => opening/closing >= 2. The tier multipliers were calibrated on full-session (continuous-class) quoted spreads and the c2c arm fills at the CLOSE, so the o2o premium is anchored at the opening/closing ratio's retrieved floor: central 2.0x. Sweep 1.0-4.0: the 1.0 floor carries Bacidore-Lipson's opposite sign (1990s NYSE opens CHEAPER); 4.0 covers opening impact well above continuous, unmeasured. UNIFORM across tiers: no retrieved source measures the open-vs-rest ratio by liquidity tier (Bacidore-Lipson's size gradient runs the other way for auction savings; GJW's microcap opening detail inaccessible) \u2014 the tier-variation question is recorded as unmeasured rather than assumed.",
+ "caveats": [
+  "GJW magnitudes are search-snippet numbers, not full-text-verified",
+  "direction conflict with 1990s NYSE evidence recorded",
+  "closing ~ 0.5x continuous also implies the un-premiumed tier levels overcharge the c2c arm; recorded as a conservative direction, unchanged"
+ ]
+}

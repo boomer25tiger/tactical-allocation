@@ -1,0 +1,26 @@
+table,n_sessions,stitched_total_return,n_discontinuities_gt5d,median_gap_days,max_gap_days,note,year,sessions,full_fill_pct,target_dollars_fillable_pct,ticker,first_in_window_session,listed_before_2011_10
+stitched_demonstrative,106.0,-0.5165,16.0,1.0,55.0,"DEMONSTRATIVE, NOT A RESULT: 106 scattered sessions with 16 gaps over 5 calendar days (max 55); a product over non-contiguous sessions has no return interpretation — the sample does not support a realized-panel early-window return statement. Reported to establish exactly that.",,,,,,,
+paper_form_coverage,,,,,,,2007.0,41.0,0.0%,26.5%,,,
+paper_form_coverage,,,,,,,2008.0,253.0,0.0%,29.3%,,,
+paper_form_coverage,,,,,,,2009.0,252.0,0.0%,21.2%,,,
+paper_form_coverage,,,,,,,2010.0,252.0,15.1%,62.7%,,,
+paper_form_coverage,,,,,,,2011.0,189.0,36.0%,82.0%,,,
+paper_form_timeline,,,,,,,,,,,QLD,2007-01-03,True
+paper_form_timeline,,,,,,,,,,,PSQ,2007-01-03,True
+paper_form_timeline,,,,,,,,,,,SH,2007-01-03,True
+paper_form_timeline,,,,,,,,,,,QQQ,2007-01-03,True
+paper_form_timeline,,,,,,,,,,,TLT,2007-01-03,True
+paper_form_timeline,,,,,,,,,,,BSV,2007-04-10,True
+paper_form_timeline,,,,,,,,,,,BIL,2007-05-30,True
+paper_form_timeline,,,,,,,,,,,SPXL,2008-11-05,True
+paper_form_timeline,,,,,,,,,,,FAS,2008-11-19,True
+paper_form_timeline,,,,,,,,,,,TECL,2008-12-30,True
+paper_form_timeline,,,,,,,,,,,TECS,2008-12-30,True
+paper_form_timeline,,,,,,,,,,,TQQQ,2010-02-11,True
+paper_form_timeline,,,,,,,,,,,SQQQ,2010-02-11,True
+paper_form_timeline,,,,,,,,,,,SOXL,2010-03-11,True
+paper_form_timeline,,,,,,,,,,,SOXS,2010-03-11,True
+paper_form_timeline,,,,,,,,,,,BTAL,2011-09-13,True
+paper_form_timeline,,,,,,,,,,,UVXY,2011-10-04,False
+paper_form_timeline,,,,,,,,,,,SVXY,2011-10-04,False
+paper_form_timeline,,,,,,,,,,,LABU,2015-05-28,False

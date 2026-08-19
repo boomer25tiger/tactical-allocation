@@ -1,0 +1,104 @@
+{
+ "UVXY": {
+  "median_dollar_volume": 444395110.0,
+  "n_sessions": 2472,
+  "zero_volume_sessions": 576,
+  "artifact_flag": true
+ },
+ "SVXY": {
+  "median_dollar_volume": 123531522.65453339,
+  "n_sessions": 2472,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "TECL": {
+  "median_dollar_volume": 20691657.928943634,
+  "n_sessions": 3168,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "TECS": {
+  "median_dollar_volume": 6420670.0,
+  "n_sessions": 3168,
+  "zero_volume_sessions": 1269,
+  "artifact_flag": true
+ },
+ "SOXL": {
+  "median_dollar_volume": 19168133.843421936,
+  "n_sessions": 2868,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "SOXS": {
+  "median_dollar_volume": 73422000.0,
+  "n_sessions": 2868,
+  "zero_volume_sessions": 2386,
+  "artifact_flag": true
+ },
+ "SPXL": {
+  "median_dollar_volume": 135620502.90298462,
+  "n_sessions": 3205,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "LABU": {
+  "median_dollar_volume": 100897730.77087402,
+  "n_sessions": 1556,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "SQQQ": {
+  "median_dollar_volume": 127955300.0,
+  "n_sessions": 2887,
+  "zero_volume_sessions": 29,
+  "artifact_flag": false
+ },
+ "TQQQ": {
+  "median_dollar_volume": 266204154.04987335,
+  "n_sessions": 2887,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "QLD": {
+  "median_dollar_volume": 187276703.19137573,
+  "n_sessions": 3670,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "PSQ": {
+  "median_dollar_volume": 19293526.818237305,
+  "n_sessions": 3670,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "QQQ": {
+  "median_dollar_volume": 4131587500.2262115,
+  "n_sessions": 3670,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "TLT": {
+  "median_dollar_volume": 827916082.2463989,
+  "n_sessions": 3670,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "BIL": {
+  "median_dollar_volume": 26346240.966796875,
+  "n_sessions": 3569,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ },
+ "BTAL": {
+  "median_dollar_volume": 183382.49588012695,
+  "n_sessions": 2487,
+  "zero_volume_sessions": 317,
+  "artifact_flag": true
+ },
+ "BSV": {
+  "median_dollar_volume": 67303391.7602539,
+  "n_sessions": 3604,
+  "zero_volume_sessions": 0,
+  "artifact_flag": false
+ }
+}

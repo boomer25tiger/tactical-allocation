@@ -1,111 +1,79 @@
 # STATE — read this first
 
-As of session 12.5 (2026-08-18). Commit `ad6be24` holds sessions 00A–12.
-This file and DECISIONS-v3.md were written after that commit and are
-uncommitted by instruction.
+Refreshed 2026-08-19 by session 16 (D22 closed). Supersedes the session 12.5
+version, which was stale from session 13 onward and still stated that the
+backtest had never been run. Commit `502ca42` holds sessions 00A through 12.6;
+sessions 13 through 15.5 are uncommitted until session 16's single commit.
 
 ## What this project is
 
-A daily multi-model tactical allocation study: four sleeves (T10
-eleven-name overbought cascade, T11 two-tier overbought with a trend
-switcher and 50/50 bear split, S2 TQQQ 200-SMA gate, S3 four-vote SMA
-regime), 25% budget each, reconstructed from a QuantConnect source
-(`docs/source-quantconnect.py`) with every numeric parameter deliberately
-re-specified and registered. The register is `docs/DECISIONS-v3.md`;
-canonical values live in `src/config.py` (validate() runs on import).
+A daily multi-model tactical allocation study: four sleeves (T10 eleven-name
+overbought cascade, T11 two-tier overbought with a trend switcher and 50/50
+bear split, S2 TQQQ 200-SMA gate, S3 four-vote SMA regime), 25% budget each,
+reconstructed from a QuantConnect source with every numeric parameter
+re-specified and registered. The register is `docs/DECISIONS-v3.md`; canonical
+values live in `src/config.py` (validate() runs on import).
 
-**The backtest has never been run. No strategy return, Sharpe, weight, or
-performance statistic exists anywhere in this repository. The holdout
-boundary 2021-08-01 (2.10) is untouched.**
+## Position as of session 16
 
-## What is built (all tested; 199 tests passing)
+**The backtest has run.** The holdout boundary 2021-08-01 (2.10) is untouched
+and no post-boundary quantity has been computed.
 
-- `src/config.py` — every parameter, decision IDs, validate() guards
-  (incl. the 7.10 grid-product pin).
-- `src/indicators.py` — Wilder RSI + SMA, skip gap treatment (1.9).
-- `src/data.py` — two-path loader (1.4), trend lag once (2.5a), DTB3
-  calendar-day accrual factors (5.5a), skip tr_index.
-- `src/sleeves.py` — four weight functions, structure from source, nine
-  named pairwise-raise sites, availability switches for SVIX/UVIX legs.
-- `src/portfolio.py` — label/short-circuit/merge/cap/drift (5.1–5.4).
-- `src/execution.py` — T+1 fills, both 4.1 modes in one path, truncation
-  sizing (4.7), DTB3 residual accrual, degeneracy detection.
-- `src/schedule.py` — per-date multiple/benchmark for 17 funds,
-  filing-grade, "on or about" carried, contiguity tested.
-- `src/spread.py` — Corwin-Schultz + Abdi-Ranaldo (now data
-  characterisation only; the tier apparatus was abandoned, 4.3).
-- `scripts/s10_build.py` — builds the nineteen synthetics into
-  `data/interim/synthetics/` (gitignored, rebuildable; SVIX/UVIX rebuilds
-  read ^SHORTVOL at run time).
+- **Designated headline cell (4.1b)**: open-to-open, realized panel, primary
+  window, class-tiered slippage with the 2.0x auction premium at the 10 bp
+  anchor, commission Arm S, 5% participation cap, canonical NAV 1,000,000.
+  Under the corrected 7.14 boundary of 2011-10-04 (session 16 step 1) it reads
+  **52.18% annualised and Lo-corrected Sharpe 1.3817**, against 52.26% and
+  1.3846 on the superseded 2011-10-03 start.
+- **Close-to-close comparison** at equal prominence per 4.1 and 2.8, realized
+  29.62% and 0.9251 on the corrected boundary.
+- **Benchmark ladder (8.8)**: the strategy ranks sixth of twelve on
+  Lo-corrected Sharpe in its own designated cell. The information ratio is
+  negative against the five lines it trails and positive against the six it
+  leads (session 15).
+- **Nulls (8.9)**: the strategy sits at the 98th to 100th percentile of both
+  the timing-shuffle and turnover-matched nulls on every window. Romano-Wolf
+  (8.10) leaves one family-wise comparison below 0.05.
+- **Participation cap (4.6)**: 5% of a trailing 21-session median dollar
+  volume, lagged one session, point-in-time. BTAL binds on 189 transitions.
+- **Metric set (8.11)**: 41 standalone metrics the grid emitter carries per
+  specification, 12 benchmark-relative metrics for the ladder lines only.
+- **Panels carry equal weight (2.8)**; no panel is primary.
 
-## What is frozen (all SHA-256-verified, 320 files, zero mismatches)
+## Open before the holdout can run
 
-- 44 ETF/fund parquets under `data/raw/etf/` (incl. RYMFX, SOXX, QID, SSO,
-  SDS, UVXY, SVXY, SVIX, UVIX) — hashes: 00E `manifest-truncated.csv`
-  (authoritative for the original panel) + per-session manifests
-  (sessions 01, 10, 12).
-- 268 CFE VX CSVs (00A manifest) + derived VX panels under `data/interim/`
-  (construction B = `vx-cm30-b.parquet`).
-- `data/raw/rates/DTB3.parquet` (session 02), `data/raw/index/NETR.parquet`
-  (session 08; the study's only interior gaps, 3 sessions, explicit
-  nulls), `data/raw/nav/{UVXY,SVXY}_nav.parquet` (session 12, ProShares
-  issuer NAV).
-- Everything truncated at 2026-08-14 (1.14).
+- **The specification grid has NOT run.** Session 16 established it is not
+  runnable as registered: only 20 of the 218,700 specifications are enumerable
+  from config, since `GRID_UNREPRESENTED_AXES_CARDINALITY` (10,935) stands in
+  for axes that no register decision enumerates. See `outputs/session-16/`.
+- **PBO, the deflated Sharpe, and the specification curve** all depend on the
+  grid and are therefore unrun.
+- **D16**, the financing spread, assumed and swept 25 to 200 bp.
 
-## Validation standard reached (session 12, `outputs/session-12/`)
+## Defect register, current
 
-Nineteen synthetics validated against real funds/NAV: index-family funds
-corr 0.993–0.999, |TD| ≤ 1.3%/yr; sector funds on exact benchmarks
-(XLK/SOXX/XBI) 0.978–0.998; UVXY vs issuer NAV 0.9998 (both multiple
-eras); mechanism validated through 2008 by five siblings at |M| ∈ {1,2};
-tracking error grows ~linearly in |M|; expense arithmetic verified
-expected == measured to the bp.
-
-## Limitations that bear on any future result
-
-1. **SOXS exception**: +6.21%/yr TD, 1394% max rolling divergence —
-   real-fund frictions compounding at −3×, recorded, not repaired.
-2. **SVXY 2018-02-06**: the fund's actual book (+187%) departed from its
-   index (+26%) for one session; every other pre-2018 day matches NAV to
-   decimals.
-3. **SVIX/UVIX**: no issuer NAV; validated against exchange closes only
-   (+7.5–8.9%/yr residual of the close-timing class); absent before 2022,
-   so T10's short-vol and S3's vol legs resolve to SVXY/UVXY throughout
-   the sample.
-4. **Regime gradient**: equity tracking error rises 5.4× from calmest to
-   wildest underlying-vol decile (D1 1.71% → D10 9.13%); unchanged by the
-   SOXX adoption. The construction is weakest where the bear branches
-   operate; 2007–2010 extrapolation is the weak case.
-5. **Financing anchor** (75 bp long / 70 bp short) is a single-fiscal-year
-   snapshot (Direxion FY2025 / ProShares FY2026 harvests).
-6. **Expense schedule** stated only for the seven Direxion funds in
-   FY2025; everything else carried constants (session 11 schedule).
-7. **FAS 2008–2022**: benchmark unobtainable, XLF is an approximation
-   (basket mismatch undisclosed by any free source).
-8. **Pre-inception windows**: sector funds have no sibling validation
-   before their listings; NDX/SPX families do (PSQ/QID/SH/SSO/SDS through
-   2008).
-9. **4.2**: closes are consolidated-tape, assumed equal to official
-   auction prints.
-
-## Operating conventions every session has followed
-
-- Run alone; no concurrent session against this tree.
-- Positive control before any negative finding is reported.
-- The `timeout` binary does not exist on this machine (exit 127).
-- Parameters read from `src/config.py`, never hardcoded.
-- No commit inside a session (the single 12.5 commit is the exception).
-- Every intermediate artifact under `outputs/<session>/`; reports as
-  REPORT.md per session.
-- Failures recorded with diagnostics and runs continue; halt only when
-  later steps become meaningless.
+D1 through D12, D14, D15, D17, D18, D19, D21, D22 closed, repaired, or swept.
+D13 never assigned. Open: **D16** financing spread, **D23** portfolio-level
+per-instrument attribution confound (corrected in place session 15.5),
+**D24** the grid axes are not enumerated (session 16). D20 closed session 16
+step 2, with NAV joining the specification curve and not the grid axes.
 
 ## Immediate next step
 
-**Session 13: the canonical in-sample backtest** (its full prompt exists;
-it was deferred in favour of this handoff session). Key constraints it
-carries: holdout truncation at 2021-07-31 in the loader with an assertion;
-everything from config; cost curve as the primary object; sanity checks
-that must pass before interpretation; both 2.8 arms; no benchmarks, no
-nulls, no grid — those are later sessions. After it: the 2.7 band
-confirmation, 7.14 sub-periods, the 8.8 ladder and nulls, then the grid.
+Session 17. The blocker is the grid axis enumeration under 7.2 through 7.9,
+which must be closed in the register before the grid, PBO, the deflated
+Sharpe, or the specification curve can run. The holdout stays untouched until
+those complete.
+
+## What is built
+
+`src/` carries config, indicators, the two-path loader, the four sleeve weight
+functions, the portfolio label/merge/cap layer, the per-date fund schedule, and
+the spread estimators. `scripts/s13_backtest.py` is the engine, `s14_common.py`
+carries the canonical cost model, panels, and cap, and `s15_lines.py` carries
+the ladder builders and the 8.11 metric set.
+
+## What is frozen
+
+44 ETF/fund parquets, 268 CFE VX CSVs, DTB3, NETR, and UVXY/SVXY issuer NAV,
+all SHA-256 verified and truncated at 2026-08-14 (1.14).

@@ -1,0 +1,16 @@
+table,fund,old_pct,new_pct,delta_pp,measured_cells,portfolio_effect_pp_yr_approx,note
+constants,FAS,0.86,0.95,0.09,"{2012: 0.95, 2016: 0.95, 2020: 0.94}",-0.0,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,LABU,0.92,0.95,0.03,"{2016: 0.95, 2020: 0.95}",-0.0001,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,PSQ,0.95,0.95,0.0,{},-0.0,ProShares 'Expenses net of waivers' line
+constants,QLD,0.95,0.95,0.0,{},-0.0,ProShares 'Expenses net of waivers' line
+constants,SH,0.88,0.89,0.01,"{2012: 0.89, 2016: 0.89, 2020: 0.9}",-0.0,ProShares 'Expenses net of waivers' line
+constants,SOXL,0.71,0.95,0.24,"{2012: 0.95, 2016: 0.95, 2020: 0.94}",-0.0439,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,SOXS,0.87,0.95,0.08,"{2012: 0.95, 2016: 0.95, 2020: 0.95}",-0.0012,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,SPXL,0.81,0.95,0.14,"{2016: 0.95, 2020: 0.95}",-0.0007,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,SQQQ,0.95,0.95,0.0,"{2012: 0.95, 2016: 0.95, 2020: 0.95}",-0.0,ProShares 'Expenses net of waivers' line
+constants,SVXY,0.95,0.95,0.0,"{2013: 0.95, 2017: 0.95, 2020: 0.95}",-0.0,ProShares 'Expenses net of waivers' line
+constants,TECL,0.83,0.95,0.12,"{2012: 0.95, 2016: 0.95, 2020: 0.95}",-0.0108,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,TECS,0.92,0.95,0.03,"{2012: 0.95, 2016: 0.95, 2020: 0.95}",-0.0004,"Direxion excl-interest 'Net Expenses 3,6' line; financing modeled separately under 2.14, so the incl-interest line would double-count"
+constants,TQQQ,0.86,0.95,0.09,"{2012: 0.95, 2016: 0.95, 2020: 0.95}",-0.0329,ProShares 'Expenses net of waivers' line
+constants,UVXY,0.95,0.95,0.0,"{2013: 0.95, 2017: 0.95, 2020: 0.95}",-0.0,ProShares 'Expenses net of waivers' line
+gate_resolution,,,,,,,"Like-for-like check RESOLVED: build ER = net operating ER excluding interest/extraordinary (financing separate under 2.14). Direxion excl-interest line measured for all seven funds (0.94-0.95 in every sampled year; accessions 0001193125-13-002341, 0001104659-17-000187, 0001104659-21-000275); the FY2025 costs-paid constants (0.71-0.92) were a third line family. TQQQ/SH from 'Expenses net of waivers' (accessions 0001104659-12-054139, -16-137872, -20-091337). No extrapolated cells. Total approximate portfolio effect: -0.090 pp/yr (direction unfavorable, as the step states). SPXL FY2012 not in the Oct-2012 filing (different filing); LABU pre-2015 n/a."

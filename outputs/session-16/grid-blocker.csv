@@ -1,0 +1,12 @@
+table,check,found,result,axis,enumerated_in_config,note,enumerable_specifications,declared_total,unrepresented_multiplier,enumerable_fraction
+positive_control,enumerator finds known-present axes,SMA_LONG_GRID(4);CRASH_THRESHOLD_GRID(5),PASS,,,,,,,
+missing_axis,,,,"RSI period, exhaustion (6.1/7.2)",False,config carries RSI_PERIOD_EXHAUSTION scalar only,,,,
+missing_axis,,,,"RSI period, dip (6.1/7.2)",False,scalar only,,,,
+missing_axis,,,,"RSI period, relative strength (6.1/7.2)",False,scalar only,,,,
+missing_axis,,,,Overbought tier one (6.2/7.3),False,scalar only,,,,
+missing_axis,,,,Tier-two offset (7.4),False,"register says 'informed', not closed; no tuple",,,,
+missing_axis,,,,Oversold (6.4/7.5),False,"scalar only; a tuple exists as a LOCAL literal in scripts/s13_5_diagnostics.py line 374, which is a diagnostic script and not a registered axis",,,,
+missing_axis,,,,Short SMA (6.6/7.8),False,scalar only,,,,
+missing_axis,,,,S3 vote threshold (6.7/7.9),False,config.S3_VOTE_THRESHOLD scalar only,,,,
+count,,,,,,,20.0,218700.0,10935.0,9.144947416552355e-05
+halt,,,,,,"STEP 5 HALTED. The session prompt directs that the axis tuples are pinned in config and that no grid may be constructed here. Only 2 of the roughly 10 registered axes are enumerated there, giving 20 of 218,700 specifications, or 0.0091 percent. The remaining factor of 10,935 is carried by GRID_UNREPRESENTED_AXES_CARDINALITY, whose own comment in src/config.py states 'No decision in hand enumerates those axes' values, so the full product cannot be recomputed from tuples alone yet'. Enumerating them here would be constructing a grid, which the prompt prohibits, and would also be a specification act, since choosing what a study searches over determines N in 8.7 and the shape of the specification curve in 9.11. validate() passes because 7.10 pins the PRODUCT against the placeholder, not the axes. Steps 6 through 9 depend on the grid and are therefore not run.",,,,

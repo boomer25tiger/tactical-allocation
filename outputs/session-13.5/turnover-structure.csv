@@ -1,0 +1,69 @@
+table,bp,traded_per_year,avg_nav,turnover,note,metric,value,sleeve,median_run,mean_run,frac_1session,n_runs,state,ticker,one_sided_turnover_per_year,year,one_sided_turnover
+turnover_vs_cost,0.0,108430397.56679308,2576121.022351802,42.102736614791894,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+turnover_vs_cost,5.0,87390336.65829906,2071800.9521332271,42.19305005769977,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+turnover_vs_cost,10.0,70982067.28373006,1679008.229639035,42.288409913429334,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+turnover_vs_cost,20.0,47744284.71484255,1123636.6211305652,42.50314268174178,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+turnover_vs_cost,35.0,27980597.867804542,652026.202527848,42.92570908226544,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+turnover_vs_cost,50.0,17804040.332239524,409365.4415503438,43.50437454810314,"identical signal stream shared across cost levels by construction; signals never read NAV, so no feedback path exists",,,,,,,,,,,,
+per_transition,,,,,,mean_frac_turned,0.4076748220047679,,,,,,,,,,
+per_transition,,,,,,median_frac_turned,0.2973060766272864,,,,,,,,,,
+per_transition,,,,,,q0.1,0.17366388978692526,,,,,,,,,,
+per_transition,,,,,,q0.25,0.2502139876861571,,,,,,,,,,
+per_transition,,,,,,q0.75,0.5016284381259721,,,,,,,,,,
+per_transition,,,,,,q0.9,0.7497751672982461,,,,,,,,,,
+per_transition,,,,,mean fraction x fills/yr ~ annual turnover,reconciliation,42.31099091962779,,,,,,,,,,
+holding_by_sleeve,,,,,,,,T10,2.0,4.385297845373891,0.3916349809885932,789.0,,,,,
+holding_by_state,,,,,,,,T10,3.0,5.482142857142857,0.31785714285714284,280.0,33%TECL+33%SOXL+33%SVXY,,,,
+holding_by_state,,,,,,,,T10,3.0,5.987261146496815,0.25477707006369427,157.0,100%UVXY,,,,
+holding_by_state,,,,,,,,T10,2.0,3.336099585062241,0.45228215767634855,241.0,50%SQQQ+50%TLT,,,,
+holding_by_state,,,,,,,,T10,1.0,1.7941176470588236,0.5882352941176471,34.0,100%SOXL,,,,
+holding_by_state,,,,,,,,T10,1.0,1.65625,0.65625,32.0,100%TECL,,,,
+holding_by_sleeve,,,,,,,,T11,2.0,3.905191873589165,0.4142212189616253,886.0,,,,,
+holding_by_state,,,,,,,,T11,3.0,5.984375,0.3203125,256.0,33%TECL+33%SOXL+33%TQQQ,,,,
+holding_by_state,,,,,,,,T11,2.0,3.792207792207792,0.3051948051948052,154.0,33%UVXY+33%BIL+33%BTAL,,,,
+holding_by_state,,,,,,,,T11,2.0,2.9257142857142857,0.49142857142857144,175.0,33%TECS+33%SOXS+33%SQQQ,,,,
+holding_by_state,,,,,,,,T11,2.0,6.2368421052631575,0.42105263157894735,38.0,50%QQQ+50%TQQQ,,,,
+holding_by_state,,,,,,,,T11,2.0,2.71875,0.484375,64.0,50%QQQ+50%PSQ,,,,
+holding_by_sleeve,,,,,,,,S2,3.0,8.065268065268064,0.34965034965034963,429.0,,,,,
+holding_by_state,,,,,,,,S2,7.0,16.451612903225808,0.23870967741935484,155.0,100%TQQQ,,,,
+holding_by_state,,,,,,,,S2,3.0,4.607142857142857,0.2976190476190476,84.0,100%UVXY,,,,
+holding_by_state,,,,,,,,S2,2.0,3.1904761904761907,0.40476190476190477,84.0,100%BSV,,,,
+holding_by_state,,,,,,,,S2,2.0,3.0754716981132075,0.39622641509433965,53.0,100%SQQQ,,,,
+holding_by_state,,,,,,,,S2,1.0,1.7692307692307692,0.5769230769230769,26.0,100%SOXL,,,,
+holding_by_sleeve,,,,,,,,S3,3.0,7.81038374717833,0.32505643340857787,443.0,,,,,
+holding_by_state,,,,,,,,S3,3.5,10.164772727272727,0.2897727272727273,176.0,50%TQQQ+50%SOXL,,,,
+holding_by_state,,,,,,,,S3,4.0,10.94186046511628,0.29069767441860467,86.0,CASH,,,,
+holding_by_state,,,,,,,,S3,3.0,4.7226277372262775,0.31386861313868614,137.0,100%UVXY,,,,
+holding_by_state,,,,,,,,S3,1.0,1.8863636363636365,0.5681818181818182,44.0,100%SOXL,,,,
+turnover_by_instrument,,,,,,,,,,,,,,BIL,1.1161776008066906,,
+turnover_by_instrument,,,,,,,,,,,,,,BSV,0.9938516496247969,,
+turnover_by_instrument,,,,,,,,,,,,,,BTAL,1.0614991049222742,,
+turnover_by_instrument,,,,,,,,,,,,,,LABU,0.31548547594940124,,
+turnover_by_instrument,,,,,,,,,,,,,,PSQ,0.6619167225914815,,
+turnover_by_instrument,,,,,,,,,,,,,,QLD,0.1221072585646518,,
+turnover_by_instrument,,,,,,,,,,,,,,QQQ,0.4137327051528487,,
+turnover_by_instrument,,,,,,,,,,,,,,SOXL,6.03411870711135,,
+turnover_by_instrument,,,,,,,,,,,,,,SOXS,1.224032564959012,,
+turnover_by_instrument,,,,,,,,,,,,,,SPXL,0.6676389240826918,,
+turnover_by_instrument,,,,,,,,,,,,,,SQQQ,4.686703967783927,,
+turnover_by_instrument,,,,,,,,,,,,,,SVXY,1.8328517415218897,,
+turnover_by_instrument,,,,,,,,,,,,,,TECL,4.196608634622714,,
+turnover_by_instrument,,,,,,,,,,,,,,TECS,1.2233592448282564,,
+turnover_by_instrument,,,,,,,,,,,,,,TLT,2.3223901330544816,,
+turnover_by_instrument,,,,,,,,,,,,,,TQQQ,6.212019317894292,,
+turnover_by_instrument,,,,,,,,,,,,,,UVXY,9.191694076168572,,
+turnover_by_year,,,,,,,,,,,,,,,,2007.0,53.16684634111926
+turnover_by_year,,,,,,,,,,,,,,,,2008.0,59.049241083934284
+turnover_by_year,,,,,,,,,,,,,,,,2009.0,38.56787049791878
+turnover_by_year,,,,,,,,,,,,,,,,2010.0,39.08459369856962
+turnover_by_year,,,,,,,,,,,,,,,,2011.0,38.2139681066729
+turnover_by_year,,,,,,,,,,,,,,,,2012.0,37.82664427845013
+turnover_by_year,,,,,,,,,,,,,,,,2013.0,45.2334345328533
+turnover_by_year,,,,,,,,,,,,,,,,2014.0,37.92857413329504
+turnover_by_year,,,,,,,,,,,,,,,,2015.0,33.862742743998375
+turnover_by_year,,,,,,,,,,,,,,,,2016.0,41.311582063190116
+turnover_by_year,,,,,,,,,,,,,,,,2017.0,44.29029595786308
+turnover_by_year,,,,,,,,,,,,,,,,2018.0,51.0512180590271
+turnover_by_year,,,,,,,,,,,,,,,,2019.0,43.317102673889266
+turnover_by_year,,,,,,,,,,,,,,,,2020.0,41.43986963977589
+turnover_by_year,,,,,,,,,,,,,,,,2021.0,38.814168478336846

@@ -1,0 +1,16 @@
+table,panel,population,window,first_day_mean_total,n,first_day_mean_dir,first_day_mean_roll,first_day_mean_reset,variant,sign_disagreement_survives,all_populations_negative,note
+entry,synthetic,ANY_sleeve_new_UVXY,full_sample,-0.008690787546653226,167.0,-0.0011016374927028485,-0.00757212862062655,-1.7021433323827082e-05,,,,
+entry,synthetic,ANY_sleeve_new_UVXY,primary_window,-0.00831630119841908,133.0,-0.0018282488226061843,-0.006472908265537208,-1.5144110275687625e-05,,,,
+entry,synthetic,S3:100%UVXY,full_sample,-0.008747955995620322,137.0,0.0007064808536369811,-0.009442287909389389,-1.2148939867916888e-05,,,,
+entry,synthetic,S3:100%UVXY,primary_window,-0.00948144767325396,113.0,-0.0008168845833660536,-0.00865526929862509,-9.293791262816635e-06,,,,
+entry,synthetic,T10:100%UVXY,full_sample,-0.005010328659836023,157.0,0.002412289166014936,-0.007405023800979866,-1.759402487109343e-05,,,,
+entry,synthetic,T10:100%UVXY,primary_window,-0.006230897941010712,126.0,0.0007979048101907941,-0.007013661657727081,-1.5141093474425158e-05,,,,
+entry,realized,ANY_sleeve_new_UVXY,full_sample,-0.007955144613254592,136.0,,,,,,,
+entry,realized,ANY_sleeve_new_UVXY,primary_window,-0.007955144613254592,136.0,,,,,,,
+entry,realized,S3:100%UVXY,full_sample,-0.009121066950252044,113.0,,,,,,,
+entry,realized,S3:100%UVXY,primary_window,-0.009121066950252044,113.0,,,,,,,
+entry,realized,T10:100%UVXY,full_sample,-0.004384998083807452,131.0,,,,,,,
+entry,realized,T10:100%UVXY,primary_window,-0.004384998083807452,131.0,,,,,,,
+s138_definition_check,,,,0.002343229806238495,469.0,,,,s13_8_as_published_object_dtype_negation,,,
+s138_definition_check,,,,-0.008690787546653226,167.0,,,,s13_8_definition_corrected,,,
+verdict,,,,,,,,,,False,True,"THERE IS NO SIGN DISAGREEMENT TO RECONCILE. Session 13.6's figures reproduce exactly on the realized panel and primary window, at -91 bp on 113 S3 observations and -44 bp on 131 T10 observations, against the minus 91 and minus 44 session 13.6 recorded. Every UVXY entry population is negative on both panels and on both windows, including the all-entries population at -80 bp. Session 13.8's positive 23 basis point figure is a MEASUREMENT ARTIFACT: its entry mask negated an object-dtype boolean series, where Python's integer bitwise negation makes every element truthy, so the mask admitted held sessions rather than entry sessions and inflated the count from roughly 167 to 469. Reproducing that mask here returns the published positive figure and correcting it returns a negative one, which identifies the cause rather than inferring it. Session 13.9's step-5 resolution, that the disagreement was a population and window difference, was derived from the defective figure and is superseded."
