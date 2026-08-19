@@ -1,0 +1,7 @@
+S,restriction,pass_label,status,n_combinations,pbo,note
+8,full_grid,sensitivity,completed,70,0.11428571428571428,full enumeration
+12,full_grid,sensitivity,completed,924,0.170995670995671,full enumeration
+16,full_grid,primary,completed,12870,0.1578088578088578,full enumeration at the preregistered primary S
+24,full_grid,sensitivity,not run,,,session 18 halted at step 3 on iCloud eviction before this pass started
+48,full_grid,sensitivity,not run,,,session 18 halted at step 3 on iCloud eviction before this pass started
+16,smooth_axes_only,restriction,not run,,,"smooth-axis restriction never ran; six of nine axes classify structural, leaving 27 specifications"

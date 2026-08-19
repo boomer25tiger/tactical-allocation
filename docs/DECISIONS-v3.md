@@ -1196,3 +1196,71 @@ than a measurement** (9.10 provenance requirement).
 - **SVIX/UVIX representation residual** — validated only against exchange
   closes (+7.5–8.9%/yr residual of the close-timing class); issuer NAV
   unobtainable at bounded effort.
+
+## 10. Custody and environment
+
+- **10.1 custody, environment, and the partial PBO, recorded (session 18s,
+  2026-08-19).** A maintenance entry. No strategy parameter, config value,
+  or prior register decision is touched by it, and no measurement was run.
+
+  **Relocation.** The repository moved from `~/Desktop/tactical-allocation`
+  to `/Users/GualyCr/Downloads/tactical-allocation` on 2026-08-19. The
+  Desktop path sat inside iCloud Drive, which is what exposed the working
+  tree to eviction. The Downloads path is outside that sync root. All
+  earlier session reports referencing the Desktop path remain correct as of
+  their own dates.
+
+  **The eviction incident and its resolution.** During session 18 iCloud
+  evicted files across the tree and reads returned zero bytes, which is
+  indistinguishable from destruction without inspecting the dataless flag.
+  Session 18 halted at step 3 on the conclusion that data had been
+  destroyed. Session 18r superseded that conclusion. 339 of 339 manifested
+  frozen inputs verify against their acquisition manifests, with the 1.14
+  truncation manifest superseding the acquisition hash for the 39 files it
+  touched. All 24 grid shards read and parse across 121,500 specifications
+  with no gap and no duplicate in the identifier space, `git fsck` exits
+  clean, and nothing was lost. The eviction was fully reversible. Session
+  18s confirms zero dataless files across 1,740 files outside `.venv` at the
+  new path.
+
+  **Environment rebuild.** `.venv` crossed the relocation as evicted stubs
+  across 3,751 files and caused an indefinite `import numpy` hang during
+  session 18. It was removed and rebuilt from the system interpreter at
+  `/Library/Frameworks/Python.framework/Versions/3.13/bin/python3`, which is
+  Python 3.13.13, the same interpreter and the same version that built the
+  environment session 17's grid ran under. **No package version diverges.**
+  All 30 installed packages hold the versions recorded before the rebuild,
+  and all 24 pins declared in `requirements-session-00a.txt` match. The six
+  packages installed beyond that file are `pytest` with its four transitive
+  dependencies plus `pypdf`. The rebuild installed from a freeze captured
+  before removal rather than from the declared file alone, so that `pytest`
+  survived and the environment reproduced exactly. Evidence is
+  `outputs/session-18s/environment.csv`. Session 17's grid results therefore
+  stand under an environment that is unchanged in every resolved version.
+
+  **Object store packed.** The store held 886 loose objects and zero pack
+  files at 202 MB. `git gc` packed 862 of them into a single pack, leaving
+  24 loose and 197 MB. `git fsck --no-dangling` exits clean after packing
+  and `HEAD` resolves unchanged. Packing consolidates and adds per-object
+  checksums, and it does **not** create a second copy of anything. The
+  repository still has no remote and no off-machine copy, so it remains
+  single-copy and one storage failure from total loss.
+
+  **The partial PBO output.** `outputs/session-18/pbo.csv` presented as a
+  finished artifact while carrying only three of six planned passes, and the
+  only record of that was a commit message. It is renamed to
+  `outputs/session-18/pbo-partial.csv` with its content byte-identical,
+  verified by SHA-256 across the rename. Completed are S equal to 8 at a PBO
+  of 0.1143 over 70 combinations, S equal to 12 at 0.1710 over 924, and S
+  equal to 16 at 0.1578 over 12,870, all on the full grid and all full
+  enumerations, with S equal to 16 the preregistered primary. Not run are S
+  equal to 24, S equal to 48, and the smooth-axis restriction. Per-pass
+  status is at `outputs/session-18/pbo-partial-status.csv`. No PBO figure
+  was recomputed and no missing pass was run.
+
+  **Two items carried forward, neither actioned here.** D26 and D27 were
+  raised in `outputs/session-16b/REPORT.md` and never written into this
+  register, which currently ends its defect numbering at D25. The scaffold
+  background for session 18s names `a90f352` as the commit carrying sessions
+  16b through 18r, which is off by one, since `a90f352` is session 16 and
+  `9e7aa47` carries 16b, 17, 18 steps 0 through 3, and 18r.
