@@ -1,0 +1,42 @@
+table,item,value,note
+precondition,manifest_present,1,outputs/session-19/MANIFEST.json
+precondition,canonicalised_panel_sha256,a287fbf2db35103e103c9e7bb61fcdff65f95e4db9053faa474e6ffa7d7eb123,
+precondition,regenerability_hash_before,510868bf6c3bce31dee8815aa3f68600cba2b02e2da85648e3b4b4d6bd01b6f1,
+before,panel_bytes,1201392000,
+before,panel_mb,1201.4,
+before,superseded_panel_bytes,55372800,
+before,superseded_total_bytes,62950350,
+before,repository_bytes,1764720819,
+before,repository_mb,1764.7,
+before,free_bytes,25065881600,
+before,free_gb,25.1,
+before,percent_used,94.9,
+superseded_content,grid,7575296,24 files
+superseded_content,logs,2254,8 files
+superseded_content,panel,55372800,8 files
+deleted,session17_panel_files,8,outputs/session-17/panel
+deleted,superseded_panel_files,8,"only the panel directory; moments, block sizes, metrics and logs preserved"
+after,repository_bytes,507956019,
+after,repository_mb,508.0,
+after,reclaimed_bytes,1256764800,
+after,reclaimed_mb,1256.8,
+after,free_bytes,25540218880,
+after,free_gb,25.5,
+after,percent_used,94.8,
+after,superseded_remaining_bytes,7577550,
+superseded_remaining,grid,7575296,24 files
+superseded_remaining,logs,2254,8 files
+required_artifact,moment shards,8,PRESENT
+required_artifact,metric shards,8,PRESENT
+required_artifact,index shards,8,PRESENT
+required_artifact,block sizes,1,PRESENT
+required_artifact,augmented specification index,1,PRESENT
+required_artifact,subsample,2,PRESENT
+required_artifact,manifest,1,PRESENT
+required_artifact,PBO report,1,PRESENT
+required_artifact,session REPORT.md,0,"written at step 12, after this step, so it is absent here by design"
+regenerability_after,exit_code,0,
+regenerability_after,hash_before_deletion,510868bf6c3bce31dee8815aa3f68600cba2b02e2da85648e3b4b4d6bd01b6f1,
+regenerability_after,hash_after_deletion,510868bf6c3bce31dee8815aa3f68600cba2b02e2da85648e3b4b4d6bd01b6f1,
+regenerability_after,byte_identical,1,
+verdict,step10,PASS,

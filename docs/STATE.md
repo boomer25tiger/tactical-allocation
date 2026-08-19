@@ -1,12 +1,9 @@
 # STATE — read this first
 
-Refreshed 2026-08-19 by session 18s. Supersedes the session 16 version, which
-was stale from session 16b onward and still stated that the grid had not run
-and that D24 was open. Both are now false.
+Refreshed 2026-08-19 by session 19. Supersedes the session 18s version.
 
-Position is commit `9e7aa47` plus session 18s. `9e7aa47` carries sessions 16b,
-17, 18 steps 0 through 3, and 18r. `a90f352` is session 16 and is one commit
-behind that.
+Position is the session 19 commit, whose parent is `40ff46b` (session 18s).
+`9e7aa47` carries sessions 16b, 17, 18 steps 0 through 3, and 18r.
 
 ## What this project is
 
@@ -17,69 +14,81 @@ reconstructed from a QuantConnect source with every numeric parameter
 re-specified and registered. The register is `docs/DECISIONS-v3.md`; canonical
 values live in `src/config.py` (validate() runs on import).
 
-## Where the repository lives
+## Custody
 
-`/Users/GualyCr/Downloads/tactical-allocation`, moved from `~/Desktop` on
-2026-08-19 to get it out of iCloud Drive after an eviction incident. Do not
-move it back under a synced path. Registered at 10.1.
+`/Users/GualyCr/Downloads/tactical-allocation`, outside iCloud Drive since
+2026-08-19. **A private GitHub remote now exists** at
+`https://github.com/boomer25tiger/tactical-allocation`, with remote main
+matching local HEAD and upstream tracking set. The single-copy exposure that
+STATE.md and session 18s both flagged is closed. Registered at 10.2.
+
+Note `http.postBuffer` is set to 524288000 locally, without which a push of
+this pack size fails with HTTP 400.
 
 ## Position
 
-**The backtest has run and the grid has run.** The holdout boundary 2021-08-01
-(2.10) is untouched and no post-boundary quantity has been computed.
+**The backtest, the grid, PBO, the deflated Sharpe, and the specification
+curve have all run.** The holdout boundary 2021-08-01 (2.10) is untouched and
+no post-boundary quantity has been computed.
 
-- **Designated headline cell (4.1b)**: open-to-open, realized panel, primary
+- **Designated headline cell (4.1b)**, open-to-open, realized panel, primary
   window, class-tiered slippage with the 2.0x auction premium at the 10 bp
   anchor, commission Arm S, 5% participation cap, canonical NAV 1,000,000.
-  Under the corrected 7.14 boundary of 2011-10-04 it reads **52.18%
-  annualised and Lo-corrected Sharpe 1.3817**. Session 18 step 1 reproduced
-  both from the completed grid.
-- **Close-to-close comparison** at equal prominence per 4.1 and 2.8, realized
-  29.62% and 0.9251 on the corrected boundary.
-- **Benchmark ladder (8.8)**: the strategy ranks sixth of twelve on
-  Lo-corrected Sharpe in its own designated cell.
-- **Nulls (8.9)**: 98th to 100th percentile of both the timing-shuffle and
-  turnover-matched nulls on every window. Romano-Wolf (8.10) leaves one
-  family-wise comparison below 0.05.
-- **The grid ran** (session 17) at 121,500 of the 364,500 enumerated
-  specifications, in 2.19h across eight shards, emitting 48-block moment
-  sums, a 72-column metric set, and the specification index. The 121,500
-  follows from dropping 7.4, the tier-two offset, from the searched set on
-  the grounds that the register marks it informed rather than closed.
-  364,500 divided by that axis's three values is 121,500.
+  **52.18% annualised and Lo-corrected Sharpe 1.3817** on the corrected 7.14
+  boundary of 2011-10-04. Reproduced from the completed grid at six decimals
+  by session 19 step 2.
+- **Close-to-close comparison** at equal prominence per 4.1 and 2.8, 29.62%
+  and 0.9251.
+- **The grid** ran at 121,500 of the 364,500 enumerated specifications, with
+  7.4's tier-two offset held at canonical rather than searched.
+- **PBO is 0.1578** at S equal to 16 over the full 12,870 combination
+  enumeration, spanning 0.1143 to 0.1710 across block counts 8 through 48.
+  The degradation slope is -1.0663. Registered at 8.12.
+- **Stratified PBO** replaces the 27-specification smooth-axis restriction.
+  The full-grid PBO exceeds none of the six within-stratum ranges, lying
+  inside five and below one. Registered at 8.13.
+- **Deflated Sharpe** at N equal to 364,500 is 0.000660 for the canonical and
+  0.023736 for the grid's in-sample-best, against an expected maximum Sharpe
+  under the no-skill null of 2.1082 annualised. 8.7 amended.
+- **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe and 8,237
+  on annualised return.
+- **Benchmark ladder (8.8)**, sixth of twelve on Lo-corrected Sharpe in its
+  own designated cell. **Nulls (8.9)**, 98th to 100th percentile on every
+  window, with Romano-Wolf leaving one family-wise comparison below 0.05.
 - **Panels carry equal weight (2.8)**; no panel is primary.
 
-## Open
+## Artifacts
 
-- **Session 18 is resumable at step 3.** Steps 0 through 2 completed and their
-  outputs are intact. Steps 4 through 10 have not run.
-- **PBO is partial.** `outputs/session-18/pbo-partial.csv` carries S equal to
-  8, 12 and 16 on the full grid. S equal to 24, S equal to 48 and the
-  smooth-axis restriction never ran. Per-pass status is in
-  `pbo-partial-status.csv`.
-- **The deflated Sharpe and the specification curve** have not run.
-- **D16**, the financing spread, assumed and swept 25 to 200 bp.
-- **D26 and D27** were raised in `outputs/session-16b/REPORT.md` and are not
-  in the register, which ends its defect numbering at D25.
+The four-tier scheme is executed and registered at 9.14. The ephemeral daily
+panels are **deleted**, reclaiming 1,256.8 MB and taking the working tree from
+1,764.7 MB to 508.0 MB. What remains is the frozen raw inputs, the 24 grid
+shards, the 2,000-specification subsample, the augmented specification index,
+the manifest, and the reports.
 
-## Custody, the standing risk
+`outputs/session-19/MANIFEST.json` carries the canonicalised panel hash, the
+39 input hashes, the config hash, the seeds, the block boundary dates, the
+environment record, and the exact command that regenerates the panel.
+`scripts/verify_panel.py` reports maximum absolute deviation against a 1e-6
+tolerance rather than asserting bit-identical equality.
 
-**There is no remote and no off-machine copy.** The object store was packed by
-session 18s, which consolidates and checksums but does not duplicate. 862 of
-886 objects now sit in a single pack file. One storage failure loses the
-repository. A private GitHub remote closes this and nothing else does.
+## Open before the holdout can run
 
-The 1.1 GB of ephemeral daily panels under `outputs/session-17/panel/` are
-excluded from the backup set by design and are scheduled for deletion at
-session 18 step 8. `.venv` is reconstructible from the freeze recorded at
-`outputs/session-18s/environment.csv`.
+- **D16**, the financing spread, remains assumed and swept 25 to 200 bp. No
+  emitted CSV carries a per-level designated-cell return.
+- **Three specification-curve axes are not sourced**, being the SMH accrual
+  arm, the sizing mode, and the unavailable-fill completion rule. Each is
+  named as a 9.11 curve axis and no emitted CSV in this repository carries a
+  two-arm designated-cell comparison for it.
+- **D23**, the portfolio-level per-instrument attribution confound, corrected
+  in place session 15.5.
+- **D26 and D27** were raised in `outputs/session-16b/REPORT.md` and are still
+  not written into the register, which ends its defect numbering at D25.
 
 ## Defect register, current
 
 D1 through D12, D14, D15, D17 through D22, D24 closed, repaired, or swept. D13
-never assigned. D25 recorded as documentation. Open: **D16** financing spread,
-**D23** portfolio-level per-instrument attribution confound (corrected in
-place session 15.5), and **D26** and **D27** pending entry into the register.
+never assigned. D25 recorded as documentation. Open: **D16**, **D23**, and
+**D26** and **D27** pending entry into the register.
 
 ## What is built
 
@@ -87,15 +96,23 @@ place session 15.5), and **D26** and **D27** pending entry into the register.
 functions, the portfolio label/merge/cap layer, the per-date fund schedule, and
 the spread estimators. `scripts/s13_backtest.py` is the engine, `s14_common.py`
 carries the canonical cost model, panels, and cap, `s15_lines.py` carries the
-ladder builders and the 8.11 metric set, and the session 17 scripts carry the
-grid emitter.
+ladder builders and the 8.11 metric set, the session 17 scripts carry the grid
+emitter, and the session 19 scripts carry CSCV, the stratification, the
+deflated Sharpe, the specification curve, and the report generator.
 
 ## Environment
 
-Python 3.13.13 from the system framework interpreter. `.venv` rebuilt by
-session 18s with every resolved version identical to the pre-rebuild state, so
-session 17's grid stands under an unchanged environment. numpy 2.5.2, pandas
-3.0.5, pyarrow 25.0.1, pytest 9.1.1.
+Python 3.13.13 from the system framework interpreter, numpy 2.5.2, pandas
+3.0.5, pyarrow 25.0.1, pytest 9.1.1. Rebuilt session 18s from a pre-removal
+freeze rather than from an authoritative requirements.txt, which does not
+exist, so the zero version divergence that rebuild reported is partly a
+construction of that method rather than independent confirmation. The manifest
+records this. matplotlib is deliberately absent and the report figures are
+generated as SVG by `scripts/s19_svg.py` using the standard library alone.
+
+The machine carries 8 GB. CSCV peak resident memory reached 3.355 GB against a
+stated 2.0 GB ceiling, which is recorded at 8.12 and does not affect any
+figure.
 
 ## What is frozen
 

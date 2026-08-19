@@ -1,0 +1,518 @@
+{
+ "session": "19",
+ "written": "2026-08-19",
+ "purpose": "identifies every committed artifact the PBO report rests on and records how the deleted panel is regenerated",
+ "commit_parent": "40ff46b7ffebd6ae283eb4d27926f437c614fc6e",
+ "commit_note": "the session 19 commit is the immediate child of commit_parent on main. A manifest cannot carry the hash of the commit that contains it, so the parent is recorded and the session commit is identified by the branch head after this session",
+ "remote": "https://github.com/boomer25tiger/tactical-allocation.git",
+ "config_sha256": "1b0697d12cd93d2d78aa5a8f01fca1b98ce3916fe38cfc8ae1332e097b8b7663",
+ "config_bytes": 21958,
+ "canonicalised_panel_sha256": "a287fbf2db35103e103c9e7bb61fcdff65f95e4db9053faa474e6ffa7d7eb123",
+ "canonicalised_panel_form": {
+  "specification_order": "ascending identifier 0..121499",
+  "session_order": "calendar order over the primary window",
+  "dtype": "float64 cast from the stored float32",
+  "precision_decimals": 10,
+  "streamed": "hashed shard by shard so the whole panel is never resident",
+  "tolerance_for_regeneration": 1e-06,
+  "tolerance_reason": "float reduction order varies with thread count and BLAS version and the run was sharded across eight processes, so verify_panel.py reports maximum absolute deviation against this tolerance rather than asserting bit-identical equality"
+ },
+ "grid": {
+  "n_evaluated": 121500,
+  "n_enumerated": 364500,
+  "searched_axes": [
+   "sma_long",
+   "crash_threshold",
+   "rsi_exhaustion",
+   "rsi_dip",
+   "rsi_rs",
+   "overbought_t1",
+   "oversold",
+   "sma_short",
+   "vote"
+  ],
+  "axis_values": {
+   "sma_long": [
+    50.0,
+    100.0,
+    150.0,
+    200.0
+   ],
+   "crash_threshold": [
+    -5.0,
+    -10.0,
+    -15.0,
+    -20.0,
+    -25.0
+   ],
+   "rsi_exhaustion": [
+    7.0,
+    14.0,
+    28.0
+   ],
+   "rsi_dip": [
+    7.0,
+    14.0,
+    28.0
+   ],
+   "rsi_rs": [
+    7.0,
+    14.0,
+    28.0
+   ],
+   "overbought_t1": [
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0
+   ],
+   "oversold": [
+    20.0,
+    25.0,
+    30.0,
+    35.0,
+    40.0
+   ],
+   "sma_short": [
+    10.0,
+    20.0,
+    50.0
+   ],
+   "vote": [
+    2.0,
+    3.0,
+    4.0
+   ]
+  },
+  "unsearched_axis": {
+   "name": "tier_two_offset",
+   "register": "7.4",
+   "status": "informed",
+   "held_at_canonical": 10
+  },
+  "canonical_spec_id": 106312,
+  "shard_count": 8,
+  "per_shard": {
+   "0": {
+    "n_specifications": 15187,
+    "first_id": 0,
+    "last_id": 15186
+   },
+   "1": {
+    "n_specifications": 15188,
+    "first_id": 15187,
+    "last_id": 30374
+   },
+   "2": {
+    "n_specifications": 15187,
+    "first_id": 30375,
+    "last_id": 45561
+   },
+   "3": {
+    "n_specifications": 15188,
+    "first_id": 45562,
+    "last_id": 60749
+   },
+   "4": {
+    "n_specifications": 15187,
+    "first_id": 60750,
+    "last_id": 75936
+   },
+   "5": {
+    "n_specifications": 15188,
+    "first_id": 75937,
+    "last_id": 91124
+   },
+   "6": {
+    "n_specifications": 15187,
+    "first_id": 91125,
+    "last_id": 106311
+   },
+   "7": {
+    "n_specifications": 15188,
+    "first_id": 106312,
+    "last_id": 121499
+   }
+  },
+  "sharded_across_processes": 8,
+  "sharding_note": "the run was sharded across eight processes and reduction order under sharding is part of what the panel tolerance accommodates",
+  "n_base_blocks": 48,
+  "moments_per_spec": 96,
+  "moment_layout": "48 blocks x 2 moments, being the sum of excess returns and the sum of squares per block; the per-block count is held once in block-sizes.npy",
+  "metrics_per_spec": 72,
+  "block_boundaries": [
+   {
+    "block": 0,
+    "n_sessions": 52,
+    "first": "2011-10-04",
+    "last": "2011-12-15"
+   },
+   {
+    "block": 1,
+    "n_sessions": 52,
+    "first": "2011-12-16",
+    "last": "2012-03-02"
+   },
+   {
+    "block": 2,
+    "n_sessions": 52,
+    "first": "2012-03-05",
+    "last": "2012-05-16"
+   },
+   {
+    "block": 3,
+    "n_sessions": 52,
+    "first": "2012-05-17",
+    "last": "2012-07-31"
+   },
+   {
+    "block": 4,
+    "n_sessions": 52,
+    "first": "2012-08-01",
+    "last": "2012-10-12"
+   },
+   {
+    "block": 5,
+    "n_sessions": 52,
+    "first": "2012-10-15",
+    "last": "2012-12-31"
+   },
+   {
+    "block": 6,
+    "n_sessions": 52,
+    "first": "2013-01-02",
+    "last": "2013-03-18"
+   },
+   {
+    "block": 7,
+    "n_sessions": 52,
+    "first": "2013-03-19",
+    "last": "2013-05-31"
+   },
+   {
+    "block": 8,
+    "n_sessions": 52,
+    "first": "2013-06-03",
+    "last": "2013-08-14"
+   },
+   {
+    "block": 9,
+    "n_sessions": 52,
+    "first": "2013-08-15",
+    "last": "2013-10-28"
+   },
+   {
+    "block": 10,
+    "n_sessions": 52,
+    "first": "2013-10-29",
+    "last": "2014-01-13"
+   },
+   {
+    "block": 11,
+    "n_sessions": 52,
+    "first": "2014-01-14",
+    "last": "2014-03-28"
+   },
+   {
+    "block": 12,
+    "n_sessions": 52,
+    "first": "2014-03-31",
+    "last": "2014-06-12"
+   },
+   {
+    "block": 13,
+    "n_sessions": 52,
+    "first": "2014-06-13",
+    "last": "2014-08-26"
+   },
+   {
+    "block": 14,
+    "n_sessions": 52,
+    "first": "2014-08-27",
+    "last": "2014-11-07"
+   },
+   {
+    "block": 15,
+    "n_sessions": 52,
+    "first": "2014-11-10",
+    "last": "2015-01-26"
+   },
+   {
+    "block": 16,
+    "n_sessions": 52,
+    "first": "2015-01-27",
+    "last": "2015-04-10"
+   },
+   {
+    "block": 17,
+    "n_sessions": 52,
+    "first": "2015-04-13",
+    "last": "2015-06-24"
+   },
+   {
+    "block": 18,
+    "n_sessions": 52,
+    "first": "2015-06-25",
+    "last": "2015-09-08"
+   },
+   {
+    "block": 19,
+    "n_sessions": 52,
+    "first": "2015-09-09",
+    "last": "2015-11-19"
+   },
+   {
+    "block": 20,
+    "n_sessions": 52,
+    "first": "2015-11-20",
+    "last": "2016-02-05"
+   },
+   {
+    "block": 21,
+    "n_sessions": 52,
+    "first": "2016-02-08",
+    "last": "2016-04-21"
+   },
+   {
+    "block": 22,
+    "n_sessions": 52,
+    "first": "2016-04-22",
+    "last": "2016-07-06"
+   },
+   {
+    "block": 23,
+    "n_sessions": 52,
+    "first": "2016-07-07",
+    "last": "2016-09-19"
+   },
+   {
+    "block": 24,
+    "n_sessions": 51,
+    "first": "2016-09-20",
+    "last": "2016-11-30"
+   },
+   {
+    "block": 25,
+    "n_sessions": 51,
+    "first": "2016-12-01",
+    "last": "2017-02-14"
+   },
+   {
+    "block": 26,
+    "n_sessions": 51,
+    "first": "2017-02-15",
+    "last": "2017-04-28"
+   },
+   {
+    "block": 27,
+    "n_sessions": 51,
+    "first": "2017-05-01",
+    "last": "2017-07-12"
+   },
+   {
+    "block": 28,
+    "n_sessions": 51,
+    "first": "2017-07-13",
+    "last": "2017-09-22"
+   },
+   {
+    "block": 29,
+    "n_sessions": 51,
+    "first": "2017-09-25",
+    "last": "2017-12-05"
+   },
+   {
+    "block": 30,
+    "n_sessions": 51,
+    "first": "2017-12-06",
+    "last": "2018-02-20"
+   },
+   {
+    "block": 31,
+    "n_sessions": 51,
+    "first": "2018-02-21",
+    "last": "2018-05-03"
+   },
+   {
+    "block": 32,
+    "n_sessions": 51,
+    "first": "2018-05-04",
+    "last": "2018-07-17"
+   },
+   {
+    "block": 33,
+    "n_sessions": 51,
+    "first": "2018-07-18",
+    "last": "2018-09-27"
+   },
+   {
+    "block": 34,
+    "n_sessions": 51,
+    "first": "2018-09-28",
+    "last": "2018-12-11"
+   },
+   {
+    "block": 35,
+    "n_sessions": 51,
+    "first": "2018-12-12",
+    "last": "2019-02-26"
+   },
+   {
+    "block": 36,
+    "n_sessions": 51,
+    "first": "2019-02-27",
+    "last": "2019-05-09"
+   },
+   {
+    "block": 37,
+    "n_sessions": 51,
+    "first": "2019-05-10",
+    "last": "2019-07-23"
+   },
+   {
+    "block": 38,
+    "n_sessions": 51,
+    "first": "2019-07-24",
+    "last": "2019-10-03"
+   },
+   {
+    "block": 39,
+    "n_sessions": 51,
+    "first": "2019-10-04",
+    "last": "2019-12-16"
+   },
+   {
+    "block": 40,
+    "n_sessions": 51,
+    "first": "2019-12-17",
+    "last": "2020-03-02"
+   },
+   {
+    "block": 41,
+    "n_sessions": 51,
+    "first": "2020-03-03",
+    "last": "2020-05-13"
+   },
+   {
+    "block": 42,
+    "n_sessions": 51,
+    "first": "2020-05-14",
+    "last": "2020-07-27"
+   },
+   {
+    "block": 43,
+    "n_sessions": 51,
+    "first": "2020-07-28",
+    "last": "2020-10-07"
+   },
+   {
+    "block": 44,
+    "n_sessions": 51,
+    "first": "2020-10-08",
+    "last": "2020-12-18"
+   },
+   {
+    "block": 45,
+    "n_sessions": 51,
+    "first": "2020-12-21",
+    "last": "2021-03-05"
+   },
+   {
+    "block": 46,
+    "n_sessions": 51,
+    "first": "2021-03-08",
+    "last": "2021-05-18"
+   },
+   {
+    "block": 47,
+    "n_sessions": 51,
+    "first": "2021-05-19",
+    "last": "2021-07-30"
+   }
+  ]
+ },
+ "cscv": {
+  "S_primary": 16,
+  "S_sensitivity": [
+   8,
+   12,
+   24,
+   48
+  ],
+  "combination_seed": 20260821,
+  "combination_cap": 20000,
+  "memory_ceiling_gb": 2.0,
+  "performance_metric": "naive Sharpe",
+  "performance_metric_reason": "autocovariance is not additive across disjoint blocks and the cross-boundary terms are missing from a union, so a Lo correction on a union would be wrong rather than approximate"
+ },
+ "seeds": {
+  "grid_subsample_seed": 20260819,
+  "grid_subsample_size": 2000,
+  "combination_seed": 20260821,
+  "additivity_draw_seed": 20260820
+ },
+ "environment": {
+  "python": "3.13.13",
+  "numpy": "2.5.2",
+  "pandas": "3.0.5",
+  "platform": "macOS-14.6-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "thread_count_note": "the grid ran as eight independent single-process shards rather than a threaded run; BLAS thread count was left at the library default and is not pinned",
+  "rebuild_note": "the environment was rebuilt in session 18s from a freeze captured before removal rather than from an authoritative requirements.txt, which does not exist in this repository. The zero version divergence that rebuild reported is therefore partly a construction of that method rather than independent confirmation, since installing from a freeze reproduces the recorded versions by definition",
+  "declared_requirements_file": "requirements-session-00a.txt",
+  "declared_pins": 24,
+  "installed_packages": 30,
+  "packages_beyond_declared": [
+   "pytest",
+   "iniconfig",
+   "packaging",
+   "pluggy",
+   "Pygments",
+   "pypdf"
+  ]
+ },
+ "regenerate_panel_command": "for k in 0 1 2 3 4 5 6 7; do .venv/bin/python scripts/s17_grid_worker.py $k 8 & done; wait   # writes outputs/session-17/panel/panel-0{k}.f32 and the grid shards; verify with .venv/bin/python scripts/verify_panel.py outputs/session-17/panel outputs/session-19/MANIFEST.json",
+ "verify_panel_script": "scripts/verify_panel.py",
+ "input_sha256": {
+  "outputs/session-17/grid/block-sizes.npy": "0ffcfc1709a3195b0fc5335194f2e077c46c8f968e2ebfd15e5c65942f249098",
+  "outputs/session-17/grid/index-00.i64": "e25389bf56109af50930534672a6e6d6a09b3e5699ee3dd504b8b0b1bf1a13bf",
+  "outputs/session-17/grid/index-01.i64": "b0f8e1108e63d57823c710132291e4d3b6671c9e126e3536a6c72ca87a93af8d",
+  "outputs/session-17/grid/index-02.i64": "a23b7b3a9e7c6a330d7a6073d976e93afd69a6305456a76541298b244652dcd5",
+  "outputs/session-17/grid/index-03.i64": "54787544e34a9368aafd77fb12ab89ac88d890d0536d9fb20689e7f0c833ed5c",
+  "outputs/session-17/grid/index-04.i64": "4a5ac6332a7e31449f9581ece1db4d5e6d769cf20a09e633195121d7f9e46942",
+  "outputs/session-17/grid/index-05.i64": "43bedf0bb0b2ac4f11685828b09ee199be8edb6d265801e969a4473cbf142bbf",
+  "outputs/session-17/grid/index-06.i64": "62429d3611928f6024666ead28359722d144d03167bd70c5f68c58b0847853e4",
+  "outputs/session-17/grid/index-07.i64": "4f293a6cc3c9029a509fd1eb26853fa38459a3825c008e03c50cdd096b9731ea",
+  "outputs/session-17/grid/metrics-00.f64": "c1311ad1c892f139f44cc3c579c0253cc48515a540908fa19a247f1072344b16",
+  "outputs/session-17/grid/metrics-01.f64": "dcf476d90e617ae2455675655317fbc967e4ba145ec7ae4fb475bf9ee7573d7d",
+  "outputs/session-17/grid/metrics-02.f64": "9d4773ea4067364459baca23281e88a438f93bad1d2676ac6d1f3410f00b73bb",
+  "outputs/session-17/grid/metrics-03.f64": "1b1195a20897f097962e6b8b76fc135a177712f2a663e43f80c2646aab6cd973",
+  "outputs/session-17/grid/metrics-04.f64": "f02235512dcb08afcb41417f1091235d27ae9a7ceaff25561e772ef24ae98102",
+  "outputs/session-17/grid/metrics-05.f64": "8648bd2f05a263677c6501c422cb59004feabc31902f794199403b500f138bee",
+  "outputs/session-17/grid/metrics-06.f64": "efed42952071d8e37f141b2f01f1f044d96ab2f43a5aec3a4c15810c14ca7248",
+  "outputs/session-17/grid/metrics-07.f64": "5c32910d76ae041f1736d94438b96c58be5ab996407907d5a08ee41c53cc5479",
+  "outputs/session-17/grid/moments-00.f64": "6ea3b9d4afb299aadb34c3d45bb398f0428b4b17fe9e06653c2a14b30fc518ff",
+  "outputs/session-17/grid/moments-01.f64": "54874b948caf09b79194a0dccadb6d201c9e4db92840d72fd291b60559d86fea",
+  "outputs/session-17/grid/moments-02.f64": "b3e1372e849d31ff4a95b5e21934d88ec2c55535561d895762c9ab311d03e5ec",
+  "outputs/session-17/grid/moments-03.f64": "04ca39e420cece156c9ddfe85999cc24618ac05cda9ca95d388ea5df1e891b0f",
+  "outputs/session-17/grid/moments-04.f64": "8261c338eba22429f33dc317ee8a36e166c10a850ce9bb76b4453203e9dc5049",
+  "outputs/session-17/grid/moments-05.f64": "adf03613407066736f0f376c0589c396698f95b107ba049b86914f264c8cf572",
+  "outputs/session-17/grid/moments-06.f64": "39c5fbe5b8589c759396501c33b5b530236f1d19b0a403aeac04eda433eb4539",
+  "outputs/session-17/grid/moments-07.f64": "aa4d18c746cb4f40e8009cf4d6329495b8b381ca777ac1b885c5e91f0df92612",
+  "outputs/session-18/spec-index-augmented.csv": "1c3c60219bac140edf720c5f3afe0543daf6b150983eb3c3a65aaca65812238f",
+  "outputs/session-18/subsample-ids.npy": "43420f76eebfb17b593470d5a2d436ca2f0fdaa4f96ebd11a7c794bbdc8aa210",
+  "outputs/session-18/subsample-returns.npy": "d4fdcd1a9fc84869a5f865d9ae93a16e717799998c5dd1ade9f5b0edcd27af9f",
+  "outputs/session-18/reachability.csv": "7bb6926cdacb9a969b86211970d812911eabc26553d42c7ea9e693d4be8b8850",
+  "outputs/session-18/additivity-check.csv": "7123e69de0d42d60a8ee47ff3034d7987ba7f0c4f695100c9dd609806f2ac2e7",
+  "outputs/session-18/axis-classification.json": "60c82939befba33c82fa711436892fe53fc4e12b512e20aa197dab767104a88b",
+  "outputs/session-19/pbo.csv": "4441fc3421463d7e0ff428b8eb1de16ec3bf3295505964ec91992b27935c9991",
+  "outputs/session-19/pbo-strata.csv": "e265812c1f09875f6884f9f154577a7de47c74545a1dd75718a5b8db2bc577dd",
+  "outputs/session-19/deflated-sharpe.csv": "53320b0b8e085792320e03087407a86aa595bcbb49e962803b6e9c73ff278aea",
+  "outputs/session-19/specification-curve.csv": "a1632c02843980372df8cbe5bdde13bca5fab3da5a61247a0a11aa597182fd52",
+  "outputs/session-19/inventory.csv": "d772259f593ef3661b1a9d29a1b94e333f3697188d1fa0445b6d8ffb02c3c626",
+  "outputs/session-19/additivity-check.csv": "bbded207e4cb28a02d4b859b5e98d8ee626d032d6e0b46375d66ad3d2ffd3683",
+  "outputs/session-19/remote-status.csv": "3b018ba77929be8451c78438a22e4524e36aec637622cf5c64dbc489fdaf3eb4",
+  "outputs/session-19/cscv-draws-s16.npz": "3fc4d327f73c39effd3ce32142c2cd93c4d6e788e90012db5b6e070bb0192f78"
+ }
+}

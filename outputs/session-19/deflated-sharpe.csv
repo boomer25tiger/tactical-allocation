@@ -1,0 +1,64 @@
+table,which,spec_id,sharpe_metric,is_primary_metric,metric,value,note
+cross_section,,,,,sharpe_naive_ann_mean,0.6199013071365644,
+cross_section,,,,,sharpe_naive_ann_sd,0.45197782372194695,
+cross_section,,,,,sharpe_naive_ann_p05,-0.26596667073004465,
+cross_section,,,,,sharpe_naive_ann_p50,0.7441659214745818,
+cross_section,,,,,sharpe_naive_ann_p95,1.1596821422868513,
+cross_section,,,,,sharpe_lo_ann_mean,0.6963403122575681,
+cross_section,,,,,sharpe_lo_ann_sd,0.5441159281830698,
+cross_section,,,,,sharpe_lo_ann_p05,-0.34936740117730175,
+cross_section,,,,,sharpe_lo_ann_p50,0.813292994836067,
+cross_section,,,,,sharpe_lo_ann_p95,1.3966662069852356,
+cross_section,,,,,sharpe_naive_daily_sd,0.028471926659153844,"the dispersion the expected maximum uses, estimated from the 121,500 evaluated specifications; the dispersion of the unevaluated remainder of the 364,500 enumerated is assumed equal to it and is not measured"
+n,,,,,n_enumerated,364500,"the search space the study enumerated, ten axes; primary N"
+n,,,,,n_evaluated,121500,"the points the grid evaluated, nine searched axes, with 7.4 held at its canonical value of 10 rather than sampled"
+n,,,,,n_register_8_7_before,131220,"the session 16b amendment, superseded by session 17 adopting the HANDOFF ranges"
+point,canonical,106312,sharpe_naive,1,sharpe_annualised,1.0910863648060856,"pre-registered, not selected"
+point,canonical,106312,sharpe_naive,1,skewness,0.4172032530478574,
+point,canonical,106312,sharpe_naive,1,excess_kurtosis,8.225832081838258,
+point,canonical,106312,sharpe_naive,1,n_sessions,2472.0,
+point,canonical,106312,sharpe_naive,1,probabilistic_sharpe_vs_zero,0.9997148096841001,z 3.4453; benchmark Sharpe zero
+point,canonical,106312,sharpe_naive,1,expected_max_sharpe_ann_N_364500,2.1081761699338144,"no-skill null at N=364,500; z quantiles 4.5453 and 4.7516"
+point,canonical,106312,sharpe_naive,1,probabilistic_sharpe_vs_expected_max_N_364500,0.0006598462023542639,z -3.2117
+point,canonical,106312,sharpe_naive,1,deflated_sharpe_N_364500,0.0006598462023542639,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null ; PRIMARY
+point,canonical,106312,sharpe_naive,1,expected_max_sharpe_ann_N_121500,2.003619556331215,"no-skill null at N=121,500; z quantiles 4.3082 and 4.5244"
+point,canonical,106312,sharpe_naive,1,probabilistic_sharpe_vs_expected_max_N_121500,0.001978908395299017,z -2.8815
+point,canonical,106312,sharpe_naive,1,deflated_sharpe_N_121500,0.001978908395299017,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+point,canonical,106312,sharpe_lo,0,sharpe_annualised,1.3817013060244996,"pre-registered, not selected"
+point,canonical,106312,sharpe_lo,0,skewness,0.4172032530478574,
+point,canonical,106312,sharpe_lo,0,excess_kurtosis,8.225832081838258,
+point,canonical,106312,sharpe_lo,0,n_sessions,2472.0,
+point,canonical,106312,sharpe_lo,0,probabilistic_sharpe_vs_zero,0.9999936079068328,z 4.3638; benchmark Sharpe zero
+point,canonical,106312,sharpe_lo,0,expected_max_sharpe_ann_N_364500,2.1081761699338144,"no-skill null at N=364,500; z quantiles 4.5453 and 4.7516"
+point,canonical,106312,sharpe_lo,0,probabilistic_sharpe_vs_expected_max_N_364500,0.010883945049487531,z -2.2944
+point,canonical,106312,sharpe_lo,0,deflated_sharpe_N_364500,0.010883945049487531,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+point,canonical,106312,sharpe_lo,0,expected_max_sharpe_ann_N_121500,2.003619556331215,"no-skill null at N=121,500; z quantiles 4.3082 and 4.5244"
+point,canonical,106312,sharpe_lo,0,probabilistic_sharpe_vs_expected_max_N_121500,0.02475477285576655,z -1.9642
+point,canonical,106312,sharpe_lo,0,deflated_sharpe_N_121500,0.02475477285576655,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+point,in_sample_best,95162,sharpe_naive,1,sharpe_annualised,1.4723492614528355,"the grid maximum on the naive Sharpe over the full primary window, a selected point"
+point,in_sample_best,95162,sharpe_naive,1,skewness,0.11092534295104456,
+point,in_sample_best,95162,sharpe_naive,1,excess_kurtosis,6.9906653187729315,
+point,in_sample_best,95162,sharpe_naive,1,n_sessions,2472.0,
+point,in_sample_best,95162,sharpe_naive,1,probabilistic_sharpe_vs_zero,0.9999977813595079,z 4.5898; benchmark Sharpe zero
+point,in_sample_best,95162,sharpe_naive,1,expected_max_sharpe_ann_N_364500,2.1081761699338144,"no-skill null at N=364,500; z quantiles 4.5453 and 4.7516"
+point,in_sample_best,95162,sharpe_naive,1,probabilistic_sharpe_vs_expected_max_N_364500,0.023735629673085845,z -1.9821
+point,in_sample_best,95162,sharpe_naive,1,deflated_sharpe_N_364500,0.023735629673085845,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null ; PRIMARY
+point,in_sample_best,95162,sharpe_naive,1,expected_max_sharpe_ann_N_121500,2.003619556331215,"no-skill null at N=121,500; z quantiles 4.3082 and 4.5244"
+point,in_sample_best,95162,sharpe_naive,1,probabilistic_sharpe_vs_expected_max_N_121500,0.04884717524801008,z -1.6561
+point,in_sample_best,95162,sharpe_naive,1,deflated_sharpe_N_121500,0.04884717524801008,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+point,in_sample_best,95162,sharpe_lo,0,sharpe_annualised,1.6686064155068572,"the grid maximum on the naive Sharpe over the full primary window, a selected point"
+point,in_sample_best,95162,sharpe_lo,0,skewness,0.11092534295104456,
+point,in_sample_best,95162,sharpe_lo,0,excess_kurtosis,6.9906653187729315,
+point,in_sample_best,95162,sharpe_lo,0,n_sessions,2472.0,
+point,in_sample_best,95162,sharpe_lo,0,probabilistic_sharpe_vs_zero,0.9999998953958773,z 5.1910; benchmark Sharpe zero
+point,in_sample_best,95162,sharpe_lo,0,expected_max_sharpe_ann_N_364500,2.1081761699338144,"no-skill null at N=364,500; z quantiles 4.5453 and 4.7516"
+point,in_sample_best,95162,sharpe_lo,0,probabilistic_sharpe_vs_expected_max_N_364500,0.08573700007679474,z -1.3675
+point,in_sample_best,95162,sharpe_lo,0,deflated_sharpe_N_364500,0.08573700007679474,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+point,in_sample_best,95162,sharpe_lo,0,expected_max_sharpe_ann_N_121500,2.003619556331215,"no-skill null at N=121,500; z quantiles 4.3082 and 4.5244"
+point,in_sample_best,95162,sharpe_lo,0,probabilistic_sharpe_vs_expected_max_N_121500,0.1486567734439368,z -1.0422
+point,in_sample_best,95162,sharpe_lo,0,deflated_sharpe_N_121500,0.1486567734439368,the deflated Sharpe is the probabilistic Sharpe evaluated against the expected maximum under the no-skill null
+definition,,,,,in_sample_best_rule,,"argmax of the naive Sharpe across the 121,500 evaluated specifications on the full primary window; this is the grid maximum rather than the CSCV per-combination selection"
+definition,,,,,metric_choice,,"the probabilistic and deflated Sharpe are computed on the naive Sharpe as primary, since the formula carries its own skewness and kurtosis adjustment while the Lo correction addresses autocorrelation; the Lo-corrected figures are reported alongside as a disclosed sensitivity"
+canonical_rank,,,,,sharpe_naive_rank,13030,"of 121,500, rank 1 is the highest"
+canonical_rank,,,,,sharpe_lo_rank,6834,"of 121,500, rank 1 is the highest"
+canonical_rank,,,,,ann_return_rank,8237,"of 121,500, rank 1 is the highest"

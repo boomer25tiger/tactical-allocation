@@ -1,0 +1,50 @@
+table,item,value,note
+volume,free_bytes,23601737728,
+volume,free_gb,23.6,
+volume,total_gb,494.4,
+volume,percent_used,95.2,
+dataless,files_scanned_excluding_venv,906,
+dataless,dataless_count,0,
+git,fsck_exit,0,
+shard,shard_0,15187,"moments (15187, 96) metrics (15187, 72) index 15187 consistent=True"
+shard,shard_1,15188,"moments (15188, 96) metrics (15188, 72) index 15188 consistent=True"
+shard,shard_2,15187,"moments (15187, 96) metrics (15187, 72) index 15187 consistent=True"
+shard,shard_3,15188,"moments (15188, 96) metrics (15188, 72) index 15188 consistent=True"
+shard,shard_4,15187,"moments (15187, 96) metrics (15187, 72) index 15187 consistent=True"
+shard,shard_5,15188,"moments (15188, 96) metrics (15188, 72) index 15188 consistent=True"
+shard,shard_6,15187,"moments (15187, 96) metrics (15187, 72) index 15187 consistent=True"
+shard,shard_7,15188,"moments (15188, 96) metrics (15188, 72) index 15188 consistent=True"
+integrity,total_specifications,121500,
+integrity,unique_specifications,121500,
+integrity,duplicates,0,
+integrity,gaps,0,
+integrity,covers_0_to_121499,1,
+layout,n_base_blocks,48,
+layout,block_size_min_max,51 to 52,
+layout,block_size_sum,2472,
+layout,moments_per_spec,96,"48 blocks x 2 moments, being sum of excess returns and sum of squares"
+layout,metrics_per_spec,72,"1 identifier, 9 axis values, 40 standalone metrics, 22 per-calendar-year figures"
+layout,prompt_assumption_deviation,"48x2 stored, not 48x5","the session 19 scaffold repeats the session 18 assumption of 48 x 5 with cubes, fourth powers and a per-block count; the stored layout is 48 x 2 with the count held once in block-sizes.npy. Naive Sharpe is reconstructible, skewness and excess kurtosis are not and come from the metric set"
+positive_control,canonical_spec_id,106312,
+positive_control,canonical_shard,7,
+positive_control,canonical_row,0,
+positive_control,axis_values_match_config,1,"axis values read from the metric row against config, no literal"
+positive_control,ann_return,0.5218447451814521,"target 0.521845, gap 2.548e-07"
+positive_control,sharpe_lo,1.3817013060244996,"target 1.381701, gap 3.060e-07"
+positive_control,matches_to_6dp,1,
+engine_change,rf_factor_array_parameter_present,1,
+engine_change,rf_factor_array_default_none,1,"default None restores the label slice, so prior behaviour is the default"
+engine_change,panel_cache_enabled_in_worker,1,s17_enable_engine_cache(True) called by the grid worker
+engine_change,panel_cache_module_default_off,1,
+session18_artifact,reachability.csv,134619,present=True fully_readable=True
+session18_artifact,additivity-check.csv,6622,present=True fully_readable=True
+session18_artifact,spec-index-augmented.csv,30516699,present=True fully_readable=True
+session18_artifact,subsample-ids.npy,16136,present=True fully_readable=True
+session18_artifact,subsample-returns.npy,19786016,present=True fully_readable=True
+session18_artifact,axis-classification.json,245,present=True fully_readable=True
+axis_classification,n_axes,9,
+axis_classification,n_structural,6,
+axis_classification,n_smooth,3,
+axis_classification,structural,crash_threshold overbought_t1 oversold rsi_dip rsi_rs sma_long,
+axis_classification,smooth,rsi_exhaustion sma_short vote,
+verdict,step2,PASS,

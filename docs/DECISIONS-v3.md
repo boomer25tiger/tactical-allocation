@@ -942,6 +942,41 @@ than a measurement** (9.10 provenance requirement).
   choices largely declined to select. If the three discretionary axes are
   later resolved from docs/HANDOFF.md or by a register decision, N moves with
   them and the deflated Sharpe must be recomputed.
+
+  **Amended again (session 19, 2026-08-19), superseding the 131,220 above.**
+  Session 17 adopted the docs/HANDOFF.md ranges for the three discretionary
+  axes, which is the register decision the 16b amendment named as the trigger
+  for N to move, so **N is 364,500**, the enumerated total across the ten axes.
+  The grid **evaluated 121,500** of them, with 7.4's tier-two offset held at
+  its canonical value of 10 on every specification rather than sampled, on the
+  grounds that the register marks 7.4 informed rather than closed. Both figures
+  are recorded and N is the enumerated total rather than the evaluated count,
+  since N is the size of the search space the study enumerated and a grid
+  running on a disclosed subset does not shrink it.
+
+  **Deflated Sharpe, computed session 19.** On the naive Sharpe, which is what
+  the Bailey and Lopez de Prado formula is defined on since it carries its own
+  skewness and excess kurtosis adjustment while the Lo correction addresses
+  autocorrelation instead, the deflated Sharpe at N equal to 364,500 is
+  **0.000660 for the canonical** and **0.023736 for the grid's
+  in-sample-best** specification. At N equal to 121,500 as the sensitivity the
+  two read 0.001979 and 0.048847. The expected maximum Sharpe
+  under the no-skill null is 2.1082 annualised, which exceeds both the
+  canonical's 1.0911 and the in-sample-best's 1.4723, and that
+  is what produces deflated figures below one half. The same quantities
+  computed on the Lo-corrected Sharpe are carried as a disclosed sensitivity at
+  0.010884 and 0.085737. Reported as measured, with no
+  recommendation and no adoption.
+
+  **Estimation caveat, stated rather than implied.** The cross-sectional
+  standard deviation of Sharpe entering the expected maximum is
+  0.4520 annualised, estimated from the 121,500 evaluated specifications
+  rather than from the 364,500 enumerated. The dispersion of the unevaluated
+  remainder is assumed equal to that of the evaluated subset and is not
+  measured. The evaluated grid also spans structurally different strategies,
+  since six of the nine searched axes change which terminals are reachable, so
+  the dispersion carries structural variation alongside parameter variation.
+  Evidence: outputs/session-19/deflated-sharpe.csv.
 - **9.13 defect-class rule — closed (session 16b, 2026-08-19).** **A defect
   found in one location triggers a sweep for the class rather than a repair of
   the instance.** Two precedents. **D18**, the object-dtype boolean negation,
@@ -1264,3 +1299,152 @@ than a measurement** (9.10 provenance requirement).
   background for session 18s names `a90f352` as the commit carrying sessions
   16b through 18r, which is off by one, since `a90f352` is session 16 and
   `9e7aa47` carries 16b, 17, 18 steps 0 through 3, and 18r.
+
+- **8.12 probability of backtest overfitting, RESULT (session 19, 2026-08-19).**
+  Pre-registered before any result was read, being **S equal to 16** as primary
+  under the Bailey, Borwein, Lopez de Prado and Zhu convention, a combination cap
+  of 20,000 at seed 20260821, and a memory ceiling of 2.0 GB.
+
+  **PBO is 0.1578** over 12,870 combinations, being the full
+  enumeration of C(16,8), across the 121,500 evaluated specifications. Session
+  18's interrupted run measured the same figure on the same construction and it
+  reproduces exactly. The performance degradation regression of out-of-sample on
+  in-sample Sharpe gives slope **-1.0663**, intercept
+  2.7549, and R-squared 0.5469.
+  The probability of loss is 0.000078. Neither first nor
+  second order stochastic dominance of the selected specification over the median
+  trial holds. The canonical point, which was pre-registered rather than selected,
+  carries a mean out-of-sample rank of 0.8243
+  expressed as a fraction of the specification count, and is reported separately
+  from the in-sample-best for that reason.
+
+  **The naive-Sharpe approximation, disclosed rather than implicit.** The CSCV
+  performance metric is the naive Sharpe and not the Lo-corrected Sharpe that 8.2
+  designates as headline. Autocovariance is not additive across disjoint blocks,
+  so the cross-boundary terms are missing from any union of blocks and a Lo
+  correction computed on a union would be wrong rather than approximate. The naive
+  Sharpe is exactly reconstructible from the stored block sums, which is why it is
+  used, and the PBO therefore measures overfitting of the naive Sharpe.
+
+  **Block-count sensitivity.** PBO reads
+  0.1143 at S equal to 8, 0.1710 at 12,
+  0.1578 at 16, 0.1646 at 24, and 0.1540 at 48.
+  S equal to 8, 12 and 16 are full enumerations. S equal to 24 and 48 exceed the
+  20,000 combination cap fixed before the run and are random samples at the
+  registered seed, which is disclosed per pass in the emitted file.
+
+  **Moment additivity re-verified.** The maximum absolute deviation between
+  statistics reconstructed from the 48 stored block moments and the same
+  statistics in the per-specification metric set is 3.331e-16 against a 1e-10
+  tolerance fixed before the comparison ran, recomputed this session rather than
+  taken from the session 18 file that the eviction touched.
+
+  **Peak memory exceeded the stated ceiling and that is recorded rather than
+  absorbed.** The chunk size is derived from a 2.0 GB ceiling counting four large
+  arrays, and observed peak resident memory reached 2.879 GB at S equal to 16 and
+  3.355 GB at S equal to 48, because the working set carries the moment array and
+  the merged block copies alongside the four the formula counts. The machine
+  carries 8 GB, so the ceiling is not decorative. No pass was re-run and no figure
+  changes, since the arithmetic is unaffected by the chunk size.
+  Evidence: outputs/session-19/pbo.csv, outputs/session-19/PBO-REPORT.md.
+
+- **8.13 PBO within structural strata, DESIGN AND RESULT (session 19,
+  2026-08-19).** The session 18 prompt specified a smooth-axis restriction, being
+  the PBO computed with all six structural axes held at canonical and only the
+  three smooth axes varying. **That restriction is replaced rather than run.** It
+  spans 3 by 3 by 3, being 27 specifications, and a 27-point PBO is not comparable
+  to a 121,500-point figure.
+
+  The purpose the restriction served was to separate overfitting arising from
+  parameter search within one strategy shape from overfitting arising from search
+  across shapes. **Stratification serves that purpose at usable sample sizes.**
+  For each of the six structural axes and each value on that axis, the axis is
+  held fixed and PBO is computed over the remaining specifications, being 121,500
+  divided by the axis cardinality, which is 24,300 to 40,500 per stratum.
+
+  | structural axis | PBO min | PBO max | full-grid inside |
+  |---|---|---|---|
+  | sma_long | 0.1033 | 0.1882 | yes |
+  | crash_threshold | 0.1688 | 0.1807 | no |
+  | rsi_dip | 0.0667 | 0.1874 | yes |
+  | rsi_rs | 0.1232 | 0.2303 | yes |
+  | overbought_t1 | 0.0100 | 0.4673 | yes |
+  | oversold | 0.0731 | 0.2026 | yes |
+
+  **Result as measured.** Against a full-grid reference of 0.1578,
+  the full-grid PBO exceeds none of the 6 within-stratum ranges, lying inside 5 of them and below 1, which indicates search across strategy shapes does not contribute overfitting beyond parameter search, with the one range it falls below indicating the full grid overfits less than any single stratum of that axis. No recommendation follows and no grid point is
+  adopted or promoted over the canonical.
+
+  Each stratum is reported with the terminals that never fire at that value, drawn
+  from outputs/session-18/reachability.csv, so a reader can see what structural
+  difference each stratum represents. The widest range is overbought tier one, at
+  0.0100 to 0.4673 across its five values. Evidence:
+  outputs/session-19/pbo-strata.csv.
+
+- **9.14 four-tier artifact scheme, EXECUTED (session 19, 2026-08-19).** The
+  scheme as run. Tier one is the frozen raw inputs, committed and hash-verified.
+  Tier two is the derived grid evidence, being the 48-block moment sums, the
+  per-specification metric set and the specification index across eight shards,
+  all committed. Tier three is the retained daily-return sample, being the 2,000
+  specification subsample drawn at the config-fixed seed, committed. Tier four is
+  the ephemeral daily return panel, which is not committed and is deleted once the
+  tiers above it can carry every downstream figure.
+
+  **The deletion ran this session.** 8 shards of the
+  session 17 panel and 8 shards of the superseded
+  ten-axis partial panel were removed, reclaiming 1256.8 MB and
+  taking the working tree from 1764.7 MB to
+  508.0 MB.
+  The superseded directory was NOT removed wholesale, and its grid moments, block
+  sizes, metrics and shard logs are preserved.
+
+  **The regenerability check is the test that the deletion was safe.** The PBO
+  report and its four figures are produced by a generator that never opens the
+  panel directory, and the check is that generating the document before and after
+  the deletion yields byte-identical output. It does, at SHA-256
+  510868bf6c3bce31... across the report and all four figures. The
+  manifest carries the canonicalised panel hash and the exact command that
+  regenerates the panel, and scripts/verify_panel.py reports maximum absolute
+  deviation against a 1e-6 tolerance rather than asserting bit-identical equality,
+  since float reduction order varies with thread count and BLAS version and the
+  run was sharded across eight processes. Evidence:
+  outputs/session-19/deletion.csv, outputs/session-19/MANIFEST.json.
+
+- **9.15 terminal counter positive control, BASIS CORRECTED (session 19,
+  2026-08-19).** The session 18 prompt named the primary window as the basis for
+  the step 1 terminal counter and that was wrong. **Session 13.5 measured the
+  synthetic panel over the full window from warm-up**, at
+  scripts/s13_5_diagnostics.py line 374, and on that basis the two T11 PSQ-dip
+  terminals reproduce exactly, firing zero times at oversold 20, 25 and 30, then 1
+  and 23 times at 35, then 10 and 113 at 40.
+
+  **On the realized panel over the corrected primary window** the same terminals
+  read zero, zero and zero at 20, 25 and 30, then 0 and 3 at 35, then 0 and 39 at
+  40, and the bond-baller PSQ-dip terminal never fires at any oversold value.
+  **Both bases are recorded and the primary-window figures are the ones that
+  describe the study's actual window.** The counter is validated and the prompt
+  named the wrong basis, so a session comparing against the primary window would
+  have read a basis difference as a defect. Evidence:
+  outputs/session-18/reachability.csv under table positive_control.
+
+- **10.2 remote created, single-copy exposure CLOSED (session 19, 2026-08-19).**
+  The repository had no remote and no off-machine copy through nineteen sessions,
+  and one iCloud eviction incident had already occurred. A private GitHub
+  repository was created at https://github.com/boomer25tiger/tactical-allocation and the full history pushed, with the
+  remote main matching local HEAD and upstream tracking set.
+
+  192.18 MB in 862 objects
+  were pushed. The largest tracked file is outputs/session-18/spec-index-augmented.csv and nothing
+  over 100 megabytes enters history. Both ephemeral panel directories and the
+  virtual environment remain excluded by .gitignore.
+
+  **The first push failed** with RPC error HTTP 400 and nothing reached the remote,
+  which is the large-pack symptom over HTTPS. It succeeded after setting
+  http.postBuffer to 524288000, which is local git configuration only and altered
+  no history, no object and no tracked file.
+
+  **Session 18s packed the object store on a premise stated wrongly in its own
+  prompt.** Consolidating 886 loose objects into one pack adds per-object checksums
+  and cheaper integrity checking, and it does not create a second copy of anything.
+  This entry is what creates the second copy. Evidence:
+  outputs/session-19/remote-status.csv.

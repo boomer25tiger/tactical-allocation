@@ -1,0 +1,22 @@
+report,figure,classification,note
+PBO-REPORT.md,0.9885,mechanism limitation,present in pbo.csv in the note column of the first-order dominance row; the checker scans numeric columns only
+PBO-REPORT.md,3.331,mechanism limitation,"present in additivity-check.csv as 3.3306690738754696e-16; rendered in scientific notation, which the fixed-decimal comparison cannot express"
+PBO-REPORT.md,4.6,register identifier,"register item 4.6, starting NAV"
+PBO-REPORT.md,5.7,register identifier,"register item 5.7, per-year covariance"
+PBO-REPORT.md,9.8,register identifier,"register item 9.8, implementation dimensions"
+REPORT.md,1.499,prior-session figure with attribution,"register D25, session 16b, wildest volatility decile effective exposure"
+REPORT.md,1.777,prior-session figure with attribution,"register D25, session 16b, mean effective exposure"
+REPORT.md,1.962,mechanism limitation,present in additivity-check.csv as 1.9619492475086986e-08; scientific notation
+REPORT.md,2.89,not a figure,"the gh version string 2.89.0, carried verbatim in remote-status.csv"
+REPORT.md,29.10,mechanism limitation,present in remote-status.csv in the note column as 29.10 MB; the checker scans numeric columns only
+REPORT.md,3.12,register identifier,"register item 3.12, SMH pre-2013 return basis"
+REPORT.md,3.331,mechanism limitation,"as above, scientific notation"
+REPORT.md,4.6,register identifier,"register item 4.6, starting NAV"
+REPORT.md,7.4,register identifier,"register item 7.4, tier-two offset"
+REPORT.md,8.8,register identifier,"register item 8.8, benchmark ladder"
+REPORT.md,8.11,register identifier,"register item 8.11, metric set"
+REPORT.md,8.12,register identifier,"register item 8.12, new this session"
+REPORT.md,8.13,register identifier,"register item 8.13, new this session"
+REPORT.md,9.11,register identifier,"register item 9.11, decision audit and specification curve axes"
+REPORT.md,9.14,register identifier,"register item 9.14, new this session"
+REPORT.md,9.15,register identifier,"register item 9.15, new this session"

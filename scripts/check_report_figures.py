@@ -10,6 +10,13 @@ Usage:  python scripts/check_report_figures.py <session-dir>
 Prose-versus-data drift appeared in sessions 13.9 and 14, three figures
 each time, so the check runs on every session report from 15 onward and
 was run retrospectively against 14.
+
+Extended session 19: the checker now covers EVERY report a session emits,
+being every file matching *REPORT*.md in the session directory, rather than
+REPORT.md alone. Session 19 emits PBO-REPORT.md beside REPORT.md and the
+earlier form would have left the first unchecked. This is a change to the
+checking mechanism and not to any measurement, following the precedent
+session 15.5 set when it extended the comparison to six decimal places.
 """
 from __future__ import annotations
 
@@ -26,11 +33,7 @@ def numbers_in(text: str) -> set[str]:
     return set(re.findall(r"-?\d+\.\d+", text))
 
 
-def check(session_dir: Path) -> int:
-    rep = session_dir / "REPORT.md"
-    if not rep.exists():
-        print(f"no REPORT.md in {session_dir}")
-        return 1
+def check_one(session_dir: Path, rep: Path) -> int:
     text = rep.read_text()
     prose = numbers_in(text)
     csv_nums: set[str] = set()
@@ -53,7 +56,7 @@ def check(session_dir: Path) -> int:
     ids |= set(re.findall(r"\b(\d\.\d{1,2})[a-c]\b", text))
     ids |= set(re.findall(r"\b([0-9]\.[0-9]{1,2})\b(?=[,.)\s]*(?:closed|amended|recorded|verdict|stand))", text))
     unmatched = sorted(x for x in prose if x not in csv_nums and x not in ids)
-    print(f"{session_dir.name}: {len(prose)} decimal figures in prose, "
+    print(f"{session_dir.name}/{rep.name}: {len(prose)} decimal figures in prose, "
           f"{len(unmatched)} not found in the session's CSVs")
     for u in unmatched:
         ctx = ""
@@ -62,6 +65,17 @@ def check(session_dir: Path) -> int:
             ctx = m.group(0).replace("\n", " ")
         print(f"  UNMATCHED {u}  ...{ctx}...")
     return 0 if not unmatched else 2
+
+
+def check(session_dir: Path) -> int:
+    reports = sorted(session_dir.glob("*REPORT*.md"))
+    if not reports:
+        print(f"no report matching *REPORT*.md in {session_dir}")
+        return 1
+    worst = 0
+    for rep in reports:
+        worst = max(worst, check_one(session_dir, rep))
+    return worst
 
 
 if __name__ == "__main__":

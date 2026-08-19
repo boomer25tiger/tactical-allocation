@@ -1,0 +1,150 @@
+table,axis,classification,reported_as,axis_value,is_canonical_value,n_specifications,sharpe_lo_mean,sharpe_lo_sd,sharpe_lo_p05,sharpe_lo_p50,sharpe_lo_p95,sharpe_lo_min,sharpe_lo_max,rank,percentile,arm,ann_return,sharpe_lo,is_canonical_arm,source,note
+axis_marginal,sma_long,structural,separated stratum,50,0,30375,0.5410752963380674,0.5368703430963636,-0.5057130765477427,0.6662114691928549,1.2290228351479198,-1.2709608121110665,1.696017795803271,,,,,,,,
+axis_marginal,sma_long,structural,separated stratum,100,0,30375,0.7167272107768569,0.5578927712435323,-0.3878878706839021,0.8884123417233506,1.3864297784173836,-0.9612128778132268,1.7933048837086023,,,,,,,,
+axis_marginal,sma_long,structural,separated stratum,150,0,30375,0.660952949386845,0.4943145577943831,-0.33512340085621184,0.8028003074657517,1.267060874804226,-0.8171793782709623,1.535490538467494,,,,,,,,
+axis_marginal,sma_long,structural,separated stratum,200,1,30375,0.8666057925285034,0.5344993641426988,-0.19213128319536296,1.0503919779696773,1.524442066817933,-0.5733154099563411,1.767438079192099,,,,,,,,
+axis_marginal,crash_threshold,structural,separated stratum,-5.0,0,24300,0.7323807888792749,0.5457876044945109,-0.3200347648120593,0.8607196418160556,1.426877522163469,-1.1562679467753327,1.7933048837086023,,,,,,,,
+axis_marginal,crash_threshold,structural,separated stratum,-10.0,0,24300,0.69526616723003,0.5422978458645621,-0.3467174429629494,0.8071878532778747,1.394886841773991,-1.1984136307601878,1.747404705312329,,,,,,,,
+axis_marginal,crash_threshold,structural,separated stratum,-15.0,1,24300,0.6865958736622305,0.5411120783061115,-0.35506979688398027,0.7997537064732492,1.3849425201181422,-1.2657080387121573,1.7536021536873543,,,,,,,,
+axis_marginal,crash_threshold,structural,separated stratum,-20.0,0,24300,0.6841931539996615,0.5451094049955307,-0.36587284455486013,0.8011735794844239,1.3866977704789452,-1.2510765980927763,1.7650218645580131,,,,,,,,
+axis_marginal,crash_threshold,structural,separated stratum,-25.0,0,24300,0.683265577516644,0.54472768333179,-0.3661792004381306,0.7996275784625582,1.3854444826122798,-1.2709608121110665,1.7559580690999765,,,,,,,,
+axis_marginal,rsi_exhaustion,smooth,sweep,7,0,40500,0.4076964229580353,0.6223170296848552,-0.6396244697319687,0.5613019937575007,1.34592941955076,-1.2709608121110665,1.767438079192099,,,,,,,,
+axis_marginal,rsi_exhaustion,smooth,sweep,14,1,40500,0.7959361172478006,0.4950543441105016,-0.08702279445957625,0.9350394310232826,1.4454937788818965,-0.5616928586207741,1.7933048837086023,,,,,,,,
+axis_marginal,rsi_exhaustion,smooth,sweep,28,0,40500,0.8853883965668689,0.3561836318016345,0.22888315256201916,0.9625124156114513,1.3767693581450122,-0.16823570888922068,1.6737896241677575,,,,,,,,
+axis_marginal,rsi_dip,structural,separated stratum,7,0,40500,0.7838046549920368,0.5268969172020932,-0.24245752548232208,0.9423893323789068,1.428072754464194,-0.9514510273709595,1.7933048837086023,,,,,,,,
+axis_marginal,rsi_dip,structural,separated stratum,14,1,40500,0.705481200885986,0.5437212265556967,-0.3339996148049983,0.8195222490302541,1.412858907154703,-1.1337705235945692,1.767438079192099,,,,,,,,
+axis_marginal,rsi_dip,structural,separated stratum,28,0,40500,0.5997350808946817,0.5457850839285922,-0.44275299992378486,0.7157210962162666,1.319193130690321,-1.2709608121110665,1.7550722509630257,,,,,,,,
+axis_marginal,rsi_rs,structural,separated stratum,7,0,40500,0.6342415685212659,0.5388363495522085,-0.3852140497253077,0.7465230190523899,1.3144351744401013,-1.2709608121110665,1.7018405633047864,,,,,,,,
+axis_marginal,rsi_rs,structural,separated stratum,14,1,40500,0.7037864898548118,0.5724591104072823,-0.37893308425084615,0.8074336926850083,1.447462857103446,-1.2508599133762508,1.7933048837086023,,,,,,,,
+axis_marginal,rsi_rs,structural,separated stratum,28,0,40500,0.7509928783966268,0.5130772194067802,-0.251944607260962,0.8773898165433053,1.4074484781221055,-0.9825029103869012,1.7251697189867088,,,,,,,,
+axis_marginal,overbought_t1,structural,separated stratum,60,0,24300,-0.03093327879647073,0.39844035333834826,-0.755667570345517,0.041179041400804646,0.5076841590987908,-1.2709608121110665,0.6585207859343141,,,,,,,,
+axis_marginal,overbought_t1,structural,separated stratum,65,0,24300,0.4920867072681524,0.45338102877022946,-0.21719931866974956,0.5036551085498875,1.1790587888589894,-0.5306429114558422,1.3635993948363092,,,,,,,,
+axis_marginal,overbought_t1,structural,separated stratum,70,1,24300,0.8824168258986486,0.291335568323523,0.40045105081651794,0.9101194957615724,1.3134633926757602,0.15281358004930376,1.5433215658262596,,,,,,,,
+axis_marginal,overbought_t1,structural,separated stratum,75,0,24300,0.9965025297945261,0.25904659685903886,0.6066718669097355,0.9637310032975561,1.440949971710652,0.28168151758065346,1.7933048837086023,,,,,,,,
+axis_marginal,overbought_t1,structural,separated stratum,80,0,24300,1.1416287771229843,0.2652960545433205,0.6639505084452156,1.1648367925173835,1.5351293784686644,0.12063068923948277,1.767438079192099,,,,,,,,
+axis_marginal,oversold,structural,separated stratum,20,0,24300,0.6033471843159773,0.5471455470556189,-0.4616050338500967,0.7257727497116794,1.320777713467936,-1.1916108268226475,1.7356173552078429,,,,,,,,
+axis_marginal,oversold,structural,separated stratum,25,0,24300,0.64340072282495,0.5631340978210927,-0.4574726089180486,0.7616181843452987,1.3823341078106826,-1.1916108268226475,1.7933048837086023,,,,,,,,
+axis_marginal,oversold,structural,separated stratum,30,1,24300,0.6692071086946616,0.5572234332352233,-0.4389889132517424,0.8131834917497639,1.360928377178307,-1.2709608121110665,1.767438079192099,,,,,,,,
+axis_marginal,oversold,structural,separated stratum,35,0,24300,0.7303193697806436,0.5185701703526349,-0.2896393583211831,0.8843787325593525,1.373056104658008,-0.9330644665568937,1.7550722509630257,,,,,,,,
+axis_marginal,oversold,structural,separated stratum,40,0,24300,0.8354271756716085,0.501767481316756,-0.14370247150737214,0.9468145606719859,1.4619578278313423,-0.6492209022574231,1.7179367280630076,,,,,,,,
+axis_marginal,sma_short,smooth,sweep,10,0,40500,0.734074214267483,0.5539555773426222,-0.33329397409960965,0.8665378871315615,1.4392928876858504,-1.1684777103096806,1.7933048837086023,,,,,,,,
+axis_marginal,sma_short,smooth,sweep,20,1,40500,0.6819989573248658,0.5376365352032575,-0.3472458133901757,0.7890988341459912,1.3847042328173382,-1.204642125477343,1.7242001253206063,,,,,,,,
+axis_marginal,sma_short,smooth,sweep,50,0,40500,0.6729477651803558,0.5386134403616271,-0.3687914441076287,0.7848268963890466,1.3557429313548361,-1.2709608121110665,1.7655830120987537,,,,,,,,
+axis_marginal,vote,smooth,sweep,2,0,40500,0.71368323536364,0.5406025699562012,-0.32765348070490874,0.8354056652396482,1.4003780382084237,-1.2709608121110665,1.7419584810405664,,,,,,,,
+axis_marginal,vote,smooth,sweep,3,1,40500,0.7053689435134503,0.5450624413458095,-0.35287572762772756,0.8274303858371868,1.4081549756466119,-1.1845686559312925,1.767438079192099,,,,,,,,
+axis_marginal,vote,smooth,sweep,4,0,40500,0.6699687578956143,0.5456913673100631,-0.36413854357696473,0.780262285785698,1.380769662708032,-1.2336876500534897,1.7933048837086023,,,,,,,,
+canonical_rank,sharpe_lo,,,1.3817013060244996,,121500,,,,,,,,6834,94.3761316872428,,,,,,"rank 1 is the highest of the 121,500 evaluated"
+canonical_rank,ann_return,,,0.5218447451814521,,121500,,,,,,,,8237,93.22139917695473,,,,,,"rank 1 is the highest of the 121,500 evaluated"
+specification_curve,panel,,,,,,,,,,,,,,,realized,0.2971065884533939,0.928624610696173,1,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S convention=c2c window=primary
+specification_curve,panel,,,,,,,,,,,,,,,synthetic,0.3163917283740021,0.971859814980244,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S convention=c2c window=primary
+curve_axis_status,panel,,,,,,,,,,,,,,,2 of 2,,,,outputs/session-14/canonical-capped.csv,"sourced from an emitted CSV, compared at cap_arm=cap5 commission_arm=S convention=c2c window=primary"
+specification_curve,convention,,,,,,,,,,,,,,,o2o,0.5225924351843778,1.3846209839337436,1,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S panel=realized window=primary
+specification_curve,convention,,,,,,,,,,,,,,,o2o_nopremium,0.561588733918809,1.4667976184798424,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S panel=realized window=primary
+specification_curve,convention,,,,,,,,,,,,,,,c2c,0.2971065884533939,0.928624610696173,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S panel=realized window=primary
+curve_axis_status,convention,,,,,,,,,,,,,,,3 of 3,,,,outputs/session-14/canonical-capped.csv,"sourced from an emitted CSV, compared at cap_arm=cap5 commission_arm=S panel=realized window=primary"
+specification_curve,window,,,,,,,,,,,,,,,primary,0.3163917283740021,0.971859814980244,1,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S convention=c2c panel=synthetic
+specification_curve,window,,,,,,,,,,,,,,,full,0.1811773855710372,0.6894069060748835,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S convention=c2c panel=synthetic
+specification_curve,window,,,,,,,,,,,,,,,early,-0.0999675587824828,0.1299278044239746,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 commission_arm=S convention=c2c panel=synthetic
+curve_axis_status,window,,,,,,,,,,,,,,,3 of 3,,,,outputs/session-14/canonical-capped.csv,"sourced from an emitted CSV, compared at cap_arm=cap5 commission_arm=S convention=c2c panel=synthetic"
+specification_curve,commission_arm,,,,,,,,,,,,,,,F,0.5189269762827107,1.3881259353344853,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 convention=o2o panel=realized window=primary
+specification_curve,commission_arm,,,,,,,,,,,,,,,S,0.5225924351843778,1.3846209839337436,1,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 convention=o2o panel=realized window=primary
+specification_curve,commission_arm,,,,,,,,,,,,,,,T,0.518537815722985,1.3871909886235088,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 convention=o2o panel=realized window=primary
+specification_curve,commission_arm,,,,,,,,,,,,,,,Z,0.5329486687857379,1.4173389621069403,0,outputs/session-14/canonical-capped.csv,held at cap_arm=cap5 convention=o2o panel=realized window=primary
+curve_axis_status,commission_arm,,,,,,,,,,,,,,,4 of 4,,,,outputs/session-14/canonical-capped.csv,"sourced from an emitted CSV, compared at cap_arm=cap5 convention=o2o panel=realized window=primary"
+specification_curve,participation_cap,,,,,,,,,,,,,,,cap5,0.5225924351843778,1.3846209839337436,1,outputs/session-14/canonical-capped.csv,held at commission_arm=S convention=o2o panel=realized window=primary
+specification_curve,participation_cap,,,,,,,,,,,,,,,uncapped,0.5286360970331241,1.3741737175282862,0,outputs/session-14/canonical-capped.csv,held at commission_arm=S convention=o2o panel=realized window=primary
+curve_axis_status,participation_cap,,,,,,,,,,,,,,,2 of 2,,,,outputs/session-14/canonical-capped.csv,"sourced from an emitted CSV, compared at commission_arm=S convention=o2o panel=realized window=primary"
+specification_curve,starting_nav,,,,,,,,,,,,,,,100000.0,0.5315764277751855,1.3804172185330532,0,outputs/session-15/nav-sweep.csv,"joined the specification curve and not the grid axes, D20 session 16"
+specification_curve,starting_nav,,,,,,,,,,,,,,,250000.0,0.5326832114784392,1.3848902783255013,0,outputs/session-15/nav-sweep.csv,"joined the specification curve and not the grid axes, D20 session 16"
+specification_curve,starting_nav,,,,,,,,,,,,,,,1000000.0,0.5225924351843778,1.3846209839337436,1,outputs/session-15/nav-sweep.csv,"joined the specification curve and not the grid axes, D20 session 16"
+specification_curve,starting_nav,,,,,,,,,,,,,,,5000000.0,0.3779703983121421,1.239229530501923,0,outputs/session-15/nav-sweep.csv,"joined the specification curve and not the grid axes, D20 session 16"
+specification_curve,starting_nav,,,,,,,,,,,,,,,25000000.0,0.226019842672049,0.9642515073250976,0,outputs/session-15/nav-sweep.csv,"joined the specification curve and not the grid axes, D20 session 16"
+curve_axis_status,starting_nav,,,,,,,,,,,,,,,5 arms,,,,outputs/session-15/nav-sweep.csv,sourced from an emitted CSV; added to the curve by D20 session 16
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.5959448381189492,1.560535987613724,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.2343870546248927,1.7922596804786055,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.6269422119805945,1.7935828081366922,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.3135759326923641,1.4417733334216796,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.348118115791705,1.304050549246745,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.3749933899748963,1.793347627586814,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.6576858651269657,1.673940040886387,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.1501047797899699,0.5906605020868412,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.1777810724151927,0.7021042490695278,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.5073284516823378,1.2073770062523883,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.735659648542911,1.4388161231616912,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_0bp,0.6572779266753801,1.3121411562563907,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.5809577480355521,1.5100031229788031,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.2343828291388598,1.792458361877242,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.6269418413396639,1.7936631243829864,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.3127165739534876,1.438508449749761,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.3062526837859498,1.1894957559146238,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.3744446110098829,1.791637295398899,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.6490685477829676,1.6108743102397909,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.1500973586263327,0.590558078290351,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.1500958792227327,0.6620034519866452,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.4786297038481824,1.1651482562724047,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.7301853568735728,1.4109016016339655,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_5bp,0.6514797514086419,1.289277377399048,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.5643137867435266,1.4678680361733305,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.234378603525341,1.7926565938270362,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.6269414706979872,1.7937434135358288,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.3118533528001621,1.4352528418265915,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.2656651447148943,1.0753642567437471,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.3738943019523197,1.7899229239206638,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.6393766878658493,1.5481882006012622,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.1500899370406263,0.5904556787786902,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.1215742927246101,0.6202952046436516,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.4454727257207025,1.114345085418516,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.7247825726423283,1.38242574439781,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_10bp,0.6418014477315528,1.2632627896045014,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.5284613875590647,1.3872364790063247,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.2343701519158092,1.793051707891476,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.6269407294124045,1.7939039105765626,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.3101339986761984,1.428717691879453,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.1881869694428912,0.8485692226831792,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.3727981853705182,1.7865043991717513,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.6182071626715162,1.4710313156404249,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.1500750926028091,0.5902509527800238,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.0642002013249971,0.5342424591115634,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.3387497642280965,0.9715361333218716,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.7087246658964326,1.3062221589732368,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_20bp,0.6192382251655963,1.217855726801609,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.4626929593780065,1.2599301189248642,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.2343574735451608,1.793640998850531,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.6269396174784452,1.7941444530333268,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.3075564967213484,1.418949339851861,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.0806457154858819,0.512057614569939,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.3711564369025841,1.781359277746016,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.5792973818883858,1.3538545605145882,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.1500528227793067,0.5899440469804645,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,-0.0261076756412861,0.3804735273508822,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.2043537743380012,0.7410405368906583,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.6617433726379587,1.2076623171887657,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_35bp,0.5863180076352228,1.1403172494212706,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.3702092483915951,1.0923658009705135,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.2343447940266936,1.7942262248320249,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.6269385055377898,1.79438475185858,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.304983986638399,1.4091776935545697,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,-0.0172951128929871,0.1802085044286763,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.3695127449604407,1.7762210950885913,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.5307112795388276,1.2405520874494922,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.1500305491544542,0.5896373620352603,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,-0.106134948205348,0.2372971458497248,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.0929967065133714,0.5230003818350277,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.6207945512039741,1.1256358543049645,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,uniform_50bp,0.536998949063515,1.0653566387738729,0,outputs/session-15/cost-sweep-designated.csv,
+specification_curve,slippage_model,,,,,,,,,,,,,,,STRATEGY_designated_tiered_plus_premium,0.5225924351843778,1.3846209839337436,1,outputs/session-15/cost-sweep-designated.csv,the designated tiered plus premium model
+curve_axis_status,slippage_model,,,,,,,,,,,,,,,73 arms,,,,outputs/session-15/cost-sweep-designated.csv,sourced from an emitted CSV; the uniform sweep REPLACES the tiered model rather than stacking on it
+specification_curve,financing_spread,,,,,,,,,,,,,,,"(25, 50, 75, 100, 150, 200)bp",nan,nan,0,outputs/session-13.8/financing-base.csv,D16 remains open and assumed; the sweep records the spread levels rather than a strategy return per level in this CSV
+curve_axis_status,financing_spread,,,,,,,,,,,,,,,1 levels,,,,outputs/session-13.8/financing-base.csv,"levels sourced; no per-level designated-cell return is carried in an emitted CSV, and D16 is open"
+curve_axis_status,smh_accrual,,,,,,,,,,,,,,,0 arms,,,,,NOT SOURCED. 9.8 records the SMH accrual arm as an implementation dimension run at canonical parameters and not crossed into the grid. No emitted CSV in this repository carries a two-arm designated-cell comparison for it
+curve_axis_status,sizing_mode,,,,,,,,,,,,,,,0 arms,,,,,NOT SOURCED. named as a 9.11 curve axis. No emitted CSV in this repository carries a two-arm designated-cell comparison for it
+curve_axis_status,completion_rule,,,,,,,,,,,,,,,0 arms,,,,,"NOT SOURCED. the unavailable-fill completion rule, named as a 9.11 curve axis. No emitted CSV in this repository carries a two-arm designated-cell comparison for it"
+excluded_axis,tier_two_offset,,,,,,,,,,,,,,,"5, 10, 15",,,,outputs/session-17/axis-adoption.csv,"NOT on the specification curve and NOT searched by the grid. The register records 7.4 as informed rather than closed, so it is not a decision the study made, and a curve spanning it would report sensitivity to a parameter the register never fixed. Held at its canonical value of 10 on every one of the 121,500 specifications, so the canonical point is unchanged"
+off_axis_post_result_choice,4.6 starting NAV,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"closed session 13.7 at 1,000,000; joined the specification curve by D20 session 16, so it is now ON the curve rather than off it. The consequential one, since it enters the return series through integer truncation, the commission minimum, and the participation cap"
+off_axis_post_result_choice,5.7 per-year covariance,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"reporting convention, does not enter the return series"
+off_axis_post_result_choice,Sharpe numerator registration,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"closed as the 8.2 amendment session 13.9, arithmetic mean excess annualised; dual-reported under both numerator definitions"
+off_axis_post_result_choice,D5 disposition,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"reporting or diagnostic convention, does not enter the return series"
+off_axis_post_result_choice,D6 disposition,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"reporting or diagnostic convention, does not enter the return series"
+off_axis_post_result_choice,D7 disposition,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"reporting or diagnostic convention, does not enter the return series"
+off_axis_post_result_choice,D10 disposition,,,,,,,,,,,,,,,,,,,outputs/session-14/decision-audit-reconciled.csv,"reporting or diagnostic convention, does not enter the return series"
+off_axis_post_result_choice,count,,,,,,,,,,,,,,,7 of 22,,,,register 9.11 as corrected session 15,"seven of the 22 post-result choices do not lie on any of the nine recorded specification-curve axes; six are reporting or diagnostic conventions and 4.6 NAV is the consequential one, since closed onto the curve by D20"

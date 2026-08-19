@@ -1,0 +1,30 @@
+table,item,value,note
+detection,gh_installed,true,/opt/homebrew/bin/gh version 2.89.0
+detection,gh_authenticated,true,"github.com account boomer25tiger, keyring, scopes gist read:org repo workflow"
+detection,git_credential_helper,osxkeychain,
+detection,remote_configured_before,none,the repository had no remote and no off-machine copy
+creation,repository,boomer25tiger/tactical-allocation,created via gh repo create
+creation,visibility,PRIVATE,
+creation,initialised_with_readme,false,"no README, no .gitignore, no license, so no initial commit conflicts with local history"
+creation,url,https://github.com/boomer25tiger/tactical-allocation,
+push,first_attempt,FAILED,"RPC failed HTTP 400 curl 22, send-pack unexpected disconnect; nothing reached the remote and git ls-remote returned empty"
+push,remedy,http.postBuffer=524288000,"local git config only; no history, no object, and no tracked file altered"
+push,second_attempt,OK,"new branch main -> main, upstream tracking set"
+verification,remote_head,40ff46b7ffebd6ae283eb4d27926f437c614fc6e,
+verification,local_head,40ff46b7ffebd6ae283eb4d27926f437c614fc6e,
+verification,heads_match,true,git ls-remote refs/heads/main equals git rev-parse HEAD
+verification,upstream,origin/main,
+verification,default_branch,main,
+size,pack_bytes_pushed,201512435,"single pack file, the whole history"
+size,pack_mb_pushed,192.18,
+size,objects_in_pack,862,
+size,tracked_bytes_at_head,296348126,
+size,tracked_mb_at_head,282.62,
+size,tracked_files_at_head,782,
+size,largest_tracked_file,outputs/session-18/spec-index-augmented.csv,29.10 MB
+size,largest_under_100mb,true,nothing over 100 megabytes enters history
+gitignore,outputs/session-17/panel/,IGNORED,"1.1 GB ephemeral panel, excluded"
+gitignore,outputs/session-17/superseded-10axis/panel/,IGNORED,"55 MB superseded panel, excluded"
+gitignore,.venv/,IGNORED,"reconstructible environment, excluded"
+correction,scaffold_head_claim,9e7aa47,"the scaffold names 9e7aa47 as HEAD; actual HEAD is 40ff46b, the session 18s commit, which the scaffold predates"
+verdict,step1,PASS,the second copy now exists off machine
