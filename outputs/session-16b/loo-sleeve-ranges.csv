@@ -1,0 +1,6 @@
+table,series,dropped_year,ann_return,sharpe_lo,max_drawdown,ann_vol,information_ratio_vs_buy_hold_QQQ,ann_return_min,ann_return_max,sharpe_lo_min,sharpe_lo_max,max_drawdown_min,max_drawdown_max,base_sharpe_lo,year_moving_sharpe_most,sharpe_when_that_year_dropped,n_estimates,total_growth,ann_return_ex_2020,max_drawdown_ex_2020,max_drawdown_with_2020,date,sqqq_weight_lagged,daily_contribution,is_entry,is_exit,feb_apr_2020_total_contribution,n_entries,n_exits,full_2020_contribution,primary_window_total,range,range_pct
+loo_range,STRATEGY,,,,,,,0.4349733888099674,0.5809265233631551,1.287076427656795,1.6183359759194622,-0.5775309985093637,-0.4468671633295136,1.3817013060244996,2020.0,1.6183359759194622,11.0,,,,,,,,,,,,,,,0.33125954826266724,23.974758279398596
+loo_range,SLEEVE_T10,,,,,,,,,0.3644546635580785,0.8760007146605843,,,0.5189279758734306,2016.0,,11.0,,,,,,,,,,,,,,,0.5115460511025058,98.57746640880173
+loo_range,SLEEVE_T11,,,,,,,,,0.7770857379398581,1.3905073322020114,,,0.9739130998405516,2013.0,,11.0,,,,,,,,,,,,,,,0.6134215942621533,62.98524933719263
+loo_range,SLEEVE_S2,,,,,,,,,1.207871268537868,1.5569097581647746,,,1.327085322938575,2011.0,,11.0,,,,,,,,,,,,,,,0.34903848962690653,26.301134041180408
+loo_range,SLEEVE_S3,,,,,,,,,1.028716108447618,1.5453771430875618,,,1.1958839875578076,2012.0,,11.0,,,,,,,,,,,,,,,0.5166610346399438,43.20327389741633

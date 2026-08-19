@@ -125,6 +125,12 @@ OVERSOLD = 30
 # against the pre-change S3 terminal-state occupancy on all 3,460 sessions).
 S3_VOTE_THRESHOLD = 3
 
+# Decision 6.8 -- closed. S3 vote membership, as supplied. Owned here rather
+# than as a literal in src/sleeves.py so that the S3_VOTE_THRESHOLD domain
+# bound derives from the membership instead of a hardcoded 4 (session 16b,
+# step 5 unported-literal port; value unchanged).
+S3_VOTE_MEMBERSHIP = ("SPY", "QQQ", "SMH", "SOXL")
+
 # Decision 6.5 -- closed. Long simple moving average.
 SMA_LONG = 200
 
@@ -265,21 +271,56 @@ SMA_LONG_GRID = (50, 100, 150, 200)
 # stays at 218,700.
 CRASH_THRESHOLD_GRID = (-5.0, -10.0, -15.0, -20.0, -25.0)
 
-# Decision 7.10 -- closed.
-# Full cross of the specification grid. Dropping 250 removed one of five
-# long-SMA values: 273,375 x 4/5 = 218,700. The 7.7 revision swapped the
-# five-point quantile axis for a five-point level axis, leaving the total
-# unchanged.
-GRID_TOTAL_SPECIFICATIONS = 218_700
+# Decision 7.10 -- REPAIRED session 16b. The product is now computed from the
+# enumerated axis tuples and checked against this total, so a grid that cannot
+# be constructed fails validate(). History: the v1/v2 ranges multiplied to
+# 273,375 exactly; 7.6 dropping long-SMA 250 carried that to 218,700 correctly;
+# 7.7 then swapped a THREE-point crash-quantile axis for a FIVE-point level axis
+# while asserting the total was unchanged, which is arithmetically impossible
+# and left 218,700 underivable. Under the session 16b enumeration the total is
+# 364,500 under the session 17 adoption of the recovered HANDOFF values.
+GRID_TOTAL_SPECIFICATIONS = 364_500
 
-# Combined cardinality of grid axes NOT yet represented as tuples in this
-# module (RSI periods per function, threshold tiers, short SMA, and any
-# further axes the 7.x register carries): 218,700 / (4 long-SMA x 5 crash)
-# = 10,935. No decision in hand enumerates those axes' values, so the full
-# product cannot be recomputed from tuples alone yet; validate() pins this
-# remainder instead. A session that adds an axis tuple must divide its
-# cardinality out of this constant in the same edit.
-GRID_UNREPRESENTED_AXES_CARDINALITY = 10_935
+# Session 17 amendment: the grid SEARCHES nine of the ten enumerated axes.
+# 7.4, the tier-two offset, is recorded in the register as INFORMED rather
+# than CLOSED. An item the register marks informed is not a decision the
+# study made, so searching over it would report a specification curve
+# spanning a parameter the register never fixed. The offset is therefore
+# held at its canonical value on every specification and is not searched.
+# The canonical point is unchanged and no strategy quantity changes.
+# Runtime was the OCCASION for reading 7.4's status, not the GROUNDS for
+# the decision: the grounds are the register status alone.
+# 8.7 keeps N at GRID_TOTAL_SPECIFICATIONS, since N is the size of the
+# space the study enumerated, not the count of points evaluated.
+GRID_SEARCHED_SPECIFICATIONS = 121_500
+GRID_UNSEARCHED_AXES = ("TIER_TWO_OFFSET_GRID",)   # 7.4, status 'informed'
+
+# Session 17: seed and size for the pre-registered random subsample of full
+# daily return series retained from the grid. Fixed in config BEFORE the run.
+GRID_SUBSAMPLE_SEED = 20260819
+GRID_SUBSAMPLE_SIZE = 2_000
+
+# Decisions 6.1-6.7 / 7.2-7.9 -- axes RECOVERED and ADOPTED by session 17.
+# Session 16b enumerated them and resolved three by construction; session 17
+# recovers those three from docs/HANDOFF.md line 122, whose values predate every
+# performance result and are corroborated by exact factorisation: the eight
+# unrepresented axes multiply to 18,225, and 18,225 x 5 x 3 = 273,375 (v1/v2),
+# 18,225 x 4 x 3 = 218,700 (after 7.6 drops long-SMA 250), and 18,225 x 4 x 5 =
+# 364,500 (after 7.7 swaps the three-point crash quantile for five levels). All
+# three reconcile with no remainder, so no axis reaches the construction branch
+# and NO 9.10 disclosure attaches to any axis value (D27 dissolved).
+# The placeholder GRID_UNREPRESENTED_AXES_CARDINALITY was removed in session 16b:
+# it was 218,700/20, a residual obtained by division rather than a product.
+RSI_PERIOD_GRID = (7, 14, 28)               # 6.1, recorded (config 6.1 comment)
+OVERBOUGHT_TIER_1_GRID = (60, 65, 70, 75, 80)   # 6.2, RECOVERED from HANDOFF
+TIER_TWO_OFFSET_GRID = (5, 10, 15)              # 7.4, recorded (status 'informed')
+OVERSOLD_GRID = (20, 25, 30, 35, 40)            # 6.4, RECOVERED from HANDOFF
+SMA_SHORT_GRID = (10, 20, 50)                   # 6.6, RECOVERED from HANDOFF
+S3_VOTE_THRESHOLD_GRID = (2, 3, 4)          # 6.7, recorded (config 6.7 comment)
+
+# The three function-tied RSI periods vary independently, so the RSI axis
+# contributes len(RSI_PERIOD_GRID) ** 3.
+N_RSI_FUNCTION_TIED_PERIODS = 3
 
 # ---------------------------------------------------------------------------
 # Validation
@@ -325,25 +366,52 @@ def validate() -> None:
         raise ValueError(f"SMH_PRE2013_ACCRUAL_PCT negative: {SMH_PRE2013_ACCRUAL_PCT}")
     # 9.8: implementation/sensitivity grids (SLIPPAGE_BASE_GRID_BP,
     # SMH_ACCRUAL_GRID) are deliberately absent from this product.
-    grid_product = (
+    searched_product = (
         len(SMA_LONG_GRID)
         * len(CRASH_THRESHOLD_GRID)
-        * GRID_UNREPRESENTED_AXES_CARDINALITY
+        * len(RSI_PERIOD_GRID) ** N_RSI_FUNCTION_TIED_PERIODS
+        * len(OVERBOUGHT_TIER_1_GRID)
+        * len(OVERSOLD_GRID)
+        * len(SMA_SHORT_GRID)
+        * len(S3_VOTE_THRESHOLD_GRID)
     )
-    if grid_product != GRID_TOTAL_SPECIFICATIONS:
+    if searched_product != GRID_SEARCHED_SPECIFICATIONS:
         raise ValueError(
-            f"grid axes multiply to {grid_product:,}, but "
-            f"GRID_TOTAL_SPECIFICATIONS is {GRID_TOTAL_SPECIFICATIONS:,}; "
+            f"the nine searched grid axes multiply to {searched_product:,}, but "
+            f"GRID_SEARCHED_SPECIFICATIONS is {GRID_SEARCHED_SPECIFICATIONS:,}; "
             "an axis was edited without resynchronising the total (7.10)"
+        )
+    enumerated_product = searched_product * len(TIER_TWO_OFFSET_GRID)
+    if enumerated_product != GRID_TOTAL_SPECIFICATIONS:
+        raise ValueError(
+            f"the ten enumerated grid axes multiply to {enumerated_product:,}, but "
+            f"GRID_TOTAL_SPECIFICATIONS is {GRID_TOTAL_SPECIFICATIONS:,}; "
+            "the enumerated space 8.7 reports as N is out of step (7.10)"
         )
     if TREND_SIGNAL_LAG < 0:
         raise ValueError(f"TREND_SIGNAL_LAG must be non-negative: {TREND_SIGNAL_LAG}")
     if not OVERSOLD < OVERBOUGHT_TIER_1 < OVERBOUGHT_TIER_2:
         raise ValueError("threshold tiers are not ordered oversold < tier1 < tier2")
-    if not 1 <= S3_VOTE_THRESHOLD <= 4:
+    if not 1 <= S3_VOTE_THRESHOLD <= len(S3_VOTE_MEMBERSHIP):
         raise ValueError(
-            f"S3_VOTE_THRESHOLD must be between 1 and 4 votes, got {S3_VOTE_THRESHOLD}"
+            f"S3_VOTE_THRESHOLD must be between 1 and "
+            f"{len(S3_VOTE_MEMBERSHIP)} votes, got {S3_VOTE_THRESHOLD}"
         )
+    for _name, _val, _grid in (
+        ("RSI_PERIOD_EXHAUSTION", RSI_PERIOD_EXHAUSTION, RSI_PERIOD_GRID),
+        ("RSI_PERIOD_DIP", RSI_PERIOD_DIP, RSI_PERIOD_GRID),
+        ("RSI_PERIOD_RELATIVE_STRENGTH", RSI_PERIOD_RELATIVE_STRENGTH, RSI_PERIOD_GRID),
+        ("OVERBOUGHT_TIER_1", OVERBOUGHT_TIER_1, OVERBOUGHT_TIER_1_GRID),
+        ("OVERBOUGHT_TIER_2 - OVERBOUGHT_TIER_1",
+         OVERBOUGHT_TIER_2 - OVERBOUGHT_TIER_1, TIER_TWO_OFFSET_GRID),
+        ("OVERSOLD", OVERSOLD, OVERSOLD_GRID),
+        ("SMA_SHORT", SMA_SHORT, SMA_SHORT_GRID),
+        ("S3_VOTE_THRESHOLD", S3_VOTE_THRESHOLD, S3_VOTE_THRESHOLD_GRID),
+    ):
+        if _val not in _grid:
+            raise ValueError(
+                f"canonical {_name} {_val} is not on its grid axis {_grid}"
+            )
     if SMA_LONG not in SMA_LONG_GRID:
         raise ValueError(
             f"canonical SMA_LONG {SMA_LONG} is not on the grid {SMA_LONG_GRID}"

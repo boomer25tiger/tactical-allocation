@@ -1,0 +1,7 @@
+[shard 3] range 136,687..182,249 (45,563 specs), resuming at 0
+[shard 3] 200/45,563 0.792s/spec eta 9.98h
+[shard 3] range 136,687..182,249 (45,563 specs), resuming at 200
+[shard 3] 400/45,563 0.477s/spec eta 5.99h
+[shard 3] 600/45,563 0.498s/spec eta 6.22h
+[shard 3] range 136,687..182,249 (45,563 specs), resuming at 600
+[shard 3] 800/45,563 0.896s/spec eta 11.15h

@@ -1,0 +1,6 @@
+[shard 0] range 0..45,561 (45,562 specs), resuming at 0
+[shard 0] 200/45,562 0.716s/spec eta 9.02h
+[shard 0] range 0..45,561 (45,562 specs), resuming at 200
+[shard 0] 400/45,562 0.486s/spec eta 6.09h
+[shard 0] range 0..45,561 (45,562 specs), resuming at 1,400
+[shard 0] 1,600/45,562 0.808s/spec eta 9.86h

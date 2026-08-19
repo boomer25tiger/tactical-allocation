@@ -1,0 +1,11 @@
+{
+ "sma_long": "structural",
+ "crash_threshold": "structural",
+ "rsi_exhaustion": "smooth",
+ "rsi_dip": "structural",
+ "rsi_rs": "structural",
+ "overbought_t1": "structural",
+ "oversold": "structural",
+ "sma_short": "smooth",
+ "vote": "smooth"
+}

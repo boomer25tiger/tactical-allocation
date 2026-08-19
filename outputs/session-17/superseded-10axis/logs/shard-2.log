@@ -1,0 +1,7 @@
+[shard 2] range 91,125..136,686 (45,562 specs), resuming at 0
+[shard 2] 200/45,562 0.709s/spec eta 8.93h
+[shard 2] range 91,125..136,686 (45,562 specs), resuming at 200
+[shard 2] 400/45,562 0.482s/spec eta 6.05h
+[shard 2] 600/45,562 0.528s/spec eta 6.59h
+[shard 2] range 91,125..136,686 (45,562 specs), resuming at 600
+[shard 2] 800/45,562 0.825s/spec eta 10.26h

@@ -1,0 +1,21 @@
+table,axis,canonical,values,cardinality,source,discretionary,note,n_axes,axes_from_recorded_values,axes_from_recorded_cardinality,axes_from_construction_alone,enumerated_total,result,enumerated_by_rule,if_handoff_values_adopted,register_asserted,value,on_enumerated_axis,t11_bond_baller_psq_dip_fires,t11_feaver_psq_dip_fires
+axis,"RSI period, exhaustion",14.0,"(7, 14, 28)",3.0,recorded values (config 6.1 comment),False,function-tied; register records three periods so they enumerate as three,,,,,,,,,,,,,
+axis,"RSI period, dip",14.0,"(7, 14, 28)",3.0,recorded values (config 6.1 comment),False,function-tied; register records three periods so they enumerate as three,,,,,,,,,,,,,
+axis,"RSI period, relative_strength",14.0,"(7, 14, 28)",3.0,recorded values (config 6.1 comment),False,function-tied; register records three periods so they enumerate as three,,,,,,,,,,,,,
+axis,Overbought tier one,70.0,"(65, 70, 75)",3.0,"construction alone (cardinality 3, granularity 5)",True,no values and no cardinality recorded; 9.10 disclosure applies,,,,,,,,,,,,,
+axis,Tier-two offset,10.0,"(5, 10, 15)",3.0,"recorded values (register 7.4, status 'informed')",False,values recorded but the item's status is 'informed' rather than 'closed',,,,,,,,,,,,,
+axis,Oversold,30.0,"(25, 30, 35)",3.0,"construction alone (cardinality 3, granularity 5)",True,no values and no cardinality recorded; 9.10 disclosure applies,,,,,,,,,,,,,
+axis,Short SMA,20.0,"(19, 20, 21)",3.0,"construction alone (cardinality 3, granularity 1 session)",True,"no values and no cardinality recorded; 9.10 disclosure applies. The rule's one-session granularity gives a 19/20/21 sweep, which is degenerate beside the recorded long-SMA sweep at 50-session steps; reported as a consequence of the pre-registered rule rather than silently widened",,,,,,,,,,,,,
+axis,S3 vote threshold,3.0,"(2, 3, 4)",3.0,recorded values (config 6.7 comment),False,domain is 0..4 voters; the symmetric range stays in domain with no shift,,,,,,,,,,,,,
+axis,Long SMA,200.0,"(50, 100, 150, 200)",4.0,recorded values (config SMA_LONG_GRID),False,,,,,,,,,,,,,,
+axis,Crash threshold,-15.0,"(-5.0, -10.0, -15.0, -20.0, -25.0)",5.0,recorded values (config CRASH_THRESHOLD_GRID),False,,,,,,,,,,,,,,
+totals,,,,,,,"no axis was resolved by recorded cardinality without values, so the middle precedence branch of the step 0 rule never fired",10.0,7.0,0.0,3.0,131220.0,,,,,,,,
+canonical_preserved,,,,,,,every axis carries its canonical value; the canonical point is unchanged and the enumeration surrounds it,,,,,,PASS,,,,,,,
+rule_gap,,,,,,,"The pre-registered rule specifies how to build values GIVEN a cardinality of 3 or 5 but does not say which applies when neither values nor cardinality are recorded. Cardinality 3 is taken, being the smaller of the two the rule names and the minimum that surrounds the canonical. This is a gap in the rule as written and is reported rather than presented as determined by it. Had 5 been taken for all three discretionary axes the total would be 131220*(5/3)**3 = 607,500.",,,,,,,,,,,,,
+alternative_totals,,,,,,,"Adopting the docs/HANDOFF.md ranges for the three discretionary axes, being tier one at five values, oversold at five, and short SMA at three, gives 364,500, which is also what the v3 amendments produce arithmetically. That adoption is a register decision and is not taken here, since HANDOFF.md is superseded and is not the register.",,,,,,,131220.0,364500.0,218700.0,,,,
+reachability,Oversold,,,,,,,,,,,,,,,,20.0,False,0.0,0.0
+reachability,Oversold,,,,,,,,,,,,,,,,25.0,True,0.0,0.0
+reachability,Oversold,,,,,,,,,,,,,,,,30.0,True,0.0,0.0
+reachability,Oversold,,,,,,,,,,,,,,,,35.0,True,1.0,23.0
+reachability,Oversold,,,,,,,,,,,,,,,,40.0,False,10.0,113.0
+reachability_verdict,,,,,,,"The enumerated oversold axis (25, 30, 35) SWITCHES BRANCH REACHABILITY partway through the search. Session 13.5 measured the two T11 PSQ-dip terminals firing zero times at oversold 20, 25 and 30, then 1 and 23 times at 35 and 10 and 113 at 40. Two of the three enumerated points leave both terminals dead and the third brings them alive, so one third of the oversold axis runs a structurally different strategy. Worth knowing before the search runs rather than after.",,,,,,,,,,,,,

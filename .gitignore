@@ -11,3 +11,12 @@ data/interim/synthetics/
 # frozen data under data/raw/ IS COMMITTED (13MB total, under the 100MB
 # rule): the repository is fully self-contained. Every frozen file carries
 # SHA-256 in a session manifest under outputs/.
+
+# ephemeral daily return panels: 143MB per file for session 17 (1.1GB total)
+# and 55MB for the superseded ten-axis partial, both over the 100MB rule
+# above. Regenerable from the frozen inputs via scripts/s17_grid_worker.py,
+# and scheduled for deletion at session 18 step 8 once the manifest and the
+# regenerability check exist. The 48-block moment sums under grid/ are the
+# committed evidence that PBO actually reads.
+outputs/session-17/panel/
+outputs/session-17/superseded-10axis/panel/

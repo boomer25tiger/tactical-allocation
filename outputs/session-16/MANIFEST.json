@@ -1,7 +1,7 @@
 {
   "session": "16",
   "date": "2026-08-19",
-  "commit_sha": "PENDING_STEP_12",
+  "commit_sha": "a90f352f6dbf7621ecf6ac0e973524e28c5cecb4",
   "config_sha256": "d1613f91b7f5a8da3056162258e5180be5c5519e11647068589d81b34069ee46",
   "input_file_sha256": {
     "src/config.py": "d1613f91b7f5a8da3056162258e5180be5c5519e11647068589d81b34069ee46",
@@ -41,5 +41,6 @@
     "declared_specifications": 218700,
     "enumerable_specifications": 20,
     "reason": "GRID_UNREPRESENTED_AXES_CARDINALITY (10,935) stands in for axes no register decision enumerates; see outputs/session-16/grid-blocker.csv"
-  }
+  },
+  "commit_note": "recorded after the step 12 commit; the manifest itself is therefore one commit behind and is captured by the next commit"
 }

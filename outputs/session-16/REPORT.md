@@ -85,20 +85,33 @@ wildest-volatility figure by roughly 0.23.
 Eleven leave-one-out estimates on the corrected primary window, against a base
 Lo-corrected Sharpe of 1.3817:
 
-| dropped | ann return | SR Lo | max DD | IR vs QQQ |
-|---|---|---|---|---|
-| none (base) | 0.5218 | 1.3817 | −0.5306 | 0.7023 |
-| 2011 | 0.5809 | 1.5636 | −0.5306 | 0.7997 |
-| 2012 | 0.5598 | 1.3042 | −0.5306 | 0.7667 |
-| 2013 | 0.5142 | 1.4100 | −0.5306 | 0.7203 |
-| 2014 | 0.4965 | 1.3323 | −0.5306 | 0.6536 |
-| 2015 | 0.5422 | 1.3856 | −0.5306 | 0.6970 |
-| 2016 | 0.5715 | 1.4799 | −0.5306 | 0.7317 |
-| 2017 | 0.5547 | 1.4471 | −0.5306 | 0.7767 |
-| 2018 | 0.4869 | 1.2871 | −0.5306 | 0.5885 |
-| 2019 | 0.4956 | 1.3287 | −0.5775 | 0.6873 |
-| **2020** | **0.4350** | **1.6183** | **−0.4469** | 0.6205 |
-| 2021 | 0.5052 | 1.3248 | −0.5306 | 0.6805 |
+| dropped | sessions | % of sample | ann return | SR Lo | max DD (see caveat) | IR vs QQQ |
+|---|---|---|---|---|---|---|
+| none (base) | 2472 | 100.00 | 0.5218 | 1.3817 | −0.5306 | 0.7023 |
+| 2011 | 62 | 2.51 | 0.5809 | 1.5636 | −0.5306 | 0.7997 |
+| 2012 | 250 | 10.11 | 0.5598 | 1.3042 | −0.5306 | 0.7667 |
+| 2013 | 252 | 10.19 | 0.5142 | 1.4100 | −0.5306 | 0.7203 |
+| 2014 | 252 | 10.19 | 0.4965 | 1.3323 | −0.5306 | 0.6536 |
+| 2015 | 252 | 10.19 | 0.5422 | 1.3856 | −0.5306 | 0.6970 |
+| 2016 | 252 | 10.19 | 0.5715 | 1.4799 | −0.5306 | 0.7317 |
+| 2017 | 251 | 10.15 | 0.5547 | 1.4471 | −0.5306 | 0.7767 |
+| 2018 | 251 | 10.15 | 0.4869 | 1.2871 | −0.5306 | 0.5885 |
+| 2019 | 252 | 10.19 | 0.4956 | 1.3287 | −0.5775 | 0.6873 |
+| **2020** | 253 | 10.23 | **0.4350** | **1.6183** | **−0.4469** | 0.6205 |
+| 2021 | 145 | 5.87 | 0.5052 | 1.3248 | −0.5306 | 0.6805 |
+
+*Caveat added 2026-08-19 by session 16b step 6, from
+outputs/session-16b/loo-session-counts.csv.* **The maximum-drawdown column is
+partly a splice artifact and should not be read as a drawdown the strategy
+experienced.** Removing sessions cannot deepen a drawdown, yet dropping 2019
+deepens it from −0.5306 to −0.5775, which happens because excision joins a
+late-2018 decline directly to a 2020 decline into a path that never occurred.
+Annualised return and the Sharpe are averages over retained sessions and
+survive splicing; path-dependent statistics do not. **The session-count and
+percentage columns are also new**, and they show the leverage behind the 2011
+figure, which sits on 62 sessions at 2.51 percent of the sample while its
+removal moves the Sharpe by +0.1819 at 13.2 percent, since the corrected window
+starts 2011-10-04 and 2011 is a stub.
 
 **The Lo-corrected Sharpe range across the eleven estimates is 1.2871 to
 1.6183**, and the year whose removal moves it most is **2020, which raises it
@@ -113,6 +126,16 @@ Per sleeve the ranges are wider, being 0.3645 to 0.8760 for T10 against a base
 of 0.5189, 0.7771 to 1.3905 for T11 against 0.9739, 1.2079 to 1.5569 for S2
 against 1.3271, and 1.0287 to 1.5454 for S3 against 1.1959, and no sleeve's
 most-influential year is 2020.
+
+*Identified 2026-08-19 by session 16b step 6, from
+outputs/session-16b/loo-sleeve-ranges.csv.* **These ranges are the
+diversification argument and were not labelled as such.** Expressed against
+each base, the ensemble's range is 0.3313 at **23.97 percent**, against 98.58
+percent for T10, 62.99 for T11, 43.20 for S3, and 26.30 for S2, so **the
+ensemble is the most stable of the five under year removal**. The margin over
+S2 standalone is small at 23.97 against 26.30 percent, and the finding sits
+alongside session 14's Romano-Wolf result placing the ensemble against S2
+standalone at a family-wise adjusted p of 0.983 rather than superseding it.
 
 The short leg through the crash contributes **−0.1649 across February to April
 2020 on seven entries and six exits**, against −0.253 for the full year and

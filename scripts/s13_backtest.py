@@ -394,9 +394,49 @@ def default_commission(date, ticker, side, shares, value) -> float:
                COMMISSION_CAP_FRAC * value)
 
 
+# Session 17: run_account rebuilds the same spec-independent arrays on every
+# call and reloads the rate file each time. Across a 364,500-specification
+# grid that is 37% of the call. The caches below are opt-in and default off,
+# so every script written before session 17 keeps its exact prior behaviour.
+_S17_CACHE = {"on": False, "arrays": {}, "rf": None}
+
+
+def s17_enable_engine_cache(on: bool = True) -> None:
+    _S17_CACHE["on"] = bool(on)
+    if not on:
+        _S17_CACHE["arrays"].clear()
+        _S17_CACHE["rf"] = None
+
+
+def _account_arrays(panel: Panel, cal):
+    build = lambda: (
+        {t: panel[t].ret_total.reindex(cal).to_numpy() for t in panel.frames},
+        {t: panel[t].raw_close.reindex(cal).to_numpy() for t in panel.frames},
+        {t: panel[t].frame["split"].reindex(cal).fillna(0.0).to_numpy()
+         for t in panel.frames},
+    )
+    if not _S17_CACHE["on"]:
+        return build()
+    key = (id(panel), id(cal), len(cal))
+    hit = _S17_CACHE["arrays"].get(key)
+    if hit is None:
+        hit = build()
+        _S17_CACHE["arrays"][key] = hit
+    return hit
+
+
+def _account_rf():
+    if not _S17_CACHE["on"]:
+        return risk_free_daily_factors(load_risk_free_series())
+    if _S17_CACHE["rf"] is None:
+        _S17_CACHE["rf"] = risk_free_daily_factors(load_risk_free_series())
+    return _S17_CACHE["rf"]
+
+
 def run_account(sig: ArmSignals, panel: Panel, signal_rows: list[dict],
                 slippage_bp: float, fill_lag: int = 1,
-                commission_fn=None, slip_fn=None, cap_fn=None) -> dict:
+                commission_fn=None, slip_fn=None, cap_fn=None,
+                rf_factors=None) -> dict:
     """One arm at one cost level. fill_lag=2 is the step-7 lookahead check.
 
     Session 13.7 extensions (defaults reproduce prior behaviour exactly):
@@ -405,11 +445,8 @@ def run_account(sig: ArmSignals, panel: Panel, signal_rows: list[dict],
     uniform slippage_bp when given (the engine halves it per side).
     """
     cal = sig.calendar
-    ret = {t: panel[t].ret_total.reindex(cal).to_numpy() for t in panel.frames}
-    raw = {t: panel[t].raw_close.reindex(cal).to_numpy() for t in panel.frames}
-    splitf = {t: panel[t].frame["split"].reindex(cal).fillna(0.0).to_numpy()
-              for t in panel.frames}
-    rf = risk_free_daily_factors(load_risk_free_series())
+    ret, raw, splitf = _account_arrays(panel, cal)
+    rf = _account_rf()
     rf = rf.loc[:HOLDOUT_LAST_DATE]
 
     by_index = {r["i"]: r for r in signal_rows}
@@ -434,8 +471,13 @@ def run_account(sig: ArmSignals, panel: Panel, signal_rows: list[dict],
     for i in range(start_i, len(cal)):
         date = cal[i]
         if prev_date is not None:
-            span = rf.loc[prev_date + pd.Timedelta(days=1): date]
-            cash *= float(span.prod())
+            if rf_factors is None:
+                span = rf.loc[prev_date + pd.Timedelta(days=1): date]
+                cash *= float(span.prod())
+            else:
+                # Session 17: the same product, precomputed per calendar
+                # position. Bit-exactness asserted in s17_common.
+                cash *= rf_factors[i]
         # Mark positions to today's close (1.3 total-return accumulation)
         # and apply real split factors to share counts.
         for t, p in positions.items():

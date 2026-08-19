@@ -1,0 +1,4 @@
+[shard 5] range 227,812..273,374 (45,563 specs), resuming at 0
+[shard 5] 200/45,563 0.780s/spec eta 9.83h
+[shard 5] range 227,812..273,374 (45,563 specs), resuming at 200
+[shard 5] 400/45,563 0.838s/spec eta 10.51h

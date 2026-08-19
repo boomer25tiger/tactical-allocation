@@ -1,0 +1,7 @@
+table,sleeve,n_axes,distinct_sequences,axes,note
+dependency,T10,5,675,rsi_exhaustion rsi_dip rsi_rs overbought_t1 oversold,measured by varying one axis from canonical and hashing the post-warm-up weight sequence
+dependency,T11,9,121500,sma_long crash_threshold rsi_exhaustion rsi_dip rsi_rs overbought_t1 tier_two_offset oversold sma_short,depends on every axis except the S3 vote threshold
+dependency,S2,7,8100,sma_long rsi_exhaustion rsi_dip rsi_rs overbought_t1 oversold sma_short,the 200-SMA gate label is the first branch only; s2_weights also reads the overbought tier one and the oversold threshold
+dependency,S3,6,2700,sma_long rsi_exhaustion rsi_dip overbought_t1 oversold vote,
+control,all,,,,"post-warm-up raises at canonical are zero on every sleeve across 3460 sessions, so the map is not a raise-message artifact"
+finding,all,,132975,,"summed distinct sleeve sequences 132975 against 364500 ten-axis full signal evaluations; recorded as available for future work and NOT acted on in this session"

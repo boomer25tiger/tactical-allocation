@@ -794,10 +794,22 @@ than a measurement** (9.10 provenance requirement).
 - **7.6 — closed.** Long SMA grid (50, 100, 150, 200); 250 dropped; 200 is
   a boundary point so long-end sensitivity is one-sided.
 - **7.7 — closed.** Crash axis sweeps levels (−5, −10, −15, −20, −25).
-- **7.10 — closed.** 218,700 specifications; validate() pins
-  len(SMA_LONG_GRID) × len(CRASH_THRESHOLD_GRID) ×
-  GRID_UNREPRESENTED_AXES_CARDINALITY (10,935) — axes not yet represented
-  as tuples must divide out of the remainder when added.
+- **7.10 — REPAIRED (session 16b, 2026-08-19).** validate() now computes the
+  product from the ENUMERATED axis tuples and compares it against
+  `GRID_TOTAL_SPECIFICATIONS`, so a grid that cannot be constructed fails.
+  The placeholder `GRID_UNREPRESENTED_AXES_CARDINALITY` is REMOVED. Confirmed
+  by control: the repaired guard rejects the pre-repair total of 218,700 and
+  accepts 131,220, and no constant outside the grid definition changed.
+  **The product test failed and 218,700 is superseded.** The v1/v2 ranges at
+  docs/HANDOFF.md line 122 multiply to 273,375 exactly, matching what that
+  document records, so the axes were a real product once. 7.6 dropping
+  long-SMA 250 carried it to 218,700 correctly. **7.7 then swapped a
+  three-point crash-quantile axis for a five-point crash-level axis while
+  asserting the total was unchanged, which multiplies the product by 5/3 and
+  cannot leave it fixed.** The placeholder 10,935 equals 218,700 divided by
+  20 exactly, a residual obtained by division rather than a product of
+  inputs, and its factorisation 3^7 x 5 does not match the axes' 3^6 x 5^2
+  under any assignment. Evidence: outputs/session-16b/product-test.csv.
 - **7.14 — closed (session 13.7, 2026-08-18; boundary CORRECTED session
   16, 2026-08-19).** Sub-period definitions:
   **primary evaluation window 2011-10-04 to 2021-07-30**, boundary set by
@@ -877,6 +889,87 @@ than a measurement** (9.10 provenance requirement).
   belongs in the register. PBO, the deflated Sharpe, and the
   specification curve all depend on the grid and are unrun. Evidence:
   outputs/session-16/grid-blocker.csv.
+
+- **7.2 through 7.9 — ENUMERATED (session 16b, 2026-08-19, closing D24).**
+  The grid axes, their values, and the source of each. Seven axes carry
+  values recorded in the register or in config, which the register's preamble
+  designates authoritative for values; **three carry neither values nor a
+  cardinality anywhere and are resolved by the pre-registered construction
+  alone, which is a post-result specification choice disclosed under 9.10**
+  and marked DISCRETIONARY. The fallback rule was written and hashed to
+  SHA-256 702a6026972251ea83defa30817b97a49931c45450fbd14af34f1c1900d74f24
+  before any part of the register was read on the axes, which is the evidence
+  the rule preceded the reading.
+
+  | axis | values | n | source |
+  |---|---|---|---|
+  | RSI period, exhaustion (6.1) | 7, 14, 28 | 3 | recorded, config 6.1 comment |
+  | RSI period, dip (6.1) | 7, 14, 28 | 3 | recorded, config 6.1 comment |
+  | RSI period, relative strength (6.1) | 7, 14, 28 | 3 | recorded, config 6.1 comment |
+  | Overbought tier one (6.2) | 65, 70, 75 | 3 | **DISCRETIONARY**, construction |
+  | Tier-two offset (7.4) | 5, 10, 15 | 3 | recorded, register 7.4 (status informed) |
+  | Oversold (6.4) | 25, 30, 35 | 3 | **DISCRETIONARY**, construction |
+  | Short SMA (6.6) | 19, 20, 21 | 3 | **DISCRETIONARY**, construction |
+  | S3 vote threshold (6.7) | 2, 3, 4 | 3 | recorded, config 6.7 comment |
+  | Long SMA (7.6) | 50, 100, 150, 200 | 4 | recorded, config tuple |
+  | Crash threshold (7.7) | −5, −10, −15, −20, −25 | 5 | recorded, config tuple |
+
+  **Enumerated total 131,220.** Every axis carries its canonical value and the
+  canonical point is unchanged. Three items are recorded rather than resolved.
+  First, the rule specifies how to build values given a cardinality of 3 or 5
+  but does not say which applies when neither is recorded, and 3 was taken as
+  the smaller of the two it names; at 5 for all three discretionary axes the
+  total would be 607,500. Second, the rule's one-session granularity gives a
+  short-SMA sweep of 19, 20, 21, which is degenerate beside the recorded
+  long-SMA sweep at 50-session steps, and it is reported rather than silently
+  widened. Third, docs/HANDOFF.md line 122 records candidate values for all
+  three discretionary axes, being tier one at 60/65/70/75/80, oversold at
+  20/25/30/35/40, and short SMA at 10/20/50, which would give **364,500**, the
+  same total the v3 amendments produce arithmetically; **HANDOFF.md is
+  superseded and is not the register, so adopting those values is a register
+  decision and is not taken here.**
+
+  **Branch reachability changes along the oversold axis.** Session 13.5
+  measured the two T11 PSQ-dip terminals firing zero times at oversold 20, 25
+  and 30, then 1 and 23 times at 35 and 10 and 113 at 40. Two of the three
+  enumerated oversold points leave both terminals dead and the third brings
+  them alive, so a third of that axis runs a structurally different strategy.
+- **8.7 — amended (session 16b, 2026-08-19).** **N is the enumerated total,
+  131,220, not 218,700.** 218,700 is superseded, having never been derivable
+  from the register as written once 7.7 changed the crash axis from three
+  points to five. N remains uninflated for register decisions, per the session
+  14 audit establishing that repairs were not trials and that the post-result
+  choices largely declined to select. If the three discretionary axes are
+  later resolved from docs/HANDOFF.md or by a register decision, N moves with
+  them and the deflated Sharpe must be recomputed.
+- **9.13 defect-class rule — closed (session 16b, 2026-08-19).** **A defect
+  found in one location triggers a sweep for the class rather than a repair of
+  the instance.** Two precedents. **D18**, the object-dtype boolean negation,
+  was found in one script, repaired, and then appeared again in the next
+  session's own first implementation, and only a repository-wide sweep in
+  session 15 established that no site lay in the return-generating path.
+  **D24**, the unenumerated grid axes, was visible as the single S3
+  vote-threshold literal before session 14, which recorded it as blocking for
+  the grid and repaired it as a one-off, when seven further axes carried the
+  same defect and the placeholder that concealed them sat in the same file.
+  Every repair session from here reports the class swept, the sites found, and
+  which lie in the return-generating path.
+- **D25 — recorded as documentation (session 16b, 2026-08-19).** Session
+  13.5's effective-exposure figures are superseded by **1.777 mean, 1.051 in
+  the worst trailing-return decile, and 1.499 in the wildest volatility
+  decile**, measured on the realized open-to-open panel with the cap over the
+  corrected primary window. **The de-exposure-into-volatility-stress claim is
+  weaker than the standing figure stated**, being a 16 percent reduction from
+  the mean rather than the 38 percent implied by 13.5's 1.06 against 1.70,
+  while the return-axis claim holds at a 41 percent reduction. Recorded as a
+  method requirement: **the decile conditioning statistic is computed on full
+  history before the window slice**, since slicing first discards the 60
+  sessions the rolling estimator needs and moves the wildest-volatility figure
+  by roughly 0.23.
+- **D24 — CLOSED (session 16b, 2026-08-19)** by the 7.2 through 7.9
+  enumeration above, with three axes resolved by construction alone and
+  carrying a 9.10 disclosure. The grid is constructible and validate() proves
+  it by computing the product from the axes.
 
 ## 8. Evaluation (not yet run)
 

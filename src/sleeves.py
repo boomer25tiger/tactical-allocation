@@ -81,7 +81,7 @@ __all__ = [
 T10_CASCADE = ("QQQE", "VTV", "VOX", "TECL", "VOOG", "VOOV", "XLP",
                "TQQQ", "XLY", "FAS", "SPY")
 T11_PANEL = ("SPY", "IOO", "TQQQ", "VTV", "XLF")
-S3_VOTES = ("SPY", "QQQ", "SMH", "SOXL")
+S3_VOTES = config.S3_VOTE_MEMBERSHIP          # 6.8, owned by config
 
 # Every pairwise call site that can raise, for tests and the report.
 PAIRWISE_SITES = (

@@ -1,0 +1,105 @@
+table,pass_label,restriction,S,n_specifications,n_combinations,combinations_full,combinations_sampled,chunk_size,seconds,peak_rss_gb,metric,value,note
+preregistration,,,,,,,,,,,S_primary,16,"Bailey, Borwein, Lopez de Prado and Zhu convention"
+preregistration,,,,,,,,,,,performance_metric,,"naive Sharpe, not Lo-corrected, because autocovariance is not additive across disjoint blocks and the cross-boundary terms are missing from a union; a disclosed approximation"
+preregistration,,,,,,,,,,,combination_cap,20000,"where C(S,S/2) exceeds the cap the combinations are a random sample at the seed below rather than a full enumeration"
+preregistration,,,,,,,,,,,combination_seed,20260821,
+preregistration,,,,,,,,,,,memory_ceiling_gb,2.0,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,pbo,0.1578088578088578,frequency with which the in-sample-best specification lands in the bottom half of the out-of-sample ranking
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,degradation_slope,-1.0663023854544191,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,degradation_intercept,2.7549013078347317,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,degradation_r_squared,0.5469127629590327,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,probability_of_loss,7.77000777000777e-05,frequency with which the selected specification returns a negative out-of-sample naive Sharpe
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,first_order_stochastic_dominance,0,selected against median trial; CDF condition holds on 0.9885 of the support
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,second_order_stochastic_dominance,0,selected against median trial; integrated CDF condition holds on 0.9663 of the support
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_is_sharpe_mean,1.6771099602371327,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_is_sharpe_median,1.6795038804357878,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_is_sharpe_p05,1.3232385495675592,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_is_sharpe_p95,2.0210475566528614,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_oos_sharpe_mean,0.9665949565645126,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_oos_sharpe_median,0.9653742795782922,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_oos_sharpe_p05,0.46752045115147284,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,selected_oos_sharpe_p95,1.472403163247442,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,median_trial_oos_sharpe_mean,0.7231249588172246,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,median_trial_oos_sharpe_median,0.7276089410829915,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,median_trial_oos_sharpe_p05,0.3898681136663162,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,median_trial_oos_sharpe_p95,1.0505070603237598,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,logit_mean,1.3273173884854754,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,logit_median,1.1611242818696053,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,logit_p05,-0.5049523532562009,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,logit_p95,3.8200714777843903,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_is_rank_mean,100157.73434343435,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_is_rank_median,103172.0,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_is_rank_p05,69592.7,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_is_rank_p95,120811.0,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_is_rank_pctile_mean,0.8243434925385542,mean rank expressed as a fraction of the specification count
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_oos_rank_mean,100157.73434343435,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_oos_rank_median,103172.0,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_oos_rank_p05,69592.7,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_oos_rank_p95,120811.0,
+pbo,primary,full_grid,16,121500,12870,12870,0,514,522.2,2.788,canonical_oos_rank_pctile_mean,0.8243434925385542,mean rank expressed as a fraction of the specification count
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,pbo,0.11428571428571428,frequency with which the in-sample-best specification lands in the bottom half of the out-of-sample ranking
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,degradation_slope,-1.161199682344798,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,degradation_intercept,2.9433738804697387,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,degradation_r_squared,0.5886530884885495,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,probability_of_loss,0.0,frequency with which the selected specification returns a negative out-of-sample naive Sharpe
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,first_order_stochastic_dominance,0,selected against median trial; CDF condition holds on 0.9929 of the support
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,second_order_stochastic_dominance,0,selected against median trial; integrated CDF condition holds on 0.9786 of the support
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_is_sharpe_mean,1.6736561140817618,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_is_sharpe_median,1.663695083237848,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_is_sharpe_p05,1.3175740944339989,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_is_sharpe_p95,2.0109509791503313,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_oos_sharpe_mean,0.9999249324435673,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_oos_sharpe_median,1.0139104112819153,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_oos_sharpe_p05,0.48430459104049395,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,selected_oos_sharpe_p95,1.490124163615844,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,median_trial_oos_sharpe_mean,0.730946462910437,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,median_trial_oos_sharpe_median,0.7512667645766407,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,median_trial_oos_sharpe_p05,0.3910472932418993,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,median_trial_oos_sharpe_p95,1.060697243166342,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,logit_mean,1.4830293804546255,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,logit_median,1.0970449426396136,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,logit_p05,-0.41655409549834155,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,logit_p95,4.280022815780494,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_is_rank_mean,99289.12857142858,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_is_rank_median,101943.0,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_is_rank_p05,70038.7,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_is_rank_p95,120625.0,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_is_rank_pctile_mean,0.8171944738389181,mean rank expressed as a fraction of the specification count
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_oos_rank_mean,99289.12857142858,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_oos_rank_median,101943.0,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_oos_rank_p05,70038.7,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_oos_rank_p95,120625.0,
+pbo,sensitivity,full_grid,8,121500,70,70,0,70,0.25,2.788,canonical_oos_rank_pctile_mean,0.8171944738389183,mean rank expressed as a fraction of the specification count
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,pbo,0.170995670995671,frequency with which the in-sample-best specification lands in the bottom half of the out-of-sample ranking
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,degradation_slope,-1.2722573777586441,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,degradation_intercept,3.088742851229511,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,degradation_r_squared,0.4253633912121658,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,probability_of_loss,0.0,frequency with which the selected specification returns a negative out-of-sample naive Sharpe
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,first_order_stochastic_dominance,0,selected against median trial; CDF condition holds on 0.9913 of the support
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,second_order_stochastic_dominance,0,selected against median trial; integrated CDF condition holds on 0.9751 of the support
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_is_sharpe_mean,1.6772115978540094,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_is_sharpe_median,1.686025598213654,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_is_sharpe_p05,1.4206867978337587,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_is_sharpe_p95,1.9143488679081173,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_oos_sharpe_mean,0.9548980217973836,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_oos_sharpe_median,0.9678781355634848,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_oos_sharpe_p05,0.4627776674209924,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,selected_oos_sharpe_p95,1.4326923758133219,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,median_trial_oos_sharpe_mean,0.7230082960784147,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,median_trial_oos_sharpe_median,0.7311608107368983,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,median_trial_oos_sharpe_p05,0.40401638684554053,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,median_trial_oos_sharpe_p95,1.0117278165208337,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,logit_mean,1.266911167124446,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,logit_median,0.9865895281991963,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,logit_p05,-0.5443422507606769,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,logit_p95,3.970744257358107,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_is_rank_mean,100752.63528138529,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_is_rank_median,101956.0,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_is_rank_p05,76933.6,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_is_rank_p95,120179.5,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_is_rank_pctile_mean,0.8292397965546114,mean rank expressed as a fraction of the specification count
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_oos_rank_mean,100752.63528138529,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_oos_rank_median,101956.0,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_oos_rank_p05,76933.6,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_oos_rank_p95,120179.5,
+pbo,sensitivity,full_grid,12,121500,924,924,0,514,17.8,2.788,canonical_oos_rank_pctile_mean,0.8292397965546114,mean rank expressed as a fraction of the specification count

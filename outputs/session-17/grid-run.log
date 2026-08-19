@@ -1,0 +1,277 @@
+2026-08-19T02:58:30 shard 0 start range 0..15,186 (15,187 specs), skipping 0 already recorded
+2026-08-19T02:59:47 shard 0 start range 0..15,186 (15,187 specs), skipping 300 already recorded
+2026-08-19T03:00:31 shard 0 heartbeat completed 500/15,187 elapsed 41s rate 4.91 spec/s eta 0.83h
+2026-08-19T03:01:06 launcher start pid 42557 shards 8 searched 121,500 of enumerated 364,500 (7.4 tier-two offset held at 10, not searched)
+2026-08-19T03:01:06 launcher spawned shard 0 pid 42559
+2026-08-19T03:01:06 launcher spawned shard 1 pid 42560
+2026-08-19T03:01:06 launcher spawned shard 2 pid 42561
+2026-08-19T03:01:06 launcher spawned shard 3 pid 42562
+2026-08-19T03:01:06 launcher spawned shard 4 pid 42563
+2026-08-19T03:01:06 launcher spawned shard 5 pid 42564
+2026-08-19T03:01:06 launcher spawned shard 6 pid 42565
+2026-08-19T03:01:06 launcher spawned shard 7 pid 42566
+2026-08-19T03:01:07 shard 0 start range 0..15,186 (15,187 specs), skipping 500 already recorded
+2026-08-19T03:01:07 shard 1 start range 15,187..30,374 (15,188 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 4 start range 60,750..75,936 (15,187 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 6 start range 91,125..106,311 (15,187 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 5 start range 75,937..91,124 (15,188 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 3 start range 45,562..60,749 (15,188 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 7 start range 106,312..121,499 (15,188 specs), skipping 0 already recorded
+2026-08-19T03:01:07 shard 2 start range 30,375..45,561 (15,187 specs), skipping 0 already recorded
+2026-08-19T03:08:26 shard 6 heartbeat completed 500/15,187 elapsed 429s rate 1.17 spec/s eta 3.50h
+2026-08-19T03:08:28 shard 4 heartbeat completed 500/15,187 elapsed 431s rate 1.16 spec/s eta 3.52h
+2026-08-19T03:08:30 shard 7 heartbeat completed 500/15,188 elapsed 433s rate 1.16 spec/s eta 3.53h
+2026-08-19T03:08:30 shard 2 heartbeat completed 500/15,187 elapsed 433s rate 1.15 spec/s eta 3.54h
+2026-08-19T03:08:31 shard 5 heartbeat completed 500/15,188 elapsed 434s rate 1.15 spec/s eta 3.54h
+2026-08-19T03:08:36 shard 3 heartbeat completed 500/15,188 elapsed 439s rate 1.14 spec/s eta 3.58h
+2026-08-19T03:08:36 shard 0 heartbeat completed 1,000/15,187 elapsed 439s rate 1.14 spec/s eta 3.46h
+2026-08-19T03:08:42 shard 1 heartbeat completed 500/15,188 elapsed 445s rate 1.12 spec/s eta 3.63h
+2026-08-19T03:13:29 shard 6 heartbeat completed 1,000/15,187 elapsed 732s rate 1.37 spec/s eta 2.88h
+2026-08-19T03:13:31 shard 4 heartbeat completed 1,000/15,187 elapsed 734s rate 1.36 spec/s eta 2.89h
+2026-08-19T03:13:32 shard 7 heartbeat completed 1,000/15,188 elapsed 735s rate 1.36 spec/s eta 2.90h
+2026-08-19T03:13:36 shard 5 heartbeat completed 1,000/15,188 elapsed 739s rate 1.35 spec/s eta 2.91h
+2026-08-19T03:13:37 shard 2 heartbeat completed 1,000/15,187 elapsed 740s rate 1.35 spec/s eta 2.92h
+2026-08-19T03:13:43 shard 3 heartbeat completed 1,000/15,188 elapsed 746s rate 1.34 spec/s eta 2.94h
+2026-08-19T03:13:46 shard 0 heartbeat completed 1,500/15,187 elapsed 749s rate 1.34 spec/s eta 2.85h
+2026-08-19T03:13:52 shard 1 heartbeat completed 1,000/15,188 elapsed 755s rate 1.33 spec/s eta 2.97h
+2026-08-19T03:18:10 shard 6 heartbeat completed 1,500/15,187 elapsed 1013s rate 1.48 spec/s eta 2.57h
+2026-08-19T03:18:12 shard 4 heartbeat completed 1,500/15,187 elapsed 1014s rate 1.48 spec/s eta 2.57h
+2026-08-19T03:18:16 shard 7 heartbeat completed 1,500/15,188 elapsed 1019s rate 1.47 spec/s eta 2.58h
+2026-08-19T03:18:20 shard 5 heartbeat completed 1,500/15,188 elapsed 1022s rate 1.47 spec/s eta 2.59h
+2026-08-19T03:18:23 shard 2 heartbeat completed 1,500/15,187 elapsed 1026s rate 1.46 spec/s eta 2.60h
+2026-08-19T03:18:30 shard 3 heartbeat completed 1,500/15,188 elapsed 1033s rate 1.45 spec/s eta 2.62h
+2026-08-19T03:18:35 shard 0 heartbeat completed 2,000/15,187 elapsed 1038s rate 1.44 spec/s eta 2.54h
+2026-08-19T03:18:42 shard 1 heartbeat completed 1,500/15,188 elapsed 1045s rate 1.44 spec/s eta 2.65h
+2026-08-19T03:22:35 shard 6 heartbeat completed 2,000/15,187 elapsed 1278s rate 1.56 spec/s eta 2.34h
+2026-08-19T03:22:37 shard 4 heartbeat completed 2,000/15,187 elapsed 1280s rate 1.56 spec/s eta 2.34h
+2026-08-19T03:22:43 shard 7 heartbeat completed 2,000/15,188 elapsed 1286s rate 1.55 spec/s eta 2.36h
+2026-08-19T03:22:47 shard 5 heartbeat completed 2,000/15,188 elapsed 1289s rate 1.55 spec/s eta 2.36h
+2026-08-19T03:22:54 shard 2 heartbeat completed 2,000/15,187 elapsed 1297s rate 1.54 spec/s eta 2.37h
+2026-08-19T03:23:01 shard 3 heartbeat completed 2,000/15,188 elapsed 1304s rate 1.53 spec/s eta 2.39h
+2026-08-19T03:23:10 shard 0 heartbeat completed 2,500/15,187 elapsed 1313s rate 1.52 spec/s eta 2.31h
+2026-08-19T03:23:17 shard 1 heartbeat completed 2,000/15,188 elapsed 1319s rate 1.52 spec/s eta 2.42h
+2026-08-19T03:27:02 shard 6 heartbeat completed 2,500/15,187 elapsed 1545s rate 1.62 spec/s eta 2.18h
+2026-08-19T03:27:04 shard 4 heartbeat completed 2,500/15,187 elapsed 1546s rate 1.62 spec/s eta 2.18h
+2026-08-19T03:27:05 shard 7 heartbeat completed 2,500/15,188 elapsed 1548s rate 1.62 spec/s eta 2.18h
+2026-08-19T03:27:09 shard 5 heartbeat completed 2,500/15,188 elapsed 1552s rate 1.61 spec/s eta 2.19h
+2026-08-19T03:27:24 shard 2 heartbeat completed 2,500/15,187 elapsed 1567s rate 1.60 spec/s eta 2.21h
+2026-08-19T03:27:26 shard 3 heartbeat completed 2,500/15,188 elapsed 1569s rate 1.59 spec/s eta 2.21h
+2026-08-19T03:27:39 shard 0 heartbeat completed 3,000/15,187 elapsed 1582s rate 1.58 spec/s eta 2.14h
+2026-08-19T03:27:44 shard 1 heartbeat completed 2,500/15,188 elapsed 1586s rate 1.58 spec/s eta 2.24h
+2026-08-19T03:31:05 shard 6 heartbeat completed 3,000/15,187 elapsed 1788s rate 1.68 spec/s eta 2.02h
+2026-08-19T03:31:06 shard 7 heartbeat completed 3,000/15,188 elapsed 1789s rate 1.68 spec/s eta 2.02h
+2026-08-19T03:31:07 shard 4 heartbeat completed 3,000/15,187 elapsed 1789s rate 1.68 spec/s eta 2.02h
+2026-08-19T03:31:10 shard 5 heartbeat completed 3,000/15,188 elapsed 1793s rate 1.67 spec/s eta 2.02h
+2026-08-19T03:31:32 shard 2 heartbeat completed 3,000/15,187 elapsed 1815s rate 1.65 spec/s eta 2.05h
+2026-08-19T03:31:33 shard 3 heartbeat completed 3,000/15,188 elapsed 1816s rate 1.65 spec/s eta 2.05h
+2026-08-19T03:31:50 shard 0 heartbeat completed 3,500/15,187 elapsed 1832s rate 1.64 spec/s eta 1.98h
+2026-08-19T03:31:56 shard 1 heartbeat completed 3,000/15,188 elapsed 1838s rate 1.63 spec/s eta 2.07h
+2026-08-19T03:35:07 shard 6 heartbeat completed 3,500/15,187 elapsed 2030s rate 1.72 spec/s eta 1.88h
+2026-08-19T03:35:08 shard 7 heartbeat completed 3,500/15,188 elapsed 2031s rate 1.72 spec/s eta 1.88h
+2026-08-19T03:35:12 shard 4 heartbeat completed 3,500/15,187 elapsed 2034s rate 1.72 spec/s eta 1.89h
+2026-08-19T03:35:12 shard 5 heartbeat completed 3,500/15,188 elapsed 2035s rate 1.72 spec/s eta 1.89h
+2026-08-19T03:35:36 shard 3 heartbeat completed 3,500/15,188 elapsed 2059s rate 1.70 spec/s eta 1.91h
+2026-08-19T03:35:39 shard 2 heartbeat completed 3,500/15,187 elapsed 2062s rate 1.70 spec/s eta 1.91h
+2026-08-19T03:36:02 shard 0 heartbeat completed 4,000/15,187 elapsed 2084s rate 1.68 spec/s eta 1.85h
+2026-08-19T03:36:02 shard 1 heartbeat completed 3,500/15,188 elapsed 2085s rate 1.68 spec/s eta 1.93h
+2026-08-19T03:39:13 shard 7 heartbeat completed 4,000/15,188 elapsed 2276s rate 1.76 spec/s eta 1.77h
+2026-08-19T03:39:15 shard 6 heartbeat completed 4,000/15,187 elapsed 2278s rate 1.76 spec/s eta 1.77h
+2026-08-19T03:39:18 shard 5 heartbeat completed 4,000/15,188 elapsed 2281s rate 1.75 spec/s eta 1.77h
+2026-08-19T03:39:21 shard 4 heartbeat completed 4,000/15,187 elapsed 2283s rate 1.75 spec/s eta 1.77h
+2026-08-19T03:39:43 shard 3 heartbeat completed 4,000/15,188 elapsed 2306s rate 1.73 spec/s eta 1.79h
+2026-08-19T03:39:51 shard 2 heartbeat completed 4,000/15,187 elapsed 2314s rate 1.73 spec/s eta 1.80h
+2026-08-19T03:40:09 shard 1 heartbeat completed 4,000/15,188 elapsed 2331s rate 1.72 spec/s eta 1.81h
+2026-08-19T03:40:16 shard 0 heartbeat completed 4,500/15,187 elapsed 2339s rate 1.71 spec/s eta 1.74h
+2026-08-19T03:43:06 shard 7 heartbeat completed 4,500/15,188 elapsed 2509s rate 1.79 spec/s eta 1.66h
+2026-08-19T03:43:12 shard 5 heartbeat completed 4,500/15,188 elapsed 2515s rate 1.79 spec/s eta 1.66h
+2026-08-19T03:43:16 shard 6 heartbeat completed 4,500/15,187 elapsed 2519s rate 1.79 spec/s eta 1.66h
+2026-08-19T03:43:20 shard 4 heartbeat completed 4,500/15,187 elapsed 2522s rate 1.78 spec/s eta 1.66h
+2026-08-19T03:43:40 shard 3 heartbeat completed 4,500/15,188 elapsed 2543s rate 1.77 spec/s eta 1.68h
+2026-08-19T03:43:58 shard 2 heartbeat completed 4,500/15,187 elapsed 2561s rate 1.76 spec/s eta 1.69h
+2026-08-19T03:44:11 shard 1 heartbeat completed 4,500/15,188 elapsed 2574s rate 1.75 spec/s eta 1.70h
+2026-08-19T03:44:23 shard 0 heartbeat completed 5,000/15,187 elapsed 2586s rate 1.74 spec/s eta 1.63h
+2026-08-19T03:47:03 shard 7 heartbeat completed 5,000/15,188 elapsed 2746s rate 1.82 spec/s eta 1.55h
+2026-08-19T03:47:12 shard 5 heartbeat completed 5,000/15,188 elapsed 2755s rate 1.82 spec/s eta 1.56h
+2026-08-19T03:47:15 shard 6 heartbeat completed 5,000/15,187 elapsed 2758s rate 1.81 spec/s eta 1.56h
+2026-08-19T03:47:20 shard 4 heartbeat completed 5,000/15,187 elapsed 2763s rate 1.81 spec/s eta 1.56h
+2026-08-19T03:47:40 shard 3 heartbeat completed 5,000/15,188 elapsed 2783s rate 1.80 spec/s eta 1.58h
+2026-08-19T03:48:00 shard 2 heartbeat completed 5,000/15,187 elapsed 2803s rate 1.78 spec/s eta 1.59h
+2026-08-19T03:48:12 shard 1 heartbeat completed 5,000/15,188 elapsed 2815s rate 1.78 spec/s eta 1.59h
+2026-08-19T03:48:23 shard 0 heartbeat completed 5,500/15,187 elapsed 2826s rate 1.77 spec/s eta 1.52h
+2026-08-19T03:51:05 shard 7 heartbeat completed 5,500/15,188 elapsed 2988s rate 1.84 spec/s eta 1.46h
+2026-08-19T03:51:15 shard 6 heartbeat completed 5,500/15,187 elapsed 2998s rate 1.83 spec/s eta 1.47h
+2026-08-19T03:51:16 shard 5 heartbeat completed 5,500/15,188 elapsed 2999s rate 1.83 spec/s eta 1.47h
+2026-08-19T03:51:21 shard 4 heartbeat completed 5,500/15,187 elapsed 3003s rate 1.83 spec/s eta 1.47h
+2026-08-19T03:51:49 shard 3 heartbeat completed 5,500/15,188 elapsed 3031s rate 1.81 spec/s eta 1.48h
+2026-08-19T03:52:06 shard 2 heartbeat completed 5,500/15,187 elapsed 3049s rate 1.80 spec/s eta 1.49h
+2026-08-19T03:52:22 shard 1 heartbeat completed 5,500/15,188 elapsed 3065s rate 1.79 spec/s eta 1.50h
+2026-08-19T03:52:31 shard 0 heartbeat completed 6,000/15,187 elapsed 3073s rate 1.79 spec/s eta 1.43h
+2026-08-19T03:55:01 shard 7 heartbeat completed 6,000/15,188 elapsed 3224s rate 1.86 spec/s eta 1.37h
+2026-08-19T03:55:13 shard 5 heartbeat completed 6,000/15,188 elapsed 3236s rate 1.85 spec/s eta 1.38h
+2026-08-19T03:55:14 shard 6 heartbeat completed 6,000/15,187 elapsed 3237s rate 1.85 spec/s eta 1.38h
+2026-08-19T03:55:17 shard 4 heartbeat completed 6,000/15,187 elapsed 3239s rate 1.85 spec/s eta 1.38h
+2026-08-19T03:55:49 shard 3 heartbeat completed 6,000/15,188 elapsed 3272s rate 1.83 spec/s eta 1.39h
+2026-08-19T03:56:12 shard 2 heartbeat completed 6,000/15,187 elapsed 3295s rate 1.82 spec/s eta 1.40h
+2026-08-19T03:56:29 shard 1 heartbeat completed 6,000/15,188 elapsed 3312s rate 1.81 spec/s eta 1.41h
+2026-08-19T03:56:34 shard 0 heartbeat completed 6,500/15,187 elapsed 3317s rate 1.81 spec/s eta 1.33h
+2026-08-19T03:58:55 shard 7 heartbeat completed 6,500/15,188 elapsed 3458s rate 1.88 spec/s eta 1.28h
+2026-08-19T03:59:08 shard 5 heartbeat completed 6,500/15,188 elapsed 3471s rate 1.87 spec/s eta 1.29h
+2026-08-19T03:59:09 shard 6 heartbeat completed 6,500/15,187 elapsed 3472s rate 1.87 spec/s eta 1.29h
+2026-08-19T03:59:13 shard 4 heartbeat completed 6,500/15,187 elapsed 3476s rate 1.87 spec/s eta 1.29h
+2026-08-19T03:59:46 shard 3 heartbeat completed 6,500/15,188 elapsed 3509s rate 1.85 spec/s eta 1.30h
+2026-08-19T04:00:09 shard 2 heartbeat completed 6,500/15,187 elapsed 3532s rate 1.84 spec/s eta 1.31h
+2026-08-19T04:00:30 shard 1 heartbeat completed 6,500/15,188 elapsed 3553s rate 1.83 spec/s eta 1.32h
+2026-08-19T04:00:34 shard 0 heartbeat completed 7,000/15,187 elapsed 3556s rate 1.83 spec/s eta 1.24h
+2026-08-19T04:02:57 shard 7 heartbeat completed 7,000/15,188 elapsed 3700s rate 1.89 spec/s eta 1.20h
+2026-08-19T04:03:13 shard 5 heartbeat completed 7,000/15,188 elapsed 3716s rate 1.88 spec/s eta 1.21h
+2026-08-19T04:03:13 shard 6 heartbeat completed 7,000/15,187 elapsed 3716s rate 1.88 spec/s eta 1.21h
+2026-08-19T04:03:17 shard 4 heartbeat completed 7,000/15,187 elapsed 3720s rate 1.88 spec/s eta 1.21h
+2026-08-19T04:03:56 shard 3 heartbeat completed 7,000/15,188 elapsed 3759s rate 1.86 spec/s eta 1.22h
+2026-08-19T04:04:17 shard 2 heartbeat completed 7,000/15,187 elapsed 3780s rate 1.85 spec/s eta 1.23h
+2026-08-19T04:04:43 shard 0 heartbeat completed 7,500/15,187 elapsed 3806s rate 1.84 spec/s eta 1.16h
+2026-08-19T04:04:47 shard 1 heartbeat completed 7,000/15,188 elapsed 3810s rate 1.84 spec/s eta 1.24h
+2026-08-19T04:07:06 shard 7 heartbeat completed 7,500/15,188 elapsed 3949s rate 1.90 spec/s eta 1.12h
+2026-08-19T04:07:14 shard 6 heartbeat completed 7,500/15,187 elapsed 3957s rate 1.90 spec/s eta 1.13h
+2026-08-19T04:07:17 shard 4 heartbeat completed 7,500/15,187 elapsed 3960s rate 1.89 spec/s eta 1.13h
+2026-08-19T04:07:19 shard 5 heartbeat completed 7,500/15,188 elapsed 3962s rate 1.89 spec/s eta 1.13h
+2026-08-19T04:08:04 shard 3 heartbeat completed 7,500/15,188 elapsed 4006s rate 1.87 spec/s eta 1.14h
+2026-08-19T04:08:16 shard 2 heartbeat completed 7,500/15,187 elapsed 4019s rate 1.87 spec/s eta 1.14h
+2026-08-19T04:08:46 shard 0 heartbeat completed 8,000/15,187 elapsed 4049s rate 1.85 spec/s eta 1.08h
+2026-08-19T04:08:53 shard 1 heartbeat completed 7,500/15,188 elapsed 4056s rate 1.85 spec/s eta 1.15h
+2026-08-19T04:11:11 shard 7 heartbeat completed 8,000/15,188 elapsed 4194s rate 1.91 spec/s eta 1.05h
+2026-08-19T04:11:18 shard 6 heartbeat completed 8,000/15,187 elapsed 4201s rate 1.90 spec/s eta 1.05h
+2026-08-19T04:11:23 shard 4 heartbeat completed 8,000/15,187 elapsed 4205s rate 1.90 spec/s eta 1.05h
+2026-08-19T04:11:26 shard 5 heartbeat completed 8,000/15,188 elapsed 4209s rate 1.90 spec/s eta 1.05h
+2026-08-19T04:12:20 shard 3 heartbeat completed 8,000/15,188 elapsed 4263s rate 1.88 spec/s eta 1.06h
+2026-08-19T04:12:34 shard 2 heartbeat completed 8,000/15,187 elapsed 4277s rate 1.87 spec/s eta 1.07h
+2026-08-19T04:13:12 shard 0 heartbeat completed 8,500/15,187 elapsed 4314s rate 1.85 spec/s eta 1.00h
+2026-08-19T04:13:18 shard 1 heartbeat completed 8,000/15,188 elapsed 4321s rate 1.85 spec/s eta 1.08h
+2026-08-19T04:15:28 shard 7 heartbeat completed 8,500/15,188 elapsed 4451s rate 1.91 spec/s eta 0.97h
+2026-08-19T04:15:44 shard 5 heartbeat completed 8,500/15,188 elapsed 4467s rate 1.90 spec/s eta 0.98h
+2026-08-19T04:15:44 shard 6 heartbeat completed 8,500/15,187 elapsed 4467s rate 1.90 spec/s eta 0.98h
+2026-08-19T04:15:49 shard 4 heartbeat completed 8,500/15,187 elapsed 4472s rate 1.90 spec/s eta 0.98h
+2026-08-19T04:16:42 shard 3 heartbeat completed 8,500/15,188 elapsed 4525s rate 1.88 spec/s eta 0.99h
+2026-08-19T04:17:04 shard 2 heartbeat completed 8,500/15,187 elapsed 4547s rate 1.87 spec/s eta 0.99h
+2026-08-19T04:17:41 shard 0 heartbeat completed 9,000/15,187 elapsed 4584s rate 1.85 spec/s eta 0.93h
+2026-08-19T04:17:43 shard 1 heartbeat completed 8,500/15,188 elapsed 4586s rate 1.85 spec/s eta 1.00h
+2026-08-19T04:19:44 shard 7 heartbeat completed 9,000/15,188 elapsed 4707s rate 1.91 spec/s eta 0.90h
+2026-08-19T04:19:58 shard 5 heartbeat completed 9,000/15,188 elapsed 4721s rate 1.91 spec/s eta 0.90h
+2026-08-19T04:20:00 shard 6 heartbeat completed 9,000/15,187 elapsed 4723s rate 1.91 spec/s eta 0.90h
+2026-08-19T04:20:04 shard 4 heartbeat completed 9,000/15,187 elapsed 4727s rate 1.90 spec/s eta 0.90h
+2026-08-19T04:20:56 shard 3 heartbeat completed 9,000/15,188 elapsed 4779s rate 1.88 spec/s eta 0.91h
+2026-08-19T04:21:19 shard 2 heartbeat completed 9,000/15,187 elapsed 4802s rate 1.87 spec/s eta 0.92h
+2026-08-19T04:21:57 shard 0 heartbeat completed 9,500/15,187 elapsed 4840s rate 1.86 spec/s eta 0.85h
+2026-08-19T04:22:04 shard 1 heartbeat completed 9,000/15,188 elapsed 4846s rate 1.86 spec/s eta 0.93h
+2026-08-19T04:23:53 shard 7 heartbeat completed 9,500/15,188 elapsed 4956s rate 1.92 spec/s eta 0.82h
+2026-08-19T04:24:09 shard 5 heartbeat completed 9,500/15,188 elapsed 4972s rate 1.91 spec/s eta 0.83h
+2026-08-19T04:24:10 shard 6 heartbeat completed 9,500/15,187 elapsed 4972s rate 1.91 spec/s eta 0.83h
+2026-08-19T04:24:14 shard 4 heartbeat completed 9,500/15,187 elapsed 4976s rate 1.91 spec/s eta 0.83h
+2026-08-19T04:25:09 shard 3 heartbeat completed 9,500/15,188 elapsed 5032s rate 1.89 spec/s eta 0.84h
+2026-08-19T04:25:34 shard 2 heartbeat completed 9,500/15,187 elapsed 5057s rate 1.88 spec/s eta 0.84h
+2026-08-19T04:26:22 shard 0 heartbeat completed 10,000/15,187 elapsed 5105s rate 1.86 spec/s eta 0.77h
+2026-08-19T04:26:24 shard 1 heartbeat completed 9,500/15,188 elapsed 5107s rate 1.86 spec/s eta 0.85h
+2026-08-19T04:28:04 shard 7 heartbeat completed 10,000/15,188 elapsed 5207s rate 1.92 spec/s eta 0.75h
+2026-08-19T04:28:21 shard 5 heartbeat completed 10,000/15,188 elapsed 5224s rate 1.91 spec/s eta 0.75h
+2026-08-19T04:28:23 shard 6 heartbeat completed 10,000/15,187 elapsed 5226s rate 1.91 spec/s eta 0.75h
+2026-08-19T04:28:26 shard 4 heartbeat completed 10,000/15,187 elapsed 5229s rate 1.91 spec/s eta 0.75h
+2026-08-19T04:29:25 shard 3 heartbeat completed 10,000/15,188 elapsed 5288s rate 1.89 spec/s eta 0.76h
+2026-08-19T04:29:55 shard 2 heartbeat completed 10,000/15,187 elapsed 5318s rate 1.88 spec/s eta 0.77h
+2026-08-19T04:30:38 shard 1 heartbeat completed 10,000/15,188 elapsed 5360s rate 1.87 spec/s eta 0.77h
+2026-08-19T04:30:39 shard 0 heartbeat completed 10,500/15,187 elapsed 5362s rate 1.87 spec/s eta 0.70h
+2026-08-19T04:32:08 shard 7 heartbeat completed 10,500/15,188 elapsed 5451s rate 1.93 spec/s eta 0.68h
+2026-08-19T04:32:24 shard 5 heartbeat completed 10,500/15,188 elapsed 5467s rate 1.92 spec/s eta 0.68h
+2026-08-19T04:32:31 shard 6 heartbeat completed 10,500/15,187 elapsed 5474s rate 1.92 spec/s eta 0.68h
+2026-08-19T04:32:33 shard 4 heartbeat completed 10,500/15,187 elapsed 5476s rate 1.92 spec/s eta 0.68h
+2026-08-19T04:33:29 shard 3 heartbeat completed 10,500/15,188 elapsed 5532s rate 1.90 spec/s eta 0.69h
+2026-08-19T04:34:06 shard 2 heartbeat completed 10,500/15,187 elapsed 5569s rate 1.89 spec/s eta 0.69h
+2026-08-19T04:34:43 shard 1 heartbeat completed 10,500/15,188 elapsed 5606s rate 1.87 spec/s eta 0.70h
+2026-08-19T04:34:54 shard 0 heartbeat completed 11,000/15,187 elapsed 5617s rate 1.87 spec/s eta 0.62h
+2026-08-19T04:36:15 shard 7 heartbeat completed 11,000/15,188 elapsed 5698s rate 1.93 spec/s eta 0.60h
+2026-08-19T04:36:33 shard 5 heartbeat completed 11,000/15,188 elapsed 5716s rate 1.92 spec/s eta 0.60h
+2026-08-19T04:36:44 shard 6 heartbeat completed 11,000/15,187 elapsed 5727s rate 1.92 spec/s eta 0.61h
+2026-08-19T04:36:45 shard 4 heartbeat completed 11,000/15,187 elapsed 5727s rate 1.92 spec/s eta 0.61h
+2026-08-19T04:37:39 shard 3 heartbeat completed 11,000/15,188 elapsed 5782s rate 1.90 spec/s eta 0.61h
+2026-08-19T04:38:19 shard 2 heartbeat completed 11,000/15,187 elapsed 5822s rate 1.89 spec/s eta 0.62h
+2026-08-19T04:38:58 shard 1 heartbeat completed 11,000/15,188 elapsed 5861s rate 1.88 spec/s eta 0.62h
+2026-08-19T04:39:07 shard 0 heartbeat completed 11,500/15,187 elapsed 5870s rate 1.87 spec/s eta 0.55h
+2026-08-19T04:40:29 shard 7 heartbeat completed 11,500/15,188 elapsed 5952s rate 1.93 spec/s eta 0.53h
+2026-08-19T04:40:50 shard 5 heartbeat completed 11,500/15,188 elapsed 5973s rate 1.93 spec/s eta 0.53h
+2026-08-19T04:40:57 shard 6 heartbeat completed 11,500/15,187 elapsed 5980s rate 1.92 spec/s eta 0.53h
+2026-08-19T04:40:57 shard 4 heartbeat completed 11,500/15,187 elapsed 5980s rate 1.92 spec/s eta 0.53h
+2026-08-19T04:42:02 shard 3 heartbeat completed 11,500/15,188 elapsed 6045s rate 1.90 spec/s eta 0.54h
+2026-08-19T04:42:34 shard 2 heartbeat completed 11,500/15,187 elapsed 6077s rate 1.89 spec/s eta 0.54h
+2026-08-19T04:43:20 shard 1 heartbeat completed 11,500/15,188 elapsed 6122s rate 1.88 spec/s eta 0.55h
+2026-08-19T04:43:28 shard 0 heartbeat completed 12,000/15,187 elapsed 6131s rate 1.88 spec/s eta 0.47h
+2026-08-19T04:44:34 shard 7 heartbeat completed 12,000/15,188 elapsed 6197s rate 1.94 spec/s eta 0.46h
+2026-08-19T04:44:56 shard 5 heartbeat completed 12,000/15,188 elapsed 6219s rate 1.93 spec/s eta 0.46h
+2026-08-19T04:45:02 shard 6 heartbeat completed 12,000/15,187 elapsed 6225s rate 1.93 spec/s eta 0.46h
+2026-08-19T04:45:03 shard 4 heartbeat completed 12,000/15,187 elapsed 6226s rate 1.93 spec/s eta 0.46h
+2026-08-19T04:46:13 shard 3 heartbeat completed 12,000/15,188 elapsed 6296s rate 1.91 spec/s eta 0.46h
+2026-08-19T04:46:49 shard 2 heartbeat completed 12,000/15,187 elapsed 6332s rate 1.90 spec/s eta 0.47h
+2026-08-19T04:47:40 shard 1 heartbeat completed 12,000/15,188 elapsed 6383s rate 1.88 spec/s eta 0.47h
+2026-08-19T04:47:43 shard 0 heartbeat completed 12,500/15,187 elapsed 6385s rate 1.88 spec/s eta 0.40h
+2026-08-19T04:48:43 shard 7 heartbeat completed 12,500/15,188 elapsed 6446s rate 1.94 spec/s eta 0.39h
+2026-08-19T04:49:06 shard 5 heartbeat completed 12,500/15,188 elapsed 6469s rate 1.93 spec/s eta 0.39h
+2026-08-19T04:49:09 shard 6 heartbeat completed 12,500/15,187 elapsed 6472s rate 1.93 spec/s eta 0.39h
+2026-08-19T04:49:11 shard 4 heartbeat completed 12,500/15,187 elapsed 6474s rate 1.93 spec/s eta 0.39h
+2026-08-19T04:50:21 shard 3 heartbeat completed 12,500/15,188 elapsed 6544s rate 1.91 spec/s eta 0.39h
+2026-08-19T04:50:54 shard 2 heartbeat completed 12,500/15,187 elapsed 6577s rate 1.90 spec/s eta 0.39h
+2026-08-19T04:51:54 shard 0 heartbeat completed 13,000/15,187 elapsed 6637s rate 1.88 spec/s eta 0.32h
+2026-08-19T04:51:54 shard 1 heartbeat completed 12,500/15,188 elapsed 6637s rate 1.88 spec/s eta 0.40h
+2026-08-19T04:52:51 shard 7 heartbeat completed 13,000/15,188 elapsed 6694s rate 1.94 spec/s eta 0.31h
+2026-08-19T04:53:11 shard 5 heartbeat completed 13,000/15,188 elapsed 6714s rate 1.94 spec/s eta 0.31h
+2026-08-19T04:53:12 shard 6 heartbeat completed 13,000/15,187 elapsed 6715s rate 1.94 spec/s eta 0.31h
+2026-08-19T04:53:15 shard 4 heartbeat completed 13,000/15,187 elapsed 6718s rate 1.94 spec/s eta 0.31h
+2026-08-19T04:54:29 shard 3 heartbeat completed 13,000/15,188 elapsed 6792s rate 1.91 spec/s eta 0.32h
+2026-08-19T04:54:59 shard 2 heartbeat completed 13,000/15,187 elapsed 6822s rate 1.91 spec/s eta 0.32h
+2026-08-19T04:55:58 shard 0 heartbeat completed 13,500/15,187 elapsed 6881s rate 1.89 spec/s eta 0.25h
+2026-08-19T04:56:02 shard 1 heartbeat completed 13,000/15,188 elapsed 6885s rate 1.89 spec/s eta 0.32h
+2026-08-19T04:56:51 shard 7 heartbeat completed 13,500/15,188 elapsed 6934s rate 1.95 spec/s eta 0.24h
+2026-08-19T04:57:12 shard 6 heartbeat completed 13,500/15,187 elapsed 6955s rate 1.94 spec/s eta 0.24h
+2026-08-19T04:57:13 shard 5 heartbeat completed 13,500/15,188 elapsed 6956s rate 1.94 spec/s eta 0.24h
+2026-08-19T04:57:14 shard 4 heartbeat completed 13,500/15,187 elapsed 6957s rate 1.94 spec/s eta 0.24h
+2026-08-19T04:58:38 shard 3 heartbeat completed 13,500/15,188 elapsed 7041s rate 1.92 spec/s eta 0.24h
+2026-08-19T04:59:06 shard 2 heartbeat completed 13,500/15,187 elapsed 7069s rate 1.91 spec/s eta 0.25h
+2026-08-19T05:00:03 shard 0 heartbeat completed 14,000/15,187 elapsed 7125s rate 1.89 spec/s eta 0.17h
+2026-08-19T05:00:13 shard 1 heartbeat completed 13,500/15,188 elapsed 7135s rate 1.89 spec/s eta 0.25h
+2026-08-19T05:00:55 shard 7 heartbeat completed 14,000/15,188 elapsed 7178s rate 1.95 spec/s eta 0.17h
+2026-08-19T05:01:14 shard 6 heartbeat completed 14,000/15,187 elapsed 7197s rate 1.95 spec/s eta 0.17h
+2026-08-19T05:01:16 shard 4 heartbeat completed 14,000/15,187 elapsed 7199s rate 1.94 spec/s eta 0.17h
+2026-08-19T05:01:19 shard 5 heartbeat completed 14,000/15,188 elapsed 7202s rate 1.94 spec/s eta 0.17h
+2026-08-19T05:02:40 shard 3 heartbeat completed 14,000/15,188 elapsed 7283s rate 1.92 spec/s eta 0.17h
+2026-08-19T05:03:07 shard 2 heartbeat completed 14,000/15,187 elapsed 7310s rate 1.92 spec/s eta 0.17h
+2026-08-19T05:04:09 shard 0 heartbeat completed 14,500/15,187 elapsed 7372s rate 1.90 spec/s eta 0.10h
+2026-08-19T05:04:22 shard 1 heartbeat completed 14,000/15,188 elapsed 7385s rate 1.90 spec/s eta 0.17h
+2026-08-19T05:04:51 shard 7 heartbeat completed 14,500/15,188 elapsed 7414s rate 1.96 spec/s eta 0.10h
+2026-08-19T05:05:10 shard 6 heartbeat completed 14,500/15,187 elapsed 7433s rate 1.95 spec/s eta 0.10h
+2026-08-19T05:05:14 shard 4 heartbeat completed 14,500/15,187 elapsed 7437s rate 1.95 spec/s eta 0.10h
+2026-08-19T05:05:15 shard 5 heartbeat completed 14,500/15,188 elapsed 7438s rate 1.95 spec/s eta 0.10h
+2026-08-19T05:06:47 shard 3 heartbeat completed 14,500/15,188 elapsed 7530s rate 1.93 spec/s eta 0.10h
+2026-08-19T05:07:19 shard 2 heartbeat completed 14,500/15,187 elapsed 7562s rate 1.92 spec/s eta 0.10h
+2026-08-19T05:08:26 shard 0 heartbeat completed 15,000/15,187 elapsed 7628s rate 1.90 spec/s eta 0.03h
+2026-08-19T05:08:39 shard 1 heartbeat completed 14,500/15,188 elapsed 7642s rate 1.90 spec/s eta 0.10h
+2026-08-19T05:09:06 shard 7 heartbeat completed 15,000/15,188 elapsed 7669s rate 1.96 spec/s eta 0.03h
+2026-08-19T05:09:25 shard 6 heartbeat completed 15,000/15,187 elapsed 7688s rate 1.95 spec/s eta 0.03h
+2026-08-19T05:09:29 shard 5 heartbeat completed 15,000/15,188 elapsed 7691s rate 1.95 spec/s eta 0.03h
+2026-08-19T05:09:29 shard 4 heartbeat completed 15,000/15,187 elapsed 7692s rate 1.95 spec/s eta 0.03h
+2026-08-19T05:10:03 shard 0 heartbeat completed 15,187/15,187 elapsed 7726s rate 1.90 spec/s eta 0.00h
+2026-08-19T05:10:03 shard 0 COMPLETE 15,187 specifications in 2.15h
+2026-08-19T05:10:33 shard 7 heartbeat completed 15,188/15,188 elapsed 7756s rate 1.96 spec/s eta 0.00h
+2026-08-19T05:10:33 shard 7 COMPLETE 15,188 specifications in 2.15h
+2026-08-19T05:10:53 shard 6 heartbeat completed 15,187/15,187 elapsed 7776s rate 1.95 spec/s eta 0.00h
+2026-08-19T05:10:53 shard 6 COMPLETE 15,187 specifications in 2.16h
+2026-08-19T05:10:55 shard 5 heartbeat completed 15,188/15,188 elapsed 7777s rate 1.95 spec/s eta 0.00h
+2026-08-19T05:10:55 shard 5 COMPLETE 15,188 specifications in 2.16h
+2026-08-19T05:10:56 shard 4 heartbeat completed 15,187/15,187 elapsed 7779s rate 1.95 spec/s eta 0.00h
+2026-08-19T05:10:56 shard 4 COMPLETE 15,187 specifications in 2.16h
+2026-08-19T05:10:59 shard 3 heartbeat completed 15,000/15,188 elapsed 7782s rate 1.93 spec/s eta 0.03h
+2026-08-19T05:11:14 shard 2 heartbeat completed 15,000/15,187 elapsed 7797s rate 1.92 spec/s eta 0.03h
+2026-08-19T05:11:48 shard 3 heartbeat completed 15,188/15,188 elapsed 7830s rate 1.94 spec/s eta 0.00h
+2026-08-19T05:11:48 shard 3 COMPLETE 15,188 specifications in 2.18h
+2026-08-19T05:11:55 shard 1 heartbeat completed 15,000/15,188 elapsed 7838s rate 1.91 spec/s eta 0.03h
+2026-08-19T05:12:00 shard 2 heartbeat completed 15,187/15,187 elapsed 7843s rate 1.94 spec/s eta 0.00h
+2026-08-19T05:12:00 shard 2 COMPLETE 15,187 specifications in 2.18h
+2026-08-19T05:12:32 shard 1 heartbeat completed 15,188/15,188 elapsed 7874s rate 1.93 spec/s eta 0.00h
+2026-08-19T05:12:32 shard 1 COMPLETE 15,188 specifications in 2.19h
+2026-08-19T05:12:32 launcher GRID COMPLETE: 121,500/121,500 specifications in 2.19h
+GRID COMPLETE: 121,500/121,500 specifications in 2.19h

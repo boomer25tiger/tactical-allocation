@@ -1,0 +1,2 @@
+table,measured_ann,measured_sharpe_lo,expected_ann,expected_sharpe_lo,match_4dp,note
+behaviour_identity,0.5218447451814521,1.3817013060244996,0.5218,1.3817,True,re-run after the step 4 guard repair and the step 5 vote-membership port; the designated cell is unchanged

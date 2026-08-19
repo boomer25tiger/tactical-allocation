@@ -1,0 +1,4 @@
+[shard 7] range 318,937..364,499 (45,563 specs), resuming at 0
+[shard 7] 200/45,563 0.776s/spec eta 9.77h
+[shard 7] range 318,937..364,499 (45,563 specs), resuming at 200
+[shard 7] 400/45,563 0.825s/spec eta 10.35h

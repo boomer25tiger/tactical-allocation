@@ -1,0 +1,35 @@
+table,axis,register_id,values,cardinality,source,canonical_value,canonical_on_axis,searched_by_grid,register_status,note
+ten_axis_enumerated,sma_long,7.6,50 100 150 200,4,"register 7.6, closed",200,True,True,,
+ten_axis_enumerated,crash_threshold,7.7,-5.0 -10.0 -15.0 -20.0 -25.0,5,"register 7.7, revised session 04",-15.0,True,True,,
+ten_axis_enumerated,rsi_exhaustion,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+ten_axis_enumerated,rsi_dip,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+ten_axis_enumerated,rsi_rs,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+ten_axis_enumerated,overbought_t1,6.2,60 65 70 75 80,5,"docs/HANDOFF.md line 122, recovered session 17",70,True,True,,
+ten_axis_enumerated,tier_two_offset,7.4,5 10 15,3,"register 7.4, recorded",10,True,False,,
+ten_axis_enumerated,oversold,6.4,20 25 30 35 40,5,"docs/HANDOFF.md line 122, recovered session 17",30,True,True,,
+ten_axis_enumerated,sma_short,6.6,10 20 50,3,"docs/HANDOFF.md line 122, recovered session 17",20,True,True,,
+ten_axis_enumerated,vote,6.7,2 3 4,3,"register 6.7, recorded",3,True,True,,
+nine_axis_searched,sma_long,7.6,50 100 150 200,4,"register 7.6, closed",200,True,True,,
+nine_axis_searched,crash_threshold,7.7,-5.0 -10.0 -15.0 -20.0 -25.0,5,"register 7.7, revised session 04",-15.0,True,True,,
+nine_axis_searched,rsi_exhaustion,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+nine_axis_searched,rsi_dip,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+nine_axis_searched,rsi_rs,6.1,7 14 28,3,"register 6.1, recorded",14,True,True,,
+nine_axis_searched,overbought_t1,6.2,60 65 70 75 80,5,"docs/HANDOFF.md line 122, recovered session 17",70,True,True,,
+nine_axis_searched,oversold,6.4,20 25 30 35 40,5,"docs/HANDOFF.md line 122, recovered session 17",30,True,True,,
+nine_axis_searched,sma_short,6.6,10 20 50,3,"docs/HANDOFF.md line 122, recovered session 17",20,True,True,,
+nine_axis_searched,vote,6.7,2 3 4,3,"register 6.7, recorded",3,True,True,,
+dropped_axis,tier_two_offset,7.4,5 10 15,3,register 7.4,10,True,False,informed,held at its canonical value on every specification; the canonical point is unchanged and no strategy quantity changes
+totals,searched_specifications,,,121500,,,,,,the nine searched axes; the grid evaluates this many points
+totals,enumerated_specifications,,,364500,,,,,,the ten enumerated axes; 8.7 reports N at this value
+totals,evaluated_of_enumerated,,,121500,,,,,,"121,500 of 364,500 evaluated, 7.4 held at canonical rather than sampled"
+totals,eight_unrepresented_axes_product,,,18225,,,,,,the recovery factorisation base
+totals,v1_v2_total,,,273375,,,,,,"18,225 x 5 x 3, reconciles with no remainder"
+totals,after_7_6_total,,,218700,,,,,,"18,225 x 4 x 3, reconciles with no remainder"
+totals,after_7_6_and_7_7_total,,,364500,,,,,,"18,225 x 4 x 5, reconciles with no remainder"
+totals,alternative_with_7_4_excluded,,,121500,,,,,,reported by session 16b as the total with 7.4 excluded
+reason,grounds,,,,,,,,,"7.4 is recorded in the register as informed rather than closed. An item the register marks informed is not a decision the study made, so searching over it would report a specification curve spanning a parameter the register never fixed."
+reason,occasion_not_grounds,,,,,,,,,"Runtime was the occasion for reading 7.4's status, not the grounds for the decision. The grounds are the register status alone. Recorded separately and explicitly so the two are not conflated."
+reason,effect_on_canonical,,,,,,,,,"None. The offset is held at its canonical value of 10 on every specification, so the canonical point is unchanged."
+reason,effect_on_8_7,,,,,,,,,"8.7 keeps N at the enumerated total. N is the size of the search space the study enumerated rather than the count of points evaluated, and the grid running on a disclosed subset does not shrink it."
+reason,effect_on_step_3,,,,,,,,,"The deflated Sharpe reports at N equal to the enumerated total as primary and at the searched total as the sensitivity, with the cross-sectional Sharpe standard deviation estimated from the evaluated grid and the estimation caveat stated."
+reason,effect_on_step_4,,,,,,,,,The specification curve spans the nine searched axes. The tier-two offset is not on the curve because it was not searched.

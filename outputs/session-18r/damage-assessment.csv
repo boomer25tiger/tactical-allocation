@@ -1,0 +1,115 @@
+section,metric,value,note
+step1_volume_and_sync,volume_size_gb,494,df -H /System/Volumes/Data
+step1_volume_and_sync,volume_used_gb,429,df -H
+step1_volume_and_sync,volume_free_gb,26,"df -H, was 19 GB at session start"
+step1_volume_and_sync,volume_capacity_pct,95,"df -H Capacity column, was 96 percent at session start"
+step1_volume_and_sync,apfs_container_free_gb,23.3,"diskutil info, measured at session start"
+step1_volume_and_sync,local_time_machine_snapshots,0,tmutil listlocalsnapshots / returned an empty list
+step1_volume_and_sync,reclaimable_from_snapshots_gb,0,"no snapshots exist, so nothing is reclaimable from them"
+step1_volume_and_sync,dataless_at_session_start_excl_venv,242,find -flags +dataless
+step1_volume_and_sync,dataless_in_git_at_start,200,
+step1_volume_and_sync,dataless_in_outputs_at_start,23,
+step1_volume_and_sync,dataless_in_data_at_start,11,"all under data/interim/synthetics, none under data/raw"
+step1_volume_and_sync,dataless_in_scripts_at_start,4,
+step1_volume_and_sync,dataless_in_src_at_start,1,
+step1_volume_and_sync,dataless_in_docs_at_start,1,
+step1_volume_and_sync,dataless_in_pytest_cache_at_start,2,
+step1_volume_and_sync,dataless_under_venv,3751,venv is reconstructible from requirements and is not data loss
+step1_volume_and_sync,dataless_remaining_excl_venv,0,all materialised by the step 2 and prefetch reads
+step1_volume_and_sync,download_rate_files_per_min,34.1,"measured over 181 s once warmed, 12-way parallel reads"
+step1_volume_and_sync,cold_fetch_seconds_per_file,92,"worst observed single-file latency, SYN_FAS.parquet"
+step1_volume_and_sync,download_queue_state,active,"progressing, not stalled; every requested file completed"
+step1_volume_and_sync,daemon_bird_running,1,pgrep matched
+step1_volume_and_sync,daemon_cloudd_running,1,pgrep matched
+step1_volume_and_sync,daemon_fileproviderd_running,1,pgrep matched
+step1_volume_and_sync,brctl_container,com.apple.CloudDocs,"reported caught-up at 14:30:47, then needs-sync-up|in-sync-down while fetching"
+step2_read_test,class_full,1630,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,class_short_read,0,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,class_zero_read_nonzero_stat,0,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,class_read_error,0,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,class_empty_by_stat,1,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,class_stat_error,0,"whole tree excluding .venv, full sequential read compared against stat size"
+step2_read_test,files_tested,1631,
+step2_read_test_nonfull,src/__init__.py,empty_by_stat,"stat 0B, read 0B"
+step2_git_objects,files,779,
+step2_git_objects,dataless_at_read_time,37,
+step2_git_objects,fully_readable,779,every one read complete
+step3_grid,outputs/session-17/grid/moments-00.f64,"OK (15187, 96) d first-row-finite=True","kind moments, stat 11663616B, read 11663616B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-01.f64,"OK (15188, 96) d first-row-finite=True","kind moments, stat 11664384B, read 11664384B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-02.f64,"OK (15187, 96) d first-row-finite=True","kind moments, stat 11663616B, read 11663616B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-03.f64,"OK (15188, 96) d first-row-finite=True","kind moments, stat 11664384B, read 11664384B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-04.f64,"OK (15187, 96) d first-row-finite=True","kind moments, stat 11663616B, read 11663616B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-05.f64,"OK (15188, 96) d first-row-finite=True","kind moments, stat 11664384B, read 11664384B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-06.f64,"OK (15187, 96) d first-row-finite=True","kind moments, stat 11663616B, read 11663616B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/moments-07.f64,"OK (15188, 96) d first-row-finite=True","kind moments, stat 11664384B, read 11664384B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-00.f64,"OK (15187, 72) d first-row-finite=False","kind metrics, stat 8747712B, read 8747712B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-01.f64,"OK (15188, 72) d first-row-finite=False","kind metrics, stat 8748288B, read 8748288B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-02.f64,"OK (15187, 72) d first-row-finite=False","kind metrics, stat 8747712B, read 8747712B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-03.f64,"OK (15188, 72) d first-row-finite=True","kind metrics, stat 8748288B, read 8748288B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-04.f64,"OK (15187, 72) d first-row-finite=False","kind metrics, stat 8747712B, read 8747712B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-05.f64,"OK (15188, 72) d first-row-finite=True","kind metrics, stat 8748288B, read 8748288B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-06.f64,"OK (15187, 72) d first-row-finite=False","kind metrics, stat 8747712B, read 8747712B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/metrics-07.f64,"OK (15188, 72) d first-row-finite=True","kind metrics, stat 8748288B, read 8748288B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-00.i64,"OK 15187 int64 values, first 0 last 15186","kind index, stat 121496B, read 121496B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-01.i64,"OK 15188 int64 values, first 15187 last 30374","kind index, stat 121504B, read 121504B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-02.i64,"OK 15187 int64 values, first 30375 last 45561","kind index, stat 121496B, read 121496B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-03.i64,"OK 15188 int64 values, first 45562 last 60749","kind index, stat 121504B, read 121504B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-04.i64,"OK 15187 int64 values, first 60750 last 75936","kind index, stat 121496B, read 121496B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-05.i64,"OK 15188 int64 values, first 75937 last 91124","kind index, stat 121504B, read 121504B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-06.i64,"OK 15187 int64 values, first 91125 last 106311","kind index, stat 121496B, read 121496B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/index-07.i64,"OK 15188 int64 values, first 106312 last 121499","kind index, stat 121504B, read 121504B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/grid/block-sizes.npy,"OK read, not parsed","kind block_sizes, stat 512B, read 512B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/subsample-ids.npy,"OK read, not parsed","kind session18_artifact, stat 16136B, read 16136B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/subsample-returns.npy,"OK read, not parsed","kind session18_artifact, stat 19786016B, read 19786016B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/spec-index-augmented.csv,"OK read, not parsed","kind session18_artifact, stat 30516699B, read 30516699B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/inventory.csv,"OK read, not parsed","kind session18_artifact, stat 10357B, read 10357B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/reachability.csv,"OK read, not parsed","kind session18_artifact, stat 134619B, read 134619B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/additivity-check.csv,"OK read, not parsed","kind session18_artifact, stat 6622B, read 6622B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-18/axis-classification.json,"OK read, not parsed","kind session18_artifact, stat 245B, read 245B, dataless_at_read 0, full 1"
+step3_grid,outputs/session-17/panel/panel-00.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150169056B, read -1B, dataless_at_read 1, full -1"
+step3_grid,outputs/session-17/panel/panel-01.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150178944B, read -1B, dataless_at_read 0, full -1"
+step3_grid,outputs/session-17/panel/panel-02.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150169056B, read -1B, dataless_at_read 1, full -1"
+step3_grid,outputs/session-17/panel/panel-03.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150178944B, read -1B, dataless_at_read 0, full -1"
+step3_grid,outputs/session-17/panel/panel-04.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150169056B, read -1B, dataless_at_read 0, full -1"
+step3_grid,outputs/session-17/panel/panel-05.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150178944B, read -1B, dataless_at_read 1, full -1"
+step3_grid,outputs/session-17/panel/panel-06.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150169056B, read -1B, dataless_at_read 1, full -1"
+step3_grid,outputs/session-17/panel/panel-07.f32,"not read; ephemeral by design, scheduled for deletion at session 18 step 8","kind panel, stat 150178944B, read -1B, dataless_at_read 1, full -1"
+step3_grid,RECONCILIATION,"moments 121500, metrics 121500, ids 121500, duplicates 0, missing 0, contiguous True","kind summary, stat -1B, read -1B, dataless_at_read 0, full 1"
+step3_grid,grid_needs_rerun,NO,"all 8 moment shards, all 8 metric shards and all 8 index shards read fully and parse; ids cover 0..121499 contiguously with no duplicate and no gap"
+step4_frozen_inputs,verdict_MATCH,339,
+step4_frozen_inputs,verdict_no_manifest_entry,8,
+step4_frozen_inputs,files_checked,347,everything under data/
+step4_frozen_inputs,mismatches,0,
+step4_frozen_inputs,read_failures,0,
+step4_frozen_inputs,absent,0,no manifest row lacked its file
+step4_frozen_inputs,hashes_superseded_by_1_14_truncation,39,new_sha256 from outputs/session-00e/manifest-truncated.csv takes precedence
+step4_frozen_inputs,match_data/raw/etf,44,all MATCH
+step4_frozen_inputs,match_data/raw/index,1,all MATCH
+step4_frozen_inputs,match_data/raw/nav,2,all MATCH
+step4_frozen_inputs,match_data/raw/rates,1,all MATCH
+step4_frozen_inputs,match_data/raw/vx,268,all MATCH
+step4_frozen_inputs,match_data/interim/synthetics,19,all MATCH
+step4_frozen_nonmatch,data/interim/vx-cm30-a.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vx-cm30-b.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vx-cm30-c.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vx-cm30.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vx-panel.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vx-term-structure-s00b.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vxx-cm30-overlap.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step4_frozen_nonmatch,data/interim/vxx-yfinance-raw.parquet,no_manifest_entry,derived interim artifact carrying no manifest row
+step5_git,git_fsck_no_dangling_exit,0,"clean, no output, run after the step 2 materialisation reads"
+step5_git,objects_reachable_from_main,754,git rev-list --objects refs/heads/main
+step5_git,reachable_objects_readable,754,"git cat-file --batch-check, zero failures"
+step5_git,loose_objects_total,779,all objects are loose
+step5_git,pack_files,0,"no pack redundancy, so every object exists in exactly one place"
+step5_git,head_sha,a90f352f6dbf7621ecf6ac0e973524e28c5cecb4,"refs/heads/main, session 16 commit"
+step5_git,working_tree_entries,21,6 modified and 15 untracked
+step5_git,objects_failing,0,
+step6_verdict,intact,"frozen inputs, grid moments, grid metrics, specification index, subsample, session 18 artifacts, git object store, working tree",no file lost
+step6_verdict,damaged,none,
+step6_verdict,unrecoverable,none,
+step6_verdict,grid_needs_rerun,NO,"evidence is step 3, 121500 of 121500 specifications present and parsing"
+step6_verdict,backup_exclude_panel,outputs/session-17/panel,"1.1 GB, ephemeral by design, scheduled for deletion at session 18 step 8"
+step6_verdict,backup_exclude_venv,.venv,"200 MB, reconstructible from requirements"
+step6_verdict,repo_size_total_gb,1.7,du -sh .
+step6_verdict,repo_size_excluding_panel_and_venv_mb,400,"approximate, the set worth backing up"

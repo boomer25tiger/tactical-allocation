@@ -1,0 +1,4 @@
+[shard 4] range 182,250..227,811 (45,562 specs), resuming at 0
+[shard 4] 200/45,562 0.712s/spec eta 8.97h
+[shard 4] range 182,250..227,811 (45,562 specs), resuming at 200
+[shard 4] 400/45,562 0.875s/spec eta 10.97h
