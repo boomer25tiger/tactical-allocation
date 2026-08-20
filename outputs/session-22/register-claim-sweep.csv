@@ -1,0 +1,29 @@
+table,file,line,claim,class,note
+hit,docs/DECISIONS-v3.md,1137,"matching above −25 percent is unreachable with PSQ, since the canonical",impossibility claim,
+hit,docs/DECISIONS-v3.md,1577,"All four are repaired. **The re-emission did not run**, halted on the memory gate",resource claim asserting a cause,
+hit,docs/DECISIONS-v3.md,1763,cannot be sourced by measurement.,impossibility claim,
+hit,docs/DECISIONS-v3.md,1841,halted on the memory gate. **The statistic is a candidate for removal from the,resource claim asserting a cause,
+hit,docs/DECISIONS-v3.md,1987,"construction, was blocked on memory and remains unrun. The statistic is removed",resource claim asserting a cause,
+hit,docs/STATE.md,49,session 20's phase G was blocked on memory.,resource claim asserting a cause,
+hit,outputs/session-15.5/REPORT.md,43,"Notional matching above −0.25 is unreachable with PSQ, since the canonical",impossibility claim,
+hit,outputs/session-19_6/REPORT.md,148,reading of full composition is unreachable on any date. They are reached only through,impossibility claim,
+hit,outputs/session-20/REPORT-DG.md,95,the phase B1 re-emission halted on the memory gate. The statistic is a candidate for,resource claim asserting a cause,
+hit,outputs/session-20/REPORT-DG.md,127,**Two of the three cannot be sourced by measurement.**,impossibility claim,
+hit,outputs/session-20/REPORT-DG.md,129,"- **sizing_mode**, NOT SOURCED, the axis is unwired. config.SIZING_MODE is defined at src/config.py:78 and validated at line 333, but the engine hardc",impossibility claim,
+hit,outputs/session-20/REPORT.md,31,"cannot select a ticker the loader excludes, so the branch is unreachable rather than",impossibility claim,
+hit,outputs/session-20/REPORT.md,141,"are named separately here. Strict full composition is unreachable on any date, since",impossibility claim,
+hit,outputs/session-20/REPORT.md,152,**The re-emission halted on the memory gate.** Free plus inactive memory stood at,resource claim asserting a cause,
+hit,outputs/session-20/REPORT.md,225,| B1 re-emission | halted | killed on the memory gate |,resource claim asserting an agent,
+assessment,,,blocked on memory / halted on the memory gate,correctness repair,"What was established is that each pass was terminated by hand after slowing, with no completion attempt allowed. No process was terminated by the operating system. Session 22 phase A allowed a completion attempt under a pre-registered 1800 second limit and the pass still did not finish, so the passes do not complete at this machine state. The MECHANISM in the original claim was wrong, since peak resident reached 1.133 GB against the 3.561 GB that completed in m1-diagnostic.csv, page-outs averaged 344 per fifteen second sample, and the compressor stayed near 2.7 GiB. The measured constraint is CPU contention, with load average 39.57 on eight cores and the process receiving a mean of 6.25 percent CPU"
+assessment,,,free memory quoted as available headroom,wording correction,"macOS holds free near zero by design and uses the remainder as cache, so a low free figure is not low headroom. Sessions 19.6 through 21 quoted free as headroom repeatedly. The meaningful signals are compressor size, swap used, and the page-out rate, and this session reports those instead"
+assessment,,,"gate C tripped, stated as a property of the result",correctness repair,"What was established is that one exceedance of 1,000 draws did not clear a threshold reachable only at zero exceedances. Session 22 phase B measured seven exceedances of 10,000, being p 0.00070, which does clear it. The gate outcome was a property of the gate's resolution and not of the strategy"
+assessment,,,the leave-one-out artifacts carry the superseded boundary,correctness repair,"Session 21 F2 recorded this as established. Session 22 phase C rebuilt them and the base estimate is identical to ten decimals at 1.3817013060, which is the corrected value. Session 16 made the 7.14a correction and s16_step4.py ran after it, so the artifacts were already correct and the claim was inferred from the rebuild list rather than measured"
+assessment,,,the 1.5636 agreement is coincidental,correctness repair,"Session 21 F2 asserted this from the two operations being differently defined. They are not independent. The primary window begins 2011-10-04, so dropping calendar 2011 removes very nearly the sessions that starting at the first session of 2012 removes, and the two agree to 8.326e-07 rather than to four decimals. The agreement is structural"
+assessment,,,the exposure-matched line reaches a higher naive Sharpe than the strategy,wording correction,"Session 21 measured this at a single 60 session window. Session 22 phase D shows it holds only there, with the matched line reading 1.033797 at 120 sessions, 0.965584 at 252 and 0.917770 at 504 against the strategy's 1.0911, so the finding is window-dependent and the window that produced it is the noisiest"
+assessment,,,SVIX and UVIX are unreachable,claim holds as written,"Phase E traces the path. State.available returns False for a ticker absent from the panel, the switch selects the fallback before the weight dictionary is built, and no renormalisation occurs. The claim was traced rather than inferred when first made"
+assessment,,,config.SIZING_MODE is unwired,claim holds as written,Session 20 traced the engine hardcoding math.trunc at s13_backtest.py:528 and session 21 confirmed no call to size_position. Established by tracing
+summary,,,assessed,8,
+summary,,,correctness repairs,4,
+summary,,,wording corrections,2,
+summary,,,hold as written,2,
+scope,,,class_definition,,"an inference recorded as a measurement. The three instances are a vacuous check passing on empty input at 9.22, a gate turning on a single draw at 9.38, and a resource claim asserting a mechanism never observed, which this entry covers"

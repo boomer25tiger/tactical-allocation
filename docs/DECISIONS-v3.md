@@ -2015,3 +2015,125 @@ than a measurement** (9.10 provenance requirement).
 
   **8.2 remains open**, being whether the Lo-corrected Sharpe stays headline, with
   9.37's measurement recorded as its grounds.
+
+- **9.35 and 8.12 CORRECTED (session 22, 2026-08-20), correctness repair.** Both
+  state that passes were blocked on memory. **The record did not support that.**
+  Every terminated pass was killed by hand after slowing, with no completion attempt
+  allowed, and the operating system terminated nothing.
+
+  Session 22 phase A allowed a completion attempt under a wall limit of
+  1800 seconds written to the artifact
+  before launch. The pass ran 1806.6 seconds without
+  emitting one of its five passes and was terminated on that rule alone. **The passes
+  genuinely do not complete at this machine state, and the mechanism in the original
+  claim was wrong.** Peak resident reached 1.133 GB against
+  the 3.561 GB that completed in
+  m1-diagnostic.csv, the maximum page-out rate was
+  80.9 per second, and the compressor stayed
+  near 2.754 GiB. The measured constraint is CPU
+  contention, with load average  on
+   cores and the process receiving a mean of
+   percent CPU. Free memory was also
+  quoted as headroom throughout sessions 19.6 to 21, which macOS does not support
+  since it holds free near zero by design.
+
+- **9.39 the relaunch test (session 22, 2026-08-20).** The abandonment rule was
+  pre-registered and written to the artifact before the process started, and
+  termination was on that rule alone rather than on an observed slowdown. The full
+  113-sample series of compressor size, swap, page-outs, process CPU and resident
+  size is emitted rather than summarised. **Gate A did not clear**, so the phase F
+  re-emission did not run.
+
+- **9.40 the nulls at 10,000 replications (session 22, 2026-08-20).** Grounds
+  recorded before the first draw. The session 20 gate required clearing p below
+  0.001, which at the registered 1,000 draws requires exactly zero exceedances and
+  turns on a single Monte Carlo draw. **The defect was in the gate specification and
+  the count was raised to make the region resolvable, not because a result moved.**
+
+  | null | metric | exceedances of 10,000 |
+  |---|---|---|
+  | timing_shuffle_block_bootstrap | annualised return | 7 |
+  | timing_shuffle_block_bootstrap | Lo-corrected Sharpe | 0 |
+  | turnover_matched_switching | annualised return | 0 |
+  | turnover_matched_switching | Lo-corrected Sharpe | 0 |
+
+  **All four clear p below 0.001**, the timing-shuffle annualised-return arm at seven
+  exceedances being p 0.00070. Every 1,000-draw count falls inside the 99 percent
+  binomial interval implied by the 10,000-draw estimate, so the earlier result was
+  consistent rather than wrong. **The session 20 gate C outcome is resolved in favour
+  of clearing**, and the resolution is a property of the replication count.
+
+- **9.41 the leave-one-out rebuild (session 22, 2026-08-20).** **The premise that
+  these artifacts carried the superseded boundary is FALSE.** The base estimate is
+  1.3817013060244996 in the original and identical in
+  the rebuild, which is the 7.14a corrected value. Session 16 made that correction and
+  s16_step4.py ran after it. Session 21's F2 finding is overturned and the rebuild
+  confirms rather than repairs. The range is unchanged at
+  1.2871 to 1.6183
+  across the eleven estimates.
+
+  The two years whose removal raises the Sharpe most are
+  2020=1.6183 2011=1.5636, so **the rebuilt file supports 2011 with
+  2020** rather than the competing 2018 reading the handoff also carries.
+
+  **The 1.5636 agreement is STRUCTURAL and session 21's coincidence finding is
+  overturned.** The estimates read 1.5635962707744815 and
+  1.5635954382183046, a gap of
+  8.326e-07. The primary window begins 2011-10-04, so dropping
+  calendar 2011 removes very nearly the sessions that starting at the first session of
+  2012 removes, and the two operations are close to identical.
+
+- **9.42 beta window sensitivity (session 22, 2026-08-20).** Session 21 read the
+  rolling window from config.CRASH_HORIZON_SESSIONS at 60, which is registered for
+  crash detection rather than beta estimation. Repeated at 120, 252 and 504 sessions,
+  stated before running and chosen for coverage.
+
+  | window | beta sd | beta min | beta max | timing contribution | matched naive Sharpe |
+  |---|---|---|---|---|---|
+  | 60 | 1.164612 | -4.497370 | 2.788517 | +0.011293 | 1.108581 |
+  | 120 | 0.699299 | -2.477552 | 2.140786 | +0.027230 | 1.033797 |
+  | 252 | 0.410476 | -0.533075 | 1.985674 | -0.004075 | 0.965584 |
+  | 504 | 0.209221 | 0.595057 | 1.381112 | -0.007751 | 0.917770 |
+
+  **The beta range narrows monotonically as the window lengthens**, so the extremes at
+  60 sessions are small-sample estimation noise rather than realised exposure. **The
+  timing component changes sign**, positive at 60 and 120 and negative at 252 and 504,
+  so session 21's figure does not hold across windows. **The exposure-matched line's
+  naive Sharpe falls with the window** and exceeds the strategy's only at 60, so that
+  finding is qualified rather than withdrawn. The line uses beta estimated from the
+  strategy's own realised returns and is not implementable, entering the paper as a
+  decomposition rather than as an ex-ante benchmark.
+
+- **9.43 volatility terminal resolution (session 22, 2026-08-20).** Traced rather
+  than inferred. State.available at scripts/s13_backtest.py:344 returns False for a
+  ticker absent from the panel, and **the switch selects the fallback BEFORE the
+  weight dictionary is built**, so the returned weights are the written weights with
+  the fallback substituted. No weight is dropped, no balance goes to cash, and no
+  renormalisation occurs. The T10 terminal fires 1114
+  times holding SVXY and the S3 terminal 519 times holding
+  UVXY across the primary window. Both list 2022-03-30, inside the
+  holdout span.
+
+  **Disposition, the loader is left unchanged and the limitation disclosed.** Adding
+  either ticker to bt.LEVERED would make the switch select it and the branch would
+  execute for the first time inside the single holdout read, which is not a risk the
+  one available read can absorb.
+
+- **9.44 the register-claim sweep (session 22, 2026-08-20), correctness repair.**
+  Third instance of the class, being an inference recorded as a measurement, after a
+  vacuous check passing on empty input at 9.22 and a gate turning on a single draw at
+  9.38. Eight claims assessed across the register, STATE.md and every session report,
+  giving 4 correctness repairs,
+  2 wording corrections and
+  2 that hold as written. The class
+  is characterised by asserting a cause, a mechanism, or an impossibility where only
+  an absence was observed.
+
+- **8.2 DECIDED (session 22, 2026-08-20), register decision.** **Both Sharpe
+  conventions are reported throughout, with the naive Sharpe leading.** The grounds
+  are that session 20's D1 measured the strategy's own Lo factor sitting inside its
+  own no-autocorrelation null while buy-and-hold QQQ's sits outside, and that nine of
+  twelve ladder rows change rank across the q sweep, so the Lo-corrected ordering is
+  not stable under a parameter that was never registered. The convention is stated
+  wherever a naive figure appears. This closes the question left open at 9.24 and
+  9.37.

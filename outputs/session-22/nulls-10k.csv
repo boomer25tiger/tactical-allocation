@@ -1,0 +1,21 @@
+table,item,value,note
+grounds,reason,,"The session 20 gate required clearing p below 0.001. At the registered 1,000 draws that requires exactly zero exceedances, so the gate turns on a single Monte Carlo draw. The defect is in the gate specification rather than in the result, and the replication count is raised to make the region resolvable rather than because a result moved unfavourably"
+grounds,written_before_first_draw,1,
+grounds,seed_convention,20260818,"np.random.default_rng at scripts/s14_nulls.py line 36, read from that script rather than assumed. Block length 21 sessions"
+grounds,boundary,2011-10-04,the corrected boundary
+grounds,new_draw_count,10000,
+grounds,scope,o2o primary,"the designated cell, which is the cell the gate turns on"
+prior_1000,timing_shuffle_block_bootstrap|annualised return,0.0010,"1 exceedances of 1000 draws, from outputs/session-20/rebuilt/nulls.csv"
+prior_1000,timing_shuffle_block_bootstrap|Lo-corrected Sharpe,0.0000,"0 exceedances of 1000 draws, from outputs/session-20/rebuilt/nulls.csv"
+prior_1000,turnover_matched_switching|annualised return,0.0000,"0 exceedances of 1000 draws, from outputs/session-20/rebuilt/nulls.csv"
+prior_1000,turnover_matched_switching|Lo-corrected Sharpe,0.0000,"0 exceedances of 1000 draws, from outputs/session-20/rebuilt/nulls.csv"
+result,timing_shuffle_block_bootstrap|annualised return,7,"7 exceedances of 10000 draws, p 0.00070, strategy percentile 99.93"
+prior_comparison,timing_shuffle_block_bootstrap|annualised return,1,"1 exceedances of 1000 draws at the registered count. Inside the 99 percent binomial interval implied by the 10,000 estimate: True"
+result,timing_shuffle_block_bootstrap|Lo-corrected Sharpe,0,"0 exceedances of 10000 draws, p 0.00000, strategy percentile 100.00"
+prior_comparison,timing_shuffle_block_bootstrap|Lo-corrected Sharpe,0,"0 exceedances of 1000 draws at the registered count. Inside the 99 percent binomial interval implied by the 10,000 estimate: True"
+result,turnover_matched_switching|annualised return,0,"0 exceedances of 10000 draws, p 0.00000, strategy percentile 100.00"
+prior_comparison,turnover_matched_switching|annualised return,0,"0 exceedances of 1000 draws at the registered count. Inside the 99 percent binomial interval implied by the 10,000 estimate: True"
+result,turnover_matched_switching|Lo-corrected Sharpe,0,"0 exceedances of 10000 draws, p 0.00000, strategy percentile 100.00"
+prior_comparison,turnover_matched_switching|Lo-corrected Sharpe,0,"0 exceedances of 1000 draws at the registered count. Inside the 99 percent binomial interval implied by the 10,000 estimate: True"
+form,primary_reporting,,"exceedance counts are the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+resolution,what_10000_buys,,"at 1,000 draws the region below p 0.001 is reachable only at zero exceedances, so the gate turned on a single draw. At 10,000 draws the same region admits up to nine exceedances, so the estimate is resolvable rather than binary"

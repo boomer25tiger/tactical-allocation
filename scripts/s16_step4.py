@@ -8,7 +8,9 @@ import scripts.s13_backtest as bt, scripts.s13_runall as ra
 import scripts.s14_common as C, scripts.s15_lines as L
 from src import config
 from src.portfolio import SLEEVE_ORDER
-OUT = ROOT / "outputs" / "session-16"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-16")
+OUT.mkdir(parents=True, exist_ok=True)
 NEW_START = pd.Timestamp("2011-10-04")
 env = L.build_env(); cal, sigs, panels, o2o = env["cal"], env["sigs"], env["panels"], env["o2o"]
 cap_fn = env["cap_fn"]; TICK = list(ra.TARGET_TICKERS)

@@ -1,10 +1,9 @@
 # STATE, read this first
 
-Refreshed 2026-08-20 by session 21. Supersedes the session 20 version.
+Refreshed 2026-08-20 by session 22. Supersedes the session 21 version.
 
-Sessions 20 and 21 both ran to completion. Session 20's gate C failed and is now
-recorded as unresolved with a defect in the gate specification itself. Session
-21's gates A and C both cleared and no phase was skipped.
+Session 22 closed the measurement phase. Phases A through E and G ran, phase F
+was skipped because gate A did not clear.
 
 ## What this project is
 
@@ -15,79 +14,79 @@ values live in `src/config.py` (validate() runs on import).
 
 ## Custody and machine
 
-`/Users/GualyCr/Downloads/tactical-allocation`, outside iCloud Drive, private
-remote at `https://github.com/boomer25tiger/tactical-allocation`.
-`http.postBuffer` is 524288000 locally.
+`/Users/GualyCr/Downloads/tactical-allocation`, private remote at
+`https://github.com/boomer25tiger/tactical-allocation`. `http.postBuffer` is
+524288000 locally.
 
-**The machine has not been rebooted since 2026-08-06.** Roughly 0.05 GiB is
-genuinely free, 3.18 GiB sits in the compressor, and free swap is near 1.2 GB.
-Two session 20 passes died on this. Any step loading the moment array must state
-a ceiling from measured free memory and halt rather than enter swap. A reboot
-would return most of it.
+**The constraint on this machine is CPU contention, not memory.** Load average
+reached 39.57 on eight cores with Chrome taking four of them, and a measured
+pass received a mean of 6.25 percent CPU. Report compressor size, swap used,
+swap free and page-outs. **Do not quote free memory as headroom**, since macOS
+holds free near zero by design.
 
 ## Position
 
-The backtest, the grid, PBO, and the specification curve have all run. The
-holdout boundary 2021-08-01 is untouched.
-
 - **Designated headline cell**, 0.521845 annualised and 1.381701 Lo-corrected
-  Sharpe, confirmed by positive control in every session since 19.
-- **The boundary is repaired** at 2011-10-04 and session 15's outputs are
-  rebuilt into `outputs/session-20/rebuilt/`. No ladder rank changed.
-- **PBO 0.1578** at S equal to 16. **N is 121,500**, not 364,500.
-- **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe, and eight of
-  its nine axis values were fixed before any comparison on that axis.
+  Sharpe over 2,472 sessions, confirmed by positive control every session.
+- **The boundary is 2011-10-04** and session 15's outputs are rebuilt.
+- **PBO 0.1578** at S equal to 16. **N is 121,500.**
+- **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe, with eight of
+  nine axis values fixed before any comparison on that axis.
+
+## The 8.2 decision, made
+
+**Both Sharpe conventions are reported throughout, with the naive Sharpe
+leading.** The grounds are that the strategy's Lo factor sits inside its own
+no-autocorrelation null while buy-and-hold QQQ's sits outside, and that nine of
+twelve ladder rows change rank across the unregistered q sweep. Registered at
+8.2 as decided.
+
+## Gate C of session 20, resolved
+
+At 10,000 draws on the designated cell all four null and metric combinations
+clear p below 0.001, the timing-shuffle annualised-return arm at seven
+exceedances being p 0.00070 and the other three at zero. Every 1,000-draw count
+is consistent with the new estimate. The earlier trip was a property of the
+gate's resolution, since clearing p below 0.001 at 1,000 draws requires exactly
+zero exceedances. Registered at 9.40.
 
 ## Statistics removed or withdrawn
 
-- **The deflated Sharpe is REMOVED** at 8.7, on a misspecified null rather than
-  an unfavourable result. The recentred comparison replaces it. The canonical
-  sits 1.0425 cross-sectional standard deviations above the grid mean at the
-  89.28th percentile, and exceeds the expected maximum only at the
-  participation-ratio effective count of 3.43, not at 6.72, 17, or 121,500.
-- **The degradation slope is REMOVED** at 9.35, since no valid null exists and
-  session 20's phase G was blocked on memory.
-- **The session 19.5 window strip is WITHDRAWN** at 9.36, since it compared a
-  nested strategy against seven stateful re-initialised benchmark lines.
+The deflated Sharpe at 8.7, the degradation slope at 9.35, and the session 19.5
+window strip at 9.36. The recentred comparison replaces the first.
 
-## The beta decomposition, session 21
+## Findings that overturned prior sessions
 
-Static beta to buy-and-hold QQQ is 1.108673 at an R-squared of 0.186794. **The
-beta-hedged residual carries a naive Sharpe of 0.655836 and a Lo-corrected
-Sharpe of 0.864915**, against the strategy's 1.0911 and 1.3817. Timing is the
-smallest of the three return components. A passive QQQ line at the canonical's
-own realised beta, daily rebalanced and identically charged, reaches a naive
-Sharpe of 1.108581 and places sixth of thirteen. Registered at 9.34.
+- **The leave-one-out artifacts were already on the corrected boundary.** Base
+  estimate identical to ten decimals. Session 21's F2 finding overturned, at
+  9.41.
+- **The 1.5636 agreement is structural, not coincidental**, at a gap of
+  8.326e-07, since dropping calendar 2011 and starting at the first 2012 session
+  remove very nearly the same sessions. Session 21 overturned, at 9.41.
+- **The rolling beta extremes are estimation noise.** The standard deviation
+  falls monotonically from 1.164612 at a 60-session window to 0.209 at 504. The
+  timing component changes sign and the exposure-matched line beats the strategy
+  only at the shortest window. Session 21 qualified, at 9.42.
+- **The register's blocked-on-memory claims were wrong in mechanism**, corrected
+  at 9.35 and 8.12.
 
 ## Open before the holdout can run
 
-- **Session 20 gate C is unresolved**, and the gate itself is defective, since
-  clearing p below 0.001 at 1,000 draws requires zero exceedances and turns on a
-  single draw. Registered at 9.38.
-- **Session 20's B1 re-emission and phase G are outstanding**, both halted on
-  memory, and the machine has not been rebooted since.
-- **8.2 is open**, being whether the Lo-corrected Sharpe stays headline. The Lo
-  q is an unregistered Python default, at 9.37.
+- **The B1 re-emission is outstanding**, with a measured reason at 9.39, being
+  that the pass does not complete under CPU contention at this machine state.
+  The defect is repaired in code at four sites and the degradation slope is
+  removed from the paper regardless.
 - **Ten config parameters have no consumer** and two more are read but never
-  invoked, at 9.31. `FINANCING_SPREAD_BP` is never read by the engine, which
-  bears on how D16 is described.
+  invoked, at 9.31.
 - **`crash_threshold` was fixed after measurement on its own axis**, at 9.32.
-- **The leave-one-out artifacts carry the superseded boundary**, since session
-  20 phase C rebuilt only four scripts.
-- **SVIX and UVIX leave a code path that will not execute at the holdout read.**
+- **SVIX and UVIX leave a code path that will not execute at the holdout read**,
+  at 9.43. The loader is left unchanged deliberately.
 - **D16 and D23 stand.**
-
-## Authoritative artifacts
-
-`outputs/session-20/held-universe.csv` supersedes every hardcoded ticker list,
-at 19 held and 13 signal-only. `outputs/session-21/unwired-config.csv` is the
-config-consumer map.
 
 ## Defect register
 
 D1 through D12, D14, D15, D17 through D22, D24 closed, repaired, or swept. D13
-never assigned. D25 applied. D26 and D27 recorded at session 20. Open: **D16**,
-**D23**.
+never assigned. D25 applied. D26 and D27 recorded. Open: **D16**, **D23**.
 
 ## Environment
 

@@ -1,0 +1,17 @@
+table,item,metric,value,note
+phase,session_start,compressor_gib,2.754,
+phase,session_start,swap_used_mb,13042.94,
+phase,session_start,swap_free_mb,1293.06,
+phase,session_start,pageouts_cumulative,13581342,
+phase,after_C,compressor_gib,2.829,
+phase,after_C,swap_used_mb,14102.0,
+phase,after_C,swap_free_mb,1258.0,
+phase,after_C,pageouts_cumulative,13646682,
+phase,session_end,compressor_gib,2.894,
+phase,session_end,swap_used_mb,12643.31,
+phase,session_end,swap_free_mb,668.69,
+phase,session_end,pageouts_cumulative,13656161,
+contention,load_average_1min,39.57,"measured at the phase A diagnosis, eight cores"
+contention,cores,8,hw.ncpu
+contention,process_cpu_mean_percent,6.25,across 113 samples of the phase A pass
+note,free_memory,,free memory is deliberately not reported as headroom anywhere in this session

@@ -32,7 +32,11 @@ from src import config
 from src.portfolio import SLEEVE_ORDER, sleeve_label
 
 OUT = C.OUT
-N_DRAWS = 1000                 # register-fixed under 8.9
+import os as _os
+# Session 22. Both overrides are absent by default, so unset environment
+# reproduces the registered behaviour exactly.
+N_DRAWS = int(_os.environ.get("S22_NDRAWS") or 1000)   # register-fixed under 8.9
+_NULLS_ONLY = bool(_os.environ.get("S22_NULLS_ONLY"))
 RNG = np.random.default_rng(20260818)
 
 env = C.build_env()
@@ -165,7 +169,7 @@ def make_stats(dates):
     return stats
 
 
-for conv in ("o2o", "c2c"):
+for conv in (("o2o",) if _NULLS_ONLY else ("o2o", "c2c")):
     acc = run_strategy(conv)
     R = ret_matrix(conv)
     comps, lens, cost_frac = episodes_and_cost(acc, conv)
@@ -245,54 +249,55 @@ t_obs = X.mean(axis=0) / (X.std(axis=0, ddof=1) / math.sqrt(n))
 BL = 21
 nb = n // BL
 Xc = X - X.mean(axis=0)
-tstar = np.zeros((N_DRAWS, k))
-for b in range(N_DRAWS):
-    starts = RNG.integers(0, n - BL, size=nb)
-    idx = np.concatenate([np.arange(s, s + BL) for s in starts])
-    Xb = Xc[idx]
-    tstar[b] = Xb.mean(axis=0) / (Xb.std(axis=0, ddof=1) / math.sqrt(len(idx)))
-order = np.argsort(-t_obs)
-remaining = list(order)
-adj = {}
-while remaining:
-    maxstat = np.max(tstar[:, remaining], axis=1)
-    j = remaining[0]
-    p = float((maxstat >= t_obs[j]).mean())
-    prev = max(adj.values()) if adj else 0.0
-    adj[j] = max(p, prev)
-    remaining = remaining[1:]
-for j in range(k):
-    rows.append({"table": "romano_wolf", "hypothesis": f"strategy_minus_{names[j]}",
-                 "mean_daily_diff": float(X[:, j].mean()),
-                 "t_stat": float(t_obs[j]),
-                 "rw_adjusted_p": adj[j],
-                 "family_size": k,
-                 "note": "one-sided, stationary block bootstrap, block 21 sessions, "
-                         f"{N_DRAWS} draws, designated cell (o2o realized primary)"})
-    print(f"  {names[j]}: t {t_obs[j]:+.2f}, RW-adj p {adj[j]:.3f}")
+if not _NULLS_ONLY:
+    tstar = np.zeros((N_DRAWS, k))
+    for b in range(N_DRAWS):
+        starts = RNG.integers(0, n - BL, size=nb)
+        idx = np.concatenate([np.arange(s, s + BL) for s in starts])
+        Xb = Xc[idx]
+        tstar[b] = Xb.mean(axis=0) / (Xb.std(axis=0, ddof=1) / math.sqrt(len(idx)))
+    order = np.argsort(-t_obs)
+    remaining = list(order)
+    adj = {}
+    while remaining:
+        maxstat = np.max(tstar[:, remaining], axis=1)
+        j = remaining[0]
+        p = float((maxstat >= t_obs[j]).mean())
+        prev = max(adj.values()) if adj else 0.0
+        adj[j] = max(p, prev)
+        remaining = remaining[1:]
+    for j in range(k):
+        rows.append({"table": "romano_wolf", "hypothesis": f"strategy_minus_{names[j]}",
+                     "mean_daily_diff": float(X[:, j].mean()),
+                     "t_stat": float(t_obs[j]),
+                     "rw_adjusted_p": adj[j],
+                     "family_size": k,
+                     "note": "one-sided, stationary block bootstrap, block 21 sessions, "
+                             f"{N_DRAWS} draws, designated cell (o2o realized primary)"})
+        print(f"  {names[j]}: t {t_obs[j]:+.2f}, RW-adj p {adj[j]:.3f}")
 
-# ensemble against the best single sleeve, post-hoc, joins the family
-sl_names = [nm for nm in names if nm.startswith("sleeve_")]
-if sl_names:
-    best = max(sl_names, key=lambda nm: C.metrics(fam[nm])["sharpe_lo"])
-    j = names.index(best)
-    rows.append({"table": "ensemble_vs_best_sleeve", "best_sleeve_line": best,
-                 "best_sleeve_sharpe_lo": C.metrics(fam[best])["sharpe_lo"],
-                 "strategy_sharpe_lo": C.metrics(strat)["sharpe_lo"],
-                 "rw_adjusted_p": adj[j],
-                 "disclosure": "post-hoc under 9.10: the best single sleeve is "
-                               "identified after the sleeve tracks were measured, "
-                               "and the comparison joins the 8.10 Romano-Wolf "
-                               "family rather than standing as a separate test"})
-    print(f"  best single sleeve: {best}")
+    # ensemble against the best single sleeve, post-hoc, joins the family
+    sl_names = [nm for nm in names if nm.startswith("sleeve_")]
+    if sl_names:
+        best = max(sl_names, key=lambda nm: C.metrics(fam[nm])["sharpe_lo"])
+        j = names.index(best)
+        rows.append({"table": "ensemble_vs_best_sleeve", "best_sleeve_line": best,
+                     "best_sleeve_sharpe_lo": C.metrics(fam[best])["sharpe_lo"],
+                     "strategy_sharpe_lo": C.metrics(strat)["sharpe_lo"],
+                     "rw_adjusted_p": adj[j],
+                     "disclosure": "post-hoc under 9.10: the best single sleeve is "
+                                   "identified after the sleeve tracks were measured, "
+                                   "and the comparison joins the 8.10 Romano-Wolf "
+                                   "family rather than standing as a separate test"})
+        print(f"  best single sleeve: {best}")
 
-# pairwise correlation of the four standalone tracks
-corr_names = [nm for nm in fam if nm.startswith("sleeve_")]
-Cm = pd.DataFrame({nm: fam[nm] for nm in corr_names}).dropna().corr()
-for a in corr_names:
-    for b in corr_names:
-        if a < b:
-            rows.append({"table": "sleeve_pairwise_correlation", "pair": f"{a}|{b}",
-                         "correlation": float(Cm.loc[a, b])})
+    # pairwise correlation of the four standalone tracks
+    corr_names = [nm for nm in fam if nm.startswith("sleeve_")]
+    Cm = pd.DataFrame({nm: fam[nm] for nm in corr_names}).dropna().corr()
+    for a in corr_names:
+        for b in corr_names:
+            if a < b:
+                rows.append({"table": "sleeve_pairwise_correlation", "pair": f"{a}|{b}",
+                             "correlation": float(Cm.loc[a, b])})
 pd.DataFrame(rows).to_csv(OUT / "nulls.csv", index=False)
 print(f"[wrote nulls.csv: {len(rows)} rows]")

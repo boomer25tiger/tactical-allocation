@@ -1,0 +1,17 @@
+table,item,value,note
+session21,window,60,config.CRASH_HORIZON_SESSIONS
+session21,beta_mean,0.86438301258676,
+session21,beta_sd,1.1646116827038935,
+session21,beta_min,-4.497369737049074,
+session21,beta_max,2.788516569715106,
+session21,static_exposure_ann_contribution,0.24139578365387873,
+session21,timing_ann_contribution,0.011293050910284682,
+session21,residual_ann_contribution,0.31987454513880875,
+session21,matched_ann_return,0.2733538064393448,
+session21,matched_sharpe_naive,1.1085813697833637,
+session21,matched_sharpe_lo,1.3000432817347205,
+session21,matched_ann_turnover,5.234603578605807,
+session21,matched_ladder_rank_naive,6,
+session21,strategy_sharpe_naive,1.0911,"the canonical's naive Sharpe, carried from the ladder"
+diagnostic,chunk514_peak_rss_gb,3.561,outputs/session-19_6/m1-diagnostic.csv
+diagnostic,chunk514_seconds,96.9,outputs/session-19_6/m1-diagnostic.csv

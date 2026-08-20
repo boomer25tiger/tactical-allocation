@@ -1,0 +1,18 @@
+table,item,value,note,note2
+terminal,t10_weights:L189,,"return {""TECL"": 1 / 3, ""SOXL"": 1 / 3, vol_short: 1 / 3}","variable vol_short resolves to ['SVIX', 'SVXY', 'SVIX']"
+terminal,s3_weights:L325,,return {vol: 1.0},"variable vol resolves to ['UVIX', 'UVXY', 'UVIX']"
+engine_path,available,,"scripts/s13_backtest.py:344 State.available reads self.sig.avail.get(t) and returns False when the ticker is absent from the panel, so the switch selects the fallback and the dictionary written into the weight map never names SVIX or UVIX",
+engine_path,renormalisation,,"there is none, and none is needed. The switch chooses the ticker BEFORE the dictionary is built, so the returned weights are the written weights with the fallback ticker substituted. No weight is dropped, no balance goes to cash, and no renormalisation occurs",
+firing,t10_vol_short,1114,sessions across the primary window under the canonical,
+firing,s3_vol,519,sessions across the primary window under the canonical,
+realised_holding,SVXY,1114,the ticker actually held on those sessions,
+realised_holding,UVXY,519,the ticker actually held on those sessions,
+loader,SVIX_in_bt_LEVERED,0,bt.LEVERED is not modified by this session,
+panel,SVIX_realized,0,,
+panel,SVIX_synthetic,0,,
+listing,SVIX,,2022-03-30,"against the holdout span beginning 2021-08-01, so the listing falls inside the holdout"
+loader,UVIX_in_bt_LEVERED,0,bt.LEVERED is not modified by this session,
+panel,UVIX_realized,0,,
+panel,UVIX_synthetic,0,,
+listing,UVIX,,2022-03-30,"against the holdout span beginning 2021-08-01, so the listing falls inside the holdout"
+disposition,if_added_to_loader,,"adding either ticker to bt.LEVERED would make State.available return True from its listing date, the switch would select it, and the branch would execute for the first time inside the single holdout read. The loader is left unchanged and the limitation is disclosed",

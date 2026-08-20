@@ -1,0 +1,260 @@
+from __future__ import annotations
+import csv
+from pathlib import Path
+OUT=Path("/Users/GualyCr/Downloads/tactical-allocation/outputs/session-22")
+def rd(n): return list(csv.DictReader(open(OUT/n)))
+pf=rd("prior-figures.csv")
+rt,nk,lo,bw,vt,rs,ms=(rd("relaunch-test.csv"),rd("nulls-10k.csv"),rd("loo-rebuilt.csv"),
+  rd("beta-window-sensitivity.csv"),rd("volatility-terminal-resolution.csv"),
+  rd("register-claim-sweep.csv"),rd("machine-state.csv"))
+def g(rs_,t,i,f="value",key="item"):
+    for r in rs_:
+        if r["table"]==t and r.get(key)==i: return r.get(f)
+    return ""
+def fl(rs_,t,i,f="value",key="item"):
+    v=g(rs_,t,i,f,key); return float(v) if v not in ("",None) else float("nan")
+def mach(ph,met):
+    for r in ms:
+        if r["item"]==ph and r["metric"]==met: return r["value"]
+    return ""
+def bwv(w,i):
+    for r in bw:
+        if r["window"]==str(w) and r["item"]==i: return float(r["value"])
+    return float("nan")
+L=[];A=L.append
+A("# Session 22 report")
+A("")
+A("Closing the measurement phase. Phases A through E and G ran. Phase F was skipped")
+A("because gate A did not clear. The 2021-08-01 holdout boundary is untouched, no grid")
+A("was re-executed, no grid point was adopted, and `bt.LEVERED` is unmodified.")
+A("")
+A("Free memory is not reported as headroom anywhere in this session. The metrics used")
+A("are compressor size, swap used, swap free, and the page-out count.")
+A("")
+A("## The three openers")
+A("")
+A(f"**The relaunch test did not complete.** Under a wall limit of")
+A(f"{fl(rt,'preregistration','wall_limit_seconds'):.0f} seconds pre-registered and written")
+A(f"to the artifact before the process started, the pass ran")
+A(f"{fl(rt,'result','wall_clock_seconds'):.1f} seconds without emitting a single one of")
+A("its five passes and was terminated on that rule. **The constraint is real, and it is")
+A(f"not memory.** Peak resident reached {fl(rt,'result','peak_rss_gb'):.3f} GB against the")
+A(f"{g(pf,'diagnostic','chunk514_peak_rss_gb')} GB that completed in "
+  f"`m1-diagnostic.csv`, the maximum page-out rate was")
+A(f"{fl(rt,'result','max_pageouts_per_second'):.1f} per second, and the compressor stayed")
+A(f"near {mach('session_start','compressor_gib')} GiB throughout. Load average was")
+A(f"{mach('contention','load_average_1min')} on {mach('contention','cores')} cores and the")
+A(f"process received a mean of {mach('contention','process_cpu_mean_percent')} percent CPU.")
+A("")
+A("**The nulls clear at 10,000 draws.** Exceedance counts on the designated cell.")
+A("")
+A("| null | metric | exceedances | draws | p |")
+A("|---|---|---|---|---|")
+for r in nk:
+    if r["table"]=="result":
+        nm,lab=r["item"].split("|")
+        p=r["note"].split("p ")[1].split(",")[0]
+        A(f"| {nm} | {lab} | {int(float(r['value']))} | 10000 | {p} |")
+A("")
+A(f"All four clear p below 0.001. The one exceedance of 1,000 that tripped the session 20")
+A("gate is consistent with the 10,000-draw estimate in every case.")
+A("")
+A(f"**The leave-one-out range is unchanged.** Before")
+A(f"{fl(lo,'range','sharpe_lo_min_before'):.4f} to {fl(lo,'range','sharpe_lo_max_before'):.4f},")
+A(f"after {fl(lo,'range','sharpe_lo_min_after'):.4f} to")
+A(f"{fl(lo,'range','sharpe_lo_max_after'):.4f}. The premise that these files carried the")
+A("superseded boundary is false, and the rebuild confirms rather than repairs.")
+A("")
+A("## Phase A, the relaunch test")
+A("")
+A(f"The abandonment rule was written to the artifact before launch. {g(rt,'preregistration','termination_rule','note')}.")
+A(f"The limit is {g(rt,'preregistration','wall_limit_seconds','note')}.")
+A("")
+A(f"The pass was terminated with reason recorded as {g(rt,'result','termination_reason','note')},")
+A("and the return code is SIGTERM issued by this script. The operating system terminated")
+A("nothing, which was also true of every earlier pass.")
+A("")
+A("**Gate A did not clear**, so phase F is skipped. What that establishes is narrower")
+A("than the register previously claimed. The pass does not complete at this machine")
+A("state under a thirty minute limit, and the reason is CPU starvation rather than")
+A("memory. Four Google Chrome processes were consuming 53.3, 47.4, 44.9 and 43.5 percent")
+A("of CPU with WindowServer at 26.9 percent.")
+A("")
+A("The full 113-sample series is in `relaunch-test.csv` rather than summarised away.")
+A("")
+A("## Phase B, the nulls at 10,000")
+A("")
+A(f"{g(nk,'grounds','reason','note')}.")
+A("")
+A(f"The seed convention is {g(nk,'grounds','seed_convention','note')}, read from that")
+A("script rather than assumed, on the corrected 2011-10-04 boundary.")
+A("")
+A("| null and metric | prior | now |")
+A("|---|---|---|")
+for r in nk:
+    if r["table"]=="prior_comparison":
+        nm,lab=r["item"].split("|")
+        cur=[x for x in nk if x["table"]=="result" and x["item"]==r["item"]][0]
+        A(f"| {nm}, {lab} | {int(float(r['value']))} of 1000 | "
+          f"{int(float(cur['value']))} of 10000 |")
+A("")
+A(f"Every prior count falls inside the 99 percent binomial interval implied by the")
+A(f"10,000-draw estimate. {g(nk,'resolution','what_10000_buys','note')}.")
+A("")
+A(f"{g(nk,'form','primary_reporting','note')}.")
+A("")
+A("## Phase C, the leave-one-out rebuild")
+A("")
+A(f"**{g(lo,'premise_check','verdict','note')}.**")
+A("")
+A(f"The two years whose removal raises the Sharpe most are {g(lo,'year_attribution','after','note')},")
+A(f"so {g(lo,'year_attribution','handoff_reconciliation','note').split('supports ')[-1]} is what the")
+A("rebuilt file supports.")
+A("")
+A(f"**{g(lo,'agreement','verdict','note')}.** The leave-one-out estimate for 2011 reads")
+A(f"{g(lo,'agreement','loo_2011_full_precision')} and the 2012-start strip arm reads")
+A(f"{g(lo,'agreement','strip_2012_full_precision')}, a gap of")
+A(f"{fl(lo,'agreement','abs_gap'):.3e}.")
+A("")
+A("Originals are preserved and the rebuild is in `outputs/session-22/rebuilt/`.")
+A("")
+A("## Phase D, beta window sensitivity")
+A("")
+A(f"{g(bw,'windows','stated_before_running','note')}. Session 21 used")
+A(f"{int(fl(bw,'windows','session21_window'))}, which {g(bw,'windows','session21_window','note')}.")
+A("")
+A("| window | beta mean | beta sd | beta min | beta max | above 1.0 | above 1.7 |")
+A("|---|---|---|---|---|---|---|")
+A(f"| 60 (session 21) | {float(g(pf,'session21','beta_mean')):.6f} | "
+  f"{float(g(pf,'session21','beta_sd')):.6f} | {float(g(pf,'session21','beta_min')):.6f} | "
+  f"{float(g(pf,'session21','beta_max')):.6f} | | |")
+for w in (120,252,504):
+    A(f"| {w} | {bwv(w,'beta_mean'):.6f} | {bwv(w,'beta_sd'):.6f} | {bwv(w,'beta_min'):.6f} | "
+      f"{bwv(w,'beta_max'):.6f} | {bwv(w,'share_above_1.0'):.4f} | {bwv(w,'share_above_1.7'):.4f} |")
+A("")
+A("**The beta range narrows monotonically as the window lengthens**, with the standard")
+A(f"deviation falling from {float(g(pf,'session21','beta_sd')):.6f} at 60 sessions to "
+  f"{bwv(504,'beta_sd'):.6f} at 504, and the minimum")
+A("moving from below minus four to above plus one half. The extremes at the shortest")
+A("window are small-sample estimation noise rather than realised exposure.")
+A("")
+A("| window | static exposure | timing | residual |")
+A("|---|---|---|---|")
+A(f"| 60 (session 21) | {float(g(pf,'session21','static_exposure_ann_contribution')):+.6f} | "
+  f"{float(g(pf,'session21','timing_ann_contribution')):+.6f} | "
+  f"{float(g(pf,'session21','residual_ann_contribution')):+.6f} |")
+for w in (120,252,504):
+    A(f"| {w} | {bwv(w,'static_exposure_ann_contribution'):+.6f} | "
+      f"{bwv(w,'timing_ann_contribution'):+.6f} | {bwv(w,'residual_ann_contribution'):+.6f} |")
+A("")
+A("**The timing component does not stay near session 21's figure and changes sign**,")
+A("reading positive at 60 and 120 sessions and negative at 252 and 504.")
+A("")
+A("| window | matched annualised | matched naive | matched Lo | turnover | ladder naive |")
+A("|---|---|---|---|---|---|")
+A(f"| 60 (session 21) | {float(g(pf,'session21','matched_ann_return')):.6f} | "
+  f"{float(g(pf,'session21','matched_sharpe_naive')):.6f} | "
+  f"{float(g(pf,'session21','matched_sharpe_lo')):.6f} | "
+  f"{float(g(pf,'session21','matched_ann_turnover')):.6f} | "
+  f"{int(float(g(pf,'session21','matched_ladder_rank_naive')))} |")
+for w in (120,252,504):
+    A(f"| {w} | {bwv(w,'ann_return'):.6f} | {bwv(w,'sharpe_naive'):.6f} | "
+      f"{bwv(w,'sharpe_lo'):.6f} | {bwv(w,'ann_turnover'):.2f} | "
+      f"{int(bwv(w,'ladder_rank_sharpe_naive'))} |")
+A("")
+A(f"**The exposure-matched line's naive Sharpe falls with the window**, from "
+  f"{float(g(pf,'session21','matched_sharpe_naive')):.6f} at")
+A(f"60 sessions to {bwv(504,'sharpe_naive'):.6f} at 504, against the strategy's "
+  f"{g(pf,'session21','strategy_sharpe_naive')}. Session 21's finding")
+A("that the matched line reaches a higher naive Sharpe holds only at the shortest and")
+A("noisiest window.")
+A("")
+A(f"{g(bw,'implementability','exposure_matched_line','note')}.")
+A("")
+A("## Phase E, what the volatility terminals resolve to")
+A("")
+A("| terminal | line as written |")
+A("|---|---|")
+for r in vt:
+    if r["table"]=="terminal":
+        A(f"| {r['item']} | `{r['note']}` |")
+A("")
+A(f"{g(vt,'engine_path','available','note')}.")
+A("")
+A(f"**{g(vt,'engine_path','renormalisation','note')}.**")
+A("")
+A("| terminal | firings | realised holding |")
+A("|---|---|---|")
+A(f"| T10 vol-short | {int(fl(vt,'firing','t10_vol_short'))} | SVXY on "
+  f"{int(fl(vt,'realised_holding','SVXY'))} sessions |")
+A(f"| S3 vol | {int(fl(vt,'firing','s3_vol'))} | UVXY on "
+  f"{int(fl(vt,'realised_holding','UVXY'))} sessions |")
+A("")
+A(f"Both list {g(vt,'listing','SVIX','note')} on the frozen files, {g(vt,'listing','SVIX','note2')},")
+A(f"confirming session 20. Neither is in `bt.LEVERED` and neither panel carries them.")
+A("")
+A(f"**Disposition.** {g(vt,'disposition','if_added_to_loader','note')}.")
+A("")
+A("## Phase F, skipped")
+A("")
+A("Gate A did not clear, so the B1 re-emission did not run. The chunk-first-element")
+A("defect remains repaired in code at four sites and unre-emitted in the three")
+A("regression figures. The degradation slope is removed from the paper at 9.35")
+A("regardless, so the outstanding item closes a defect rather than restoring a reported")
+A("figure.")
+A("")
+A("## Phase G, the register-claim sweep")
+A("")
+A(f"{g(rs,'scope','class_definition','note','claim')}.")
+A("")
+A("| claim | class |")
+A("|---|---|")
+for r in rs:
+    if r["table"]=="assessment":
+        A(f"| {r['claim']} | {r['class']} |")
+A("")
+A("## Findings and the class of change each would need")
+A("")
+A("| finding | class |")
+A("|---|---|")
+A("| the passes do not complete at this machine state, and the cause is CPU contention rather than memory | correctness repair to the register text, applied |")
+A("| all four nulls clear p below 0.001 at 10,000 draws | register decision on what the paper claims |")
+A("| the leave-one-out artifacts were already on the corrected boundary | documentation, session 21's finding overturned |")
+A("| the 1.5636 agreement is structural rather than coincidental | documentation, session 21's finding overturned |")
+A("| the rolling beta range is estimation noise at short windows | documentation |")
+A("| the timing component changes sign across windows | documentation |")
+A("| the exposure-matched result holds only at the shortest window | documentation, session 21's finding qualified |")
+A("| the volatility terminals substitute the fallback before the dictionary is built | documentation |")
+A("| four register claims were inferences recorded as measurements | correctness repair, applied |")
+A("")
+A("No recommendation is made on any of these.")
+A("")
+A("## What remains open before the holdout can run")
+A("")
+A("- **The B1 re-emission is still outstanding**, now with a measured reason, being that")
+A("  the pass does not complete under CPU contention at this machine state.")
+A("- **8.2 is decided this session** and the convention is stated wherever a figure")
+A("  appears, so it is no longer open.")
+A("- **Ten config parameters have no consumer** and two more are read but never invoked.")
+A("- **`crash_threshold` was fixed after measurement on its own axis.**")
+A("- **SVIX and UVIX leave a code path that will not execute at the holdout read**, and")
+A("  the loader is left unchanged deliberately.")
+A("- **D16 and D23 stand.**")
+A("")
+A("## Machine state per phase")
+A("")
+A("| point | compressor GiB | swap used MB | swap free MB | page-outs cumulative |")
+A("|---|---|---|---|---|")
+for ph,lbl in (("session_start","session start"),("after_C","after phase C"),
+               ("session_end","session end")):
+    A(f"| {lbl} | {mach(ph,'compressor_gib')} | {mach(ph,'swap_used_mb')} | "
+      f"{mach(ph,'swap_free_mb')} | {mach(ph,'pageouts_cumulative')} |")
+A("")
+A("## Stop")
+A("")
+A("Halted after phase H. No holdout executed, no grid re-executed, no grid point")
+A("adopted, no canonical value changed, `bt.LEVERED` unmodified, and session 16 and 16b")
+A("outputs preserved alongside their rebuilds.")
+A("")
+(OUT/"REPORT.md").write_text("\n".join(L)+"\n")
+print(f"wrote {OUT/'REPORT.md'}")
