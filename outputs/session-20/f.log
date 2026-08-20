@@ -1,0 +1,16 @@
+span 2013-01-02 to 2013-01-22, 14 sessions
+cumulative -0.190783
+
+attribution by sleeve, arithmetic contribution summed over the span
+  T10    -0.063276
+  T11    -0.047584
+  S2     +0.030385
+  S3     +0.044738
+  UVXY carried by sleeves ['S3', 'T10', 'T11'], sleeves losing ['T10', 'T11']
+  worst instruments UVXY=-0.0849 SQQQ=-0.0302 SOXS=-0.0106 TECS=-0.0099 TLT=-0.0054 BTAL=-0.0000
+
+69 overlapping 14-session windows below -0.15, January 2013 ranks 42
+  worst 2020-02-27 to 2020-03-17 at -0.503239
+
+wrote /Users/GualyCr/Downloads/tactical-allocation/outputs/session-20/jan2013-attribution.csv with 144 rows
+phase F peak 0.206 GB, 2.4s

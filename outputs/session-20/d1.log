@@ -1,0 +1,28 @@
+built 12 excess-return series in 5.7s
+
+== D1, Lo Sharpe across q ==
+  q=1    strategy 1.0911 rank 6
+  q=5    strategy 1.1491 rank 7
+  q=21   strategy 1.2291 rank 7
+  q=63   strategy 1.2740 rank 7
+  q=126  strategy 1.3931 rank 7
+  q=252  strategy 1.3817 rank 6
+  strategy rank across the sweep [6, 7, 7, 7, 7, 6], rows changing rank 9 of 12
+
+== D1, permutation null per row, 300 draws ==
+  STRATEGY                           factor 1.2664 null [0.8106, 1.5045] inside True  dist +1.91 sd
+  buy_hold_QQQ                       factor 1.5598 null [0.8202, 1.4787] inside False  dist +1.23 sd
+  buy_hold_TQQQ                      factor 1.6024 null [0.8234, 1.4835] inside False  dist +1.16 sd
+  vol_targeted_QQQ_matched           factor 1.3263 null [0.8307, 1.5160] inside True  dist +1.71 sd
+  naive_fast_1d_momentum             factor 1.3608 null [0.8185, 1.4787] inside True  dist +1.60 sd
+  matched_exposure_levered_QQQ_1.70  factor 1.6028 null [0.8235, 1.4833] inside False  dist +1.16 sd
+  long_legs_only                     factor 1.2080 null [0.8300, 1.5154] inside True  dist +2.16 sd
+  equal_weight_universe              factor 1.0168 null [0.8351, 1.4818] inside True  dist +2.98 sd
+  sleeve_T10_standalone              factor 1.2551 null [0.8259, 1.4723] inside True  dist +1.93 sd
+  sleeve_T11_standalone              factor 1.2058 null [0.8151, 1.4660] inside True  dist +2.07 sd
+  sleeve_S2_standalone               factor 1.1088 null [0.8164, 1.4819] inside True  dist +2.59 sd
+  sleeve_S3_standalone               factor 1.1152 null [0.8145, 1.5249] inside True  dist +2.33 sd
+  rows whose observed factor falls inside their own no-autocorrelation null: 9 of 12
+
+wrote /Users/GualyCr/Downloads/tactical-allocation/outputs/session-20/lo-q-sweep.csv with 164 rows
+phase D1 peak 0.194 GB, 7.7s

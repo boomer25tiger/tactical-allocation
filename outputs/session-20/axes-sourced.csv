@@ -1,0 +1,7 @@
+table,axis,arm,status,ann_return,sharpe_naive,sharpe_lo,note
+axis_arm,canonical,,reference,0.5218447451814521,1.0910863648060856,1.3817013060244996,
+axis_arm,smh_accrual,0.0,measured,0.5201204525629202,1.0889062174438457,1.374754842122376,"SMH_PRE2013_ACCRUAL_PCT 0.0, canonical is 1.5"
+axis_arm,smh_accrual,1.0,measured,0.5209104821150572,1.0902395417956037,1.3782400621954989,"SMH_PRE2013_ACCRUAL_PCT 1.0, canonical is 1.5"
+axis_arm,smh_accrual,2.0,measured,0.5237865321070354,1.093911344733918,1.3943133503450131,"SMH_PRE2013_ACCRUAL_PCT 2.0, canonical is 1.5"
+axis_unsourceable,sizing_mode,,"NOT SOURCED, the axis is unwired",,,,"config.SIZING_MODE is defined at src/config.py:78 and validated at line 333, but the engine hardcodes math.trunc(alloc / px) at scripts/s13_backtest.py:528 and never calls src.execution.size_position nor reads config.SIZING_MODE. Setting the config to fractional changes nothing in the return-generating path, so the axis cannot be measured without a code change, which is a specification change rather than a measurement. This is a new instance of the phase B3 hardcoded-literal class"
+axis_unsourceable,completion_rule,,"NOT SOURCED, no alternative arm exists",,,,"scripts/s13_backtest.py lines 18 to 24 record the unavailable-fill completion rule as PROVISIONAL and explicitly not a register closure, and no switch implements an alternative. Sourcing it requires implementing a second arm, which is a specification change rather than a measurement"

@@ -1,0 +1,16 @@
+table,axis,arm,in_N,ann_return,sharpe_naive,sharpe_lo,note
+effective_n,subsample_size,,2001,,,,
+effective_n,canonical_in_subsample,,1,,,,session 19 step 3's positive control
+effective_n,participation_ratio,,3.4279931063515994,,,,(sum lambda)^2 / sum(lambda^2)
+effective_n,variance_threshold_95,,17,,,,smallest k carrying 95 percent
+effective_n,spectral_entropy,,6.719710164987509,,,,exp of the spectral entropy
+effective_n,top_eigenvalue_share,,0.4677702078080885,,,,share of total variance in the first principal component
+effective_n_deflated,participation_ratio,canonical,3.4279931063515994,0.42853318831642234,1.0910863648060856,0.9817871362228352,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,participation_ratio,in_sample_best,3.4279931063515994,0.42853318831642234,1.4723492614528355,0.9994308405565201,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,variance_threshold_95,canonical,17,0.8262578375426014,1.0910863648060856,0.7984924591081681,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,variance_threshold_95,in_sample_best,17,0.8262578375426014,1.4723492614528355,0.9779988562622548,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,spectral_entropy,canonical,6.719710164987509,0.6165706631986276,1.0910863648060856,0.9329823851007615,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,spectral_entropy,in_sample_best,6.719710164987509,0.6165706631986276,1.4723492614528355,0.9961817145322711,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,preregistered_121500,canonical,121500,2.003619556331215,1.0910863648060856,0.001978908395299017,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_deflated,preregistered_121500,in_sample_best,121500,2.003619556331215,1.4723492614528355,0.04884717524801008,"expected maximum annualised in ann_return, deflated Sharpe in sharpe_lo"
+effective_n_disclosure,9.10,,,,,,"recorded as a disclosed post-hoc sensitivity. The motivation is that the pre-registered N returned a deflated Sharpe near zero and the independence assumption underlying the expected maximum is violated by construction, since specifications sharing eight of nine axis values share most of their return path. Primary remains N equal to 121,500"

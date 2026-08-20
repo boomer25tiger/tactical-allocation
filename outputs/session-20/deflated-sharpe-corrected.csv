@@ -1,0 +1,84 @@
+table,item,sharpe_metric,metric,value,primary,note
+grounds,correction_class,,,correctness repair,,"N equal to 364,500 counts the 7.4 tier-two offset axis, which was held at its canonical value of 10 on every specification and across which no maximum was ever taken. Selection operates only over trials actually drawn, so the evaluated count of 121,500 is the count the statistic requires. Recorded as a correctness repair with the grounds stated, not as a post-hoc sensitivity, and no 9.10 entry is opened"
+adoption,method,,,,,"the N equal to 121,500 row session 19 already emitted is adopted in full rather than recomputed"
+corrected_deflated_sharpe,canonical,sharpe_naive,sharpe_annualised,1.0910863648060856,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,skewness,0.4172032530478574,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,excess_kurtosis,8.225832081838258,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,probabilistic_sharpe_vs_zero,0.9997148096841001,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,expected_max_sharpe_ann_N_121500,2.003619556331215,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,probabilistic_sharpe_vs_expected_max_N_121500,0.001978908395299017,0,
+corrected_deflated_sharpe,canonical,sharpe_naive,deflated_sharpe_N_121500,0.001978908395299017,1,
+corrected_deflated_sharpe,canonical,sharpe_naive,deflated_sharpe_N_364500,0.0006598462023542639,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,sharpe_annualised,1.3817013060244996,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,skewness,0.4172032530478574,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,excess_kurtosis,8.225832081838258,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,probabilistic_sharpe_vs_zero,0.9999936079068328,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,expected_max_sharpe_ann_N_121500,2.003619556331215,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,probabilistic_sharpe_vs_expected_max_N_121500,0.02475477285576655,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,deflated_sharpe_N_121500,0.02475477285576655,0,
+corrected_deflated_sharpe,canonical,sharpe_lo,deflated_sharpe_N_364500,0.010883945049487531,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,sharpe_annualised,1.4723492614528355,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,skewness,0.11092534295104456,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,excess_kurtosis,6.9906653187729315,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,probabilistic_sharpe_vs_zero,0.9999977813595079,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,expected_max_sharpe_ann_N_121500,2.003619556331215,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,probabilistic_sharpe_vs_expected_max_N_121500,0.04884717524801008,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,deflated_sharpe_N_121500,0.04884717524801008,1,
+corrected_deflated_sharpe,in_sample_best,sharpe_naive,deflated_sharpe_N_364500,0.023735629673085845,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,sharpe_annualised,1.6686064155068572,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,skewness,0.11092534295104456,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,excess_kurtosis,6.9906653187729315,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,probabilistic_sharpe_vs_zero,0.9999998953958773,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,expected_max_sharpe_ann_N_121500,2.003619556331215,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,probabilistic_sharpe_vs_expected_max_N_121500,0.1486567734439368,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,deflated_sharpe_N_121500,0.1486567734439368,0,
+corrected_deflated_sharpe,in_sample_best,sharpe_lo,deflated_sharpe_N_364500,0.08573700007679474,0,
+cross_section,sharpe_naive_ann_mean,,,0.6199013071365644,,
+cross_section,sharpe_naive_ann_sd,,,0.45197782372194695,,
+cross_section,sharpe_naive_ann_p05,,,-0.26596667073004465,,
+cross_section,sharpe_naive_ann_p50,,,0.7441659214745818,,
+cross_section,sharpe_naive_ann_p95,,,1.1596821422868513,,
+cross_section,sharpe_lo_ann_mean,,,0.6963403122575681,,
+cross_section,sharpe_lo_ann_sd,,,0.5441159281830698,,
+cross_section,sharpe_lo_ann_p05,,,-0.34936740117730175,,
+cross_section,sharpe_lo_ann_p50,,,0.813292994836067,,
+cross_section,sharpe_lo_ann_p95,,,1.3966662069852356,,
+cross_section,sharpe_naive_daily_sd,,,0.028471926659153844,,
+propagation,docs/STATE.md,,42,"equal to 364,500.",,"states the enumerated space size, which remains true and is not corrected"
+propagation,docs/DECISIONS-v3.md,,927,"20/25/30/35/40, and short SMA at 10/20/50, which would give **364,500**, the",,"states the enumerated space size, which remains true and is not corrected"
+propagation,docs/DECISIONS-v3.md,,949,"for N to move, so **N is 364,500**, the enumerated total across the ten axes.",,"DESIGNATES N, requires correction"
+propagation,docs/DECISIONS-v3.md,,960,"autocorrelation instead, the deflated Sharpe at N equal to 364,500 is",,"DESIGNATES N, requires correction"
+propagation,docs/DECISIONS-v3.md,,974,"rather than from the 364,500 enumerated. The dispersion of the unevaluated",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-19/REPORT.md,,30,"**The deflated Sharpe at N equal to 364,500 is 0.000660",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/REPORT.md,,117,"**Step 6, the deflated Sharpe.** N is 364,500 enumerated with 121,500 evaluated,",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/REPORT.md,,207,"| N for the deflated Sharpe | 364,500 enumerated, 121,500 evaluated | amended at 8.7 this session |",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/REPORT.md,,222,"- **8.7, amended again**, superseding N at 131,220 with N at 364,500 enumerated and",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/PBO-REPORT.md,,102,"N is **364,500**, the size of the search space the study enumerated across ten axes, and the grid evaluated **",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/PBO-REPORT.md,,106,**Estimation caveat.** The cross-sectional standard deviation of Sharpe entering the expected maximum is estim,,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-19/PBO-REPORT.md,,114,"| expected maximum Sharpe, no-skill null, N=364,500 | 2.1082 | 2.1082 |",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-19/PBO-REPORT.md,,115,"| **deflated Sharpe at N=364,500** | **0.000660** | **0.023736** |",,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/PBO-REPORT.md,,118,The same figures computed on the Lo-corrected Sharpe are carried in `deflated-sharpe.csv` as a disclosed sensi,,"DESIGNATES N, requires correction"
+propagation,outputs/session-19/MANIFEST.json,,22,"""n_enumerated"": 364500,",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-16b/REPORT.md,,62,"5/3 and cannot leave it fixed. The arithmetic gives **364,500**.",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-16b/REPORT.md,,108,"SMA at 10/20/50, which give **364,500**, the same total the v3 amendments",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-16b/REPORT.md,,183,"placeholder removed, and the 273,375 to 218,700 to 364,500 history recorded.",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-16b/REPORT.md,,228,"The total moves to 364,500 under the first and stays at 131,220 under the",,"states the enumerated space size, which remains true and is not corrected"
+propagation,outputs/session-16b/REPORT.md,,249,"HANDOFF's values would require rerunning it at 364,500 and recomputing the",,"states the enumerated space size, which remains true and is not corrected"
+propagation,src/config.py,,281,"# 364,500 under the session 17 adoption of the recovered HANDOFF values.",,"states the enumerated space size, which remains true and is not corrected"
+propagation,src/config.py,,309,"# 364,500 (after 7.7 swaps the three-point crash quantile for five levels). All",,"states the enumerated space size, which remains true and is not corrected"
+propagation,scripts/s19_report.py,,343,"f""{dv('canonical','expected_max_sharpe_ann_N_364500'):.4f} | """,,"states the enumerated space size, which remains true and is not corrected"
+propagation,scripts/s19_report.py,,344,"f""{dv('in_sample_best','expected_max_sharpe_ann_N_364500'):.4f} |"")",,"states the enumerated space size, which remains true and is not corrected"
+propagation,scripts/s19_report.py,,346,"f""**{dv('canonical','deflated_sharpe_N_364500'):.6f}** | """,,"DESIGNATES N, requires correction"
+propagation,scripts/s19_report.py,,347,"f""**{dv('in_sample_best','deflated_sharpe_N_364500'):.6f}** |"")",,"DESIGNATES N, requires correction"
+propagation,scripts/s19_report.py,,353,"f""{dv('canonical','deflated_sharpe_N_364500','sharpe_lo'):.6f} for the canonical and """,,"DESIGNATES N, requires correction"
+propagation,scripts/s19_report.py,,354,"f""{dv('in_sample_best','deflated_sharpe_N_364500','sharpe_lo'):.6f} for the """,,"DESIGNATES N, requires correction"
+propagation,scripts/s19_report.py,,358,"f""{dv('canonical','expected_max_sharpe_ann_N_364500'):.4f} annualised, exceeds both """,,"states the enumerated space size, which remains true and is not corrected"
+propagation_summary,sites_found,,,29,,
+propagation_summary,sites_designating_N,,,13,,
+propagation_summary,sites_left_unchanged,,,16,,"364,500 remains the correct size of the enumerated space and the correct content of MANIFEST.json's grid.n_enumerated field; only its use as the deflated Sharpe's N is corrected"
+slope_disposition,status,,,UNRESOLVED,,"no valid null exists for the degradation slope. Session 19.6's null permuted block ordering independently per specification, which destroys the common time structure every specification shares, so its four z-scores measure the presence of that shared structure rather than overfitting"
+slope_disposition,corrected_n_is_slope,,,-1.0666200132036998,,"the B1-corrected value at chunk 514 from outputs/session-19_6/m1-nis-correction.csv, carried here since the phase B1 re-emission halted on the memory gate"
+slope_disposition,as_emitted_slope,,,-1.0663023854544191,,
+slope_disposition,candidate_for_removal,,,1,,the statistic is a candidate for removal from the paper. No recommendation is made on whether to remove it
+estimator_control,pbo_null_mean,,,0.9919283331048036,,"retained as an estimator control rather than as a test. A harness fed selection driven purely by idiosyncratic noise returned near-total overfitting, which is a validation of the harness that session 19's observed 0.157809 never carried"
+estimator_control,pbo_observed,,,0.1578088578088578,,

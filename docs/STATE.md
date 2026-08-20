@@ -2,9 +2,9 @@
 
 Refreshed 2026-08-20 by session 20. Supersedes the session 19.5 version.
 
-Session 20 ran phases A through C, tripped gate C, and did not reach phases D
-through G. Partial completion through a completed phase is the state this
-project is in.
+Session 20 ran phases A through C, **gate C FAILED**, and phases D through F were
+then resumed by instruction on the corrected boundary. Phase G was skipped on its
+budget gate.
 
 ## What this project is
 
@@ -41,7 +41,7 @@ have all run. The holdout boundary 2021-08-01 (2.10) is untouched.
 - **PBO 0.1578** at S equal to 16. **Deflated Sharpe** 0.000660 canonical at N
   equal to 364,500.
 
-## Gate C, tripped and unresolved
+## Gate C, FAILED and unresolved
 
 On the designated cell the timing-shuffle null on annualised return moved from
 p 0.000 to **p 0.001**, which does not clear p below 0.001, and the strategy's
@@ -58,10 +58,21 @@ is an open register decision.** Registered at 9.23.
   `outputs/session-19/pbo.csv` and the regression columns of `pbo-strata.csv`
   still carry it. The pass halted on the memory gate. Known magnitude is
   3.176e-04 on the S equal to 16 slope. PBO and stratified PBO are immune.
-- **Phases D through G are unrun**, so the Lo q sweep, the deflated Sharpe
-  correction to N equal to 121,500, the axis census, the three unsourced 9.11
-  axes, effective N, the January 2013 attribution, and the corrected
-  degradation null all remain open.
+- **Phase G is the only unrun phase.** The corrected degradation null was
+  skipped on its budget gate, with 0.06 GiB genuinely free against a
+  requirement near 0.72 GB. Its construction is recorded so a later session can
+  run it unchanged.
+- **8.7 is corrected to N equal to 121,500** at 9.25 through 9.30's companion
+  amendment, with 364,500 retained wherever it states the enumerated space.
+- **The effective count is 3.43 to 17**, not 121,500, so the canonical's
+  deflated Sharpe moves from 0.001979 to 0.981787 depending on the definition.
+  Post-hoc sensitivity at 9.28, primary unchanged.
+- **config.SIZING_MODE is unwired** from the engine, which hardcodes
+  math.trunc. A new instance of the hardcoded-literal class, at 9.27.
+- **The completion rule has no alternative arm**, so that 9.11 axis cannot be
+  sourced without a specification change.
+- **The January 2013 event ranks 42nd of 69** comparable fourteen-session
+  windows, so it is not exceptional. Registered at 9.29.
 - **SVIX and UVIX leave a code path untested at the holdout read.** They are
   held in code, load on neither panel, and list 2022-03-30 inside the holdout
   span, so the holdout measures a strategy that differs from the source over

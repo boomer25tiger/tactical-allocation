@@ -1,9 +1,11 @@
 report,figure,classification,note
-REPORT.md,1.9,register identifier,not a measured figure
-REPORT.md,11767.44,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
-REPORT.md,12288.00,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
-REPORT.md,3.176,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
-REPORT.md,520.56,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
-REPORT.md,7.14,register identifier,not a measured figure
-REPORT.md,8.2,register identifier,not a measured figure
-REPORT.md,9.11,register identifier,not a measured figure
+REPORT.md,11767.44,mechanism limitation,present inside a text field of an emitted CSV
+REPORT.md,12288.00,mechanism limitation,present inside a text field of an emitted CSV
+REPORT.md,3.176,mechanism limitation,present inside a text field of an emitted CSV
+REPORT.md,520.56,mechanism limitation,present inside a text field of an emitted CSV
+REPORT.md,7.14,register or session identifier,not a measured figure
+REPORT-DG.md,-1.0663023854544191,mechanism limitation,"emitted at full precision, checker compares to six decimals"
+REPORT-DG.md,-1.0666200132036998,mechanism limitation,"emitted at full precision, checker compares to six decimals"
+REPORT-DG.md,0.0100,mechanism limitation,present inside a text field of an emitted CSV
+REPORT-DG.md,0.4673,mechanism limitation,present inside a text field of an emitted CSV
+REPORT-DG.md,19.6,register or session identifier,not a measured figure

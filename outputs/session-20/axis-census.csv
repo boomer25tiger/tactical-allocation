@@ -1,0 +1,26 @@
+table,axis,register,source,status,in_N,note
+census,sma_long,7.6,"register 7.6, closed",searched,1,4 values
+census,crash_threshold,7.7,"register 7.7, revised session 04",searched,1,5 values
+census,rsi_exhaustion,6.1,"register 6.1, recorded",searched,1,3 values
+census,rsi_dip,6.1,"register 6.1, recorded",searched,1,3 values
+census,rsi_rs,6.1,"register 6.1, recorded",searched,1,3 values
+census,overbought_t1,6.2,"docs/HANDOFF.md line 122, recovered session 17",searched,1,5 values
+census,oversold,6.4,"docs/HANDOFF.md line 122, recovered session 17",searched,1,5 values
+census,sma_short,6.6,"docs/HANDOFF.md line 122, recovered session 17",searched,1,3 values
+census,vote,6.7,"register 6.7, recorded",searched,1,3 values
+census,tier_two_offset,7.4,"register 7.4, status informed",held at canonical,0,"held at 10 on every specification, no maximum taken across it, so it does not enter N"
+curve_axis,panel,9.11,,searched as a reported sensitivity,1,
+curve_axis,convention,9.11,,searched as a reported sensitivity,1,
+curve_axis,window,9.11,,searched as a reported sensitivity,1,
+curve_axis,commission_arm,9.11,,searched as a reported sensitivity,1,
+curve_axis,slippage_model,9.11,,searched as a reported sensitivity,1,
+curve_axis,financing_spread,9.11,,"assumed, D16 open",0,
+curve_axis,smh_accrual,9.11 and 9.8,,never varied until phase E2,0,
+curve_axis,sizing_mode,9.11,,"never varied, and unwired, see below",0,
+curve_axis,completion_rule,9.11,,"never varied, provisional rather than closed",0,
+curve_axis,starting_nav,D20 session 16,,"added to the curve, not to the grid",0,
+curve_axis,participation_cap,added session 19,,"ADDED WITHOUT RECORD, see below",0,
+discrepancy,participation_cap,,,,,"session 19 added it to the curve axis list without recording the addition, giving eleven where 9.11 plus NAV gives ten. Searched as a sensitivity, not part of N"
+discrepancy,ladder_fourteen_to_twelve,,,,,"session 14's ladder carried fourteen lines and the twelve-row ladder dropped the intraday-only and overnight-only hold universes. Recorded nowhere and never run through Romano-Wolf at thirteen. Not part of N, since the ladder is a comparison set rather than a search"
+discrepancy,lo_q,,,,,"on no axis, a Python default at scripts/s13_backtest.py:609, never swept before phase D1. Belongs in N only if the paper reports a figure selected across q, which it does not"
+authoritative_count,searched_degrees_of_freedom,,,,9,the nine grid axes are the searched degrees of freedom that enter N. The curve axes are reported sensitivities rather than a search over which a maximum was taken

@@ -1,0 +1,14 @@
+E1 authoritative searched degrees of freedom: 9
+E2 canonical reference ann 0.521845 lo 1.381701
+  smh_accrual 0.0: ann 0.520120 lo 1.374755
+  smh_accrual 1.0: ann 0.520910 lo 1.378240
+  smh_accrual 2.0: ann 0.523787 lo 1.394313
+E2 sizing_mode and completion_rule NOT SOURCED, both need code changes
+E3 subsample (2001, 2472), canonical inside True
+  participation ratio 3.43, variance-95 count 17, entropy 6.72, top eigenvalue share 0.4678
+  N_eff participation_ratio = 3.43: expected max 0.4285, canonical DSR 0.981787
+  N_eff variance_threshold_95 = 17.00: expected max 0.8263, canonical DSR 0.798492
+  N_eff spectral_entropy = 6.72: expected max 0.6166, canonical DSR 0.932982
+  N_eff preregistered_121500 = 121500.00: expected max 2.0036, canonical DSR 0.001979
+
+phase E peak 0.370 GB, 11.7s

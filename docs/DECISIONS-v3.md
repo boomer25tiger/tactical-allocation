@@ -1705,3 +1705,150 @@ than a measurement** (9.10 provenance requirement).
   headline metric under 8.2 is a register decision, left open here.** The q sweep
   that would inform it is phase D of session 20 and did not run, since gate C halts
   the session before phase D.
+
+- **Phase C recorded as FAILED (session 20, 2026-08-20).** The gate condition at
+  9.23 was that both randomization nulls clear p below 0.001 on the designated cell.
+  The timing-shuffle null on annualised return did not, so phase C is recorded as
+  failed rather than passed. The boundary repair itself succeeded and its outputs
+  stand, and phases D through G were resumed on the corrected boundary by explicit
+  instruction after the gate halt.
+
+- **8.7 amended again (session 20, 2026-08-20), correctness repair.** **N is
+  121,500, the evaluated count, not 364,500.** N equal to 364,500 counts the 7.4
+  tier-two offset axis, which was held at its canonical value of 10 on every
+  specification and across which no maximum was ever taken. Selection operates only
+  over trials actually drawn, so the evaluated count is the count the statistic
+  requires. 364,500 remains the correct size of the enumerated space and is retained
+  wherever it is stated as such, including MANIFEST.json's grid.n_enumerated field.
+  Recorded as a correctness repair with the grounds stated rather than as a post-hoc
+  sensitivity, and no 9.10 entry is opened.
+
+  The deflated Sharpe on the naive Sharpe reads **0.001979
+  for the canonical** and 0.048847
+  for the in-sample-best, against 0.000660
+  and 0.023736 at the superseded N.
+  The propagation sweep found 29 sites
+  carrying the figure, of which 13
+  designate N. Evidence: outputs/session-20/deflated-sharpe-corrected.csv.
+
+- **9.25 the Lo lag count swept (session 20, 2026-08-20).** `lo_sharpe(excess,
+  q=252)` at scripts/s13_backtest.py:609 is a Python default parameter, absent from
+  config.py and from every specification-curve axis, and was never swept before this
+  phase. Across q of 1, 5, 21, 63, 126 and 252 the strategy's rank spans
+  6 to 7 and
+  **9 of twelve rows
+  change rank**.
+
+  Against a permutation null of 300 draws per
+  row at seed 20260820 fixed before drawing,
+  **9 of twelve rows carry
+  a Lo factor inside their own no-autocorrelation null**, meaning indistinguishable
+  from what a series with no autocorrelation produces at this sample length. The
+  three that fall outside are exactly the three rows that outrank the strategy on the
+  Lo-corrected Sharpe. The strategy's own factor is inside its null. **Whether 8.2
+  keeps the Lo-corrected Sharpe as headline remains an open register decision.**
+
+- **9.26 the axis census (session 20, 2026-08-20).** **The authoritative count of
+  searched degrees of freedom is 9**,
+  being the nine grid axes. The specification-curve axes are reported sensitivities
+  rather than a search over which a maximum was taken, so they do not enter N. Four
+  discrepancies are resolved and each is recorded as previously unrecorded. The
+  participation cap was added to the curve axis list in session 19 without record,
+  giving eleven where 9.11 plus NAV gives ten. The ladder dropped from fourteen lines
+  to twelve, removing the intraday-only and overnight-only hold universes, recorded
+  nowhere and never run through Romano-Wolf at thirteen. The Lo q is on no axis. The
+  tier-two offset was held rather than searched and does not enter N.
+
+- **9.27 the three open 9.11 axes (session 20, 2026-08-20).** One is sourced and two
+  cannot be sourced by measurement.
+
+  **SMH accrual, sourced.** Three arms measured against the canonical with every
+  other axis held.
+
+  | arm | annualised | Lo Sharpe |
+  |---|---|---|
+  | canonical | 0.521845 | 1.381701 |
+  | accrual 0.0 | 0.520120 | 1.374755 |
+  | accrual 1.0 | 0.520910 | 1.378240 |
+  | accrual 2.0 | 0.523787 | 1.394313 |
+
+  **Sizing mode, NOT SOURCED and unwired.** config.SIZING_MODE is defined at
+  src/config.py:78 and validated at line 333, but the engine hardcodes
+  `math.trunc(alloc / px)` at scripts/s13_backtest.py:528 and never calls
+  src.execution.size_position nor reads the config. **Setting the config changes
+  nothing in the return-generating path.** This is a new instance of the
+  hardcoded-literal class at 9.22 and was not known before this phase. Wiring it is a
+  correctness repair and varying it is a specification change.
+
+  **Completion rule, NOT SOURCED.** scripts/s13_backtest.py lines 18 to 24 record the
+  unavailable-fill completion rule as provisional and explicitly not a register
+  closure, and no switch implements an alternative. Sourcing it requires implementing
+  a second arm, which is a specification change rather than a measurement.
+
+- **9.28 effective N, POST-HOC SENSITIVITY under 9.10 (session 20, 2026-08-20).**
+  **Motivation, stated.** The pre-registered N returned a deflated Sharpe near zero,
+  and the independence assumption underlying the expected maximum is violated by
+  construction, since specifications sharing eight of nine axis values share most of
+  their return path.
+
+  Across the pre-registered 2001
+  specification subsample, with the canonical inside it, the correlation spectrum
+  puts 46.8 percent
+  of total variance in the first principal component. Three definitions are reported
+  so the choice is visible.
+
+  | definition | effective count | expected maximum Sharpe | canonical deflated Sharpe |
+  |---|---|---|---|
+  | participation_ratio | 3.43 | 0.4285 | 0.981787 |
+  | spectral_entropy | 6.72 | 0.6166 | 0.932982 |
+  | variance_threshold_95 | 17.00 | 0.8263 | 0.798492 |
+  | preregistered_121500 | 121500.00 | 2.0036 | 0.001979 |
+
+  **Primary remains N equal to 121,500.** This entry adopts nothing and changes no
+  canonical value.
+
+- **9.29 the January 2013 event (session 20, 2026-08-20).** Fourteen sessions from
+  2013-01-02 to 2013-01-22 at a cumulative -0.190783,
+  appearing in no session report across nineteen sessions.
+
+  **Attribution established rather than asserted.** UVXY is carried by
+  3 sleeves during the span, being
+  S3 T10 T11, and
+  2 sleeves lose,
+  being T10 T11. Both
+  conditions hold together. S2 and S3 contribute positively, so the loss is not
+  portfolio-wide.
+
+  **The event is not singular.** 69
+  overlapping fourteen-session windows across the primary window fall below minus
+  0.15, and January 2013 ranks 42 among
+  them. The worst is the 2020 span at roughly minus 0.50. The premise that the event
+  is exceptional does not hold.
+
+  **The strip's asymmetry, recorded.** The strategy is nested through
+  run(sig["rows"]) while each benchmark line is re-initialised through
+  LINES[ln][0](o2o, sig["rows"], i0), and
+  7 of the eleven benchmark
+  lines carry state and are therefore affected by re-entry rather than only repriced.
+
+- **9.30 the degradation slope, UNRESOLVED (session 20, 2026-08-20).** No valid null
+  exists for it. Session 19.6's null permuted block ordering independently per
+  specification, which destroys the common time structure every specification shares,
+  so its z-scores measure the presence of that shared structure rather than
+  overfitting. The corrected value carried forward is
+  -1.0666200132036998 against the emitted
+  -1.0663023854544191, since the phase B1 re-emission
+  halted on the memory gate. **The statistic is a candidate for removal from the
+  paper and no recommendation is made on whether to remove it.**
+
+  Session 19.6's PBO null is retained as an **estimator control** rather than a test.
+  A harness fed selection driven purely by idiosyncratic noise returned
+  0.991928 against the observed
+  0.157809, a validation the observed
+  figure never carried on its own.
+
+  **The corrected null did not run.** Phase G was skipped on its budget gate, with
+  0.06 GiB genuinely free against a requirement of about
+  0.717 GB before overhead. The construction is
+  recorded in outputs/session-20/degradation-null-corrected.csv so a later session
+  can run it unchanged.

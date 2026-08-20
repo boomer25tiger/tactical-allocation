@@ -1,0 +1,17 @@
+table,item,value,note
+machine,free_gib,0.06,genuinely unused
+machine,available_gib,1.29,free plus inactive plus purgeable
+machine,wired_gib,1.79,"kernel, not reclaimable"
+machine,compressor_gib,3.07,compressed pages of other processes
+machine,swap,total = 11264.00M  used = 10503.75M  free = 760.25M  (encrypted),
+machine,swap_free_mb,760.25,
+requirement,moment_array_gb,0.093,"121,500 x 48 x 2 float64"
+requirement,residual_array_gb,0.047,the per-specification residual the construction needs
+requirement,permutation_index_gb,0.047,"argsort index, 121,500 x 48"
+requirement,chunk_arrays_gb,0.280,six chunk-sized arrays at chunk 48
+requirement,total_estimate_gb,0.717,before Python and BLAS overhead
+gate,ram_condition,needs 0.717 GB against 1.29 GiB available,FAILS
+gate,precedent,phase B1 re-emission,"a strictly lighter pass, without the residual and permutation arrays, already fell to 0.0 percent CPU and was killed at this machine state"
+gate,verdict,SKIPPED,"the budget gate requires free RAM to support the stated ceiling without swap, and it does not"
+gate,not_run_partial,true,the scaffold requires skipping rather than running a partial pass
+construction,recorded_not_run,"the null decomposes each specification's per-block moments into the cross-sectional block mean plus a residual, permutes each residual across blocks independently at a seed fixed before drawing, then recomposes, which preserves the shared period effect while removing any persistent idiosyncratic edge",the design is recorded so a later session can run it unchanged
