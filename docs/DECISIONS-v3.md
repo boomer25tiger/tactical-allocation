@@ -1557,3 +1557,151 @@ than a measurement** (9.10 provenance requirement).
   **Whether any early-start figure enters the paper is a register decision. It is not
   made here and this entry does not pre-empt it.** Evidence:
   outputs/session-19_5/coverage-early.csv.
+
+- **9.16 rank sentence, CORRECTED (session 20, 2026-08-20).** The sentence recorded
+  above, that the canonical start returns the lowest rank of any start date tested
+  under both metrics, is **false**. Under the naive Sharpe the canonical ties the
+  pre-D21 boundary at rank 6, the worst of the six arms rather than uniquely so.
+  Under the Lo-corrected Sharpe the 2013-01-02 arm falls below it at rank 7, so the
+  canonical is not the worst on that metric. The same false sentence was committed in
+  outputs/session-19_5/REPORT.md and docs/STATE.md and is corrected in all three.
+  Correctness repair. Evidence: outputs/session-19_5/window-strip.csv.
+
+- **8.12 amended (session 20, 2026-08-20), correctness repair.** The entry records
+  that no arithmetic depends on the chunk size. **The sweep falsifies that.**
+  `n_is = float(mc[0] @ nvec)` takes the in-sample session count from the first
+  combination of each chunk and applies it chunk-wide, and merged super-block counts
+  are unequal, so the three regression figures depend on where chunk boundaries fall.
+  The class appears at four sites, being scripts/s19_step4.py, scripts/s18_step3.py,
+  scripts/s19_draws.py, and scripts/s19_step5.py, the last being the stratified pass.
+  All four are repaired. **The re-emission did not run**, halted on the memory gate
+  with free plus inactive memory at 1.33 GiB,
+  so the three regression figures in outputs/session-19/pbo.csv and the regression
+  columns of pbo-strata.csv still carry the defect. The known magnitude is
+  3.176e-04 on the S equal to 16 slope. PBO and the
+  stratified PBO are immune, since within a chunk the substituted count scales every
+  specification identically and preserves the ordering the rank and the argmax read.
+
+- **8.8 amended (session 20, 2026-08-20), correctness repair.** The matched-exposure
+  levered QQQ row was built at 1.70 where D25 superseded that with 1.777. Rebuilt at
+  the corrected boundary from frozen inputs, holding TQQQ at exposure over three
+  rebalanced daily, which is the convention read from scripts/s15_lines.py rather
+  than assumed, and on the realized arm TQQQ carries the issuer's own financing and
+  daily reset so no separate financing model applies.
+
+  | exposure | TQQQ weight | annualised | volatility | naive Sharpe | Lo Sharpe |
+  |---|---|---|---|---|---|
+  | 1.7 | 0.5667 | 0.367317 | 0.318603 | 1.124116 | 1.801782 |
+  | 1.777 | 0.5923 | 0.383126 | 0.333040 | 1.124271 | 1.802013 |
+
+- **9.19 the derived held universe (session 20, 2026-08-20).** The held and signal
+  sets are derived from the abstract syntax tree of src/sleeves.py, giving
+  **19 held** and
+  **13 signal-only** tickers, which
+  reconciles exactly with session 19.6. **outputs/session-20/held-universe.csv is the
+  artifact that supersedes every hardcoded ticker list in the repository**, carrying
+  the sleeve, function, line number, and weight expression for every held ticker.
+  The list in scripts/s195_strip.py carried four misclassifications, being FAS, SH,
+  and KMLM treated as held when they are not, and QQQ treated as a signal input when
+  it is held. Correctness repair for the artifact, specification change for any
+  repository-wide refactor.
+
+- **9.20 SVIX and UVIX, unreachable in sample and at the holdout read (session 20,
+  2026-08-20).** Both are held in code and load on neither panel. `State.available`
+  at scripts/s13_backtest.py:344 returns False for a ticker absent from the panel, so
+  the availability switches resolve to SVXY and UVXY on every session. Across the
+  primary window the T10 terminal fired 1114
+  times and the S3 terminal 519 times, while
+  SVIX and UVIX were selected zero times.
+
+  **The engine raises on an unlisted held ticker.** The fill path at
+  scripts/s13_backtest.py:500 reads px = raw[t][i] where raw is built only over
+  panel.frames, so an absent ticker raises KeyError rather than being dropped,
+  renormalised, or routed to cash. Register 1.9 covers threshold reads and is silent
+  on weight dictionaries, and the traced behaviour is an exception.
+
+  **The holdout consequence.** SVIX and UVIX list 2022-03-30 on the frozen files,
+  inside the holdout span from 2021-08-01, so the source strategy's date guards would
+  activate there while this implementation will not. The branch executed zero times
+  in sample and will execute zero times at the holdout read under the current loader,
+  so the holdout measures a strategy that differs from the source over that span.
+  Whether the loader should carry the two tickers is a register decision this session
+  does not make.
+
+- **9.21 QQQ is held and is also a ladder benchmark (session 20, 2026-08-20).** QQQ
+  is held on 195 of
+  2472 primary-window sessions at a mean weight of
+  0.1244 conditional on holding and
+  0.0098 unconditional. The
+  arithmetic share of the strategy's summed daily return attributable to that
+  position is 0.007405, so the gap
+  against the buy-and-hold QQQ ladder row is partly a comparison of the strategy
+  against a component of itself. Documentation, reported without recommendation.
+
+- **9.22 three defect class sweeps under 9.13 (session 20, 2026-08-20).** The
+  chunk-first-element class at four sites, all repaired in code with the re-emission
+  outstanding on the memory gate. The vacuous-check class at five checks, all
+  repaired with an explicit cardinality floor asserted before the predicate, being
+  eight per shard class for the required-artifact check, four for the regenerability
+  figure count, ten prose figures and ten CSV numerics for check_report_figures.py,
+  twenty-one comparisons for the additivity accumulator, and one row per shard for
+  the parse consistency line. The hardcoded literal class swept across scripts and
+  src, with divergent ticker lists reported against the derived held set rather than
+  refactored, since replacing every list is a specification change.
+
+- **9.23 the boundary repair (session 20, 2026-08-20), correctness repair.**
+  scripts/s14_common.py line 29 read 2011-10-03 and no session 15 script overrode it,
+  so every session 15 primary-window row carried
+  2473 sessions against the corrected
+  2472. The default is corrected and
+  the affected outputs are rebuilt into outputs/session-20/rebuilt/ with the
+  originals preserved.
+
+  The strategy moves from 0.522592 to
+  0.521845 annualised and from
+  1.384621 to
+  1.381701 Lo-corrected Sharpe, reproducing
+  7.14a's corrected values. **No ladder rank changes on either metric** and the
+  strategy holds sixth of twelve. The information ratio moves from
+  0.703614 to
+  0.709366 and the
+  Newey-West alpha t from
+  2.347007 to
+  2.364283.
+
+  **Gate C tripped.** On the designated cell the timing-shuffle null on annualised
+  return moves from p 0.000
+  to p 0.001,
+  which does not clear p below 0.001, and the strategy's percentile on that arm moves
+  from 100.0 to 99.9.
+  On the Lo-corrected Sharpe both nulls remain at p 0.000 with the strategy at the
+  100th percentile. Romano-Wolf keeps one of eleven below 0.05, the equal-weight
+  universe moving from 0.033
+  to 0.046 with
+  the strategy above. **What the paper claims from the annualised-return arm is a
+  register decision left open here.**
+
+- **D26, recorded (session 20, 2026-08-20), previously absent from this register.**
+  The 7.7 amendment asserted a five-point crash axis left the 218,700 total unchanged,
+  which is arithmetically impossible, and 218,700 stood in the register and in config
+  for four sessions with N in 8.7 wrong throughout. Raised in
+  outputs/session-16b/REPORT.md and never written here until now. Documentation.
+
+- **D27, recorded (session 20, 2026-08-20), previously absent from this register.**
+  The pre-registered enumeration rule underdetermines the cardinality when neither
+  values nor a cardinality are recorded, and its one-session granularity produces a
+  degenerate short-SMA sweep. Both are properties of the rule rather than of the
+  register. Raised in outputs/session-16b/REPORT.md. Register decision.
+
+- **D25, APPLIED (session 20, 2026-08-20).** The superseding exposure figure of
+  1.777 is now carried by the rebuilt matched-exposure row under the 8.8 amendment
+  above, so D25 moves from recorded-as-documentation to applied.
+
+- **9.24 the Lo estimator and the 8.2 question (session 20, 2026-08-20).** Session
+  19.5 measured that the Lo scale factor's sampling dispersion is of the same order
+  as the gaps between ladder rows, and session 19.6 established that q is a Python
+  default parameter at scripts/s13_backtest.py:609, absent from config.py and from
+  every specification-curve axis. **Whether the Lo-corrected Sharpe remains the
+  headline metric under 8.2 is a register decision, left open here.** The q sweep
+  that would inform it is phase D of session 20 and did not run, since gate C halts
+  the session before phase D.

@@ -1,0 +1,23 @@
+targets read from outputs/session-19/pbo.csv:
+  pbo                      0.1578088578088578
+  degradation_slope        -1.0663023854544191
+  degradation_intercept    2.7549013078347317
+  degradation_r_squared    0.5469127629590327
+
+moment array (121500, 48, 2) float64 93.3 MB in 0.1s
+combinations 12,870, full enumeration of C(16,8)
+
+== M1 positive control, unmodified S=16 machinery ==
+    [observed] chunk 1/101 t=0s rss=0.37GB
+    [observed] chunk 21/101 t=13s rss=0.95GB
+    [observed] chunk 41/101 t=25s rss=0.95GB
+    [observed] chunk 61/101 t=36s rss=0.95GB
+    [observed] chunk 81/101 t=44s rss=0.95GB
+    [observed] chunk 101/101 t=52s rss=0.95GB
+  [observed] chunk=128 52.0s peak 0.95 GB  PBO=0.157809 slope=-1.066486 icept=2.755417 R2=0.546839
+    pbo                      got 0.1578088578088578 target 0.1578088578088578 gap 0.000e+00
+    degradation_slope        got -1.0664861204431002 target -1.0663023854544191 gap 1.837e-04
+    degradation_intercept    got 2.755417267053332 target 2.7549013078347317 gap 5.160e-04
+    degradation_r_squared    got 0.54683908834265 target 0.5469127629590327 gap 7.367e-05
+  positive control FAIL
+M1 halted, positive control failed

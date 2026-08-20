@@ -1,0 +1,49 @@
+table,item,value,within,note,note2
+arms,late_start,2146,,2013-01-23,
+arms,early_start,2160,,2013-01-02,
+arms,late_ann_emitted,0.6749399432937893,,,
+arms,early_ann_emitted,0.6286270583369207,,,
+arms,session_difference,14,,,
+front,first_session,,,2013-01-02,
+front,last_session,,,2013-01-22,
+front,n_sessions,14,,,
+terminal_mapping,method,,,"terminal labels are matched by the ticker set each sleeve returns, parsed from the terminal strings in outputs/session-18/reachability.csv. Exact set equality is tried first, then a unique subset match, which is what resolves the terminals whose source carries a variable key such as vol_short. A label reads UNMATCHED where neither is unique within that sleeve",
+terminal_mapping,fill_lag,,,"run_account fills with fill_lag=1, so the signal row reported against a session is the row at the prior calendar position, being the one whose weights the holdings on that session reflect",
+front_session,2013-01-02,-0.08777658274714173,0,SOXL=0.1250 SOXS=0.0834 SQQQ=0.2084 TECS=0.0834 TLT=0.1250 TQQQ=0.3752,"T10: t10_weights:L190 return {""SQQQ"": 0.5, ""TLT"": 0.5} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-03,0.002073068492566277,1,SOXL=0.1669 SVXY=0.0834 TECL=0.1669 TQQQ=0.3338 UVXY=0.2503,"T10: t10_weights:L189 return {""TECL"": 1 / 3, ""SOXL"": 1 / 3, vol_short: 1 / 3} | T11: t11_weights:L261 return {""TECL"": 1 / 3, ""SOXL"": 1 / 3, ""TQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L325 return {vol: 1.0}"
+front_session,2013-01-04,-0.013835674442686408,0,SOXL=0.1251 SOXS=0.0834 SQQQ=0.2086 TECS=0.0835 TLT=0.1251 TQQQ=0.3755,"T10: t10_weights:L190 return {""SQQQ"": 0.5, ""TLT"": 0.5} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-07,-0.003034789859321263,1,BIL=0.0834 BTAL=0.0024 SOXL=0.1251 TQQQ=0.3754 UVXY=0.3337,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L249 return {""UVXY"": 1 / 3, ""BIL"": 1 / 3, ""BTAL"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-08,-0.010760162889834168,1,BIL=0.0843 BTAL=0.0024 SOXL=0.1250 TQQQ=0.3827 UVXY=0.3247,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L249 return {""UVXY"": 1 / 3, ""BIL"": 1 / 3, ""BTAL"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-09,-0.01773861996250703,0,SOXL=0.1251 SOXS=0.0834 SQQQ=0.2085 TECS=0.0834 TLT=0.1250 TQQQ=0.3754,"T10: t10_weights:L190 return {""SQQQ"": 0.5, ""TLT"": 0.5} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-10,0.005185119102218527,0,SOXL=0.1315 SOXS=0.0790 SQQQ=0.2019 TECS=0.0812 TLT=0.1237 TQQQ=0.3835,"T10: t10_weights:L190 return {""SQQQ"": 0.5, ""TLT"": 0.5} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-11,-0.0009200377305270679,1,BIL=0.0834 BTAL=0.0061 SOXL=0.1251 TQQQ=0.3754 UVXY=0.3337,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L249 return {""UVXY"": 1 / 3, ""BIL"": 1 / 3, ""BTAL"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-14,-0.00918350963476322,1,BIL=0.0841 BTAL=0.0061 SOXL=0.1261 TQQQ=0.3747 UVXY=0.3318,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L249 return {""UVXY"": 1 / 3, ""BIL"": 1 / 3, ""BTAL"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-15,-0.004648640236286972,1,SOXL=0.1251 SOXS=0.0834 SQQQ=0.0833 TECS=0.0834 TQQQ=0.3751 UVXY=0.2501,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-16,-0.007963206543442625,1,SOXL=0.1263 SOXS=0.0847 SQQQ=0.0836 TECS=0.0840 TQQQ=0.3799 UVXY=0.2419,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L266 return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-17,-0.008169213971308209,1,SOXL=0.2085 TECL=0.0834 TQQQ=0.4586 UVXY=0.2502,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L261 return {""TECL"": 1 / 3, ""SOXL"": 1 / 3, ""TQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front_session,2013-01-18,0.002431173529292563,1,SOXL=0.0834 TECL=0.0834 TQQQ=0.3335 UVXY=0.5004,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L261 return {""TECL"": 1 / 3, ""SOXL"": 1 / 3, ""TQQQ"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L325 return {vol: 1.0}"
+front_session,2013-01-22,-0.051427355465786584,1,BIL=0.0833 BTAL=0.0066 SOXL=0.1250 TQQQ=0.3751 UVXY=0.3335,"T10: t10_weights:L170 return {""UVXY"": 1.0} | T11: t11_weights:L249 return {""UVXY"": 1 / 3, ""BIL"": 1 / 3, ""BTAL"": 1 / 3} | S2: s2_weights:L289 return {""TQQQ"": 1.0} | S3: s3_weights:L326 return {""TQQQ"": 0.5, ""SOXL"": 0.5}"
+front,cumulative_return,-0.1907829429130603,,,
+front,n_sessions_uvxy_held,10,,,
+verification,TOL_ANN,1e-09,,stated before comparing,
+verification,growth_late_arm,80.82562654420259,,,
+verification,growth_front_span,0.8092170570869397,,,
+verification,growth_early_arm_reconstructed,65.40547564930766,,,
+verification,growth_early_arm_direct,65.40547564930779,,,
+verification,ann_reconstructed,0.6286270583369205,,,
+verification,ann_emitted,0.6286270583369207,,,
+verification,abs_gap,2.220446049250313e-16,1,,
+verification,verdict,,,"PASS, the difference is carried by the front span",
+overlap,n_sessions,2146,,,
+overlap,daily_return_correlation,1.0,,,
+overlap,max_abs_daily_return_difference,0.0,,,
+overlap,cumulative_return_early_arm,79.82562654420259,,,
+overlap,cumulative_return_late_arm,79.82562654420259,,,
+overlap,cumulative_returns_identical,1,,,
+overlap,position_vectors_agree_every_session,1,,"both arms slice one account, so the weight dictionary at each overlapping session is the same object",
+nesting,strategy_call,,1,"acc_s = run(sig[""rows""]) inside the loop over start dates, taking no start argument, so one account is built and every arm is a slice of it",
+nesting,benchmark_call,,1,"rws = LINES[ln][0](o2o, sig[""rows""], i0) inside the same loop, taking the per-arm entry index i0, so each benchmark line is re-initialised per arm",
+nesting,consequence,,,"the strip compares a nested strategy against non-nested benchmarks, so a rank change across arms mixes the strategy's window change with the benchmarks' re-entry. The 19.5 report does not state this",
+resources,memory_ceiling_gb,5.0,,stated before running,
+resources,peak_rss_gb,0.177,1,,
+resources,seconds,3.4,,,

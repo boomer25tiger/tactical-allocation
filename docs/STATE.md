@@ -1,14 +1,14 @@
-# STATE — read this first
+# STATE, read this first
 
-Refreshed 2026-08-19 by session 19.5. Supersedes the session 19 version.
+Refreshed 2026-08-20 by session 20. Supersedes the session 19.5 version.
 
-Position is the session 19.5 commit, whose parent is `525c0a7` (session 19).
+Session 20 ran phases A through C, tripped gate C, and did not reach phases D
+through G. Partial completion through a completed phase is the state this
+project is in.
 
 ## What this project is
 
-A daily multi-model tactical allocation study: four sleeves (T10 eleven-name
-overbought cascade, T11 two-tier overbought with a trend switcher and 50/50
-bear split, S2 TQQQ 200-SMA gate, S3 four-vote SMA regime), 25% budget each,
+A daily multi-model tactical allocation study, four sleeves at 25% budget each,
 reconstructed from a QuantConnect source with every numeric parameter
 re-specified and registered. The register is `docs/DECISIONS-v3.md`; canonical
 values live in `src/config.py` (validate() runs on import).
@@ -16,96 +16,81 @@ values live in `src/config.py` (validate() runs on import).
 ## Custody
 
 `/Users/GualyCr/Downloads/tactical-allocation`, outside iCloud Drive. Private
-remote at `https://github.com/boomer25tiger/tactical-allocation` with remote
-main matching local HEAD. `http.postBuffer` is set to 524288000 locally,
-without which a push of this pack size fails with HTTP 400.
+remote at `https://github.com/boomer25tiger/tactical-allocation`.
+`http.postBuffer` is 524288000 locally, without which a push of this pack size
+fails with HTTP 400.
+
+**The machine is memory-constrained.** 8 GiB physical with roughly 1 GiB free
+and swap near exhaustion. Session 19's chunk of 514 peaked at 3.56 GB and is not
+available. Any step loading the moment array must state a ceiling from measured
+free memory and halt rather than enter swap.
 
 ## Position
 
 The backtest, the grid, PBO, the deflated Sharpe, and the specification curve
 have all run. The holdout boundary 2021-08-01 (2.10) is untouched.
 
-- **Designated headline cell (4.1b)**, 52.18% annualised and Lo-corrected
-  Sharpe 1.3817 on the corrected 7.14 boundary of 2011-10-04. Rebuilt from the
-  frozen inputs by session 19.5 to six decimals, so it survives the panel
-  deletion.
-- **PBO 0.1578** at S equal to 16, spanning 0.1143 to 0.1710 across block
-  counts. Stratified PBO exceeds none of the six within-stratum ranges (8.12,
-  8.13).
-- **Deflated Sharpe** 0.000660 canonical and 0.023736 in-sample-best at N
-  equal to 364,500 (8.7).
-- **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe.
+- **The primary window boundary is repaired.** `s14_common.PRIMARY_START` now
+  reads 2011-10-04. Every session 15 output carried 2,473 sessions against the
+  corrected 2,472, and the affected outputs are rebuilt into
+  `outputs/session-20/rebuilt/` with the originals preserved.
+- **Designated headline cell**, 0.521845 annualised and 1.381701 Lo-corrected
+  Sharpe, confirmed by positive control before and after the repair.
+- **No ladder rank changed** under the repair. The strategy holds sixth of
+  twelve on both metrics.
+- **PBO 0.1578** at S equal to 16. **Deflated Sharpe** 0.000660 canonical at N
+  equal to 364,500.
 
-## The ladder, audited session 19.5
+## Gate C, tripped and unresolved
 
-- **No construction defect.** Every levered and inverse ladder row holds the
-  live fund ticker from the frozen parquet, not a costless scaling. The
-  ladder's TQQQ row tracks live TQQQ volatility nine times closer than a
-  costless 3x. Registered at 9.17.
-- **Every ladder row carries the superseded 2011-10-03 boundary.** Its
-  STRATEGY row reads 1.3846 over 2473 sessions against the 7.14a corrected
-  1.3817 over 2472. `s14_common.PRIMARY_START` still defaults to 2011-10-03.
-  **Session 20 step 5 owns this repair. 8.8 is deliberately unamended.**
-- **The Lo correction is not separable from sampling noise at this sample
-  length.** Under a permutation null that destroys serial dependence, the Lo
-  factor still averages 1.1129 and reaches 1.4783 at the 95th percentile
-  against QQQ's observed 1.5598. Eight of twelve rows change rank between the
-  naive and Lo-corrected metrics. Whether 8.2 keeps the Lo-corrected Sharpe as
-  headline is an open register decision.
-- **Romano-Wolf direction is now established.** The one comparison below 0.05
-  is the equal-weight universe at 0.033 with the **strategy above**.
-
-## The window strip, post-hoc under 9.10
-
-Registered at 9.16. **The primary window remains 2011-10-04.** The strategy's
-rank among twelve is not stable across six start dates, spanning 3 to 6 under
-the naive Sharpe and 5 to 7 under the Lo-corrected, with the canonical start
-returning the lowest rank under both. The earliest full-composition start on
-the synthetic panel is **2013-01-23**, bound by QQQE, which is later than
-canonical, so no genuinely early arm exists.
+On the designated cell the timing-shuffle null on annualised return moved from
+p 0.000 to **p 0.001**, which does not clear p below 0.001, and the strategy's
+percentile on that arm moved from 100.0 to 99.9. On the Lo-corrected Sharpe,
+which 8.2 designates as headline, both nulls remain at p 0.000 with the strategy
+at the 100th percentile. **What the paper claims from the annualised-return arm
+is an open register decision.** Registered at 9.23.
 
 ## Open before the holdout can run
 
-- **The ladder is on the superseded boundary.** Session 20 step 5.
-- **8.2's headline metric** is an open register decision given the Lo
-  correction's sampling behaviour.
-- **7.14b tension** on early-start return figures, recorded at 9.18, left open.
-- **D16**, the financing spread, assumed and swept 25 to 200 bp.
-- **Three specification-curve axes unsourced**, being the SMH accrual arm, the
-  sizing mode, and the unavailable-fill completion rule.
-- **D23**, corrected in place session 15.5. **D26 and D27** still absent from
-  the register, which ends its defect numbering at D25.
-- **The 8.8 matched-exposure benchmark still names 1.70** where D25 superseded
-  it with 1.777.
-- **External QQQ verification pending.** No independent offline series exists.
+- **Gate C is unresolved**, above.
+- **The B1 re-emission is outstanding.** The chunk-first-element defect is
+  repaired at all four code sites, but the three regression figures in
+  `outputs/session-19/pbo.csv` and the regression columns of `pbo-strata.csv`
+  still carry it. The pass halted on the memory gate. Known magnitude is
+  3.176e-04 on the S equal to 16 slope. PBO and stratified PBO are immune.
+- **Phases D through G are unrun**, so the Lo q sweep, the deflated Sharpe
+  correction to N equal to 121,500, the axis census, the three unsourced 9.11
+  axes, effective N, the January 2013 attribution, and the corrected
+  degradation null all remain open.
+- **SVIX and UVIX leave a code path untested at the holdout read.** They are
+  held in code, load on neither panel, and list 2022-03-30 inside the holdout
+  span, so the holdout measures a strategy that differs from the source over
+  that span. Registered at 9.20.
+- **D16**, the financing spread, remains assumed.
+- **8.2** is open, being whether the Lo-corrected Sharpe remains headline given
+  the estimator's sampling behaviour. Registered at 9.24.
+- **7.14b tension** on early-start return figures, at 9.18, left open.
 
-## Defect register, current
+## Authoritative artifacts
+
+`outputs/session-20/held-universe.csv` is the derived held and signal universe
+and **supersedes every hardcoded ticker list in the repository**. 19 held, 13
+signal-only, derived from the AST of `src/sleeves.py`. The list in
+`scripts/s195_strip.py` carried four misclassifications.
+
+## Defect register
 
 D1 through D12, D14, D15, D17 through D22, D24 closed, repaired, or swept. D13
-never assigned. D25 recorded as documentation. Open: **D16**, **D23**, and
-**D26** and **D27** pending entry. Session 19.5 added no new defect number,
-since the ladder boundary is a known correction not yet propagated and the Lo
-finding is a register decision rather than a defect.
-
-## What is built
-
-`src/` carries config, indicators, the two-path loader, the four sleeve weight
-functions, the portfolio label/merge/cap layer, the per-date fund schedule, and
-the spread estimators. `scripts/s13_backtest.py` is the engine, `s14_common.py`
-carries the canonical cost model, panels, and cap, `s15_lines.py` carries the
-ladder builders and the 8.11 metric set, the session 17 scripts carry the grid
-emitter, the session 19 scripts carry CSCV and the report generator, and the
-session 19.5 scripts carry the ladder audit and the window strip.
+never assigned. **D25 applied** by the 1.777 matched-exposure rebuild. **D26 and
+D27 are now written into the register** at session 20. Open: **D16**, **D23**.
 
 ## Environment
 
 Python 3.13.13, numpy 2.5.2, pandas 3.0.5, pyarrow 25.0.1, pytest 9.1.1.
-matplotlib is deliberately absent. The machine carries 8 GB; session 19.5
-peaked at 0.211 GB against a 4.0 GB stated ceiling.
+matplotlib is deliberately absent.
 
 ## What is frozen
 
-44 ETF/fund parquets, 268 CFE VX CSVs, DTB3, NETR, and UVXY/SVXY issuer NAV,
-all SHA-256 verified and truncated at 2026-08-14 (1.14). **Re-verified 339 of
-339 against manifest by session 19.5**, which is what every measurement in that
-session ran from after the panel deletion.
+44 ETF/fund parquets, 268 CFE VX CSVs, DTB3, NETR, and UVXY/SVXY issuer NAV, all
+SHA-256 verified and truncated at 2026-08-14 (1.14). 339 of 339 verified against
+manifest by session 19.5.

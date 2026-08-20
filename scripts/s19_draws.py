@@ -70,8 +70,11 @@ is_sel, os_sel, os_med, rank, c_is, c_os = [], [], [], [], [], []
 for a in range(0, ncomb, chunk):
     mc = M[a:a + chunk]
     oc = 1.0 - mc
-    is_sh = sharpe(mc @ SbT, mc @ QbT, float(mc[0] @ nvec))
-    os_sh = sharpe(oc @ SbT, oc @ QbT, float(oc[0] @ nvec))
+        # Session 20 B1 repair. The count varies across combinations because
+        # merged super-block counts are unequal, so it is taken per
+        # combination rather than from the chunk's first row.
+    is_sh = sharpe(mc @ SbT, mc @ QbT, (mc @ nvec)[:, None])
+    os_sh = sharpe(oc @ SbT, oc @ QbT, (oc @ nvec)[:, None])
     best = np.argmax(is_sh, axis=1)
     r = np.arange(len(best))
     is_sel.append(is_sh[r, best])

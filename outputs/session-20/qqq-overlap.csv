@@ -1,0 +1,13 @@
+table,item,sleeve,value,note
+site,QQQ,T11,201,"_t11_bond_baller line 201, weight 1.0 (bare return)"
+holding,sessions_in_window,,2472,
+holding,sessions_holding_qqq,,195,
+holding,share_of_sessions,,0.07888349514563107,
+holding,mean_weight_conditional,,0.12444304879329048,
+holding,mean_weight_unconditional,,0.00981650263539306,
+holding,max_weight,,0.13333320223307446,
+overlap,sum_qqq_contribution_arithmetic,,0.0391323287955121,
+overlap,sum_total_return_arithmetic,,5.284814143474101,
+overlap,share_of_arithmetic_return,,0.007404674551106828,"sum of weight times QQQ return over sum of daily strategy return, an arithmetic share rather than a compounded attribution"
+consequence,naive_sharpe_gap_vs_buy_hold_qqq,,-0.07764130388997548,"read from outputs/session-15/metrics-full.csv, which carries the superseded boundary; phase C rebuilds it"
+consequence,statement,,,"the canonical holds QQQ directly, so the gap against buy-and-hold QQQ is partly a comparison of the strategy against a component of itself. Reported as measured with no recommendation"

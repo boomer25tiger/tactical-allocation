@@ -1,0 +1,6 @@
+chunk  128    38.8s peak 1.09GB  PBO 0.1578088578 (gap 0.0e+00)  slope -1.0664861204 (gap 1.8e-04)
+chunk  257    63.1s peak 1.82GB  PBO 0.1578088578 (gap 0.0e+00)  slope -1.0663751739 (gap 7.3e-05)
+chunk  514    96.9s peak 3.56GB  PBO 0.1578088578 (gap 0.0e+00)  slope -1.0663023855 (gap 0.0e+00)
+chunk 128 against 514: 0 of 12870 selections differ, max abs selected in-sample Sharpe difference 8.362e-03
+chunk 257 against 514: 0 of 12870 selections differ, max abs selected in-sample Sharpe difference 7.340e-03
+wrote /Users/GualyCr/Downloads/tactical-allocation/outputs/session-19_6/m1-diagnostic.csv with 23 rows

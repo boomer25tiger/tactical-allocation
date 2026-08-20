@@ -55,6 +55,14 @@ def check_one(session_dir: Path, rep: Path) -> int:
     ids = set(re.findall(r"(?:session|sessions|register at|item|under|per)\s+(\d+\.\d+)", text))
     ids |= set(re.findall(r"\b(\d\.\d{1,2})[a-c]\b", text))
     ids |= set(re.findall(r"\b([0-9]\.[0-9]{1,2})\b(?=[,.)\s]*(?:closed|amended|recorded|verdict|stand))", text))
+    # Session 20 B2 repair. A report with zero decimal figures produced an
+    # empty unmatched set and exited 0. Both sides carry a cardinality floor.
+    PROSE_FLOOR, CSV_FLOOR = 10, 10
+    if len(prose) < PROSE_FLOOR or len(csv_nums) < CSV_FLOOR:
+        print(f"{session_dir.name}/{rep.name}: VACUOUS, {len(prose)} prose figures and "
+              f"{len(csv_nums)} CSV numerics against floors of {PROSE_FLOOR} and "
+              f"{CSV_FLOOR}; the check cannot pass on this input")
+        return 1
     unmatched = sorted(x for x in prose if x not in csv_nums and x not in ids)
     print(f"{session_dir.name}/{rep.name}: {len(prose)} decimal figures in prose, "
           f"{len(unmatched)} not found in the session's CSVs")

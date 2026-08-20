@@ -1,0 +1,12 @@
+table,item,value,note,note2
+coverage,realized_sessions_any_held_unlisted,916,"of 2472 window sessions, over the 17 held tickers that load on this panel",
+coverage,realized_share,0.3705501618122977,,
+coverage,realized_held_never_loading,2,SVIX UVIX,
+full_composition,realized,0,2016-03-29,"bound by LABU first available 2015-05-28 plus 210 warmup sessions, over loading held tickers only"
+coverage,synthetic_sessions_any_held_unlisted,0,"of 2472 window sessions, over the 17 held tickers that load on this panel",
+coverage,synthetic_share,0.0,,
+coverage,synthetic_held_never_loading,2,SVIX UVIX,
+full_composition,synthetic,0,2012-07-13,"bound by BTAL first available 2011-09-13 plus 210 warmup sessions, over loading held tickers only"
+distinction,unavailable_fills_from_2011_10_04,0.0,"outputs/session-16/boundary-correction.csv, counting fills the strategy attempted and could not make, which is what 7.14 defines the window by",
+distinction,listing_coverage_vs_unavailable_fills,,the two are different quantities. Listing coverage counts sessions where a held ticker was unlisted whether or not it was targeted. The 19.5 report presented the first without distinguishing it,
+strict_full_composition,reachable,0,"SVIX and UVIX are held in code and load on neither panel, so strict full composition over the derived held set is unreachable on any date. The dates above are computed over loading held tickers only",

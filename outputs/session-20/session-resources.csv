@@ -1,0 +1,19 @@
+table,item,metric,value,note
+phase,A,peak_rss_gb,0.151,measured by resource.getrusage in scripts/s20_phaseA.py
+phase,A,seconds,4.7,wall clock for phase A end to end
+phase,B_sweeps,peak_rss_gb,0.2,"code analysis only, no array load"
+phase,B1_reemission,status,halted,killed on the memory gate
+phase,C,status,rebuilt,"s14_ladder, s14_nulls, s15_metrics, s15_rest"
+phase,C,s15_step12_status,not run,session ended at the gate C halt
+matched_exposure,1.70_registered_8_8,ann_return,0.3673169219794641,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.70_registered_8_8,ann_vol,0.31860309249877883,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.70_registered_8_8,sharpe_naive,1.1241159893163706,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.70_registered_8_8,sharpe_lo,1.801781584473704,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.70_registered_8_8,tqqq_weight,0.5666666666666667,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.70_registered_8_8,exposure,1.7,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,ann_return,0.3831264132653789,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,ann_vol,0.3330404856111576,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,sharpe_naive,1.1242706010954133,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,sharpe_lo,1.8020128031147926,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,tqqq_weight,0.5923333333333333,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"
+matched_exposure,1.777_D25_superseded,exposure,1.777,"rebuilt at the corrected boundary, from rebuilt/matched-exposure-1777.csv"

@@ -1,0 +1,15 @@
+table,item,value,note
+m1_attempt_1,stated_ceiling_gb,5.0,derived chunk 1286; killed after falling to 10 percent CPU
+m1_attempt_1,observed_cpu_percent,10.2,ps sample while thrashing
+m1_attempt_1,swap_used_mb,14122.38,sysctl vm.swapusage at the time of the kill
+m1_attempt_2,stated_ceiling_gb,2.0,session 19's own value; also thrashed
+m1_attempt_2,swap_used_mb,12852.62,sysctl vm.swapusage at the time of the kill
+m1_attempt_2,swap_total_mb,14336.00,sysctl vm.swapusage
+m1_attempt_2,observed_cpu_percent,2.6,top sample while thrashing
+m1_attempt_3,stated_ceiling_gb,4.0,chunk pinned to 514 for the positive control; completed
+machine,physical_memory_gb,8,hw.memsize
+machine,swap_state_at_report,11264.00M,vm.swapusage: total = 11264.00M  used = 10602.81M  free = 661.19M  (encrypted)
+session19_reference,pass_seconds,775.0,"outputs/session-19/pbo.csv, S=16 primary, seconds column"
+m1_attempt_1,swap_used_gb,13.8,same reading in GB
+m1_attempt_2,swap_used_gb,12.6,same reading in GB
+m1_attempt_2,swap_total_gb,14.0,same reading in GB

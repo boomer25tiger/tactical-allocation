@@ -1,0 +1,54 @@
+metric,class,grid_emitter_carries_per_specification,note
+n_sessions,standalone,True,defined for a single specification without reference to a benchmark
+total_return,standalone,True,defined for a single specification without reference to a benchmark
+ann_return,standalone,True,defined for a single specification without reference to a benchmark
+ann_vol,standalone,True,defined for a single specification without reference to a benchmark
+sharpe_naive,standalone,True,defined for a single specification without reference to a benchmark
+sharpe_lo,standalone,True,defined for a single specification without reference to a benchmark
+max_drawdown,standalone,True,defined for a single specification without reference to a benchmark
+calmar,standalone,True,defined for a single specification without reference to a benchmark
+arith_mean_excess_ann,standalone,True,defined for a single specification without reference to a benchmark
+ann_turnover,standalone,True,defined for a single specification without reference to a benchmark
+downside_deviation_ann,standalone,True,defined for a single specification without reference to a benchmark
+sortino_mar_dtb3,standalone,True,defined for a single specification without reference to a benchmark
+skewness,standalone,True,defined for a single specification without reference to a benchmark
+excess_kurtosis,standalone,True,defined for a single specification without reference to a benchmark
+var_95_daily,standalone,True,defined for a single specification without reference to a benchmark
+cvar_95_daily,standalone,True,defined for a single specification without reference to a benchmark
+var_95_annualised,standalone,True,defined for a single specification without reference to a benchmark
+cvar_95_annualised,standalone,True,defined for a single specification without reference to a benchmark
+var_99_daily,standalone,True,defined for a single specification without reference to a benchmark
+cvar_99_daily,standalone,True,defined for a single specification without reference to a benchmark
+var_99_annualised,standalone,True,defined for a single specification without reference to a benchmark
+cvar_99_annualised,standalone,True,defined for a single specification without reference to a benchmark
+n_drawdowns_gt_20pct,standalone,True,defined for a single specification without reference to a benchmark
+mean_duration_drawdowns_gt_20pct_sessions,standalone,True,defined for a single specification without reference to a benchmark
+max_dd_duration_sessions,standalone,True,defined for a single specification without reference to a benchmark
+max_dd_duration_calendar_days,standalone,True,defined for a single specification without reference to a benchmark
+time_to_recovery_sessions,standalone,True,defined for a single specification without reference to a benchmark
+recovered_within_window,standalone,True,defined for a single specification without reference to a benchmark
+ulcer_index,standalone,True,defined for a single specification without reference to a benchmark
+pain_ratio,standalone,True,defined for a single specification without reference to a benchmark
+rolling_12m_sharpe_min,standalone,True,defined for a single specification without reference to a benchmark
+rolling_12m_sharpe_max,standalone,True,defined for a single specification without reference to a benchmark
+rolling_12m_sharpe_frac_below_zero,standalone,True,defined for a single specification without reference to a benchmark
+pct_positive_months,standalone,True,defined for a single specification without reference to a benchmark
+split_half_first_sharpe_lo,standalone,True,defined for a single specification without reference to a benchmark
+split_half_first_ann_return,standalone,True,defined for a single specification without reference to a benchmark
+split_half_second_sharpe_lo,standalone,True,defined for a single specification without reference to a benchmark
+split_half_second_ann_return,standalone,True,defined for a single specification without reference to a benchmark
+return_per_unit_turnover,standalone,True,defined for a single specification without reference to a benchmark
+turnover_adjusted_sharpe,standalone,True,defined for a single specification without reference to a benchmark
+alpha_ann,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+alpha_t_newey_west,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+andrews_bandwidth,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+beta,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+down_capture,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+information_ratio,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+n_down_days,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+n_up_days,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+newey_west_lag,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+r_squared,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+tracking_error_ann,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+up_capture,benchmark_relative,False,requires a benchmark series; the grid emitter carries it only for the ladder lines 8.8 fixes
+per_calendar_year_return_and_sharpe_lo,standalone,True,emitted as a per-year block alongside the scalar set

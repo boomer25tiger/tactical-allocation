@@ -135,8 +135,14 @@ required = {
     "PBO report": [OUT / "PBO-REPORT.md"],
 }
 allok = True
+# Session 20 B2 repair. all() over an empty list is True, so an empty glob
+# reported PRESENT. A cardinality floor is asserted before the predicate.
+REQUIRED_FLOOR = {"moment shards": 8, "metric shards": 8, "index shards": 8,
+                  "block sizes": 1, "augmented specification index": 1,
+                  "subsample": 2, "manifest": 1, "PBO report": 1}
 for name, paths in required.items():
-    ok = all(p.exists() and p.stat().st_size > 0 for p in paths)
+    floor = REQUIRED_FLOOR[name]
+    ok = len(paths) >= floor and all(p.exists() and p.stat().st_size > 0 for p in paths)
     allok &= ok
     add("required_artifact", name, len(paths), "PRESENT" if ok else "MISSING")
     print(f"  {name:<32} {len(paths):>2} file(s)  {'PRESENT' if ok else 'MISSING'}")
@@ -149,9 +155,15 @@ print("\nre-running the step 8 regenerability check after deletion")
 r = subprocess.run([sys.executable, "scripts/s19_report.py"], cwd=ROOT,
                    capture_output=True, text=True)
 import hashlib
+# Session 20 B2 repair. Zero figures on both runs hashed equal, so the check
+# passed on an empty figure set. The count is asserted before hashing.
+FIGURE_FLOOR = 4
 h = hashlib.sha256()
 h.update((OUT / "PBO-REPORT.md").read_bytes())
-for f in sorted((OUT / "figures").glob("*.svg")):
+_figs = sorted((OUT / "figures").glob("*.svg"))
+assert len(_figs) >= FIGURE_FLOOR, (
+    f"regenerability check requires at least {FIGURE_FLOOR} figures, found {len(_figs)}")
+for f in _figs:
     h.update(f.read_bytes())
 after_hash = h.hexdigest()
 match = after_hash == before_hash

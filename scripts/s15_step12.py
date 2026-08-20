@@ -19,7 +19,9 @@ import scripts.s14_common as C
 from src import config
 from src.portfolio import SLEEVE_ORDER, sleeve_label
 
-OUT = ROOT / "outputs" / "session-15"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-15")
+OUT.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(parents=True, exist_ok=True)
 
 # ===========================================================================

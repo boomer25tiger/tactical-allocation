@@ -17,7 +17,9 @@ import scripts.s15_lines as L
 from src import config
 from src.portfolio import SLEEVE_ORDER
 
-OUT = ROOT / "outputs" / "session-15"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-15")
+OUT.mkdir(parents=True, exist_ok=True)
 env = L.build_env()
 cal, sigs, panels, o2o = env["cal"], env["sigs"], env["panels"], env["o2o"]
 cap_fn = env["cap_fn"]

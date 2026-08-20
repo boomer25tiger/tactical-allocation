@@ -1,0 +1,14 @@
+table,item,value,note
+machine_state,free_plus_inactive_gib,1.33,measured at the halt
+machine_state,swap,,total = 12288.00M  used = 11767.44M  free = 520.56M  (encrypted)
+machine_state,memory_ceiling_gb,0.65,"stated before the load, derived from 1.08 GiB free and 1.24 GB free swap"
+machine_state,chunk,48,"session 19 used 514, which peaked at 3.56 GB"
+halt,step,B1 re-emission,"the moment-array pass was launched, fell to 0.0 percent CPU with 400 KB resident, and was killed rather than allowed to continue into swap"
+halt,free_swap_at_kill_mb,560.56,down from 1244.94 MB at launch
+halt,instruction,memory gate,the scaffold requires halting the step and reporting rather than proceeding into swap
+halt,figures_reemitted,0,no regression figure was re-emitted
+halt,repair_status,applied,the four code sites are repaired; only the re-emission is outstanding
+outstanding,affected_outputs,outputs/session-19/pbo.csv,"degradation_slope, degradation_intercept and degradation_r_squared at S of 16, 8, 12, 24 and 48"
+outstanding,affected_outputs,outputs/session-19/pbo-strata.csv,the per-stratum regression columns carry the same defect through scripts/s19_step5.py line 149
+outstanding,known_magnitude,3.176e-04,"the S=16 slope shift session 19.6 measured at chunk 514, from outputs/session-19_6/m1-nis-correction.csv"
+immunity,pbo_and_strata_pbo,immune,"within a chunk the substituted count scales every specification identically and preserves the ordering the rank and the argmax read, so PBO is a function of an unchanged ordering. Session 19.6 measured a PBO gap of exactly 0.0e+00 at chunk 128, 257 and 514"

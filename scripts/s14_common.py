@@ -20,13 +20,18 @@ import scripts.s13_runall as ra
 from src import config
 from src.data import TickerFrame
 
-OUT = ROOT / "outputs" / "session-14"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-14")
+OUT.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(parents=True, exist_ok=True)
 S138 = ROOT / "outputs" / "session-13.8"
 S139 = ROOT / "outputs" / "session-13.9"
 
 ANCHOR = 10
-PRIMARY_START = pd.Timestamp("2011-10-03")
+# Session 20 C1 repair. Register 7.14a moved the primary window start to
+# 2011-10-04, and this default was never updated, so every session 15 output
+# carried the superseded boundary at 2,473 sessions.
+PRIMARY_START = pd.Timestamp("2011-10-04")
 EARLY_END = pd.Timestamp("2011-10-02")
 SPLICE = pd.Timestamp(config.COMMISSION_SPLICE_DATE)
 

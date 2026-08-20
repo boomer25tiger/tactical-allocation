@@ -1,0 +1,7 @@
+table,file,item,assertion_before,assertion_after,floor,basis,passes_on_empty,repaired,note
+check,scripts/s19_step10.py,required-artifact check,ok = all(p.exists() and p.stat().st_size > 0 for p in paths),ok = len(paths) >= floor and all(...),"8 per shard class, 1 or 2 otherwise","the shard count the grid emitter writes, and the file count each class carries",1,1,
+check,scripts/s19_step10.py,regenerability figure count,for f in sorted(glob('*.svg')): h.update(...),assert len(_figs) >= FIGURE_FLOOR before hashing,4,the four figures scripts/s19_report.py writes,1,1,
+check,scripts/check_report_figures.py,prose figure check,return 0 if not unmatched else 2,returns 1 when prose or CSV numerics fall below the floor,10 prose figures and 10 CSV numerics,a session report carrying fewer than ten decimal figures is not a report the check can meaningfully screen,1,1,
+check,scripts/s19_step3.py,additivity accumulator,"worst_add, worst_pan = 0.0, 0.0 then ok = worst_add <= TOL",ok = len(pick) >= COMPARISON_FLOOR and ...,21,the canonical plus the twenty drawn specifications the step specifies,1,1,
+check,scripts/s19_step2.py,per-shard parse consistency,ok = mo.shape[0] == me.shape[0] == ix.size,ok = ix.size >= SHARD_ROW_FLOOR and ...,1,a shard carrying zero specifications is not a shard that parsed,1,1,
+scope,,checks_examined,,,,,5,5,

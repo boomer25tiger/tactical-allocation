@@ -87,7 +87,10 @@ for k in range(NSHARD):
     assert mo.size % (2 * NBLK) == 0 and me.size % W.N_MET == 0
     mo = mo.reshape(-1, 2 * NBLK)
     me = me.reshape(-1, W.N_MET)
-    ok = mo.shape[0] == me.shape[0] == ix.size
+    # Session 20 B2 repair. An empty shard gave 0 == 0 == 0 and reported
+    # consistent. A positive row count is required before consistency counts.
+    SHARD_ROW_FLOOR = 1
+    ok = (ix.size >= SHARD_ROW_FLOOR and mo.shape[0] == me.shape[0] == ix.size)
     add("shard", f"shard_{k}", ix.size,
         f"moments {mo.shape} metrics {me.shape} index {ix.size} consistent={ok}")
     if not ok:

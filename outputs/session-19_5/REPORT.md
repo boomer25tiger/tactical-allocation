@@ -207,7 +207,11 @@ positive control at the canonical start reproduces the canonical to
 **The strategy's rank is not stable across start dates.** It spans
 3 to 6 under the naive Sharpe and
 5 to 7 under the Lo-corrected Sharpe. The
-canonical start returns the lowest rank of any start date tested under both metrics.
+canonical start ties the pre-D21 boundary at rank 6 under the naive Sharpe, the worst
+of the six arms rather than uniquely so, while under the Lo-corrected Sharpe the
+2013-01-02 arm falls below it at rank 7. *(Corrected 2026-08-20 by session 20; the
+original sentence claimed the canonical returned the lowest rank under both metrics,
+which window-strip.csv contradicts.)*
 Reported as measured, with no interpretation and no change to the primary window.
 
 ## Step 5, coverage at the earliest start

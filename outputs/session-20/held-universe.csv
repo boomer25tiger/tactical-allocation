@@ -1,0 +1,114 @@
+table,ticker,sleeve,function,line,weight,via_variable,note
+held,BIL,T11,t11_weights,249,1 / 3,,
+held,BSV,S2,s2_weights,301,1.0,,
+held,BTAL,T11,_t11_feaver_bear,230,1.0 (bare return),,
+held,BTAL,T11,t11_weights,249,1 / 3,,
+held,LABU,T10,t10_weights,180,1.0,,
+held,PSQ,T11,_t11_bond_baller,207,1.0 (bare return),,
+held,PSQ,T11,_t11_bond_baller,209,1.0 (bare return),,
+held,PSQ,T11,_t11_bond_baller,204,1.0 (bare return),,
+held,PSQ,T11,_t11_feaver_bear,236,1.0 (bare return),,
+held,PSQ,T11,_t11_feaver_bear,238,1.0 (bare return),,
+held,PSQ,T11,_t11_feaver_bear,233,1.0 (bare return),,
+held,QLD,T11,_t11_feaver_bear,229,1.0 (bare return),,
+held,QQQ,T11,_t11_bond_baller,201,1.0 (bare return),,
+held,SOXL,T10,t10_weights,176,1.0,,
+held,SOXL,T10,t10_weights,189,1 / 3,,
+held,SOXL,T11,t11_weights,261,1 / 3,,
+held,SOXL,T11,t11_weights,265,1 / 3,,
+held,SOXL,S2,s2_weights,295,1.0,,
+held,SOXL,S3,s3_weights,326,0.5,,
+held,SOXL,S3,s3_weights,330,1.0,,
+held,SOXS,T11,t11_weights,266,1 / 3,,
+held,SPXL,T10,t10_weights,178,1.0,,
+held,SPXL,T11,t11_weights,255,1.0,,
+held,SQQQ,T10,t10_weights,190,0.5,,
+held,SQQQ,T11,_t11_bond_baller,210,1.0 (bare return),,
+held,SQQQ,T11,_t11_feaver_bear,239,1.0 (bare return),,
+held,SQQQ,T11,t11_weights,266,1 / 3,,
+held,SQQQ,S2,s2_weights,300,1.0,,
+held,SVIX,T10,t10_weights,189,1 / 3,vol_short,
+held,SVXY,T10,t10_weights,189,1 / 3,vol_short,
+held,TECL,T10,t10_weights,174,1.0,,
+held,TECL,T10,t10_weights,189,1 / 3,,
+held,TECL,T11,t11_weights,261,1 / 3,,
+held,TECL,T11,t11_weights,265,1 / 3,,
+held,TECL,S2,s2_weights,293,1.0,,
+held,TECS,T11,t11_weights,266,1 / 3,,
+held,TLT,T10,t10_weights,190,0.5,,
+held,TQQQ,T11,_t11_bond_baller,206,1.0 (bare return),,
+held,TQQQ,T11,_t11_feaver_bear,235,1.0 (bare return),,
+held,TQQQ,T11,t11_weights,253,1.0,,
+held,TQQQ,T11,t11_weights,261,1 / 3,,
+held,TQQQ,T11,t11_weights,265,1 / 3,,
+held,TQQQ,S2,s2_weights,303,1.0,,
+held,TQQQ,S2,s2_weights,289,1.0,,
+held,TQQQ,S3,s3_weights,326,0.5,,
+held,UVIX,S3,s3_weights,325,1.0,vol,
+held,UVXY,T10,t10_weights,170,1.0,,
+held,UVXY,T11,t11_weights,249,1 / 3,,
+held,UVXY,T11,t11_weights,248,1.0,,
+held,UVXY,S2,s2_weights,288,1.0,,
+held,UVXY,S3,s3_weights,325,1.0,vol,
+signal_only,FAS,,,,,,T10_CASCADE
+signal_only,IOO,,,,,,T11_PANEL
+signal_only,QQQE,,,,,,T10_CASCADE
+signal_only,RYMFX,,,,,,config.TREND_SIGNAL_SERIES
+signal_only,SMH,,,,,,S3_VOTES
+signal_only,SPY,,,,,,S3_VOTES ; T10_CASCADE ; T11_PANEL
+signal_only,VOOG,,,,,,T10_CASCADE
+signal_only,VOOV,,,,,,T10_CASCADE
+signal_only,VOX,,,,,,T10_CASCADE
+signal_only,VTV,,,,,,T10_CASCADE ; T11_PANEL
+signal_only,XLF,,,,,,T11_PANEL
+signal_only,XLP,,,,,,T10_CASCADE
+signal_only,XLY,,,,,,T10_CASCADE
+counts,n_held,,,19,,,
+counts,n_signal_only,,,13,,,
+counts,session_19_6_n_held,,,19,,,reconciliation target
+counts,session_19_6_n_signal_only,,,13,,,
+reconciliation,difference_vs_19_6,,,,,,none
+authority,supersedes,,,,,,outputs/session-20/held-universe.csv supersedes every hardcoded ticker list in the repository
+hardcoded_list_site,scripts/s00c_diagnostics.py,,,5,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00c_download.py,,,27,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00c_rsi.py,,,15,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00c_structure.py,,,17,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00e_report.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00e_smh.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s00e_vote.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s05_entity.py,,,28,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s05_liquidity.py,,,11,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s06_structure.py,,,26,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s07_checks.py,,,26,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s09_financing.py,,,11,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s09_proxy.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s10_acquire.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s10_build.py,,,18,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s10_validate.py,,,19,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s11_voldiag.py,,,3,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s12_validate.py,,,16,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_5_diagnostics.py,,,8,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_6_audit.py,,,14,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_6_run.py,,,14,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_7_mechanism.py,,,6,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_7_o2o_control.py,,,12,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_7_run.py,,,14,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_7_slippage.py,,,17,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_7a_tracking.py,,,4,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_8_canonical.py,,,18,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_8_steps12.py,,,13,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_8_steps3456.py,,,20,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_8_steps89.py,,,3,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_9_controls.py,,,5,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_9_rerun.py,,,19,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_backtest.py,,,30,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s13_runall.py,,,21,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s14_common.py,,,30,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s14_ladder.py,,,6,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s14_step0.py,,,6,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s155_arms.py,,,5,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s15_lines.py,,,6,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s195_strip.py,,,25,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,scripts/s20_phaseA.py,,,7,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,src/config.py,,,5,,,carries a ticker list phase B3 sweeps
+hardcoded_list_site,src/schedule.py,,,16,,,carries a ticker list phase B3 sweeps

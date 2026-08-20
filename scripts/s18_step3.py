@@ -139,8 +139,11 @@ def cscv(nb, spec_mask=None, label=""):
     for a in range(0, ncomb, chunk):
         mc = M[a:a + chunk]
         oc = 1.0 - mc
-        n_is = float(mc[0] @ nvec)
-        n_os = float(oc[0] @ nvec)
+        # Session 20 B1 repair. The count varies across combinations because
+        # merged super-block counts are unequal, so it is taken per
+        # combination rather than from the chunk's first row.
+        n_is = (mc @ nvec)[:, None]
+        n_os = (oc @ nvec)[:, None]
         is_sh = sharpe(mc @ SbT, mc @ QbT, n_is)
         os_sh = sharpe(oc @ SbT, oc @ QbT, n_os)
         peak = max(peak, rss_gb())

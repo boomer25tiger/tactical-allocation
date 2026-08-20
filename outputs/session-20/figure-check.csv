@@ -1,0 +1,9 @@
+report,figure,classification,note
+REPORT.md,1.9,register identifier,not a measured figure
+REPORT.md,11767.44,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
+REPORT.md,12288.00,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
+REPORT.md,3.176,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
+REPORT.md,520.56,mechanism limitation,"present inside a text field of an emitted CSV, which the checker's numeric-column scan cannot reach"
+REPORT.md,7.14,register identifier,not a measured figure
+REPORT.md,8.2,register identifier,not a measured figure
+REPORT.md,9.11,register identifier,not a measured figure

@@ -187,7 +187,11 @@ print(f"\n  maximum absolute deviation, moments against metric set, all {len(pic
       f"{worst_add:.3e}   tolerance {TOL_ADDITIVITY:g}")
 print(f"  maximum absolute deviation, moments against retained series, all {len(pick)}: "
       f"{worst_pan:.3e}   tolerance {TOL_PANEL:g}")
-ok = worst_add <= TOL_ADDITIVITY and worst_pan <= TOL_PANEL and max(d_s, d_q) <= TOL_ADDITIVITY
+# Session 20 B2 repair. The accumulators initialise at the passing value, so
+# zero comparisons passed. A minimum comparison count is asserted.
+COMPARISON_FLOOR = 21
+ok = (len(pick) >= COMPARISON_FLOOR and worst_add <= TOL_ADDITIVITY
+      and worst_pan <= TOL_PANEL and max(d_s, d_q) <= TOL_ADDITIVITY)
 rows.append({"table": "session18_comparison", "which": "worst_additivity_session18",
              "abs_gap_metric_set": 3.3e-16,
              "note": "session 18 step 2 reported this maximum deviation; the row above carries this session recomputation"})

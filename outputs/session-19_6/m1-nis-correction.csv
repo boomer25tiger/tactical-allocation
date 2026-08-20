@@ -1,0 +1,14 @@
+table,metric,value,as_emitted,emitted_in_pbo_csv,abs_gap,note
+counts,base_block_min,51.0,,,,
+counts,base_block_max,52.0,,,,
+counts,superblock_min,153.0,,,,
+counts,superblock_max,156.0,,,,
+counts,n_is_true_min,1224.0,,,,
+counts,n_is_true_max,1248.0,,,,
+counts,n_is_distinct_values,9,,,,
+counts,n_is_spread_fraction,0.019417475728155338,,,,
+correction,pbo,0.1578088578088578,0.1578088578088578,0.1578088578088578,0.0,
+correction,degradation_slope,-1.0666200132036998,-1.0663023854544191,-1.0663023854544191,0.00031762774928068005,
+correction,degradation_intercept,2.7556630502858295,2.7549013078347317,2.7549013078347317,0.0007617424510977244,
+correction,degradation_r_squared,0.547339642724338,0.5469127629590327,0.5469127629590327,0.00042687976530531024,
+diagnosis,mechanism,,,,,"n_is = float(mc[0] @ nvec) in scripts/s19_step4.py takes the in-sample session count from the first combination of each chunk and applies it to every combination in that chunk. Super-block counts are unequal, so the count varies across combinations. PBO is unaffected because within a chunk the same count scales every specification identically and rank ordering is preserved. The regression coefficients compare Sharpe levels across combinations and are affected, which is why they move with the chunk size while PBO does not"

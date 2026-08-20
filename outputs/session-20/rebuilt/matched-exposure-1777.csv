@@ -1,0 +1,8 @@
+table,item,exposure,tqqq_weight,ann_return,ann_vol,sharpe_naive,sharpe_lo,n_sessions,note
+convention,financing,,,,,,,,"the row holds the TQQQ ticker at weight exposure/3 rebalanced daily through daily_constant in scripts/s15_lines.py line 118. On the realized arm TQQQ loads from the frozen fund parquet, so financing and daily reset are the issuer's own and no separate financing model applies. Read from code rather than assumed"
+matched_exposure,1.70_registered_8_8,1.7,0.5666666666666667,0.3673169219794641,0.31860309249877883,1.1241159893163706,1.801781584473704,2472,
+matched_exposure,1.777_D25_superseded,1.777,0.5923333333333333,0.3831264132653789,0.3330404856111576,1.1242706010954133,1.8020128031147926,2472,
+delta,ann_return,,,0.0158094912859148,,,,,"1.777 minus 1.70, both on the corrected boundary"
+delta,ann_vol,,,0.014437393112378794,,,,,"1.777 minus 1.70, both on the corrected boundary"
+delta,sharpe_naive,,,0.00015461177904274592,,,,,"1.777 minus 1.70, both on the corrected boundary"
+delta,sharpe_lo,,,0.00023121864108865964,,,,,"1.777 minus 1.70, both on the corrected boundary"

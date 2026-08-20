@@ -1,0 +1,16 @@
+table,file,line,code,variable,quantity,varies_within_collection,note
+site,scripts/s13_5_diagnostics.py,356,"key = b11 if sub is None else f""bear[{sub[0]}|{sub[1]}]""",sub,"false positive, tuple element rather than a chunk scalar",n/a,
+site,scripts/s13_5_diagnostics.py,384,"if sub[0] == ""bb:PSQ_dip->PSQ"":",sub,"false positive, tuple element rather than a chunk scalar",n/a,
+site,scripts/s18_step3.py,142,n_is = float(mc[0] @ nvec),mc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s18_step3.py,143,n_os = float(oc[0] @ nvec),oc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_draws.py,73,"is_sh = sharpe(mc @ SbT, mc @ QbT, float(mc[0] @ nvec))",mc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_draws.py,74,"os_sh = sharpe(oc @ SbT, oc @ QbT, float(oc[0] @ nvec))",oc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_step4.py,143,n_is = float(mc[0] @ nvec),mc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_step4.py,144,n_os = float(oc[0] @ nvec),oc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_step5.py,149,n_is = float(mc[0] @ NV16); n_os = float(oc[0] @ NV16),mc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+site,scripts/s19_step5.py,149,n_is = float(mc[0] @ NV16); n_os = float(oc[0] @ NV16),oc,in-sample or out-of-sample session count,1,repaired session 20 to a per-combination column vector
+scope,,111,111 python files scanned under scripts/ and src/,,"chunk, batch, shard, group, block first-element scalars",,
+immunity_argument,outputs/session-19/pbo-strata.csv,,confirmed by reasoning rather than by re-running,,"within a chunk the substituted count is one scalar applied to every specification, so it multiplies every specification's Sharpe by the same factor and preserves the ordering the rank and the argmax read. PBO and every stratified PBO are functions of that ordering alone, so they are immune. Session 19.6 measured a PBO gap of exactly 0.0e+00 at chunk 128, 257 and 514, which is the empirical half of the same argument. The strata pass is therefore not re-run",,
+register,docs/DECISIONS-v3.md,,8.12 records that no arithmetic depends on the chunk size,,falsified by this sweep; the three regression figures do. Recorded as a correctness repair,,
+repair,4 files,7,n_is and n_os taken per combination rather than from the chunk first row,,"scripts/s19_step4.py, s18_step3.py, s19_draws.py, s19_step5.py",,
+false_positive,scripts/s13_5_diagnostics.py,2,sub[0] and sub[1] index a two-element tuple,,"not a chunk scalar, no repair",,

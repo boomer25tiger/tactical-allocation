@@ -1,0 +1,75 @@
+table,item,value,target,abs_gap,within,note
+setup,n_combinations,12870,,,,"full enumeration of C(16,8)"
+setup,n_specifications,121500,,,,from src/config.py via s17_common
+setup,pc_chunk,514,,,,pinned to session 19's value
+setup,null_chunk,257,,,,
+setup,mem_ceiling_gb,4.0,,,,stated before running
+setup,null_seed,20260822,,,,fixed before drawing
+setup,wall_budget_seconds,1800.0,,,,stated before choosing the replication count
+positive_control,pbo,0.1578088578088578,0.1578088578088578,0.0,1,
+positive_control,degradation_slope,-1.0663023854544191,-1.0663023854544191,0.0,1,
+positive_control,degradation_intercept,2.7549013078347317,2.7549013078347317,0.0,1,
+positive_control,degradation_r_squared,0.5469127629590327,0.5469127629590327,0.0,1,
+positive_control,verdict,,,,,PASS
+positive_control,seconds,97.7,,,,
+positive_control,peak_rss_gb,3.489,,,,
+marginal_control,max_abs_sharpe_deviation,8.881784197001252e-16,,,1,full-window naive Sharpe after permutation against before
+marginal_control,merged_count_min_permuted,153.0,,,,
+marginal_control,merged_count_max_permuted,156.0,,,,
+pilot,seconds,105.7,,,,
+pilot,slope,-0.850096358591603,,,,
+pilot,intercept,2.151501914120268,,,,
+pilot,r_squared,0.06849379217265483,,,,
+pilot,pbo,0.9914529914529915,,,,
+replication_count,chosen,17,,,,"set by a 1800 s wall-clock budget divided by the pilot's 105.7 s, not by a power calculation"
+null,slope,-0.8089884528863183,,,,mean
+null,slope_sd,0.06542329198484405,,,,
+null,slope_p05,-0.8836504277304735,,,,
+null,slope_p95,-0.7026971355939852,,,,
+null,slope_min,-0.941130829512189,,,,
+null,slope_max,-0.6949609859850895,,,,
+observed_vs_null,slope,-1.0666200132036998,-0.8089884528863183,0.25763156031738155,,"z -3.9379, percentile 0.00, exact-count observed"
+observed_vs_null,slope_emitted,-1.0663023854544191,,,,"the value in outputs/session-19/pbo.csv, computed with the first-combination session count"
+null,intercept,2.051507561687322,,,,mean
+null,intercept_sd,0.14652609211012108,,,,
+null,intercept_p05,1.8192039056188067,,,,
+null,intercept_p95,2.226303391316105,,,,
+null,intercept_min,1.799700839245524,,,,
+null,intercept_max,2.351759684058289,,,,
+observed_vs_null,intercept,2.7556630502858295,2.051507561687322,0.7041554885985075,,"z 4.8057, percentile 100.00, exact-count observed"
+observed_vs_null,intercept_emitted,2.7549013078347317,,,,"the value in outputs/session-19/pbo.csv, computed with the first-combination session count"
+null,r2,0.06279541793041361,,,,mean
+null,r2_sd,0.009673677229083081,,,,
+null,r2_p05,0.0478407882538042,,,,
+null,r2_p95,0.07787245289569035,,,,
+null,r2_min,0.0456318788954031,,,,
+null,r2_max,0.08115520249729746,,,,
+observed_vs_null,r2,0.547339642724338,0.06279541793041361,0.4845442247939244,,"z 50.0889, percentile 100.00, exact-count observed"
+observed_vs_null,r2_emitted,0.5469127629590327,,,,"the value in outputs/session-19/pbo.csv, computed with the first-combination session count"
+null,pbo,0.9919283331048036,,,,mean
+null,pbo_sd,0.0018132779319574813,,,,
+null,pbo_p05,0.9894017094017094,,,,
+null,pbo_p95,0.9943900543900545,,,,
+null,pbo_min,0.988966588966589,,,,
+null,pbo_max,0.9952602952602952,,,,
+observed_vs_null,pbo,0.1578088578088578,0.9919283331048036,0.8341194752959458,,"z -460.0064, percentile 0.00, exact-count observed"
+observed_vs_null,pbo_emitted,0.1578088578088578,,,,"the value in outputs/session-19/pbo.csv, computed with the first-combination session count"
+replication,rep_0,-0.850096358591603,,,,intercept 2.1515019141 r2 0.0684937922 pbo 0.9914529915 seconds 105.7
+replication,rep_1,-0.7838353474004882,,,,intercept 1.9865720196 r2 0.0648627493 pbo 0.9940170940 seconds 117.1
+replication,rep_2,-0.7760631237362369,,,,intercept 1.9694926954 r2 0.0582417878 pbo 0.9926184926 seconds 103.2
+replication,rep_3,-0.6949609859850895,,,,intercept 1.7997008392 r2 0.0456318789 pbo 0.9921522922 seconds 108.5
+replication,rep_4,-0.941130829512189,,,,intercept 2.3517596841 r2 0.0811552025 pbo 0.9905205905 seconds 103.7
+replication,rep_5,-0.8692803272850447,,,,intercept 2.1949393181 r2 0.0672644156 pbo 0.9895104895 seconds 96.3
+replication,rep_6,-0.7229750038845404,,,,intercept 1.8588906338 r2 0.0519891103 pbo 0.9933954934 seconds 102.5
+replication,rep_7,-0.7776394982578122,,,,intercept 1.9757419079 r2 0.0574907087 pbo 0.9941724942 seconds 171.1
+replication,rep_8,-0.856753712039961,,,,intercept 2.1612301758 r2 0.0710946604 pbo 0.9919968920 seconds 232.0
+replication,rep_9,-0.8391169484219769,,,,intercept 2.1123849847 r2 0.0628336146 pbo 0.9923853924 seconds 266.8
+replication,rep_10,-0.7728074354628833,,,,intercept 1.9782511829 r2 0.0603315976 pbo 0.9934731935 seconds 145.6
+replication,rep_11,-0.8671665645065368,,,,intercept 2.1744739977 r2 0.0770517655 pbo 0.9952602953 seconds 153.8
+replication,rep_12,-0.7833916894436656,,,,intercept 2.0016976316 r2 0.0542483414 pbo 0.9905205905 seconds 198.1
+replication,rep_13,-0.8182175365952291,,,,intercept 2.0654339443 r2 0.0625726884 pbo 0.9889665890 seconds 211.0
+replication,rep_14,-0.8556378346538072,,,,intercept 2.1583857776 r2 0.0719159226 pbo 0.9902874903 seconds 187.6
+replication,rep_15,-0.7046311729962091,,,,intercept 1.8240796722 r2 0.0483930156 pbo 0.9923853924 seconds 178.9
+replication,rep_16,-0.8390993302941379,,,,intercept 2.1110921696 r2 0.0639508535 pbo 0.9896658897 seconds 202.9
+verdict,null_slope_centred_near_minus_one,0,,,,"null mean slope -0.808988; a null slope near -1.0 means the observed slope carries little information beyond partition arithmetic, a null slope near zero means it measures degradation"
+resources,peak_rss_gb,3.489,,,,

@@ -1,0 +1,24 @@
+table,chunk,metric,value,target,abs_gap,exact,note
+chunk_sweep,128,pbo,0.1578088578088578,0.1578088578088578,0.0,1,
+chunk_sweep,128,degradation_slope,-1.0664861204431002,-1.0663023854544191,0.0001837349886810724,0,
+chunk_sweep,128,degradation_intercept,2.755417267053332,2.7549013078347317,0.0005159592186001483,0,
+chunk_sweep,128,degradation_r_squared,0.54683908834265,0.5469127629590327,7.367461638263517e-05,0,
+chunk_sweep,128,seconds,38.8,,,,
+chunk_sweep,128,peak_rss_gb,1.089,,,,
+chunk_sweep,257,pbo,0.1578088578088578,0.1578088578088578,0.0,1,
+chunk_sweep,257,degradation_slope,-1.0663751738942815,-1.0663023854544191,7.278843986235906e-05,0,
+chunk_sweep,257,degradation_intercept,2.7552199375857174,2.7549013078347317,0.00031862975098562174,0,
+chunk_sweep,257,degradation_r_squared,0.5470477587828404,0.5469127629590327,0.00013499582380771535,0,
+chunk_sweep,257,seconds,63.1,,,,
+chunk_sweep,257,peak_rss_gb,1.824,,,,
+chunk_sweep,514,pbo,0.1578088578088578,0.1578088578088578,0.0,1,
+chunk_sweep,514,degradation_slope,-1.0663023854544191,-1.0663023854544191,0.0,1,
+chunk_sweep,514,degradation_intercept,2.7549013078347317,2.7549013078347317,0.0,1,
+chunk_sweep,514,degradation_r_squared,0.5469127629590327,0.5469127629590327,0.0,1,
+chunk_sweep,514,seconds,96.9,,,,
+chunk_sweep,514,peak_rss_gb,3.561,,,,
+selection_stability,128,selections_differing_from_chunk_514,0,,,,of 12870 combinations
+selection_stability,128,max_abs_selected_is_sharpe_difference,0.008361882573753476,,,,
+selection_stability,257,selections_differing_from_chunk_514,0,,,,of 12870 combinations
+selection_stability,257,max_abs_selected_is_sharpe_difference,0.007340360351722364,,,,
+diagnosis,,mechanism,,,,,"mc @ SbT is a BLAS matmul whose summation order over the 16-element inner dimension depends on the shape of mc, so the chunk size perturbs the in-sample Sharpe at the level of float rounding. argmax over 121,500 specifications is not continuous in that perturbation, so some selections flip and the regression coefficients move while PBO, a coarse statistic over ranks, does not"

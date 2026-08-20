@@ -1,0 +1,11 @@
+base block sizes span 51 to 52, sum 2472
+merged super-block counts span 153 to 156, sum 2472
+true in-sample session count across 12,870 combinations spans 1224 to 1248, 9 distinct values
+
+as emitted, chunk 514, first-combination count: PBO 0.1578088578 slope -1.0663023855 icept 2.7549013078 R2 0.5469127630
+exact per-combination count:                     PBO 0.1578088578 slope -1.0666200132 icept 2.7556630503 R2 0.5473396427
+  pbo                      emitted 0.1578088578088578  exact 0.1578088578088578  shift 0.000e+00
+  degradation_slope        emitted -1.0663023854544191  exact -1.0666200132036998  shift 3.176e-04
+  degradation_intercept    emitted 2.7549013078347317  exact 2.7556630502858295  shift 7.617e-04
+  degradation_r_squared    emitted 0.5469127629590327  exact 0.547339642724338  shift 4.269e-04
+wrote /Users/GualyCr/Downloads/tactical-allocation/outputs/session-19_6/m1-nis-correction.csv with 13 rows

@@ -1,0 +1,37 @@
+== positive control, chunk pinned to 514 ==
+  [observed] 97.7s peak 3.49GB PBO=0.157809 slope=-1.066302
+    pbo                      gap 0.000e+00
+    degradation_slope        gap 0.000e+00
+    degradation_intercept    gap 0.000e+00
+    degradation_r_squared    gap 0.000e+00
+  positive control PASS
+
+== null, pilot replication ==
+  marginals preserved to 8.882e-16 against 1e-10
+  [null 0] 105.7s peak 3.49GB PBO=0.991453 slope=-0.850096
+
+  pilot 105.7s -> 17 replications under a 1800s budget
+  [null 1] 117.1s peak 3.49GB PBO=0.994017 slope=-0.783835
+  [null 2] 103.2s peak 3.49GB PBO=0.992618 slope=-0.776063
+  [null 3] 108.5s peak 3.49GB PBO=0.992152 slope=-0.694961
+  [null 4] 103.7s peak 3.49GB PBO=0.990521 slope=-0.941131
+  [null 5] 96.3s peak 3.49GB PBO=0.989510 slope=-0.869280
+  [null 6] 102.5s peak 3.49GB PBO=0.993395 slope=-0.722975
+  [null 7] 171.1s peak 3.49GB PBO=0.994172 slope=-0.777639
+  [null 8] 232.0s peak 3.49GB PBO=0.991997 slope=-0.856754
+  [null 9] 266.8s peak 3.49GB PBO=0.992385 slope=-0.839117
+  [null 10] 145.6s peak 3.49GB PBO=0.993473 slope=-0.772807
+  [null 11] 153.8s peak 3.49GB PBO=0.995260 slope=-0.867167
+  [null 12] 198.1s peak 3.49GB PBO=0.990521 slope=-0.783392
+  [null 13] 211.0s peak 3.49GB PBO=0.988967 slope=-0.818218
+  [null 14] 187.6s peak 3.49GB PBO=0.990287 slope=-0.855638
+  [null 15] 178.9s peak 3.49GB PBO=0.992385 slope=-0.704631
+  [null 16] 202.9s peak 3.49GB PBO=0.989666 slope=-0.839099
+
+== null distribution over 17 replications ==
+  slope      null mean -0.808988 sd  0.065423 p05 -0.883650 p95 -0.702697 | observed -1.066620 z -3.938 pct 0.0
+  intercept  null mean  2.051508 sd  0.146526 p05  1.819204 p95  2.226303 | observed  2.755663 z  4.806 pct 100.0
+  r2         null mean  0.062795 sd  0.009674 p05  0.047841 p95  0.077872 | observed  0.547340 z  50.089 pct 100.0
+  pbo        null mean  0.991928 sd  0.001813 p05  0.989402 p95  0.994390 | observed  0.157809 z -460.006 pct 0.0
+
+wrote /Users/GualyCr/Downloads/tactical-allocation/outputs/session-19_6/degradation-null.csv with 74 rows

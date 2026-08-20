@@ -1,0 +1,29 @@
+table,item,sleeve,value,target,abs_gap,within,note
+positive_control,ann_return,,0.5218447451814521,0.521845,2.5481854792896996e-07,1,
+positive_control,sharpe_lo,,1.3817013060244996,1.381701,3.0602449951899757e-07,1,
+positive_control,n_sessions,,2472.0,2472.0,0.0,1,
+positive_control,tolerance,,5e-07,,,,stated before comparing
+positive_control,verdict,,,,,,PASS
+site,SVIX,T10,189,,,,"t10_weights line 189, weight 1 / 3, selected through variable vol_short"
+loaded,SVIX,,0,,,,"membership of bt.LEVERED or bt.UNLEVERED, the loader tuples"
+panel_presence,SVIX_realized,,0,,,,presence in the loaded panel frames
+panel_presence,SVIX_synthetic,,0,,,,presence in the loaded panel frames
+file_on_disk,data/raw/etf/SVIX.parquet,,1098,,,,first 2022-03-30 last 2026-08-14
+file_on_disk,data/interim/synthetics/SYN_SVIX.parquet,,5170,,,,first 2005-12-21 last 2026-08-14
+site,UVIX,S3,325,,,,"s3_weights line 325, weight 1.0, selected through variable vol"
+loaded,UVIX,,0,,,,"membership of bt.LEVERED or bt.UNLEVERED, the loader tuples"
+panel_presence,UVIX_realized,,0,,,,presence in the loaded panel frames
+panel_presence,UVIX_synthetic,,0,,,,presence in the loaded panel frames
+file_on_disk,data/raw/etf/UVIX.parquet,,1098,,,,first 2022-03-30 last 2026-08-14
+file_on_disk,data/interim/synthetics/SYN_UVIX.parquet,,5173,,,,first 2005-12-21 last 2026-08-14
+terminal_firing,t10_vol_short_terminal,,1114,,,,sessions across the primary window under the canonical
+terminal_firing,s3_vol_terminal,,519,,,,sessions across the primary window under the canonical
+terminal_firing,t10_resolved_SVIX,,0,,,,sessions across the primary window under the canonical
+terminal_firing,s3_resolved_UVIX,,0,,,,sessions across the primary window under the canonical
+engine_behaviour,available_on_absent_ticker,,,,,,"ArmSignals State.available at scripts/s13_backtest.py:344 reads self.sig.avail.get(t) and returns False when the ticker is absent from the panel, so the switch resolves to SVXY and UVXY on every session and the SVIX and UVIX branches are unreachable"
+engine_behaviour,weight_dict_naming_absent_ticker,,,,,,"the fill path at scripts/s13_backtest.py:500 reads px = raw[t][i] where raw is built only over panel.frames, so an absent ticker raises KeyError rather than being silently dropped, renormalised, or routed to cash. Register 1.9 covers threshold reads and is silent on weight dictionaries, and the traced behaviour is an exception"
+gate_A2,engine_raises_on_absent_held_ticker,,1,,,,"KeyError, established by tracing rather than by execution"
+gate_A2,terminal_can_fire_inside_holdout,,0,,,,"the availability switch cannot select SVIX or UVIX while the loader tuples exclude them, so the branch cannot fire inside the holdout under the current loader and the gate does not trip"
+gate_A2,verdict,,,,,,"PASS, session continues"
+holdout_consequence,listing_inside_holdout,,1,,,,"SVIX and UVIX list 2022-03-30 on the frozen files, which falls inside the holdout span beginning 2021-08-01, so the source strategy's SVIX_LIVE and UVIX_LIVE guards would activate there while this implementation will not, since the loader excludes them"
+holdout_consequence,untested_code_path,,1,,,,the SVIX and UVIX branches executed zero times in sample and remain unexecuted at the holdout read under the current loader. A session that adds them to the loader tuples activates them for the first time inside the holdout

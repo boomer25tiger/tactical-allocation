@@ -18,7 +18,9 @@ import scripts.s14_common as C
 import scripts.s15_lines as L
 from src import config
 
-OUT = ROOT / "outputs" / "session-15"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-15")
+OUT.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(parents=True, exist_ok=True)
 
 env = L.build_env()
@@ -48,7 +50,10 @@ print("== STEP 3: metrics completion ==")
 rows3 = []
 
 # --- positive control against session 14's ladder.csv ----------------------
-lad14 = pd.read_csv(ROOT / "outputs" / "session-14" / "ladder.csv")
+# Session 20 C1. The upstream ladder follows the same redirect, so a rebuild
+# compares against the rebuilt session 14 ladder rather than the superseded one.
+lad14 = pd.read_csv(ROOT / "outputs" / (_os.environ.get("S20_OUTDIR") or "session-14")
+                    / "ladder.csv")
 lad14 = lad14[lad14.table == "ladder"]
 CTRL_KEYS = ["ann_return", "ann_vol", "sharpe_naive", "sharpe_lo",
              "max_drawdown", "calmar", "arith_mean_excess_ann", "ann_turnover"]

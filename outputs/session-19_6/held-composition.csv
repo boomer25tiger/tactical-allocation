@@ -1,0 +1,77 @@
+table,item,value,within,note,note2
+derivation,method,,,abstract syntax tree of src/sleeves.py; held is a non-zero weight key in a returned dict or a bare ticker string returned by a terminal helper; signal-only is an IndicatorState accessor argument or a named panel member that is never held,
+counts,n_held,19,,,
+counts,n_signal_only,13,,,
+held,BIL,,,t11_weights,
+held,BSV,,,s2_weights,
+held,BTAL,,,_t11_feaver_bear ; t11_weights,
+held,LABU,,,t10_weights,
+held,PSQ,,,_t11_bond_baller ; _t11_feaver_bear,
+held,QLD,,,_t11_feaver_bear,
+held,QQQ,,,_t11_bond_baller,
+held,SOXL,,,s2_weights ; s3_weights ; t10_weights ; t11_weights,
+held,SOXS,,,t11_weights,
+held,SPXL,,,t10_weights ; t11_weights,
+held,SQQQ,,,_t11_bond_baller ; _t11_feaver_bear ; s2_weights ; t10_weights ; t11_weights,
+held,SVIX,,,t10_weights via vol_short,
+held,SVXY,,,t10_weights via vol_short,
+held,TECL,,,s2_weights ; t10_weights ; t11_weights,
+held,TECS,,,t11_weights,
+held,TLT,,,t10_weights,
+held,TQQQ,,,_t11_bond_baller ; _t11_feaver_bear ; s2_weights ; s3_weights ; t11_weights,
+held,UVIX,,,s3_weights via vol,
+held,UVXY,,,s2_weights ; s3_weights via vol ; t10_weights ; t11_weights,
+signal_only,FAS,,,T10_CASCADE,
+signal_only,IOO,,,T11_PANEL,
+signal_only,QQQE,,,T10_CASCADE,
+signal_only,RYMFX,,,config.TREND_SIGNAL_SERIES,
+signal_only,SMH,,,S3_VOTES,
+signal_only,SPY,,,S3_VOTES ; T10_CASCADE ; T11_PANEL,
+signal_only,VOOG,,,T10_CASCADE,
+signal_only,VOOV,,,T10_CASCADE,
+signal_only,VOX,,,T10_CASCADE,
+signal_only,VTV,,,T10_CASCADE ; T11_PANEL,
+signal_only,XLF,,,T11_PANEL,
+signal_only,XLP,,,T10_CASCADE,
+signal_only,XLY,,,T10_CASCADE,
+hardcoded_list,excluded_by_hand,,,AGG BND IEF IOO QQQ QQQE SMH SPY VOOG VOOV VOX VTV XLF XLK XLP XLY,
+hardcoded_list,implied_held,21,,BIL BSV BTAL FAS KMLM LABU PSQ QLD SH SOXL SOXS SPXL SQQQ SVIX SVXY TECL TECS TLT TQQQ UVIX UVXY,
+classification_differs,FAS,,,"derived signal-only, hardcoded held",
+classification_differs,KMLM,,,"derived neither, hardcoded held",
+classification_differs,QQQ,,,"derived held, hardcoded signal input",
+classification_differs,SH,,,"derived neither, hardcoded held",
+classification_differs,count,4,,,
+warmup,max_sma_lookback,200,,max over SMA_LONG_GRID and SMA_SHORT_GRID in src/config.py,
+warmup,max_rsi_period,28,,max over RSI_PERIOD_GRID,
+warmup,rsi_seed_convergence_sessions,190,,sessions for Wilder seed weight ((n-1)/n)^k to fall below 0.001,
+warmup,derived_requirement,200,,"max of the two, before the stated margin",
+warmup,config_WARMUP_SESSIONS,210,,,
+warmup,stated_margin,10,,,
+warmup,binding_lookback,,,"the moving average at 200 sessions binds, since it exceeds RSI seed convergence at 190",
+availability,BIL,,,synthetic 2007-05-30,realized 2007-05-30
+availability,BSV,,,synthetic 2007-04-10,realized 2007-04-10
+availability,BTAL,,,synthetic 2011-09-13,realized 2011-09-13
+availability,LABU,,,synthetic 2007-01-03,realized 2015-05-28
+availability,PSQ,,,synthetic 2007-01-03,realized 2007-01-03
+availability,QLD,,,synthetic 2007-01-03,realized 2007-01-03
+availability,QQQ,,,synthetic 2007-01-03,realized 2007-01-03
+availability,SOXL,,,synthetic 2007-01-03,realized 2010-03-11
+availability,SOXS,,,synthetic 2007-01-03,realized 2010-03-11
+availability,SPXL,,,synthetic 2007-01-03,realized 2008-11-05
+availability,SQQQ,,,synthetic 2007-01-03,realized 2010-02-11
+availability,SVIX,,,synthetic never,realized never
+availability,SVXY,,,synthetic 2007-01-03,realized 2011-10-04
+availability,TECL,,,synthetic 2007-01-03,realized 2008-12-30
+availability,TECS,,,synthetic 2007-01-03,realized 2008-12-30
+availability,TLT,,,synthetic 2007-01-03,realized 2007-01-03
+availability,TQQQ,,,synthetic 2007-01-03,realized 2010-02-11
+availability,UVIX,,,synthetic never,realized never
+availability,UVXY,,,synthetic 2007-01-03,realized 2011-10-04
+full_composition,synthetic,,0,2012-07-13,bound by BTAL first available 2011-09-13 plus 210 warmup sessions
+full_composition,realized,,0,2016-03-29,bound by LABU first available 2015-05-28 plus 210 warmup sessions
+two_measures,window_sessions,2472,,,
+two_measures,sessions_any_held_ticker_unavailable,916,,"listing coverage on the realized panel over the canonical window, counting sessions where a held ticker is unlisted whether or not it was targeted",
+two_measures,share,0.3705501618122977,,,
+two_measures,unavailable_fills_from_2011_10_04,0.0,,"outputs/session-16/boundary-correction.csv, both conventions, counting fills the strategy actually attempted and could not make, which is what 7.14 defines the window by",
+two_measures,remaining_unavailable_fills_on_corrected_boundary,0.0,,"same file, halt_check row",
+two_measures,distinction,,,"the two are different quantities and the 19.5 report conflated them; listing coverage counts sessions where a ticker was unlisted, the 7.14 measure counts fills attempted and failed",
