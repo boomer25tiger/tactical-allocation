@@ -1,0 +1,61 @@
+table,item,value,note
+F1,sweep_range_bp,6,0 to 50
+F1,buy_hold_QQQ|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,buy_hold_TQQQ|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,vol_targeted_QQQ_matched|sharpe_lo,14.272092502450095,inside the swept range
+F1,naive_fast_1d_momentum|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,matched_exposure_levered_QQQ_1.70|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,long_legs_only|sharpe_lo,9.436255565159119,inside the swept range
+F1,equal_weight_universe|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_T10_standalone|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_T11_standalone|sharpe_lo,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_S2_standalone|sharpe_lo,26.761697455511936,inside the swept range
+F1,sleeve_S3_standalone|sharpe_lo,40.503889436792136,inside the swept range
+F1,buy_hold_QQQ|sharpe_naive,10.084002378357239,inside the swept range
+F1,buy_hold_TQQQ|sharpe_naive,15.100748319892627,inside the swept range
+F1,vol_targeted_QQQ_matched|sharpe_naive,22.849387147343997,inside the swept range
+F1,naive_fast_1d_momentum|sharpe_naive,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,matched_exposure_levered_QQQ_1.70|sharpe_naive,15.58472569389908,inside the swept range
+F1,long_legs_only|sharpe_naive,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,equal_weight_universe|sharpe_naive,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_T10_standalone|sharpe_naive,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_T11_standalone|sharpe_naive,nan,"no crossing inside the swept range, so any figure would be an extrapolation"
+F1,sleeve_S2_standalone|sharpe_naive,2.777610498198513,inside the swept range
+F1,sleeve_S3_standalone|sharpe_naive,23.74133922976391,inside the swept range
+F2,files,,outputs/session-16/leave-one-out.csv outputs/session-16b/loo-session-counts.csv outputs/session-16b/loo-sleeve-ranges.csv
+F2,rebuilt_in_session_20,0,"phase C of session 20 rebuilt s14_ladder, s14_nulls, s15_metrics and s15_rest only, so the leave-one-out artifacts were NOT rebuilt and carry the superseded boundary"
+F2,leave-one-out.csv|n_estimates,11.0,
+F2,leave-one-out.csv|sharpe_lo_range,60,0.3645 to 1.6183
+F2,loo-session-counts.csv|sharpe_lo_range,11,1.2871 to 1.6183
+F2,loo-sleeve-ranges.csv|n_estimates,11.0,
+F2,1.5636_agreement,,"the 2011 leave-one-out estimate and the 2012-start strip arm both read 1.5636. They are computed differently, since a leave-one-out drops one calendar year from the return series while a strip arm starts the window later and keeps every subsequent year, so the agreement at four decimals is coincidental rather than structural"
+F3,18225_times_15,273375,"18,225 times 15 is 273,375, the v1/v2 total. With N corrected to 121,500 that arithmetic still describes the historical reconciliation of the enumerated space and no longer describes N"
+F3,searched_specifications,121500.0,
+F3,enumerated_specifications,364500.0,
+F3,evaluated_of_enumerated,121500.0,
+F3,eight_unrepresented_axes_product,18225.0,
+F3,v1_v2_total,273375.0,
+F3,after_7_6_total,218700.0,
+F3,after_7_6_and_7_7_total,364500.0,
+F3,alternative_with_7_4_excluded,121500.0,
+F3,what_each_total_now_refers_to,,"273,375 is the superseded v1/v2 enumerated space, 364,500 is the current enumerated space across ten axes, and 121,500 is both the evaluated count and, since session 20, N"
+F4,original|timing_shuffle_block_bootstrap|annualised return,0.0,0 exceedances of 1000 draws
+F4,original|timing_shuffle_block_bootstrap|Lo-corrected Sharpe,0.0,0 exceedances of 1000 draws
+F4,original|turnover_matched_switching|annualised return,0.0,0 exceedances of 1000 draws
+F4,original|turnover_matched_switching|Lo-corrected Sharpe,0.0,0 exceedances of 1000 draws
+F4,rebuilt|timing_shuffle_block_bootstrap|annualised return,0.001,1 exceedances of 1000 draws
+F4,rebuilt|timing_shuffle_block_bootstrap|Lo-corrected Sharpe,0.0,0 exceedances of 1000 draws
+F4,rebuilt|turnover_matched_switching|annualised return,0.0,0 exceedances of 1000 draws
+F4,rebuilt|turnover_matched_switching|Lo-corrected Sharpe,0.0,0 exceedances of 1000 draws
+F4,gate_defect,,"clearing p below 0.001 at 1,000 draws requires zero exceedances, so the gate turns on a single draw. The session 20 gate specification carries that defect and the gate outcome is unresolved rather than settled. No null is re-run in this session"
+F5,overlapping_windows_below_threshold,69,
+F5,distinct_non_overlapping_episodes,16,greedy selection taking the most negative window first and excluding any window sharing a session with one already chosen
+F5,january_2013_rank_among_episodes,11,
+F5_episode,2020-02-27|2020-03-17,-0.5032387647004148,rank 1
+F5_episode,2012-03-08|2012-03-27,-0.2892017493743335,rank 2
+F5_episode,2012-01-20|2012-02-08,-0.24122354751667352,rank 3
+F5_episode,2020-10-14|2020-11-02,-0.22729251087061597,rank 4
+F5_episode,2012-05-02|2012-05-21,-0.22259160374326215,rank 5
+F5_episode,2018-12-04|2018-12-24,-0.2082008729487259,rank 6
+F5_episode,2020-09-08|2020-09-25,-0.20310131143714794,rank 7
+F5_episode,2018-03-14|2018-04-03,-0.19812093424173105,rank 8

@@ -1852,3 +1852,166 @@ than a measurement** (9.10 provenance requirement).
   0.717 GB before overhead. The construction is
   recorded in outputs/session-20/degradation-null-corrected.csv so a later session
   can run it unchanged.
+
+- **9.31 the unwired-config sweep (session 21, 2026-08-20).** The inverse of 9.22's
+  hardcoded-literal class, being a config value with no consumer. Of 57
+  parameters defined in src/config.py, **10 have no consumer outside config.py**
+  and two more carry a read that is never invoked. Detection is on the abstract
+  syntax tree, since docstring prose naming a parameter is not a read, with dynamic
+  getattr resolution detected separately.
+
+  **SIZING_MODE and EXECUTION_MODE** are read by src/execution.py as default
+  arguments of size_position, which no module in the return-generating path calls, so
+  each has a read site and no influence on any result.
+
+  **FINANCING_SPREAD_BP is never read by the engine.** Its readers are the synthetics
+  builder and validator plus session scripts, so the financing spread enters results
+  only through the pre-built reconstructions on the synthetic arm. On the realized
+  arm, which is the designated cell, the levered funds carry the issuer's own
+  financing inside their price history and no financing model applies. D16 describes
+  the spread as assumed and treated by the cost sweep, and this entry establishes
+  that the engine never reads it.
+
+  **SLIPPAGE_MODEL and SLIPPAGE_MODELS have no consumer while slippage_model is a
+  specification-curve axis.** The axis was varied through function selection in the
+  cost sweep rather than through the config value, so the curve is real and the
+  parameter is inert. No grid axis is affected. **Gate A cleared**, since all nine
+  grid axis attributes are read by the engine and the 121,500 count stands.
+
+  The completion rule is not a config parameter at all. It is hardcoded in the fill
+  path and marked provisional at scripts/s13_backtest.py lines 18 to 24, so it is
+  unregistered rather than unread. Nothing is repaired by this entry.
+
+- **9.32 canonical axis provenance (session 21, 2026-08-20).** Each of the nine grid
+  axes traced through this register rather than inferred from code.
+
+  | axis | canonical | register | state |
+  |---|---|---|---|
+  | sma_long | 200 | 6.5 / 6.6 | before |
+  | crash_threshold | -15.0 | 6.10, with 7.7 fixing the swept levels | after |
+  | rsi_exhaustion | 14 | 6.1 | before |
+  | rsi_dip | 14 | 6.1 | before |
+  | rsi_rs | 14 | 6.1 | before |
+  | overbought_t1 | 70 | 6.2 / 6.3 / 6.4 | before |
+  | oversold | 30 | 6.4 | before |
+  | sma_short | 20 | 6.5 / 6.6 | before |
+  | vote | 3 | 6.7 | before |
+
+  **Eight of nine were fixed before any comparison on that axis. crash_threshold was
+  not.** Its source value was minus 12, session 04 closed an absolute threshold at
+  minus 10 after session 03 measured all three estimator forms failing, and session 09
+  re-closed at the present value citing session 06's firing-rate measurement. The
+  register already marks it [A], a stipulation. What those measurements compared was
+  estimator form and firing rate rather than performance across levels, which is
+  recorded rather than smoothed over.
+
+  **The percentile claim, stated as measured.** The canonical's rank of 6,834 of
+  121,500 on the Lo-corrected Sharpe is supported on eight axes and weakened on
+  crash_threshold alone. The weakening is per axis rather than a single verdict. A
+  documentation caveat travels with it, since seven of the nine closures carry no
+  session attribution, so their ordering rests on the entries' source-derived phrasing
+  rather than on a dated record.
+
+- **9.33 subsample representativeness (session 21, 2026-08-20).** The 2,001-series
+  subsample is representative and **phase E and session 20's effective-N figures are
+  licensed**. The primary test is a resampling null of 2,000 random subsets at a seed
+  fixed before drawing, which makes no distributional assumption and respects the
+  finite population exactly. The observed mean sits at the
+  90.80 percentile, a two-sided p of
+  0.1840. All
+  34 axis values fall inside a 99
+  percent binomial interval and the canonical is present. A Kolmogorov-Smirnov
+  distance is reported alongside as a distance rather than a test, since both of its
+  assumptions fail when the subsample is a subset of the population it is compared
+  against and specifications are correlated by construction.
+
+- **9.34 the beta decomposition (session 21, 2026-08-20).** Run on the canonical's
+  daily series from the frozen inputs against the investable buy-and-hold QQQ ladder
+  line. The positive control passes, with the benchmark regressed on itself returning
+  beta 1.0 and alpha below tolerance.
+
+  Static beta is 1.108673 at an R-squared of
+  0.186794, with annualised alpha
+  0.288744 at a Newey-West t of
+  2.3643 on the lag 8.11 fixes. **The beta-hedged
+  residual carries a naive Sharpe of 0.655836 and
+  a Lo-corrected Sharpe of 0.864915**, against the
+  strategy's own 1.0911 and 1.3817. The fitted OLS residual has mean zero by
+  construction and its Sharpe is identically zero, which is a property of the
+  estimator, so the hedged series retaining the intercept is what is reported.
+
+  Rolling beta over 60 sessions, read from
+  config.CRASH_HORIZON_SESSIONS rather than chosen, has mean
+  0.8644 and standard deviation
+  1.1646 across a range of -4.4974
+  to 2.7885.
+
+  The timing decomposition splits annualised excess return into a static exposure
+  component of +0.241396,
+  a timing component of +0.011293,
+  and a residual of +0.319875.
+  **Timing is the smallest of the three.**
+
+  **The exposure-matched null.** A passive QQQ line held at the canonical's own
+  rolling realised beta lagged one session, rebalanced daily and charged the identical
+  cost model, returns 0.273354 annualised at a
+  naive Sharpe of 1.108581 and a Lo-corrected
+  Sharpe of 1.300043, placing
+  6 of thirteen on the naive
+  metric and 8 of thirteen on the
+  Lo-corrected metric. Reported as measured, with no adoption and no recommendation.
+
+- **8.7 amended again (session 21, 2026-08-20), the deflated Sharpe REMOVED.** The
+  statistic assumes every trial has true Sharpe zero while the grid's cross-sectional
+  naive mean is 0.6199013071365644, so the null is misspecified at every N. The
+  incoherence is visible at the participation-ratio count, where session 20's expected
+  maximum falls below the mean of the draws it maximises over. **Removed on the
+  misspecified null rather than on an unfavourable result.** Effective N is retained
+  as its own finding under 9.28, since it is the reason for the removal.
+
+  **The recentred comparison replaces it.** Against the grid's own cross-sectional
+  distribution the canonical's naive Sharpe sits
+  1.0425 standard
+  deviations above the grid mean at the
+  89.28 percentile. Two
+  correlation-accounting methods are reported so the choice is visible. The empirical
+  method needs no adjustment, since the grid's own distribution already embeds the
+  correlation. The effective-count method compares the canonical's z against the
+  expected maximum z of that many independent draws, and **the canonical exceeds it
+  only at the participation-ratio count and at none of the other three.** The two
+  methods disagree, which is why both are reported.
+
+- **9.35 the degradation slope REMOVED (session 21, 2026-08-20).** No valid null
+  exists for it. Session 19.6's null destroyed the common time structure every
+  specification shares, and session 20's phase G, which would have run the corrected
+  construction, was blocked on memory and remains unrun. The statistic is removed
+  rather than carried unresolved.
+
+- **9.36 the session 19.5 window strip WITHDRAWN (session 21, 2026-08-20).** The
+  strip compared a nested strategy against re-initialised benchmarks, since the
+  strategy was built once through run(sig["rows"]) and sliced while each benchmark
+  line was rebuilt per arm through LINES[ln][0](o2o, sig["rows"], i0). Seven of the
+  eleven benchmark lines carry state and are therefore affected by re-entry rather
+  than only repriced, so the rank comparison across arms is not like for like. The
+  strip is withdrawn and 9.16's corrected sentence stands as the record of what it
+  reported.
+
+- **9.37 the Lo q as an unregistered parameter (session 21, 2026-08-20).** q is a
+  Python default at scripts/s13_backtest.py:609, on no specification-curve axis and in
+  no grid axis. Session 20's D1 swept it and found nine of twelve ladder rows changing
+  rank and nine of twelve carrying a Lo factor inside their own no-autocorrelation
+  null. **Its status is neither a searched axis nor outside the degrees-of-freedom
+  census**, since it was never varied when any reported figure was selected, and it
+  is recorded as discovered post hoc.
+
+- **9.38 gate C of session 20 UNRESOLVED, with a defect in the gate itself (session
+  21, 2026-08-20).** The gate required both randomization nulls to clear p below 0.001
+  on the designated cell, and the timing-shuffle null on annualised return returned
+  p equal to 0.001. **At the registered 1,000 draws, clearing p below 0.001 requires
+  zero exceedances, so the gate turns on a single draw.** That is a defect in the gate
+  specification rather than a property of the strategy. The outcome is recorded as
+  unresolved pending a re-run at a higher replication count, and no null is re-run in
+  this session.
+
+  **8.2 remains open**, being whether the Lo-corrected Sharpe stays headline, with
+  9.37's measurement recorded as its grounds.

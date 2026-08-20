@@ -1,0 +1,11 @@
+table,item,metric,value,note
+phase,C,peak_rss_gb,0.263,from the phase log
+phase,C,seconds,0.5,from the phase log
+phase,D,peak_rss_gb,0.201,from the phase log
+phase,D,seconds,7.8,from the phase log
+phase,EF,seconds,6.6,from the phase log
+phase,A,peak_rss_gb,0.191,reported by resource.getrusage in s21_phaseA.py
+phase,A,seconds,10.5,reported by s21_phaseA.py
+phase,B,peak_rss_gb,0.0,"documentary trace, no array load"
+cited,session20_expected_max_participation_ratio,0.4285,"outputs/session-20/effective-n.csv, cited with attribution"
+cited,session19_peak_rss_gb,2.879,"outputs/session-19/pbo.csv, cited with attribution"

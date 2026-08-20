@@ -1,0 +1,44 @@
+table,item,value,target,abs_gap,note
+setup,n_sessions,2472,,,
+setup,newey_west_lag,21,,,"fixed by 8.11 before the run, not chosen here"
+setup,rolling_window,60,,,"config.CRASH_HORIZON_SESSIONS, the only rolling lookback the register records for a return-based estimator"
+positive_control,beta,0.9999999999999997,1.0,3.3306690738754696e-16,
+positive_control,alpha_daily,2.7912324767798483e-19,0.0,2.7912324767798483e-19,
+positive_control,r_squared,1.0,1.0,0.0,
+positive_control,tolerance,1e-09,,,stated before comparing
+positive_control,verdict,,,,PASS
+static,residual_definition,,,,"the beta-hedged excess return ys minus beta times yq, retaining the intercept. The fitted OLS residual has mean zero by construction and its Sharpe is identically zero, which is a property of the estimator rather than a result"
+static,beta,1.108672858112171,,,
+static,alpha_annualised,0.28874420661558875,,,
+static,r_squared,0.18679426851145753,,,
+static,alpha_t_newey_west,2.364283243646891,,,
+static,residual_ann_return,0.21358698774783869,,,
+static,residual_ann_vol,0.4402687433674235,,,
+static,residual_sharpe_naive,0.6558362612960221,,,
+static,residual_sharpe_lo,0.8649152595612315,,,
+rolling,window,60,,,
+rolling,beta_mean,0.86438301258676,,,
+rolling,beta_sd,1.1646116827038935,,,
+rolling,beta_min,-4.497369737049074,,,
+rolling,beta_max,2.788516569715106,,,
+rolling,share_beta_above_1.0,0.5667495854063018,,,
+rolling,share_beta_above_1.7,0.2155887230514096,,,
+rolling,n_sessions_with_beta,2412,,,
+timing_decomposition,static_exposure_ann_contribution,0.24139578365387873,,,
+timing_decomposition,static_exposure_sharpe_naive,1.1444570540004477,,,
+timing_decomposition,static_exposure_sharpe_lo,1.7906547374541053,,,
+timing_decomposition,timing_ann_contribution,0.011293050910284682,,,
+timing_decomposition,timing_sharpe_naive,0.05895788385991944,,,
+timing_decomposition,timing_sharpe_lo,0.07871913543161974,,,
+timing_decomposition,residual_ann_contribution,0.31987454513880875,,,
+timing_decomposition,residual_sharpe_naive,0.6843656966177268,,,
+timing_decomposition,residual_sharpe_lo,1.2088934617805913,,,
+timing_decomposition,total_ann_check,0.5725633797029721,,,the three components sum to the strategy's own annualised mean excess return by construction
+exposure_matched,ann_return,0.2733538064393448,,,
+exposure_matched,ann_vol,0.23855141552142883,,,
+exposure_matched,sharpe_naive,1.1085813697833637,,,
+exposure_matched,sharpe_lo,1.3000432817347205,,,
+exposure_matched,ann_turnover,5.234603578605807,,,
+exposure_matched,construction,,,,"QQQ held at the canonical's own rolling realised beta lagged one session, rebalanced daily, charged the identical cost model"
+exposure_matched,ladder_rank_sharpe_naive,6,,,"position among the twelve rebuilt ladder rows plus this line, so of thirteen"
+exposure_matched,ladder_rank_sharpe_lo,8,,,"position among the twelve rebuilt ladder rows plus this line, so of thirteen"
