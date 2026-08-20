@@ -2137,3 +2137,50 @@ than a measurement** (9.10 provenance requirement).
   not stable under a parameter that was never registered. The convention is stated
   wherever a naive figure appears. This closes the question left open at 9.24 and
   9.37.
+
+- **9.45 the B1 re-emission, HALTED ON CONTENTION (session 23, 2026-08-20).** The
+  pass was not launched. The halt condition required stopping if load average exceeds
+  twice the core count, and at the check the one-minute average read
+  71.43 against a threshold of
+  16, being
+  8.9288 times the core count against
+  4.9463 when session 22's pass
+  failed to complete. Five samples before the check showed the one-minute figure
+  between 60 and 63 with the five and fifteen minute figures rising, so the load was
+  not transient.
+
+  The abandonment rule was written before the check and stands unconsumed. **8.12 is
+  NOT closed.** The chunk-first-element defect remains repaired in code at four sites
+  and unre-emitted in the three regression figures, and the degradation slope is
+  removed from the paper at 9.35 regardless, so the outstanding item closes a defect
+  rather than restoring a reported figure. The standing positive control passed.
+
+- **9.46 the corrected degradation null, SKIPPED (session 23, 2026-08-20).** It runs
+  only if the phase above completes inside its limit, and that phase did not launch.
+  The construction stays as recorded in
+  outputs/session-20/degradation-null-corrected.csv and is unmodified.
+
+  **The slope's removal at 9.35 stands.** the slope's removal at 9.35 was decided on the absence of a valid null rather than on any result, so the removal is unaffected by this phase not running. A favourable outcome would have reopened the question rather than settling it, and no outcome exists.
+
+- **9.47 the resource diagnosis history (session 23, 2026-08-20), amending 9.35 and
+  8.12 as session 22 corrected them.** The established mechanism is CPU contention,
+  and the history is recorded because the class of an inference stated as a
+  measurement has now produced three register corrections.
+
+  | stage | claim | what was established |
+  |---|---|---|
+  | session 21 | memory | CLAIMED blocked on memory. OBSERVED processes at low CPU and low resident size, each terminated by hand. NEVER OBSERVED an operating-system kill, memory exhaustion, or any completion attempt. The clai |
+  | correction | impatience | CLAIMED the passes might have finished had they not been killed. OBSERVED that a chunk-514 pass peaked at 3.561 GB, higher than any killed pass, and completed in 96.9 seconds. NEVER OBSERVED a complet |
+  | session 22 | contention | CLAIMED CPU contention. OBSERVED a pre-registered 1800 second attempt that did not complete, with peak resident 1.133 GB, page-outs at 80.9 per second, the compressor flat, load average 39.57 on eight |
+  | session 23 | consistent, not confirmed | the halt condition fired before any launch, so no completion observation was added. The diagnosis stands on session 22's measurement alone |
+
+  The first two named a mechanism the evidence did not reach, in opposite directions.
+  The third named one the evidence did reach, and it was reached only because a rule
+  was pre-registered and a completion attempt was allowed to run to that rule. Session
+  23 adds no completion observation, since the halt fired before any launch, so the
+  diagnosis stands on session 22's measurement alone.
+
+- **The measurement phase is CLOSED (session 23, 2026-08-20).** Two measurements
+  remain outstanding and neither is load-bearing, being the B1 re-emission at 9.45
+  and the corrected degradation null at 9.46. Both close defects rather than restore
+  figures. No reported figure depends on either.

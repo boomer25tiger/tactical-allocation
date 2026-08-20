@@ -2,8 +2,9 @@
 
 Refreshed 2026-08-20 by session 22. Supersedes the session 21 version.
 
-Session 22 closed the measurement phase. Phases A through E and G ran, phase F
-was skipped because gate A did not clear.
+**The measurement phase is closed.** Session 23 attempted the two outstanding
+passes and halted on the contention condition before launching either. Neither is
+load-bearing, so no reported figure depends on them.
 
 ## What this project is
 
@@ -72,10 +73,13 @@ window strip at 9.36. The recentred comparison replaces the first.
 
 ## Open before the holdout can run
 
-- **The B1 re-emission is outstanding**, with a measured reason at 9.39, being
-  that the pass does not complete under CPU contention at this machine state.
-  The defect is repaired in code at four sites and the degradation slope is
-  removed from the paper regardless.
+**Two measurements remain outstanding and neither is load-bearing.** The B1
+re-emission at 9.45 and the corrected degradation null at 9.46 both close
+defects rather than restore figures, since the chunk-first-element defect is
+repaired in code at four sites and the degradation slope is removed from the
+paper at 9.35. Session 23 halted on contention before launching either, with the
+one-minute load average at 8.93 times the core count against 4.95 when session
+22's pass failed.
 - **Ten config parameters have no consumer** and two more are read but never
   invoked, at 9.31.
 - **`crash_threshold` was fixed after measurement on its own axis**, at 9.32.

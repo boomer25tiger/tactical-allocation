@@ -1,0 +1,30 @@
+table,item,value,target,note
+preregistration,wall_limit_seconds,969.0,,"ten times the 96.9 second chunk-514 pass in m1-diagnostic.csv, which completed at a larger working set of 3.561 GB"
+preregistration,chunk,257,,completed at a 1.824 GB peak in 63.1 seconds
+preregistration,termination_rule,,,terminate on the wall limit and on nothing else
+preregistration,written_before_launch,1,,
+machine_at_launch,cores,8,,
+machine_at_launch,halt_threshold,16,,twice the core count
+machine_at_launch,load_1min,71.43,,
+machine_at_launch,load_5min,53.18,,
+machine_at_launch,load_15min,33.06,,
+machine_at_launch,compressor_gib,2.813,,
+machine_at_launch,swap_used_mb,14433.19,,
+machine_at_launch,swap_free_mb,926.81,,
+machine_at_launch,pageouts_cumulative,13712909,,
+top_process,rank_1,73.5,,/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.fram
+top_process,rank_2,49.1,,/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.fram
+top_process,rank_3,26.2,,/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents
+top_process,rank_4,22.6,,/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents
+top_process,rank_5,21.5,,/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+halt_condition,load_exceeds_twice_cores,1,,load average 71.43 against a threshold of 16
+positive_control,ann_return,0.5218447451814521,0.521845,
+positive_control,sharpe_lo,1.3817013060244996,1.381701,
+positive_control,n_sessions,2472,2472,
+positive_control,tolerance,5e-07,,stated before comparing
+positive_control,verdict,,,PASS
+result,launched,0,,
+result,verdict,,,HALTED ON CONTENTION
+result,reason,,,"load average 71.43 at launch exceeds twice the core count at 16. Session 22 established that a pass does not finish under these conditions, and the halt condition requires reporting rather than starting one. The pass is not attempted, so no wall limit is consumed and no figure is produced"
+result,session_title_note,,,"the session anticipated a quiet machine and the machine is not quiet. The one-minute load is higher than the 39.57 session 22 recorded, and the five and fifteen minute figures were rising across five samples"
+outstanding,b1_reemission,,,"the chunk-first-element defect stays repaired in code at four sites and unre-emitted in the three regression figures. The degradation slope is removed from the paper at 9.35 regardless, so the outstanding item closes a defect rather than restoring a reported figure"

@@ -1,0 +1,23 @@
+table,item,value,note
+diagnosis,constraint,CPU contention,not memory. Established by session 22 phase A under a pre-registered rule
+evidence_22,peak_rss_gb,1.133,"against the 3.561 GB that completed in m1-diagnostic.csv, so the working set was smaller than one that had succeeded"
+evidence_22,max_pageouts_per_second,80.9,low and stable across 113 samples
+evidence_22,compressor_gib,2.7,"flat throughout, no deterioration"
+evidence_22,load_average,39.57,on eight cores
+evidence_22,process_cpu_mean_percent,6.25,across 113 samples
+session_23,load_at_launch,71.43,against a halt threshold of 16
+session_23,load_5min,53.18,
+session_23,load_15min,33.06,
+session_23,compressor_gib,2.757,
+session_23,swap_used_mb,14689.12,
+session_23,swap_free_mb,670.88,
+session_23,load_now,121.20,measured at the phase C write
+session_23,passes_completed,0,"neither pass ran. The machine was not quiet, so the session provides no new completion observation and therefore neither confirms nor refutes the contention diagnosis by completion. It is consistent with it, since the load that halted the session is higher than the load under which session 22's pass failed"
+history,1_session_21,memory,"CLAIMED blocked on memory. OBSERVED processes at low CPU and low resident size, each terminated by hand. NEVER OBSERVED an operating-system kill, memory exhaustion, or any completion attempt. The claim asserted a mechanism from an absence"
+history,2_correction,impatience,"CLAIMED the passes might have finished had they not been killed. OBSERVED that a chunk-514 pass peaked at 3.561 GB, higher than any killed pass, and completed in 96.9 seconds. NEVER OBSERVED a completion attempt at the killed configuration, so this claim also ran ahead of the evidence, in the opposite direction"
+history,3_session_22,contention,"CLAIMED CPU contention. OBSERVED a pre-registered 1800 second attempt that did not complete, with peak resident 1.133 GB, page-outs at 80.9 per second, the compressor flat, load average 39.57 on eight cores and the process receiving 6.25 percent CPU. This is the first of the three supported by a measurement rather than an inference"
+history,4_session_23,"consistent, not confirmed","the halt condition fired before any launch, so no completion observation was added. The diagnosis stands on session 22's measurement alone"
+class,register_corrections_produced,3,"the class of an inference recorded as a measurement has now produced three register corrections, at 9.22 for a vacuous check, at 9.38 for a gate turning on a single draw, and at 9.35 with 8.12 for the resource claim"
+class,lesson_recorded,state what was observed and what was not,"each of the first two diagnoses named a mechanism the evidence did not reach. The third named one the evidence did reach, and it was reached only because a rule was pre-registered and a completion attempt was allowed to run to that rule"
+session_23,load_to_core_ratio,8.928750,the one-minute load average at launch divided by the core count
+session_23,session22_load_to_core_ratio,4.946250,the same ratio when session 22's pass failed to complete

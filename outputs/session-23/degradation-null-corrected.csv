@@ -1,0 +1,5 @@
+table,item,value,note
+dependency,runs_only_if_phase_A_completed,0,"phase A halted on contention without launching, so phase B does not run"
+construction,read_from,outputs/session-20/degradation-null-corrected.csv,"the construction was recorded there and would run unchanged. It decomposes each specification's per-block moments into the cross-sectional block mean plus a residual, permutes each residual across blocks independently at a seed fixed before drawing, then recomposes, which preserves the shared period effect while removing any persistent idiosyncratic edge"
+status,skipped,1,"not run, and no partial pass was attempted"
+consequence,slope_removal_stands,1,"the slope's removal at 9.35 was decided on the absence of a valid null rather than on any result, so the removal is unaffected by this phase not running. A favourable outcome would have reopened the question rather than settling it, and no outcome exists"
