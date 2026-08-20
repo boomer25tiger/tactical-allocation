@@ -1,0 +1,15 @@
+table,item,value,target,abs_gap,within,ann_return,ann_vol,mean_rf_ann,sharpe_naive,sharpe_lo,lo_factor,rho1,lag_count,acf_sum,scale_sq,mean_eff_exposure,ann_turnover,n_sessions,csv_sharpe_lo,reproduces,rank_naive,rank_lo,rank_changed,note
+positive_control,tolerance,5e-07,,,,,,,,,,,,,,,,,,,,,,"stated before comparing, six decimals"
+positive_control,ann_return,0.5218447451814521,0.521845,2.5481854792896996e-07,1,,,,,,,,,,,,,,,,,,,
+positive_control,sharpe_lo,1.3817013060244996,1.381701,3.0602449951899757e-07,1,,,,,,,,,,,,,,,,,,,
+positive_control,n_sessions,2472,,,,,,,,,,,,,,,,,,,,,,
+positive_control,verdict,,,,,,,,,,,,,,,,,,,,,,,PASS
+qqq,corrected_2011_10_04,,,,,0.2309626254933499,0.190300966526694,0.00605049036678757,1.1561088525573673,1.8033205778849906,1.5598190204114089,-0.10026994936840504,251,-74.21283684559208,103.57432630881584,,,2472,,,,,,"q=252 in bt.lo_sharpe, so 251 lags enter the correction"
+qqq,ladder_2011_10_03,,,,,0.2343836742462655,0.19046605745390197,0.006048213581452571,1.1698602148983626,1.792419563116047,1.5321655872122915,-0.09804560925155709,251,-72.32659622052076,107.34680755895849,,,2473,,,,,,"q=252 in bt.lo_sharpe, so 251 lags enter the correction"
+qqq_vs_ladder,tolerance,5e-05,,,,,,,,,,,,,,,,,,,,,,stated before comparing
+qqq_vs_ladder,ann_return,0.2343836742462655,0.2343836742462655,0.0,1,,,,,,,,,,,,,,,,,,,reproduced with the ladder's own 2011-10-03 entry index and start
+qqq_vs_ladder,ann_vol,0.19046605745390197,0.1904660574539019,5.551115123125783e-17,1,,,,,,,,,,,,,,,,,,,reproduced with the ladder's own 2011-10-03 entry index and start
+qqq_vs_ladder,sharpe_naive,1.1698611113008928,1.1698611113008928,0.0,1,,,,,,,,,,,,,,,,,,,reproduced with the ladder's own 2011-10-03 entry index and start
+qqq_vs_ladder,sharpe_lo,1.7924186615414786,1.7924186615414786,0.0,1,,,,,,,,,,,,,,,,,,,reproduced with the ladder's own 2011-10-03 entry index and start
+qqq_vs_ladder,worst_gap,5.551115123125783e-17,,,1,,,,,,,,,,,,,,,,,,,
+qqq_external,independent_series,,,,,,,,,,,,,,,,,,,,,,,"the only QQQ total-return path in this repository is the frozen input data/raw/etf/QQQ.parquet, which is the same series the ladder used. No second independent QQQ source exists offline and no network fetch is attempted, so external verification is PENDING rather than performed"

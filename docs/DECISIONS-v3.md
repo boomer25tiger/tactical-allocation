@@ -1448,3 +1448,112 @@ than a measurement** (9.10 provenance requirement).
   and cheaper integrity checking, and it does not create a second copy of anything.
   This entry is what creates the second copy. Evidence:
   outputs/session-19/remote-status.csv.
+
+- **9.16 window strip, POST-HOC SENSITIVITY under 9.10 (session 19.5,
+  2026-08-19).** A strip of start dates run with every other axis held at canonical
+  and every window ending at 2021-08-01. **The primary window remains 2011-10-04**
+  and this entry changes no boundary.
+
+  **Motivation, recorded before the results were read.** The ladder's buy-and-hold
+  QQQ row reads 1.792 Lo-corrected Sharpe, and window arithmetic over the primary
+  window supported a naive Sharpe near 1.25 with an autocorrelation that did not
+  obviously support a Lo factor large enough to close the gap. Separately three
+  ladder rows sat within 0.004 of each other, which is the pattern costless leverage
+  produces. Both were arguments from arithmetic rather than measurements, and this
+  session measured them.
+
+  **Result.** The positive control reproduces the canonical at the canonical start
+  to 2.55e-07 and
+  3.06e-07. Across six start dates
+  **the strategy's rank among twelve is not stable**, spanning
+  3 to 6 under the naive Sharpe and
+  5 to 7 under the Lo-corrected Sharpe, with the
+  canonical start returning the lowest rank of any date tested under both metrics.
+  Reported as measured, with no interpretation, no recommendation and no change to
+  the primary window. Evidence: outputs/session-19_5/window-strip.csv.
+
+  **The earliest full-composition start is later than canonical.** On the synthetic
+  panel every ticker named in src/sleeves.py is available and past warmup only from
+  2013-01-23, bound by
+  QQQE first appearing
+  2012-03-21 plus
+  210 warmup sessions. The strip therefore
+  has no arm reaching back before the canonical window, and the 2007 date the
+  scaffold anticipated does not exist as a full-composition start.
+
+- **9.17 ladder construction audit, NO DEFECT, with the 9.13 class sweep (session
+  19.5, 2026-08-19).** Every levered and inverse line in the twelve-row ladder holds
+  the live fund ticker taken from the frozen fund parquet on the realized arm through
+  `_frozen_frame`, rather than a costless scaling of the underlying. Financing and
+  daily reset apply to the reconstructions on the synthetic arm only, where the rate
+  source is frozen DTB3 at rate over 360 per calendar day under 5.5a, the spread is
+  `config.FINANCING_SPREAD_BP` for multiples above one with a haircut for inverse
+  funds and k equal to zero for the volatility funds under 2.15, and the reset
+  compounds daily at the close.
+
+  **Decisive check, tolerance 5e-03 stated before comparing.** Annualised volatility
+  discriminates where the naive Sharpe does not, being untouched by the risk-free
+  subtraction and the account's cash accrual. The ladder's buy-and-hold TQQQ row sits
+  0.001025 from the live fund and
+  0.009650 from a costless daily-compounded
+  3x QQQ, a factor of nine closer to the live fund. **No row is a costless scaling.**
+
+  **Scope of the 9.13 sweep.** Run regardless of the gate. With no defect found there
+  is no defect class to sweep, and the sweep instead records the construction of all
+  fourteen levered and inverse instruments the strategy trades. **The canonical result
+  at 0.521845 and 1.381701 does not depend on any instrument carrying a
+  costless-scaling construction**, since the canonical runs on the realized arm where
+  every one of them is the live fund's own frozen history. Nothing was repaired.
+  Evidence: outputs/session-19_5/construction-audit.csv,
+  outputs/session-19_5/defect-sweep.csv.
+
+  **Two findings the audit surfaced that the gate does not cover, recorded rather
+  than acted on.** First, **every ladder row carries the superseded 2011-10-03
+  boundary**, its STRATEGY row reading 1.3846
+  over 2473 sessions against the
+  7.14a corrected 1.3817 over 2472, because session 15 ran before the correction and
+  `s14_common.PRIMARY_START` still defaults to the superseded date. Session 20 step 5
+  owns the ladder repair and 8.8 is deliberately not amended here.
+
+  Second, **the Lo correction's scale factor is not separable from sampling noise at
+  this sample length**. `bt.lo_sharpe` sums 251 weighted sample autocorrelations from
+  2472 observations. Against a null of
+  300 independent permutations of the same excess
+  returns at a seed fixed before drawing, which destroys serial dependence entirely,
+  QQQ's observed weighted sum of -74.213 sits
+  1.417 standard deviations from a
+  null mean of -12.382, and a series with no
+  autocorrelation at all still produces a mean Lo factor of
+  1.1129 reaching
+  1.4783 at the 95th percentile against QQQ's
+  observed 1.5598. The null mean exceeds one
+  because each sample autocorrelation carries a small-sample bias of order minus one
+  over n and 251 of them are summed with weights up to 251.
+
+  **8 of the twelve rows change rank
+  between the naive and the Lo-corrected Sharpe**, and the three rows the motivation
+  flagged span 0.0038 on the Lo-corrected
+  Sharpe against 0.0315 on the naive
+  Sharpe, a factor of 8.23 wider, so their
+  convergence is produced by the correction rather than by the construction. Whether
+  8.2 keeps the Lo-corrected Sharpe as headline is a register decision this session
+  does not make.
+
+- **9.18 early-window reporting form, TENSION RECORDED AND LEFT OPEN (session 19.5,
+  2026-08-19).** 7.14b fixed the early-window reporting form as coverage tables and
+  the per-instrument availability timeline only, with no return figure at any
+  prominence. The 9.16 strip emits return figures at its earliest start as a
+  diagnostic, which is in tension with that form.
+
+  The tension is narrower than it first appears, since the earliest full-composition
+  start is 2013-01-23 rather than a 2007
+  date, so no strip arm sits in the 2007-01-03 to 2011-10-02 extension 7.14b governs.
+  Over that start's 2146 sessions,
+  0.2749 of them lack at least one
+  sleeve-held ticker on the realized panel, so a start there is confounded with panel
+  source because the panel differs alongside the window. The confound is disclosed
+  rather than resolved.
+
+  **Whether any early-start figure enters the paper is a register decision. It is not
+  made here and this entry does not pre-empt it.** Evidence:
+  outputs/session-19_5/coverage-early.csv.

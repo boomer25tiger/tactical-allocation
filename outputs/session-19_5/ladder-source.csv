@@ -1,0 +1,43 @@
+table,item,value,rank,sharpe_naive,ann_return,ann_vol,n_sessions,prose_figure,prose_matches_csv,mean_daily_diff,t_stat,sign,below_0_05,text
+artifact,path,,,,,,,,,,,,,outputs/session-15/metrics-full.csv
+artifact,written_by,,,,,,,,,,,,,"session 15, the ladder-emitting session; register 8.11 names this file as the metric values"
+artifact,prior_partial,,,,,,,,,,,,,"outputs/session-14/ladder.csv carries 14 lines including the intraday-only and overnight-only hold universes, which the twelve-row ladder does not"
+artifact,n_columns,64,,,,,,,,,,,,
+artifact,n_rows_file,568,,,,,,,,,,,,
+artifact,n_rows_designated_cell,12,,,,,,,,,,,,"realized panel, open-to-open, primary window"
+artifact,twelve_rows_exist,1,,,,,,,,,,,,
+artifact,columns,,,,,,,,,,,,,table line metric session15 session14 abs_gap match_4dp panel convention window n_sessions total_return ann_return ann_vol sharpe_naive sharpe_lo max_drawdown calmar arith_mean_excess_ann ann_turnover downside_deviation_ann sortino_mar_dtb3 skewness excess_kurtosis var_95_daily cvar_95_daily var_95_annualised cvar_95_annualised var_99_daily cvar_99_daily var_99_annualised cvar_99_annualised n_drawdowns_gt_20pct mean_duration_drawdowns_gt_20pct_sessions max_dd_duration_sessions max_dd_duration_calendar_days time_to_recovery_sessions recovered_within_window ulcer_index pain_ratio rolling_12m_sharpe_min rolling_12m_sharpe_max rolling_12m_sharpe_frac_below_zero pct_positive_months split_half_first_sharpe_lo split_half_first_ann_return split_half_second_sharpe_lo split_half_second_ann_return return_per_unit_turnover turnover_adjusted_sharpe year line_kind alpha_ann beta tracking_error_ann information_ratio r_squared alpha_t_newey_west newey_west_lag andrews_bandwidth up_capture down_capture n_up_days n_down_days
+ladder_row,buy_hold_TQQQ,1.7937434135358288,1,1.1412249659607967,0.6269414706979872,0.562710381163404,2473.0,1.794,1,,,,,
+ladder_row,buy_hold_QQQ,1.7924186615414786,2,1.1698611113008928,0.2343836742462655,0.1904660574539019,2473.0,1.792,1,,,,,
+ladder_row,matched_exposure_levered_QQQ_1.70,1.7899229239206638,3,1.1384076775942409,0.3738943019523197,0.3189083255262094,2473.0,1.79,1,,,,,
+ladder_row,long_legs_only,1.46144543261059,4,1.2132741348145604,0.6112936057120661,0.4851296842489904,2473.0,1.461,1,,,,,
+ladder_row,vol_targeted_QQQ_matched,1.4352528418265915,5,1.0865820088734346,0.3118533528001621,0.2810489255257806,2473.0,1.435,1,,,,,
+ladder_row,STRATEGY,1.3846209839337436,6,1.0922198074109173,0.5225924351843778,0.488123344434799,2473.0,1.385,1,,,,,
+ladder_row,sleeve_S2_standalone,1.3557787688957572,7,1.2070829402076682,0.7154726093438708,0.583498405777851,2473.0,,,,,,,
+ladder_row,sleeve_S3_standalone,1.1950777943357531,8,1.072096948012145,0.6082434924427285,0.6120506745144497,2473.0,,,,,,,
+ladder_row,naive_fast_1d_momentum,1.0753642567437471,9,0.7902521313745848,0.2656651447148943,0.3857121395354316,2473.0,,,,,,,
+ladder_row,sleeve_T11_standalone,0.9736423509860032,10,0.8074724947709148,0.3439779709006203,0.5340126253805767,2473.0,,,,,,,
+ladder_row,equal_weight_universe,0.5902814041583745,11,0.5805573946525712,0.1500773011505718,0.3203522650119241,2473.0,,,,,,,
+ladder_row,sleeve_T10_standalone,0.5070328106599319,12,0.4061004077058746,0.0484043208000324,0.7043046703560462,2473.0,,,,,,,
+prose_check,figures_checked,6,,,,,,,,,,,,
+prose_check,disagreements,0,,,,,,,,,,,,"rounded to three decimals, the precision the prose carries"
+boundary,ladder_strategy_sharpe_lo,1.3846209839337436,,,,,,,,,,,,
+boundary,ladder_strategy_ann_return,0.5225924351843778,,,,,,,,,,,,
+boundary,ladder_strategy_n_sessions,2473.0,,,,,,,,,,,,
+boundary,register_7_14a_corrected_sharpe_lo,1.3817,,,,,,,,,,,,
+boundary,register_7_14a_corrected_ann_return,0.5218,,,,,,,,,,,,
+boundary,ladder_on_corrected_boundary,0,,,,,,,,,,,,"the ladder's STRATEGY row carries the pre-correction 2011-10-03 figures, being 1.3846 and 0.5226, which register 7.14a superseded with 1.3817 and 0.5218 on the 2011-10-04 start. Every ladder row is therefore on the superseded window"
+romano_wolf,strategy_minus_equal_weight_universe,0.033,,,,,,,,0.0013775754697218,2.287859555615817,strategy above,1,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_buy_hold_QQQ,0.052,,,,,,,,0.0012313215185384,2.204176164452484,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_sleeve_T10_standalone,0.219,,,,,,,,0.0009806490599772,1.6841000546718905,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_vol_targeted_QQQ_matched,0.24,,,,,,,,0.0009037138475652,1.5309312116596714,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_naive_fast_1d_momentum,0.324,,,,,,,,0.0009060196790235,1.3372787499616074,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_matched_exposure_levered_QQQ_1.70,0.411,,,,,,,,0.0006748628459931,1.1776189972656952,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_sleeve_T11_standalone,0.563,,,,,,,,0.0004045613735828,0.91006807635361,strategy above,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_buy_hold_TQQQ,0.96,,,,,,,,-0.0004328031340002,-0.6076290048893164,strategy below,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_sleeve_S2_standalone,0.983,,,,,,,,-0.0006793921383004,-1.512418423156778,strategy below,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_sleeve_S3_standalone,0.983,,,,,,,,-0.0004882695765015,-1.1433887263012048,strategy below,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf,strategy_minus_long_legs_only,0.983,,,,,,,,-0.0002200983198608,-1.5471520674408517,strategy below,0,"one-sided, stationary block bootstrap, block 21 sessions, 1000 draws, designated cell (o2o realized primary)"
+romano_wolf_summary,comparisons,11,,,,,,,,,,,,
+romano_wolf_summary,below_0_05,1,,,,,,,,,,,,
+romano_wolf_summary,significant_hypothesis,0.033,,,,,,,,0.0013775754697218,,strategy above,,strategy_minus_equal_weight_universe

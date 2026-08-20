@@ -1,0 +1,13 @@
+table,item,value,target,abs_gap,within,ann_return,ann_vol,mean_rf_ann,sharpe_naive,sharpe_lo,lo_factor,rho1,lag_count,acf_sum,scale_sq,mean_eff_exposure,ann_turnover,n_sessions,csv_sharpe_lo,reproduces,rank_naive,rank_lo,rank_changed,note
+lo_control,seed,20260819,,,,,,,,,,,,,,,,,,,,,,fixed before drawing
+lo_control,draws,300,,,,,,,,,,,,,,,,,,,,,,"iid permutation of the same excess returns, marginal preserved, serial dependence destroyed"
+lo_control,observed_acf_sum,-74.21283684559208,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_acf_sum_mean,-12.382069295236363,,,,,,,,,,,,,,,,,,,,,,"not zero, because each sample autocorrelation carries a negative small-sample bias of order -1/n and 251 of them are summed with weights up to 251"
+lo_control,null_acf_sum_sd,43.64661869217863,,,,,,,,,,,,,,,,,,,,,,
+lo_control,observed_z_against_null,-1.4166221669179528,,,,,,,,,,,,,,,,,,,,,,
+lo_control,observed_lo_factor,1.5598190204114089,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_lo_factor_mean,1.1128951669790612,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_lo_factor_sd,0.2235006153409813,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_lo_factor_p05,0.7938319236577266,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_lo_factor_p95,1.4782709644878398,,,,,,,,,,,,,,,,,,,,,,
+lo_control,null_lo_factor_max,2.1084407110933316,,,,,,,,,,,,,,,,,,,,,,

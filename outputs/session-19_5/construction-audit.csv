@@ -1,0 +1,27 @@
+table,item,value,target,abs_gap,within,ann_return,ann_vol,mean_rf_ann,sharpe_naive,sharpe_lo,lo_factor,rho1,lag_count,acf_sum,scale_sq,mean_eff_exposure,ann_turnover,n_sessions,csv_sharpe_lo,reproduces,rank_naive,rank_lo,rank_changed,note
+line_construction,buy_hold_TQQQ,,,,,,,,,,,,,,,,,,,,,,,"holds the TQQQ ticker from the panel rather than a scaling of QQQ. On the realized arm bt.load_arm_panel takes levered tickers from _frozen_frame, being the frozen fund parquet, so the series is the live fund's own history carrying its real daily reset, financing and expense. On the synthetic arm the same tickers come from _synthetic_frame, being the reconstruction. The designated cell is the realized arm"
+line_construction,matched_exposure_levered_QQQ_1.70,,,,,,,,,,,,,,,,,,,,,,,"holds the TQQQ ticker from the panel rather than a scaling of QQQ. On the realized arm bt.load_arm_panel takes levered tickers from _frozen_frame, being the frozen fund parquet, so the series is the live fund's own history carrying its real daily reset, financing and expense. On the synthetic arm the same tickers come from _synthetic_frame, being the reconstruction. The designated cell is the realized arm"
+line_construction,vol_targeted_QQQ_matched,,,,,,,,,,,,,,,,,,,,,,,"holds the TQQQ ticker from the panel rather than a scaling of QQQ. On the realized arm bt.load_arm_panel takes levered tickers from _frozen_frame, being the frozen fund parquet, so the series is the live fund's own history carrying its real daily reset, financing and expense. On the synthetic arm the same tickers come from _synthetic_frame, being the reconstruction. The designated cell is the realized arm"
+financing,rate_source,,,,,,,,,,,,,,,,,,,,,,,"frozen DTB3 accrued at rate/360 per calendar day between sessions, the 5.5a convention, applied inside scripts/s10_build.py"
+financing,spread,,,,,,,,,,,,,,,,,,,,,,,"config.FINANCING_SPREAD_BP = 75 bp over the reference for multiples above one, a haircut for inverse funds, and k=0 for the volatility funds which are futures-based under 2.15. D16 records the spread as assumed rather than measured"
+financing,applies_to,,,,,,,,,,,,,,,,,,,,,,,"the reconstructions only. The realized arm carries the live fund prices, in which financing is already embedded by the issuer"
+daily_reset,convention,,,,,,,,,,,,,,,,,,,,,,,"the levered daily return compounds session to session inside the reconstruction, so path dependence and volatility decay are carried rather than assumed away. Rebalance is daily at the close"
+reconstruction_validation,artifact,,,,,,,,,,,,,,,,,,,,,,,outputs/session-10/synthetic-validation-primary.csv
+decisive_check,vol_gap_vs_costless,0.009650411971227624,,,,,,,,,,,,,,,,,,,,,,
+decisive_check,vol_gap_vs_live,0.0010246538579717912,,,,,,,,,,,,,,,,,,,,,,
+decisive_check,closer_on_volatility,,,,,,,,,,,,,,,,,,,,,,,live fund
+decisive_check,tolerance,0.005,,,,,,,,,,,,,,,,,,,,,,"stated before comparing, on annualised naive Sharpe"
+decisive_check,costless_3x_QQQ,,,,,0.6553566392066414,0.5723607931346316,,1.1633207307535194,1.8549593590348699,,,,,,,,2473,,,,,,
+decisive_check,live_TQQQ,,,,,0.6016435192794682,0.5637350350213758,,1.1123615205622317,1.808410550412625,,,,,,,,2473,,,,,,
+decisive_check,ladder_buy_hold_TQQQ,,,,,0.6269414706979872,0.562710381163404,,1.1412249659607967,1.7937434135358288,,,,,,,,,,,,,,
+decisive_check,gap_vs_costless,0.022095764792722683,,,0,,,,,,,,,,,,,,,,,,,
+decisive_check,gap_vs_live,0.028863445398565002,,,0,,,,,,,,,,,,,,,,,,,
+decisive_check,row_is_costless_scaling,0,,,,,,,,,,,,,,,,,,,,,,a row inside tolerance of the costless construction while outside it against the live fund would be a scaling
+resources,memory_ceiling_gb,4.0,,,,,,,,,,,,,,,,,,,,,,stated before running
+resources,peak_rss_gb,0.157,,,1,,,,,,,,,,,,,,,,,,,
+resources,seconds_build_env,3.22,,,,,,,,,,,,,,,,,,,,,,
+resources,seconds_step1_canonical,0.49,,,,,,,,,,,,,,,,,,,,,,
+resources,seconds_step1_qqq,1.05,,,,,,,,,,,,,,,,,,,,,,
+resources,seconds_step2,3.71,,,,,,,,,,,,,,,,,,,,,,
+resources,seconds_step3,0.0,,,,,,,,,,,,,,,,,,,,,,
+resources,seconds_lo_control,0.14,,,,,,,,,,,,,,,,,,,,,,

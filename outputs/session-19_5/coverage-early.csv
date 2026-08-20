@@ -1,0 +1,60 @@
+table,item,line,start,n_sessions,ann_return,sharpe_naive,sharpe_lo,strategy_rank_naive,strategy_rank_lo,share_sessions_all_realized_available,share_requiring_synthetic,value,target,abs_gap,within,seconds,note,note2
+early_start,binding_ticker,,,,,,,,,,,,,,,,QQQE,
+early_start,binding_ticker_first_session,,,,,,,,,,,,,,,,2012-03-21,
+early_start,warmup_sessions,,,,,,,,,,,210,,,,,,
+early_start,full_composition_date,,,,,,,,,,,,,,,,2013-01-23,earliest session at which every ticker named in src/sleeves.py is available on the synthetic panel and has cleared indicator warmup
+early_start,later_than_canonical,,,,,,,,,,,1,,,,,"the synthetic panel does not support a full-composition start earlier than the canonical 2011-10-04, so the strip has no genuinely early arm",
+coverage_ticker,AGG,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,FAS,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,IEF,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,IOO,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,LABU,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,PSQ,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,QLD,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,QQQ,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,SH,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,SOXL,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,SOXS,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,SPXL,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,SPY,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,SQQQ,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,SVXY,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,TECL,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,TECS,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,TLT,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,TQQQ,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,UVXY,,,,,,,,,,,,,,,,2007-01-03,held by a sleeve
+coverage_ticker,VOX,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,VTV,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,XLF,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,XLK,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,XLP,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,XLY,,,,,,,,,,,,,,,,2007-01-03,signal input
+coverage_ticker,SMH,,,,,,,,,,,,,,,,2007-01-04,signal input
+coverage_ticker,BND,,,,,,,,,,,,,,,,2007-04-10,signal input
+coverage_ticker,BSV,,,,,,,,,,,,,,,,2007-04-10,held by a sleeve
+coverage_ticker,BIL,,,,,,,,,,,,,,,,2007-05-30,held by a sleeve
+coverage_ticker,VOOG,,,,,,,,,,,,,,,,2010-09-09,signal input
+coverage_ticker,VOOV,,,,,,,,,,,,,,,,2010-09-09,signal input
+coverage_ticker,BTAL,,,,,,,,,,,,,,,,2011-09-13,held by a sleeve
+coverage_ticker,QQQE,,,,,,,,,,,,,,,,2012-03-21,signal input
+coverage_early,start,,,,,,,,,,,,,,,,2013-01-23,
+coverage_early,n_sessions,,,,,,,,,,,2146,,,,,,
+coverage_early,share_all_realized_available,,,,,,,,,,,0.7250698974836906,,,,,,
+coverage_early,share_requiring_synthetic,,,,,,,,,,,0.27493010251630945,,,,,,
+coverage_early,register_16_tension,,,,,,,,,,,,,,,,"register 7.14b fixed the early-window reporting form as coverage tables and availability timelines with no return figure at any prominence. Step 4 emits return figures at the early start as a diagnostic, which is in tension with that form. Whether any early-start figure enters the paper is a register decision this session does not make and does not pre-empt",
+coverage_early,confound,,,,,,,,,,,,,,,,"a start date sitting on synthetic reconstruction is confounded with panel source, since the panel differs alongside the window. The confound is disclosed rather than resolved here",
+reconstruction_reach,TQQQ,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2010-02-11
+reconstruction_reach,SQQQ,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2010-02-11
+reconstruction_reach,QLD,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2007-01-03
+reconstruction_reach,PSQ,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2007-01-03
+reconstruction_reach,SH,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2007-01-03
+reconstruction_reach,SPXL,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2008-11-05
+reconstruction_reach,TECL,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2008-12-30
+reconstruction_reach,TECS,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2008-12-30
+reconstruction_reach,SOXL,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2010-03-11
+reconstruction_reach,SOXS,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2010-03-11
+reconstruction_reach,FAS,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2008-11-19
+reconstruction_reach,LABU,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2015-05-28
+reconstruction_reach,UVXY,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2011-10-04
+reconstruction_reach,SVXY,,,,,,,,,,,,,,1,,synthetic from 2007-01-03,realized from 2011-10-04

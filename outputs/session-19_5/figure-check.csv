@@ -1,0 +1,5 @@
+report,figure,classification,note
+REPORT.md,19.5,not a figure,the session number in the document title
+REPORT.md,3.06,mechanism limitation,"present in qqq-control.csv as 3.0602e-07; scientific notation, which the fixed-decimal comparison cannot express"
+REPORT.md,5.55,mechanism limitation,present in qqq-control.csv as 5.551e-17; scientific notation
+REPORT.md,9.99,mechanism limitation,present in ladder-decomposition.csv as the worst reproduction gap 9.99e-07; scientific notation
