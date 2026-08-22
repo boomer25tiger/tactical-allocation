@@ -1,0 +1,25 @@
+table,item,value,target,note
+preregistration,tolerance,5e-07,,stated before comparing
+preregistration,halt_rule,,,a failure on any of the three gates halts the session before any holdout quantity is computed
+A1,hook_exit_code,0,,
+A1,working_copy_sha256,3a3d150e986bcedfb9946deeb299373efac7026e7ccc7ca45625b9553fbecb2f,,
+A1,working_copy_bytes,10496,,
+A1,commit,35466c2131f24e35a5ce7fed13c4ed8c821ca45b,,
+A1,author_timestamp,2026-08-22T11:25:54+02:00,,
+A1,commit_timestamp,2026-08-22T11:25:54+02:00,,
+A1,blob_at_HEAD,1282cf989cecbcedf9908f0cda0787377455d9ca,,
+A1,hook_verdict,PASS,,"PASS  the prediction is committed and unmodified, so it predates this read."
+A1,committed_blob_sha256,3a3d150e986bcedfb9946deeb299373efac7026e7ccc7ca45625b9553fbecb2f,3a3d150e986bcedfb9946deeb299373efac7026e7ccc7ca45625b9553fbecb2f,
+A1,verdict,PASS,,the hook exits zero and the committed blob's hash matches the scaffold's expected value
+A3,files_under_data,347,,
+A3,manifested_and_checked,339,,
+A3,mismatches,0,,
+A3,unmanifested,8,,
+A3,verifier_exit_code,0,,
+A3,verdict,PASS,,339 hashed frozen inputs verify with 0 mismatches
+A2,ann_return,0.5218447451814521,0.521845,
+A2,sharpe_lo,1.3817013060244996,1.381701,
+A2,n_sessions,2472,2472,
+A2,primary_start,2011-10-04,,read from scripts/s14_common.py rather than typed
+A2,verdict,PASS,,
+gates,all_three,PASS,,the read proceeds only on PASS

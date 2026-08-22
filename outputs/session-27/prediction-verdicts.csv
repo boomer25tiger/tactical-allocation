@@ -1,0 +1,38 @@
+component,quantity,value,of,verdict,condition,note
+P1,rank on the naive Sharpe,2,12,falsified,"In the holdout, on the designated cell, the strategy ranks no better than sixth of twelve on the naive Sharpe. Falsified by any rank of fifth or better.",the condition is falsified by any rank of fifth or better and the rank is 2 of 12
+P1,rank on the Lo-corrected Sharpe,1,12,reported alongside,,8.2 leads on the naive figure while the pre-registered convention is Lo
+P1,the two ranks diverge,1,,reportable,,"naive 2, Lo-corrected 1"
+P1,strategy naive Sharpe,1.637799226672021,,,,
+P1,strategy Lo-corrected Sharpe,2.7585227658215015,,,,
+P2,holdout naive Sharpe,1.637799226672021,,falsified,"The strategy's holdout naive Sharpe lands between 0.25 and 0.85, against 1.0910863648060856 over the primary window at outputs/session-20/rebuilt/metrics-full.csv. Falsified above 0.85 or below 0.25.",the band is 0.25 to 0.85 and the figure sits outside it
+P2,"distance to the nearer bound, being 0.85",0.787799226672021,,,,against the primary-window naive Sharpe of 1.0910863648060856
+pass,re-execution reproduces phase C exactly,1,,PASS,,"naive gap 0.0, Lo gap 0.0, sessions 1265. The re-execution varies no specification and exists only because phase C did not persist the per-session sleeve dicts"
+P3 part one,"SQQQ and TLT daily return correlation, holdout",-0.07884210926185957,1265,falsified,Part one. SQQQ and TLT realise positive daily return correlation over the holdout. Falsified by a negative realised correlation.,computed from the frozen realized panel's daily total returns without reference to the strategy
+P3 part one,the same pair over the primary window,0.16448233204452256,3737,,,"computed here for the first time, since no committed CSV carried the direct pair"
+P3 part one,committed sleeve-level baseline,-0.5618926986740371,,,,"the short leg against the rest of its own sleeve on arm A at outputs/session-15.5/short-leg-decomposition.csv, which the prediction names as the committed baseline and flags as not the direct pair"
+P3 part one,sign flips from the primary window,0,,,,"primary 0.16448233204452256, holdout -0.07884210926185957"
+P3 part two,"T10 risk-off branch contribution, holdout",0.06250008813584088,416,falsified,Part two. T10's risk-off branch contributes negatively to holdout return. Falsified by a positive contribution.,"the arithmetic sum of the lagged portfolio weight times the realised return on each leg across the sessions the branch fired, the same construction session 15.5 used"
+P3 part two,the SQQQ leg alone,0.09966091314902041,,,,
+P3 part two,the TLT leg alone,-0.037160825013179535,,,,
+P3 part two,the SQQQ leg over the primary window,-0.0848435348504287,,,,"against the -1.074235187878671 the prediction names, which is the portfolio-level short-leg figure at session 15.5 rather than a T10-only one"
+P3 part two,the part predicts persistence rather than change,1,,,,"recorded in the prediction, since the primary-window sign is already negative"
+P3 part two,"sessions the branch fired, holdout",416,,,,
+P3 part two,"sessions the branch fired, primary window",928,,,,
+P4,"the 2022 peak, taken as buy-and-hold QQQ's 2022 high",2022-01-03,,not a prediction,State-classification latency in a slow bear is not measurable from the primary window and is not predicted.,"the mechanism concerns classification of a market regime, so the market line the state machine watches is the peak used. The strategy's own NAV peak is reported beside it"
+P4,the strategy's own 2022 NAV peak,2022-10-13,,,,
+P4,first risk-off state after the peak,2022-01-10,,,,
+P4,sessions from the peak to the first risk-off state,5,,,,
+P4,mean effective exposure across that interval,0.9277520939003893,5,,,
+P4,minimum effective exposure across that interval,0.9022991359297223,,,,
+P4,maximum effective exposure across that interval,1.0006645933510157,,,,
+P4,sessions in that interval with exposure above 1.0,1,5,,,
+P4,the guard,,,,,P4 carries no verdict and does not qualify any other component unless the state series shows the latency mechanism operating
+P5,short-equity sleeve holdout contribution,0.3160580325724543,,positive,"If P1 fails, the most likely reason is that 2022 gave the short-equity sleeve its only sustained tailwind in either window, carrying the strategy past passive in the one period its hedges exist for.","the arithmetic sum across SQQQ, TECS, SOXS, PSQ, SH"
+P5,the SQQQ contribution,0.2896712920331235,,,,
+P5,the TECS contribution,0.014551358900689083,,,,
+P5,the SOXS contribution,-0.0006734763885016953,,,,
+P5,the PSQ contribution,0.012508858027143454,,,,
+P5,the SH contribution,0.0,,,,
+P5,naive Sharpe with the short contribution removed,1.333724053273868,,,,"the pre-specified examination of whether the short sleeve accounts for the rank, computed once"
+P5,rank the strategy would hold on that series,4,12,,,against its actual rank of 2. The short sleeve accounts for the rank only if removing it moves the rank past fifth
+P5,the short sleeve accounts for the rank,0,,,,P5's premise requires that removing the short contribution would put the strategy at sixth or worse

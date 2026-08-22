@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-22 by session 26. Supersedes the session 25 version.
+Refreshed 2026-08-22 by session 27. Supersedes the session 26 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
@@ -8,13 +8,20 @@ No claim is added without a dated register entry recording the addition and its
 grounds. Registered at 9.51 and 9.52. Claim 4's scope phrase was narrowed on
 2026-08-22 as a wording repair at 9.59, with no quoted figure moved.
 
-**The prediction is committed.** `docs/HOLDOUT-PREDICTION.md` carries P1 through
-P5 and is frozen on the commit that added it, at 9.64. It is not amended after
-the read.
+**The holdout has been READ, once, on 2026-08-22.** All three gates passed
+first. The span runs 2021-08-01 to 2026-08-14, being 1265 sessions against the
+primary window's 2472, and it runs entirely on the 339 hashed frozen inputs.
+Registered at 9.66. **The read is not repeated.**
 
-**The next action is the holdout read.** Nothing blocks it. Any holdout session
-runs `scripts/verify_prediction_precedes_read.py` as its first step, at 9.65,
-and proceeds only if that exits zero.
+**All four falsifiable prediction components are falsified**, at 9.67. The
+strategy ranks 2 of 12 on the naive Sharpe and 1 of 12 on the Lo-corrected over
+the holdout, at 1.637799226672021 and 2.7585227658215015.
+
+**`docs/HOLDOUT-PREDICTION.md` is frozen at 9.64 and is not amended after the
+read.** It stands as written.
+
+**No frozen claim is contradicted and none is amended**, at 9.68. The holdout
+bears on 8 of the 15 claims, 1 of which was evaluated in this session.
 
 **The measurement phase is closed.** One measurement remains outstanding, being
 S equal to 48 of the B1 re-emission, and it is not load-bearing.
@@ -44,6 +51,11 @@ as headroom**, since macOS holds free near zero by design.
 
 - **Designated headline cell**, 0.521845 annualised and 1.381701 Lo-corrected
   Sharpe over 2,472 sessions, confirmed by positive control every session.
+- **Holdout cell**, 0.8287111594113898 annualised and 2.7585227658215015
+  Lo-corrected over 1265 sessions, read once at 9.66.
+- **Combined window**, 3737 sessions, the strategy placing 2 of 12 on the naive
+  Sharpe and 1 of 12 on the Lo-corrected. **Descriptive only**, since the
+  combined window contains the sample the specification was chosen on.
 - **The boundary is 2011-10-04** and session 15's outputs are rebuilt.
 - **PBO 0.1578** at S equal to 16. **N is 121,500.** The figure re-emits
   exactly on repaired code, as do S equal to 8, 12 and 24, at 9.48.
@@ -99,7 +111,18 @@ window strip at 9.36. The recentred comparison replaces the first.
 - **The register's blocked-on-memory claims were wrong in mechanism**, corrected
   at 9.35 and 8.12.
 
-## Open before the holdout can run
+## What remains before the paper
+
+**The holdout is read and the measurement work is finished.** What remains is
+writing, being the paper itself from the frozen claim set, the withdrawn set, the
+prediction as written, and the verdicts at 9.67. **No interpretation of the
+holdout result has been written**, and it belongs in a later session.
+
+Seven claims bear on the holdout and were not evaluated, being 2, 3, 11, 12, 13,
+14 and 15, since each would need a measurement outside the single pass. Whether
+any of them is evaluated is a decision that has not been taken.
+
+## Formerly open before the holdout ran
 
 **One measurement remains outstanding and it is not load-bearing.** Session 24
 ran the B1 re-emission on a quiet machine and reached four of five block counts
@@ -139,9 +162,9 @@ matplotlib deliberately absent.
 
 ## Figures
 
-**The paper's figure cap is six**, fixed at 9.60 rather than left open, so no
-figure is added after the read. **Eight are drawn**, in
-`outputs/session-25/figures/`, each carrying the exact
+**The paper's figure cap is six and it is now reached**, fixed at 9.60 and
+filled by the two at 9.69 in `outputs/session-27/figures/`. **No further figure
+is drawn.** Eight further candidates are drawn, in `outputs/session-25/figures/`, each carrying the exact
 series it plots as a committed CSV of the same name. Two candidates remain
 undrawable, being the null distribution histograms and effective exposure by
 decile, and three were excluded because the PBO report already carries them.

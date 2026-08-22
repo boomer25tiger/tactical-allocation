@@ -1,0 +1,43 @@
+table,item,value,note
+specification,convention,open-to-open,read from src/config.py and scripts/s14_common.py rather than typed
+specification,panel,realized,read from src/config.py and scripts/s14_common.py rather than typed
+specification,slippage,class-tiered at the 10 basis point anchor with the 2.0x opening auction premium,read from src/config.py and scripts/s14_common.py rather than typed
+specification,commission_arm,S,read from src/config.py and scripts/s14_common.py rather than typed
+specification,participation_cap_level,0.05,read from src/config.py and scripts/s14_common.py rather than typed
+specification,starting_nav,1000000.0,read from src/config.py and scripts/s14_common.py rather than typed
+specification,anchor_bp,10,read from src/config.py and scripts/s14_common.py rather than typed
+specification,premium_multiple,2.0,read from src/config.py and scripts/s14_common.py rather than typed
+specification,gross_cap,1.0,read from src/config.py and scripts/s14_common.py rather than typed
+read_control,read_holdout_through,2026-08-14,"the single-read lift, set in this process only. The module default is unchanged at 2021-07-31 and the boundary is unchanged at 2021-08-01"
+read_control,holdout_boundary,2021-08-01,
+read_control,primary_start,2011-10-04,
+canonical_holdout,ann_return,0.8287111594113898,
+canonical_holdout,ann_vol,0.3934998613555563,
+canonical_holdout,sharpe_naive,1.637799226672021,
+canonical_holdout,sharpe_lo,2.7585227658215015,
+canonical_holdout,max_drawdown,-0.34468314755389173,
+canonical_holdout,ann_turnover,21.02620648507965,
+canonical_holdout,n_sessions,1265,
+canonical_holdout,daily_mean,0.0027050347916394556,
+canonical_holdout,daily_sd,0.0247881612877428,
+canonical_holdout,skewness,0.00044220578416748354,
+canonical_holdout,excess_kurtosis,5.223157724383093,
+canonical_holdout,first_session,2021-08-02,
+canonical_holdout,last_session,2026-08-14,
+canonical_holdout,rank_sharpe_naive,2,of 12
+canonical_holdout,rank_sharpe_lo,1,of 12
+canonical_combined,ann_return,0.6194765048951141,
+canonical_combined,ann_vol,0.4583197957445933,
+canonical_combined,sharpe_naive,1.2448587065882768,
+canonical_combined,sharpe_lo,1.6423297853685075,
+canonical_combined,max_drawdown,-0.5306024012913018,
+canonical_combined,ann_turnover,21.64202318073651,
+canonical_combined,n_sessions,3737,
+canonical_combined,daily_mean,0.0023298590192395003,
+canonical_combined,daily_sd,0.02887143334471698,
+canonical_combined,skewness,0.32829634222041065,
+canonical_combined,excess_kurtosis,8.053063317267492,
+canonical_combined,first_session,2011-10-04,
+canonical_combined,last_session,2026-08-14,
+canonical_combined,rank_sharpe_naive,2,of 12
+canonical_combined,rank_sharpe_lo,1,of 12

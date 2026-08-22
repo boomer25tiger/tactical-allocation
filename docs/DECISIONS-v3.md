@@ -121,8 +121,13 @@ than a measurement** (9.10 provenance requirement).
   reason does not bind inside it. The early window (2007..2011-10) is
   synthetic-only with realized coverage reported instead of a return.
 - **2.9 — closed.** Sample starts 2007-01-01.
-- **2.10 — closed.** Holdout boundary 2021-08-01, untouched. No
-  post-boundary quantity has been computed anywhere.
+- **2.10 — closed, AMENDED session 27 (2026-08-22).** Holdout boundary 2021-08-01,
+  untouched and not moved. The original text continued *no post-boundary quantity
+  has been computed anywhere*, and **that half no longer holds**. The holdout was
+  read once on 2026-08-22 under the prediction frozen at 9.64, gated at 9.66, and
+  the post-boundary quantities live in outputs/session-27/. See the amendment
+  entry at the end of this register for the artifact list. The read is not
+  repeated.
 - **2.11 — closed (history).** Warm-up: v2 carried 292 (sum-based);
   re-derived as max(longest SMA, RSI seed convergence) + 10 = **210**
   (session 01 continuation). The "unavailable input" half: threshold-false
@@ -2488,3 +2493,130 @@ than a measurement** (9.10 provenance requirement).
   context in which it exits zero is a session running after this commit.** Its role is
   that the prediction's precedence over the read is established by the repository rather
   than by anyone's recollection.
+
+- **9.66 the holdout, READ ONCE (session 27, 2026-08-22).** The read ran under the
+  prediction frozen at 9.64 and was gated before any holdout quantity was computed.
+
+  **The three gates.** A1, scripts/verify_prediction_precedes_read.py exits 0 and the
+  committed blob's SHA-256 reads
+  3a3d150e986bcedfb9946deeb299373efac7026e7ccc7ca45625b9553fbecb2f at commit
+  35466c2131f24e35a5ce7fed13c4ed8c821ca45b, blob 1282cf989cecbcedf9908f0cda0787377455d9ca,
+  authored and committed 2026-08-22T11:25:54+02:00. A3, 339 hashed frozen inputs verify
+  with 0 mismatches. A2, the standing positive control reproduces 0.5218447451814521
+  annualised and 1.3817013060244996 Lo-corrected over 2472 sessions inside the 5e-07
+  tolerance stated before comparing.
+
+  **The span the frozen data supports.** Every held ticker, the risk-free series, the
+  index files and the NAV files all run to 2026-08-14, so the canonical specification is
+  computable end to end through that date. The holdout span is 2021-08-01 to 2026-08-14,
+  being **1265 sessions** against the primary window's 2472, a ratio of 0.511731. The
+  first session is 2021-08-02 and the last is 2026-08-14. **The branch taken is that the
+  frozen inputs cover the span**, so the read runs entirely on hashed data and no input
+  was fetched.
+
+  **SVIX and UVIX both list 2022-03-30, inside the span, and both remain absent from
+  bt.LEVERED and bt.UNLEVERED**, so the loader excludes them exactly as the disposition
+  at 9.43 recorded. bt.LEVERED is not modified.
+
+  **The mechanism of the read.** scripts/s13_backtest.py truncates every loaded series
+  at 2.10's boundary. The constant now reads an optional READ_HOLDOUT_THROUGH
+  environment variable, **with the default unchanged at 2021-07-31** and the boundary
+  itself unchanged at 2021-08-01, so every other context still loads nothing past the
+  boundary and assert_holdout still fires on a breach. No strategy parameter reads the
+  variable.
+
+  **Phase D re-executed the identical pass** to obtain the per-session sleeve dicts that
+  phase C did not persist, and the re-execution reproduces the canonical's holdout naive
+  and Lo-corrected Sharpe to a gap of exactly 0.0 on both at the same 1265 sessions. No
+  specification was varied and no quantity was recomputed differently.
+
+- **9.67 the prediction components, ALL FOUR FALSIFIABLE COMPONENTS FALSIFIED (session
+  27, 2026-08-22).** Each verdict is against the condition as stated in
+  docs/HOLDOUT-PREDICTION.md. Source outputs/session-27/prediction-verdicts.csv.
+
+  | component | condition | holdout figure | verdict |
+  |---|---|---|---|
+  | P1 | no better than sixth of twelve on the naive Sharpe, falsified by fifth or better | rank 2 of 12 | **falsified** |
+  | P2 | naive Sharpe between 0.25 and 0.85 | 1.637799226672021 | **falsified** |
+  | P3 part one | SQQQ and TLT realise positive daily return correlation | -0.07884210926185957 | **falsified** |
+  | P3 part two | T10's risk-off branch contributes negatively | 0.06250008813584088 | **falsified** |
+  | P4 | not a prediction | no verdict | not a prediction |
+  | P5 | evaluated because P1 is falsified | short sleeve contribution 0.3160580325724543 | reported |
+
+  **P1's two ranks diverge**, the strategy placing 2 of 12 on the naive Sharpe and 1 of
+  12 on the Lo-corrected, which the prediction records as itself reportable. The
+  strategy's holdout naive Sharpe is 1.637799226672021 and its Lo-corrected Sharpe is
+  2.7585227658215015.
+
+  **P2 misses its upper bound by 0.787799226672021.**
+
+  **P3 part one's primary-window direction is the opposite of the one the prediction
+  assumed.** The direct SQQQ against TLT correlation reads 0.16448233204452256 over the
+  primary window's 3737 overlapping sessions and -0.07884210926185957 over the holdout's
+  1265, so the pair was positively correlated in sample and negatively correlated out of
+  sample. The committed baseline the prediction named, -0.5618926986740371, is the short
+  leg against the rest of its own sleeve rather than the direct pair, which the
+  prediction flagged.
+
+  **P3 part two fired on 416 holdout sessions against 928 primary-window sessions**, the
+  SQQQ leg contributing 0.09966091314902041 and the TLT leg -0.037160825013179535. The
+  same T10-only SQQQ leg reads -0.0848435348504287 over the primary window, against the
+  -1.074235187878671 the prediction named, which is the portfolio-level short-leg figure
+  at session 15.5 rather than a T10-only one.
+
+  **P4's specified examination ran and carries no verdict.** Buy-and-hold QQQ's 2022 high
+  falls on 2022-01-03 and the first risk-off state after it falls on 2022-01-10, being 5
+  sessions. Mean effective exposure across that interval is 0.9277520939003893, spanning
+  0.9022991359297223 to 1.0006645933510157, with 1 of 5 sessions above 1.0. The
+  strategy's own 2022 NAV peak falls on 2022-10-13. **The guard holds**, so P4 does not
+  qualify any other component.
+
+  **P5's premise does not hold on its own test.** The short-equity sleeve's holdout
+  contribution is 0.3160580325724543 and is positive, of which SQQQ carries
+  0.2896712920331235. Removing that contribution leaves a naive Sharpe of
+  1.333724053273868 and a rank of 4 of 12, which is still better than fifth, so the short
+  sleeve does not account for the rank on P5's own stated test.
+
+- **9.68 the frozen claims against the holdout, NO CONTRADICTION RECORDED (session 27,
+  2026-08-22).** Claims are not amended and none is amended here.
+
+  **The holdout bears on 8 of the 15 claims and 1 of those was evaluated in this
+  session.** Claim 1 is the one evaluated. Its primary-window value is rank 6 of 12 on
+  both conventions with the strategy trailing buy-and-hold QQQ, and its holdout value is
+  rank 2 of 12 on the naive Sharpe and 1 of 12 on the Lo-corrected with the strategy
+  above buy-and-hold QQQ on both. **The claim is scoped to the designated cell over the
+  primary window, so a forward span does not contradict it as written**, and the
+  difference in value is recorded rather than resolved.
+
+  **7 claims bear on the holdout and were not evaluated**, being 2, 3, 11, 12, 13, 14 and
+  15, since each would need a null, a sweep, a leave-one-out or a regression outside the
+  single pass, and running one here would be a second read.
+
+  **7 claims do not bear on a forward span at all**, being 4, 5, 6, 7, 8, 9 and 10, since
+  each is a property of the grid search or of the measurement apparatus rather than of a
+  forward return series. Source outputs/session-27/claims-vs-holdout.csv.
+
+- **2.10 AMENDED (session 27, 2026-08-22).** The entry recorded that the holdout
+  boundary is 2021-08-01, untouched, and that **no post-boundary quantity has been
+  computed anywhere**. The boundary is still untouched and is not moved. **The second
+  half no longer holds.** Post-boundary quantities now exist, computed once under the
+  prediction frozen at 9.64 and gated at 9.66.
+
+  They are carried in outputs/session-27/holdout-ladder.csv,
+  outputs/session-27/holdout-canonical.csv, outputs/session-27/holdout-coverage.csv,
+  outputs/session-27/combined-window.csv, outputs/session-27/prediction-verdicts.csv,
+  outputs/session-27/claims-vs-holdout.csv, the retained series
+  outputs/session-27/_holdout_line_returns.parquet,
+  outputs/session-27/_combined_line_returns.parquet,
+  outputs/session-27/_canonical_daily.parquet,
+  outputs/session-27/_canonical_orders.parquet and
+  outputs/session-27/_state_series.parquet, and the two figures in
+  outputs/session-27/figures/. **The read is not repeated.**
+
+- **9.69 the fifth and sixth figures (session 27, 2026-08-22), under the cap at 9.60.**
+  outputs/session-27/figures/combined-equity-curve.svg and
+  outputs/session-27/figures/combined-drawdown.svg, each carrying the exact series it
+  plots as a committed CSV of the same name, each drawn across the full 3737-session
+  combined window with the 2021-08-01 boundary marked at session 2472. Both read
+  outputs/session-27/_combined_line_returns.parquet, which the phase C pass wrote, so
+  neither recomputes any quantity. **The cap is reached and no further figure is drawn.**

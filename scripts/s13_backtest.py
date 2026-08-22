@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import json
 import math
+import os as _os
 import sys
 from pathlib import Path
 
@@ -59,7 +60,15 @@ OUT.mkdir(parents=True, exist_ok=True)
 # Sample window and holdout (2.9, 2.10)
 # ---------------------------------------------------------------------------
 SAMPLE_START = pd.Timestamp("2007-01-01")      # 2.9
-HOLDOUT_LAST_DATE = pd.Timestamp("2021-07-31")  # 2.10: boundary 2021-08-01
+HOLDOUT_BOUNDARY = pd.Timestamp("2021-08-01")  # 2.10, the sealed boundary, unchanged
+# 2.10 truncates every loaded series at the session before the boundary. Session 27
+# reads the sealed span exactly once, under the prediction committed at 9.64, and
+# lifts the truncation for that read alone through an explicit environment variable.
+# THE DEFAULT IS UNCHANGED, so every other context still loads nothing past
+# 2021-07-31 and assert_holdout still fires on a breach. The boundary itself is not
+# moved, and no strategy parameter reads this variable.
+HOLDOUT_LAST_DATE = pd.Timestamp(
+    _os.environ.get("READ_HOLDOUT_THROUGH") or "2021-07-31")  # 2.10: boundary 2021-08-01
 
 # Starting NAV: closed at 1,000,000 by session 13.7 (4.6, with the
 # liquidity check recorded in the register). Commission constants: ported
