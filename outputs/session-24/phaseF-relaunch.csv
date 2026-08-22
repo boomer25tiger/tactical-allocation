@@ -1,0 +1,78 @@
+table,item,t_seconds,load_1min,cpu_percent,rss_gb,compressor_gib,swap_used_mb,swap_free_mb,value,note
+script_defect,s23_phaseA_has_no_launch_branch,,,,,,,,1,"scripts/s23_phaseA.py contains only an 'if halt' branch, so run unchanged on a quiet machine it writes a passed positive control and no pass. The scaffold's instruction to run it unchanged cannot close the measurement, and the rule it pre-registered is reused here verbatim"
+orphans,multiprocessing_workers_found,,,,,,,,0,"session 23 identified four Python workers aged over one day at 0.0 percent CPU. None is present now, so the kill step had nothing to terminate"
+orphans,compressor_gib_before,,,,,,,,3.029,
+preregistration,wall_limit_seconds,,,,,,,,969.0,"ten times the 96.9 second chunk-514 pass, taken from scripts/s23_phaseA.py"
+preregistration,chunk,,,,,,,,257,
+preregistration,termination_rule,,,,,,,,,terminate on the wall limit and on nothing else
+machine_at_launch,cores,,,,,,,,8,
+machine_at_launch,halt_threshold,,,,,,,,16,
+machine_at_launch,load_1min,,,,,,,,15.2,
+machine_at_launch,load_5min,,,,,,,,8.07,
+machine_at_launch,load_15min,,,,,,,,6.64,
+machine_at_launch,compressor_gib,,,,,,,,3.029,
+machine_at_launch,swap_used_mb,,,,,,,,11020.75,
+machine_at_launch,swap_free_mb,,,,,,,,1267.25,
+halt_condition,load_exceeds_twice_cores,,,,,,,,0,load 15.2 against threshold 16
+sample,,30.0,15.64,25.7,0.187,2.922,12659.19,652.81,,
+sample,,60.2,16.43,19.9,0.091,2.94,12604.31,707.69,,
+sample,,90.4,12.76,7.6,0.105,3.0,13932.0,404.0,,
+sample,,120.7,10.48,39.3,0.273,3.088,13090.06,1245.94,,
+sample,,150.8,8.6,37.6,0.373,2.974,13431.69,904.31,,
+sample,,180.9,10.84,18.7,0.256,3.039,12201.56,2134.44,,
+sample,,211.0,8.09,68.1,0.46,2.498,12295.88,1016.12,,
+sample,,241.1,7.16,69.6,0.704,2.854,12498.62,813.38,,
+sample,,271.1,6.42,12.0,0.159,3.04,13013.5,1322.5,,
+sample,,301.3,6.5,3.7,0.044,2.986,13861.81,474.19,,
+sample,,331.6,5.85,77.5,1.449,1.794,12221.0,1091.0,,
+sample,,361.6,5.11,49.9,0.801,1.506,12289.0,1023.0,,
+sample,,391.7,5.84,15.6,0.084,2.878,12394.12,917.88,,
+sample,,421.9,5.09,87.3,1.187,1.733,12716.75,595.25,,
+sample,,452.1,5.89,16.9,0.272,2.881,12912.81,1423.19,,
+sample,,482.3,5.26,27.1,0.191,2.895,12763.75,1572.25,,
+sample,,512.5,5.1,94.0,1.085,1.575,13424.06,911.94,,
+sample,,542.5,5.48,65.7,0.292,1.697,13702.5,633.5,,
+sample,,572.6,6.27,86.2,0.837,1.581,13984.56,1375.44,,
+sample,,602.6,6.43,56.7,0.596,2.752,13949.38,1410.62,,
+sample,,632.7,10.76,11.8,0.059,2.652,14554.19,805.81,,
+sample,,662.9,8.5,10.2,0.109,3.052,12665.94,2694.06,,
+sample,,693.2,8.67,32.1,0.339,3.082,12800.88,511.12,,
+sample,,723.3,13.05,32.6,0.332,3.004,13017.75,1318.25,,
+sample,,753.5,9.96,58.8,0.561,2.987,13364.88,971.12,,
+sample,,783.6,7.39,42.4,0.624,2.908,13466.69,869.31,,
+sample,,813.7,7.55,88.7,0.868,1.575,13461.44,874.56,,
+sample,,843.7,7.73,91.0,1.084,1.726,14174.94,1185.06,,
+sample,,873.7,8.8,39.2,0.049,2.384,14488.62,871.38,,
+sample,,903.8,9.22,43.5,0.336,2.62,14922.69,1461.31,,
+sample,,933.9,7.7,28.5,0.47,3.03,14961.81,1422.19,,
+sample,,964.0,6.61,82.9,1.584,1.533,15667.88,716.12,,
+sample,,994.0,6.27,64.7,0.909,2.602,15433.0,951.0,,
+result,launched,,,,,,,,1,
+result,completed,,,,,,,,0,
+result,wall_clock_seconds,,,,,,,,994.2,
+result,return_code,,,,,,,,-15,
+result,peak_rss_gb,,,,,,,,1.584,
+result,termination_reason,,,,,,,,,pre-registered wall limit reached
+machine_at_end,compressor_gib,,,,,,,,1.976,
+machine_at_end,swap_used_mb,,,,,,,,15433.0,
+machine_at_end,load_1min,,,,,,,,6.27,
+reemission,source,,,,,,,,,"parsed from outputs/session-24/b1.log, the payload log of scripts/s22_b1.py at chunk 257 on repaired code"
+reemission,S=8_pbo_reemitted,,,,,,,,0.1142857143,"reported 0.11428571428571428 at chunk 70, reproduces exactly True"
+reemission,S=8_slope_corrected,,,,,,,,-1.1504038735,"defective slope at chunk 257 -1.1611996823, shift 1.080e-02; reported slope -1.161199682344798 at chunk 70"
+reemission,S=8_seconds,1.1,,,,,,,1.1,against 0.41 seconds when first run at chunk 70
+reemission,S=12_pbo_reemitted,,,,,,,,0.1709956710,"reported 0.170995670995671 at chunk 514, reproduces exactly True"
+reemission,S=12_slope_corrected,,,,,,,,-1.2618531502,"defective slope at chunk 257 -1.2589430508, shift 2.910e-03; reported slope -1.2722573777586441 at chunk 514"
+reemission,S=12_seconds,14.9,,,,,,,14.9,against 88.24 seconds when first run at chunk 514
+reemission,S=16_pbo_reemitted,,,,,,,,0.1578088578,"reported 0.1578088578088578 at chunk 514, reproduces exactly True"
+reemission,S=16_slope_corrected,,,,,,,,-1.0666200132,"defective slope at chunk 257 -1.0663751739, shift 2.448e-04; reported slope -1.0663023854544191 at chunk 514"
+reemission,S=16_seconds,417.4,,,,,,,417.4,against 775.01 seconds when first run at chunk 514
+reemission,S=24_pbo_reemitted,,,,,,,,0.1646000000,"reported 0.1646 at chunk 514, reproduces exactly True"
+reemission,S=24_slope_corrected,,,,,,,,-1.1476066760,"defective slope at chunk 257 -1.1479100539, shift 3.034e-04; reported slope -1.1477022468334592 at chunk 514"
+reemission,S=24_seconds,506.1,,,,,,,506.1,against 598.24 seconds when first run at chunk 514
+reemission,S=48_reached,,,,,,,,0,"the wall limit fired first. S=48 first ran in 962.47 seconds, so it needed roughly as long again as the whole budget"
+reemission,stages_completed,,,,,,,,4,of five block counts
+reemission,stage_seconds_this_run,,,,,,,,939.5,"against 2424.37 seconds summed across the five original stages, so the four completed stages ran faster than their originals"
+finding,pbo_unchanged_by_the_repair,,,,,,,,1,"all four re-emitted PBO values reproduce the reported figures exactly, so the chunk-first-element defect did not touch PBO"
+finding,slope_moved_by_the_repair,,,,,,,,1,"the degradation slope shifts between 2.448e-04 and 1.080e-02 across the four, and the S=16 corrected value matches the -1.0666200132036998 recorded in session 19.6"
+finding,wall_limit_was_misderived,,,,,,,,1,"969 seconds came from ten times a single-chunk 96.9 second pass, while the sweep it had to cover measured 2424.37 seconds when first run. The limit was about 40 percent of the work. The halt reflects the limit rather than the machine, since load ran between 5.09 and 13.05 throughout and the completed stages beat their originals"
+finding,contention_diagnosis,,,,,,,,supported,"a completion observation is added for four of five stages at a load-to-core ratio of 1.90 at launch, against 4.9463 when session 22's pass failed to complete and 8.9288 when session 23 halted before launch"

@@ -2180,7 +2180,95 @@ than a measurement** (9.10 provenance requirement).
   23 adds no completion observation, since the halt fired before any launch, so the
   diagnosis stands on session 22's measurement alone.
 
-- **The measurement phase is CLOSED (session 23, 2026-08-20).** Two measurements
-  remain outstanding and neither is load-bearing, being the B1 re-emission at 9.45
-  and the corrected degradation null at 9.46. Both close defects rather than restore
-  figures. No reported figure depends on either.
+- **The measurement phase is CLOSED (session 23, 2026-08-20), amended at session 24.**
+  One measurement remains outstanding and it is not load-bearing, being S equal to 48
+  of the B1 re-emission at 9.48. The other four block counts re-emitted at session 24
+  and reproduce their reported PBO figures exactly. The corrected degradation null at
+  9.46 is not run and its slope is withdrawn at 9.35 regardless. No reported figure
+  depends on either.
+
+- **9.48 the B1 re-emission, PARTIAL (session 24, 2026-08-22), amending 8.12 and
+  9.45.** The pass launched at a one-minute load of 15.2 against the halt threshold of
+  16 and ran to the pre-registered wall limit at 994.2 seconds, peak resident 1.584 GB,
+  return code -15. It reached four of its five block counts, being 8, 12, 16 and 24,
+  with 48 unreached.
+
+  | S | re-emitted PBO | reported PBO | reproduces | corrected slope | defective slope at chunk 257 | shift |
+  |---|---|---|---|---|---|---|
+  | 8 | 0.1142857143 | 0.11428571428571428 | yes | -1.1504038735 | -1.1611996823 | 1.080e-02 |
+  | 12 | 0.1709956710 | 0.170995670995671 | yes | -1.2618531502 | -1.2589430508 | 2.910e-03 |
+  | 16 | 0.1578088578 | 0.1578088578088578 | yes | -1.0666200132 | -1.0663751739 | 2.448e-04 |
+  | 24 | 0.1646000000 | 0.1646 | yes | -1.1476066760 | -1.1479100539 | 3.034e-04 |
+
+  **The chunk-first-element defect did not touch PBO.** All four re-emitted values
+  reproduce the reported figures exactly on repaired code at a chunk size of 257 rather
+  than the 514 most were first run at, so the defect's effect on PBO is nil at every
+  block count reached. The degradation slope does move, and the S=16 corrected value
+  reproduces the -1.0666200132036998 recorded at session 19.6, which the slope's
+  removal at 9.35 makes moot.
+
+  **8.12 is closed for S equal to 8, 12, 16 and 24 and remains open for S equal to 48.**
+  The two figures claim 4 quotes as its range endpoints are S equal to 8 and S equal to
+  12, both re-emitted, so the claim stands on repaired code. S equal to 48 sets neither
+  endpoint. Source outputs/session-24/phaseF-relaunch.csv and outputs/session-24/b1.log.
+
+- **9.49 the wall limit was mis-derived (session 24, 2026-08-22).** The 969 second
+  limit was taken as ten times the 96.9 second chunk-514 pass recorded at session 23,
+  which was a single-chunk pass rather than a five-block sweep. The sweep it had to
+  cover measured 2424.37 seconds across its five stages when first run, so the limit
+  was about 40 percent of the work and could not have covered it however quiet the
+  machine.
+
+  **The halt reflects the limit rather than the machine.** Load ran between 5.09 and
+  13.05 across 33 samples, the compressor stayed between 1.506 and 3.088 GiB, and each
+  completed stage beat its original, S=16 at 417.4 seconds against 775.01 and S=24 at
+  506.1 against 598.24. Recording the halt as a contention halt would repeat the class
+  at 9.47 of naming a mechanism the evidence does not reach. A wall limit for a
+  multi-stage pass is derived from the sum of that pass's own stage times.
+
+- **9.50 the resource diagnosis, a completion observation added (session 24,
+  2026-08-22), extending 9.47.** Four of five stages completed at a load-to-core ratio
+  of 1.90 at launch, against 4.9463 when session 22's pass failed to complete and
+  8.9288 when session 23 halted before launch. The contention diagnosis gains its first
+  supporting completion observation. It is support rather than proof, since the three
+  runs differ in wall limit as well as in load.
+
+- **9.51 the claim set is FROZEN (session 24, 2026-08-22).** docs/CLAIMS.md carries 15
+  claims, being 11 primary and 4 supporting, of which 6 concern the strategy, 5 the
+  grid and 4 the measurement apparatus. Each carries a statement, a source file, the
+  literal emitted value, a register item and the condition that would overturn it. The
+  map is outputs/session-24/claim-sources.csv.
+
+  **No claim is added after this date without a dated register entry recording the
+  addition and its grounds.** The limitations are written into the same file rather
+  than into a separate one, so that a limitation is not separable from the claim it
+  qualifies.
+
+- **9.52 the withdrawn set (session 24, 2026-08-22).** docs/WITHDRAWN.md carries 10
+  withdrawals, of which 7 followed from a measurement and 3 from an argument about
+  construction. Three concern the measurement apparatus rather than the strategy, and
+  two of those were successive wrong answers to the same question in opposite
+  directions. The map is outputs/session-24/withdrawn-sources.csv.
+
+- **9.53 the figure specification, NOT DRAWN (session 24, 2026-08-22).** Ten rows are
+  specified at outputs/session-24/figure-spec.csv against the scaffold's eight, each
+  naming its source file, its axes and the claim it carries. **No figure is drawn this
+  session.**
+
+  **Two are not drawable from committed artifacts.** The null distribution histograms
+  need per-draw arrays that outputs/session-22/rebuilt/nulls.csv does not carry, since
+  it holds only the mean, the 5th, 50th and 95th percentiles and the maximum. Effective
+  exposure by decile has the mean and two named deciles rather than a ten-decile
+  series. Either would require re-running a measurement, which the closed measurement
+  phase does not permit without a fresh entry.
+
+  **Plotting will use the standard-library SVG path at scripts/s19_svg.py**, since
+  matplotlib is absent from the environment and the offline constraint rules out
+  installing it.
+
+- **9.54 the volatility terminal read, CARRIED (session 24, 2026-08-22).** The phase
+  read outputs/session-22/volatility-terminal-resolution.csv rather than recomputing
+  it. The T10 terminal fires 1114 sessions holding SVXY and the S3 terminal 519 holding
+  UVXY across the primary window, both tickers list 2022-03-30 inside the holdout span,
+  and both load on neither panel. The finding is carried into the limitations of
+  docs/CLAIMS.md under the holdout heading. **bt.LEVERED is not modified.**

@@ -1,10 +1,14 @@
 # STATE, read this first
 
-Refreshed 2026-08-20 by session 22. Supersedes the session 21 version.
+Refreshed 2026-08-22 by session 24. Supersedes the session 22 version.
 
-**The measurement phase is closed.** Session 23 attempted the two outstanding
-passes and halted on the contention condition before launching either. Neither is
-load-bearing, so no reported figure depends on them.
+**The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
+limitations written beside each, and `docs/WITHDRAWN.md` carries 10 withdrawals.
+No claim is added after 2026-08-22 without a dated register entry recording the
+addition and its grounds. Registered at 9.51 and 9.52.
+
+**The measurement phase is closed.** One measurement remains outstanding, being
+S equal to 48 of the B1 re-emission, and it is not load-bearing.
 
 ## What this project is
 
@@ -21,16 +25,19 @@ values live in `src/config.py` (validate() runs on import).
 
 **The constraint on this machine is CPU contention, not memory.** Load average
 reached 39.57 on eight cores with Chrome taking four of them, and a measured
-pass received a mean of 6.25 percent CPU. Report compressor size, swap used,
-swap free and page-outs. **Do not quote free memory as headroom**, since macOS
-holds free near zero by design.
+pass received a mean of 6.25 percent CPU. Session 24 added the first supporting
+completion observation, four of five stages completing at a load-to-core ratio
+of 1.90 at launch against 4.9463 when session 22's pass failed, at 9.50. Report
+compressor size, swap used, swap free and page-outs. **Do not quote free memory
+as headroom**, since macOS holds free near zero by design.
 
 ## Position
 
 - **Designated headline cell**, 0.521845 annualised and 1.381701 Lo-corrected
   Sharpe over 2,472 sessions, confirmed by positive control every session.
 - **The boundary is 2011-10-04** and session 15's outputs are rebuilt.
-- **PBO 0.1578** at S equal to 16. **N is 121,500.**
+- **PBO 0.1578** at S equal to 16. **N is 121,500.** The figure re-emits
+  exactly on repaired code, as do S equal to 8, 12 and 24, at 9.48.
 - **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe, with eight of
   nine axis values fixed before any comparison on that axis.
 
@@ -73,13 +80,18 @@ window strip at 9.36. The recentred comparison replaces the first.
 
 ## Open before the holdout can run
 
-**Two measurements remain outstanding and neither is load-bearing.** The B1
-re-emission at 9.45 and the corrected degradation null at 9.46 both close
-defects rather than restore figures, since the chunk-first-element defect is
-repaired in code at four sites and the degradation slope is removed from the
-paper at 9.35. Session 23 halted on contention before launching either, with the
-one-minute load average at 8.93 times the core count against 4.95 when session
-22's pass failed.
+**One measurement remains outstanding and it is not load-bearing.** Session 24
+ran the B1 re-emission on a quiet machine and reached four of five block counts
+before its wall limit fired, leaving S equal to 48 alone. **All four re-emitted
+PBO values reproduce the reported figures exactly**, so the chunk-first-element
+defect did not touch PBO and S equal to 48 sets neither endpoint of the reported
+range. The corrected degradation null at 9.46 is not run and its slope is
+withdrawn at 9.35 regardless. Registered at 9.48.
+
+**The wall limit was mis-derived**, at 969 seconds taken from a single-chunk
+pass against a sweep measuring 2424.37 seconds when first run, so the halt
+reflects the limit rather than the machine. A wall limit for a multi-stage pass
+is derived from that pass's own stage times. Registered at 9.49.
 - **Ten config parameters have no consumer** and two more are read but never
   invoked, at 9.31.
 - **`crash_threshold` was fixed after measurement on its own axis**, at 9.32.
@@ -96,6 +108,14 @@ never assigned. D25 applied. D26 and D27 recorded. Open: **D16**, **D23**.
 
 Python 3.13.13, numpy 2.5.2, pandas 3.0.5, pyarrow 25.0.1, pytest 9.1.1.
 matplotlib deliberately absent.
+
+## Figures
+
+**None is drawn.** Ten are specified at `outputs/session-24/figure-spec.csv`,
+two of which are not drawable from committed artifacts, being the null
+distribution histograms and effective exposure by decile. Plotting will use the
+standard-library SVG path at `scripts/s19_svg.py`, since matplotlib is
+deliberately absent. Registered at 9.53.
 
 ## What is frozen
 

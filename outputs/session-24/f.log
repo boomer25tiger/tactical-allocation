@@ -1,0 +1,37 @@
+cores 8 threshold 16 load [15.2, 8.07, 6.64]
+launched pid 63253
+  t=  30.0s load=15.64 cpu= 25.7 rss=0.187GB
+  t=  60.2s load=16.43 cpu= 19.9 rss=0.091GB
+  t=  90.4s load=12.76 cpu=  7.6 rss=0.105GB
+  t= 120.7s load=10.48 cpu= 39.3 rss=0.273GB
+  t= 150.8s load= 8.60 cpu= 37.6 rss=0.373GB
+  t= 180.9s load=10.84 cpu= 18.7 rss=0.256GB
+  t= 211.0s load= 8.09 cpu= 68.1 rss=0.460GB
+  t= 241.1s load= 7.16 cpu= 69.6 rss=0.704GB
+  t= 271.1s load= 6.42 cpu= 12.0 rss=0.159GB
+  t= 301.3s load= 6.50 cpu=  3.7 rss=0.044GB
+  t= 331.6s load= 5.85 cpu= 77.5 rss=1.449GB
+  t= 361.6s load= 5.11 cpu= 49.9 rss=0.801GB
+  t= 391.7s load= 5.84 cpu= 15.6 rss=0.084GB
+  t= 421.9s load= 5.09 cpu= 87.3 rss=1.187GB
+  t= 452.1s load= 5.89 cpu= 16.9 rss=0.272GB
+  t= 482.3s load= 5.26 cpu= 27.1 rss=0.191GB
+  t= 512.5s load= 5.10 cpu= 94.0 rss=1.085GB
+  t= 542.5s load= 5.48 cpu= 65.7 rss=0.292GB
+  t= 572.6s load= 6.27 cpu= 86.2 rss=0.837GB
+  t= 602.6s load= 6.43 cpu= 56.7 rss=0.596GB
+  t= 632.7s load=10.76 cpu= 11.8 rss=0.059GB
+  t= 662.9s load= 8.50 cpu= 10.2 rss=0.109GB
+  t= 693.2s load= 8.67 cpu= 32.1 rss=0.339GB
+  t= 723.3s load=13.05 cpu= 32.6 rss=0.332GB
+  t= 753.5s load= 9.96 cpu= 58.8 rss=0.561GB
+  t= 783.6s load= 7.39 cpu= 42.4 rss=0.624GB
+  t= 813.7s load= 7.55 cpu= 88.7 rss=0.868GB
+  t= 843.7s load= 7.73 cpu= 91.0 rss=1.084GB
+  t= 873.7s load= 8.80 cpu= 39.2 rss=0.049GB
+  t= 903.8s load= 9.22 cpu= 43.5 rss=0.336GB
+  t= 933.9s load= 7.70 cpu= 28.5 rss=0.470GB
+  t= 964.0s load= 6.61 cpu= 82.9 rss=1.584GB
+  t= 994.0s load= 6.27 cpu= 64.7 rss=0.909GB
+
+completed False wall 994.2s rc -15 peak 1.584 GB

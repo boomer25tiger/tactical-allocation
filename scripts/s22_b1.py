@@ -12,7 +12,9 @@ ROOT = Path("/Users/GualyCr/Downloads/tactical-allocation")
 sys.path.insert(0, str(ROOT))
 import scripts.s17_common as S      # noqa: E402
 G = ROOT / "outputs" / "session-17" / "grid"
-OUT = ROOT / "outputs" / "session-22"
+import os as _os
+OUT = ROOT / "outputs" / (_os.environ.get("S24_OUTDIR") or "session-22")
+OUT.mkdir(parents=True, exist_ok=True)
 CHUNK = int(sys.argv[1])
 COMBO_CAP, COMBO_SEED, NBLK, NSHARD = 20000, 20260821, 48, 8
 TOTAL = S.grid_size(); ANN = math.sqrt(252.0)
