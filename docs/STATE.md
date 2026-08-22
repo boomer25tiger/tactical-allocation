@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-22 by session 24. Supersedes the session 22 version.
+Refreshed 2026-08-22 by session 25. Supersedes the session 24 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 10 withdrawals.
@@ -40,6 +40,19 @@ as headroom**, since macOS holds free near zero by design.
   exactly on repaired code, as do S equal to 8, 12 and 24, at 9.48.
 - **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe, with eight of
   nine axis values fixed before any comparison on that axis.
+
+## Two claim-wording questions open
+
+**The 8.2 grounds hold as written and fail if generalised.** Five ladder rows
+outrank the strategy on the Lo-corrected Sharpe and only the top three sit
+outside their own nulls, so long_legs_only and vol_targeted_QQQ_matched outrank
+the strategy from inside their own nulls. 8.2 names buy-and-hold QQQ
+specifically, so the sentence as written is true. **8.2 is not amended**, at
+9.56.
+
+**Claim 4's scope phrase names block counts 8 through 48** while its two quoted
+figures come from S equal to 8 and S equal to 12, both re-emitted on repaired
+code. Two candidate repairs are recorded and neither is adopted, at 9.57.
 
 ## The 8.2 decision, made
 
@@ -111,11 +124,18 @@ matplotlib deliberately absent.
 
 ## Figures
 
-**None is drawn.** Ten are specified at `outputs/session-24/figure-spec.csv`,
-two of which are not drawable from committed artifacts, being the null
-distribution histograms and effective exposure by decile. Plotting will use the
-standard-library SVG path at `scripts/s19_svg.py`, since matplotlib is
-deliberately absent. Registered at 9.53.
+**Eight are drawn**, in `outputs/session-25/figures/`, each carrying the exact
+series it plots as a committed CSV of the same name. Two candidates remain
+undrawable, being the null distribution histograms and effective exposure by
+decile, and three were excluded because the PBO report already carries them.
+Plotting used `scripts/s19_svg.py` extended by `scripts/s25_svg.py`, with
+`s19_svg.py` unmodified so session 19's four figures stay byte-identical.
+matplotlib remains absent. Registered at 9.55 and 9.58.
+
+**Seven claims have no figure anywhere**, being 2, 3, 7, 9, 10, 11 and 12, and
+four of the eight figures illustrate no frozen claim. **The paper's two-figure
+cap is analysed and not decided**, the one pair covering the most distinct
+primary claims being leave-one-out with lo-factor-vs-null at three.
 
 ## What is frozen
 

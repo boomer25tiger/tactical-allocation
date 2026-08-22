@@ -2272,3 +2272,105 @@ than a measurement** (9.10 provenance requirement).
   UVXY across the primary window, both tickers list 2022-03-30 inside the holdout span,
   and both load on neither panel. The finding is carried into the limitations of
   docs/CLAIMS.md under the holdout heading. **bt.LEVERED is not modified.**
+
+- **9.55 the figure set, DRAWN (session 25, 2026-08-22).** Eight figures are written to
+  `outputs/session-25/figures/`, being equity-curve, drawdown, cost-sweep,
+  leave-one-out, hedge-intensity, nav-capacity, lo-factor-vs-null and
+  rolling-beta-dispersion. **Each carries the exact series it plots as a committed CSV
+  of the same name at full round-trip precision**, so every figure is reproducible from
+  a committed file and the figure-to-claim check compares numbers rather than pixels.
+
+  Plotting used scripts/s19_svg.py, extended by scripts/s25_svg.py for the marks this
+  session needed. **scripts/s19_svg.py is unmodified**, so session 19's four figures
+  stay byte-identical under the regenerability check. matplotlib was not installed and
+  the environment is as 10.1 records it.
+
+  Two source substitutions against the session 24 specification. The NAV capacity curve
+  uses outputs/session-20/rebuilt/nav-sweep.csv rather than the session 15 file, which
+  is on the superseded boundary. The equity and drawdown curves read
+  outputs/session-20/rebuilt/_ladder_returns.pkl, which is a committed artifact rather
+  than a committed CSV, and their emitted series CSVs supply the CSV the sourcing rule
+  asks for from here on.
+
+  **Both session 24 undrawable findings are confirmed rather than accepted.**
+  outputs/session-22/rebuilt/nulls.csv at 10,000 draws carries five summary columns and
+  no per-draw column, and no committed CSV carries effective exposure as a ten-decile
+  series. A five-point quantile marker plot is drawable from the null summary and is not
+  substituted for a histogram.
+
+- **9.56 the Lo null argument (session 25, 2026-08-22), bearing on 8.2 which is NOT
+  amended.** Five ladder rows outrank the strategy on the Lo-corrected Sharpe and three
+  sit outside their own no-autocorrelation null.
+
+  | row | observed | own null 5th | own null 95th | inside |
+  |---|---|---|---|---|
+  | buy_hold_TQQQ | 1.8057440502648456 | 0.8233761527592989 | 1.4834802306081902 | no |
+  | buy_hold_QQQ | 1.8033205778849906 | 0.820220296843908 | 1.47866235794891 | no |
+  | matched_exposure_levered_QQQ_1.70 | 1.8017816270863776 | 0.8234552740076613 | 1.483349422403496 | no |
+  | long_legs_only | 1.4695627600234846 | 0.8300481461907913 | 1.5153672392519424 | yes |
+  | vol_targeted_QQQ_matched | 1.4304523894100714 | 0.8306618122953046 | 1.5159596470316377 | yes |
+  | STRATEGY | 1.3817011382923612 | 0.8106119182519183 | 1.5045050578577397 | yes |
+
+  **As stated the argument holds**, since 8.2 names buy-and-hold QQQ specifically and
+  that row sits outside its own null while the strategy sits inside its own. **Narrowed
+  to the three highest rows it holds. Generalised to every row above the strategy it
+  fails**, since long_legs_only and vol_targeted_QQQ_matched both outrank the strategy
+  and both sit inside their own nulls.
+
+  The grounds as they should read. *The strategy's own Lo factor sits inside its own
+  no-autocorrelation null while the three rows ranked highest on the Lo-corrected Sharpe
+  sit outside theirs, and two further rows outranking the strategy sit inside theirs, so
+  the property separates the top three rather than separating every row above the
+  strategy from every row below it.*
+
+  **8.2 is left unamended pending the decision**, since amending a register decision on
+  a wording question is a decision rather than a repair. Source
+  outputs/session-25/claim-checks.csv.
+
+- **9.57 claim 4's block-count wording (session 25, 2026-08-22).** The claim's two
+  quoted figures are the range minimum 0.11428571428571428 at S equal to 8 and the range
+  maximum 0.170995670995671 at S equal to 12, **both re-emitted on repaired code at
+  9.48**. The scope phrase names block counts 8 through 48, so the wording covers S
+  equal to 48, which is not re-emitted, while neither quoted figure depends on it.
+
+  Two candidate repairs are recorded and neither is adopted. Narrow the scope to the
+  block counts re-emitted on repaired code, or leave the wording and carry the item open
+  at 9.48 until S equal to 48 re-emits. **No claim is amended**, since the set is frozen
+  at 9.51 and amendment requires a dated entry with grounds.
+
+- **9.58 the claims without a figure and the figures excluded (session 25,
+  2026-08-22).** Thirteen candidates were considered. **Two are undrawable**, being the
+  null histograms and the effective exposure decile curve. **Three were excluded because
+  the PBO report already carries them**, being the logit histogram, the in-sample
+  against out-of-sample scatter and the specification curve, all drawn at session 19
+  under the same standard-library path. The remaining eight equal the target, so the
+  rule that a figure illustrating a supporting claim yields to one illustrating a
+  primary claim was not needed.
+
+  **Seven claims have no figure anywhere**, being 2, 3, 7, 9, 10, 11 and 12. Claim 2 is
+  among them because its figure is undrawable rather than because it was passed over.
+
+  **Four of the eight illustrate no frozen claim**, being drawdown, hedge-intensity,
+  nav-capacity and rolling-beta-dispersion. The last illustrates 9.42, being the window
+  sensitivity of the beta estimate, and not claim 12, whose own figures are the timing
+  contributions the figure does not plot. **Three of the eight plot a value the claim
+  quotes**, being cost-sweep, leave-one-out and lo-factor-vs-null.
+
+  The paper's two-figure cap was analysed by enumerating all 28 pairs against the number
+  of distinct primary claims each pair covers. **The maximum is three and one pair
+  reaches it**, being leave-one-out with lo-factor-vs-null, covering primary claims 1,
+  13 and 14. **No selection is made.**
+
+  **One correction to the session 24 specification.** Its note that two of the report's
+  four figures support a statistic since removed overstates it by one, since the
+  degradation scatter carries the withdrawn slope while the logit histogram carries the
+  PBO, which is claim 4 and stands.
+
+  **The figure-to-claim check ran 27 numeric comparisons with no disagreement**, 25
+  exact and 2 agreeing within the 5e-07 positive-control tolerance rather than exactly.
+  Both non-exact comparisons have the same cause, being that the lo-factor-vs-null
+  figure plots outputs/session-20/lo-q-sweep.csv while claim 1 quotes
+  outputs/session-20/rebuilt/metrics-full.csv, and the two emitted files differ at the
+  seventh decimal. **Neither file is changed.** The derived series were checked against
+  the emitted scalars, the equity curve's final growth reproducing each line's total
+  return and the drawdown minimum reproducing each line's maximum drawdown, all exactly.

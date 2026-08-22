@@ -1,0 +1,49 @@
+table,item,value,primary_claims,supporting_claims,carries_literal,note
+cap,paper_figure_cap,2,,,,"the four-tier scheme caps the paper at two figures, with the rest carried by the PBO report"
+per_figure,cost-sweep,0,,15,1,
+per_figure,drawdown,0,,,0,
+per_figure,equity-curve,1,1,,0,
+per_figure,hedge-intensity,0,,,0,
+per_figure,leave-one-out,1,13,,1,
+per_figure,lo-factor-vs-null,2,"1,14",,1,
+per_figure,nav-capacity,0,,,0,
+per_figure,rolling-beta-dispersion,0,,,0,
+pair,leave-one-out + lo-factor-vs-null,3,"1,13,14",0,,highest
+pair,cost-sweep + lo-factor-vs-null,2,"1,14",1,,
+pair,drawdown + lo-factor-vs-null,2,"1,14",0,,
+pair,equity-curve + leave-one-out,2,"1,13",0,,
+pair,equity-curve + lo-factor-vs-null,2,"1,14",0,,
+pair,hedge-intensity + lo-factor-vs-null,2,"1,14",0,,
+pair,lo-factor-vs-null + nav-capacity,2,"1,14",0,,
+pair,lo-factor-vs-null + rolling-beta-dispersion,2,"1,14",0,,
+pair,cost-sweep + equity-curve,1,1,1,,
+pair,cost-sweep + leave-one-out,1,13,1,,
+pair,drawdown + equity-curve,1,1,0,,
+pair,drawdown + leave-one-out,1,13,0,,
+pair,equity-curve + hedge-intensity,1,1,0,,
+pair,equity-curve + nav-capacity,1,1,0,,
+pair,equity-curve + rolling-beta-dispersion,1,1,0,,
+pair,hedge-intensity + leave-one-out,1,13,0,,
+pair,leave-one-out + nav-capacity,1,13,0,,
+pair,leave-one-out + rolling-beta-dispersion,1,13,0,,
+pair,cost-sweep + drawdown,0,,1,,
+pair,cost-sweep + hedge-intensity,0,,1,,
+pair,cost-sweep + nav-capacity,0,,1,,
+pair,cost-sweep + rolling-beta-dispersion,0,,1,,
+pair,drawdown + hedge-intensity,0,,0,,
+pair,drawdown + nav-capacity,0,,0,,
+pair,drawdown + rolling-beta-dispersion,0,,0,,
+pair,hedge-intensity + nav-capacity,0,,0,,
+pair,hedge-intensity + rolling-beta-dispersion,0,,0,,
+pair,nav-capacity + rolling-beta-dispersion,0,,0,,
+result,largest_primary_coverage,3,,,,across the 28 pairs of the eight figures
+result,pairs_at_the_maximum,1,,,,leave-one-out + lo-factor-vs-null
+result,criterion_resolves,1,,,,"the criterion selects one pair, being leave-one-out and lo-factor-vs-null, covering primary claims 1,13,14. No other pair reaches 3"
+result,selection_made,0,,,,the scaffold requires the analysis and leaves the choice
+result,second_criterion_if_needed,,,,,"three of the eight carry a claim's literal emitted value in the series they plot, being cost-sweep, leave-one-out and lo-factor-vs-null. The other five illustrate a claim's subject or a register finding without plotting any figure the claim quotes, which is a second ordering available if the primary count leaves a tie"
+pbo_report_carries,logit-histogram.svg,9554,4,,,"logit histogram with the PBO region shaded, drawn session 19 under scripts/s19_svg.py, the same path this session uses"
+pbo_report_carries,degradation-scatter.svg,329792,"4,5",,,"in-sample against out-of-sample Sharpe as a scatter, drawn session 19 under scripts/s19_svg.py, the same path this session uses"
+pbo_report_carries,selected-vs-median.svg,42115,,,,"out-of-sample Sharpe, selected against the median trial, drawn session 19 under scripts/s19_svg.py, the same path this session uses"
+pbo_report_carries,specification-curve.svg,15058,"6,8",,,"specification curve with structural axes as strata, drawn session 19 under scripts/s19_svg.py, the same path this session uses"
+duplication,figures_in_the_eight_duplicating_a_report_figure,0,,,,"none. The three candidates that would have duplicated one were excluded at phase B, being logit-histogram, is-vs-oos-scatter and specification-curve, so the eight and the report's four are disjoint"
+duplication,report_figures_illustrating_a_withdrawn_statistic,1,,,,"degradation-scatter.svg carries a fitted line for the degradation slope withdrawn at 9.35. The logit histogram carries the PBO, which is claim 4 and stands, so the session 24 specification's note that two of the four support a statistic since removed overstates it by one"

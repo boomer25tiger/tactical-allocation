@@ -1,0 +1,34 @@
+claim,figure,quantity,claim_value,figure_value,deviation,exact,within_tolerance,verdict,note
+,,tolerance,5e-07,5e-07,0,1,1,stated before comparing,"the standing positive-control tolerance, applied to every numeric check below"
+14,lo-factor-vs-null,rows inside their own null,9,9,0.0,1,1,agrees,claim 14 states nine of twelve
+14,lo-factor-vs-null,rows plotted,12,12,0.0,1,1,agrees,
+14,lo-factor-vs-null,"rows outside, in Lo order","buy_hold_TQQQ,buy_hold_QQQ,matched_exposure_levered_QQQ_1.70","buy_hold_TQQQ,buy_hold_QQQ,matched_exposure_levered_QQQ_1.70",,1,1,agrees,
+1,lo-factor-vs-null,strategy rank on the Lo convention,6,6,0.0,1,1,agrees,
+1,lo-factor-vs-null,ladder rows,12,12,0.0,1,1,agrees,
+1,lo-factor-vs-null,strategy Lo-corrected Sharpe,1.3817013060244996,1.3817011382923612,1.6773213840082235e-07,0,1,agrees within tolerance,"claim 1 quotes outputs/session-20/rebuilt/metrics-full.csv while the figure plots outputs/session-20/lo-q-sweep.csv, so this compares two emitted files"
+1,lo-factor-vs-null,Lo gap to buy-and-hold QQQ,0.42161920118337926,0.4216194395926294,2.3840925011953118e-07,0,1,agrees within tolerance,"claim 1 states the gap as a negative figure and the figure plots the two levels, so the magnitude is compared"
+13,leave-one-out,estimates plotted,11,11,0.0,1,1,agrees,
+13,leave-one-out,minimum,1.287076427656795,1.287076427656795,0.0,1,1,agrees,
+13,leave-one-out,maximum,1.6183359759194622,1.6183359759194622,0.0,1,1,agrees,
+13,leave-one-out,two years whose removal raises it most,"2020,2011","2020,2011",,1,1,agrees,
+15,cost-sweep,crossings inside the swept range,10,10,0.0,1,1,agrees,
+15,cost-sweep,crossings that would be extrapolations,12,12,0.0,1,1,agrees,
+15,cost-sweep,buy-and-hold QQQ crossing on the naive Sharpe,10.084002378357239,10.084002378357239,0.0,1,1,agrees,
+15,cost-sweep,buy-and-hold QQQ crossing on the Lo-corrected Sharpe,nan,nan,0.0,1,1,agrees,claim 15 states there is no crossing inside the range
+,equity-curve,STRATEGY total return,60.51291119309332,60.51291119309332,0.0,1,1,agrees,"the plotted growth series is derived from the committed return series, so its final value is checked against the emitted scalar rather than assumed"
+,drawdown,STRATEGY maximum drawdown,-0.5306024012913018,-0.5306024012913018,0.0,1,1,agrees,"as above, the derived series minimum against the emitted scalar"
+,equity-curve,buy_hold_QQQ total return,6.678195614249296,6.678195614249296,0.0,1,1,agrees,"the plotted growth series is derived from the committed return series, so its final value is checked against the emitted scalar rather than assumed"
+,drawdown,buy_hold_QQQ maximum drawdown,-0.2756457596241686,-0.2756457596241686,0.0,1,1,agrees,"as above, the derived series minimum against the emitted scalar"
+,equity-curve,matched_exposure_levered_QQQ_1.70 total return,20.518502322645414,20.518502322645414,0.0,1,1,agrees,"the plotted growth series is derived from the committed return series, so its final value is checked against the emitted scalar rather than assumed"
+,drawdown,matched_exposure_levered_QQQ_1.70 maximum drawdown,-0.46478605429490005,-0.46478605429490005,0.0,1,1,agrees,"as above, the derived series minimum against the emitted scalar"
+,equity-curve,sessions plotted,2472,2472,0.0,1,1,agrees,the primary window session count the positive control reproduces
+,hedge-intensity,claim literal carried,none,none,,,,no literal to check,no frozen claim quotes a hedge-arm figure
+,hedge-intensity,plotted rows read straight from the source,4,4,0,1,1,agrees,"every plotted value is copied from the source CSV without transformation, so the series and the source agree by construction"
+,nav-capacity,claim literal carried,none,none,,,,no literal to check,no frozen claim quotes a NAV-sweep figure
+,nav-capacity,plotted rows read straight from the source,5,5,0,1,1,agrees,"every plotted value is copied from the source CSV without transformation, so the series and the source agree by construction"
+,rolling-beta-dispersion,claim literal carried,none,none,,,,no literal to check,"it illustrates register 9.42 rather than a frozen claim, and claim 12's own figures are the timing contributions this figure does not plot"
+,rolling-beta-dispersion,plotted rows read straight from the source,4,4,0,1,1,agrees,"every plotted value is copied from the source CSV without transformation, so the series and the source agree by construction"
+,drawdown,claim literal carried,none,none,,,,no literal to check,no frozen claim quotes a drawdown figure
+,drawdown,plotted rows read straight from the source,2472,2472,0,1,1,agrees,"every plotted value is copied from the source CSV without transformation, so the series and the source agree by construction"
+,equity-curve,claim literal carried,none,none,,,,no literal to check,"claim 1's figures are Sharpe ratios and a rank rather than a growth series, so the figure illustrates the claim's subject without carrying its literal"
+,equity-curve,plotted rows read straight from the source,2472,2472,0,1,1,agrees,"every plotted value is copied from the source CSV without transformation, so the series and the source agree by construction"

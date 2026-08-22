@@ -1,0 +1,36 @@
+table,item,value,rank,null_mean,null_p05,null_p95,inside_own_null,flag_consistent_with_bounds,target,note
+machine_at_start,load_1min,25.35,,,,,,,,
+machine_at_start,load_5min,11.4,,,,,,,,
+machine_at_start,load_15min,8.61,,,,,,,,
+machine_at_start,compressor_gib,2.901,,,,,,,,
+machine_at_start,swap_used_mb,11784.06,,,,,,,,
+machine_at_start,swap_free_mb,1527.94,,,,,,,,
+A1,strategy_rank_by_lo,6,,,,,,,,"of 12 ladder rows, source outputs/session-20/lo-q-sweep.csv table lo_null"
+A1,rows_outranking_strategy,5,,,,,,,,
+A1_outranking,buy_hold_TQQQ,1.8057440502648456,1,1.1266513651566141,0.8233761527592989,1.4834802306081902,0,1,,
+A1_outranking,buy_hold_QQQ,1.8033205778849906,2,1.127150618957686,0.820220296843908,1.47866235794891,0,1,,
+A1_outranking,matched_exposure_levered_QQQ_1.70,1.8017816270863776,3,1.1266515389481175,0.8234552740076613,1.483349422403496,0,1,,
+A1_outranking,long_legs_only,1.4695627600234846,4,1.1246113559225863,0.8300481461907913,1.5153672392519424,1,1,,
+A1_outranking,vol_targeted_QQQ_matched,1.4304523894100714,5,1.12825526829759,0.8306618122953046,1.5159596470316377,1,1,,
+A1_strategy,STRATEGY,1.3817011382923612,6,1.1242668337104709,0.8106119182519183,1.5045050578577397,1,,,
+A1_verdict,argument_as_stated,holds,,,,,,,,"8.2 names buy-and-hold QQQ specifically. buy_hold_QQQ sits outside its own null and the strategy sits inside its own, so the sentence as written is true"
+A1_verdict,argument_narrowed_to_top_three,holds,,,,,,,,"The three outside are buy_hold_TQQQ, buy_hold_QQQ and matched_exposure_levered_QQQ_1.70, being Lo ranks 1 to 3"
+A1_verdict,argument_generalised_to_all_outranking,fails,,,,,,,,"2 of the 5 rows outranking the strategy sit inside their own null, being long_legs_only and vol_targeted_QQQ_matched, so outranking the strategy does not imply sitting outside the null"
+A1_verdict,grounds_as_they_should_read,,,,,,,,,"The strategy's own Lo factor sits inside its own no-autocorrelation null while the three rows ranked highest on the Lo-corrected Sharpe sit outside theirs, and two further rows outranking the strategy sit inside theirs, so the property separates the top three rather than separating every row above the strategy from every row below it"
+A1_verdict,current_register_text_8_2,,,,,,,,,"The grounds are that session 20's D1 measured the strategy's own Lo factor sitting inside its own no-autocorrelation null while buy-and-hold QQQ's sits outside, and that nine of twelve ladder rows change rank across the q sweep, so the Lo-corrected ordering is not stable under a parameter that was never registered"
+A1_verdict,amended_this_phase,0,,,,,,,,8.2 is not amended here
+A2,claim_4_statement_verbatim,,,,,,,,,"Probability of backtest overfitting is 0.1578088578088578 at S equal to 16 over the full 12,870 combination enumeration, spanning 0.11428571428571428 to 0.170995670995671 across block counts 8 through 48."
+A2,block_counts_re_emitted,"8,12,16,24",,,,,,,,source outputs/session-24/phaseF-relaunch.csv
+A2,block_counts_not_re_emitted,48,,,,,,,,
+A2,range_minimum,0.11428571428571428,,,,,,,,at S equal to 8
+A2,range_maximum,0.170995670995671,,,,,,,,at S equal to 12
+A2,numeric_endpoints_are_re_emitted,1,,,,,,,,the range's two numeric endpoints are S equal to 8 and S equal to 12
+A2,wording_spans_all_five_block_counts,1,,,,,,,,"the phrase naming block counts 8 through 48 gives the scope of the sweep rather than the two S values the endpoints come from, so the wording covers S equal to 48, which is not re-emitted, while the two numeric figures quoted do not depend on it"
+A2_repair_candidate,narrow_the_wording,1,,,,,,,,"Restate the scope as the block counts re-emitted on repaired code, so the sentence carries no figure and no scope that S equal to 48 could move"
+A2_repair_candidate,leave_open_pending_S48,1,,,,,,,,"Leave the wording and carry the item open at 9.48 until S equal to 48 re-emits, since the two quoted figures already stand on repaired code"
+A2_repair_candidate,recommendation,none,,,,,,,,the scaffold requires no change and no recommendation in this phase
+positive_control,tolerance,5e-07,,,,,,,,stated before comparing
+positive_control,ann_return,0.5218447451814521,,,,,,,0.521845,
+positive_control,sharpe_lo,1.3817013060244996,,,,,,,1.381701,
+positive_control,n_sessions,2472,,,,,,,2472,
+positive_control,verdict,,,,,,,,,PASS
