@@ -2374,3 +2374,117 @@ than a measurement** (9.10 provenance requirement).
   seventh decimal. **Neither file is changed.** The derived series were checked against
   the emitted scalars, the equity curve's final growth reproducing each line's total
   return and the drawdown minimum reproducing each line's maximum drawdown, all exactly.
+
+- **9.59 claim 4's scope phrase narrowed, WORDING REPAIR (session 26, 2026-08-22),
+  amending the frozen set at 9.51.** Amending a frozen claim requires a dated entry
+  with grounds, which this is.
+
+  Before. *Probability of backtest overfitting is 0.1578088578088578 at S equal to 16
+  over the full 12,870 combination enumeration, spanning 0.11428571428571428 to
+  0.170995670995671 across block counts 8 through 48.*
+
+  After. *Probability of backtest overfitting is 0.1578088578088578 at S equal to 16
+  over the full 12,870 combination enumeration, spanning 0.11428571428571428 to
+  0.170995670995671 across the block counts 8, 12, 16 and 24 re-emitted on repaired
+  code.*
+
+  **No quoted figure moved.** The two range endpoints are 0.11428571428571428 at S
+  equal to 8 and 0.170995670995671 at S equal to 12, both re-emitted on repaired code at
+  9.48, and neither depends on the unre-emitted S equal to 48. The claim asserts the
+  same thing about the same numbers over a scope the record supports, so this is a
+  wording repair rather than a change to what the claim asserts. This closes the
+  question raised at 9.57.
+
+- **9.60 the paper's figure cap, AMENDED FROM TWO TO SIX (session 26, 2026-08-22).**
+  **Six is fixed now rather than left open**, so no figure is added after the holdout is
+  read.
+
+  The grounds are that the cap of two was set before the paper's shape was known. Eight
+  figures are drawn at 9.55 and four of them illustrate no frozen claim, so a cap of two
+  forced a choice the evidence did not support. Fixing six before the read removes the
+  possibility of a figure being added because of what the read shows. The remainder are
+  carried by the PBO report as before.
+
+- **9.61 the 8.2 grounds recorded in the NARROWED form (session 26, 2026-08-22),
+  amending 9.56.** Figures read from outputs/session-25/claim-checks.csv.
+
+  **The narrowed form, which holds.** Buy-and-hold QQQ's Lo factor at
+  1.8033205778849906 sits outside its own null upper bound of 1.47866235794891 while the
+  strategy's at 1.3817011382923612 sits inside its own bound of 1.5045050578577397.
+
+  **The general form, which fails.** long_legs_only at 1.4695627600234846 and
+  vol_targeted_QQQ_matched at 1.4304523894100714 both outrank the strategy from inside
+  their own nulls, their upper bounds being 1.5153672392519424 and 1.5159596470316377,
+  so outranking the strategy does not imply sitting outside the null.
+
+  **8.2 stands on the narrowed form together with the q sweep**, which moves nine of
+  twelve ladder rows in rank. The second ground is independent of the null finding, so
+  the decision to lead on the naive Sharpe does not rest on the form that fails.
+
+- **9.62 the size convention (session 26, 2026-08-22), applying from this session
+  forward.** Repository size, working tree size and free space are read **before** the
+  commit and reported with the expected delta stated. No figure is read after the
+  commit.
+
+  The grounds are that session 25 ended with two dirty files carrying post-commit
+  readings, which a one-commit session cannot contain. Reading pre-commit and stating
+  the expected delta leaves no file dirty and makes the reading falsifiable, since a
+  later session can check the stated delta against what the repository actually did.
+
+- **9.63 the section 4 holdout prediction, WITHDRAWN (session 26, 2026-08-22).** The
+  handoff's claim that the holdout's 2022 tests a demonstrated weakness rather than a
+  demonstrated strength is withdrawn **by argument rather than by measurement**.
+
+  The claim rested on an inference chain running from the leave-one-out result to a
+  statement about hedge behaviour to a statement about 2022. **Session 22's leave-one-out
+  rebuild confirmed the underlying figures without supporting the chain**, the base
+  estimate reproducing at 1.3817013060244996, and **session 22's beta window sensitivity
+  showed the timing component changing sign across windows**, reading
+  0.011293050910284682 at 60 sessions, -0.004075416692355631 at 252 and
+  -0.0077512681113622505 at 504. An inference that a crisis-year weakness transfers to a
+  specific future period is not supported by either measurement. Recorded as withdrawal
+  11 in docs/WITHDRAWN.md.
+
+- **9.64 docs/HOLDOUT-PREDICTION.md, FROZEN ON THIS COMMIT (session 26, 2026-08-22).**
+  The document is not amended after the holdout is read.
+
+  Its five components in summary. **P1**, the strategy ranks no better than sixth of
+  twelve on the naive Sharpe in the holdout, falsified by any rank of fifth or better.
+  **P2**, the holdout naive Sharpe lands between 0.25 and 0.85 against
+  1.0910863648060856 over the primary window, falsified outside that band. **P3**, two
+  independently falsifiable parts, being that SQQQ and TLT realise positive daily return
+  correlation over the holdout against a committed sleeve-level baseline of
+  -0.5618926986740371, and that T10's risk-off branch contributes negatively. **P4**, the
+  named unknown, being state-classification latency in a slow bear, which is not
+  predicted and which does not qualify P1, P2 or P3 unless a pre-specified examination of
+  the state series shows the mechanism operating. **P5**, the interesting failure mode,
+  being that 2022 gave the short-equity sleeve its only sustained tailwind, recorded as
+  less likely than even and recorded because a prediction naming only the confirming path
+  is not a prediction.
+
+  **The commit SHA cannot appear inside the commit it names.** The prediction's identity
+  in this entry is its content hash, being SHA-256
+  3a3d150e986bcedfb9946deeb299373efac7026e7ccc7ca45625b9553fbecb2f over 10496 bytes, and
+  the commit SHA is reported in outputs/session-26/REPORT.md and is recoverable at any
+  time with `git log -1 -- docs/HOLDOUT-PREDICTION.md`.
+
+  **Six figures the scaffold named are not carried as the scaffold stated them**, being
+  recorded in outputs/session-26/prompt-disagreements.csv and in the document's closing
+  section rather than adopted. The material ones are that the canonical's mean effective
+  exposure is 1.7769723457408557 rather than the matched-exposure line's leverage factor
+  of 1.70, that SQQQ is returned at five sites across three sleeves rather than four,
+  that removal of 2018 gives the leave-one-out minimum at 1.287076427656795 so 2018 is a
+  year the strategy beat its own average rather than a year its weakness showed, and that
+  no committed file locates the dip-buying latency mechanism the scaffold described.
+
+- **9.65 the pre-read verification hook (session 26, 2026-08-22).**
+  scripts/verify_prediction_precedes_read.py is run as the FIRST step of any holdout
+  session. It exits zero only when docs/HOLDOUT-PREDICTION.md exists in committed
+  history and the working copy matches the committed blob exactly, and it exits non-zero
+  when the file is absent, untracked, uncommitted, or modified.
+
+  **Run in session 26 before the commit it describes, it exits 1** and reports that the
+  file appears in no commit, which is the correct answer at that moment. **The first
+  context in which it exits zero is a session running after this commit.** Its role is
+  that the prediction's precedence over the read is established by the repository rather
+  than by anyone's recollection.

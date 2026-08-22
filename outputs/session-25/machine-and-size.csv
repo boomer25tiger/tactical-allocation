@@ -12,3 +12,16 @@ size,before_commit,git_dir_bytes,205336,
 size,before_commit,working_tree_bytes,825688,kilobytes as du reports them
 space,before_commit,free_kilobytes,19539808,
 space,before_commit,free_gib,18.63,
+machine,after_commit,load_1min,5.67,
+machine,after_commit,load_5min,5.7,
+machine,after_commit,load_15min,6.49,
+machine,after_commit,compressor_gib,2.986,
+machine,after_commit,swap_used_mb,11548.62,
+machine,after_commit,swap_free_mb,739.38,
+size,after_commit,largest_tracked_file_bytes,30516699,outputs/session-18/spec-index-augmented.csv
+size,after_commit,largest_tracked_file_mb,29.10,against the 100 megabyte limit
+size,after_commit,tracked_files_over_100mb,0,
+size,after_commit,git_dir_bytes,205800,
+size,after_commit,working_tree_bytes,826220,kilobytes as du reports them
+space,after_commit,free_kilobytes,19525808,
+space,after_commit,free_gib,18.62,

@@ -170,9 +170,9 @@ S equal to 48 of the B1 re-emission, which sets neither endpoint of claim 4's qu
 
 | reading | before the commit | after the commit |
 |---|---|---|
-| git directory, kilobytes | 205336 | not yet read |
-| working tree, kilobytes | 825688 | not yet read |
-| free space, GiB | 18.63 | not yet read |
+| git directory, kilobytes | 205336 | 205800 |
+| working tree, kilobytes | 825688 | 826220 |
+| free space, GiB | 18.63 | 18.62 |
 
 ## Register
 

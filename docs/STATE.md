@@ -1,11 +1,20 @@
 # STATE, read this first
 
-Refreshed 2026-08-22 by session 25. Supersedes the session 24 version.
+Refreshed 2026-08-22 by session 26. Supersedes the session 25 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
-limitations written beside each, and `docs/WITHDRAWN.md` carries 10 withdrawals.
-No claim is added after 2026-08-22 without a dated register entry recording the
-addition and its grounds. Registered at 9.51 and 9.52.
+limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
+No claim is added without a dated register entry recording the addition and its
+grounds. Registered at 9.51 and 9.52. Claim 4's scope phrase was narrowed on
+2026-08-22 as a wording repair at 9.59, with no quoted figure moved.
+
+**The prediction is committed.** `docs/HOLDOUT-PREDICTION.md` carries P1 through
+P5 and is frozen on the commit that added it, at 9.64. It is not amended after
+the read.
+
+**The next action is the holdout read.** Nothing blocks it. Any holdout session
+runs `scripts/verify_prediction_precedes_read.py` as its first step, at 9.65,
+and proceeds only if that exits zero.
 
 **The measurement phase is closed.** One measurement remains outstanding, being
 S equal to 48 of the B1 re-emission, and it is not load-bearing.
@@ -41,18 +50,17 @@ as headroom**, since macOS holds free near zero by design.
 - **The canonical ranks 6,834 of 121,500** on Lo-corrected Sharpe, with eight of
   nine axis values fixed before any comparison on that axis.
 
-## Two claim-wording questions open
+## The two claim-wording questions, settled
 
-**The 8.2 grounds hold as written and fail if generalised.** Five ladder rows
-outrank the strategy on the Lo-corrected Sharpe and only the top three sit
-outside their own nulls, so long_legs_only and vol_targeted_QQQ_matched outrank
-the strategy from inside their own nulls. 8.2 names buy-and-hold QQQ
-specifically, so the sentence as written is true. **8.2 is not amended**, at
-9.56.
+**The 8.2 grounds are recorded in the narrowed form at 9.61.** Buy-and-hold QQQ
+sits outside its own null while the strategy sits inside its own, which holds.
+The general form fails, since long_legs_only and vol_targeted_QQQ_matched both
+outrank the strategy from inside their own nulls. 8.2 stands on the narrowed form
+together with the q sweep moving nine of twelve rows in rank, the second being
+independent of the null finding.
 
-**Claim 4's scope phrase names block counts 8 through 48** while its two quoted
-figures come from S equal to 8 and S equal to 12, both re-emitted on repaired
-code. Two candidate repairs are recorded and neither is adopted, at 9.57.
+**Claim 4's scope phrase is narrowed at 9.59** to name only the block counts
+re-emitted on repaired code. No quoted figure moved.
 
 ## The 8.2 decision, made
 
@@ -117,6 +125,13 @@ is derived from that pass's own stage times. Registered at 9.49.
 D1 through D12, D14, D15, D17 through D22, D24 closed, repaired, or swept. D13
 never assigned. D25 applied. D26 and D27 recorded. Open: **D16**, **D23**.
 
+## Size convention
+
+Repository size, working tree size and free space are read **before** the commit
+and reported with the expected delta stated. No figure is read after the commit,
+so no session ends with a dirty file carrying a post-commit reading. Adopted at
+9.62 and applying from session 26 forward.
+
 ## Environment
 
 Python 3.13.13, numpy 2.5.2, pandas 3.0.5, pyarrow 25.0.1, pytest 9.1.1.
@@ -124,7 +139,9 @@ matplotlib deliberately absent.
 
 ## Figures
 
-**Eight are drawn**, in `outputs/session-25/figures/`, each carrying the exact
+**The paper's figure cap is six**, fixed at 9.60 rather than left open, so no
+figure is added after the read. **Eight are drawn**, in
+`outputs/session-25/figures/`, each carrying the exact
 series it plots as a committed CSV of the same name. Two candidates remain
 undrawable, being the null distribution histograms and effective exposure by
 decile, and three were excluded because the PBO report already carries them.

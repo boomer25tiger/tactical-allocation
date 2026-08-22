@@ -1,0 +1,49 @@
+item,source_file,literal_value,prompt_value,note
+strategy_sharpe_naive_primary,outputs/session-20/rebuilt/metrics-full.csv,1.0910863648060856,1.091086,
+strategy_sharpe_lo_primary,outputs/session-20/rebuilt/metrics-full.csv,1.3817013060244996,1.381701,
+strategy_ann_turnover,outputs/session-20/rebuilt/metrics-full.csv,37.87437898045862,37.87,
+buy_hold_QQQ_ann_turnover,outputs/session-20/rebuilt/metrics-full.csv,0.017286585046131533,0.02,
+strategy_max_dd_duration_sessions,outputs/session-20/rebuilt/metrics-full.csv,70.0,,the deepest drawdown's own duration
+strategy_max_dd_duration_calendar_days,outputs/session-20/rebuilt/metrics-full.csv,99.0,,
+strategy_n_drawdowns_gt_20pct,outputs/session-20/rebuilt/metrics-full.csv,13.0,,
+strategy_max_drawdown,outputs/session-20/rebuilt/metrics-full.csv,-0.5306024012913018,,
+timing_ann_contribution_60,outputs/session-21/beta-decomposition.csv,0.011293050910284682,+0.011293,
+total_ann_check_60,outputs/session-21/beta-decomposition.csv,0.5725633797029721,+0.572563,
+rolling_beta_sd_60,outputs/session-21/beta-decomposition.csv,1.1646116827038935,,
+timing_ann_contribution_120,outputs/session-22/beta-window-sensitivity.csv,0.027230151692897046,,
+rolling_beta_sd_120,outputs/session-22/beta-window-sensitivity.csv,0.6992985332538183,,
+timing_ann_contribution_252,outputs/session-22/beta-window-sensitivity.csv,-0.004075416692355631,,
+rolling_beta_sd_252,outputs/session-22/beta-window-sensitivity.csv,0.41047564557798377,,
+timing_ann_contribution_504,outputs/session-22/beta-window-sensitivity.csv,-0.0077512681113622505,,
+rolling_beta_sd_504,outputs/session-22/beta-window-sensitivity.csv,0.20922149429810166,,
+loo_base_sharpe_lo,outputs/session-22/rebuilt/leave-one-out.csv,1.3817013060244996,1.381701,
+loo_drop_2011_sharpe_lo,outputs/session-22/rebuilt/leave-one-out.csv,1.5635962707744817,1.5636,
+loo_drop_2020_sharpe_lo,outputs/session-22/rebuilt/leave-one-out.csv,1.6183359759194622,1.6183,
+loo_drop_2018_sharpe_lo,outputs/session-22/rebuilt/leave-one-out.csv,1.287076427656795,,"the minimum across the eleven, so removing 2018 LOWERS the estimate"
+canonical_mean_effective_exposure,outputs/session-16/exposure-reconciliation.csv,1.7769723457408557,1.70,
+canonical_wildest_vol_decile_exposure,outputs/session-16/exposure-reconciliation.csv,1.4992706033470402,,
+t10_short_leg_ticker,outputs/session-15.5/short-leg-decomposition.csv,SQQQ,,
+t10_short_leg_leverage_multiple,outputs/session-15.5/short-leg-decomposition.csv,-3.0,,
+t10_short_leg_mean_weight_when_held,outputs/session-15.5/short-leg-decomposition.csv,0.49741933465476185,0.5,
+t10_short_leg_held_sessions,outputs/session-15.5/short-leg-decomposition.csv,513.0,,
+t10_corr_short_vs_rest_of_sleeve,outputs/session-15.5/short-leg-decomposition.csv,-0.5618926986740371,,the primary-window baseline P3 part one predicts a sign change against
+t10_short_leg_total_arith_contribution,outputs/session-15.5/short-leg-decomposition.csv,-1.074235187878671,,
+t10_short_leg_beta_component,outputs/session-15.5/short-leg-decomposition.csv,-1.0846763867101825,,
+t10_short_leg_residual_component,outputs/session-15.5/short-leg-decomposition.csv,0.010441198831511622,,
+sqqq_site_src/sleeves.py:190,src/sleeves.py,t10_weights,,"return {""SQQQ"": 0.5, ""TLT"": 0.5}"
+sqqq_site_src/sleeves.py:210,src/sleeves.py,_t11_bond_baller,,"return ""SQQQ"""
+sqqq_site_src/sleeves.py:239,src/sleeves.py,_t11_feaver_bear,,"return ""SQQQ"""
+sqqq_site_src/sleeves.py:266,src/sleeves.py,t11_weights,,"return {""TECS"": 1 / 3, ""SOXS"": 1 / 3, ""SQQQ"": 1 / 3}"
+sqqq_site_src/sleeves.py:300,src/sleeves.py,s2_weights,,"return {""SQQQ"": 1.0}"
+sqqq_position_sites,src/sleeves.py,5,4,
+sqqq_sleeves,src/sleeves.py,"S2,T10,T11",3,
+s3_vote_threshold,docs/DECISIONS-v3.md,3 of 4,,"register 6.7, informed rather than closed, literal at config.S3_VOTE_THRESHOLD"
+lag_1.0_ann_return,outputs/session-15/lag-anomaly.csv,0.2971065884533939,,
+lag_1.0_sharpe_lo,outputs/session-15/lag-anomaly.csv,0.928624610696173,,
+lag_2.0_ann_return,outputs/session-15/lag-anomaly.csv,0.4723877298801684,,
+lag_2.0_sharpe_lo,outputs/session-15/lag-anomaly.csv,0.8601102920915699,,
+lag_3.0_ann_return,outputs/session-15/lag-anomaly.csv,0.35317147369173063,,
+lag_3.0_sharpe_lo,outputs/session-15/lag-anomaly.csv,0.9068380319416652,,
+data_end,outputs/session-00e/manifest-truncated.csv,2026-08-14,,across 39 frozen inputs
+holdout_boundary,docs/DECISIONS-v3.md,2021-08-01,,"register 2.10, closed and untouched"
+primary_window_sessions,outputs/session-25/figures/equity-curve.csv,2472,,"rows in the emitted series, matching the standing positive control"

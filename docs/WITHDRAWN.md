@@ -4,7 +4,7 @@ Every claim this project made and then withdrew, with the grounds and the sessio
 that overturned it. A negative-result paper is judged partly on whether its authors
 can show what they stopped believing.
 
-**10 withdrawals**, of which 7 followed from a measurement and 3 from an argument about construction. The map is `outputs/session-24/withdrawn-sources.csv`.
+**11 withdrawals**, of which 7 followed from a measurement and 4 from an argument about construction. The map is `outputs/session-24/withdrawn-sources.csv`.
 
 ## 1. The deflated Sharpe, reported at 0.000660 for the canonical at N equal to 364,500 and later at 0.001979 at N equal to 121,500.
 
@@ -96,9 +96,18 @@ The two operations are not independent. The primary window begins 2011-10-04, so
 - Source `outputs/session-22/loo-rebuilt.csv`
 - Emitted abs_gap 8.326e-07
 
+## 11. The handoff's section 4 prediction that the holdout's 2022 tests a demonstrated weakness rather than a demonstrated strength.
+
+The claim rested on an inference chain running from the leave-one-out result to a statement about hedge behaviour to a statement about 2022. Session 22's leave-one-out rebuild confirmed the underlying figures without supporting the chain, the base estimate reproducing at 1.3817013060244996, and session 22's beta window sensitivity showed the timing component changing sign across windows, reading 0.011293050910284682 at 60 sessions and -0.0077512681113622505 at 504. An inference that a crisis-year weakness transfers to a specific future period is not supported by either measurement.
+
+- Withdrawn by argument, from the inference chain rather than from a result
+- Session 22 for both underlying measurements, withdrawn at session 26
+- Source `outputs/session-22/rebuilt/leave-one-out.csv and outputs/session-22/beta-window-sensitivity.csv`
+- Emitted base 1.3817013060244996; timing at 60 0.011293050910284682; timing at 252 -0.004075416692355631; timing at 504 -0.0077512681113622505
+
 ## A note on the pattern
 
-Three of the ten withdrawals concern the measurement apparatus rather than the
+Three of the 11 withdrawals concern the measurement apparatus rather than the
 strategy, and two of those, being the resource diagnosis in its first and second
 forms, were successive wrong answers to the same question in opposite directions. The
 register records the class at 9.47 as an inference stated as a measurement, which has

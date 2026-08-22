@@ -10,7 +10,11 @@ traceable to a committed file. Claims withdrawn during the project are in
 `docs/WITHDRAWN.md` rather than removed silently.
 
 Both Sharpe conventions are reported throughout with the naive figure leading, per
-the 8.2 decision, on the grounds recorded in claim 14.
+the 8.2 decision, on the grounds recorded in claim 14 as narrowed at 9.61.
+
+**Amendments since the freeze.** Claim 4's scope phrase was narrowed on 2026-08-22 to
+name only the block counts re-emitted on repaired code, recorded at 9.59 as a wording
+repair. No quoted figure moved and no claim was added or removed.
 
 **15 claims**, being 11 primary and 4 supporting. 6 concern the strategy and 5 the grid, while 4 concern the measurement apparatus. **The contribution sits mostly in that last group.**
 
@@ -43,11 +47,11 @@ Romano-Wolf across eleven comparisons leaves one below 0.05, being the equal-wei
 
 ## Claim 4, primary, about the grid
 
-Probability of backtest overfitting is 0.1578088578088578 at S equal to 16 over the full 12,870 combination enumeration, spanning 0.11428571428571428 to 0.170995670995671 across block counts 8 through 48.
+Probability of backtest overfitting is 0.1578088578088578 at S equal to 16 over the full 12,870 combination enumeration, spanning 0.11428571428571428 to 0.170995670995671 across the block counts 8, 12, 16 and 24 re-emitted on repaired code.
 
 - Source `outputs/session-19/pbo.csv and outputs/session-24/phaseF-relaunch.csv`
 - Emitted S16 0.1578088578088578, S8 0.11428571428571428, S12 0.170995670995671, S24 0.1646, S48 0.154; re-emitted on repaired code at chunk 257 the four reached reproduce exactly, S48 not reached
-- Register 8.12, re-emitted in part at 9.48
+- Register 8.12, re-emitted in part at 9.48, wording repaired at 9.59
 - Overturned by a CSCV variant that changes the selection rule rather than the block count
 
 ## Claim 5, supporting, about the apparatus
