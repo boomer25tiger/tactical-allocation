@@ -1,0 +1,28 @@
+table,item,metric,window,value,target,exceedances,n_draws,p_value,percentile,observed,null_mean,null_sd,null_p95,null_max,primary_exceedances,primary_null_mean,note
+machine_at_phase_D,load_1min,,,4.05,,,,,,,,,,,,,
+machine_at_phase_D,compressor_gib,,,2.917,,,,,,,,,,,,,
+machine_at_phase_D,swap_used_mb,,,13365.31,,,,,,,,,,,,,
+machine_at_phase_D,swap_free_mb,,,970.69,,,,,,,,,,,,,
+construction,source,,,scripts/s14_nulls.py,,,,,,,,,,,,,"the module's definitions are executed up to its own driver loop, so the constructions are the pre-registered ones rather than rewritten"
+construction,seed,,,20260818,,,,,,,,,,,,,"the session 22 seed convention, unchanged. scripts/s14_nulls.py sets RNG = np.random.default_rng(20260818) at module level"
+construction,n_draws,,,10000,,,,,,,,,,,,,"matching the 10,000 replications session 22 raised the primary-window nulls to"
+null_setup,n_episodes,,,1943,,,,,,,,,,,,,
+null_setup,mean_episode_len,,,2.431806484817293,,,,,,,,,,,,,
+null_setup,median_episode_len,,,1.0,,,,,,,,,,,,,
+null_setup,measured_transition_rate_per_session,,,0.411005291005291,,,,,,,,,,,,,
+null_setup,mean_cost_frac_per_transition,,,0.0006351239491594208,,,,,,,,,,,,,
+window,holdout_sessions,,,1265,,,,,,,,,,,,,2021-08-02 to 2026-08-14
+lo_sharpe_control,fast,,,2.758522765821501,2.7585227658215015,,,,,,,,,,,,"absolute gap 4.440892098500626e-16, checked before any null draw is read"
+observed,ann_return,,,0.8152169801601323,,,,,,,,,,,,,
+observed,sharpe_naive,,,1.6195086580237787,,,,,,,,,,,,,
+observed,sharpe_lo,,,2.749153241791565,,,,,,,,,,,,,
+observed,statistic_drops_the_first_session,,,1,,,,,,,,,,,,,"scripts/s14_nulls.py make_stats evaluates on r[1:], so the statistic runs on 1264 sessions rather than 1265. That is the pre-registered construction and it is why the observed naive Sharpe here reads 1.6195086580237787 against the 1.637799226672021 at outputs/session-27/holdout-ladder.csv, and the annualised return 0.8152169801601323 against 0.8287111594113898. The null and the observed value are computed the same way, so the exceedance counts are internally consistent"
+null,timing_shuffle_block_bootstrap,ann_return,holdout,,,4,10000,0.0004,99.96000000000001,0.8152169801601323,-0.015298422789583321,0.1755550014452398,0.3015721156074434,0.9192346214980631,7 of 10000,-0.04331570123131011,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+null,timing_shuffle_block_bootstrap,sharpe_naive,holdout,,,0,10000,0.0,100.0,1.6195086580237787,0.10183682433124347,0.35803030824219095,0.689528488317568,1.4336844459777551,not reported for this metric at session 22,,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+null,timing_shuffle_block_bootstrap,sharpe_lo,holdout,,,1,10000,0.0001,99.99,2.749153241791565,0.14381138320236322,0.48410021216550614,0.9447958533410551,2.764680933798931,0 of 10000,0.11598752550101225,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+null,turnover_matched_switching,ann_return,holdout,,,3,10000,0.0003,99.97,0.8152169801601323,-0.02028991086005031,0.16651426880136763,0.27661093289966926,0.9541904774806127,0 of 10000,-0.06617664689543529,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+null,turnover_matched_switching,sharpe_naive,holdout,,,0,10000,0.0,100.0,1.6195086580237787,0.061021420651143424,0.37172661395421025,0.6674369141547933,1.6010837170739123,not reported for this metric at session 22,,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+null,turnover_matched_switching,sharpe_lo,holdout,,,2,10000,0.0002,99.98,2.749153241791565,0.09669225552628022,0.4947430625199215,0.9281622284672502,2.9934063695010766,0 of 10000,0.025508399072500354,"exceedance count is the primary form, since one in 1,000 and ten in 10,000 are the same estimate at different resolution"
+machine_at_phase_D_end,compressor_gib,,,3.038,,,,,,,,,,,,,
+machine_at_phase_D_end,swap_used_mb,,,13496.31,,,,,,,,,,,,,
+machine_at_phase_D_end,seconds,,,41.27747082710266,,,,,,,,,,,,,

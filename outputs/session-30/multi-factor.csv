@@ -1,0 +1,110 @@
+table,item,window,instrument,source,value,beta,alpha_daily,n_factors,r_squared,incremental_r_squared,alpha_annualised,alpha_t_newey_west,note
+machine_at_phase_E,load_1min,,,,3.83,,,,,,,,
+machine_at_phase_E,compressor_gib,,,,3.044,,,,,,,,
+machine_at_phase_E,swap_used_mb,,,,13466.38,,,,,,,,
+machine_at_phase_E,swap_free_mb,,,,869.62,,,,,,,,
+factor,equity_market,,QQQ,the open-to-open panel built from the loaded universe,1,,,,,,,,the broadest exposure and the single factor the study already regresses against
+factor,semiconductor,,SMH,the open-to-open panel built from the loaded universe,1,,,,,,,,"SOXL and SOXS are the largest sector positions the strategy takes, and SMH is the ICE Semiconductor tracker their registered schedule names from 2021-08-25"
+factor,biotechnology,,XBI,"frozen input at data/raw/etf, open-to-open built with the loader's own adjustment ratio",1,,,,,,,,"LABU's registered benchmark is the S&P Biotechnology Select Industry Index, which XBI tracks"
+factor,long_treasury,,TLT,the open-to-open panel built from the loaded universe,1,,,,,,,,the risk-off leg of the T10 branch
+factor,volatility,,UVXY,the open-to-open panel built from the loaded universe,1,,,,,,,,the narrowest exposure and the one the strategy holds least often
+factor_set,convention,,,,open-to-open,,,,,,,,matching the designated cell. A close-to-close factor set correlates only 0.2704559414562822 with the traded open-to-open QQQ line and would not span the strategy's own returns
+factor_set,factors_available,,,,5,,,,,,,,nothing is fetched. Every factor stands for an instrument already inside the frozen inputs
+setup,newey_west_lag,,,,21,,,,,,,,"fixed by 8.11 before the run, not chosen here"
+setup,entry_order,,,,"equity_market,semiconductor,biotechnology,long_treasury,volatility",,,,,,,,stated before running and justified on economic grounds rather than on fit
+window,holdout,,,,1265,,,,,,,,2021-08-02 to 2026-08-14
+positive_control,equity_market,holdout,,,1,1.0000000000000004,-4.877362030880743e-19,,,,,,
+positive_control,semiconductor,holdout,,,1,0.9999999999999998,1.1705668874113783e-18,,,,,,
+positive_control,biotechnology,holdout,,,1,0.9999999999999993,9.754724061761486e-20,,,,,,
+positive_control,long_treasury,holdout,,,1,0.9999999999999996,-3.41415342161652e-19,,,,,,
+positive_control,volatility,holdout,,,1,1.0000000000000004,1.9509448123522973e-18,,,,,,
+positive_control,tolerance,holdout,,,1e-10,,,,,,,,stated before comparing
+positive_control,verdict,holdout,,,PASS,,,,,,,,
+single_factor,beta,holdout,,,0.5946975667115855,,,,,,,,
+single_factor,alpha_annualised,holdout,,,0.5637941837318013,,,,,,,,
+single_factor,r_squared,holdout,,,0.12086286064363738,,,,,,,,
+single_factor,alpha_t_newey_west,holdout,,,3.4918970688555846,,,,,,,,
+single_factor,residual_sharpe_naive,holdout,,,1.527991674661622,,,,,,,,
+single_factor,residual_sharpe_lo,holdout,,,1.930075216384835,,,,,,,,
+incremental,equity_market,holdout,,,,,,1,0.12086490377356474,0.12086490377356474,0.5637935306553864,3.491895761576768,factors entered in the pre-registered economic order
+incremental,semiconductor,holdout,,,,,,2,0.1978242491462059,0.07695934537264115,0.4660932272045664,3.0581940351401493,factors entered in the pre-registered economic order
+incremental,biotechnology,holdout,,,,,,3,0.20317677390570643,0.005352524759500543,0.46219954696765186,3.0765864003855765,factors entered in the pre-registered economic order
+incremental,long_treasury,holdout,,,,,,4,0.20318004248131194,3.268575605508417e-06,0.46166995721092513,3.013313498512811,factors entered in the pre-registered economic order
+incremental,volatility,holdout,,,,,,5,0.21044365972605372,0.007263617244741782,0.45868406085120844,2.9859793219153783,factors entered in the pre-registered economic order
+multi_factor,alpha_annualised,holdout,,,0.45868406085120844,,,,,,,,against the single-factor figure of 0.5637941837318013 over the holdout
+multi_factor,r_squared,holdout,,,0.21044365972605372,,,,,,,,
+multi_factor,alpha_t_newey_west,holdout,,,2.9859793219153783,,,,,,,,
+loading,equity_market,holdout,,,-0.3998086287867097,,,,,,,,
+loading,semiconductor,holdout,,,0.6608610878426954,,,,,,,,
+loading,biotechnology,holdout,,,-0.13726090874524807,,,,,,,,
+loading,long_treasury,holdout,,,0.03272199138520437,,,,,,,,
+loading,volatility,holdout,,,-0.04604630228496218,,,,,,,,
+multi_factor_residual,residual_ann_return,holdout,,,0.488123204317654,,,,,,,,
+multi_factor_residual,residual_ann_vol,holdout,,,0.3496736060678889,,,,,,,,
+multi_factor_residual,residual_sharpe_naive,holdout,,,1.3117491651976525,,,,,,,,against the single-factor residual naive Sharpe of 1.527991674661622
+multi_factor_residual,residual_sharpe_lo,holdout,,,1.658687406667706,,,,,,,,
+factor_correlation,equity_market|semiconductor,holdout,,,0.8999113076527876,,,,,,,,
+factor_correlation,equity_market|biotechnology,holdout,,,0.6283813395381725,,,,,,,,
+factor_correlation,equity_market|long_treasury,holdout,,,0.0852955681312991,,,,,,,,
+factor_correlation,equity_market|volatility,holdout,,,-0.743714540911723,,,,,,,,
+variance_inflation,equity_market,holdout,,,7.35171925889059,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,semiconductor|biotechnology,holdout,,,0.529310109270821,,,,,,,,
+factor_correlation,semiconductor|long_treasury,holdout,,,0.056471259553396456,,,,,,,,
+factor_correlation,semiconductor|volatility,holdout,,,-0.67148490731364,,,,,,,,
+variance_inflation,semiconductor,holdout,,,5.332198903158704,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,biotechnology|long_treasury,holdout,,,0.05705364802225366,,,,,,,,
+factor_correlation,biotechnology|volatility,holdout,,,-0.5449138149289791,,,,,,,,
+variance_inflation,biotechnology,holdout,,,1.7114902693270648,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,long_treasury|volatility,holdout,,,0.044985367785783666,,,,,,,,
+variance_inflation,long_treasury,holdout,,,1.0375762344452537,,,,,,,,one over one minus the R-squared of that factor on the others
+variance_inflation,volatility,holdout,,,2.3535503316832704,,,,,,,,one over one minus the R-squared of that factor on the others
+verdict,alpha_absorbed_by_the_extra_factors,holdout,,,0.10511012288059288,,,,,,,,"the single-factor annualised alpha 0.5637941837318013 against the multi-factor 0.45868406085120844. A multi-factor alpha materially below the single-factor figure means the single-factor figure was measuring sector exposure the benchmark omits, and an alpha that survives means it was not"
+verdict,share_of_the_single_factor_alpha_absorbed,holdout,,,0.18643349987199245,,,,,,,,
+window,primary,,,,2472,,,,,,,,2011-10-04 to 2021-07-30
+positive_control,equity_market,primary,,,1,0.9999999999999999,-2.7912324767798483e-19,,,,,,
+positive_control,semiconductor,primary,,,1,0.9999999999999993,5.582464953559697e-19,,,,,,
+positive_control,biotechnology,primary,,,1,1.0000000000000007,-2.7912324767798483e-19,,,,,,
+positive_control,long_treasury,primary,,,1,0.999999999999999,1.3956162383899241e-19,,,,,,
+positive_control,volatility,primary,,,1,0.9999999999999996,0.0,,,,,,
+positive_control,tolerance,primary,,,1e-10,,,,,,,,stated before comparing
+positive_control,verdict,primary,,,PASS,,,,,,,,
+single_factor,beta,primary,,,1.108672858112171,,,,,,,,
+single_factor,alpha_annualised,primary,,,0.28874420661558875,,,,,,,,
+single_factor,r_squared,primary,,,0.18679426851145753,,,,,,,,
+single_factor,alpha_t_newey_west,primary,,,2.364283243646891,,,,,,,,
+single_factor,residual_sharpe_naive,primary,,,0.6558362612960221,,,,,,,,
+single_factor,residual_sharpe_lo,primary,,,0.8649152595612315,,,,,,,,
+incremental,equity_market,primary,,,,,,1,0.1847796714444918,0.1847796714444918,0.2903836469464326,2.3788427467432167,factors entered in the pre-registered economic order
+incremental,semiconductor,primary,,,,,,2,0.18666416081314252,0.0018844893686507103,0.28679912786493617,2.3439941709624548,factors entered in the pre-registered economic order
+incremental,biotechnology,primary,,,,,,3,0.18742480280759222,0.0007606419944496956,0.28579607372994276,2.3372654160868453,factors entered in the pre-registered economic order
+incremental,long_treasury,primary,,,,,,4,0.18904486398399978,0.0016200611764075612,0.2703489358642575,2.2299201575492567,factors entered in the pre-registered economic order
+incremental,volatility,primary,,,,,,5,0.2254662179646324,0.03642135398063262,0.28536068219605043,2.429602755645417,factors entered in the pre-registered economic order
+multi_factor,alpha_annualised,primary,,,0.28536068219605043,,,,,,,,against the single-factor figure of 0.5637941837318013 over the holdout
+multi_factor,r_squared,primary,,,0.2254662179646324,,,,,,,,
+multi_factor,alpha_t_newey_west,primary,,,2.429602755645417,,,,,,,,
+loading,equity_market,primary,,,1.4175774214644519,,,,,,,,
+loading,semiconductor,primary,,,0.21895808860931762,,,,,,,,
+loading,biotechnology,primary,,,-0.0044012049738858675,,,,,,,,
+loading,long_treasury,primary,,,0.009782273827371834,,,,,,,,
+loading,volatility,primary,,,0.11182061241329179,,,,,,,,
+multi_factor_residual,residual_ann_return,primary,,,0.21472868959201863,,,,,,,,
+multi_factor_residual,residual_ann_vol,primary,,,0.4296727594079078,,,,,,,,
+multi_factor_residual,residual_sharpe_naive,primary,,,0.6641349165101165,,,,,,,,against the single-factor residual naive Sharpe of 1.527991674661622
+multi_factor_residual,residual_sharpe_lo,primary,,,1.03808456210245,,,,,,,,
+factor_correlation,equity_market|semiconductor,primary,,,0.8505706950893,,,,,,,,
+factor_correlation,equity_market|biotechnology,primary,,,0.6726998813289997,,,,,,,,
+factor_correlation,equity_market|long_treasury,primary,,,-0.3206505529783839,,,,,,,,
+factor_correlation,equity_market|volatility,primary,,,-0.7374536665708828,,,,,,,,
+variance_inflation,equity_market,primary,,,5.108514278028019,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,semiconductor|biotechnology,primary,,,0.5858637184804594,,,,,,,,
+factor_correlation,semiconductor|long_treasury,primary,,,-0.31861732698778567,,,,,,,,
+factor_correlation,semiconductor|volatility,primary,,,-0.6529492057645121,,,,,,,,
+variance_inflation,semiconductor,primary,,,3.660961012440792,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,biotechnology|long_treasury,primary,,,-0.229712010003559,,,,,,,,
+factor_correlation,biotechnology|volatility,primary,,,-0.5616880294828976,,,,,,,,
+variance_inflation,biotechnology,primary,,,1.8599861334019663,,,,,,,,one over one minus the R-squared of that factor on the others
+factor_correlation,long_treasury|volatility,primary,,,0.36426285750333237,,,,,,,,
+variance_inflation,long_treasury,primary,,,1.1683912886493588,,,,,,,,one over one minus the R-squared of that factor on the others
+variance_inflation,volatility,primary,,,2.328681241044709,,,,,,,,one over one minus the R-squared of that factor on the others
+verdict,alpha_absorbed_by_the_extra_factors,primary,,,0.0033835244195382893,,,,,,,,"the single-factor annualised alpha 0.28874420661558875 against the multi-factor 0.28536068219605043. A multi-factor alpha materially below the single-factor figure means the single-factor figure was measuring sector exposure the benchmark omits, and an alpha that survives means it was not"
+verdict,share_of_the_single_factor_alpha_absorbed,primary,,,0.011718068595027593,,,,,,,,

@@ -1,0 +1,712 @@
+table,item,window,date,value,rank,n_screened,n_low_underlying,n_flagged,flagged_contribution,share_of_window,implied_multiple,registered_multiple,underlying_return,residual,proxy,weight_lagged,contribution,screen,indicator,lookback,n_terminal_firings,matching_discontinuity,note
+machine_at_phase_B,load_1min,,,3.28,,,,,,,,,,,,,,,,,,,
+machine_at_phase_B,compressor_gib,,,2.911,,,,,,,,,,,,,,,,,,,
+machine_at_phase_B,swap_used_mb,,,11698.88,,,,,,,,,,,,,,,,,,,
+machine_at_phase_B,swap_free_mb,,,589.12,,,,,,,,,,,,,,,,,,,
+rule,residual_tolerance,,,0.05,,,,,,,,,,,,,,,,,,,"the tracking residual e equals the observed return minus the registered multiple times the proxy's return. A missing split of ratio R contributes about 1/R minus 1 to e, being -0.0476 at R equal to 1.05 and -0.1667 at R equal to 1.2, and it does not shrink as the underlying's move grows. The threshold catches ratios at and above about 1.053"
+rule,min_abs_underlying_return,,,0.005,,,,,,,,,,,,,,,,,,,"below this the implied multiple is not computed, since its denominator is unstable. Those sessions are screened on absolute return instead"
+rule,absolute_return_tolerance,,,0.25,,,,,,,,,,,,,,,,,,,"applied to the sessions the implied multiple cannot be computed on, so they are not silently dropped. A missing split of ratio 1.33 or larger shows as an absolute return above this on its own"
+rule,stated_before_running,,,1,,,,,,,,,,,,,,,,,,,
+proxy,volatility_benchmark,,,data/interim/vx-cm30.parquet,,,,,,,,,,,,,,,,,,,"the frozen constant-maturity thirty-day VIX futures settle. It is an IMPERFECT PROXY for a front-month-tracking product, which is why session 29 flagged SVXY on 2018-02-06 and UVXY on 2018-02-05 and 2020-03-16 as unexplained where the underlying event is the February 2018 volatility spike and the March 2020 volatility peak respectively"
+proxy,Financials Select Sector Index,,,XLF,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,ICE Semiconductor Index,,,SMH,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,Nasdaq-100 Index,,,QQQ,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,PHLX Semiconductor Sector Index,,,SOXX,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,Russell 1000 Financial Services Index,,,XLF,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,Russell 1000 Financials 40 Act 15/22.5 Daily Capped Index,,,XLF,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,S&P 500 Index,,,SPY,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,S&P Biotechnology Select Industry Index,,,XBI,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+proxy,Technology Select Sector Index,,,XLK,,,,,,,,,,,,,,,,,,,frozen instrument standing for the registered index
+scope,loaded_universe,,,35,,,,,,,,,,,,,,,,,,,"bt.UNLEVERED plus bt.LEVERED, unmodified"
+scope,derived_held_universe,,,17,,,,,,,,,,,,,,,,,,,"BIL, BSV, BTAL, LABU, PSQ, QLD, QQQ, SOXL, SOXS, SPXL, SQQQ, SVXY, TECL, TECS, TLT, TQQQ, UVXY"
+scope,sessions_screened_per_instrument,,,3737,,,,,,,,,,,,,,,,,,,"2011-10-04 to 2026-08-14, the full combined window"
+instrument_screen,BIL,,,0,,0,0,,,,,,,,none,,,,,,,,"unlevered or no registered schedule, so the implied-multiple screen does not apply"
+instrument_screen,BSV,,,0,,0,0,,,,,,,,none,,,,,,,,"unlevered or no registered schedule, so the implied-multiple screen does not apply"
+instrument_screen,BTAL,,,0,,0,0,,,,,,,,none,,,,,,,,"unlevered or no registered schedule, so the implied-multiple screen does not apply"
+instrument_screen,LABU,,,1,,2820,642,,,,,3.0,,,XBI,,,,,,,,
+flagged_session,LABU,primary,2020-03-17,0.011131744500489704,,,,,,,0.3084602970594954,3.0,0.03608809498858334,-0.09713254046526032,XBI,0.0,0.0,residual,,,,,
+instrument_screen,PSQ,,,0,,3737,1575,,,,,-1.0,,,QQQ,,,,,,,,
+instrument_screen,QLD,,,0,,3737,1575,,,,,2.0,,,QQQ,,,,,,,,
+instrument_screen,QQQ,,,0,,0,0,,,,,,,,none,,,,,,,,"unlevered or no registered schedule, so the implied-multiple screen does not apply"
+instrument_screen,SOXL,,,8,,3737,1055,,,,,3.0,,,"SMH,SOXX",,,,,,,,
+flagged_session,SOXL,primary,2020-03-16,-0.38592975430920673,,,,,,,2.5343838869924316,3.0,-0.1522775441755163,0.0709028782173422,"SMH,SOXX",0.08333333333333333,-0.03216081285910056,residual,,,,,
+flagged_session,SOXL,primary,2020-03-17,0.09939821874613641,,,,,,,1.12971513091232,3.0,0.08798520620491801,-0.16455739986861762,"SMH,SOXX",0.0,0.0,residual,,,,,
+flagged_session,SOXL,holdout,2023-05-25,0.1946349842944184,,,,,,,2.263854736165629,3.0,0.08597503240162774,-0.06329011291046482,"SMH,SOXX",0.125,0.0243293730368023,residual,,,,,
+flagged_session,SOXL,holdout,2024-02-22,0.14609847450106006,,,,,,,2.1393304276372156,3.0,0.06829168258146012,-0.05877657324332031,"SMH,SOXX",0.125,0.018262309312632508,residual,,,,,
+flagged_session,SOXL,holdout,2024-05-23,-0.01154312844258465,,,,,,,-0.8455044665539909,3.0,0.013652356550676537,-0.05250019809461426,"SMH,SOXX",0.29166666666666663,-0.0033667457957538556,residual,,,,,
+flagged_session,SOXL,holdout,2025-01-27,-0.23246559587204207,,,,,,,2.3637917620200506,3.0,-0.09834436332639618,0.06256749410714646,"SMH,SOXX",0.29166666666666663,-0.06780246546267893,residual,,,,,
+flagged_session,SOXL,holdout,2026-05-26,0.18487613444005468,,,,,,,4.1265602219494895,3.0,0.04480151130636223,0.050471600520967996,"SMH,SOXX",0.08333333333333333,0.015406344536671224,residual,,,,,
+flagged_session,SOXL,holdout,2026-06-02,0.17306086753370842,,,,,,,4.310984435430654,3.0,0.04014416431462253,0.05262837458984082,"SMH,SOXX",0.0,0.0,residual,,,,,
+instrument_screen,SOXS,,,7,,3737,1055,,,,,-3.0,,,"SMH,SOXX",,,,,,,,
+flagged_session,SOXS,holdout,2023-05-25,-0.1974957313602732,,,,,,,-2.2971288971161132,-3.0,0.08597503240162774,0.060429365844610006,"SMH,SOXX",0.08333333333333333,-0.0164579776133561,residual,,,,,
+flagged_session,SOXS,holdout,2024-02-22,-0.14655172413793105,,,,,,,-2.1459673945376916,-3.0,0.06829168258146012,0.05832332360644932,"SMH,SOXX",0.08333333333333333,-0.01221264367816092,residual,,,,,
+flagged_session,SOXS,holdout,2024-05-23,0.018477457501847816,,,,,,,1.3534262332851374,-3.0,0.013652356550676537,0.059434527153877426,"SMH,SOXX",0.0,0.0,residual,,,,,
+flagged_session,SOXS,holdout,2025-01-27,0.22830292979546707,,,,,,,-2.321464312476659,-3.0,-0.09834436332639618,-0.06673016018372147,"SMH,SOXX",0.0,0.0,residual,,,,,
+flagged_session,SOXS,holdout,2026-05-26,-0.9457524782010531,,,,,,,-21.109834258353413,-3.0,0.04480151130636223,-0.8113479442819664,"SMH,SOXX",0.0,-0.0,residual,,,,,
+flagged_session,SOXS,holdout,2026-06-02,-0.1741213734324245,,,,,,,-4.337401871609037,-3.0,0.04014416431462253,-0.05368888048855691,"SMH,SOXX",0.0,-0.0,residual,,,,,
+flagged_session,SOXS,holdout,2026-07-30,-0.26288452434454745,,,,,,,-3.822132253109131,-3.0,0.06877954684344134,-0.05654588381422343,"SMH,SOXX",0.0,-0.0,residual,,,,,
+instrument_screen,SPXL,,,0,,3737,1920,,,,,3.0,,,SPY,,,,,,,,
+instrument_screen,SQQQ,,,0,,3737,1575,,,,,-3.0,,,QQQ,,,,,,,,
+instrument_screen,SVXY,,,17,,3736,519,,,,,-1.0,,,vx-cm30,,,,,,,,
+flagged_session,SVXY,primary,2012-12-28,-0.05152584967834517,,,,,,,-0.3314665305862921,-1.0,0.15544812197843072,0.10392227230008555,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2012-12-31,0.0582053122544115,,,,,,,-0.31560890955402543,-1.0,-0.18442227228838104,-0.12621696003396954,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,SVXY,primary,2013-04-15,-0.11588410240705493,,,,,,,-0.5475623395522355,-1.0,0.21163636363636362,0.09575226122930869,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2013-04-16,0.04463273387844269,,,,,,,-0.36322885030732605,-1.0,-0.12287772251757856,-0.07824498863913587,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,SVXY,primary,2014-10-14,0.006388653417921386,,,,,,,-0.10254475687744223,-1.0,-0.0623011220901023,-0.055912468672180915,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,SVXY,primary,2014-10-15,-0.01974958472872601,,,,,,,-0.16225667629660576,-1.0,0.12171816395784973,0.10196857922912372,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2014-10-16,-0.041914046135260175,,,,,,,0.7822917288335874,-1.0,-0.05357853674070523,-0.0954925828759654,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2015-08-24,-0.18823696711025328,,,,,,,-0.7673764095520581,-1.0,0.24529939253688182,0.05706242542662854,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2015-08-25,-0.10465522586826759,,,,,,,,-1.0,0.003687572590011623,-0.10096765327825596,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,SVXY,primary,2015-09-18,-0.11930435844089671,,,,,,,-2.215265019232105,-1.0,0.05385556915544676,-0.06544878928544995,vx-cm30,0.08333333333333333,-0.009942029870074726,residual,,,,,
+flagged_session,SVXY,primary,2016-06-24,-0.26445431622627125,,,,,,,-0.7651827228043793,-1.0,0.34560936668440645,0.0811550504581352,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2016-06-28,0.08450706534032859,,,,,,,-0.4435735907241305,-1.0,-0.19051419450461748,-0.1060071291642889,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,SVXY,primary,2017-08-10,-0.1379429143620634,,,,,,,-0.6508973914727296,-1.0,0.2119272809650563,0.0739843666029929,vx-cm30,0.08333333333333333,-0.011495242863505284,residual,,,,,
+flagged_session,SVXY,primary,2018-02-05,-0.3198863566989083,,,,,,,-0.3308439094527745,-1.0,0.9668799925258098,0.6469936358269015,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2018-02-06,-0.8295739372998041,,,,,,,3.1220245468366317,-1.0,-0.2657166607291297,-1.0952905980289338,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2018-02-08,-0.22303325361038828,,,,,,,-1.819825627483051,-1.0,0.12255748586135651,-0.10047576774903177,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,SVXY,primary,2018-02-09,0.1336116642134606,,,,,,,-2.390156203641555,-1.0,-0.05590080849523338,0.07771085571822722,vx-cm30,0.0,0.0,residual,,,,,
+instrument_screen,TECL,,,2,,3737,1498,,,,,3.0,,,XLK,,,,,,,,
+flagged_session,TECL,primary,2020-03-16,-0.3616384292477297,,,,,,,2.6179129371018623,3.0,-0.13813997559753777,0.05278149754488359,XLK,0.08333333333333333,-0.03013653577064414,residual,,,,,
+flagged_session,TECL,primary,2020-03-17,0.08542061215594532,,,,,,,1.2546794223293114,3.0,0.06808162358904557,-0.11882425861119139,XLK,0.0,0.0,residual,,,,,
+instrument_screen,TECS,,,1,,3737,1498,,,,,-3.0,,,XLK,,,,,,,,
+flagged_session,TECS,primary,2020-03-16,0.3257142857142856,,,,,,,-2.3578568354697986,-3.0,-0.13813997559753777,-0.08870564107832768,XLK,0.0,0.0,residual,,,,,
+instrument_screen,TLT,,,0,,0,0,,,,,,,,none,,,,,,,,"unlevered or no registered schedule, so the implied-multiple screen does not apply"
+instrument_screen,TQQQ,,,1,,3737,1575,,,,,3.0,,,QQQ,,,,,,,,
+flagged_session,TQQQ,primary,2020-03-17,0.16295301194158984,,,,,,,2.148594492787561,3.0,0.07584167812427767,-0.06457202243124316,QQQ,0.0,0.0,residual,,,,,
+instrument_screen,UVXY,,,137,,3736,519,,,,,2.0,,,vx-cm30,,,,,,,,
+flagged_session,UVXY,primary,2011-10-18,-0.06666660402771585,,,,,,,1.1264946680580694,2.0,-0.05918057663125953,0.05169454923480321,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2011-10-19,0.11105985903015592,,,,,,,1.2080195192753789,2.0,0.09193548387096784,-0.07281110871177976,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2011-11-01,0.29313329831945345,,,,,,,2.420122694794681,2.0,0.12112332112332114,0.050886656072811176,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2011-12-12,0.0024569961928333495,,,,,,,0.09229809529993968,2.0,0.026620226396318225,-0.0507834565998031,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2011-12-22,-0.0009025001175566594,,,,,,,-0.03174949131507009,2.0,0.028425655976676456,-0.05775381207090957,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-02-29,-0.03514939146444451,,,,,,,-3.825006992577226,2.0,0.009189366590088621,-0.053528124644621755,vx-cm30,0.8333333333333333,-0.029291159553703757,residual,,,,,
+flagged_session,UVXY,primary,2012-03-14,0.06288792103305019,,,,,,,1.0651287526318418,2.0,0.05904255319148932,-0.05519718534992846,vx-cm30,0.8333333333333333,0.052406600860875154,residual,,,,,
+flagged_session,UVXY,primary,2012-03-26,-0.18582370668662873,,,,,,,2.7441277289554025,2.0,-0.06771685761047486,-0.05038999146567902,vx-cm30,0.8333333333333333,-0.15485308890552393,residual,,,,,
+flagged_session,UVXY,primary,2012-04-13,0.10000008725207454,,,,,,,1.1156417403218375,2.0,0.08963458755426879,-0.07926908785646303,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-05-17,0.09783728662728941,,,,,,,1.0568189789740556,2.0,0.09257714762301905,-0.08731700861874869,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-05-21,-0.22923590006467864,,,,,,,1.6365702232465664,2.0,-0.1400709219858156,0.05090594390695258,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-05-24,0.015096222093682332,,,,,,,-0.7946879177617694,2.0,-0.018996415770609287,0.05308905363490091,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-05-30,0.1344927950288377,,,,,,,1.2298618923192632,2.0,0.10935601458080169,-0.08421923413276566,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-06-11,0.15833864758963845,,,,,,,1.2799783356745895,2.0,0.12370416215379842,-0.0890696767179584,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-06-19,-0.04351267504566525,,,,,,,,2.0,0.004587155963302614,-0.05268698697227048,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2012-06-21,0.21719452552011775,,,,,,,1.47073776386967,2.0,0.1476772616136921,-0.07815999770726645,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-06-22,-0.20520448419726656,,,,,,,3.475571619460716,2.0,-0.05904193803639901,-0.08712060812446853,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-06-25,0.17867166371018994,,,,,,,5.437175687590231,2.0,0.03286111650171408,0.11294943070676178,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-07-30,0.04347814730687416,,,,,,,0.7863227324901324,2.0,0.055293005671077644,-0.06710786403528113,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-09-10,0.11261523244919336,,,,,,,1.3782451384148966,2.0,0.08170914542728647,-0.050803058405379575,vx-cm30,0.5833333333333333,0.06569221892869612,residual,,,,,
+flagged_session,UVXY,primary,2012-09-14,0.06449512395870549,,,,,,,1.1017512904825428,2.0,0.058538732394366466,-0.05258234083002744,vx-cm30,0.5833333333333333,0.037622155642578196,residual,,,,,
+flagged_session,UVXY,primary,2012-09-20,-0.019446279926771504,,,,,,,-0.635113241213017,2.0,0.0306186025812194,-0.0806834850892103,vx-cm30,0.8333333333333333,-0.016205233272309584,residual,,,,,
+flagged_session,UVXY,primary,2012-10-23,0.15616152860868993,,,,,,,1.4589090499634938,2.0,0.10703993412927115,-0.05791833964985238,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-10-24,0.009188337778611944,,,,,,,-0.40838744275516586,2.0,-0.022499070286351786,0.054186478351315515,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-11-02,0.04758364176415486,,,,,,,0.9580173208516485,2.0,0.04966887417218557,-0.051754106580216286,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-11-23,-0.08390028720296339,,,,,,,14.863258571417584,2.0,-0.005644811115935622,-0.07261066497109214,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-12-03,0.04036789070858915,,,,,,,0.7494530529094624,2.0,0.05386313465783665,-0.06735837860708416,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-12-24,-0.03135744741795421,,,,,,,-1.3273788898740766,2.0,0.023623584537289855,-0.07860461649253392,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-12-28,0.10027966695249746,,,,,,,0.6451005369264726,2.0,0.15544812197843072,-0.21061657700436398,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2012-12-31,-0.24110387940567246,,,,,,,1.3073468644213342,2.0,-0.18442227228838104,0.12774066517108962,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2013-02-25,0.2764884837710977,,,,,,,1.5673289032703748,2.0,0.1764074427480915,-0.07632640172508531,vx-cm30,0.25,0.06912212094277442,residual,,,,,
+flagged_session,UVXY,primary,2013-04-15,0.23407645350318473,,,,,,,1.106031352463502,2.0,0.21163636363636362,-0.1891962737695425,vx-cm30,0.25,0.05851911337579618,residual,,,,,
+flagged_session,UVXY,primary,2013-04-16,-0.17548386806942773,,,,,,,1.4281178432837855,2.0,-0.12287772251757856,0.07027157696572939,vx-cm30,0.25,-0.04387096701735693,residual,,,,,
+flagged_session,UVXY,primary,2013-12-19,0.023046618620020443,,,,,,,-1.4024344727117724,2.0,-0.01643329443796193,0.055913207495944306,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-01-24,0.17587208268733856,,,,,,,1.310629346635209,2.0,0.13418903150525097,-0.09250598032316337,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-01-30,-0.028371525610081938,,,,,,,-2.1682204701153203,2.0,0.01308516638465873,-0.0545418583793994,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-01-31,0.1670666865641237,,,,,,,3.2060382735734794,2.0,0.052110010021156006,0.0628466665218117,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-07-31,0.16715753755522833,,,,,,,1.520562617831602,2.0,0.10993137381846418,-0.05270521008170004,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-10-14,-0.03622713799016197,,,,,,,0.5814845186539157,2.0,-0.0623011220901023,0.08837510619004263,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-10-15,0.021315653470686646,,,,,,,0.17512302829401968,2.0,0.12171816395784973,-0.22212067444501282,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-10-16,0.030969450628366202,,,,,,,-0.5780197167056594,2.0,-0.05357853674070523,0.13812652410977666,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-08,0.07224958696005834,,,,,,,0.9790831877764905,2.0,0.07379310344827594,-0.07533661993649354,vx-cm30,0.5833333333333333,0.04214559239336736,residual,,,,,
+flagged_session,UVXY,primary,2014-12-11,0.11576359934318559,,,,,,,1.3567317943915045,2.0,0.08532533830321687,-0.05488707726324815,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-12,0.10669604795544729,,,,,,,14.149374914012434,2.0,0.007540689861131877,0.09161466823318354,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-16,0.08891976183019623,,,,,,,0.9929623319385508,2.0,0.08954998489882193,-0.09018020796744763,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-18,-0.0591311570519758,,,,,,,0.8015077273395544,2.0,-0.07377490576198176,0.08841865447198771,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-19,-0.01881145737326495,,,,,,,0.4977801028002423,2.0,-0.03779069767441856,0.05676993797557217,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-22,-0.09803924083899285,,,,,,,12.980395487082665,2.0,-0.007552870090634434,-0.08293350065772398,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-23,0.005797101449275255,,,,,,,-0.2019762845849765,2.0,-0.028701891715590344,0.06320088488045594,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-24,-0.01969263400576371,,,,,,,-0.9774110678194045,2.0,0.020147750167897938,-0.059988134341559585,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-26,0.022538035003642376,,,,,,,-1.0480186276693606,2.0,-0.021505376344086224,0.06554878769181482,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2014-12-29,-0.011978947404574725,,,,,,,-0.6104471597371292,2.0,0.019623233908948157,-0.05122541522247104,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-01-28,0.16427432216905902,,,,,,,1.2120813690093233,2.0,0.1355307707627964,-0.10678721935653379,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-01-29,-0.07089043287671237,,,,,,,1.062238641383904,2.0,-0.06673682364290101,0.06258321440908965,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-04-13,0.05080219607843128,,,,,,,0.8659275962712959,2.0,0.05866794902620809,-0.0665337019739849,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-08-21,0.3364158163265305,,,,,,,2.399225411643633,2.0,0.1402185116470831,0.055978793032364305,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-08-24,0.3672154617036507,,,,,,,1.4970092583838677,2.0,0.24529939253688182,-0.12338332337011293,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-08-25,0.15671902268760918,,,,,,,,2.0,0.003687572590011623,0.14934387750758593,vx-cm30,0.0,0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2015-08-26,-0.17682558841279417,,,,,,,2.8271647153862416,2.0,-0.06254520207133973,-0.0517351842701147,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-08-28,0.10304403079076274,,,,,,,12.155859675478357,2.0,0.008476901966763428,0.08609022685723589,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-08-31,0.07137203217114196,,,,,,,1.0528488938430778,2.0,0.0677894354911861,-0.06420683881123024,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-09-01,0.29592888013364305,,,,,,,2.6390728287675804,2.0,0.1121336542545659,0.07166157162451126,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-09-17,-0.016984644020474615,,,,,,,-0.343041965145924,2.0,0.049511854951185486,-0.11600835392284559,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-09-18,0.25230769230769234,,,,,,,4.684895104895105,2.0,0.05385556915544676,0.14459655399679883,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-09-22,0.10533159947984405,,,,,,,0.9978878444272762,2.0,0.10555454710473766,-0.10577749472963127,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-10-13,0.09457040572792352,,,,,,,1.0568657622576714,2.0,0.0894819466248038,-0.08439348752168407,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-10-20,0.06707759245830314,,,,,,,0.9952442787999402,2.0,0.06739811912225702,-0.0677186457862109,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-10-23,0.01351845085860437,,,,,,,0.3764304433528631,2.0,0.03591221458656646,-0.05830597831452855,vx-cm30,0.5,0.006759225429302185,residual,,,,,
+flagged_session,UVXY,primary,2015-12-08,0.06043110084680525,,,,,,,1.03933690301446,2.0,0.05814389989572466,-0.05585669894464407,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-12-15,-0.08055473591029805,,,,,,,1.0166984092920932,2.0,-0.07923169267707098,0.0779086494438439,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-12-21,-0.09396170839469808,,,,,,,1.1994799337260662,2.0,-0.07833537331701357,0.06270903823932905,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2015-12-23,-0.0488245931283906,,,,,,,,2.0,0.0043021510755374415,-0.057428895279465486,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2016-01-11,-0.06819243344231662,,,,,,,1.0770535409648208,2.0,-0.06331387516838771,0.0584353168944588,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-04-18,-0.12672018348623848,,,,,,,3.563674174996578,2.0,-0.03555885787071433,-0.055602467744809814,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-05-11,0.06473724295506478,,,,,,,1.0861340689639971,2.0,0.059603362793705594,-0.05446948263234641,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-05-23,-0.010370370370370363,,,,,,,-0.4984894698620212,2.0,0.020803589638996423,-0.05197754964836321,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-06-23,-0.195046439628483,,,,,,,1.4224150265739608,2.0,-0.13712343864805288,0.07920043766762275,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-06-24,0.4375,,,,,,,1.2658800431167236,2.0,0.34560936668440645,-0.2537187333688129,vx-cm30,0.5,0.21875,residual,,,,,
+flagged_session,UVXY,primary,2016-06-27,-0.01538461538461533,,,,,,,-0.378021978021976,2.0,0.04069767441860472,-0.09677996422182478,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-06-28,-0.22350543478260865,,,,,,,1.1731694604896832,2.0,-0.19051419450461748,0.15752295422662632,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-09-13,0.2695876288659793,,,,,,,2.6483693391993413,2.0,0.10179381888912875,0.06599999108772181,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-09-14,-0.005278116118554554,,,,,,,-0.16609775291599488,2.0,0.031777167516673144,-0.06883245115190084,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-09-16,-0.024304021210782123,,,,,,,0.6302842833996156,2.0,-0.03856041131105403,0.05281680141132594,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-09-20,-0.01624462494027712,,,,,,,-0.9272973403408153,2.0,0.01751824817518255,-0.05128112129064222,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-09-30,-0.07499999999999996,,,,,,,,2.0,-0.004979207704092881,-0.0650415845918142,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2016-11-08,-0.06732026143790848,,,,,,,,2.0,-0.00017469537493985943,-0.06697087068802876,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2016-11-09,-0.05045550105115626,,,,,,,0.8981942344977618,2.0,-0.05617437644694878,0.061893251842741304,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2016-11-16,0.007317073170731714,,,,,,,0.2024261024067194,2.0,0.03614688562263613,-0.06497669807454054,vx-cm30,0.5,0.003658536585365857,residual,,,,,
+flagged_session,UVXY,primary,2016-12-12,0.012035010940919078,,,,,,,0.29049283124857295,2.0,0.04142963146178569,-0.0708242519826523,vx-cm30,0.75,0.009026258205689308,residual,,,,,
+flagged_session,UVXY,primary,2017-02-15,0.056533333333333324,,,,,,,1.0065546218487407,2.0,0.0561651917404129,-0.05579705014749248,vx-cm30,1.0,0.056533333333333324,residual,,,,,
+flagged_session,UVXY,primary,2017-05-18,-0.045425867507886464,,,,,,,-2.800454891567689,2.0,0.016220888843689663,-0.07786764519526579,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-05-19,-0.1440846001321877,,,,,,,1.32697268831418,2.0,-0.10858143607705784,0.07307827202192796,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-06-20,0.057022175290390775,,,,,,,,2.0,-0.004123711340206282,0.06526959797080334,vx-cm30,0.5833333333333333,0.03326293558606128,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2017-06-29,0.10264900662251653,,,,,,,3.987794547974755,2.0,0.02574079616881164,0.05116741428489324,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-06-30,-0.025025025025025016,,,,,,,-1.3721721721721698,2.0,0.01823752553253577,-0.061500076090096556,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-07-17,-0.051985981308411255,,,,,,,,2.0,0.0046637580863546635,-0.06131349748112058,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2017-08-10,0.2671826625386997,,,,,,,1.26072802577387,2.0,0.2119272809650563,-0.1566718993914129,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-08-18,-0.05297691373025515,,,,,,,,2.0,0.003350083752093669,-0.059677081234442486,vx-cm30,0.0,-0.0,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2017-08-23,0.015349444807315482,,,,,,,0.2987806368910605,2.0,0.05137362637362641,-0.08739780793993734,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-08-24,0.05307172724348663,,,,,,,-4.321393620443047,2.0,-0.01228116017768488,0.07763404759885639,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2017-09-06,-0.04517133956386288,,,,,,,-5.304505152168718,2.0,0.008515655705489289,-0.062202650974841456,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-01-17,-0.04205128205128206,,,,,,,,2.0,0.0041407867494824835,-0.050332855550247024,vx-cm30,1.0,-0.04205128205128206,residual,,,,,"the implied multiple is not computed, the underlying's move being below the floor"
+flagged_session,UVXY,primary,2018-02-05,0.6620639534883721,,,,,,,0.6847426346664206,2.0,0.9668799925258098,-1.2716960315632475,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-02-06,-0.3344993441189331,,,,,,,1.2588572474193485,2.0,-0.2657166607291297,0.19693397733932627,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-02-07,0.22536136662286466,,,,,,,-5.0198107866564206,2.0,-0.044894394669599214,0.3151501559620631,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-02-08,0.49651474530831097,,,,,,,4.051280440510951,2.0,0.12255748586135651,0.25139977358559795,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-02-09,-0.16374059476890002,,,,,,,2.9291274880731297,2.0,-0.05590080849523338,-0.05193897777843326,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-02-15,-0.045454545454545414,,,,,,,0.9106424994710435,2.0,-0.04991480793060743,0.054375070406669446,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-04-02,0.1430113329735565,,,,,,,2.442330614831886,1.5,0.05855527179861375,0.05517842527563588,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-10-11,0.1298030969221946,,,,,,,8.70887461586273,1.5,0.014904692356664029,0.10744605838719856,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-10-12,-0.11641285956006764,,,,,,,3.1360883766773227,1.5,-0.03712040146120077,-0.060732257368266485,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-10-25,-0.047671147233510514,,,,,,,-3.864048624350047,1.5,0.01233709817549955,-0.06617679449675984,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-10-26,0.0922369932709668,,,,,,,15.353506365618419,1.5,0.006007552351527723,0.08322566474367521,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2018-12-20,0.08346278774184435,,,,,,,5.640279850532687,1.5,0.014797632378819259,0.06126633917361546,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2019-05-07,0.2491145218417945,,,,,,,2.12187517266965,1.5,0.1174030051581072,0.0730100141046337,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2019-08-05,0.20947712418300646,,,,,,,1.0906568488977517,1.5,0.19206510681586964,-0.078620536040798,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2019-10-01,0.060675883256528396,,,,,,,0.8136054302246583,1.5,0.07457654656972257,-0.05118893659805546,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2019-12-19,-0.038961038961038974,,,,,,,-2.7405764966740382,1.5,0.014216366158113836,-0.06028558819820973,vx-cm30,0.8333333333333333,-0.03246753246753248,residual,,,,,
+flagged_session,UVXY,primary,2020-02-28,0.055734684477199536,,,,,,,-5.333959938750243,1.5,-0.010449025698955339,0.07140822302563254,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-09,0.3683109118086696,,,,,,,1.9839388370212416,1.5,0.18564630367419244,0.08984145629738094,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-12,0.3484031522189963,,,,,,,1.8215368169805004,1.5,0.19126879510266082,0.06149995956500509,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-16,0.5747728860936407,,,,,,,1.814481939653458,1.5,0.3167696925125718,0.09961834732478303,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-17,-0.03228311515420457,,,,,,,-0.8393609940093169,1.5,0.03846153846153855,-0.08997542284651239,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-20,-0.03167180359230526,,,,,,,0.4418721235326463,1.5,-0.0716764011703157,0.0758427981631683,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-23,-0.23246624958840967,,,,,,,1.1484850004989784,1.5,-0.2024112195522021,0.07115057973989347,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-24,-0.13627913627913624,,,,,,,2.976324094386334,1.5,-0.04578773411678294,-0.06759753510396183,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-27,0.12825278810408913,,,,,,,0.8535668255288867,1.5,0.1502551227018707,-0.0971298959487169,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-03-30,-0.050172233038789926,,,,,,,0.6773346844710108,1.5,-0.07407303093886852,0.06093731336951286,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-05-12,0.15211521152115215,,,,,,,1.032457929337238,1.5,0.14733308466989925,-0.06888441548369673,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-05-13,0.1473958333333334,,,,,,,2.4353961504028647,1.5,0.0605223233636758,0.05661234828781969,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-06-11,0.5016479894528676,,,,,,,1.2450995487347152,1.5,0.4028978967686947,-0.10269885570017445,vx-cm30,0.8333333333333333,0.41803999121072294,residual,,,,,
+flagged_session,UVXY,primary,2020-06-12,-0.11194029850746268,,,,,,,0.8813329945657203,1.5,-0.12701249039543971,0.0785784370856969,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-06-19,0.022076860179885527,,,,,,,0.43601798855274065,1.5,0.05063291139240489,-0.05387250690872181,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,primary,2020-06-22,-0.07413333333333338,,,,,,,0.7164529680365302,1.5,-0.1034727143869596,0.08107573824710601,vx-cm30,0.0,-0.0,residual,,,,,
+flagged_session,UVXY,holdout,2021-11-26,0.3744321868916287,,,,,,,1.2562427105767227,1.5,0.29805720163719984,-0.07265361556417105,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,holdout,2024-08-05,0.583034323123736,,,,,,,1.3672889044181649,1.5,0.42641633471884277,-0.056590178954528114,vx-cm30,0.0,0.0,residual,,,,,
+flagged_session,UVXY,holdout,2024-12-19,0.13985744518291998,,,,,,,1.0578260437927165,1.5,0.13221214017521898,-0.058460765079908494,vx-cm30,0.0,0.0,residual,,,,,
+B1_summary,instruments_screened,,,17,,,,,,,,,,,,,,,,,,,
+B1_summary,sessions_screened,,,43925,,,,,,,,,,,,,,,,,,,instrument-sessions on which a registered multiple and a proxy return both exist
+B1_summary,sessions_flagged,,,174,,,,,,,,,,,,,,,,,,,a selectivity of 0.00396130
+B1_summary,sessions_below_the_underlying_floor,,,15006,,,,,,,,,,,,,,,,,,,screened on absolute return instead of on the implied multiple
+B1_summary,benchmarks_with_no_frozen_proxy,,,0,,,,,,,,,,,,,,,,,,,none
+proxy_limitation,SVXY 2018-02-06,,,1,,,,,,,,,,,,,,,,,,,remains flagged under the sweep's rule
+proxy_limitation,UVXY 2018-02-05,,,1,,,,,,,,,,,,,,,,,,,remains flagged under the sweep's rule
+proxy_limitation,UVXY 2020-03-16,,,1,,,,,,,,,,,,,,,,,,,remains flagged under the sweep's rule
+contribution_rank,TQQQ,holdout,,0.951556253095966,1,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SOXL,holdout,,0.9487899220608594,2,,,8,-0.013171184372326755,0.0038491199775195217,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SQQQ,holdout,,0.2896712920331235,3,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,UVXY,holdout,,0.1350964817698338,4,,,137,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TECL,holdout,,0.11282071433845367,5,,,2,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,QLD,holdout,,0.07038963122854404,6,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,LABU,holdout,,-0.051504161994962085,7,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SVXY,holdout,,0.04311367777143263,8,,,17,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,QQQ,holdout,,0.02864324998891967,9,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TLT,holdout,,-0.0243539230332209,10,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TECS,holdout,,0.014551358900689083,11,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SPXL,holdout,,0.013958869550299324,12,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,PSQ,holdout,,0.012508858027143454,13,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BIL,holdout,,0.002791756988443454,14,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BSV,holdout,,-0.0010064599445912625,15,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SOXS,holdout,,-0.0006734763885016953,16,,,7,-0.02867062129151702,0.00837864371657715,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BTAL,holdout,,0.00029838728216376837,17,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+B2_summary,cumulative_flagged_contribution,holdout,,-0.041841805663843774,,,,,,,,,,,,,,,,,,,"against the window's arithmetic return sum of 3.4218690114239116, a share of 0.012227763694096672"
+B2_summary,instruments_material_under_the_gate,holdout,,0,,,,,,,,,,,,,,,,,,,none. Materiality was fixed at 5 percent of the window's arithmetic return sum before the flags were seen
+contribution_rank,TQQQ,primary,,2.152772082139501,1,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SOXL,primary,,1.4555486425919377,2,,,8,-0.03216081285910056,0.006085514454432425,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SQQQ,primary,,-0.7676845366846142,3,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,UVXY,primary,,0.6949195804794077,4,,,137,0.7527988192268535,0.14244565632576492,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TECL,primary,,0.4630496070477503,5,,,2,-0.03013653577064414,0.005702477883324986,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SVXY,primary,,0.2160505499895108,6,,,17,-0.02143727273358001,0.004056391038850743,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,LABU,primary,,0.18225537689804433,7,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SOXS,primary,,-0.11310783198557423,8,,,7,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,SPXL,primary,,-0.0989913949256389,9,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TECS,primary,,-0.07793735134460246,10,,,1,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,QQQ,primary,,0.0556180851710973,11,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,PSQ,primary,,-0.029987401972373054,12,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,TLT,primary,,0.01851265486064096,13,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,QLD,primary,,0.004294898419046967,14,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BSV,primary,,0.003665573814273495,15,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BTAL,primary,,0.0014883239626152557,16,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+contribution_rank,BIL,primary,,0.00048506490871420653,17,,,0,0.0,0.0,,,,,,,,,,,,,read from outputs/session-28/holdout-decomposition.csv rather than recomputed
+B2_summary,cumulative_flagged_contribution,primary,,0.6690641978635289,,,,,,,,,,,,,,,,,,,"against the window's arithmetic return sum of 5.284814143474101, a share of 0.1266012729491568"
+B2_summary,instruments_material_under_the_gate,primary,,1,,,,,,,,,,,,,,,,,,,UVXY
+B2_named,TQQQ,holdout,,0.951556253095966,,,,1,0.0,,,,,,,,,,,,,,named explicitly because an unrecorded adjustment here moves the result where one in a zero-weight instrument does not
+B2_named,TQQQ,primary,,2.152772082139501,,,,1,0.0,,,,,,,,,,,,,,named explicitly because an unrecorded adjustment here moves the result where one in a zero-weight instrument does not
+indicator_read,XLK,,,src/sleeves.py:187,,,,,,,,,,,,,,,rs,14,,,inside t10_weights
+indicator_read,RYMFX,,,src/sleeves.py:187,,,,,,,,,,,,,,,rs,RYMFX,,,inside t10_weights
+indicator_read,TLT,,,src/sleeves.py:200,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,PSQ,,,src/sleeves.py:200,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,SH,,,src/sleeves.py:205,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,AGG,,,src/sleeves.py:205,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,IEF,,,src/sleeves.py:208,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,PSQ,,,src/sleeves.py:208,,,,,,,,,,,,,,,rs,14,,,inside _t11_bond_baller
+indicator_read,BND,,,src/sleeves.py:228,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,QQQ,,,src/sleeves.py:228,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,SH,,,src/sleeves.py:234,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,AGG,,,src/sleeves.py:234,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,PSQ,,,src/sleeves.py:237,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,IEF,,,src/sleeves.py:237,,,,,,,,,,,,,,,rs,14,,,inside _t11_feaver_bear
+indicator_read,XLK,,,src/sleeves.py:259,,,,,,,,,,,,,,,rs,14,,,inside t11_weights
+indicator_read,RYMFX,,,src/sleeves.py:259,,,,,,,,,,,,,,,rs,RYMFX,,,inside t11_weights
+indicator_read,SQQQ,,,src/sleeves.py:299,,,,,,,,,,,,,,,rs,14,,,inside s2_weights
+indicator_read,BSV,,,src/sleeves.py:299,,,,,,,,,,,,,,,rs,14,,,inside s2_weights
+break_role,LABU,,2020-03-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,LABU,,2020-03-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2020-03-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2020-03-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2020-03-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2020-03-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2023-05-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2023-05-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2024-02-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2024-02-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2024-05-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2024-05-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2025-01-27,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2025-01-27,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2026-05-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2026-05-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXL,,2026-06-02,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXL,,2026-06-02,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2023-05-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2023-05-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2024-02-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2024-02-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2024-05-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2024-05-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2025-01-27,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2025-01-27,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2026-05-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2026-05-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2026-06-02,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2026-06-02,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SOXS,,2026-07-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SOXS,,2026-07-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2012-12-28,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2012-12-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2012-12-31,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2012-12-31,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2013-04-15,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2013-04-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2013-04-16,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2013-04-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2014-10-14,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2014-10-14,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2014-10-15,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2014-10-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2014-10-16,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2014-10-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2015-08-24,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2015-08-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2015-08-25,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2015-08-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2015-09-18,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2015-09-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2016-06-24,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2016-06-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2016-06-28,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2016-06-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2017-08-10,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2017-08-10,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2018-02-05,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2018-02-05,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2018-02-06,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2018-02-06,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2018-02-08,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2018-02-08,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,SVXY,,2018-02-09,neither,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,SVXY,,2018-02-09,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,TECL,,2020-03-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,TECL,,2020-03-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,TECL,,2020-03-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,TECL,,2020-03-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,TECS,,2020-03-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,TECS,,2020-03-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,TQQQ,,2020-03-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,TQQQ,,2020-03-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2011-10-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2011-10-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2011-10-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2011-10-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2011-11-01,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2011-11-01,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2011-12-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2011-12-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2011-12-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2011-12-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-02-29,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-02-29,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-03-14,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-03-14,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-03-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-03-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-04-13,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-04-13,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-05-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-05-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-05-21,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-05-21,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-05-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-05-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-05-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-05-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-06-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-06-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-06-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-06-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-06-21,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-06-21,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-06-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-06-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-06-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-06-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-07-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-07-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-09-10,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-09-10,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-09-14,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-09-14,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-09-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-09-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-10-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-10-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-10-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-10-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-11-02,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-11-02,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-11-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-11-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-12-03,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-12-03,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-12-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-12-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-12-28,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-12-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2012-12-31,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2012-12-31,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2013-02-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2013-02-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2013-04-15,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2013-04-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2013-04-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2013-04-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2013-12-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2013-12-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-01-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-01-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-01-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-01-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-01-31,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-01-31,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-07-31,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-07-31,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-10-14,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-10-14,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-10-15,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-10-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-10-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-10-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-08,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-08,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2014-12-29,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2014-12-29,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-01-28,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-01-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-01-29,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-01-29,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-04-13,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-04-13,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-21,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-21,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-28,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-08-31,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-08-31,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-09-01,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-09-01,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-09-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-09-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-09-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-09-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-09-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-09-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-10-13,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-10-13,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-10-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-10-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-10-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-10-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-12-08,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-12-08,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-12-15,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-12-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-12-21,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-12-21,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2015-12-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2015-12-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-01-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-01-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-04-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-04-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-05-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-05-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-05-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-05-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-06-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-06-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-06-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-06-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-06-27,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-06-27,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-06-28,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-06-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-09-13,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-09-13,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-09-14,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-09-14,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-09-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-09-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-09-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-09-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-09-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-09-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-11-08,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-11-08,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-11-09,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-11-09,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-11-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-11-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2016-12-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2016-12-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-02-15,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-02-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-05-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-05-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-05-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-05-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-06-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-06-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-06-29,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-06-29,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-06-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-06-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-07-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-07-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-08-10,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-08-10,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-08-18,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-08-18,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-08-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-08-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-08-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-08-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2017-09-06,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2017-09-06,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-01-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-01-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-05,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-05,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-06,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-06,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-07,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-07,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-08,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-08,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-09,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-09,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-02-15,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-02-15,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-04-02,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-04-02,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-10-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-10-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-10-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-10-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-10-25,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-10-25,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-10-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-10-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2018-12-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2018-12-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2019-05-07,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2019-05-07,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2019-08-05,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2019-08-05,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2019-10-01,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2019-10-01,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2019-12-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2019-12-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-02-28,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-02-28,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-09,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-09,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-16,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-16,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-17,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-17,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-20,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-20,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-23,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-23,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-24,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-24,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-27,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-27,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-03-30,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-03-30,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-05-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-05-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-05-13,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-05-13,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-06-11,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-06-11,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-06-12,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-06-12,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-06-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-06-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2020-06-22,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2020-06-22,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2021-11-26,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2021-11-26,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2024-08-05,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2024-08-05,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+break_role,UVXY,,2024-12-19,position,,,,,,,,,,,,,,,,,,,"from src/sleeves.py, a position being a ticker appearing in a returned weight dictionary and a signal input being a ticker an indicator reads"
+contamination,UVXY,,2024-12-19,0,,,,,,,,,,,,,,,,,,,"no indicator reads this instrument, so no indicator window spans the break"
+B3_summary,breaks_examined,,,174,,,,,,,,,,,,,,,,,,,
+B3_summary,longest_contaminated_span,,,0,,,,,,,,,,,,,,,,,,,sma_long at 200 sessions sets the outer bound for any instrument an SMA reads
+B3_summary,contaminated_sessions_coinciding_with_a_terminal_firing,,,0,,,,,,,,,,,,,,,,,,,"a terminal transition inside a contaminated indicator window, being the condition gate B tests"
+recorded_split,BIL,,2017-11-30,0.5,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,LABU,,2016-03-24,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,LABU,,2023-12-04,0.05,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,PSQ,,2014-11-06,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,PSQ,,2024-04-10,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2012-05-11,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2015-05-20,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2017-07-17,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2020-08-18,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2021-05-25,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,QLD,,2025-11-20,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXL,,2015-05-20,4.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXL,,2021-03-02,15.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2013-08-20,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2015-05-20,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2017-05-01,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2019-06-28,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2020-08-28,0.08333333333333333,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2022-03-28,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2024-04-15,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2026-03-05,0.05,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SOXS,,2026-07-15,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+discontinuity_without_split,SOXS,,2025-04-09,0.4402381965121225,,,,,,,,,,,,,,,,,,,a close-to-close price step beyond the 0.60 to 1.67 band with no recorded corporate action within five days
+discontinuity_without_split,SOXS,,2026-05-26,0.05424752179894688,,,,,,,,,,,,,,,,,,,a close-to-close price step beyond the 0.60 to 1.67 band with no recorded corporate action within five days
+recorded_split,SPXL,,2013-04-02,3.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SPXL,,2017-05-01,4.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2012-05-11,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2014-01-24,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2017-01-12,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2019-05-24,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2020-08-18,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2022-01-13,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2024-11-07,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SQQQ,,2025-11-20,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SVXY,,2012-10-05,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SVXY,,2014-01-24,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SVXY,,2017-07-17,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SVXY,,2018-09-18,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,SVXY,,2024-04-11,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+discontinuity_without_split,SVXY,,2018-02-06,0.17042606270019592,,,,,,,,,,,,,,,,,,,a close-to-close price step beyond the 0.60 to 1.67 band with no recorded corporate action within five days
+recorded_split,TECL,,2015-05-20,4.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECL,,2021-03-02,10.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2013-04-02,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2015-05-20,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2018-03-29,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2020-04-23,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2021-10-25,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2024-11-04,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TECS,,2026-07-15,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2012-05-11,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2014-01-24,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2017-01-12,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2018-05-24,3.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2021-01-21,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2022-01-13,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,TQQQ,,2025-11-20,2.0,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2012-03-08,0.16666666666666666,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2012-09-07,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2013-06-10,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2014-01-24,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2015-05-20,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2016-07-25,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2017-01-12,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2017-07-17,0.25,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2018-09-18,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2021-05-26,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2023-06-23,0.1,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2024-04-11,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+recorded_split,UVXY,,2025-11-20,0.2,,,,,,,,,,,,,,,,,,0,"recorded split with NO matching price discontinuity, so the price series is already adjusted for it"
+B4_summary,recorded_splits_with_no_price_discontinuity,,,66,,,,,,,,,,,,,,,,,,,"the price series is already adjusted for these, which is the expected state for an adjusted series rather than a defect"
+B4_summary,price_discontinuities_with_no_recorded_split,,,3,,,,,,,,,,,,,,,,,,,"the split column's false-negative count across the study's own held instruments, being the class the SOXS defect belongs to"
+break_classification,SOXS,,2025-04-09,0,,,,,,,,,,,,,,,,,,,"market move. The price step is outside the band because the underlying moved far enough that the registered multiple carries the fund past it, and the residual screen clears the session, so no adjustment artifact is present"
+break_classification,SOXS,,2026-05-26,1,,,,,,,,,,,,,,,,,,,"BREAK. The price step is outside the band and the residual screen also flags it, so the registered multiple times the underlying's move does not account for it"
+break_classification,SVXY,,2018-02-06,1,,,,,,,,,,,,,,,,,,,"BREAK. The price step is outside the band and the residual screen also flags it, so the registered multiple times the underlying's move does not account for it"
+B4_summary,breaks_after_conjoining_the_two_screens,,,2,,,,,,,,,,,,,,,,,,,SOXS 2026-05-26; SVXY 2018-02-06
+gate_B,instruments_with_a_break,,,2,,,,,,,,,,,,,,,,,,,"SOXS, SVXY"
+gate_B,instruments_material_by_flagged_contribution,,,1,,,,,,,,,,,,,,,,,,,UVXY
+gate_B,instruments_with_both,,,0,,,,,,,,,,,,,,,,,,,"none, so no break sits in a material instrument"
+gate_B,contaminated_session_coinciding_with_a_firing,,,0,,,,,,,,,,,,,,,,,,,
+gate_B,verdict_materiality_alone,,,HALT,,,,,,,,,,,,,,,,,,,the first implementation tested materiality without conjoining the break condition and would have halted on UVXY
+gate_B,verdict,,,PROCEED,,,,,,,,,,,,,,,,,,,"the gate as the scaffold states it, being a break in an instrument contributing materially. no break sits in a material instrument and no contaminated indicator session coincides with a terminal firing, so phases C through H proceed"
+gate_B,materiality_definition_unchanged,,,0.05,,,,,,,,,,,,,,,,,,,the 5 percent threshold fixed at 9.82 before the flags were seen is not moved. Only the conjunction the scaffold states was added to the implementation

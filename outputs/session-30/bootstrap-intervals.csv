@@ -1,0 +1,37 @@
+table,item,window,value,p05,p50,p95,bootstrap_sd,iid_standard_error,n_draws,note
+machine_at_phase_F,load_1min,,4.12,,,,,,,
+machine_at_phase_F,load_5min,,5.34,,,,,,,
+machine_at_phase_F,cores,,8,,,,,,,
+machine_at_phase_F,compressor_gib,,3.029,,,,,,,
+machine_at_phase_F,swap_used_mb,,13050.5,,,,,,,
+machine_at_phase_F,swap_free_mb,,1285.5,,,,,,,
+preregistration,wall_limit_seconds,,1800.0,,,,,,,stated before launching. Termination on this limit alone
+preregistration,memory_ceiling_gb,,3.0,,,,,,,"stated before launching, read as peak resident set size"
+preregistration,replications,,10000,,,,,,,
+preregistration,seed,,20260823,,,,,,,fixed before drawing
+preregistration,mean_block_length,,21,,,,,,,"the Newey-West lag 8.11 already fixes for this study's serial dependence, so the bootstrap carries the same dependence horizon the register already records rather than a second one chosen here. Block lengths are geometric with that mean, being the stationary bootstrap of Politis and Romano"
+contention_check,threshold,,16,,,,,,,"twice the core count, the precedent at 9.47"
+contention_check,load_1min,,4.12,,,,,,,
+contention_check,verdict,,PROCEED,,,,,,,
+setup,holdout_sessions,,1265,,,,,,,
+setup,primary_sessions,,2472,,,,,,,
+setup,factors,,"equity_market,semiconductor,biotechnology,long_treasury,volatility",,,,,,,
+setup,returns_are_excess_of_the_risk_free_rate,,1,,,,,,,"every statistic here is computed on the excess return series, so the annualised return reported below is an annualised EXCESS return. That is why the holdout point estimate reads lower than the 0.8287111594113898 at outputs/session-27/holdout-ladder.csv and the primary one lower than 0.5218447451814521, both of which are total annualised returns. The interval and the point estimate are computed the same way, so the interval is internally consistent"
+interval,naive_sharpe,holdout,1.637799226672021,0.9929195170218649,1.637792307531051,2.2821600447939803,0.390077789607612,0.04302029260529093,10000,"the iid approximate standard error uses the Lo 1994 form for the naive Sharpe and the ordinary mean standard error for the annualised return, and is blank where no closed form applies"
+interval,lo_sharpe,holdout,2.758522765821501,1.1865866798515843,2.2378989939127667,3.8601197003586423,0.8373252035736385,,10000,no closed-form iid standard error applies
+interval,ann_return,holdout,0.7621310929144585,0.37209994356077475,0.7584017793440334,1.2380172185585112,0.2656259460419004,0.01106435563524277,10000,"the iid approximate standard error uses the Lo 1994 form for the naive Sharpe and the ordinary mean standard error for the annualised return, and is blank where no closed form applies"
+interval,gap_vs_buy_hold_QQQ,holdout,1.0477912527059852,0.3284274858286137,1.0247093373760472,1.777935616024335,0.44043353049102396,,10000,no closed-form iid standard error applies
+interval,gap_vs_matched_exposure,holdout,1.0813672791419497,0.3669357162610955,1.0567352860182369,1.815241771965525,0.4399619391314106,,10000,no closed-form iid standard error applies
+interval,single_factor_alpha,holdout,0.5637944783875491,0.291362473531032,0.5495013211291294,0.817442953711603,0.15949723786621764,,10000,no closed-form iid standard error applies
+interval,multi_factor_alpha,holdout,0.458684966492575,0.20140576122592446,0.45375245003762493,0.7162496447883718,0.15540045300756433,,10000,no closed-form iid standard error applies
+interval,naive_sharpe,primary,1.0910863648060856,0.6251134091230913,1.0985147793858503,1.56408605941694,0.283510258422312,0.025403178773557585,10000,"the iid approximate standard error uses the Lo 1994 form for the naive Sharpe and the ordinary mean standard error for the annualised return, and is blank where no closed form applies"
+interval,lo_sharpe,primary,1.3817013060245,0.7420445103469738,1.3402645622784468,2.145423686927412,0.4332428277665335,,10000,no closed-form iid standard error applies
+interval,ann_return,primary,0.5126738106139874,0.2056760530903768,0.5148980494423844,0.8892723189716257,0.20922488020270802,0.009819591151366538,10000,"the iid approximate standard error uses the Lo 1994 form for the naive Sharpe and the ordinary mean standard error for the annualised return, and is blank where no closed form applies"
+interval,gap_vs_buy_hold_QQQ,primary,-0.0650226373237004,-0.54012012773405,-0.07073011574586163,0.3840804971488868,0.2823512789348429,,10000,no closed-form iid standard error applies
+interval,gap_vs_matched_exposure,primary,-0.033029624510285016,-0.4959158144572925,-0.035488947539688454,0.4060431952792486,0.27739816969392445,,10000,no closed-form iid standard error applies
+interval,single_factor_alpha,primary,0.2887442018017539,0.09837771841081142,0.29041761295579915,0.48924323124014135,0.1195172320194636,,10000,no closed-form iid standard error applies
+verdict,holdout_gap_vs_buy_hold_QQQ_excludes_zero_at_the_5th_percentile,,1,,,,,,,the 5th percentile reads 0.3284274858286137 against a point estimate of 1.0477912527059852
+machine_at_phase_F_end,peak_rss_gb,,0.198967296,,,,,,,against the 3.0 GB ceiling stated before launching
+machine_at_phase_F_end,compressor_gib,,3.038,,,,,,,
+machine_at_phase_F_end,swap_used_mb,,13381.25,,,,,,,
+machine_at_phase_F_end,seconds,,20.867775917053223,,,,,,,against the 1800.0 second limit stated before launching

@@ -1,0 +1,61 @@
+table,item,value,ann_return,sharpe_naive,sharpe_lo,ann_turnover,events_per_session,mean_trade_share_of_nav,cap_binding_share,rank_naive,inherited,events,cap_binding_events,nav_at_year_end,session_28_coupled,note
+machine_at_phase_G,load_1min,2.4,,,,,,,,,,,,,,
+machine_at_phase_G,cores,8,,,,,,,,,,,,,,
+machine_at_phase_G,compressor_gib,2.822,,,,,,,,,,,,,,
+machine_at_phase_G,swap_used_mb,12992.19,,,,,,,,,,,,,,
+machine_at_phase_G,swap_free_mb,1343.81,,,,,,,,,,,,,,
+contention_check,threshold,16,,,,,,,,,,,,,,
+contention_check,load_1min,2.4,,,,,,,,,,,,,,
+contention_check,verdict,PROCEED,,,,,,,,,,,,,,
+preregistration,levels,"1000000.0,10000000.0,51671728.47473126,200000000.0,1028029775.2491124",,,,,,,,,,,,,,"stated before running and chosen for coverage rather than for result. 1000000 is the study anchor, 51671728.47473126 the NAV inherited at the boundary and 1028029775.2491124 the terminal NAV, with the two remaining levels filling the order-of-magnitude gaps"
+preregistration,axis,D20,,,,,,,,,,,,,,"a curve axis rather than a grid axis, so varying it is a recorded sensitivity and not a new degree of freedom. The canonical starting NAV is unchanged"
+preregistration,fixed_nav_for_G4,51671728.47473126,,,,,,,,,,,,,,"the NAV inherited at the boundary, held constant across all six cost levels so the cost effect is separated from the capacity effect"
+G1,nav,1000000.0,0.8287111594113898,1.637799226672021,2.7585227658215015,21.02620648507965,0.45296442687747035,0.4259900699427347,0.9406631762652705,2,,,,,,"the ladder lines are run once at the canonical NAV and the strategy's rank is taken against them, so the rank isolates the strategy's own NAV sensitivity"
+G1,nav,10000000.0,0.6113253896674531,1.470029407714543,2.41045082511403,15.484416968429413,0.45296442687747035,0.31205710318865104,0.9633507853403142,3,,,,,,"the ladder lines are run once at the canonical NAV and the strategy's rank is taken against them, so the rank isolates the strategy's own NAV sensitivity"
+G1,nav,51671728.47473126,0.5133218074573589,1.3545290711149274,2.4058099147729357,14.024284395194687,0.45296442687747035,0.2755487781991789,0.9755671902268761,4,,,,,,"the ladder lines are run once at the canonical NAV and the strategy's rank is taken against them, so the rank isolates the strategy's own NAV sensitivity"
+G1,nav,200000000.0,0.38313068677513873,1.1988554425602465,2.516363461850663,11.888076570503655,0.45296442687747035,0.22537530106405607,0.9930191972076788,4,,,,,,"the ladder lines are run once at the canonical NAV and the strategy's rank is taken against them, so the rank isolates the strategy's own NAV sensitivity"
+G1,nav,1028029775.2491124,0.20644199149770004,0.9817333726959366,2.2424965373708323,7.617929370545249,0.45296442687747035,0.1370788555032445,1.0,4,,,,,,"the ladder lines are run once at the canonical NAV and the strategy's rank is taken against them, so the rank isolates the strategy's own NAV sensitivity"
+G1_summary,monotone_in_nav,1,,,,,,,,,,,,,,"the naive Sharpe across the five levels in ascending NAV order is 1.637799226672021, 1.470029407714543, 1.3545290711149274, 1.1988554425602465, 0.9817333726959366"
+G1_summary,largest_single_step_change,-0.21712206986430982,,,,,,,,,,,,,,"between adjacent levels, against a total change across the whole range of -0.6560658539760843"
+G1_summary,degrades_smoothly_or_breaks,smoothly,,,,,,,,,,,,,,smoothly is recorded when no adjacent step exceeds twice the mean step
+G1_summary,nav_at_which_cap_binding_first_exceeds_0.75,1000000.0,,,,,,,,,,,,,,
+G1_summary,nav_at_which_cap_binding_first_exceeds_0.9,1000000.0,,,,,,,,,,,,,,
+G2,ann_return,1.092999588869573,,,,,,,,,0.8287111594113898,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,sharpe_naive,1.642191290482138,,,,,,,,,1.637799226672021,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,sharpe_lo,3.9839230017945937,,,,,,,,,2.7585227658215015,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,ann_turnover,41.08922178480395,,,,,,,,,21.02620648507965,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,eff_mean,1.3018299643734321,,,,,,,,,0.9681564510351294,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,eff_sd,1.3873664557178833,,,,,,,,,1.1784430216279307,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,cap_binding_share,0.2949389179755672,,,,,,,,,0.9406631762652705,,,,,reset to the study anchor at the boundary against the inherited 51671728.47473126
+G2,rank_naive,2,,,,,,,,,2,,,,,
+G2,construction,standalone account from the boundary,,,,,,,,,,,,,,"the reset runs the holdout as its own account beginning at the boundary, so the book does not carry the primary window's compounding into it. The signal rows are unchanged"
+G3,2011,0.34285714285714286,,,,,,,,,,35,12,621997.2982369242,,primary window
+G3,2012,0.18811881188118812,,,,,,,,,,101,19,759389.7268543746,,primary window
+G3,2013,0.29292929292929293,,,,,,,,,,99,29,1208350.425949178,,primary window
+G3,2014,0.43617021276595747,,,,,,,,,,94,41,2132506.0166284395,,primary window
+G3,2015,0.5316455696202531,,,,,,,,,,79,42,2886293.0024354327,,primary window
+G3,2016,0.7314814814814815,,,,,,,,,,108,79,3310123.885374278,,primary window
+G3,2017,0.7452830188679245,,,,,,,,,,106,79,4165953.019187809,,primary window
+G3,2018,0.4796747967479675,,,,,,,,,,123,59,7768922.743162607,,primary window
+G3,2019,0.5384615384615384,,,,,,,,,,104,56,13780512.568725497,,primary window
+G3,2020,0.33695652173913043,,,,,,,,,,92,31,35247996.93151197,,primary window
+G3,2021,0.8631578947368421,,,,,,,,,,95,82,68275012.70408444,,primary window
+G3,2022,0.7181818181818181,,,,,,,,,,110,79,132107682.82230437,,holdout
+G3,2023,1.0,,,,,,,,,,106,106,299980546.5266878,,holdout
+G3,2024,1.0,,,,,,,,,,117,117,469774136.5481864,,holdout
+G3,2025,0.9920634920634921,,,,,,,,,,126,125,763165443.1849234,,holdout
+G3,2026,1.0,,,,,,,,,,70,70,1028029775.2491124,,holdout
+G3_summary,first_year_binding_exceeds_0.75,2021,,,,,,,,,,,,,,
+G3_summary,first_year_binding_exceeds_0.90,2023,,,,,,,,,,,,,,
+G3_summary,boundary_year,2021,,,,,,,,,,,,,,throttling is established by the year it first exceeded each threshold rather than assumed to begin at the boundary
+G4,slippage_bp,0,,1.361772196136466,2.4344414346640058,,,,,,,,,,1.6315236073244241,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4,slippage_bp,5,,1.3572952194497587,2.430444784154896,,,,,,,,,,1.627837987070995,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4,slippage_bp,10,,1.3517828312970106,2.4271475926840886,,,,,,,,,,1.6217530831644835,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4,slippage_bp,20,,1.34067976833887,2.417884059786773,,,,,,,,,,1.6177324353366955,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4,slippage_bp,35,,1.326614750697517,2.3732832248138838,,,,,,,,,,1.556539469995808,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4,slippage_bp,50,,1.2921156303896475,2.3481445450622234,,,,,,,,,,1.4354803238074518,"NAV held at the stated constant across all six points, against session 28's figures where NAV compounds from the inherited level"
+G4_summary,non_monotone_steps_coupled,0,,,,,,,,,,,,,,"session 28's sweep, where NAV compounds differently at each cost level"
+G4_summary,non_monotone_steps_at_fixed_nav,0,,,,,,,,,,,,,,
+G4_summary,non_monotonicity_disappears_at_fixed_nav,0,,,,,,,,,,,,,,a sweep in which a higher cost produces a higher Sharpe is non-monotone. Holding NAV constant separates the cost effect from the capacity effect
+G4_summary,session_28_naive_sharpe_was_already_monotone,1,,,,,,,,,,,,,,"the scaffold asks whether a non-monotonicity disappears once NAV is fixed. On the naive Sharpe session 28's coupled sweep is already monotone decreasing, so there is none to disappear. What was non-monotone there is the RANK, reading 3,2,2,2,2,2 across the six levels, which moves from 3 at zero basis points to 2 at every higher level"
+canonical_unchanged,start_nav_restored,1000000.0,,,,,,,,,,,,,,"every run restores scripts/s13_backtest.py START_NAV in a finally block, so no canonical value is left changed by this phase"

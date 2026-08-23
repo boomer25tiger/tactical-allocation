@@ -1,0 +1,56 @@
+table,item,window,rank,value,variance_share,own_ann_vol,corr_with_buy_hold_QQQ,sessions_held,k_zero,note
+machine_at_phase_H,load_1min,,,4.23,,,,,,
+machine_at_phase_H,compressor_gib,,,3.078,,,,,,
+machine_at_phase_H,swap_used_mb,,,13137.81,,,,,,
+machine_at_phase_H,swap_free_mb,,,1198.19,,,,,,
+preregistration,illustrative_k,,,1.0,,,,,,"stated before computing. Register 2.15 carries k equal to zero for the volatility instruments and that is unchanged. A value of one is the smallest non-zero choice and is used only to show how far the exposure figure moves, so it is illustrative rather than adopted"
+setup,convention,,,open-to-open,,,,,,"the designated cell's convention, so the contributions are the ones the account realises"
+setup,weights,,,realised portfolio weights,,,,,,"read from the account's own raw_rows, being the weights after the participation cap truncates and after the fill lands, which is what session 28's attribution and its exposure figure both use"
+k_zero,instruments,,,3,,,,,,"BTAL, SVXY, UVXY. Register 2.15 carries k equal to zero for the volatility instruments and BTAL carries no multiple at all, being an anti-beta long and short strategy"
+instrument,SOXL,holdout,1,1.1440491386220595,0.3689889347815891,1.1301826537122164,0.8794997583815428,883,0,
+instrument,TQQQ,holdout,2,1.132574376644474,0.37415308536609504,0.6909290585037473,0.9994555879477693,965,0,
+instrument,SQQQ,holdout,3,0.5631314688171576,0.2097861092537085,0.6947690998858094,-0.9980824359764943,502,0,
+instrument,UVXY,holdout,4,0.2487907258034977,0.011656935941652732,1.1174425892294084,-0.7434127916963604,410,1,
+instrument,TECL,holdout,5,0.15267227598551386,0.029476849237394524,0.7863345420380556,0.9671694696932991,613,0,
+instrument,LABU,holdout,6,0.10753916493196276,0.002901316805631242,0.9484157529789167,0.6284671312115191,27,0,
+instrument,SOXS,holdout,7,0.054546596076858606,-0.0051727144760300965,1.2182943226135265,-0.8330526289483813,252,0,
+instrument,SVXY,holdout,8,0.05118509207657487,0.0061097847752686705,0.3615439068933997,0.7560108578233581,427,1,
+instrument,QQQ,holdout,9,0.04233199229832978,0.004556698871029031,0.23008188522122852,0.9999999999723108,74,0,
+instrument,QLD,holdout,10,0.038646410616101724,-0.003263814874478974,0.4613613191352292,0.9997850825412978,33,0,
+instrument,TECS,holdout,11,0.013844622422730471,0.001017487679323592,0.7950209844460545,-0.967148958486917,252,0,
+instrument,SPXL,holdout,12,0.00982438342505634,0.0003724899706150443,0.5202010923917924,0.9513799308128291,8,0,
+instrument,PSQ,holdout,13,0.004949055243060323,-0.0003472730421826082,0.23336899804673275,-0.9985869986914594,36,0,
+instrument,BIL,holdout,14,0.002724927948953699,-1.6399259298526125e-05,0.00234513174904231,-0.06177972331474984,240,0,
+instrument,BTAL,holdout,15,0.00045299701685893733,5.406220567692538e-06,0.20130965310911578,-0.6926223863740514,260,1,
+instrument,BSV,holdout,34,-0.0010780778957304325,8.50073314068265e-06,0.027555979131966012,0.09077312479178667,56,0,
+instrument,TLT,holdout,35,-0.011406091173895665,-0.00023339798402575843,0.14972154442364316,0.08523391223024969,416,0,
+summary,portfolio_variance,holdout,,0.0006149071520793472,,,,,,
+summary,k_zero_share_of_return,holdout,,0.3004288148969315,,,,,,the arithmetic contribution of the k equal to zero instruments
+summary,k_zero_share_of_variance,holdout,,0.017772126937489096,,,,,,"their combined share of portfolio variance, computed as the covariance with the portfolio over the portfolio's variance"
+instrument,TQQQ,primary,1,2.4519549411429407,0.2423581564397341,0.5634118563904827,,2009,0,
+instrument,UVXY,primary,2,1.9549013950340006,0.4202355000708376,1.2715472389534137,,806,1,
+instrument,SOXL,primary,3,1.7522232973379308,0.19388672516979424,0.7684151327642053,,1872,0,
+instrument,TECL,primary,4,0.5520795356843303,0.09466445047014409,0.5894163232181158,,1408,0,
+instrument,SVXY,primary,5,0.30523879145917243,0.02736288659501985,0.6345838394275252,,1112,1,
+instrument,QQQ,primary,6,0.04631691512994905,0.0031992590870332897,0.19069215483548793,,196,0,
+instrument,QLD,primary,7,0.038230072388966224,-0.00012351126704010444,0.3807494045774572,,9,0,
+instrument,TLT,primary,8,0.008561092547156377,0.00011901548473622632,0.13372460017434903,,513,0,
+instrument,BSV,primary,9,0.003701072524634818,-1.1888431401016359e-06,0.01825714908531229,,122,0,
+instrument,BIL,primary,10,0.0010111955949729098,7.842527133546068e-06,0.002369965054605163,,478,0,
+instrument,BTAL,primary,11,0.0007570749142379799,5.981019814435189e-05,0.32083306321346056,,480,1,
+instrument,PSQ,primary,30,-0.00978354869302138,-0.0015055129583679803,0.19305872855719983,,89,0,
+instrument,SPXL,primary,31,-0.035928027019277366,0.014047502501770903,0.4674816179246669,,18,0,
+instrument,TECS,primary,32,-0.09668515929301322,7.959979113242543e-05,0.5859633402493766,,425,0,
+instrument,LABU,primary,33,-0.12688719456768285,0.004641519868100221,0.8226226489586985,,22,0,
+instrument,SOXS,primary,34,-0.17643512235521652,-0.0010996988483886444,0.7603371198748841,,425,0,
+instrument,SQQQ,primary,35,-0.482609068757451,0.0020676437133558176,0.5735716387563614,,636,0,
+summary,portfolio_variance,primary,,0.0009495727083899788,,,,,,
+summary,k_zero_share_of_return,primary,,2.260897261407411,,,,,,the arithmetic contribution of the k equal to zero instruments
+summary,k_zero_share_of_variance,primary,,0.44765819686400177,,,,,,"their combined share of portfolio variance, computed as the covariance with the portfolio over the portfolio's variance"
+exposure,mean_at_register_k,holdout,,0.9681564510351294,,,,,,against 0.9681564510351294 at outputs/session-28/holdout-decomposition.csv
+exposure,mean_at_illustrative_k_1,holdout,,0.9734733792725769,,,,,,"the volatility instruments carried at a non-zero k. Illustrative and NOT adopted, since register 2.15 is unchanged"
+exposure,difference,holdout,,0.00531692823744756,,,,,,
+exposure,realised_volatility_ratio_against_buy_hold_QQQ,holdout,,1.7102013039589175,,,,,,"the strategy's own realised volatility over buy-and-hold QQQ's across the holdout, against a mean effective exposure of 0.9681564510351294. The gap between the two is what the k convention bears on"
+exposure,mean_at_register_k,primary,,1.7769723457408557,,,,,,reproduces 1.7769723457408557 over the primary window at outputs/session-16/exposure-reconciliation.csv
+exposure,mean_at_illustrative_k_1,primary,,1.6920818243411098,,,,,,"the volatility instruments carried at a non-zero k. Illustrative and NOT adopted, since register 2.15 is unchanged"
+exposure,difference,primary,,-0.08489052139974596,,,,,,

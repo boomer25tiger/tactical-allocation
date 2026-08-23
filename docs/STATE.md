@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-23 by session 29. Supersedes the session 28 version.
+Refreshed 2026-08-23 by session 30. Supersedes the session 29 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
@@ -60,6 +60,41 @@ bears on 8 of the 15 claims, 1 of which was evaluated in this session.
 
 **The measurement phase is closed.** One measurement remains outstanding, being
 S equal to 48 of the B1 re-emission, and it is not load-bearing.
+
+**The corporate action class was swept and gate B reads PROCEED.** 43925
+instrument-sessions were screened on the implied-multiple rule across 17 held
+instruments, 174 were flagged, and only ONE unexplained break survives both
+screens, being SOXS on 2026-05-26. No break sits in an instrument contributing
+materially and no contaminated indicator session coincides with a terminal
+firing. Registered at 9.83 and 9.84.
+
+**The disposition is OPEN and adopted by none**, at 9.85. Repairing the frozen
+input changes a hashed file and two manifest entries after the holdout has been
+read, disclosing unrepaired leaves the defect inside the study with its impact
+bounded at -0.041841805663843774 across the holdout, and the third option adds the
+implied-multiple screen as a permanent check beside the input-integrity check. The
+defect contributes exactly 0.0 to holdout return through the position path.
+
+**The holdout nulls ran at 10,000 draws**, at 9.86. The timing shuffle is exceeded
+on 4 of 10000 draws on annualised return, 0 on the naive Sharpe and 1 on the
+Lo-corrected, and the turnover-matched null on 3, 0 and 2. Both nulls are centred
+near zero on annualised return.
+
+**The multi-factor alpha survives**, at 9.87. Adding semiconductor, biotechnology,
+long Treasury and volatility factors takes the holdout annualised alpha from
+0.5637941837318013 to 0.45868406085120844, absorbing 0.18643349987199245 of it,
+with semiconductor carrying almost all of the absorption. Over the primary window
+the extra factors absorb 0.011718068595027593.
+
+**The study now carries intervals**, at 9.88. The holdout naive Sharpe's 5th to
+95th percentile block-bootstrap interval is 0.9929195886104111 to
+2.2821599669578414, and the holdout gap against buy-and-hold QQQ excludes zero at
+the 5th percentile while the primary-window gap does not.
+
+**The holdout result IS capacity-bounded**, at 9.89. Across five starting NAV
+levels the naive Sharpe falls monotonically from 1.637799226672021 at the study
+anchor to 0.9817333723461858 at the terminal NAV, and the cap-binding share
+already exceeds 0.90 at the anchor.
 
 ## What this project is
 
