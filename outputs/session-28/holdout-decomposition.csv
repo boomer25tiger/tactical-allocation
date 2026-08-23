@@ -1,0 +1,210 @@
+table,item,window,value,rank,n_sessions,primary_count,holdout_count,primary_rate,holdout_rate,note
+window,holdout_arithmetic_return_sum,,3.4218690114239116,,,,,,,"the arithmetic sum of daily returns, which the attribution figures sum toward without reconciling exactly, since compounding and cash are not attributed"
+sleeve,T10,holdout,1.6408333525813386,,1265,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,T10:TECL,holdout,0.49530470165798046,,,,,,,
+sleeve_instrument,T10:UVXY,holdout,0.4048425606753387,,,,,,,
+sleeve_instrument,T10:SOXL,holdout,0.3243103018915686,,,,,,,
+sleeve_instrument,T10:LABU,holdout,0.2186470597559535,,,,,,,
+sleeve_instrument,T10:SVXY,holdout,0.12921528001414462,,,,,,,
+sleeve_instrument,T10:SQQQ,holdout,0.09966091314902041,,,,,,,
+sleeve_instrument,T10:TLT,holdout,-0.037160825013179535,,,,,,,
+sleeve_instrument,T10:SPXL,holdout,0.006013360450511929,,,,,,,
+sleeve,T11,holdout,1.7840150264456724,,1265,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,T11:TQQQ,holdout,0.43416676001950316,,,,,,,
+sleeve_instrument,T11:SOXL,holdout,0.4026212551900103,,,,,,,
+sleeve_instrument,T11:TECL,holdout,0.2744367089639532,,,,,,,
+sleeve_instrument,T11:SQQQ,holdout,0.2699196583389947,,,,,,,
+sleeve_instrument,T11:UVXY,holdout,0.09481418758728452,,,,,,,
+sleeve_instrument,T11:QLD,holdout,0.07603261531714013,,,,,,,
+sleeve_instrument,T11:TECS,holdout,0.07158127570394514,,,,,,,
+sleeve_instrument,T11:SOXS,holdout,0.05499012574964285,,,,,,,
+sleeve_instrument,T11:QQQ,holdout,0.040105117934788326,,,,,,,
+sleeve_instrument,T11:BTAL,holdout,0.03505127480353694,,,,,,,
+sleeve_instrument,T11:PSQ,holdout,0.02000596006469363,,,,,,,
+sleeve_instrument,T11:SPXL,holdout,0.007088433444294051,,,,,,,
+sleeve_instrument,T11:BIL,holdout,0.0032016533278854667,,,,,,,
+sleeve,S2,holdout,0.9318151458475786,,1265,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,S2:TQQQ,holdout,0.6142248782397232,,,,,,,
+sleeve_instrument,S2:SQQQ,holdout,0.2649355513724187,,,,,,,
+sleeve_instrument,S2:TECL,holdout,0.19230397822200657,,,,,,,
+sleeve_instrument,S2:UVXY,holdout,-0.08456150899070353,,,,,,,
+sleeve_instrument,S2:SOXL,holdout,-0.05872042815547515,,,,,,,
+sleeve_instrument,S2:BSV,holdout,0.0036326751596088835,,,,,,,
+sleeve,S3,holdout,0.851150147828876,,1265,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,S3:SOXL,holdout,0.5391099564438946,,,,,,,
+sleeve_instrument,S3:TQQQ,holdout,0.21664993577489516,,,,,,,
+sleeve_instrument,S3:UVXY,holdout,0.09539025561008618,,,,,,,
+instrument,TQQQ,holdout,0.951556253095966,1,,,,,,
+instrument,SOXL,holdout,0.9487899220608594,2,,,,,,
+instrument,SQQQ,holdout,0.2896712920331235,3,,,,,,
+instrument,UVXY,holdout,0.1350964817698338,4,,,,,,
+instrument,TECL,holdout,0.11282071433845367,5,,,,,,
+instrument,QLD,holdout,0.07038963122854404,6,,,,,,
+instrument,SVXY,holdout,0.04311367777143263,7,,,,,,
+instrument,QQQ,holdout,0.02864324998891967,8,,,,,,
+instrument,TECS,holdout,0.014551358900689083,9,,,,,,
+instrument,SPXL,holdout,0.013958869550299324,10,,,,,,
+instrument,PSQ,holdout,0.012508858027143454,11,,,,,,
+instrument,BIL,holdout,0.002791756988443454,12,,,,,,
+instrument,BTAL,holdout,0.00029838728216376837,13,,,,,,
+instrument,SOXS,holdout,-0.0006734763885016953,32,,,,,,
+instrument,BSV,holdout,-0.0010064599445912625,33,,,,,,
+instrument,TLT,holdout,-0.0243539230332209,34,,,,,,
+instrument,LABU,holdout,-0.051504161994962085,35,,,,,,
+instrument_summary,largest_positive,holdout,0.951556253095966,,,,,,,TQQQ
+instrument_summary,largest_negative,holdout,-0.051504161994962085,,,,,,,LABU
+instrument_summary,short_sleeve_total,holdout,0.31605803257245435,,,,,,,"the arithmetic sum across SQQQ, TECS, SOXS, PSQ, SH"
+window,primary_arithmetic_return_sum,,5.284814143474101,,,,,,,"the arithmetic sum of daily returns, which the attribution figures sum toward without reconciling exactly, since compounding and cash are not attributed"
+sleeve,T10,primary,1.4028996195526637,,2472,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,T10:TECL,primary,0.5364199490494977,,,,,,,
+sleeve_instrument,T10:SOXL,primary,0.4142930062114042,,,,,,,
+sleeve_instrument,T10:UVXY,primary,0.3253958514163642,,,,,,,
+sleeve_instrument,T10:SVXY,primary,0.31317671286647847,,,,,,,
+sleeve_instrument,T10:SQQQ,primary,-0.1845044479994491,,,,,,,
+sleeve_instrument,T10:LABU,primary,-0.11093152015549193,,,,,,,
+sleeve_instrument,T10:SPXL,primary,0.07735558434950554,,,,,,,
+sleeve_instrument,T10:TLT,primary,0.03169448381435454,,,,,,,
+sleeve,T11,primary,1.7166810512825552,,2472,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,T11:TQQQ,primary,0.6804120225117141,,,,,,,
+sleeve_instrument,T11:UVXY,primary,0.47303992872569256,,,,,,,
+sleeve_instrument,T11:SOXL,primary,0.32832241369280046,,,,,,,
+sleeve_instrument,T11:TECL,primary,0.24677751321639624,,,,,,,
+sleeve_instrument,T11:SOXS,primary,-0.1620933671155071,,,,,,,
+sleeve_instrument,T11:TECS,primary,-0.1043438445155728,,,,,,,
+sleeve_instrument,T11:SPXL,primary,0.1009493794617031,,,,,,,
+sleeve_instrument,T11:QLD,primary,0.055229367278183075,,,,,,,
+sleeve_instrument,T11:QQQ,primary,0.043036620869003867,,,,,,,
+sleeve_instrument,T11:PSQ,primary,0.03822187423106989,,,,,,,
+sleeve_instrument,T11:SQQQ,primary,0.012178984066040996,,,,,,,
+sleeve_instrument,T11:BTAL,primary,0.00401872608959023,,,,,,,
+sleeve_instrument,T11:BIL,primary,0.0009314327714408469,,,,,,,
+sleeve,S2,primary,2.035524487757279,,2472,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,S2:TQQQ,primary,1.294885708491803,,,,,,,
+sleeve_instrument,S2:UVXY,primary,0.42311489350201903,,,,,,,
+sleeve_instrument,S2:TECL,primary,0.23794968011628226,,,,,,,
+sleeve_instrument,S2:SOXL,primary,0.043757711243574304,,,,,,,
+sleeve_instrument,S2:SQQQ,primary,0.031130182892958463,,,,,,,
+sleeve_instrument,S2:BSV,primary,0.004686311510642194,,,,,,,
+sleeve,S3,primary,2.2412534538458315,,2472,,,,,"the arithmetic sum of the lagged portfolio weight times the realised return, across every instrument the sleeve held"
+sleeve_instrument,S3:SOXL,primary,1.0968305888201897,,,,,,,
+sleeve_instrument,S3:TQQQ,primary,0.5926823538756008,,,,,,,
+sleeve_instrument,S3:UVXY,primary,0.5517405111500411,,,,,,,
+instrument,TQQQ,primary,2.152772082139501,1,,,,,,
+instrument,SOXL,primary,1.4555486425919377,2,,,,,,
+instrument,UVXY,primary,0.6949195804794077,3,,,,,,
+instrument,TECL,primary,0.4630496070477503,4,,,,,,
+instrument,SVXY,primary,0.2160505499895108,5,,,,,,
+instrument,LABU,primary,0.18225537689804433,6,,,,,,
+instrument,QQQ,primary,0.0556180851710973,7,,,,,,
+instrument,TLT,primary,0.01851265486064096,8,,,,,,
+instrument,QLD,primary,0.004294898419046967,9,,,,,,
+instrument,BSV,primary,0.003665573814273495,10,,,,,,
+instrument,BTAL,primary,0.0014883239626152557,11,,,,,,
+instrument,BIL,primary,0.00048506490871420653,12,,,,,,
+instrument,PSQ,primary,-0.029987401972373054,31,,,,,,
+instrument,TECS,primary,-0.07793735134460246,32,,,,,,
+instrument,SPXL,primary,-0.0989913949256389,33,,,,,,
+instrument,SOXS,primary,-0.11310783198557423,34,,,,,,
+instrument,SQQQ,primary,-0.7676845366846142,35,,,,,,
+instrument_summary,largest_positive,primary,2.152772082139501,,,,,,,TQQQ
+instrument_summary,largest_negative,primary,-0.7676845366846142,,,,,,,SQQQ
+instrument_summary,short_sleeve_total,primary,-0.9887171219871639,,,,,,,"the arithmetic sum across SQQQ, TECS, SOXS, PSQ, SH"
+sleeve_states,T10,holdout,7,,1265,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,T10,primary,7,,2472,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,T11,holdout,16,,1265,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,T11,primary,15,,2472,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,S2,holdout,6,,1265,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,S2,primary,6,,2472,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,S3,holdout,4,,1265,,,,,distinct terminals the sleeve emitted across the window
+sleeve_states,S3,primary,4,,2472,,,,,distinct terminals the sleeve emitted across the window
+terminal,S2:BSV=1,both,56,,,122,56,0.049352750809061485,0.04426877470355731,
+terminal,S2:SOXL=1,both,1,,,15,1,0.006067961165048544,0.0007905138339920949,
+terminal,S2:SQQQ=1,both,171,,,73,171,0.02953074433656958,0.13517786561264822,
+terminal,S2:TECL=1,both,17,,,22,17,0.00889967637540453,0.013438735177865613,
+terminal,S2:TQQQ=1,both,910,,,1919,910,0.776294498381877,0.7193675889328063,
+terminal,S2:UVXY=1,both,110,,,321,110,0.12985436893203883,0.08695652173913043,
+terminal,S3:CASH,both,315,,,466,315,0.18851132686084143,0.2490118577075099,
+terminal,S3:SOXL=0.5|TQQQ=0.5,both,722,,,1448,722,0.5857605177993528,0.5707509881422925,
+terminal,S3:SOXL=1,both,17,,,39,17,0.015776699029126214,0.013438735177865613,
+terminal,S3:UVXY=1,both,211,,,519,211,0.2099514563106796,0.16679841897233202,
+terminal,T10:LABU=1,both,27,,,22,27,0.00889967637540453,0.021343873517786563,
+terminal,T10:SOXL=0.333333|SVXY=0.333333|TECL=0.333333,both,425,,,1114,425,0.4506472491909385,0.3359683794466403,
+terminal,T10:SOXL=1,both,1,,,27,1,0.010922330097087379,0.0007905138339920949,
+terminal,T10:SPXL=1,both,8,,,13,8,0.0052588996763754045,0.006324110671936759,
+terminal,T10:SQQQ=0.5|TLT=0.5,both,416,,,512,416,0.20711974110032363,0.32885375494071145,
+terminal,T10:TECL=1,both,19,,,28,19,0.011326860841423949,0.015019762845849802,
+terminal,T10:UVXY=1,both,369,,,756,369,0.3058252427184466,0.291699604743083,
+terminal,T11:BIL=0.333333|BTAL=0.333333|UVXY=0.333333,both,242,,,478,242,0.19336569579288027,0.19130434782608696,
+terminal,T11:BTAL=0.5|PSQ=0.5,both,1,,,0,1,0.0,0.0007905138339920949,fired in the holdout and NEVER in the primary window
+terminal,T11:BTAL=0.5|QQQ=0.5,both,1,,,0,1,0.0,0.0007905138339920949,fired in the holdout and NEVER in the primary window
+terminal,T11:BTAL=0.5|SQQQ=0.5,both,18,,,2,18,0.0008090614886731392,0.014229249011857707,
+terminal,T11:PSQ=0.5|QLD=0.5,both,1,,,1,1,0.0004045307443365696,0.0007905138339920949,
+terminal,T11:PSQ=0.5|QQQ=0.5,both,16,,,67,16,0.027103559870550162,0.012648221343873518,
+terminal,T11:PSQ=1,both,18,,,20,18,0.008090614886731391,0.014229249011857707,
+terminal,T11:QLD=0.5|QQQ=0.5,both,8,,,7,8,0.0028317152103559872,0.006324110671936759,
+terminal,T11:QLD=0.5|SQQQ=0.5,both,24,,,1,24,0.0004045307443365696,0.018972332015810278,
+terminal,T11:QQQ=0.5|SQQQ=0.5,both,0,,,9,0,0.0036407766990291263,0.0,fired in the primary window and NEVER in the holdout
+terminal,T11:QQQ=0.5|TQQQ=0.5,both,49,,,111,49,0.044902912621359224,0.03873517786561265,
+terminal,T11:SOXL=0.333333|TECL=0.333333|TQQQ=0.333333,both,487,,,1214,487,0.4911003236245955,0.3849802371541502,
+terminal,T11:SOXS=0.333333|SQQQ=0.333333|TECS=0.333333,both,252,,,425,252,0.17192556634304207,0.1992094861660079,
+terminal,T11:SPXL=1,both,3,,,14,3,0.0056634304207119745,0.0023715415019762848,
+terminal,T11:SQQQ=1,both,110,,,40,110,0.016181229773462782,0.08695652173913043,
+terminal,T11:TQQQ=1,both,25,,,28,25,0.011326860841423949,0.019762845849802372,
+terminal,T11:UVXY=1,both,10,,,55,10,0.022249190938511326,0.007905138339920948,
+terminal_summary,fired_first_in_the_holdout,,2,,,,,,,T11 BTAL=0.5|PSQ=0.5; T11 BTAL=0.5|QQQ=0.5
+terminal_summary,fired_only_in_the_primary_window,,1,,,,,,,T11 QQQ=0.5|SQQQ=0.5
+exposure,mean,holdout,0.9681564510351294,,,,,,,against the committed primary-window canonical figure of 1.7769723457408557 at outputs/session-16/exposure-reconciliation.csv
+exposure,sd,holdout,1.1784430216279307,,,,,,,
+exposure,min,holdout,-1.958625000762561,,,,,,,
+exposure,max,holdout,2.848257470714799,,,,,,,
+exposure,share_above_1.0,holdout,0.5296442687747036,,,,,,,
+exposure,share_above_1.7,holdout,0.31778656126482213,,,,,,,
+exposure,mean,primary,1.7769723457408557,,,,,,,against the committed primary-window canonical figure of 1.7769723457408557 at outputs/session-16/exposure-reconciliation.csv
+exposure,sd,primary,0.9111563758271118,,,,,,,
+exposure,min,primary,-1.831910320620685,,,,,,,
+exposure,max,primary,3.0049021648338914,,,,,,,
+exposure,share_above_1.0,primary,0.7673948220064725,,,,,,,
+exposure,share_above_1.7,primary,0.6812297734627831,,,,,,,
+turnover,ann_turnover_committed,holdout,21.026206485079,,,,,,,from outputs/session-20/rebuilt/metrics-full.csv for the primary window and outputs/session-27/holdout-ladder.csv for the holdout
+turnover,rebalancing_events,holdout,573,,1265,,,,,
+turnover,rebalancing_events_per_session,holdout,0.45296442687747035,,,,,,,
+turnover,mean_trade_value_share_of_nav,holdout,0.4259900699427347,,,,,,,
+turnover,median_trade_value_share_of_nav,holdout,0.3563098942873202,,,,,,,
+turnover,orders,holdout,3522,,,,,,,
+turnover,transitions_with_the_participation_cap_binding,holdout,539,,573,,,,,"of 573 rebalancing events, a share of 0.940663"
+turnover,cap_binding_share_of_events,holdout,0.9406631762652705,,,,,,,
+turnover,cap_events,holdout,1338,,,,,,,
+turnover,nav_at_window_start,holdout,51671728.47473126,,,,,,,
+turnover,nav_at_window_end,holdout,1028029775.2491124,,,,,,,
+turnover,ann_turnover_committed,primary,37.87437898045862,,,,,,,from outputs/session-20/rebuilt/metrics-full.csv for the primary window and outputs/session-27/holdout-ladder.csv for the holdout
+turnover,rebalancing_events,primary,992,,2472,,,,,
+turnover,rebalancing_events_per_session,primary,0.40129449838187703,,,,,,,
+turnover,mean_trade_value_share_of_nav,primary,0.7668753781235466,,,,,,,
+turnover,median_trade_value_share_of_nav,primary,0.565718153145121,,,,,,,
+turnover,orders,primary,6178,,,,,,,
+turnover,transitions_with_the_participation_cap_binding,primary,487,,992,,,,,"of 992 rebalancing events, a share of 0.490927"
+turnover,cap_binding_share_of_events,primary,0.4909274193548387,,,,,,,
+turnover,cap_events,primary,561,,,,,,,
+turnover,nav_at_window_start,primary,816441.3464029437,,,,,,,
+turnover,nav_at_window_end,primary,49668246.28810794,,,,,,,
+turnover,turnover_fall_share,both,0.444843531403445,,,,,,,the holdout annualised turnover against the primary window's
+drawdown,STRATEGY,holdout,-0.34468314755389173,,,,,,,"peak 2022-10-13, trough 2023-01-09, 59 sessions from peak to trough, recovered 2023-05-19"
+drawdown,buy_hold_QQQ,holdout,-0.36694214173860695,,,,,,,"peak 2021-11-22, trough 2022-10-13, 224 sessions from peak to trough, recovered 2023-12-14"
+drawdown,matched_exposure_levered_QQQ_1.70,holdout,-0.5751006880169329,,,,,,,"peak 2021-11-22, trough 2022-10-13, 224 sessions from peak to trough, recovered 2024-03-04"
+drawdown_summary,strategy_against_buy_hold_QQQ,holdout,shallower,,,,,,,strategy -0.34468314755389173 against buy-and-hold QQQ -0.36694214173860695
+drawdown_summary,strategy_against_matched_exposure,holdout,shallower,,,,,,,strategy -0.34468314755389173 against the matched-exposure line -0.5751006880169329
+availability,share_of_sessions_every_loaded_ticker_available,holdout,1.0,,1265,,,,,every ticker in bt.UNLEVERED plus bt.LEVERED simultaneously available
+availability,share_of_sessions_every_held_ticker_available,holdout,1.0,,1265,,,,,restricted to the tickers actually held on each session
+availability,share_of_sessions_every_loaded_ticker_available,primary,0.6294498381877023,,2472,,,,,every ticker in bt.UNLEVERED plus bt.LEVERED simultaneously available
+availability,share_of_sessions_every_held_ticker_available,primary,1.0,,2472,,,,,restricted to the tickers actually held on each session
+availability,scaffold_figure_0.629,primary,0.6294498381877023,,,,,,,"the scaffold names a primary-window realized-available share of 0.629 and the first definition above reproduces it, so the figure the scaffold quotes is the share of sessions on which every ticker in the loaded universe is simultaneously available"
+distribution,n_sessions,holdout,1265,,,,,,,
+distribution,daily_mean,holdout,0.0027050347916394556,,,,,,,
+distribution,daily_sd,holdout,0.0247881612877428,,,,,,,
+distribution,skewness,holdout,0.00044220578416748354,,,,,,,
+distribution,excess_kurtosis,holdout,5.223157724383093,,,,,,,
+distribution,n_sessions,primary,2472,,,,,,,
+distribution,daily_mean,primary,0.0021378697991400086,,,,,,,
+distribution,daily_sd,primary,0.030754976178934808,,,,,,,
+distribution,skewness,primary,0.4172032530478573,,,,,,,
+distribution,excess_kurtosis,primary,8.22583208183826,,,,,,,

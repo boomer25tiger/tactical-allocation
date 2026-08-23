@@ -1,0 +1,108 @@
+table,item,window,value,target,abs_gap,primary_window,note
+setup,window,,holdout,,,,2021-08-02 to 2026-08-14
+setup,n_sessions,,1265,,,,against 2472 in the primary window
+setup,newey_west_lag,,21,,,,"fixed by 8.11 before the run, not chosen here"
+setup,rolling_windows,,"60,120,252,504",,,,the four session 22 used
+positive_control,beta,,0.9999999999999998,1.0,2.220446049250313e-16,,
+positive_control,alpha_daily,,9.754724061761486e-20,0.0,9.754724061761486e-20,,
+positive_control,r_squared,,1.0,1.0,0.0,,
+positive_control,tolerance,,1e-10,,,,stated before comparing
+positive_control,verdict,,PASS,,,,buy-and-hold QQQ regressed on itself through the same code path
+static,residual_definition,,,,,,"the beta-hedged excess return, being the strategy less beta times the benchmark with the intercept retained. The fitted OLS residual has mean zero by construction and its Sharpe is identically zero, which is a property of the estimator rather than a result"
+static,beta,,0.5946975667115855,,,1.108672858112171,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+static,alpha_annualised,,0.5637941837318013,,,0.28874420661558875,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+static,r_squared,,0.12086286064363738,,,0.18679426851145753,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+static,alpha_t_newey_west,,3.4918970688555846,,,2.364283243646891,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+static,residual_ann_return,,0.6412066989548881,,,,
+static,residual_ann_vol,,0.36897726151332266,,,,
+static,residual_sharpe_naive,,1.527991674661622,,,0.6558362612960221,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+static,residual_sharpe_lo,,1.930075216384835,,,0.8649152595612315,the primary-window figure is from outputs/session-21/beta-decomposition.csv
+rolling,beta_mean,60,0.9663019637383276,,,,
+rolling,beta_sd,60,0.9097117526295763,,,1.1646116827038935,the primary-window standard deviation is from outputs/session-22/beta-window-sensitivity.csv
+rolling,beta_min,60,-1.4912484733203395,,,,
+rolling,beta_max,60,2.359135913365702,,,,
+rolling,n_sessions_with_beta,60,1205.0,,,,
+timing,static_exposure_ann_contribution,60,0.07845832398746164,,,,
+timing,static_exposure_sharpe_naive,60,0.5639316000232619,,,,
+timing,static_exposure_sharpe_lo,60,0.6926551976349666,,,,
+timing,timing_ann_contribution,60,0.12727498849055022,,,0.011293050910284682,the primary-window timing contribution is from outputs/session-21/beta-decomposition.csv at 60 sessions and outputs/session-22/beta-window-sensitivity.csv beyond it
+timing,timing_sharpe_naive,60,0.5279274891028484,,,,
+timing,timing_sharpe_lo,60,1.1300824671500203,,,,
+timing,residual_ann_contribution,60,0.4347912308052462,,,,
+timing,residual_sharpe_naive,60,1.326644813591716,,,,
+timing,residual_sharpe_lo,60,1.3786340398980714,,,,
+timing,total_ann_check,60,0.640524543283258,,,,the three components sum to the strategy's own annualised mean excess return by construction
+exposure_matched,ann_return,60,0.18046882005944265,,,,
+exposure_matched,ann_vol,60,0.24564690183540622,,,,
+exposure_matched,sharpe_naive,60,0.6478021636114607,,,,
+exposure_matched,sharpe_lo,60,0.9094094838020261,,,,
+exposure_matched,ann_turnover,60,3.9245098327347967,,,,
+exposure_matched,beats_the_strategy_on_the_naive_sharpe,60,0,,,,the matched line reads 0.6478021636114607 against the strategy's 1.637799226672021
+rolling,beta_mean,120,0.8880540107328023,,,,
+rolling,beta_sd,120,0.8411148924824693,,,0.6992985332538183,the primary-window standard deviation is from outputs/session-22/beta-window-sensitivity.csv
+rolling,beta_min,120,-1.0728376957124466,,,,
+rolling,beta_max,120,2.108868676184113,,,,
+rolling,n_sessions_with_beta,120,1145.0,,,,
+timing,static_exposure_ann_contribution,120,0.08894392592825118,,,,
+timing,static_exposure_sharpe_naive,120,0.638984039023464,,,,
+timing,static_exposure_sharpe_lo,120,0.8954429945861446,,,,
+timing,timing_ann_contribution,120,0.11621725925748441,,,0.027230151692897046,the primary-window timing contribution is from outputs/session-21/beta-decomposition.csv at 60 sessions and outputs/session-22/beta-window-sensitivity.csv beyond it
+timing,timing_sharpe_naive,120,0.5398592207028774,,,,
+timing,timing_sharpe_lo,120,1.3454635304281635,,,,
+timing,residual_ann_contribution,120,0.4440365802636093,,,,
+timing,residual_sharpe_naive,120,1.3239393447637489,,,,
+timing,residual_sharpe_lo,120,1.427992223210392,,,,
+timing,total_ann_check,120,0.6491977654493448,,,,the three components sum to the strategy's own annualised mean excess return by construction
+exposure_matched,ann_return,120,0.20879870148243374,,,,
+exposure_matched,ann_vol,120,0.22764881995663025,,,,
+exposure_matched,sharpe_naive,120,0.7842645892692112,,,,
+exposure_matched,sharpe_lo,120,1.3705632416648608,,,,
+exposure_matched,ann_turnover,120,2.0816915092186643,,,,
+exposure_matched,beats_the_strategy_on_the_naive_sharpe,120,0,,,,the matched line reads 0.7842645892692112 against the strategy's 1.637799226672021
+rolling,beta_mean,252,0.8683265704743323,,,,
+rolling,beta_sd,252,0.7564014846176441,,,0.41047564557798377,the primary-window standard deviation is from outputs/session-22/beta-window-sensitivity.csv
+rolling,beta_min,252,-0.6537335097317891,,,,
+rolling,beta_max,252,1.7874483836033195,,,,
+rolling,n_sessions_with_beta,252,1013.0,,,,
+timing,static_exposure_ann_contribution,252,0.11692092886651373,,,,
+timing,static_exposure_sharpe_naive,252,0.9085227767337833,,,,
+timing,static_exposure_sharpe_lo,252,1.8605463850402841,,,,
+timing,timing_ann_contribution,252,0.07533456901020892,,,-0.004075416692355631,the primary-window timing contribution is from outputs/session-21/beta-decomposition.csv at 60 sessions and outputs/session-22/beta-window-sensitivity.csv beyond it
+timing,timing_sharpe_naive,252,0.3938898412250416,,,,
+timing,timing_sharpe_lo,252,0.6052389684993623,,,,
+timing,residual_ann_contribution,252,0.3682478325646796,,,,
+timing,residual_sharpe_naive,252,1.2244868280959265,,,,
+timing,residual_sharpe_lo,252,1.5338198282817406,,,,
+timing,total_ann_check,252,0.5605033304414021,,,,the three components sum to the strategy's own annualised mean excess return by construction
+exposure_matched,ann_return,252,0.18599637904198407,,,,
+exposure_matched,ann_vol,252,0.21829359379176638,,,,
+exposure_matched,sharpe_naive,252,0.7205573215722426,,,,
+exposure_matched,sharpe_lo,252,1.1680348744566385,,,,
+exposure_matched,ann_turnover,252,0.9661808433734218,,,,
+exposure_matched,beats_the_strategy_on_the_naive_sharpe,252,0,,,,the matched line reads 0.7205573215722426 against the strategy's 1.637799226672021
+rolling,beta_mean,504,0.8894077220069633,,,,
+rolling,beta_sd,504,0.6204291853738693,,,0.20922149429810166,the primary-window standard deviation is from outputs/session-22/beta-window-sensitivity.csv
+rolling,beta_min,504,-0.21303946810288213,,,,
+rolling,beta_max,504,1.5794437669180563,,,,
+rolling,n_sessions_with_beta,504,761.0,,,,
+timing,static_exposure_ann_contribution,504,0.1230530779768627,,,,
+timing,static_exposure_sharpe_naive,504,1.0035432812854317,,,,
+timing,static_exposure_sharpe_lo,504,2.746352792818356,,,,
+timing,timing_ann_contribution,504,0.051111599234742566,,,-0.0077512681113622505,the primary-window timing contribution is from outputs/session-21/beta-decomposition.csv at 60 sessions and outputs/session-22/beta-window-sensitivity.csv beyond it
+timing,timing_sharpe_naive,504,0.3460405970213974,,,,
+timing,timing_sharpe_lo,504,0.44375397031706176,,,,
+timing,residual_ann_contribution,504,0.2904967282685069,,,,
+timing,residual_sharpe_naive,504,1.0497942759031045,,,,
+timing,residual_sharpe_lo,504,1.960656085213982,,,,
+timing,total_ann_check,504,0.46466140548011214,,,,the three components sum to the strategy's own annualised mean excess return by construction
+exposure_matched,ann_return,504,0.13496812180466677,,,,
+exposure_matched,ann_vol,504,0.19006090839544743,,,,
+exposure_matched,sharpe_naive,504,0.5654454773479913,,,,
+exposure_matched,sharpe_lo,504,0.8120842321362368,,,,
+exposure_matched,ann_turnover,504,0.49471049720831867,,,,
+exposure_matched,beats_the_strategy_on_the_naive_sharpe,504,0,,,,the matched line reads 0.5654454773479913 against the strategy's 1.637799226672021
+exposure_matched,construction,,,,,,"QQQ held at the canonical's own rolling realised beta lagged one session, rebalanced daily, charged the identical cost model. It uses beta estimated from the strategy's own realised returns, so it is a decomposition rather than an ex-ante benchmark"
+timing_summary,windows_fitted,,4,,,,
+timing_summary,timing_contribution_range,,0.051111599234742566 to 0.12727498849055022,,,,against a primary-window range of -0.0077512681113622505 to 0.027230151692897046 across the same four windows
+timing_summary,changes_sign_across_the_window,,0,,,,
+timing_summary,material_over_the_holdout,,1,,,,"material is recorded when any window's timing contribution exceeds 0.05 annualised in absolute value, against a strategy annualised excess mean of np.float64(0.6445126075841863). The primary-window finding was that timing contributes essentially nothing at any window"

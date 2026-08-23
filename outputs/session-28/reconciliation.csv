@@ -1,0 +1,28 @@
+table,item,value,session_27_value,session_28_value,note
+I1,the_two_quantities_as_the_scaffold_states_them,0.5127 against 0.5218447451814521,,,the scaffold reports a residual annualised return of 0.5127 near the primary window's annualised return
+I1,short_sleeve_contribution_holdout,0.31605803257245435,,,"an ARITHMETIC SUM of daily contributions across 1265 sessions, not an annualised rate"
+I1,strategy_holdout_ann_return,0.8287111594113898,,,a GEOMETRIC annualised rate from outputs/session-27/holdout-ladder.csv
+I1,units_match,0,,,"the two are not comparably defined. Subtracting an arithmetic sum over 1265 sessions from a geometric annualised rate mixes a level and a rate, and 0.8287111594113898 minus 0.31605803257245435 is 0.5126531268389355, which is the 0.5127 the scaffold quotes"
+I1,the_subtraction_the_scaffold_performs,0.5126531268389355,,,reproduced here to show where the figure comes from
+I1,short_contribution_expressed_as_an_annualised_rate,0.06296175826739801,,,"the arithmetic sum times 252 over 1265, being the same units as an annualised mean"
+I1,properly_defined_residual_ann_return,0.5257545196845275,,,"the strategy's daily return series net of the per-session short-leg contribution, compounded and annualised the same way the strategy's own figure is, so the two are comparably defined"
+I1,gap_to_the_primary_window,0.003909774503075392,,,against the primary window's 0.5218447451814521
+I1,the_scaffold_figure_is_a_units_mix,1,,,"the 0.5127 the scaffold quotes is a geometric annualised rate minus an arithmetic sum over 1265 sessions, so the two terms are not comparably defined and the figure should not be read as a residual annualised return"
+I1,verdict,the proximity survives the definitional check and is not structurally forced,,,"recomputed with both quantities in the same units the residual reads 0.5257545196845275 against the primary window's 0.5218447451814521, a gap of 0.003909774503075392, which is closer than the 0.5126531268389355 the scaffold's arithmetic produced. Nothing in the construction forces two non-overlapping spans to agree, so the proximity is a coincidence in the sense of being unimplied rather than an artifact of the units mix"
+I2,combined_sessions,3737,,,
+I2,primary_plus_holdout,3737,,,2472 plus 1265
+I2,session_count_reconciles,1,,,
+I2,primary_growth_factor,61.51291119309332,,,
+I2,holdout_growth_factor,20.69792779245461,,,
+I2,product_of_the_two,1273.1897941783186,,,
+I2,combined_growth_factor,1273.1897941783204,,,
+I2,relative_gap,1.4286867612850912e-15,,,the two spans compounded against the combined window computed in one pass
+I2,return_reconciles,1,,,
+I3,P4_mean_effective_exposure_across_the_interval,0.8314622495542426,0.9277520939003893,1.759214343454632,"session 27 read the leverage multiple from the REALIZED panel, where the loader sets it to NaN for every levered fund, so its figure is the gross portfolio weight rather than leverage-adjusted exposure. Session 28 reads it from the synthetic panel as session 16 step 3 does, and reproduces the committed primary-window canonical figure of 1.7769723457408557 exactly, which the realized-panel reading does not. The session 27 figure is the one in error and is corrected here rather than in that report, which is not edited"
+I3,primary_window_mean_effective_exposure_check,0.0,,1.7769723457408557,"the gap to the committed 1.7769723457408557 at outputs/session-16/exposure-reconciliation.csv, which is the evidence that the synthetic-panel reading is the correct one"
+I3,P3_part_one_primary_window_correlation,0,0.16448233204452256,0.16448233204452256,the prediction asserted a negative primary-window SQQQ against TLT correlation and the measured figure is positive. Session 27 recorded this and session 28 does not disagree with it
+I3,P1_turnover_premise,0.444843531403445,21.026206485079,21.026206485079,"P1's mechanism stated that nothing in the holdout reduces turnover. Turnover fell from 37.87437898045862 to 21.026206485079, a fall of 0.444844. Session 27 did not report this and session 28 does, so it is an addition rather than a disagreement"
+I3,strategy_holdout_naive_sharpe,0,1.637799226672021,1.637799226672021,"read from the same committed file, so no disagreement is possible"
+I3,strategy_holdout_lo_sharpe,0,2.7585227658215015,2.7585227658215015,"read from the same committed file, so no disagreement is possible"
+I3,holdout_sessions,0,1265,1265,"read from the same committed file, so no disagreement is possible"
+I3_summary,quantities_disagreeing_with_session_27,1,,,"the P4 effective-exposure figures, arising from reading the leverage multiple from the wrong panel. Every other quantity checked agrees or is an addition"

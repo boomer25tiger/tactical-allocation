@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-22 by session 27. Supersedes the session 26 version.
+Refreshed 2026-08-23 by session 28. Supersedes the session 27 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
@@ -16,6 +16,26 @@ Registered at 9.66. **The read is not repeated.**
 **All four falsifiable prediction components are falsified**, at 9.67. The
 strategy ranks 2 of 12 on the naive Sharpe and 1 of 12 on the Lo-corrected over
 the holdout, at 1.637799226672021 and 2.7585227658215015.
+
+**The holdout is decomposed**, at 9.70 through 9.78, under a ruling written
+before any measurement that permits describing a committed result and forbids
+selecting against it. **No specification was selected on any holdout
+observation.**
+
+**The dedicated lookahead test has run**, at 9.71, closing the gap the
+corrections list item 12 recorded. Under one additional session of lag the
+holdout rank holds at 2 of 12 while the annualised return falls from
+0.8287111594113898 to 0.4284098105559164. **The rank survives and the level does
+not.** Corrections item 12's own pattern does not reproduce on the designated
+open-to-open cell and is convention-specific.
+
+**The holdout Lo factor sits inside its own permutation null** at holdout sample
+length, at 9.72, and the Lo-corrected rank of 1 of 12 occurs at q equal to 252
+alone.
+
+**The turnover fall is a capacity effect**, at 9.73. Rebalancing events per
+session rose while the participation cap bound on 0.9406631762652705 of holdout
+events against 0.4909274193548387 of primary-window events.
 
 **`docs/HOLDOUT-PREDICTION.md` is frozen at 9.64 and is not amended after the
 read.** It stands as written.
@@ -113,14 +133,20 @@ window strip at 9.36. The recentred comparison replaces the first.
 
 ## What remains before the paper
 
-**The holdout is read and the measurement work is finished.** What remains is
-writing, being the paper itself from the frozen claim set, the withdrawn set, the
-prediction as written, and the verdicts at 9.67. **No interpretation of the
-holdout result has been written**, and it belongs in a later session.
+**The holdout is read and decomposed, and no measurement remains outstanding for
+the holdout account.** What remains is writing, being the paper itself from the
+frozen claim set, the withdrawn set, the prediction as written, the verdicts at
+9.67 and the decomposition at 9.70 through 9.78.
 
-Seven claims bear on the holdout and were not evaluated, being 2, 3, 11, 12, 13,
-14 and 15, since each would need a measurement outside the single pass. Whether
-any of them is evaluated is a decision that has not been taken.
+Seven claims bear on the holdout and were not evaluated at 9.68, being 2, 3, 11,
+12, 13, 14 and 15. Claims 11 and 12 now have holdout counterparts from the beta
+decomposition and claim 13 has one from leave-one-year-out, and whether those
+counterparts are turned into evaluations against the frozen claims is a decision
+that has not been taken.
+
+**The outperformance is spread rather than concentrated**, all six calendar years
+in the span carrying a positive arithmetic gap against buy-and-hold QQQ. One
+observation over one macro regime remains the principal limitation.
 
 ## Formerly open before the holdout ran
 

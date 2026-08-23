@@ -1,0 +1,129 @@
+table,item,slippage_bp,convention,value,sharpe_naive,sharpe_lo,ann_return,ann_turnover,note
+preregistration,range_source,,,src/config.SLIPPAGE_BASE_GRID_BP,,,,,"read rather than assumed, being [0, 5, 10, 20, 35, 50] basis points round turn"
+preregistration,stacking_rule,,,replaces,,,,,"the uniform round-turn sweep replaces the tiered slippage and the opening-auction premium rather than stacking on them, as session 20 pre-registered. Commission Arm S and the participation cap are unchanged"
+preregistration,disclosed_post_hoc,,,1,,,,,recorded under 9.10 at 9.70. It selects nothing and cannot change the canonical whatever it returns
+sweep,STRATEGY,0,,,1.6315236073244241,2.5373135704115186,0.7414405621976743,16.85748473979044,
+sweep,buy_hold_QQQ,0,,,0.590007802870153,0.7437985556237449,0.15763585368386512,0.0,
+sweep,buy_hold_TQQQ,0,,,0.5565596514354734,0.7020511954289493,0.20005631274573377,0.0,
+sweep,vol_targeted_QQQ_matched,0,,,0.6173008991117322,0.8410998744054548,0.19624201134666341,1.3997020170019199,
+sweep,naive_fast_1d_momentum,0,,,0.025005434545569482,0.023047096284713908,-0.057743478521259495,63.91324571924246,
+sweep,matched_exposure_levered_QQQ_1.70,0,,,0.5588887414606792,0.7055224672554178,0.19671028860537088,0.908176623836941,
+sweep,long_legs_only,0,,,1.4201561422483826,2.6376948878244857,0.5792194927719865,13.226494909085583,
+sweep,equal_weight_universe,0,,,0.602610306328318,0.7362271911345737,0.24173516632887493,0.0,
+sweep,sleeve_T10_standalone,0,,,1.6446691662670168,1.113689649913679,0.892784300954955,32.771988690065605,
+sweep,sleeve_T11_standalone,0,,,1.7587450970108263,2.566873246977847,1.1364097249316631,21.450131457761252,
+sweep,sleeve_S2_standalone,0,,,0.8780701348681986,1.5356158147575565,0.3721671190089004,6.999364610753683,
+sweep,sleeve_S3_standalone,0,,,0.8683005042916646,1.0647453873513353,0.45460360182459914,13.563280780122959,
+rank,STRATEGY,0,sharpe_naive,3,,,,,of 12
+rank,STRATEGY,0,sharpe_lo,3,,,,,of 12
+sweep,STRATEGY,5,,,1.627837987070995,2.5858374692230535,0.7603457003765086,17.824009741795816,
+sweep,buy_hold_QQQ,5,,,0.5900080167429755,0.7438006251413367,0.1576392165240288,0.0,
+sweep,buy_hold_TQQQ,5,,,0.5565605384262111,0.702053079022288,0.20005661355656423,0.0,
+sweep,vol_targeted_QQQ_matched,5,,,0.6150188208216788,0.8378643405336033,0.19540434745194757,1.3997220052754034,
+sweep,naive_fast_1d_momentum,5,,,-0.04398535063580563,-0.04048843092857872,-0.08731240688875186,63.94935849618038,
+sweep,matched_exposure_levered_QQQ_1.70,5,,,0.5576610154384436,0.7037722254928516,0.19613250143860728,0.9082495718517025,
+sweep,long_legs_only,5,,,1.4153172077405107,2.6159923305690405,0.5887403657780879,13.682778770206436,
+sweep,equal_weight_universe,5,,,0.6026254800587785,0.7362608969807758,0.24174446411242645,0.0,
+sweep,sleeve_T10_standalone,5,,,1.6013225690388728,1.085903357883721,0.8951270871011199,34.433782869996136,
+sweep,sleeve_T11_standalone,5,,,1.7550585604048092,2.7167271351108306,1.192812697155622,23.516669308994064,
+sweep,sleeve_S2_standalone,5,,,0.8842558334997123,1.5194989929103917,0.38172757695864434,7.126592780000017,
+sweep,sleeve_S3_standalone,5,,,0.853944095498109,1.0571026434382431,0.4467484121171794,13.737120842043643,
+rank,STRATEGY,5,sharpe_naive,2,,,,,of 12
+rank,STRATEGY,5,sharpe_lo,3,,,,,of 12
+sweep,STRATEGY,10,,,1.6217530831644835,2.6413537977373887,0.7791586643668447,18.926045804514818,
+sweep,buy_hold_QQQ,10,,,0.5900082306455291,0.7438026948955151,0.157642579557296,0.0,
+sweep,buy_hold_TQQQ,10,,,0.5565614254276027,0.7020549626450708,0.20005691436855488,0.0,
+sweep,vol_targeted_QQQ_matched,10,,,0.6127370762969571,0.8346302118441822,0.1945673888317121,1.3997366604134576,
+sweep,naive_fast_1d_momentum,10,,,-0.11299625825558965,-0.10387976457665896,-0.11596775095781109,63.98876460719003,
+sweep,matched_exposure_levered_QQQ_1.70,10,,,0.5564319475300712,0.7020177681359031,0.19555435441853186,0.9083201266384529,
+sweep,long_legs_only,10,,,1.4101242355812638,2.604131658205192,0.5980383737050787,14.185336145299642,
+sweep,equal_weight_universe,10,,,0.6026406568853828,0.7362946125501443,0.24175376279371052,0.0,
+sweep,sleeve_T10_standalone,10,,,1.5654842464434218,1.0486077127356297,0.9012048664824892,35.961527172945885,
+sweep,sleeve_T11_standalone,10,,,1.7234134313990659,2.8384320170780417,1.2346796804373512,26.348368343228888,
+sweep,sleeve_S2_standalone,10,,,0.8901930216516202,1.504089971451289,0.39121908483904666,7.255922036817394,
+sweep,sleeve_S3_standalone,10,,,0.8468999270582247,1.050874609188963,0.44379181022113423,13.88665123774808,
+rank,STRATEGY,10,sharpe_naive,2,,,,,of 12
+rank,STRATEGY,10,sharpe_lo,2,,,,,of 12
+sweep,STRATEGY,20,,,1.6177324353366955,2.7602479112997704,0.8170459771731899,21.260661107655576,
+sweep,buy_hold_QQQ,20,,,0.5900086585398475,0.74380683511379,0.15764930620320716,0.0,
+sweep,buy_hold_TQQQ,20,,,0.5565631994623341,0.7020587299789507,0.2000575159960123,0.0,
+sweep,vol_targeted_QQQ_matched,20,,,0.6081743498102916,0.8281690198344802,0.19289558879975277,1.3997826314873532,
+sweep,naive_fast_1d_momentum,20,,,-0.251057679939367,-0.23021938500464645,-0.17064424215918028,64.07663786343629,
+sweep,matched_exposure_levered_QQQ_1.70,20,,,0.553974652212568,0.6985158350724203,0.19439928914696325,0.908465031782168,
+sweep,long_legs_only,20,,,1.4036080747797164,2.60861273949545,0.6175600611823775,15.259593836883182,
+sweep,equal_weight_universe,20,,,0.6026710198317842,0.7363620728763729,0.24177236285002035,0.0,
+sweep,sleeve_T10_standalone,20,,,1.5207790826447773,1.071988053582593,0.9221945771719136,40.12155118771165,
+sweep,sleeve_T11_standalone,20,,,1.6607761928443385,2.7712395625589608,1.2894976504863527,35.54920422698191,
+sweep,sleeve_S2_standalone,20,,,0.9093544761546032,1.4761858416738631,0.4175897095177379,7.5155991234008965,
+sweep,sleeve_S3_standalone,20,,,0.8352100157965753,1.0580469559542542,0.4403200502678777,14.193960982808346,
+rank,STRATEGY,20,sharpe_naive,2,,,,,of 12
+rank,STRATEGY,20,sharpe_lo,2,,,,,of 12
+sweep,STRATEGY,35,,,1.556539469995808,2.6461182448887213,0.8279400185750607,25.70149465101586,
+sweep,buy_hold_QQQ,35,,,0.5900093006044455,0.743813047216547,0.15765939762076875,0.0,
+sweep,buy_hold_TQQQ,35,,,0.5565658605943171,0.7020643812005833,0.20005841844589645,0.0,
+sweep,vol_targeted_QQQ_matched,35,,,0.6013269571048537,0.818473366201729,0.19039110148013294,1.3998380425227108,
+sweep,naive_fast_1d_momentum,35,,,-0.45818958275224775,-0.41858942492819956,-0.2464616731331848,64.22836575504273,
+sweep,matched_exposure_levered_QQQ_1.70,35,,,0.5502887519651566,0.6932712063263164,0.19266872102395394,0.908679950155785,
+sweep,long_legs_only,35,,,1.3548774080460877,2.5825029663990025,0.6225385252986677,17.561007948963052,
+sweep,equal_weight_universe,35,,,0.6027165875022648,0.7364633364019849,0.24180026967088875,0.0,
+sweep,sleeve_T10_standalone,35,,,1.4256312490596241,1.2343023806426558,0.965471105990136,51.85742990559417,
+sweep,sleeve_T11_standalone,35,,,1.561344620208353,2.9899627280873644,1.2743887482755554,45.014765628566686,
+sweep,sleeve_S2_standalone,35,,,0.9584410495039819,1.527434580157225,0.47303798309234524,8.365970520394113,
+sweep,sleeve_S3_standalone,35,,,0.8051060442885304,1.0450698194444121,0.4145786817957342,14.607757402731085,
+rank,STRATEGY,35,sharpe_naive,2,,,,,of 12
+rank,STRATEGY,35,sharpe_lo,2,,,,,of 12
+sweep,STRATEGY,50,,,1.4354803238074518,2.4530086719847097,0.7710621337407104,29.103787871726908,
+sweep,buy_hold_QQQ,50,,,0.5900099429369289,0.7438192614506318,0.1576694907771743,0.0,
+sweep,buy_hold_TQQQ,50,,,0.5565685218221662,0.7020700326872048,0.20005932090621537,0.0,
+sweep,vol_targeted_QQQ_matched,50,,,0.5944787363905486,0.8087855318041948,0.18789166884133812,1.399892951241451,
+sweep,naive_fast_1d_momentum,50,,,-0.6654478771405563,-0.6057115270557973,-0.3154621825929246,64.39609261639266,
+sweep,matched_exposure_levered_QQQ_1.70,50,,,0.5466025363576097,0.6880328108715906,0.19094043255820048,0.9088918359356126,
+sweep,long_legs_only,50,,,1.2815238708614953,2.5557871038867424,0.6016122915678348,19.651296297363558,
+sweep,equal_weight_universe,50,,,0.6027621831024661,0.7365646876793512,0.2418281845787158,0.0,
+sweep,sleeve_T10_standalone,50,,,1.2495401138347886,1.4852662442255513,0.9261136654335895,67.28235235581458,
+sweep,sleeve_T11_standalone,50,,,1.4395867672672564,3.1468443405159094,1.1930739632965488,54.655733317407616,
+sweep,sleeve_S2_standalone,50,,,0.9904142047421959,1.6150858622946331,0.5158930094759648,9.536143960433183,
+sweep,sleeve_S3_standalone,50,,,0.7668298779079655,1.0214323143906887,0.3810658273404859,15.341131186297496,
+rank,STRATEGY,50,sharpe_naive,2,,,,,of 12
+rank,STRATEGY,50,sharpe_lo,3,,,,,of 12
+rank_crossing,rank_falls_to_6,,sharpe_naive,nan,,,,,"extrapolation, the rank does not reach the target inside the range"
+rank_crossing,rank_falls_to_8,,sharpe_naive,nan,,,,,"extrapolation, the rank does not reach the target inside the range"
+rank_crossing,falls_below_buy_hold_QQQ,,sharpe_naive,nan,,,,,"extrapolation, the strategy leads buy-and-hold QQQ at every swept level"
+gap_to_buy_hold_QQQ,sharpe_naive,0,,1.0415158044542712,,,,,
+gap_to_buy_hold_QQQ,sharpe_naive,5,,1.0378299703280194,,,,,
+gap_to_buy_hold_QQQ,sharpe_naive,10,,1.0317448525189543,,,,,
+gap_to_buy_hold_QQQ,sharpe_naive,20,,1.0277237767968481,,,,,
+gap_to_buy_hold_QQQ,sharpe_naive,35,,0.9665301693913625,,,,,
+gap_to_buy_hold_QQQ,sharpe_naive,50,,0.845470380870523,,,,,
+rank_crossing,rank_falls_to_6,,sharpe_lo,nan,,,,,"extrapolation, the rank does not reach the target inside the range"
+rank_crossing,rank_falls_to_8,,sharpe_lo,nan,,,,,"extrapolation, the rank does not reach the target inside the range"
+rank_crossing,falls_below_buy_hold_QQQ,,sharpe_lo,nan,,,,,"extrapolation, the strategy leads buy-and-hold QQQ at every swept level"
+gap_to_buy_hold_QQQ,sharpe_lo,0,,1.7935150147877739,,,,,
+gap_to_buy_hold_QQQ,sharpe_lo,5,,1.8420368440817168,,,,,
+gap_to_buy_hold_QQQ,sharpe_lo,10,,1.8975511028418737,,,,,
+gap_to_buy_hold_QQQ,sharpe_lo,20,,2.0164410761859806,,,,,
+gap_to_buy_hold_QQQ,sharpe_lo,35,,1.9023051976721743,,,,,
+gap_to_buy_hold_QQQ,sharpe_lo,50,,1.709189410534078,,,,,
+primary_crossing,buy_hold_QQQ,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,buy_hold_TQQQ,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,vol_targeted_QQQ_matched,,sharpe_lo,14.272092502450095,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,naive_fast_1d_momentum,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,matched_exposure_levered_QQQ_1.70,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,long_legs_only,,sharpe_lo,9.436255565159119,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,equal_weight_universe,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_T10_standalone,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_T11_standalone,,sharpe_lo,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_S2_standalone,,sharpe_lo,26.761697455511936,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_S3_standalone,,sharpe_lo,40.503889436792136,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,buy_hold_QQQ,,sharpe_naive,10.084002378357239,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,buy_hold_TQQQ,,sharpe_naive,15.100748319892627,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,vol_targeted_QQQ_matched,,sharpe_naive,22.849387147343997,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,naive_fast_1d_momentum,,sharpe_naive,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,matched_exposure_levered_QQQ_1.70,,sharpe_naive,15.58472569389908,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,long_legs_only,,sharpe_naive,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,equal_weight_universe,,sharpe_naive,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_T10_standalone,,sharpe_naive,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_T11_standalone,,sharpe_naive,nan,,,,,"no crossing inside the swept range, so any figure would be an extrapolation, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_S2_standalone,,sharpe_naive,2.777610498198513,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_crossing,sleeve_S3_standalone,,sharpe_naive,23.74133922976391,,,,,"inside the swept range, from outputs/session-21/reads.csv"
+primary_summary,crossings_inside_the_swept_range,,,10,,,,,"of 22 across the eleven lines and both conventions, the rest being extrapolations, at outputs/session-20/rebuilt/cost-sweep-designated.csv and outputs/session-21/reads.csv"

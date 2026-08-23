@@ -1,0 +1,68 @@
+table,item,window,fill_lag,value,ann_return,sharpe_naive,sharpe_lo,rank_naive,rank_lo,n_sessions,note
+G1,motivation,,,,,,,,,,the register's corrections list item 12 records that no dedicated lookahead test has run anywhere in the project. Recorded under 9.10 at 9.70
+G1,canonical_fill_lag,,,1,,,,,,,"scripts/s13_backtest.py run_account, the signal evaluated at a session's close fills at that session plus fill_lag"
+G1,negative_shift_computable,,,0,,,,,,,"a fill lag of zero fills at the SAME session's open under the open-to-open convention, which precedes the close the signal was evaluated at, so it would trade on information the signal could not yet carry. It is mechanically runnable and is NOT run, since a lookahead test that itself looks ahead measures nothing"
+G1_lag,STRATEGY,primary,1,1.0910863648060856,0.5218447451814521,1.0910863648060856,1.3817013060244996,6,6,,of 12 ladder rows
+G1_lag,STRATEGY,holdout,1,1.637799226672021,0.8287111594113898,1.637799226672021,2.7585227658215015,2,1,,of 12 ladder rows
+G1_lag,STRATEGY,primary,2,0.7836795580531645,0.3150488651993313,0.7836795580531645,0.7381523120792618,7,8,,of 12 ladder rows
+G1_lag,STRATEGY,holdout,2,0.9301170365074822,0.4284098105559164,0.9301170365074822,1.8044351487441768,2,1,,of 12 ladder rows
+G1_shift,ann_return_change,primary,,-0.2067958799821208,,,,,,,
+G1_shift,sharpe_naive_change,primary,,-0.3074068067529211,,,,,,,
+G1_shift,sharpe_lo_change,primary,,-0.6435489939452378,,,,,,,
+G1_shift,rank_naive_change,primary,,1,,,,,,,from 6 at the canonical lag to 7 at one additional session
+G1_shift,ann_return_change,holdout,,-0.4003013488554734,,,,,,,
+G1_shift,sharpe_naive_change,holdout,,-0.7076821901645387,,,,,,,
+G1_shift,sharpe_lo_change,holdout,,-0.9540876170773247,,,,,,,
+G1_shift,rank_naive_change,holdout,,0,,,,,,,from 2 at the canonical lag to 2 at one additional session
+G1_verdict,holdout_advantage_survives_one_extra_session_of_lag,,,1,,,,,,,"an edge which disappears under one session of additional lag is consistent with the signal using information not available at execution time, while an edge that survives is not. Stated as measured and not further interpreted"
+G1_corrections_item_12,reproduces_on_the_designated_cell,,,0,,,,,,,"item 12 records annualised return improving under one extra session of lag while the Lo-corrected Sharpe degrades. On the designated open-to-open cell over the primary window the return moves from 0.5218447451814521 to 0.3150488651993313 and the Lo-corrected Sharpe from np.float64(1.3817013060244996) to np.float64(0.7381523120792618), so BOTH degrade and the recorded pattern does not reproduce"
+G1_corrections_item_12,the_close_to_close_figures_item_12_rests_on,,,0.2971065884533939,,,,,,,"outputs/session-15/lag-anomaly.csv records close-to-close annualised return 0.2971065884533939 at one session of lag against 0.4723877298801684 at two, with the Lo-corrected Sharpe moving from 0.928624610696173 to 0.8601102920915699. The return improves there, so item 12's pattern holds on the close-to-close convention and not on the designated open-to-open cell"
+G1_corrections_item_12,convention_dependence,,,1,,,,,,,item 12's recorded lag sensitivity is convention-specific. It was measured close-to-close and the designated cell is open-to-open
+G2,arithmetic_return_sum,holdout,,3.4218690114239116,,,,,,,
+G2,share_from_the_best_1_sessions,holdout,,0.04187191017347265,,,,,,,
+G2,share_from_the_worst_1_sessions,holdout,,-0.04216346977511778,,,,,,,
+G2,share_from_the_best_5_sessions,holdout,,0.16902815276903652,,,,,,,
+G2,share_from_the_worst_5_sessions,holdout,,-0.16718278328923694,,,,,,,
+G2,share_from_the_best_10_sessions,holdout,,0.29299239950833256,,,,,,,
+G2,share_from_the_worst_10_sessions,holdout,,-0.29868357609030377,,,,,,,
+G2,share_from_the_best_25_sessions,holdout,,0.6007601013561109,,,,,,,
+G2,share_from_the_worst_25_sessions,holdout,,-0.5790103591885034,,,,,,,
+G2,naive_sharpe_with_the_best_5_removed,holdout,,1.4095131731335688,,,,,,,
+G2,naive_sharpe_with_the_best_10_removed,holdout,,1.216555933902445,,,,,,,
+G2,naive_sharpe_unmodified,holdout,,1.637799226672021,,,,,,,
+G2,sessions_accounting_for_half_the_return,holdout,,20,,,,,,,"of 1265 sessions, a share of 0.015810"
+G2,arithmetic_return_sum,primary,,5.284814143474101,,,,,,,
+G2,share_from_the_best_1_sessions,primary,,0.038526964394835404,,,,,,,
+G2,share_from_the_worst_1_sessions,primary,,-0.047520008918499404,,,,,,,
+G2,share_from_the_best_5_sessions,primary,,0.17609825102997434,,,,,,,
+G2,share_from_the_worst_5_sessions,primary,,-0.1644559543002491,,,,,,,
+G2,share_from_the_best_10_sessions,primary,,0.31762546959463517,,,,,,,
+G2,share_from_the_worst_10_sessions,primary,,-0.28052769562009516,,,,,,,
+G2,share_from_the_best_25_sessions,primary,,0.6585596295464436,,,,,,,
+G2,share_from_the_worst_25_sessions,primary,,-0.5437970553928859,,,,,,,
+G2,naive_sharpe_with_the_best_5_removed,primary,,0.9323989955534449,,,,,,,
+G2,naive_sharpe_with_the_best_10_removed,primary,,0.7910800073030204,,,,,,,
+G2,naive_sharpe_unmodified,primary,,1.0910863648060856,,,,,,,
+G2,sessions_accounting_for_half_the_return,primary,,18,,,,,,,"of 2472 sessions, a share of 0.007282"
+G3,base,,,1.637799226672021,,,2.758522765821501,,,1265,the holdout unmodified
+G3,2021,,,1.603456184631876,,,2.7048600854922844,,,1158,the holdout with that calendar year removed
+G3,2022,,,1.6807557149692214,,,2.6543888119656702,,,1014,the holdout with that calendar year removed
+G3,2023,,,1.4608187196166473,,,2.372321248555297,,,1015,the holdout with that calendar year removed
+G3,2024,,,1.7121151693407555,,,3.5010323864321666,,,1013,the holdout with that calendar year removed
+G3,2025,,,1.7091529802911365,,,2.8895727385670686,,,1015,the holdout with that calendar year removed
+G3,2026,,,1.6756806869518472,,,2.7253381609636707,,,1110,the holdout with that calendar year removed
+G3_summary,naive_sharpe_range,,,1.4608187196166473 to 1.7121151693407555,,,,,,,"minimum when 2023 is removed and maximum when 2024 is removed, against the primary window's eleven estimates bounding 1.287076427656795 to 1.6183359759194622 on the Lo-corrected convention at 9.41"
+G3_summary,year_whose_removal_moves_it_most,,,2023,,,,,,,moving the naive Sharpe by -0.1769805070553736 from the base 1.637799226672021
+G3_summary,estimates,,,6,,,,,,,
+G4,window_sessions,,,252,,,,,,,
+G4,windows,,,3486,,,,,,,
+G4,minimum,,,-0.23724927017259576,,,,,,,at 2020-04-13
+G4,maximum,,,3.4173898213134275,,,,,,,at 2024-03-06
+G4,share_above_1.0,,,0.6970740103270223,,,,,,,
+G4,boundary_marked,,,2021-08-01,,,,,,,the emitted series carries an in_holdout column at outputs/session-28/rolling-sharpe-series.csv
+G4,minimum,primary,,-0.23724927017259576,,,,,,,
+G4,maximum,primary,,2.9440688030791,,,,,,,
+G4,share_above_1.0,primary,,0.5844214317874831,,,,,,2221,
+G4,minimum,holdout,,0.057204158460181134,,,,,,,
+G4,maximum,holdout,,3.4173898213134275,,,,,,,
+G4,share_above_1.0,holdout,,0.8948616600790514,,,,,,1265,

@@ -1,0 +1,15 @@
+table,item,value,note
+commit_contents,files_in_the_commit,33,
+commit_contents,bytes_of_those_files,960664,
+commit_contents,files_new_to_the_repository,31,
+commit_contents,bytes_new_to_the_repository,772484,
+size,largest_tracked_file_bytes,30516699,outputs/session-18/spec-index-augmented.csv
+size,largest_tracked_file_mb,29.10,against the 100 megabyte limit
+size,tracked_files_over_100mb,0,
+size,git_directory_kib_before_commit,208224,
+size,working_tree_kib_before_commit,831904,
+space,free_kib_before_commit,18193040,
+space,free_gib_before_commit,17.35,
+expected_delta,working_tree_kib,+0,"every file the commit touches is already written to disk, so the working tree reading above already includes them"
+expected_delta,git_directory_kib,+754 or less,"the commit writes objects for 33 files totalling 960664 bytes on disk, of which 772484 bytes are new. Objects are zlib compressed, and the parquet series files here compress less than text does"
+expected_delta,free_space_gib,0.00 to -0.01,the commit adds well under one gibibyte
