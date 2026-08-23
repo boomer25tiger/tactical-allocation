@@ -1,0 +1,220 @@
+table,item,window,value,rank,date,held,inverse_or_vol,corporate_action,action_date,n_events,note
+scope,loaded_universe,,35,,,,,,,,"bt.UNLEVERED plus bt.LEVERED, unmodified"
+scope,instruments_ever_held,,17,,,,,,,,"BIL, BSV, BTAL, LABU, PSQ, QLD, QQQ, SOXL, SOXS, SPXL, SQQQ, SVXY, TECL, TECS, TLT, TQQQ, UVXY"
+largest_single_session,SOXS,holdout,-0.9457524782010531,1,2026-05-26,1,1,,,,
+largest_single_session,UVXY,holdout,0.583034323123736,2,2024-08-05,1,1,,,,
+largest_single_session,SOXL,holdout,0.5478788433652935,3,2025-04-09,1,0,,,,
+largest_single_session,TECS,holdout,-0.39515148824896695,4,2025-04-09,1,1,,,,
+largest_single_session,TECL,holdout,0.388427519120492,5,2025-04-09,1,0,,,,
+largest_single_session,SQQQ,holdout,-0.3528412688444744,6,2025-04-09,1,1,,,,
+largest_single_session,TQQQ,holdout,0.35244212202284464,7,2025-04-09,1,0,,,,
+largest_single_session,SPXL,holdout,0.2756216595103884,8,2025-04-09,1,0,,,,
+largest_single_session,LABU,holdout,-0.24519939767223442,9,2022-05-09,1,0,,,,
+largest_single_session,QLD,holdout,0.23492935932887726,10,2025-04-09,1,0,,,,
+largest_single_session,FAS,holdout,0.22362552082156073,11,2025-04-09,0,0,,,,
+largest_single_session,SVXY,holdout,-0.21434289544703022,12,2024-08-05,1,1,,,,
+largest_single_session,SMH,holdout,0.17160325316201197,13,2025-04-09,0,0,,,,
+largest_single_session,XLK,holdout,0.13425697132599002,14,2025-04-09,0,0,,,,
+largest_single_session,QQQ,holdout,0.12003077136578888,15,2025-04-09,1,0,,,,
+largest_single_session,PSQ,holdout,-0.11789240443094473,16,2025-04-09,1,1,,,,
+largest_single_session,VOOG,holdout,0.11295339586350894,17,2025-04-09,0,0,,,,
+largest_single_session,XLY,holdout,0.10888055657805773,18,2025-04-09,0,0,,,,
+largest_single_session,QQQE,holdout,0.10639119842639033,19,2025-04-09,0,0,,,,
+largest_single_session,SPY,holdout,0.10501930183911301,20,2025-04-09,0,0,,,,
+largest_single_session,IOO,holdout,0.09935259263809648,21,2025-04-09,0,0,,,,
+largest_single_session,VOX,holdout,0.09487684304445865,22,2025-04-09,0,0,,,,
+largest_single_session,SH,holdout,-0.09351218056397181,23,2025-04-09,0,1,,,,
+largest_single_session,VOOV,holdout,0.07586850328769934,24,2025-04-09,0,0,,,,
+largest_single_session,XLF,holdout,0.07536433313495516,25,2025-04-09,0,0,,,,
+largest_single_session,VTV,holdout,0.06637598145233459,26,2025-04-09,0,0,,,,
+largest_single_session,XLP,holdout,-0.06434798786014906,27,2022-05-18,0,0,,,,
+largest_single_session,BTAL,holdout,0.055582841367793234,28,2025-04-03,1,0,,,,
+largest_single_session,TLT,holdout,0.038473727578119954,29,2022-11-10,1,0,,,,
+largest_single_session,RYMFX,holdout,-0.03483803305740418,30,2023-03-14,0,0,,,,
+largest_single_session,IEF,holdout,0.022525432929422884,31,2022-09-28,0,0,,,,
+largest_single_session,AGG,holdout,0.02147010802512228,32,2022-11-10,0,0,,,,
+largest_single_session,BND,holdout,0.020702411897323802,33,2022-11-10,0,0,,,,
+largest_single_session,BSV,holdout,0.008322184517879583,34,2022-11-10,1,0,,,,
+largest_single_session,BIL,holdout,0.0007650239871499487,35,2023-01-12,1,0,,,,
+largest_single_session,SVXY,primary,-0.8295739372998041,1,2018-02-06,1,1,,,,
+largest_single_session,UVXY,primary,0.6620639534883721,2,2018-02-05,1,1,,,,
+largest_single_session,BTAL,primary,0.48842599218737637,3,2015-04-30,1,0,,,,
+largest_single_session,SOXS,primary,0.46254980079681274,4,2020-03-16,1,1,,,,
+largest_single_session,FAS,primary,-0.3897889154115729,5,2020-03-16,0,0,,,,
+largest_single_session,SOXL,primary,-0.38592975430920673,6,2020-03-16,1,0,,,,
+largest_single_session,TECL,primary,-0.3616384292477297,7,2020-03-16,1,0,,,,
+largest_single_session,TQQQ,primary,-0.34465165552424737,8,2020-03-16,1,0,,,,
+largest_single_session,SPXL,primary,-0.33871916499820365,9,2020-03-16,1,0,,,,
+largest_single_session,LABU,primary,0.33376201862690924,10,2016-11-09,1,0,,,,
+largest_single_session,SQQQ,primary,0.3274221453287198,11,2020-03-16,1,1,,,,
+largest_single_session,TECS,primary,0.3257142857142856,12,2020-03-16,1,1,,,,
+largest_single_session,QLD,primary,-0.24280985238471853,13,2020-03-16,1,0,,,,
+largest_single_session,SMH,primary,-0.14411615122466703,14,2020-03-16,0,0,,,,
+largest_single_session,XLK,primary,-0.13813997559753777,15,2020-03-16,0,0,,,,
+largest_single_session,XLF,primary,-0.13709327340589916,16,2020-03-16,0,0,,,,
+largest_single_session,XLY,primary,-0.12668627885876194,17,2020-03-16,0,0,,,,
+largest_single_session,QQQ,primary,-0.1197878430113809,18,2020-03-16,1,0,,,,
+largest_single_session,VOOG,primary,-0.11899209262019894,19,2020-03-16,0,0,,,,
+largest_single_session,QQQE,primary,-0.11727620042697673,20,2020-03-16,0,0,,,,
+largest_single_session,SH,primary,0.1151052310662064,21,2020-03-16,0,1,,,,
+largest_single_session,VOX,primary,-0.11419634273818069,22,2020-03-16,0,0,,,,
+largest_single_session,PSQ,primary,0.11406553411759401,23,2020-03-16,1,1,,,,
+largest_single_session,VTV,primary,-0.11078386186855227,24,2020-03-16,0,0,,,,
+largest_single_session,SPY,primary,-0.10942373540494488,25,2020-03-16,0,0,,,,
+largest_single_session,VOOV,primary,-0.10906702600063412,26,2020-03-16,0,0,,,,
+largest_single_session,IOO,primary,-0.10801854075991768,27,2020-03-16,0,0,,,,
+largest_single_session,XLP,primary,-0.09395629541629491,28,2020-03-12,0,0,,,,
+largest_single_session,RYMFX,primary,0.08970681012327253,29,2017-04-25,0,0,,,,
+largest_single_session,TLT,primary,0.07519553539436075,30,2020-03-20,1,0,,,,
+largest_single_session,BND,primary,-0.054384876788192704,31,2020-03-12,0,0,,,,
+largest_single_session,AGG,primary,-0.04001049440763793,32,2020-03-12,0,0,,,,
+largest_single_session,IEF,primary,0.02641668951367504,33,2020-03-16,0,0,,,,
+largest_single_session,BSV,primary,0.01982973464214588,34,2020-03-20,1,0,,,,
+largest_single_session,BIL,primary,0.0004593175730382981,35,2016-12-01,1,0,,,,
+above_threshold,SOXL,holdout,0.5478788433652935,,2025-04-09,1,,"market move, SMH returned 0.17160325316201197 and the implied multiple is 3.192706625719017 against the registered 3",2025-04-09,,"EXPLAINED. Underlying proxy SMH returned 0.17160325316201197, the implied multiple is 3.192706625719017 against the registered 3.0, so the direction is the same sign at 1.06 times the registered magnitude"
+above_threshold,SOXS,holdout,-0.5597618034878775,,2025-04-09,1,,"market move, SMH returned 0.17160325316201197 and the implied multiple is -3.2619533323147554 against the registered -3",2025-04-09,,"EXPLAINED. Underlying proxy SMH returned 0.17160325316201197, the implied multiple is -3.2619533323147554 against the registered -3.0, so the direction is the same sign at 1.09 times the registered magnitude"
+above_threshold,SOXS,holdout,-0.9457524782010531,,2026-05-26,1,,none identifiable,,,"UNEXPLAINED. Underlying proxy SMH returned 0.04480151130636223, the implied multiple is -21.109834258353413 against the registered -3.0, so the direction is the same sign at 7.04 times the registered magnitude"
+unexplained_detail,SOXS,holdout,-0.9457524782010531,,2026-05-26,,,,,,"no corporate action in the frozen record within one session. Underlying proxy SMH returned 0.04480151130636223 and the implied multiple is -21.109834258353413 against the registered -3.0. The direction is the same sign at 7.04 times the registered magnitude, so the session is an order of magnitude beyond what any move in the registered underlying produces, which is the signature of an unrecorded corporate action"
+above_threshold,UVXY,holdout,0.583034323123736,,2024-08-05,1,,"market move, the frozen constant-maturity thirty-day VIX futures settle returned 0.42641633471884277 and the implied multiple is 1.3672889044181649 against the registered 1.5",2024-08-05,,"EXPLAINED. Underlying proxy the VIX futures settle returned 0.42641633471884277, the implied multiple is 1.3672889044181649 against the registered 1.5, so the direction is the same sign at 0.91 times the registered magnitude"
+above_threshold,SVXY,primary,-0.8295739372998041,,2018-02-06,1,,none identifiable,,,"UNEXPLAINED. Underlying proxy the VIX futures settle returned -0.2657166607291297, the implied multiple is 3.1220245468366317 against the registered -1.0, so the direction is the opposite sign"
+unexplained_detail,SVXY,primary,-0.8295739372998041,,2018-02-06,,,,,,"no corporate action in the frozen record within one session. Underlying proxy the VIX futures settle returned -0.2657166607291297 and the implied multiple is 3.1220245468366317 against the registered -1.0. The direction is the opposite sign, so the session is not attributable by this screen, since a fund whose net asset value strikes at a different time from the proxy's settle can move against it on a single session"
+above_threshold,UVXY,primary,0.6620639534883721,,2018-02-05,1,,none identifiable,,,"UNEXPLAINED. Underlying proxy the VIX futures settle returned 0.9668799925258098, the implied multiple is 0.6847426346664206 against the registered 2.0, so the direction is the same sign at 0.34 times the registered magnitude"
+unexplained_detail,UVXY,primary,0.6620639534883721,,2018-02-05,,,,,,"no corporate action in the frozen record within one session. Underlying proxy the VIX futures settle returned 0.9668799925258098 and the implied multiple is 0.6847426346664206 against the registered 2.0. The direction is the same sign at 0.34 times the registered magnitude, so the session is within a factor the proxy's own tracking error can account for, so it is consistent with a market move the proxy measures imperfectly"
+above_threshold,UVXY,primary,0.5747728860936407,,2020-03-16,1,,none identifiable,,,"UNEXPLAINED. Underlying proxy the VIX futures settle returned 0.3167696925125718, the implied multiple is 1.814481939653458 against the registered 1.5, so the direction is the same sign at 1.21 times the registered magnitude"
+unexplained_detail,UVXY,primary,0.5747728860936407,,2020-03-16,,,,,,"no corporate action in the frozen record within one session. Underlying proxy the VIX futures settle returned 0.3167696925125718 and the implied multiple is 1.814481939653458 against the registered 1.5. The direction is the same sign at 1.21 times the registered magnitude, so the session is within a factor the proxy's own tracking error can account for, so it is consistent with a market move the proxy measures imperfectly"
+above_threshold,UVXY,primary,0.5016479894528676,,2020-06-11,1,,"market move, the frozen constant-maturity thirty-day VIX futures settle returned 0.4028978967686947 and the implied multiple is 1.2450995487347152 against the registered 1.5",2020-06-11,,"EXPLAINED. Underlying proxy the VIX futures settle returned 0.4028978967686947, the implied multiple is 1.2450995487347152 against the registered 1.5, so the direction is the same sign at 0.83 times the registered magnitude"
+above_threshold_summary,sessions_above_50_percent,,8,,,,,,,,"across both windows and the full loaded universe, at a threshold of 0.5"
+above_threshold_summary,unexplained_in_a_held_instrument,,4,,,,,,,,holdout SOXS 2026-05-26 -0.9457524782010531; primary SVXY 2018-02-06 -0.8295739372998041; primary UVXY 2018-02-05 0.6620639534883721; primary UVXY 2020-03-16 0.5747728860936407
+split_adjustment,AGG,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,BIL,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,BIL,primary,1.0,,2017-11-30,,,,,,"split factor 0.5, an unadjusted series would show a close ratio near 2 and the observed ratio is 1.0, a gap of 1.0"
+split_adjustment,BND,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,BSV,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,BTAL,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,FAS,,adjusted,,,,,,,5,"5 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 5 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,FAS,pre-window,1.0359520613581261,,2009-07-09,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.0359520613581261, a gap of 3.964047938641874"
+split_event,FAS,pre-window,0.9829278530850964,,2010-05-05,,,,,,"split factor 3, an unadjusted series would show a close ratio near 0.333333 and the observed ratio is 0.9829278530850964, a gap of 0.6495945197517632"
+split_event,FAS,primary,1.0125786039036229,,2011-11-10,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.0125786039036229, a gap of 3.9874213960963774"
+split_event,FAS,primary,1.013230452865285,,2013-04-02,,,,,,"split factor 3, an unadjusted series would show a close ratio near 0.333333 and the observed ratio is 1.013230452865285, a gap of 0.6798971195319516"
+split_event,FAS,primary,0.9902551690101389,,2015-05-20,,,,,,"split factor 4, an unadjusted series would show a close ratio near 0.25 and the observed ratio is 0.9902551690101389, a gap of 0.7402551690101389"
+split_adjustment,IEF,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,IOO,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,IOO,primary,0.9954466806301794,,2018-05-02,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9954466806301794, a gap of 0.4954466806301794"
+split_adjustment,LABU,,adjusted,,,,,,,2,"2 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 2 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,LABU,primary,1.0129240584384491,,2016-03-24,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.0129240584384491, a gap of 2.987075941561551"
+split_event,LABU,holdout,1.0502381097702753,,2023-12-04,,,,,,"split factor 0.05, an unadjusted series would show a close ratio near 20 and the observed ratio is 1.0502381097702753, a gap of 18.949761890229723"
+split_adjustment,PSQ,,adjusted,,,,,,,2,"2 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 2 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,PSQ,primary,0.9963981462819267,,2014-11-06,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9963981462819267, a gap of 3.0036018537180733"
+split_event,PSQ,holdout,1.0083900852468093,,2024-04-10,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.0083900852468093, a gap of 3.991609914753191"
+split_adjustment,QLD,,adjusted,,,,,,,6,"6 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 6 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,QLD,primary,1.0005619216363182,,2012-05-11,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0005619216363182, a gap of 0.5005619216363182"
+split_event,QLD,primary,1.0011048611410716,,2015-05-20,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0011048611410716, a gap of 0.5011048611410716"
+split_event,QLD,primary,1.0010570362230309,,2017-07-17,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0010570362230309, a gap of 0.5010570362230309"
+split_event,QLD,primary,1.0194998825374104,,2020-08-18,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0194998825374104, a gap of 0.5194998825374104"
+split_event,QLD,primary,1.0026101544748725,,2021-05-25,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0026101544748725, a gap of 0.5026101544748725"
+split_event,QLD,holdout,0.952881167230185,,2025-11-20,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.952881167230185, a gap of 0.452881167230185"
+split_adjustment,QQQ,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,QQQ,pre-window,0.9717992103778906,,2000-03-20,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9717992103778906, a gap of 0.47179921037789063"
+split_adjustment,QQQE,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,QQQE,primary,1.005376320457998,,2017-05-01,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.005376320457998, a gap of 0.505376320457998"
+split_adjustment,RYMFX,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,SH,,adjusted,,,,,,,2,"2 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 2 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SH,primary,1.0364556614356706,,2016-06-24,,,,,,"split factor 0.5, an unadjusted series would show a close ratio near 2 and the observed ratio is 1.0364556614356706, a gap of 0.9635443385643294"
+split_event,SH,holdout,0.9926886471194628,,2024-11-07,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9926886471194628, a gap of 3.0073113528805373"
+split_adjustment,SMH,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SMH,holdout,1.021140322168964,,2023-05-05,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.021140322168964, a gap of 0.5211403221689641"
+split_adjustment,SOXL,,adjusted,,,,,,,2,"2 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 2 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SOXL,primary,1.0052109101795044,,2015-05-20,,,,,,"split factor 4, an unadjusted series would show a close ratio near 0.25 and the observed ratio is 1.0052109101795044, a gap of 0.7552109101795044"
+split_event,SOXL,primary,0.9058226526945614,,2021-03-02,,,,,,"split factor 15, an unadjusted series would show a close ratio near 0.0666667 and the observed ratio is 0.9058226526945614, a gap of 0.8391559860278948"
+split_adjustment,SOXS,,adjusted,,,,,,,10,"10 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 10 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SOXS,pre-window,0.950298931441066,,2011-02-24,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.950298931441066, a gap of 4.049701068558934"
+split_event,SOXS,primary,0.9809494173019511,,2013-08-20,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9809494173019511, a gap of 3.019050582698049"
+split_event,SOXS,primary,0.9952918685917556,,2015-05-20,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9952918685917556, a gap of 3.004708131408244"
+split_event,SOXS,primary,0.9701333333333333,,2017-05-01,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9701333333333333, a gap of 4.029866666666667"
+split_event,SOXS,primary,1.0021400778210117,,2019-06-28,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.0021400778210117, a gap of 8.99785992217899"
+split_event,SOXS,primary,0.940771349862259,,2020-08-28,,,,,,"split factor 0.0833333, an unadjusted series would show a close ratio near 12 and the observed ratio is 0.940771349862259, a gap of 11.05922865013774"
+split_event,SOXS,holdout,0.9819484240687679,,2022-03-28,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 0.9819484240687679, a gap of 9.018051575931231"
+split_event,SOXS,holdout,1.040340909090909,,2024-04-15,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.040340909090909, a gap of 8.95965909090909"
+split_event,SOXS,holdout,1.03860103626943,,2026-03-05,,,,,,"split factor 0.05, an unadjusted series would show a close ratio near 20 and the observed ratio is 1.03860103626943, a gap of 18.96139896373057"
+split_event,SOXS,holdout,1.0742990738752682,,2026-07-15,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.0742990738752682, a gap of 8.925700926124732"
+split_adjustment,SPXL,,adjusted,,,,,,,2,"2 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 2 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SPXL,primary,1.013945436117038,,2013-04-02,,,,,,"split factor 3, an unadjusted series would show a close ratio near 0.333333 and the observed ratio is 1.013945436117038, a gap of 0.6806121027837047"
+split_event,SPXL,primary,1.005857042214848,,2017-05-01,,,,,,"split factor 4, an unadjusted series would show a close ratio near 0.25 and the observed ratio is 1.005857042214848, a gap of 0.7558570422148481"
+split_adjustment,SPY,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,SQQQ,,adjusted,,,,,,,8,"8 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 8 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SQQQ,primary,1.0002032520325204,,2012-05-11,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.0002032520325204, a gap of 2.99979674796748"
+split_event,SQQQ,primary,1.0592011412268187,,2014-01-24,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.0592011412268187, a gap of 2.9407988587731815"
+split_event,SQQQ,primary,1.003207869974337,,2017-01-12,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.003207869974337, a gap of 2.9967921300256632"
+split_event,SQQQ,primary,1.005813953488372,,2019-05-24,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.005813953488372, a gap of 2.994186046511628"
+split_event,SQQQ,primary,0.9715909090909091,,2020-08-18,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9715909090909091, a gap of 4.028409090909091"
+split_event,SQQQ,holdout,1.0744479495268138,,2022-01-13,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.0744479495268138, a gap of 3.9255520504731862"
+split_event,SQQQ,holdout,0.9530826884104793,,2024-11-07,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9530826884104793, a gap of 4.046917311589521"
+split_event,SQQQ,holdout,1.07037036775398,,2025-11-20,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.07037036775398, a gap of 3.9296296322460202"
+split_adjustment,SVXY,,adjusted,,,,,,,5,"5 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 5 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,SVXY,primary,1.0131523350747331,,2012-10-05,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0131523350747331, a gap of 0.5131523350747331"
+split_event,SVXY,primary,0.9095996149942065,,2014-01-24,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9095996149942065, a gap of 0.4095996149942065"
+split_event,SVXY,primary,1.0261176614200367,,2017-07-17,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0261176614200367, a gap of 0.5261176614200367"
+split_event,SVXY,primary,0.9977383251713544,,2018-09-18,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9977383251713544, a gap of 3.0022616748286457"
+split_event,SVXY,holdout,1.0090684758612158,,2024-04-11,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0090684758612158, a gap of 0.5090684758612158"
+split_adjustment,TECL,,adjusted,,,,,,,3,"3 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 3 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,TECL,pre-window,0.9862306358869743,,2010-05-05,,,,,,"split factor 4, an unadjusted series would show a close ratio near 0.25 and the observed ratio is 0.9862306358869743, a gap of 0.7362306358869743"
+split_event,TECL,primary,1.005592291383138,,2015-05-20,,,,,,"split factor 4, an unadjusted series would show a close ratio near 0.25 and the observed ratio is 1.005592291383138, a gap of 0.7555922913831381"
+split_event,TECL,primary,0.9532267434991876,,2021-03-02,,,,,,"split factor 10, an unadjusted series would show a close ratio near 0.1 and the observed ratio is 0.9532267434991876, a gap of 0.8532267434991876"
+split_adjustment,TECS,,adjusted,,,,,,,8,"8 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 8 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,TECS,pre-window,0.9822222222222222,,2010-07-08,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9822222222222222, a gap of 4.017777777777778"
+split_event,TECS,primary,0.9874843554443054,,2013-04-02,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9874843554443054, a gap of 4.012515644555695"
+split_event,TECS,primary,0.9956043956043956,,2015-05-20,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9956043956043956, a gap of 3.0043956043956044"
+split_event,TECS,primary,0.9374800637958532,,2018-03-29,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9374800637958532, a gap of 4.062519936204147"
+split_event,TECS,primary,1.0217948717948717,,2020-04-23,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.0217948717948717, a gap of 8.97820512820513"
+split_event,TECS,holdout,0.9875949367088608,,2021-10-25,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 0.9875949367088608, a gap of 9.012405063291139"
+split_event,TECS,holdout,1.0023896834429573,,2024-11-04,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.0023896834429573, a gap of 8.997610316557044"
+split_event,TECS,holdout,1.031019293916972,,2026-07-15,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.031019293916972, a gap of 8.968980706083029"
+split_adjustment,TLT,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,TQQQ,,adjusted,,,,,,,8,"8 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 8 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,TQQQ,pre-window,1.0428451524824258,,2011-02-25,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0428451524824258, a gap of 0.5428451524824258"
+split_event,TQQQ,primary,0.9990157894493397,,2012-05-11,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9990157894493397, a gap of 0.49901578944933966"
+split_event,TQQQ,primary,0.9407454212499223,,2014-01-24,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9407454212499223, a gap of 0.44074542124992233"
+split_event,TQQQ,primary,0.9949144999033258,,2017-01-12,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9949144999033258, a gap of 0.4949144999033258"
+split_event,TQQQ,primary,0.9991585287067385,,2018-05-24,,,,,,"split factor 3, an unadjusted series would show a close ratio near 0.333333 and the observed ratio is 0.9991585287067385, a gap of 0.6658251953734051"
+split_event,TQQQ,primary,1.0248534956662065,,2021-01-21,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0248534956662065, a gap of 0.5248534956662065"
+split_event,TQQQ,holdout,0.9274300032500383,,2022-01-13,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9274300032500383, a gap of 0.4274300032500383"
+split_event,TQQQ,holdout,0.9285357190625965,,2025-11-20,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 0.9285357190625965, a gap of 0.42853571906259647"
+split_adjustment,UVXY,,adjusted,,,,,,,13,"13 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 13 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,UVXY,primary,0.9178700248017482,,2012-03-08,,,,,,"split factor 0.166667, an unadjusted series would show a close ratio near 6 and the observed ratio is 0.9178700248017482, a gap of 5.082129975198252"
+split_event,UVXY,primary,0.88571427974344,,2012-09-07,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 0.88571427974344, a gap of 9.11428572025656"
+split_event,UVXY,primary,0.9769599995281408,,2013-06-10,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 0.9769599995281408, a gap of 9.023040000471859"
+split_event,UVXY,primary,1.1758720826873386,,2014-01-24,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 1.1758720826873386, a gap of 2.824127917312661"
+split_event,UVXY,primary,1.0034021871202916,,2015-05-20,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.0034021871202916, a gap of 3.9965978128797084"
+split_event,UVXY,primary,0.9901639344262295,,2016-07-25,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9901639344262295, a gap of 4.00983606557377"
+split_event,UVXY,primary,0.9973856209150327,,2017-01-12,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9973856209150327, a gap of 4.002614379084967"
+split_event,UVXY,primary,0.9480140186915887,,2017-07-17,,,,,,"split factor 0.25, an unadjusted series would show a close ratio near 4 and the observed ratio is 0.9480140186915887, a gap of 3.051985981308411"
+split_event,UVXY,primary,0.9962453066332916,,2018-09-18,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9962453066332916, a gap of 4.003754693366709"
+split_event,UVXY,primary,0.9320293398533007,,2021-05-26,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 0.9320293398533007, a gap of 9.067970660146699"
+split_event,UVXY,holdout,1.0277777777777777,,2023-06-23,,,,,,"split factor 0.1, an unadjusted series would show a close ratio near 10 and the observed ratio is 1.0277777777777777, a gap of 8.972222222222221"
+split_event,UVXY,holdout,0.9747459732742199,,2024-04-11,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 0.9747459732742199, a gap of 4.02525402672578"
+split_event,UVXY,holdout,1.1070826706663737,,2025-11-20,,,,,,"split factor 0.2, an unadjusted series would show a close ratio near 5 and the observed ratio is 1.1070826706663737, a gap of 3.8929173293336263"
+split_adjustment,VOOG,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,VOOG,holdout,0.9935716641836256,,2026-04-21,,,,,,"split factor 6, an unadjusted series would show a close ratio near 0.166667 and the observed ratio is 0.9935716641836256, a gap of 0.826904997516959"
+split_adjustment,VOOV,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,VOX,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,VTV,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,XLF,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,XLF,primary,1.0063763338163092,,2016-09-19,,,,,,"split factor 1.231, an unadjusted series would show a close ratio near 0.812348 and the observed ratio is 1.0063763338163092, a gap of 0.19402864900721095"
+split_adjustment,XLK,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,XLK,holdout,1.0073178439180095,,2025-12-05,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0073178439180095, a gap of 0.5073178439180095"
+split_adjustment,XLP,,no split in the frozen record,,,,,,,,"the Stock Splits column carries no non-zero entry across the span, so no adjustment question arises"
+split_adjustment,XLY,,adjusted,,,,,,,1,"1 split events in the frozen record. The close ratio across each event is compared against the reciprocal of the split factor, which is what an UNADJUSTED series would show. 0 of 1 events match that pattern within 0.15. Establishing method, the raw Close column against the Stock Splits column in the same frozen parquet"
+split_event,XLY,holdout,1.0055429886940537,,2025-12-05,,,,,,"split factor 2, an unadjusted series would show a close ratio near 0.5 and the observed ratio is 1.0055429886940537, a gap of 0.5055429886940537"
+adjustment_method,realized_arm,,the issuer's own history as the vendor supplies it,,,,,,,,"scripts/s13_backtest.py load_arm_panel takes the frozen fund parquet for every levered ticker on the realized arm and sets multiple to NaN. src/data.py build_ticker_frame computes ret_total as close plus dividend over the prior close on the compressed available-only series, so the adjustment the vendor already applied to Close is the adjustment that reaches returns"
+adjustment_method,synthetic_arm,,reconstructions validated against live NAV,,,,,,,,"the synthetic arm rebuilds each levered fund from the underlying at the registered multiple with financing, and session 10 validated those against issuer NAV. The DESIGNATED CELL IS THE REALIZED ARM, so the holdout figures carry the issuer's own history and not a reconstruction"
+adjustment_method,differs_between_windows,,0,,,,,,,,"the same loader and the same total-return construction run across both windows on the realized arm, so the adjustment method does not change at the boundary. What changes is which instruments are available, since the primary window carries sessions on which some loaded tickers had not yet listed"
+unexplained_contribution,SOXS,,-0.0,,2026-05-26,,,,,,the lagged portfolio weight 0.0 times the session return -0.9457524782010531
+unexplained_contribution,total,,0.0,,,,,,,,"against the holdout arithmetic return sum of 3.4218690114239116, a share of 0.0"
+cross_check,SOXS,,-0.9457524797518353,1,2026-05-26,,,,,,"the adjusted-close path gives -0.9457524797518353 against the engine's -0.9457524782010531, a deviation of 1.550782169346121e-09. The adjusted close is an independent column in the same frozen parquet, dividend and split adjusted by the vendor, so it is an alternative path rather than a second read of the same one"
+cross_check,UVXY,,0.583034323123736,2,2024-08-05,,,,,,"the adjusted-close path gives 0.583034323123736 against the engine's 0.583034323123736, a deviation of 0.0. The adjusted close is an independent column in the same frozen parquet, dividend and split adjusted by the vendor, so it is an alternative path rather than a second read of the same one"
+cross_check,SOXL,,0.54787896700471,3,2025-04-09,,,,,,"the adjusted-close path gives 0.54787896700471 against the engine's 0.5478788433652935, a deviation of 1.236394164827459e-07. The adjusted close is an independent column in the same frozen parquet, dividend and split adjusted by the vendor, so it is an alternative path rather than a second read of the same one"
+gate_B,unexplained_sessions_in_a_held_instrument,,4,,,,,,,,
+gate_B,unexplained_inside_the_holdout,,1,,,,,,,,
+gate_B,soxs_holdout_sessions_held,,252,,,,,,,,"of the holdout's sessions. The weight is zero across the whole of 2026-05-18 to 2026-06-05, so the defect session itself carries no position"
+gate_B,soxs_in_any_signal_path,,0,,,,,,,,"src/sleeves.py names SOXS at line 266 alone, inside T11's bear split, which is a position rather than a signal, so the defect cannot enter through the signal path"
+gate_B,verdict,,HALT,,,,,,,,the session halts before any other phase runs

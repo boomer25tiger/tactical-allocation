@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-23 by session 28. Supersedes the session 27 version.
+Refreshed 2026-08-23 by session 29. Supersedes the session 28 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
@@ -36,6 +36,21 @@ alone.
 **The turnover fall is a capacity effect**, at 9.73. Rebalancing events per
 session rose while the participation cap bound on 0.9406631762652705 of holdout
 events against 0.4909274193548387 of primary-window events.
+
+**A DATA DEFECT SITS INSIDE THE HOLDOUT SPAN**, at 9.80. SOXS returns
+-0.9457524782010531 on 2026-05-26 with no corporate action in the frozen record,
+its close running 1159.5 on 2026-05-22 against 62.900001525878906 on 2026-05-26
+while SMH rose 0.04480151130636223 across the same gap. **It contributes exactly
+0.0 to holdout return**, since SOXS carries zero weight across the whole of
+2026-05-18 to 2026-06-05, and it cannot enter through the signal path since SOXS
+appears in `src/sleeves.py` at line 266 alone as a position.
+
+**Session 29's gate B fired on that defect and its measurement phases did not
+run.** The holdout nulls, the multi-factor decomposition, the interval estimates,
+the NAV sensitivity and the instrument attribution were pre-registered at 9.79 and
+none was computed. **The gate's disposition is not decided.** Repairing a frozen
+input changes a hashed file, its manifest entry and the input-integrity check
+every session runs.
 
 **`docs/HOLDOUT-PREDICTION.md` is frozen at 9.64 and is not amended after the
 read.** It stands as written.
@@ -133,10 +148,15 @@ window strip at 9.36. The recentred comparison replaces the first.
 
 ## What remains before the paper
 
-**The holdout is read and decomposed, and no measurement remains outstanding for
-the holdout account.** What remains is writing, being the paper itself from the
-frozen claim set, the withdrawn set, the prediction as written, the verdicts at
-9.67 and the decomposition at 9.70 through 9.78.
+**The holdout is read and decomposed. Six robustification measurements remain
+uncomputed**, being the holdout nulls, the multi-factor decomposition, the
+interval estimates, the NAV sensitivity, the instrument attribution and the
+leave-one-year-out convention restatement, all pre-registered at 9.79 and all
+halted by gate B at 9.80. **The gate's disposition is the open question.**
+
+What otherwise remains is writing, being the paper itself from the frozen claim
+set, the withdrawn set, the prediction as written, the verdicts at 9.67 and the
+decomposition at 9.70 through 9.78.
 
 Seven claims bear on the holdout and were not evaluated at 9.68, being 2, 3, 11,
 12, 13, 14 and 15. Claims 11 and 12 now have holdout counterparts from the beta
