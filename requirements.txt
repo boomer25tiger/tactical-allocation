@@ -1,0 +1,18 @@
+# Generated from the current environment on 2026-08-23 by session 31.
+# NOT an authoritative record. Session 18s rebuilt this environment from a
+# pre-removal freeze rather than from a requirements file, and the register
+# notes at 10.1 that the zero version divergence it reported is partly a
+# construction of that method.
+#
+# matplotlib is DELIBERATELY ABSENT. The plotting decision at 9.53 draws every
+# figure through scripts/s19_svg.py using the standard library alone, so that
+# adding matplotlib would change the environment the manifest records.
+#
+# Python 3.13.13
+
+numpy==2.5.2
+pandas==3.0.5
+pyarrow==25.0.1
+pytest==9.1.1
+requests==2.34.2
+yfinance==1.6.0

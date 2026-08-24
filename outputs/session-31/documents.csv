@@ -1,0 +1,36 @@
+table,item,value,source_file,note
+figure,primary_naive,1.0910863648060856,outputs/session-20/rebuilt/metrics-full.csv,
+figure,primary_lo,1.3817013060244996,outputs/session-20/rebuilt/metrics-full.csv,
+figure,primary_ann,0.5218447451814521,outputs/session-20/rebuilt/metrics-full.csv,
+figure,holdout_naive,1.637799226672021,outputs/session-27/holdout-ladder.csv,
+figure,holdout_lo,2.7585227658215015,outputs/session-27/holdout-ladder.csv,
+figure,holdout_ann,0.8287111594113898,outputs/session-27/holdout-ladder.csv,
+figure,holdout_sessions,1265,outputs/session-27/holdout-ladder.csv,
+figure,holdout_rank_naive,2,outputs/session-27/holdout-ladder.csv,
+figure,holdout_rank_lo,1,outputs/session-27/holdout-ladder.csv,
+figure,pbo,0.1578088578088578,outputs/session-19/pbo.csv,
+figure,estimator_control,0.9919283331048036,outputs/session-19_6/degradation-null.csv,the PBO the same harness returns when selection is driven purely by idiosyncratic noise
+figure,bs_p05,0.9929195170218649,outputs/session-30/bootstrap-intervals.csv,
+figure,bs_p95,2.2821600447939803,outputs/session-30/bootstrap-intervals.csv,
+figure,mf_alpha,0.45868406085120844,outputs/session-30/multi-factor.csv,
+figure,sf_alpha,0.5637941837318013,outputs/session-30/multi-factor.csv,
+figure,nav_terminal_sharpe,0.9817333726959366,outputs/session-30/nav-sensitivity.csv,
+figure,nav_terminal,1028029775.2491124,outputs/session-30/nav-sensitivity.csv,
+figure,cap_share_anchor,0.9406631762652705,outputs/session-30/nav-sensitivity.csv,
+figure,n_claims,15,outputs/session-24/claim-sources.csv,
+figure,n_withdrawals,11,outputs/session-24/withdrawn-sources.csv,
+figure,unwired_config_parameters,10,outputs/session-21/unwired-config.csv,"ten parameters defined in src/config.py with no consumer outside it, as recorded at 9.31"
+readme,written,README.md,,70 lines
+licence_option,MIT,"permits use, copying, modification and redistribution including commercially, requiring only that the notice travels with the code. It says nothing about data",,
+licence_option,Apache-2.0,as MIT plus an express patent grant and a requirement to state changes. It says nothing about data,,
+licence_option,BSD-3-Clause,as MIT plus a clause forbidding use of the author's name to endorse derived work,,
+licence_option,CC-BY-4.0,"written for content rather than code, permitting redistribution with attribution. It is the usual choice for the document and data halves and an unusual one for code",,
+licence_option,none,no licence means no permission is granted. Readers may look at a public repository and may not reuse it,,
+licence_coverage,code,"src/, scripts/, tests/, being 218 tracked files",,"the author's own work, so a licence choice is unconstrained"
+licence_coverage,documents,docs/ and every REPORT.md under outputs/,,"the author's own work, so a licence choice is unconstrained"
+licence_coverage,session outputs,the emitted CSVs under outputs/,,"derived from the frozen inputs, so their redistributability follows the inputs' rather than the author's choice"
+licence_coverage,frozen inputs,data/raw/ and data/interim/,,"third-party price and settlement series. Whether they may be redistributed is NOT established inside this project, and a licence the author grants cannot convey rights the author does not hold"
+licence_decision,verdict,OPEN,,"the register records no licence decision and the vendor question at phase A is unresolved, so the choice is not unambiguous from what the register already records. NO LICENCE FILE IS WRITTEN and the decision is reported as open. Nothing is recommended"
+reproduce_guide,written,docs/REPRODUCE.md,,53 lines
+readme_check,figures_checked,21,,
+readme_check,figures_not_found_in_the_readme,0,,every figure the README quotes was read from its emitted CSV before the file was written

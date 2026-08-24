@@ -1,0 +1,94 @@
+table,item,value,target,deviation,seconds,pass_number,note
+machine_at_phase_D,load_1min,3.59,,,,,
+machine_at_phase_D,cores,8,,,,,
+machine_at_phase_D,compressor_gib,2.752,,,,,
+machine_at_phase_D,swap_used_mb,11062.56,,,,,
+machine_at_phase_D,swap_free_mb,1225.44,,,,,
+preregistration,wall_limit_seconds,2400.0,,,,,stated before launching. Termination on this limit alone
+contention_check,threshold,16,,,,,
+contention_check,load_1min,3.59,,,,,
+contention_check,verdict,PROCEED,,,,,
+pass,number,1,,,,,the first pass runs against the repository as committed. A second pass runs from a fresh clone after any defect the first found is repaired
+step,git clone,0,,,2.53,1,"cloned from the local repository, which carries the same objects the remote does"
+clone,total_kib,514764,,,,,"502.7 MB, of which 203.9 MB is the git directory"
+clone,git_directory_kib,208784,,,,,
+clone,path,/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone,,,,,"outside the working directory, so nothing in the working copy is read"
+step,python3 -m venv .venv,0,,,2.65,1,
+step,.venv/bin/python -m pip install -r requirements.txt,1,,,3.67,1,"[notice] A new release of pip is available: 26.0.1 -> 26.2.1
+[notice] To update, run: /private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/.venv/bin/python -m pip install --upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'"
+defect,pip install failed,1,,,,1,"[notice] A new release of pip is available: 26.0.1 -> 26.2.1
+[notice] To update, run: /private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/.venv/bin/python -m pip install --upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'"
+guide,commands_read_from_docs/REPRODUCE.md,4,,,,,python3 -m venv .venv; .venv/bin/python -m pip install -r requirements.txt; .venv/bin/python scripts/s195_verify_inputs.py; .venv/bin/python scripts/reproduce.py
+step,.venv/bin/python scripts/s195_verify_inputs.py,0,,,1.09,1,FROZEN INPUTS: PASS
+step,.venv/bin/python scripts/reproduce.py,2,,,0.21,1, | /Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/s
+defect,.venv/bin/python scripts/reproduce.py,2,,,,1,/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/scripts/reproduce.py': [Errno 2] No such file or directory
+reproduction,verdict,DEVIATION,,,,1,exit code 2
+reproduction,wall_clock_seconds,10.2,,,,1,"clone, environment build and the full sequence"
+vacuous_check,scripts/s195_verify_inputs.py,0,,,0.26,1,"the input verifier, whose n_ver floor of 300 was added at 9.22 after it reported PASS on zero matched files. Exit 0, FROZEN INPUTS: PASS"
+vacuous_check,scripts/verify_prediction_precedes_read.py,0,,,0.29,1,"the prediction precedence hook, which must exit zero on a fresh clone since the prediction is in committed history. Exit 0, PASS  the prediction is committed and unmodified, so it predates this read."
+machine_at_phase_D,load_1min,3.81,,,,,
+machine_at_phase_D,cores,8,,,,,
+machine_at_phase_D,compressor_gib,2.686,,,,,
+machine_at_phase_D,swap_used_mb,11072.12,,,,,
+machine_at_phase_D,swap_free_mb,1215.88,,,,,
+preregistration,wall_limit_seconds,2400.0,,,,,stated before launching. Termination on this limit alone
+contention_check,threshold,16,,,,,
+contention_check,load_1min,3.81,,,,,
+contention_check,verdict,PROCEED,,,,,
+pass,number,2,,,,,the first pass runs against the repository as committed. A second pass runs from a fresh clone after any defect the first found is repaired
+step,git clone,0,,,2.68,2,"cloned from the local repository, which carries the same objects the remote does"
+pending_files_copied_in,count,4,,,,2,"requirements.txt; scripts/reproduce.py; docs/REPRODUCE.md; README.md. A clone reads committed objects and this session's commit has not happened yet, so these files are absent from history. They are copied in for this pass and the limitation is stated rather than hidden"
+clone,total_kib,514784,,,,,"502.7 MB, of which 203.9 MB is the git directory"
+clone,git_directory_kib,208784,,,,,
+clone,path,/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone,,,,,"outside the working directory, so nothing in the working copy is read"
+step,python3 -m venv .venv,0,,,2.0,2,
+step,.venv/bin/python -m pip install -r requirements.txt,0,,,13.3,2,"[notice] A new release of pip is available: 26.0.1 -> 26.2.1
+[notice] To update, run: /private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/.venv/bin/python -m pip install --upgrade pip"
+guide,commands_read_from_docs/REPRODUCE.md,4,,,,,python3 -m venv .venv; .venv/bin/python -m pip install -r requirements.txt; .venv/bin/python scripts/s195_verify_inputs.py; .venv/bin/python scripts/reproduce.py
+step,.venv/bin/python scripts/s195_verify_inputs.py,0,,,0.19,2,FROZEN INPUTS: PASS
+step,.venv/bin/python scripts/reproduce.py,1,,,21.66,2,"building the environment from the frozen inputs | Traceback (most recent call last):
+  File ""/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/scripts/reproduce.py"", line 81, in <module>
+    raise SystemExit(main("
+defect,.venv/bin/python scripts/reproduce.py,1,,,,2,"_or_handle
+    handles = get_handle(
+        path_or_handle, mode, is_text=False, storage_options=storage_options
+    )
+  File ""/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/.venv/lib/python3.13/site-packages/pandas/io/common.py"", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/data/interim/synthetics/SYN_TQQQ.parquet'"
+reproduction,verdict,DEVIATION,,,,2,exit code 1
+reproduction,wall_clock_seconds,39.9,,,,2,"clone, environment build and the full sequence"
+vacuous_check,scripts/s195_verify_inputs.py,0,,,0.22,2,"the input verifier, whose n_ver floor of 300 was added at 9.22 after it reported PASS on zero matched files. Exit 0, FROZEN INPUTS: PASS"
+vacuous_check,scripts/verify_prediction_precedes_read.py,0,,,0.16,2,"the prediction precedence hook, which must exit zero on a fresh clone since the prediction is in committed history. Exit 0, PASS  the prediction is committed and unmodified, so it predates this read."
+machine_at_phase_D,load_1min,2.83,,,,,
+machine_at_phase_D,cores,8,,,,,
+machine_at_phase_D,compressor_gib,2.877,,,,,
+machine_at_phase_D,swap_used_mb,10829.44,,,,,
+machine_at_phase_D,swap_free_mb,1458.56,,,,,
+preregistration,wall_limit_seconds,2400.0,,,,,stated before launching. Termination on this limit alone
+contention_check,threshold,16,,,,,
+contention_check,load_1min,2.83,,,,,
+contention_check,verdict,PROCEED,,,,,
+pass,number,3,,,,,the first pass runs against the repository as committed. A second pass runs from a fresh clone after any defect the first found is repaired
+step,git clone,0,,,2.52,3,"cloned from the local repository, which carries the same objects the remote does"
+pending_files_copied_in,count,4,,,,3,"requirements.txt; scripts/reproduce.py; docs/REPRODUCE.md; README.md. A clone reads committed objects and this session's commit has not happened yet, so these files are absent from history. They are copied in for this pass and the limitation is stated rather than hidden"
+clone,total_kib,514784,,,,,"502.7 MB, of which 203.9 MB is the git directory"
+clone,git_directory_kib,208784,,,,,
+clone,path,/private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone,,,,,"outside the working directory, so nothing in the working copy is read"
+step,python3 -m venv .venv,0,,,2.45,3,
+step,.venv/bin/python -m pip install -r requirements.txt,0,,,11.46,3,"[notice] A new release of pip is available: 26.0.1 -> 26.2.1
+[notice] To update, run: /private/tmp/claude-502/-Users-GualyCr-Downloads-tactical-allocation/9e5fb936-e632-49d6-9d64-825663b6b09a/scratchpad/s31-clone/.venv/bin/python -m pip install --upgrade pip"
+guide,commands_read_from_docs/REPRODUCE.md,4,,,,,python3 -m venv .venv; .venv/bin/python -m pip install -r requirements.txt; .venv/bin/python scripts/s195_verify_inputs.py; .venv/bin/python scripts/reproduce.py
+step,.venv/bin/python scripts/s195_verify_inputs.py,0,,,0.63,3,FROZEN INPUTS: PASS
+step,.venv/bin/python scripts/reproduce.py,0,,,20.54,3,REPRODUCED
+reproduction,verdict,REPRODUCED,,,,3,exit code 0
+reproduction,ann_return,0.5218447451814521,0.521845,2.5481854792896996e-07,,3,
+reproduction,sharpe_lo,1.3817013060244996,1.381701,3.0602449951899757e-07,,3,
+reproduction,n_sessions,2472,2472,0,,3,
+reproduction,wall_clock_seconds,37.6,,,,3,"clone, environment build and the full sequence"
+vacuous_check,scripts/s195_verify_inputs.py,0,,,0.18,3,"the input verifier, whose n_ver floor of 300 was added at 9.22 after it reported PASS on zero matched files. Exit 0, FROZEN INPUTS: PASS"
+vacuous_check,scripts/verify_prediction_precedes_read.py,0,,,0.16,3,"the prediction precedence hook, which must exit zero on a fresh clone since the prediction is in committed history. Exit 0, PASS  the prediction is committed and unmodified, so it predates this read."
+summary,passes_run,3,,,,,"pass 1 against committed history alone, pass 2 with the four files this session's commit adds copied in, pass 3 after the defect pass 2 found was repaired"
+summary,gate_D,PASS,,,,,"the canonical reproduces from a clean clone at the third pass, inside the stated tolerance of 5e-07 on each figure and exactly on the session count"

@@ -1,6 +1,6 @@
 # STATE, read this first
 
-Refreshed 2026-08-23 by session 30. Supersedes the session 29 version.
+Refreshed 2026-08-23 by session 31. Supersedes the session 30 version.
 
 **The claim set is frozen.** `docs/CLAIMS.md` carries 15 claims with the
 limitations written beside each, and `docs/WITHDRAWN.md` carries 11 withdrawals.
@@ -87,14 +87,40 @@ with semiconductor carrying almost all of the absorption. Over the primary windo
 the extra factors absorb 0.011718068595027593.
 
 **The study now carries intervals**, at 9.88. The holdout naive Sharpe's 5th to
-95th percentile block-bootstrap interval is 0.9929195886104111 to
-2.2821599669578414, and the holdout gap against buy-and-hold QQQ excludes zero at
+95th percentile block-bootstrap interval is 0.9929195170218649 to
+2.2821600447939803, and the holdout gap against buy-and-hold QQQ excludes zero at
 the 5th percentile while the primary-window gap does not.
 
 **The holdout result IS capacity-bounded**, at 9.89. Across five starting NAV
 levels the naive Sharpe falls monotonically from 1.637799226672021 at the study
-anchor to 0.9817333723461858 at the terminal NAV, and the cap-binding share
+anchor to 0.9817333726959366 at the terminal NAV, and the cap-binding share
 already exceeds 0.90 at the anchor.
+
+**The repository is publication-ready and STILL PRIVATE.** Nothing in
+session 31 changed visibility. `README.md`, `requirements.txt`,
+`docs/REPRODUCE.md` and `scripts/reproduce.py` are written, and the final step is
+recorded as an instruction at 9.92 through 9.96 rather than taken.
+
+**Gate A cleared.** No credential or key pattern matched across 919 tracked text
+files. Two personal identifiers are present and are not repaired, being an
+absolute home path in 94 files and one email address in one, at 9.92.
+
+**Gate D cleared at the third pass.** The canonical reproduces from a clean clone
+at 0.5218447451814521 and 1.3817013060244996 over 2472 sessions in 37.6 seconds,
+at 9.94. The reproduction path was repaired first, since the original called for
+the synthetic arm whose reconstructions a clean clone does not carry.
+
+**History is not rewritten**, at 9.95. An absolute home path appears in 1028
+commit-and-path pairs across all 20 commits and removing it would change every
+commit SHA including the one establishing the prediction predates the read.
+
+**The licence decision is OPEN** at 9.96 and no licence file is written.
+
+**Two corrections.** Register 9.88 carried fifteen superseded bootstrap figures
+and this document carried three, both from a session 30 phase that was re-run
+after the prose was written. The prose-against-CSV checker could not catch them
+because it treated the register as a source as well as a document, which is a
+self-validating loop. Corrected at 9.97 and the checker is fixed.
 
 ## What this project is
 

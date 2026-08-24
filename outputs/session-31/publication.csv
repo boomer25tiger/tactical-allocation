@@ -1,0 +1,23 @@
+table,item,value,note
+gate,"A, credentials and keys",PROCEED,0 credential or key patterns matched across every tracked text file
+gate,"D, the clean-clone reproduction",PASS,"the canonical reproduces from a clean clone at the third pass, inside the stated tolerance of 5e-07 on each figure and exactly on the session count"
+gate,all_gates_cleared,1,
+publication_step,1,Decide the licence.,"The decision is recorded as OPEN at phase C. A public repository with no licence grants no reuse rights, which may be the intent. The vendor question on the frozen inputs is also open and a licence the author grants cannot convey rights the author does not hold"
+publication_step,2,Decide whether the personal identifiers stay.,"1028 commit-and-path pairs carry an absolute home path and 20 carry an email address, both across committed history. Removing either requires a full history rewrite that changes every commit SHA including the one establishing the prediction predates the read"
+publication_step,3,Decide whether CLAUDE.md stays.,It is tracked at the repository root and describes the working discipline the sessions ran under. It goes public with everything else unless it is removed first
+publication_step,4,Change the visibility.,gh repo edit boomer25tiger/tactical-allocation --visibility public --accept-visibility-change-consequences
+publication_step,5,Or through the web interface.,"github.com/boomer25tiger/tactical-allocation, Settings, then General, then Danger Zone, then Change repository visibility"
+publication_step,6,Verify afterwards.,"clone the public URL into a scratch directory and run the sequence in docs/REPRODUCE.md, which is the same sequence phase D verified"
+publication_step,executed_in_this_session,0,the repository stays private. Nothing in this session changes visibility
+first_visit,readme_title,"Tactical allocation, a pre-registered negative-result study",
+first_visit,readme_opening,"A four-sleeve daily tactical allocation strategy, reconstructed from a public QuantConnect source with every numeric parameter re-specified and registered, was tested against a ladder of eleven leverage-matched passive and mechanical benchmarks. Over the primary window from 2011-10-04 it placed sixth of twelve on both Sharpe conventions. A five-year holdout was sealed at 2021-08-01, a prediction o",
+first_visit,root_listing,"CLAUDE.md, README.md, data, docs, outputs, requirements-session-00a.txt, requirements.txt, scripts, src, tests",the entries a visitor sees at the repository root
+first_visit,languages_github_will_detect,Python,"GitHub's linguist counts source files and excludes data and documentation by default, and the only source language present is Python. By bytes on disk the largest extensions are .f64 at 163.0 MB, .csv at 51.8 MB, .parquet at 33.1 MB, .pkl at 28.4 MB, .npy at 18.9 MB, .py at 2.1 MB"
+summary_one_line,text,"Pre-registered study of a four-sleeve tactical allocation strategy against eleven leverage-matched benchmarks, with a five-year holdout sealed at 2021-08-01, a prediction committed to git before the read, and all five prediction components falsified when it was opened once.",
+summary_three_line,1,"A four-sleeve daily tactical allocation strategy was reconstructed with every parameter registered and tested against eleven leverage-matched benchmarks, placing sixth of twelve on both Sharpe conventions over the primary window.",
+summary_three_line,2,"A five-year holdout was sealed at 2021-08-01 and a falsifiable prediction of what it would show was committed to git before it was opened, with a verification hook that checks that precedence against git rather than against recollection.",
+summary_three_line,3,"The holdout was read once. The strategy placed 2 of twelve on the naive Sharpe at 1.637799226672021, all five prediction components were falsified, and the result is capacity-bounded, the same figure falling to 0.9817333726959366 at a starting NAV of 1028029775.2491124.",
+summary,carries_the_holdout_result,1,
+summary,carries_the_preregistration_discipline,1,
+summary,carries_the_sealed_single_read,1,
+summary,characterisation,0,neither form calls any figure good or bad and neither describes the strategy as one anybody should trade

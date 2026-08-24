@@ -1,0 +1,46 @@
+table,item,value,note
+environment,python,Python 3.13.13,
+environment,interpreter,.venv/bin/python,
+environment,installed_packages,30,
+imports,modules_imported,35,
+imports,third_party_modules,8,"AlgorithmImports, numpy, pandas, pytest, requests, s00c_indicators, s00c_rsi, yfinance"
+direct_dependency,numpy,2.5.2,imported as numpy
+direct_dependency,pandas,3.0.5,imported as pandas
+direct_dependency,pytest,9.1.1,imported as pytest
+direct_dependency,requests,2.34.2,imported as requests
+direct_dependency,yfinance,1.6.0,imported as yfinance
+missing_dependency,AlgorithmImports,ABSENT,"the QuantConnect runtime namespace, imported only by docs/source-quantconnect.py, which is the source strategy carried as a reference document and is never executed here"
+missing_dependency,s00c_indicators,ABSENT,"a local session 00c module imported by path rather than as a package, so it resolves at run time and is not a third-party dependency"
+missing_dependency,s00c_rsi,ABSENT,"a local session 00c module imported by path rather than as a package, so it resolves at run time and is not a third-party dependency"
+runtime_requirement,pyarrow,25.0.1,the parquet engine pandas.read_parquet resolves to. Nothing imports it by name and every frozen input load needs it
+transitive_or_unused,beautifulsoup4,4.15.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,certifi,2026.7.22,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,cffi,2.1.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,charset-normalizer,3.5.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,curl_cffi,0.16.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,idna,3.18,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,iniconfig,2.3.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,lxml,6.1.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,multitasking,0.0.13,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,packaging,26.3,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,peewee,4.3.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,platformdirs,4.11.3,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,pluggy,1.6.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,protobuf,7.35.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,pycparser,3.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,pygments,2.21.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,pypdf,6.16.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,python-dateutil,2.9.0.post0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,pytz,2026.3.post1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,six,1.17.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,soupsieve,2.9.2,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,typing_extensions,4.16.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,urllib3,2.7.0,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+transitive_or_unused,websockets,17.0.1,"present in the environment and imported by nothing in this codebase, so it is either a transitive dependency or unused"
+counts,direct_dependencies,6,
+counts,missing_from_the_environment,3,
+counts,installed_but_not_imported,24,
+requirements,written,requirements.txt,pinning every direct dependency at its installed version
+requirements,generated_from,the current environment rather than an authoritative record,no authoritative requirements file exists. requirements-session-00a.txt is a session 00a artifact and predates the session 18s rebuild
+requirements,matplotlib_absent,1,"deliberately, per the plotting decision at 9.53"
+requirements,pinned_packages,6,
