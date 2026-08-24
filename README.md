@@ -39,9 +39,9 @@ The naive convention leads throughout, per the decision at 8.2, on the grounds t
 
 | path | holds |
 |---|---|
-| `docs/` | the claim set, the withdrawn set, the holdout prediction, and the decision register |
+| `docs/` | the claim set, the withdrawn set, the holdout prediction, the decision register, the reproduction guide and the QuantConnect source the strategy was reconstructed from |
 | `src/` | the strategy itself, being the sleeves, the portfolio tracker, the indicators, the fund schedule, and the configuration every parameter is read from |
-| `scripts/` | the backtest engine and one driver per session |
+| `scripts/` | the backtest engine, three entry points and one driver per session. `scripts/README.md` explains which is which |
 | `outputs/` | one directory per session, each carrying that session's emitted CSVs and its report |
 | `data/` | the frozen inputs, hash-verified against manifests under `outputs/` |
 

@@ -1,20 +1,29 @@
 table,item,value,n_commits,n_files,note
-history,commits,20,,,
+history,commits,21,,,
 history,first_commit,ad6be24ef13df4967ac3de538afc62eedeab7a81 2026-08-18,,,
-history,head,19e4c80e0242ebbe639b17f5fa82f55c9c6b09f5 2026-08-24,,,
-history,pack_kib,208808,,,"the whole git directory, being every object ever committed plus the index"
-deleted,files_ever_committed,1090,,,
-deleted,files_in_the_current_tree,1088,,,
-deleted,files_deleted,4,,,
+history,head,4d57fb3a5053eb567fe23e39706aa512013411ca 2026-08-24,,,
+history,pack_kib,209100,,,"the whole git directory, being every object ever committed plus the index"
+deleted,files_ever_committed,1115,,,
+deleted,files_in_the_current_tree,1104,,,
+deleted,files_deleted,13,,,
+deleted_file,CLAUDE.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
 deleted_file,docs/DECISIONS-OPEN-v2.md,"3f6c232 2026-08-18 Session 12.5: reissue register as v3, add STATE.md handoff, archive stale v2",,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,docs/prompts/README.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,docs/prompts/session-12.6.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,docs/prompts/session-13.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
 deleted_file,outputs/session-18/pbo.csv,"40ff46b 2026-08-19 Session 18s: relocation off iCloud registered, environment rebuilt, object store packed",,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,outputs/session-28/_register-tail.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,outputs/session-29/_register-tail.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,outputs/session-30/_register-tail.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,outputs/session-31/_register-tail.md,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
+deleted_file,requirements-session-00a.txt,,,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
 deleted_file,src/__pycache__/config.cpython-313.pyc,a90f352 2026-08-19 Session 16: pre-grid closures; grid blocked on unenumerated axes (D24),,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
 deleted_file,src/__pycache__/sleeves.cpython-313.pyc,a90f352 2026-08-19 Session 16: pre-grid closures; grid blocked on unenumerated axes (D24),,,still reachable in history. Removing it would require rewriting every commit from its introduction onward
 history_identifier,absolute_home_path_in_commit_messages,0,,,none
-history_identifier,absolute_home_path_in_file_contents,1028,20,118,"1028 commit-and-path pairs, being 118 distinct paths across 20 of the 20 commits. The count is exact rather than truncated. Examples, docs/DECISIONS-v3.md; docs/STATE.md; outputs/session-00d/REPORT.md; outputs/session-18s/REPORT.md"
+history_identifier,absolute_home_path_in_file_contents,1153,21,127,"1153 commit-and-path pairs, being 127 distinct paths across 21 of the 21 commits. The count is exact rather than truncated. Examples, docs/DECISIONS-v3.md; docs/STATE.md; outputs/session-00d/REPORT.md; outputs/session-18s/REPORT.md"
 history_identifier,absolute_home_path_removal_requires,a full history rewrite,,,"git filter-repo or an equivalent across every commit, which changes every commit SHA including 35466c2131f24e35a5ce7fed13c4ed8c821ca45b, the commit that establishes the holdout prediction predates the read. That SHA is cited in docs/DECISIONS-v3.md at 9.64 and 9.66, in outputs/session-27/gates.csv and in docs/REPRODUCE.md, and it is load-bearing evidence rather than a convenience"
 history_identifier,email_address_in_commit_messages,0,,,none
-history_identifier,email_address_in_file_contents,20,20,1,"20 commit-and-path pairs, being 1 distinct paths across 20 of the 20 commits. The count is exact rather than truncated. Examples, scripts/s09_financing.py"
+history_identifier,email_address_in_file_contents,23,21,3,"23 commit-and-path pairs, being 3 distinct paths across 21 of the 21 commits. The count is exact rather than truncated. Examples, outputs/session-31/publication-audit.csv; scripts/s09_financing.py; scripts/s31_phaseE.py"
 history_identifier,email_address_removal_requires,a full history rewrite,,,"git filter-repo or an equivalent across every commit, which changes every commit SHA including 35466c2131f24e35a5ce7fed13c4ed8c821ca45b, the commit that establishes the holdout prediction predates the read. That SHA is cited in docs/DECISIONS-v3.md at 9.64 and 9.66, in outputs/session-27/gates.csv and in docs/REPRODUCE.md, and it is load-bearing evidence rather than a convenience"
 largest_blob,outputs/session-18/spec-index-augmented.csv,30516699,,,29.10 MB
 largest_blob,outputs/session-18/subsample-returns.npy,19786016,,,18.87 MB

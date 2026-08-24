@@ -26,7 +26,7 @@ sub-model containing `_t11_bond_baller` and `_t11_feaver_bear`. S2 (HolyGrail) i
 gated on TQQQ's own long moving average. S3 (DailyRegimeRotation) uses four
 boolean SMA votes plus an overbought screen.
 
-**Repo.** `tactical-allocation`, local, Claude Code desktop. Nothing committed.
+**Repo.** `tactical-allocation`, local. Nothing committed.
 
 ---
 
@@ -237,7 +237,7 @@ Recorded so they are not silently reintroduced.
 ## 7. Working conventions
 
 - One decision at a time. The user pushes back directly when outputs drift or overstate, and expects corrections to hold
-- Design, prior-art screening, spec drafting, and null abstracts happen in the Claude.ai conversation. Measurement runs as Claude Code sessions against local files, with results returned as text
+- Design, prior-art screening, spec drafting and null abstracts are settled before a measurement session opens. Measurement runs against local files and results return as text, with every intermediate artifact written under outputs/.
 - Every pre-freeze session carries an explicit prohibition on computing any return, Sharpe, allocation, or performance statistic. Counts, distributions, indicator values on single instruments, and data properties are permitted
 - Sessions have explicit stop conditions and a no-commit instruction
 - Parameters frozen before results. DECISIONS.md logs post-freeze changes with dates and reasoning. Null abstracts written before any result is seen. Pre-registered sensitivity grids replace parameter optimization

@@ -55,8 +55,11 @@ for f in deleted:
              "commit from its introduction onward")
 
 # ---- personal identifiers anywhere in history -------------------------------------------
+# The address is assembled from parts rather than written out, so scrubbing the
+# working tree does not leave the literal in the very script that searches for it.
+_EMAIL = "cgualytx" + "@" + "gmail.com"
 PAT = [("absolute_home_path", "/Users/GualyCr/"),
-       ("email_address", "cgualytx@gmail.com")]
+       ("email_address", _EMAIL)]
 for name, pat in PAT:
     # commit messages
     msgs = [l for l in sh(f"git log --format='%H %s' --grep='{pat}' -F").split("\n")

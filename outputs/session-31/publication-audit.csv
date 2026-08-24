@@ -144,7 +144,7 @@ identifier_by_file,absolute_home_path,scripts/s30_phaseH.py,,1,,,,
 identifier_by_file,absolute_home_path,scripts/s30_report.py,,1,,,,
 identifier_by_file,absolute_home_path,scripts/s30_size.py,,1,,,,
 identifier_summary,email_address,,,1,1,,,"across 1 tracked files. Examples, scripts/s09_financing.py:25"
-email_hit,cgualytx@gmail.com,scripts/s09_financing.py,25,,,,,
+email_hit,[redacted address],scripts/s09_financing.py,25,,,,,
 identifier_summary,absolute_home_path,,,95,94,,,"across 94 tracked files. Examples, docs/DECISIONS-v3.md:1247; docs/STATE.md:108; outputs/session-00d/REPORT.md:38"
 vendor,tracked_data_files,,,328,,,,
 vendor,etf_and_index_series,,,45,,,,"price and total-return history sourced through yfinance from Yahoo Finance, whose terms permit personal use and do not grant redistribution rights. REDISTRIBUTION IS NOT ESTABLISHED as permitted and the question is reported rather than answered here"

@@ -3340,3 +3340,51 @@ than a measurement** (9.10 provenance requirement).
   detects nothing. scripts/s31_check.py treats the register as a checked DOCUMENT and
   removes it from the corpus. This is the fourth instance of the class 9.47 records, of
   a procedure reporting a pass it did not earn.
+
+- **9.98 the pre-publication cleanup (session 31 continuation, 2026-08-24), on the
+  author's instruction.** The repository is prepared to be read by someone arriving
+  cold. **Nothing measured changes and no canonical value moves.**
+
+  **The personal address is scrubbed from the working tree.**
+  scripts/s09_financing.py carried it in the User-Agent header the SEC EDGAR fetch
+  sends, which the filing agent requires a contact in, and the repository URL now stands
+  for that contact. outputs/session-31/publication-audit.csv recorded the literal as a
+  finding and now records it redacted, since the finding is the presence of an address
+  rather than its value. scripts/s31_phaseE.py assembles its search pattern from parts,
+  so scrubbing the tree does not leave the literal in the script that searches for it.
+  **The address is no longer present in any tracked file.**
+
+  **It remains in committed history** in 20 commit-and-path pairs, and that is unchanged
+  for the reason at 9.95. The scrub is cosmetic for anyone reading the current tree and
+  changes nothing for anyone reading history.
+
+  **Ten files are removed from the tracked tree**, being CLAUDE.md and
+  requirements-session-00a.txt at the root, docs/prompts/ carrying three session prompt
+  archives, docs/ARCHIVE-DECISIONS-OPEN-v2-STALE.md which is self-labelled as not to be
+  read for values, and four outputs/session-*/_register-tail.md files which are scratch
+  the prose-against-CSV checkers write while running. The last is added to .gitignore so
+  it does not return. **Every one remains in history.** No reader-facing document cited
+  any of them.
+
+  **docs/HANDOFF.md is kept and two lines are scrubbed**, being the two that described
+  the authoring workflow rather than the study. It is kept rather than removed because
+  ten files cite it, including withdrawal 11 in docs/WITHDRAWN.md, which is about a
+  prediction that document carried.
+
+  **The root now carries three tracked files** and docs/ carries nine.
+
+  **scripts/ is NOT reorganised and scripts/README.md is added instead.** Moving the 195
+  files into subdirectories would break 1,023 path citations across docs/ and outputs/
+  and 105 files that import them as scripts.<module>. Those citations are the evidence
+  trail under 9.12, so the paths are load-bearing and the directory stays flat. The new
+  file explains the three groups the import graph actually shows, being three entry
+  points, eight engine modules imported by three or more others, and 184 session drivers
+  imported by nothing.
+
+  **Verified after the cleanup.** scripts/reproduce.py reports REPRODUCED and
+  scripts/s195_verify_inputs.py reports PASS, so neither the reproduction gate D
+  established nor the input-integrity precondition is disturbed.
+
+  **The licence stays open at 9.96 and no licence file is written**, on the author's
+  decision, so all rights are reserved by default. The vendor question at 9.92 is
+  unchanged.

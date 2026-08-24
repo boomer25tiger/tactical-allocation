@@ -22,7 +22,10 @@ import requests
 
 OUT = ROOT / "outputs" / "session-09"
 OUT.mkdir(parents=True, exist_ok=True)
-H = {"User-Agent": "tactical-allocation research cgualytx@gmail.com"}
+# SEC EDGAR requires a contact in the User-Agent. The repository URL stands
+# for one, so no personal address is carried in the tree.
+H = {"User-Agent": "tactical-allocation research "
+                   "https://github.com/boomer25tiger/tactical-allocation"}
 
 TRUSTS = {
     "ProShares Trust": dict(

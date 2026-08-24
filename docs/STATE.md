@@ -96,7 +96,9 @@ levels the naive Sharpe falls monotonically from 1.637799226672021 at the study
 anchor to 0.9817333726959366 at the terminal NAV, and the cap-binding share
 already exceeds 0.90 at the anchor.
 
-**The repository is publication-ready and STILL PRIVATE.** Nothing in
+**The repository is published.** The pre-publication cleanup at 9.98 scrubbed the personal address from the working tree, removed ten internal or stale files, and added scripts/README.md rather than reorganising scripts/, since 1,023 path citations and 105 imports depend on those paths. The licence stays open at 9.96 and no licence file is written, so all rights are reserved by default.
+
+**Before that cleanup the repository was publication-ready and private.** Nothing in
 session 31 changed visibility. `README.md`, `requirements.txt`,
 `docs/REPRODUCE.md` and `scripts/reproduce.py` are written, and the final step is
 recorded as an instruction at 9.92 through 9.96 rather than taken.

@@ -20,3 +20,6 @@ data/interim/synthetics/
 # committed evidence that PBO actually reads.
 outputs/session-17/panel/
 outputs/session-17/superseded-10axis/panel/
+
+# internal scratch the prose-against-CSV checkers write while running
+outputs/session-*/_register-tail.md
