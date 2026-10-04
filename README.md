@@ -1,6 +1,6 @@
 # Tactical allocation, a pre-registered negative-result study
 
-A four-sleeve daily tactical allocation strategy, reconstructed from a public QuantConnect source with every numeric parameter re-specified and registered, was tested against a ladder of eleven leverage-matched passive and mechanical benchmarks. Over the primary window from 2011-10-04 it placed sixth of twelve on both Sharpe conventions. A five-year holdout was sealed at 2021-08-01, a prediction of what it would show was committed to git before it was opened, and it was then read once. In the holdout the strategy placed 2 of twelve on the naive Sharpe. **All five pre-registered prediction components were falsified, every one in the same direction.**
+A four-sleeve daily tactical allocation strategy, designed by the author and first written as an unpublished QuantConnect algorithm, was rebuilt with every numeric parameter re-specified and registered, then tested against a ladder of eleven leverage-matched passive and mechanical benchmarks. Over the primary window from 2011-10-04 it placed sixth of twelve on both Sharpe conventions. A five-year holdout was sealed at 2021-08-01, a prediction of what it would show was committed to git before it was opened, and it was then read once. In the holdout the strategy placed 2 of twelve on the naive Sharpe. **All five pre-registered prediction components were falsified, every one in the same direction.**
 
 ## Method
 
@@ -39,7 +39,7 @@ The naive convention leads throughout, per the decision at 8.2, on the grounds t
 
 | path | holds |
 |---|---|
-| `docs/` | the claim set, the withdrawn set, the holdout prediction, the decision register, the reproduction guide and the QuantConnect source the strategy was reconstructed from |
+| `docs/` | the claim set, the withdrawn set, the holdout prediction, the decision register, the reproduction guide and the author's original QuantConnect implementation, which the strategy was rebuilt from |
 | `src/` | the strategy itself, being the sleeves, the portfolio tracker, the indicators, the fund schedule, and the configuration every parameter is read from |
 | `scripts/` | the backtest engine, three entry points and one driver per session. `scripts/README.md` explains which is which |
 | `outputs/` | one directory per session, each carrying that session's emitted CSVs and its report |

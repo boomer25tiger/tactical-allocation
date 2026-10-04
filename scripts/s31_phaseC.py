@@ -101,9 +101,9 @@ add("figure", item="unwired_config_parameters", value=F["unwired"],
 R = []; a = R.append
 a("# Tactical allocation, a pre-registered negative-result study")
 a("")
-a("A four-sleeve daily tactical allocation strategy, reconstructed from a public "
-  "QuantConnect source with every numeric parameter re-specified and registered, was "
-  "tested against a ladder of eleven leverage-matched passive and mechanical "
+a("A four-sleeve daily tactical allocation strategy, designed by the author and first "
+  "written as an unpublished QuantConnect algorithm, was rebuilt with every numeric "
+  "parameter re-specified and registered, then tested against a ladder of eleven leverage-matched passive and mechanical "
   f"benchmarks. Over the primary window from 2011-10-04 it placed sixth of twelve on "
   f"both Sharpe conventions. A five-year holdout was sealed at 2021-08-01, a prediction "
   f"of what it would show was committed to git before it was opened, and it was then "
