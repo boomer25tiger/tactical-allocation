@@ -17,6 +17,7 @@ python3 scripts/hw2/h01_constnav.py   # about 15 seconds
 python3 scripts/hw2/h02_cost_sweep.py # about 10 seconds
 python3 scripts/hw2/h03_ladder.py     # about 1 minute (bootstrap)
 python3 scripts/hw2/h04_fund.py       # about 2 minutes (bootstrap); needs h01
+python3 scripts/hw2/h05_fund_evidence.py  # about 1 minute; needs h01
 ```
 
 ## What each file does
@@ -28,7 +29,8 @@ python3 scripts/hw2/h04_fund.py       # about 2 minutes (bootstrap); needs h01
 | `h01_constnav.py` | `constnav-sweep.csv`, `constnav-by-instrument.csv`, `constnav-10m-daily.csv`, `dollar-volume-by-year.csv` | 8, 9, 14, 16 |
 | `h02_cost_sweep.py` | `cost-sweep.csv` | 13 |
 | `h03_ladder.py` | `ladder-windows.csv`, `ladder-misc.json` | 3, 4, 6, 11, 12, 15, 18, 21 |
-| `h04_fund.py` | `fund-windows.csv`, `fund-start-dates.csv`, `fund-targets.csv`, `fund-fees.csv`, `fund-checks.json` | 8, 9, 11, 16, 17, 18, 19, 21 |
+| `h04_fund.py` | `fund-windows.csv`, `fund-start-dates.csv`, `fund-targets.csv`, `fund-fees.csv`, `fund-checks.json` | 8, 9, 17, 18, 19, 21 |
+| `h05_fund_evidence.py` | `fund-ladder.csv`, `fund-holdout-years.csv`, `fund-holdout-path.csv`, `fund-cost-sweep.csv`, `fund-rolling-5y.csv`, `fund-evidence.json` | 1, 3, 6, 7, 11, 12, 13, 15, 16, 18, 21 |
 
 ## Windows
 
@@ -51,3 +53,6 @@ python3 scripts/hw2/h04_fund.py       # about 2 minutes (bootstrap); needs h01
 - `h01_constnav.py` reruns the designated cell at a compounding $1M and prints its primary-window CAGR, which must equal the canonical 0.521845.
 - `h02_cost_sweep.py` reproduces the session-20 uniform-cost sweep on P11 (1.21, 1.18, 1.16, 1.10, 0.99, 0.86).
 - `h03_ladder.py` reproduces the canonical annualised returns on P11 (0.52184) and H (0.82871).
+- `h05_fund_evidence.py` reruns its factor regressions on the engine as a positive control, reproducing the session-30 holdout alphas of 0.56379 and 0.45868.
+
+The deck presents the fund (the 25% volatility target on the constant-$10M engine) on its performance slides. PBO, the timing nulls, Romano-Wolf, the signal-delay test and the holdout prediction test the engine signal and stay on the registered search window, P11.
