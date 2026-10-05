@@ -18,6 +18,7 @@ python3 scripts/hw2/h02_cost_sweep.py # about 10 seconds
 python3 scripts/hw2/h03_ladder.py     # about 1 minute (bootstrap)
 python3 scripts/hw2/h04_fund.py       # about 2 minutes (bootstrap); needs h01
 python3 scripts/hw2/h05_fund_evidence.py  # about 1 minute; needs h01
+python3 scripts/hw2/h06_risk_stats.py     # a few seconds; needs h01
 ```
 
 ## What each file does
@@ -25,12 +26,13 @@ python3 scripts/hw2/h05_fund_evidence.py  # about 1 minute; needs h01
 | file | writes | deck slides |
 |---|---|---|
 | `common.py` | nothing; windows, metric set, fund overlay, fee model, stationary bootstrap | all |
-| `engine.py` | nothing; the constant-NAV account loop shared by h01 and h02 | 8, 13, 14 |
-| `h01_constnav.py` | `constnav-sweep.csv`, `constnav-by-instrument.csv`, `constnav-10m-daily.csv`, `dollar-volume-by-year.csv` | 8, 9, 14, 16 |
-| `h02_cost_sweep.py` | `cost-sweep.csv` | 13 |
-| `h03_ladder.py` | `ladder-windows.csv`, `ladder-misc.json` | 3, 4, 6, 11, 12, 15, 18, 21 |
-| `h04_fund.py` | `fund-windows.csv`, `fund-start-dates.csv`, `fund-targets.csv`, `fund-fees.csv`, `fund-checks.json` | 8, 9, 17, 18, 19, 21 |
-| `h05_fund_evidence.py` | `fund-ladder.csv`, `fund-holdout-years.csv`, `fund-holdout-path.csv`, `fund-cost-sweep.csv`, `fund-rolling-5y.csv`, `fund-evidence.json` | 1, 3, 6, 7, 11, 12, 13, 15, 16, 18, 21 |
+| `engine.py` | nothing; the constant-NAV account loop shared by h01, h02 and h05 | 9, 14, 15 |
+| `h01_constnav.py` | `constnav-sweep.csv`, `constnav-by-instrument.csv`, `constnav-10m-daily.csv`, `dollar-volume-by-year.csv` | 9, 10, 15, 17 |
+| `h02_cost_sweep.py` | `cost-sweep.csv` (engine reference in the notes) | 14 |
+| `h03_ladder.py` | `ladder-windows.csv`, `ladder-misc.json` (engine reference figures) | 4, 6, 13, 22 |
+| `h04_fund.py` | `fund-windows.csv`, `fund-start-dates.csv`, `fund-targets.csv`, `fund-fees.csv`, `fund-checks.json` | 9, 10, 18, 19, 20, 22 |
+| `h05_fund_evidence.py` | `fund-ladder.csv`, `fund-holdout-years.csv`, `fund-holdout-path.csv`, `fund-cost-sweep.csv`, `fund-rolling-5y.csv`, `fund-evidence.json` | 1, 3, 6, 8, 12, 13, 14, 16, 17, 19, 22 |
+| `h06_risk_stats.py` | `fund-risk-stats.csv` (beta, correlation, R-squared, alpha, tracking error, information ratio, capture, skewness, kurtosis, VaR, CVaR, worst day and month, underwater) | 7 |
 
 ## Windows
 
