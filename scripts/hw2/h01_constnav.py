@@ -1,4 +1,4 @@
-"""h01. Constant-NAV re-run of the designated cell (slides 8, 9, 14, 16).
+"""h01. Constant-NAV re-run of the designated cell (slides 9, 10, 15, 17).
 
 The canonical engine compounds NAV from a $1M start, so its capacity sweep
 mixes account size, compounding and the trading volume of each era. This

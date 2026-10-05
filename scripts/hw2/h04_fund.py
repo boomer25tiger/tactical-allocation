@@ -1,11 +1,13 @@
-"""h04. The fund: 25% volatility target, fees and checks (slides 8, 9, 11, 16 to 19, 21).
+"""h04. The fund: 25% volatility target, fees and checks (slides 9, 10, 18 to 20, 22).
 
 Reads outputs/hw2/constnav-10m-daily.csv (run h01 first) and applies the fund
 overlay in common.overlay: exposure w = min(1, 0.25 / sigma), sigma the
 annualised sd of the last 60 daily engine returns applied two sessions later,
 the rest in T-bills, 10 bp per unit change in exposure. Fees follow
-common.net_of_fees (daily management fee, incentive fee accrued daily above
-the high-water mark and the year's T-bill return, paid at each anniversary).
+common.net_of_fees with the deck's terms, FEE_MGMT and FEE_INC (a 1% management
+fee accrued daily and a 20% incentive fee accrued daily above the high-water
+mark and the year's QQQ return, paid at each anniversary). The earlier 2% and
+20% over T-bills is kept as a comparison line.
 
 Writes to outputs/hw2/
     fund-windows.csv       engine, fund gross, fund net at 1/20 over QQQ and at 2/20, QQQ, by window

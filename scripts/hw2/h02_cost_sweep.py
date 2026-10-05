@@ -1,4 +1,4 @@
-"""h02. Uniform round-turn cost sweep from January 2012 (slide 13).
+"""h02. Uniform round-turn cost sweep from January 2012 (slide 14 notes).
 
 Re-runs the session-20 uniform-cost sweep: the tiered slippage and the
 opening-auction premium are REPLACED by one uniform round-turn cost of 0, 5,

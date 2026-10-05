@@ -1,4 +1,4 @@
-"""h05. Evidence on the fund series itself (slides 1, 3, 6, 7, 11, 12, 13, 16, 18, 21).
+"""h05. Evidence on the fund series itself (slides 1, 3, 6, 8, 12, 13, 14, 16, 17, 19, 22).
 
 The deck presents the 25% volatility-target fund as the product. This script
 re-measures on the fund the evidence that h03 and session 30 measure on the

@@ -1,4 +1,4 @@
-"""h03. Engine and benchmark ladder by window (slides 3, 4, 6, 11, 12, 15, 18, 21).
+"""h03. Engine and benchmark ladder by window (engine reference figures on slides 4, 6, 13 and 22).
 
 Reads the frozen twelve-line ladder (outputs/session-27/_combined_line_returns.parquet,
 daily returns of the canonical engine and eleven comparison lines) and the
