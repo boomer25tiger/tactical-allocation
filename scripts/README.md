@@ -40,3 +40,11 @@ Moving these files into subdirectories would break 1,023 path citations across
 `docs/` and `outputs/`, and 105 files import them as `scripts.<module>`. Those
 citations are the study's evidence trail under the rule at 9.12 that every figure
 names its source file, so the paths are load-bearing and the directory stays flat.
+
+## scripts/hw2/, the investor-pitch re-runs
+
+A subdirectory holds the post-read re-runs behind the Columbia B9339 Homework 2
+pitch deck: the constant-NAV account, the January 2012 analysis window, the
+25% volatility-target fund and its fee model. They import the engine and change
+nothing it produced. `scripts/hw2/README.md` gives the run order, and every
+result lands in `outputs/hw2/`.
