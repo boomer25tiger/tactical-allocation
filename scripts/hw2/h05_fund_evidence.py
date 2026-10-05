@@ -19,7 +19,7 @@ Writes to outputs/hw2/
     fund-holdout-years.csv   calendar-year returns of fund and QQQ in the holdout
     fund-holdout-path.csv    growth of $1 in fund and QQQ over the holdout
     fund-cost-sweep.csv      fund metrics under a uniform round-turn cost of 0 to 50 bp
-    fund-rolling-5y.csv      five-year outcomes from every monthly start, both fee classes
+    fund-rolling-5y.csv      five-year outcomes from every monthly start, 1/20 over QQQ and 2/20 for comparison
     fund-evidence.json       concentration, LOYO, bootstrap, factor regressions, controls,
                              rolling five-year summaries
 """
@@ -30,7 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (OUT, ROOT, WINDOWS, P12, H, ANN, metrics, overlay,  # noqa: E402
-                    net_of_fees, sl, stationary_blocks)
+                    net_of_fees, sl, stationary_blocks, FEE_MGMT, FEE_INC)
 import engine  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -164,8 +164,8 @@ starts = [s for s in starts if s + pd.DateOffset(years=5) <= fund.index[-1]]
 rrow = []
 for s0 in starts:
     x = fund[s0:]
-    for cls, mg, ic in (("founders 1.5/15", 0.015, 0.15), ("standard 2/20", 0.02, 0.20)):
-        _, tot = net_of_fees(x, rf, mg, ic, nav0=1.0, years=5)
+    for cls, mg, ic, hz in (("1/20 over QQQ", FEE_MGMT, FEE_INC, q), ("2/20 over T-bills", 0.02, 0.20, None)):
+        _, tot = net_of_fees(x, rf, mg, ic, nav0=1.0, years=5, hurdle=hz)
         e = tot["end_date"]
         rrow.append({"start": s0.date(), "end": e.date(), "class": cls, "gross": tot["gross"],
                      "net": tot["net"], "qqq": float((1 + q[s0:e]).prod()),

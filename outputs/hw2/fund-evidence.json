@@ -153,49 +153,49 @@
   }
  },
  "rolling_5y": {
-  "founders 1.5/15 | all": {
+  "1/20 over QQQ | all": {
    "starts": 116,
    "first": "2012-01-03",
    "last": "2021-08-02",
-   "net_median": 3.5646536287321524,
-   "net_min": 2.1484307508913534,
-   "net_max": 7.998041007583722,
+   "net_median": 3.8110618897159747,
+   "net_min": 2.2402909780849583,
+   "net_max": 8.92213626839798,
    "qqq_median": 2.3083624489086465,
    "qqq_min": 1.7725852088450262,
    "qqq_max": 3.4733890570363877,
-   "share_ahead": 0.8448275862068966,
-   "net_annual_median": 0.289444579560742,
+   "share_ahead": 0.896551724137931,
+   "net_annual_median": 0.3067871857751394,
    "qqq_annual_median": 0.18211787497769005
   },
-  "founders 1.5/15 | in_sample_only": {
+  "1/20 over QQQ | in_sample_only": {
    "starts": 55,
    "first": "2012-01-03",
    "last": "2016-07-01",
-   "net_median": 2.529689126938991,
-   "net_min": 2.1484307508913534,
-   "net_max": 3.6437173814868684,
+   "net_median": 2.671487609974841,
+   "net_min": 2.2402909780849583,
+   "net_max": 3.853621484079543,
    "qqq_median": 2.3185486657381933,
    "qqq_min": 1.8190266511558393,
    "qqq_max": 3.458006731500174,
-   "share_ahead": 0.7454545454545455,
-   "net_annual_median": 0.20396380493982247,
+   "share_ahead": 0.8545454545454545,
+   "net_annual_median": 0.21716829949733696,
    "qqq_annual_median": 0.18315935842625208
   },
-  "founders 1.5/15 | overlapping_holdout": {
+  "1/20 over QQQ | overlapping_holdout": {
    "starts": 61,
    "first": "2016-08-01",
    "last": "2021-08-02",
-   "net_median": 5.959374954974413,
-   "net_min": 2.837788079970234,
-   "net_max": 7.998041007583722,
+   "net_median": 6.366774514313145,
+   "net_min": 3.1435170751268036,
+   "net_max": 8.92213626839798,
    "qqq_median": 2.2731303675699275,
    "qqq_min": 1.7725852088450262,
    "qqq_max": 3.4733890570363877,
    "share_ahead": 0.9344262295081968,
-   "net_annual_median": 0.42902603876432566,
+   "net_annual_median": 0.4480511198908492,
    "qqq_annual_median": 0.17848719710566785
   },
-  "standard 2/20 | all": {
+  "2/20 over T-bills | all": {
    "starts": 116,
    "first": "2012-01-03",
    "last": "2021-08-02",
@@ -209,7 +209,7 @@
    "net_annual_median": 0.26797659646295013,
    "qqq_annual_median": 0.18211787497769005
   },
-  "standard 2/20 | in_sample_only": {
+  "2/20 over T-bills | in_sample_only": {
    "starts": 55,
    "first": "2012-01-03",
    "last": "2016-07-01",
@@ -223,7 +223,7 @@
    "net_annual_median": 0.18788539220388478,
    "qqq_annual_median": 0.18315935842625208
   },
-  "standard 2/20 | overlapping_holdout": {
+  "2/20 over T-bills | overlapping_holdout": {
    "starts": 61,
    "first": "2016-08-01",
    "last": "2021-08-02",

@@ -8,7 +8,7 @@ common.net_of_fees (daily management fee, incentive fee accrued daily above
 the high-water mark and the year's T-bill return, paid at each anniversary).
 
 Writes to outputs/hw2/
-    fund-windows.csv       engine, fund gross, fund net at 2/20 and 1.5/15, QQQ, by window
+    fund-windows.csv       engine, fund gross, fund net at 1/20 over QQQ and at 2/20, QQQ, by window
     fund-start-dates.csv   seven start dates, each ending 2021-07-30
     fund-targets.csv       max drawdown and CAGR by target level and window
     fund-fees.csv          five-year investor outcomes for three start dates and both fee classes
@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (OUT, WINDOWS, P11, P12, H, ANN, metrics, overlay, net_of_fees,  # noqa: E402
-                    sl, stationary_blocks)
+                    sl, stationary_blocks, FEE_MGMT, FEE_INC)
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
@@ -36,12 +36,12 @@ rows = []
 for wn, win in WINDOWS.items():
     x = sl(fund, win); t = sl(rf, win)
     lines = {"engine10m": sl(r, win), "fund_gross": x,
-             "fund_net_2_20": net_of_fees(x, t, 0.02, 0.20)[0],
-             "fund_net_15_15": net_of_fees(x, t, 0.015, 0.15)[0], "qqq": sl(q, win)}
+             "fund_net": net_of_fees(x, t, FEE_MGMT, FEE_INC, hurdle=sl(q, win))[0],
+             "fund_net_2_20": net_of_fees(x, t, 0.02, 0.20)[0], "qqq": sl(q, win)}
     for k, s in lines.items():
         rows.append({"window": wn, "line": k, **metrics(s, t)})
     checks[f"avg_exposure_{wn}"] = float(sl(w, win).mean())
-    for k in ("fund_gross", "fund_net_2_20"):        # CAPM against QQQ, Newey-West lag 8
+    for k in ("fund_gross", "fund_net", "fund_net_2_20"):        # CAPM against QQQ, Newey-West lag 8
         y = (lines[k] - t).to_numpy(); xx = (sl(q, win) - t).to_numpy()
         X = np.column_stack([np.ones(len(y)), xx]); b, *_ = np.linalg.lstsq(X, y, rcond=None)
         e = y - X @ b; n = len(y); S = (X * e[:, None]).T @ (X * e[:, None]) / n
@@ -57,8 +57,10 @@ pd.DataFrame(rows).to_csv(OUT / "fund-windows.csv", index=False)
 strip = []
 for s0 in ("2011-10-04", "2012-01-03", "2012-07-02", "2013-01-02", "2014-01-02", "2015-01-02", "2016-01-04"):
     win = (s0, "2021-07-30"); x = sl(fund, win); t = sl(rf, win)
-    g = metrics(x, t); n_ = metrics(net_of_fees(x, t, 0.02, 0.20)[0], t); qq = metrics(sl(q, win), t)
-    strip.append({"start": s0, **{f"{a}_{k}": v for a, m in (("gross", g), ("net_2_20", n_), ("qqq", qq))
+    g = metrics(x, t); qq = metrics(sl(q, win), t)
+    n_ = metrics(net_of_fees(x, t, FEE_MGMT, FEE_INC, hurdle=sl(q, win))[0], t)
+    n2 = metrics(net_of_fees(x, t, 0.02, 0.20)[0], t)
+    strip.append({"start": s0, **{f"{a}_{k}": v for a, m in (("gross", g), ("net", n_), ("net_2_20", n2), ("qqq", qq))
                                   for k, v in m.items() if k != "n"}})
 pd.DataFrame(strip).to_csv(OUT / "fund-start-dates.csv", index=False)
 
@@ -97,8 +99,9 @@ checks["q4_2011"] = {"fund": float((1 + sl(fund, q4)).prod() - 1), "engine10m": 
 frow = []
 for label, s0 in (("Jan 2012", "2012-01-03"), ("Aug 2016", "2016-08-01"), ("Aug 2021", "2021-08-02")):
     x = fund[s0:]
-    for cls, mg, ic, nav0 in (("founders 1.5/15", 0.015, 0.15, 10e6), ("standard 2/20", 0.02, 0.20, 1e6)):
-        _, tot = net_of_fees(x, rf, mg, ic, nav0=nav0, years=5)
+    for cls, mg, ic, nav0, hz in (("1/20 over QQQ", FEE_MGMT, FEE_INC, 10e6, q),
+                                  ("2/20 over T-bills", 0.02, 0.20, 10e6, None)):
+        _, tot = net_of_fees(x, rf, mg, ic, nav0=nav0, years=5, hurdle=hz)
         qv = nav0 * float((1 + q[s0:str(tot["end_date"].date())]).prod())
         frow.append({"start": label, "class": cls, "nav0": nav0, "end_date": tot["end_date"].date(),
                      "gross": tot["gross"], "net": tot["net"], "fees": tot["mgmt_fees"] + tot["incentive_fees"],
@@ -106,11 +109,11 @@ for label, s0 in (("Jan 2012", "2012-01-03"), ("Aug 2016", "2016-08-01"), ("Aug 
                      "qqq_annual": (qv / nav0) ** (1 / 5) - 1})
 pd.DataFrame(frow).to_csv(OUT / "fund-fees.csv", index=False)
 
-# Review rule. Distribution of a two-year (504-session) Sharpe after 2/20 fees,
+# Review rule. Distribution of a two-year (504-session) Sharpe after fees (1% and 20% over QQQ),
 # from a stationary bootstrap of the fund's net daily returns from January 2012
 # through the holdout (mean block 21 sessions, 10,000 draws, seed 20260823).
 win = (P12[0], H[1]); t = sl(rf, win)
-net = net_of_fees(sl(fund, win), t, 0.02, 0.20)[0]
+net = net_of_fees(sl(fund, win), t, FEE_MGMT, FEE_INC, hurdle=sl(q, win))[0]
 E = (net - t).to_numpy()
 rng = np.random.default_rng(20260823)
 draws = [E[stationary_blocks(rng, len(E), 21, 504)] for _ in range(10000)]
@@ -122,8 +125,9 @@ checks["review_rule_two_year_net_sharpe"] = {"p05": float(np.percentile(srs, 5))
 json.dump(checks, open(OUT / "fund-checks.json", "w"), indent=1, default=str)
 pd.set_option("display.width", 220)
 print(pd.DataFrame(rows).round(5).to_string(index=False))
-print(pd.DataFrame(strip)[["start", "gross_sortino", "net_2_20_sortino", "qqq_sortino", "gross_calmar",
-                           "net_2_20_calmar", "qqq_calmar"]].round(3).to_string(index=False))
+print(pd.DataFrame(strip)[["start", "gross_sortino", "net_sortino", "qqq_sortino", "gross_calmar",
+                           "net_calmar", "qqq_calmar", "gross_sharpe_naive", "net_sharpe_naive",
+                           "qqq_sharpe_naive"]].round(3).to_string(index=False))
 print(pd.DataFrame(trow).round(4).to_string(index=False))
 print(pd.DataFrame(frow).round(4).to_string(index=False))
 print(json.dumps(checks, indent=1, default=str))

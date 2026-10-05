@@ -1,6 +1,6 @@
 """h06. Risk and portfolio statistics against QQQ (slide 7).
 
-For the fund gross of fees, the fund after 2% and 20% fees, and buy-and-hold
+For the fund gross of fees, the fund after 1% and 20% over QQQ, and buy-and-hold
 QQQ, over P12 and the holdout. QQQ is the twelve-line ladder's buy_hold_QQQ
 series, the same one behind slide 6.
 
@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import OUT, ROOT, P12, H, ANN, overlay, net_of_fees, sl  # noqa: E402
+from common import OUT, ROOT, P12, H, ANN, overlay, net_of_fees, sl, FEE_MGMT, FEE_INC  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 import scripts.s13_backtest as bt  # noqa: E402
@@ -73,8 +73,8 @@ for wn, win in (("P12", P12), ("H", H)):
     idx = f.index
     q = cl["buy_hold_QQQ"].reindex(idx).fillna(0.0)
     rf = rfl.reindex(idx).fillna(0.0)
-    net = net_of_fees(f, sl(D["rf"], win), 0.02, 0.20)[0]
-    for name, s in (("fund_gross", f), ("fund_net_2_20", net), ("qqq", q)):
+    net = net_of_fees(f, sl(D["rf"], win), FEE_MGMT, FEE_INC, hurdle=sl(D["qqq"], win))[0]
+    for name, s in (("fund_gross", f), ("fund_net", net), ("qqq", q)):
         rows.append({"window": wn, "line": name, **stats(s, q, rf)})
 R = pd.DataFrame(rows)
 R.to_csv(OUT / "fund-risk-stats.csv", index=False)

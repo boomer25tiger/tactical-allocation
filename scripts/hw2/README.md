@@ -47,7 +47,7 @@ python3 scripts/hw2/h06_risk_stats.py     # a few seconds; needs h01
 - **Fund.** w = min(1, 0.25 / sigma), sigma = sqrt(252) x sd of the last 60 daily engine returns, applied two sessions later. Fund return = w r + (1 - w) rf - 10 bp x |change in w|. The engine is the constant-$10M re-run from h01.
 - **Sortino.** mean(r - rf) x 252 / (sqrt(252) x sqrt(mean of min(r - rf, 0)^2)), over all days.
 - **Calmar.** CAGR / |max drawdown| over the whole window.
-- **Fees.** Management fee accrues daily at m / 252. The incentive fee accrues daily in NAV on gains above max(high-water mark, year-start NAV x (1 + that year's T-bill return)) and is paid at each anniversary.
+- **Fees.** One class, 1% and 20% (`FEE_MGMT`, `FEE_INC` in common.py). Management fee accrues daily at m / 252. The incentive fee accrues daily in NAV on gains above max(high-water mark, year-start NAV x (1 + that year's QQQ return)) and is paid at each anniversary. The earlier 2% and 20% over T-bills is kept as a comparison line in fund-windows.csv, fund-start-dates.csv, fund-fees.csv and fund-rolling-5y.csv.
 - **Bootstrap.** Politis-Romano stationary bootstrap, mean block 21 sessions, 10,000 draws, seed 20260823, matching `scripts/s30_phaseF.py`.
 
 ## Checks

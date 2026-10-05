@@ -37,6 +37,11 @@ WINDOWS = {"P11": P11, "P12": P12, "H": H}
 # remainder earns T-bills and every unit of exposure change pays WEIGHT_COST_BP.
 TARGET, LOOKBACK, LAG, WEIGHT_COST_BP = 0.25, 60, 2, 10.0
 
+# Fee terms in the deck: one class, 1% management fee and a 20% incentive fee
+# on returns above QQQ's for the year, above a high-water mark. The earlier
+# 2% and 20% over T-bills remains available as a comparison.
+FEE_MGMT, FEE_INC = 0.01, 0.20
+
 ANN = math.sqrt(252.0)
 
 
@@ -80,15 +85,17 @@ def overlay(strat: pd.Series, rf: pd.Series, target=TARGET, lookback=LOOKBACK,
 
 
 def net_of_fees(x: pd.Series, rf: pd.Series, mgmt: float, inc: float,
-                nav0: float = 1.0, years: int | None = None):
+                nav0: float = 1.0, years: int | None = None, hurdle: pd.Series | None = None):
     """Daily NAV after fees.
 
     The management fee accrues daily at mgmt / 252. The incentive fee accrues
     daily in NAV on gains above max(high-water mark, year-start NAV times
-    (1 + that year's T-bill return)) and is paid at each anniversary, so a fall
-    in NAV reduces the accrued fee. Returns (daily net returns, dict of totals).
+    (1 + that year's hurdle return)) and is paid at each anniversary, so a fall
+    in NAV reduces the accrued fee. The hurdle is the T-bill series rf unless a
+    daily return series is passed, such as QQQ's for the deck's fee terms.
+    Returns (daily net returns, dict of totals).
     """
-    rf = rf.reindex(x.index).fillna(0.0)
+    rf = (rf if hurdle is None else hurdle).reindex(x.index).fillna(0.0)
     G, hwm, ys, hg = nav0, nav0, nav0, 1.0
     start = x.index[0]
     k = 1
